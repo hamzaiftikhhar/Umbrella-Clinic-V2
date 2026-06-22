@@ -20,13 +20,7 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div
-      className={cn(
-        "max-w-2xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
-    >
+    <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
         <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-primary/70">
           {eyebrow}
@@ -35,9 +29,7 @@ export function SectionHeading({
       <Tag className="text-3xl font-semibold leading-[1.05] text-foreground sm:text-4xl md:text-5xl">
         {title}{" "}
         {accent && (
-          <span className="font-display italic font-medium text-primary/90">
-            {accent}
-          </span>
+          <span className="font-display italic font-medium text-primary/90">{accent}</span>
         )}
       </Tag>
       {description && (

@@ -35,7 +35,11 @@ export function NeighborhoodPage({ config }: { config: NeighborhoodConfig }) {
         <Container size="lg">
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
             <Reveal>
-              <SectionHeading as="h2" title="Why patients near" accent={`${config.name} choose us.`} />
+              <SectionHeading
+                as="h2"
+                title="Why patients near"
+                accent={`${config.name} choose us.`}
+              />
               <ul className="mt-8 space-y-4 text-base text-foreground/80">
                 {config.why.map((w) => (
                   <li key={w} className="flex gap-3">
@@ -62,9 +66,7 @@ export function NeighborhoodPage({ config }: { config: NeighborhoodConfig }) {
                     {config.transit}
                   </li>
                 </ul>
-                <p className="mt-6 text-xs text-muted-foreground">
-                  Serves {config.serves}
-                </p>
+                <p className="mt-6 text-xs text-muted-foreground">Serves {config.serves}</p>
               </div>
             </Reveal>
           </div>

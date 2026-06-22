@@ -1,4 +1,3 @@
-
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
@@ -16,9 +15,7 @@ export function HomeHero() {
       />
 
       <Container size="md" className="text-center">
-        <p
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-primary/80 backdrop-blur"
-        >
+        <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] text-primary/80 backdrop-blur">
           <Sparkles className="h-3 w-3" />
           Multispecialty · Diagnostics · Longevity
         </p>
@@ -28,31 +25,19 @@ export function HomeHero() {
           className="text-balance text-5xl font-semibold leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl"
         >
           {words.map((w, i) => (
-            <span
-              key={i}
-              className="inline-block pr-[0.25em]"
-            >
+            <span key={i} className="inline-block pr-[0.25em]">
               {w}
             </span>
           ))}
-          <span
-            className="block font-display italic font-medium text-primary"
-          >
-            measured.
-          </span>
+          <span className="block font-display italic font-medium text-primary">measured.</span>
         </h1>
 
-        <p
-          className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
-        >
-          A new kind of NYC clinic — board-certified primary care and specialists,
-          in-house diagnostics, and longevity programs that actually track your numbers.
-          Insurance accepted.
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+          A new kind of NYC clinic — board-certified primary care and specialists, in-house
+          diagnostics, and longevity programs that actually track your numbers. Insurance accepted.
         </p>
 
-        <div
-          className="mt-9 flex flex-wrap items-center justify-center gap-3"
-        >
+        <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
           <BookButton>Book appointment</BookButton>
           <a
             href="#how"
@@ -64,9 +49,7 @@ export function HomeHero() {
         </div>
       </Container>
 
-      <div
-        className="mx-auto mt-14 max-w-6xl px-5 sm:px-8"
-      >
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] border border-border/70 shadow-[var(--shadow-elegant)] sm:rounded-[36px]">
           <img
             src={IMG.consult}

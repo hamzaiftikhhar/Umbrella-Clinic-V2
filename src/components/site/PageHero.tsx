@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "./primitives/Container";
 import { Reveal } from "./primitives/Reveal";
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { ChevronRight } from "lucide-react";
 
 export interface Crumb {
@@ -39,9 +39,7 @@ export function PageHero({
         : "bg-background text-foreground";
 
   return (
-    <section
-      className={`relative overflow-hidden pt-28 pb-24 sm:pt-36 sm:pb-32 ${bg}`}
-    >
+    <section className={`relative overflow-hidden pt-28 pb-24 sm:pt-36 sm:pb-32 ${bg}`}>
       <Container>
         {crumbs && crumbs.length > 0 && (
           <nav
@@ -54,7 +52,7 @@ export function PageHero({
               <span key={i} className="flex items-center gap-1.5">
                 {i > 0 && <ChevronRight className="h-3 w-3" />}
                 {c.to ? (
-                  <Link to={c.to} className="hover:underline">
+                  <Link href={c.to} className="hover:underline">
                     {c.label}
                   </Link>
                 ) : (
@@ -113,10 +111,8 @@ export function PageHero({
         aria-hidden="true"
         className="absolute inset-x-0 bottom-[-1px] h-16 bg-background"
         style={{
-          WebkitMaskImage:
-            "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
-          maskImage:
-            "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
+          WebkitMaskImage: "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
+          maskImage: "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
         }}
       />
     </section>

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { Instagram, Facebook } from "lucide-react";
 import { FOOTER_COLUMNS } from "@/data/nav";
 import { SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
@@ -22,8 +22,8 @@ export function SiteFooter() {
               Connect with us.
             </p>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-              Modern, data-driven medicine for New Yorkers — primary care,
-              specialty, diagnostics and longevity under one roof.
+              Modern, data-driven medicine for New Yorkers — primary care, specialty, diagnostics
+              and longevity under one roof.
             </p>
             <div className="mt-7 flex gap-3">
               {[Instagram, Facebook, TikTokIcon].map((Icon, i) => (

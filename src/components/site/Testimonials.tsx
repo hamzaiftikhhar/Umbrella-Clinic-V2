@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
 import { TestimonialCard } from "./primitives/TestimonialCard";
@@ -26,7 +26,7 @@ export function Testimonials() {
           </Link>
         </div>
       </Container>
-      
+
       {/* Horizontal scroll container with left and right fades */}
       <div className="relative mt-14 w-full">
         {/* Left edge fade effect */}
@@ -38,7 +38,7 @@ export function Testimonials() {
               <TestimonialCard {...r} rating={5} />
             </div>
           ))}
-          
+
           {/* View all card */}
           <div className="flex w-[200px] shrink-0 snap-start items-center justify-center p-6 pr-12 sm:pr-24">
             <Link
@@ -50,7 +50,7 @@ export function Testimonials() {
             </Link>
           </div>
         </div>
-        
+
         {/* Right edge fade effect */}
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent sm:w-24 xl:w-[calc((100vw-1216px)/2+2rem)]" />
       </div>

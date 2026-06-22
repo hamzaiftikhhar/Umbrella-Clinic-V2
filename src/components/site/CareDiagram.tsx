@@ -1,4 +1,3 @@
-
 import {
   HeartPulse,
   Stethoscope,
@@ -26,11 +25,7 @@ const orbit = [
 
 export function CareDiagram() {
   return (
-    <section
-      id="how"
-      aria-labelledby="diagram-heading"
-      className="overflow-hidden py-24 sm:py-32"
-    >
+    <section id="how" aria-labelledby="diagram-heading" className="overflow-hidden py-24 sm:py-32">
       <Container>
         <div className="grid items-center gap-12 md:grid-cols-[1fr_1.1fr] md:gap-20">
           <SectionHeading
@@ -47,9 +42,7 @@ export function CareDiagram() {
             <div className="absolute left-1/2 top-1/2 grid h-32 w-32 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-elegant)] sm:h-40 sm:w-40">
               <div className="text-center">
                 <p className="font-display text-xl italic">Umbrella</p>
-                <p className="text-[10px] uppercase tracking-[0.18em] opacity-80">
-                  one record
-                </p>
+                <p className="text-[10px] uppercase tracking-[0.18em] opacity-80">one record</p>
               </div>
             </div>
 
@@ -67,9 +60,7 @@ export function CareDiagram() {
                   className="absolute left-1/2 top-1/2"
                   style={{ transform: `translate(${x}px, ${y}px)` }}
                 >
-                  <div
-                    className="-translate-x-1/2 -translate-y-1/2"
-                  >
+                  <div className="-translate-x-1/2 -translate-y-1/2">
                     <div className="grid h-16 w-16 place-items-center rounded-full bg-card text-primary shadow-[var(--shadow-card)] sm:h-20 sm:w-20">
                       <o.icon className="h-6 w-6 sm:h-7 sm:w-7" />
                     </div>

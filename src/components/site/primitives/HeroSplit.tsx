@@ -73,10 +73,8 @@ export function HeroSplit({
         aria-hidden="true"
         className="absolute inset-x-0 bottom-[-1px] h-16 bg-background"
         style={{
-          WebkitMaskImage:
-            "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
-          maskImage:
-            "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
+          WebkitMaskImage: "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
+          maskImage: "radial-gradient(140% 100% at 50% 100%, black 70%, transparent 71%)",
         }}
       />
     </section>

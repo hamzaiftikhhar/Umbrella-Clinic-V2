@@ -12,11 +12,15 @@ export interface Article {
 
 import { IMG } from "./images";
 
-export const pillars: Record<Pillar, { title: string; slug: string; description: string; image: string }> = {
+export const pillars: Record<
+  Pillar,
+  { title: string; slug: string; description: string; image: string }
+> = {
   diagnostics: {
     title: "Decoding Your Diagnostics",
     slug: "decoding-your-diagnostics",
-    description: "Plain-English explainers for the labs and biomarkers that actually move outcomes.",
+    description:
+      "Plain-English explainers for the labs and biomarkers that actually move outcomes.",
     image: IMG.microscope,
   },
   longevity: {
@@ -38,7 +42,8 @@ export const articles: Article[] = [
     slug: "cholesterol-panel-explained",
     pillar: "diagnostics",
     title: "What Your Cholesterol Panel Actually Means",
-    excerpt: "Total, LDL, HDL, triglycerides — and the two newer numbers (ApoB, Lp(a)) that matter more.",
+    excerpt:
+      "Total, LDL, HDL, triglycerides — and the two newer numbers (ApoB, Lp(a)) that matter more.",
     readTime: "6 min read",
     image: IMG.lab,
     body: [
@@ -52,7 +57,8 @@ export const articles: Article[] = [
     slug: "glp1-what-to-expect",
     pillar: "busy-professionals",
     title: "GLP-1 for Weight Loss: What to Actually Expect",
-    excerpt: "Side effects, body composition, the maintenance question — and what 'medically supervised' actually means.",
+    excerpt:
+      "Side effects, body composition, the maintenance question — and what 'medically supervised' actually means.",
     readTime: "8 min read",
     image: IMG.glp1Hero,
     body: [
@@ -66,7 +72,8 @@ export const articles: Article[] = [
     slug: "sleep-debt-guide",
     pillar: "busy-professionals",
     title: "The Busy Professional's Guide to Sleep Debt",
-    excerpt: "What sleep debt actually is, how to test for apnea without a lab, and the 4 changes that move the needle.",
+    excerpt:
+      "What sleep debt actually is, how to test for apnea without a lab, and the 4 changes that move the needle.",
     readTime: "7 min read",
     image: IMG.sleepStudy,
     body: [

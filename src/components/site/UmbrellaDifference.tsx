@@ -26,11 +26,7 @@ const points = [
 
 export function UmbrellaDifference() {
   return (
-    <section
-      id="difference"
-      aria-labelledby="difference-heading"
-      className="py-24 sm:py-32"
-    >
+    <section id="difference" aria-labelledby="difference-heading" className="py-24 sm:py-32">
       <Container>
         <div className="grid items-start gap-14 md:grid-cols-[1.1fr_1fr] md:gap-20">
           <div>
@@ -46,12 +42,8 @@ export function UmbrellaDifference() {
                   <div className="flex gap-4">
                     <IconBadge icon={p.icon} />
                     <div>
-                      <h3 className="text-base font-semibold text-foreground">
-                        {p.title}
-                      </h3>
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                        {p.body}
-                      </p>
+                      <h3 className="text-base font-semibold text-foreground">{p.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                     </div>
                   </div>
                 </Reveal>

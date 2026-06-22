@@ -56,24 +56,16 @@ export function LeafPage({ config }: { config: LeafConfig }) {
         <section className="py-20 sm:py-28">
           <Container size="lg">
             <div className="grid gap-12 md:grid-cols-[1fr_1.2fr] md:gap-20">
-              <SectionHeading
-                as="h2"
-                title={c.intro.heading}
-                accent={c.intro.accent}
-              />
+              <SectionHeading as="h2" title={c.intro.heading} accent={c.intro.accent} />
               <div>
-                <p className="text-lg leading-relaxed text-foreground/80">
-                  {c.intro.body}
-                </p>
+                <p className="text-lg leading-relaxed text-foreground/80">{c.intro.body}</p>
                 {c.intro.bullets && (
                   <ul className="mt-8 space-y-6">
                     {c.intro.bullets.map((b) => (
                       <li key={b.title} className="flex gap-4">
                         <IconBadge icon={b.icon} />
                         <div>
-                          <h3 className="text-base font-semibold text-foreground">
-                            {b.title}
-                          </h3>
+                          <h3 className="text-base font-semibold text-foreground">{b.title}</h3>
                           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                             {b.body}
                           </p>
@@ -107,11 +99,7 @@ export function LeafPage({ config }: { config: LeafConfig }) {
       {c.related && (
         <section className="bg-secondary/40 py-20 sm:py-28">
           <Container>
-            <SectionHeading
-              as="h2"
-              title={c.related.heading}
-              accent={c.related.accent}
-            />
+            <SectionHeading as="h2" title={c.related.heading} accent={c.related.accent} />
             <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {c.related.cards.map((card, i) => (
                 <Reveal key={card.title} delay={i * 0.04}>
@@ -134,11 +122,7 @@ export function LeafPage({ config }: { config: LeafConfig }) {
         </section>
       )}
 
-      <CTABanner
-        title={c.cta?.title}
-        italic={c.cta?.italic}
-        image={c.cta?.image}
-      />
+      <CTABanner title={c.cta?.title} italic={c.cta?.italic} image={c.cta?.image} />
     </main>
   );
 }

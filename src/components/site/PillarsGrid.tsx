@@ -1,5 +1,5 @@
 import { ArrowRight, Stethoscope, FlaskConical, Activity } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
 import { Reveal } from "./primitives/Reveal";
@@ -16,8 +16,7 @@ const pillars = [
   },
   {
     title: "Diagnostics & Data",
-    description:
-      "In-house imaging, labs, sleep, and biomarker panels. Results faster, in context.",
+    description: "In-house imaging, labs, sleep, and biomarker panels. Results faster, in context.",
     to: "/diagnostics",
     icon: FlaskConical,
     image: IMG.lab,

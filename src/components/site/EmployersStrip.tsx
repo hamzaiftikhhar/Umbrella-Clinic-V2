@@ -1,5 +1,5 @@
 import { ArrowUpRight, Building2 } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { Reveal } from "./primitives/Reveal";
 
@@ -13,12 +13,15 @@ export function EmployersStrip() {
               <Building2 className="h-6 w-6" />
             </span>
             <div>
-              <h2 id="employers-heading" className="text-xl font-semibold text-foreground sm:text-2xl">
+              <h2
+                id="employers-heading"
+                className="text-xl font-semibold text-foreground sm:text-2xl"
+              >
                 Executive physicals & longevity for your team
               </h2>
               <p className="mt-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Concierge-quality care for downtown firms. Built for partners,
-                principals, and the people who keep them running.
+                Concierge-quality care for downtown firms. Built for partners, principals, and the
+                people who keep them running.
               </p>
             </div>
             <Link

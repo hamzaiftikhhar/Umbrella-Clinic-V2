@@ -94,12 +94,12 @@ Every leaf route uses `PageHead` to set unique `<title>`, description, `og:title
 
 Replace current Verdant home with Umbrella, keeping the proven section rhythm:
 
-1. `HeroCentered` — "Modern medicine, *measured.*" + Book CTA → Zocdoc + "How it works" + video-style hero image.
+1. `HeroCentered` — "Modern medicine, _measured._" + Book CTA → Zocdoc + "How it works" + video-style hero image.
 2. `LogoBar` — accepted insurance logos (Aetna, BCBS, Cigna, United, EmblemHealth, Medicare) — text-only, no fake logos.
-3. `LocationBanner` — "Visit us in *New York City*" with curved image.
+3. `LocationBanner` — "Visit us in _New York City_" with curved image.
 4. Three-pillar entry tiles → Specialties / Diagnostics & Data / Longevity (replaces ConditionsGrid).
-5. `CareDiagram` — kept, repurposed: "Comprehensive, *coordinated* care" with floating product/icon orbit (primary care, cardiology, sleep, GLP-1, longevity, diagnostics).
-6. `NectarDifference` → `UmbrellaDifference` — "The *Umbrella* difference" 3 cards (Data-driven, Multispecialty under one roof, Insurance-accepted) + video.
+5. `CareDiagram` — kept, repurposed: "Comprehensive, _coordinated_ care" with floating product/icon orbit (primary care, cardiology, sleep, GLP-1, longevity, diagnostics).
+6. `NectarDifference` → `UmbrellaDifference` — "The _Umbrella_ difference" 3 cards (Data-driven, Multispecialty under one roof, Insurance-accepted) + video.
 7. `StatCallout` — "94% of members rate their care 5★" gradient banner.
 8. `Testimonials` — 4 Google-style cards.
 9. `PhysicianFeature` — founder-forward (Columbia/NYP, board cert, pain fellowship).

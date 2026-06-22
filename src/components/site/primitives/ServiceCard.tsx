@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { cn } from "@/lib/utils";
 
 interface ServiceCardProps {

@@ -1,5 +1,5 @@
 import { ArrowRight, GraduationCap, Award, BadgeCheck } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
 import { Reveal } from "./primitives/Reveal";
@@ -39,10 +39,9 @@ export function FounderProfile() {
               accent="treats you like a person."
             />
             <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Dr. Anjali Rao trained at Columbia and led a multispecialty
-              practice at NewYork-Presbyterian before founding Umbrella to
-              build the clinic she wished existed — rigorous, calm, and
-              built around the patient.
+              Dr. Anjali Rao trained at Columbia and led a multispecialty practice at
+              NewYork-Presbyterian before founding Umbrella to build the clinic she wished existed —
+              rigorous, calm, and built around the patient.
             </p>
             <ul className="mt-8 space-y-3">
               {creds.map((c) => (
