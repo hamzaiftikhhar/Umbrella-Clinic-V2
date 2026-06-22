@@ -47,8 +47,8 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
-      <body>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <JsonLd data={organizationSchema} />
         <SiteLayout>{children}</SiteLayout>
       </body>

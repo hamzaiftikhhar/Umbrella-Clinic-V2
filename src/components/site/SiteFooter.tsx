@@ -74,7 +74,7 @@ export function SiteFooter() {
             <Link to="/hipaa-accessibility" className="hover:text-primary-foreground">
               HIPAA & Accessibility
             </Link>
-            <span>© {new Date().getFullYear()} Umbrella Health</span>
+            <span suppressHydrationWarning>© {new Date().getFullYear()} Umbrella Health</span>
           </div>
         </div>
       </div>
