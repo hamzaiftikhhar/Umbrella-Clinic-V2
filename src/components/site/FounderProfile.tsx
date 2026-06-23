@@ -46,9 +46,7 @@ export function FounderProfile() {
               accent="treats you like a person."
             />
             <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Dr. Anjali Rao trained at Columbia and led a multispecialty practice at
-              NewYork-Presbyterian before founding Umbrella to build the clinic she wished existed —
-              rigorous, calm, and built around the patient.
+              Dr. Rajat founded Umbrella Health to create a more connected model of healthcare, one where primary care, specialty medicine, and diagnostics work together to deliver better outcomes.
             </p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-1">
               {creds.map((c) => (

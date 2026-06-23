@@ -20,10 +20,10 @@ export function Testimonials() {
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
               as="h2"
-              eyebrow="Patient stories"
+              eyebrow="Patient reviews"
               title="Real stories from"
               accent="real people."
-              description="See why Umbrella Health is one of New York City's top primary care clinics."
+              description="See why patients across New York trust Umbrella Health for primary care."
             />
             <Link
               to="/reviews"

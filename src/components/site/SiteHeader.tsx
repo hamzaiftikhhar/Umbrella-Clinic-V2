@@ -2,18 +2,31 @@
 
 import { Link } from "@/components/AppLink";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BookButton } from "./primitives/BookButton";
 import { Wordmark } from "./primitives/Wordmark";
 import { PRIMARY_NAV, MORE_NAV } from "@/data/nav";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const currentY = window.scrollY;
+      // Mark as scrolled past threshold for background styling
+      setScrolled(currentY > 12);
+      // Hide on scroll down (after 80px), show on scroll up
+      if (currentY > lastScrollY.current && currentY > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = currentY;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -21,10 +34,13 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
-        : "bg-background/85 backdrop-blur-md border-b border-transparent"
-        }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      } ${
+        scrolled
+          ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
+          : "bg-background/85 backdrop-blur-md border-b border-transparent"
+      }`}
     >
       <div className="w-full grid grid-cols-2 xl:grid-cols-[1fr_auto_1fr] items-center h-16 px-4 xl:px-8">
         <div className="flex justify-start items-center">

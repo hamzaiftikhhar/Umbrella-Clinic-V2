@@ -40,9 +40,8 @@ export function HomeHero() {
 
         <Reveal delay={0.1}>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A new kind of NYC clinic — board-certified primary care and specialists, in-house
-            diagnostics, and longevity programs that actually track your numbers. Insurance
-            accepted.
+            Primary care, specialty medicine, advanced diagnostics, and preventive health, all under one roof in Lower Manhattan.{" "}
+            <span className="text-foreground/80 font-medium">Care guided by data, not guesswork.</span>
           </p>
         </Reveal>
 
@@ -63,8 +62,8 @@ export function HomeHero() {
       <Reveal delay={0.2} className="mx-auto mt-14 max-w-6xl px-5 sm:px-8">
         <div className="group relative aspect-[16/9] overflow-hidden rounded-[28px] border border-border/60 shadow-[var(--shadow-elegant)] sm:rounded-[36px]">
           <Image
-            src={IMG.consult}
-            alt="Umbrella Health physician reviewing diagnostic results with a patient in a modern NYC clinic"
+            src="/images/Dr-rajat-hero-section.png"
+            alt="Dr. Rajat at Umbrella Health clinic in New York City"
             fill
             priority
             className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"

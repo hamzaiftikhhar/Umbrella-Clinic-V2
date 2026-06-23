@@ -89,7 +89,7 @@ export default function HomePage() {
         <StatCallout
           stat="92%"
           title="of members rate their care 5 stars after their first visit."
-          description="Multispecialty under one roof, data-driven care plans, and a team that actually picks up the phone."
+          description="Multispecialty care, advanced diagnostics, and a team that knows your history, not just your appointment slot. "
           image="/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.jpg"
           imageAlt="Relaxing waiting area with green moss wall"
         />

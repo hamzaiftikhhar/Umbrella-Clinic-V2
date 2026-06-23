@@ -12,17 +12,17 @@ const points = [
   {
     icon: Database,
     title: "Data-driven",
-    body: "We own our diagnostics — imaging, labs, sleep, autonomic — so your numbers come back faster and stay in one place.",
+    body: "Advanced diagnostics, biomarker testing, imaging, sleep studies, and objective measurements that help guide every decision. ",
   },
   {
     icon: Layers,
     title: "Multispecialty",
-    body: "Primary care, cardiology, neurology, sleep, and pain in one clinic. Fewer referrals, less context-switching.",
+    body: "Primary care, cardiology, neurology, sleep medicine, pain management, and more all working together in one practice.",
   },
   {
     icon: ShieldCheck,
     title: "Insurance-accepted",
-    body: "We work with most major plans and offer transparent cash-pay for longevity and self-pay options.",
+    body: "Longer-term relationships, coordinated care, and a team that understands your history, not just today's appointment. ",
   },
 ];
 

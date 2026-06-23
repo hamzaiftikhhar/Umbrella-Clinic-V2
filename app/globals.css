@@ -193,3 +193,87 @@
 @utility text-balance {
   text-wrap: balance;
 }
+
+/* How It Works — solar system orbit */
+.orbit-system {
+  --orbit-scale: 1;
+}
+
+.orbit-system--split {
+  --orbit-scale: 0.88;
+}
+
+.orbit-label {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.1rem;
+  max-height: 2.1rem;
+}
+
+@media (max-width: 1023px) {
+  .orbit-system--split {
+    --orbit-scale: 0.68;
+  }
+}
+
+@media (max-width: 767px) {
+  .orbit-system {
+    --orbit-scale: 0.52;
+  }
+
+  .orbit-system--split {
+    --orbit-scale: 0.54;
+  }
+
+  .orbit-label {
+    min-height: 1.9rem;
+    max-height: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .orbit-system {
+    --orbit-scale: 0.42;
+  }
+
+  .orbit-system--split {
+    --orbit-scale: 0.46;
+  }
+}
+
+@keyframes smooth-orbit {
+  0% {
+    transform: rotate(var(--angle)) translateY(calc(var(--radius) * var(--orbit-scale) * -1))
+      rotate(calc(var(--angle) * -1));
+  }
+  100% {
+    transform: rotate(calc(var(--angle) + 360deg))
+      translateY(calc(var(--radius) * var(--orbit-scale) * -1))
+      rotate(calc((var(--angle) + 360deg) * -1));
+  }
+}
+
+.orbit-item {
+  animation: smooth-orbit var(--speed) linear infinite;
+}
+
+.orbit-sphere {
+  box-shadow:
+    0 14px 32px -10px color-mix(in oklab, var(--primary) 40%, transparent),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.22);
+}
+
+.orbit-item:hover .orbit-sphere,
+.orbit-item:focus-within .orbit-sphere {
+  box-shadow:
+    0 22px 44px -12px color-mix(in oklab, var(--primary) 50%, transparent),
+    inset 0 -10px 18px rgba(0, 0, 0, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-item {
+    animation-play-state: paused;
+  }
+}

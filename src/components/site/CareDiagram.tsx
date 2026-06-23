@@ -1,104 +1,203 @@
+"use client";
+
+import type { CSSProperties } from "react";
 import Image from "next/image";
-import { ArrowRight, ClipboardList, FlaskConical, Users } from "lucide-react";
+import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
-import { SectionHeading } from "./primitives/SectionHeading";
 import { BookButton } from "./primitives/BookButton";
-import { Reveal } from "./primitives/Reveal";
+import { Wordmark } from "./primitives/Wordmark";
 import { IMG } from "@/data/images";
 
-const journeySteps = [
+/** Two-ring orbital layout constants */
+const INNER_RING_RADIUS = 200;
+const OUTER_RING_RADIUS = 325;
+const RING_STEP_DEG = 72;
+const OUTER_RING_OFFSET_DEG = 36;
+
+const INNER_ANGLES = Array.from({ length: 5 }, (_, i) => i * RING_STEP_DEG);
+const OUTER_ANGLES = Array.from({ length: 5 }, (_, i) => i * RING_STEP_DEG + OUTER_RING_OFFSET_DEG);
+
+interface ServiceSeed {
+  name: string;
+  image: string;
+  href: string;
+}
+
+interface OrbitService extends ServiceSeed {
+  angle: number;
+  radius: number;
+  speed: number;
+}
+
+const innerRingSeeds: ServiceSeed[] = [
+  { name: "Primary Care", image: IMG.consult, href: "/specialties/primary-care" },
+  { name: "Cardiology", image: IMG.ekg, href: "/specialties/cardiology-vascular" },
+  { name: "Neurology", image: IMG.doctorPatient, href: "/specialties/neurology" },
+  { name: "Sleep Medicine", image: IMG.sleepStudy, href: "/specialties/sleep-medicine" },
+  { name: "Pain Management", image: IMG.examRoom, href: "/specialties/pain-management" },
+];
+
+const outerRingSeeds: ServiceSeed[] = [
+  { name: "GLP-1 Weight Loss", image: IMG.glp1Hero, href: "/weight-loss-glp1" },
+  { name: "Diagnostics", image: IMG.microscope, href: "/diagnostics" },
+  { name: "Biomarkers", image: IMG.lab, href: "/diagnostics/biomarkers" },
+  { name: "Imaging", image: IMG.ultrasound, href: "/diagnostics/imaging-cardiac" },
   {
-    icon: Users,
-    title: "Your primary care home",
-    body: "One physician who knows your history, goals, and the full picture — not a rotating cast.",
-  },
-  {
-    icon: FlaskConical,
-    title: "Diagnostics, same week",
-    body: "Labs, imaging, sleep studies, and biomarkers run in-house — results in context, not in a portal black hole.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Specialists, one chart",
-    body: "Cardiology, neurology, sleep, and pain under the same roof, reading the same record.",
+    name: "Preventive Health",
+    image: IMG.longevityHero,
+    href: "/longevity/healthspan-programs",
   },
 ];
+
+const services: OrbitService[] = [
+  ...innerRingSeeds.map((seed, i) => ({
+    ...seed,
+    angle: INNER_ANGLES[i],
+    radius: INNER_RING_RADIUS,
+    speed: 46,
+  })),
+  ...outerRingSeeds.map((seed, i) => ({
+    ...seed,
+    angle: OUTER_ANGLES[i],
+    radius: OUTER_RING_RADIUS,
+    speed: 64,
+  })),
+];
+
+const CANVAS_SIZE = (OUTER_RING_RADIUS + 96) * 2;
+const CANVAS_CENTER = CANVAS_SIZE / 2;
+
+function OrbitArcs() {
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full text-primary/12"
+      viewBox={`0 0 ${CANVAS_SIZE} ${CANVAS_SIZE}`}
+      preserveAspectRatio="xMidYMid meet"
+      aria-hidden
+    >
+      <circle
+        cx={CANVAS_CENTER}
+        cy={CANVAS_CENTER}
+        r={INNER_RING_RADIUS}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+      />
+      <circle
+        cx={CANVAS_CENTER}
+        cy={CANVAS_CENTER}
+        r={OUTER_RING_RADIUS}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1"
+        strokeDasharray="7 11"
+      />
+      <path
+        d={`M ${CANVAS_CENTER} ${CANVAS_CENTER - INNER_RING_RADIUS} A ${INNER_RING_RADIUS} ${INNER_RING_RADIUS} 0 0 1 ${CANVAS_CENTER + INNER_RING_RADIUS} ${CANVAS_CENTER}`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        opacity="0.3"
+      />
+      <path
+        d={`M ${CANVAS_CENTER + OUTER_RING_RADIUS} ${CANVAS_CENTER} A ${OUTER_RING_RADIUS} ${OUTER_RING_RADIUS} 0 0 1 ${CANVAS_CENTER} ${CANVAS_CENTER + OUTER_RING_RADIUS}`}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        opacity="0.3"
+      />
+    </svg>
+  );
+}
+
+function OrbitItem({ service }: { service: OrbitService }) {
+  return (
+    <div
+      className="orbit-item absolute top-1/2 left-1/2 z-30 -mt-[2.4rem] -ml-[2.375rem] w-[4.75rem]"
+      style={
+        {
+          "--angle": `${service.angle}deg`,
+          "--radius": `${service.radius}px`,
+          "--speed": `${service.speed}s`,
+        } as CSSProperties
+      }
+    >
+      <Link
+        href={service.href}
+        className="group flex w-[4.75rem] flex-col items-center outline-none"
+      >
+        <div className="orbit-sphere relative h-[3.25rem] w-[3.25rem] shrink-0 overflow-hidden rounded-full ring-2 ring-white transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:scale-110 group-hover:ring-primary/30 sm:h-[3.75rem] sm:w-[3.75rem]">
+          <Image src={service.image} alt="" fill className="object-cover" sizes="64px" />
+          <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-br from-white/50 via-transparent to-black/35" />
+          <div className="pointer-events-none absolute inset-x-1.5 top-1 h-2 rounded-full bg-white/40 blur-[2px]" />
+        </div>
+        <span className="orbit-label mt-1.5 w-full text-center text-[8px] font-semibold uppercase leading-[1.25] tracking-[0.1em] text-muted-foreground transition-colors duration-500 group-hover:text-primary sm:text-[9px] sm:tracking-[0.12em]">
+          {service.name}
+        </span>
+      </Link>
+    </div>
+  );
+}
 
 export function CareDiagram() {
   return (
     <section
       id="how"
       aria-labelledby="diagram-heading"
-      className="overflow-hidden bg-secondary/30 py-24 sm:py-32"
+      className="relative overflow-hidden bg-background py-20 sm:py-28"
     >
-      <Container>
-        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-8">
-          <Reveal className="lg:col-span-4 lg:pt-4">
-            <SectionHeading
-              as="h2"
-              eyebrow="How it works"
-              title="One team. One record."
-              accent="One Umbrella."
-              description="Your primary doctor, your specialists, your labs, your imaging, and your longevity plan — all looking at the same data, in the same place."
-            />
-            <a
-              href="#services"
-              className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary"
-            >
-              See our clinical services
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </Reveal>
+      <div
+        className="pointer-events-none absolute top-1/2 left-[22%] h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--mint)]/30 blur-[100px]"
+        aria-hidden
+      />
 
-          <Reveal delay={0.08} className="lg:col-span-8">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="relative min-h-[340px] overflow-hidden rounded-[2rem] sm:col-span-2 sm:min-h-[380px]">
-                <Image
-                  src={IMG.reception}
-                  alt="Umbrella Health modern clinic reception"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 66vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/70">
-                    Unified care
-                  </p>
-                  <p className="mt-2 font-display text-3xl italic text-white sm:text-4xl">
-                    One chart. Every specialty.
-                  </p>
-                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-stone-200">
-                    No faxing records between offices. No starting over with each referral.
-                  </p>
-                </div>
+      <Container className="relative z-10">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 xl:gap-24">
+          {/* Left — orbital infographic (dead-zone padding on the right edge) */}
+          <div className="lg:col-span-5 lg:pr-10 xl:pr-14">
+            <div
+              className="orbit-system orbit-system--split relative mx-auto aspect-square w-full max-w-[min(680px,100%)] lg:mx-0 lg:mr-auto lg:max-w-[620px]"
+              style={{ maxHeight: `${CANVAS_SIZE}px` }}
+            >
+              <OrbitArcs />
+
+              <div className="absolute top-1/2 left-1/2 z-20 flex h-36 w-36 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/10 bg-white shadow-[0_0_80px_-16px_color-mix(in_oklab,var(--primary)_35%,transparent),inset_0_1px_0_rgba(255,255,255,1)] sm:h-40 sm:w-40">
+                <Wordmark imageClassName="h-28 w-auto sm:h-32" />
               </div>
 
-              {journeySteps.map((step, i) => (
-                <div
-                  key={step.title}
-                  className="flex flex-col justify-between rounded-[1.75rem] border border-border/60 bg-card p-6 shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-elegant)]"
-                >
-                  <div>
-                    <span className="inline-grid h-11 w-11 place-items-center rounded-full bg-[color:var(--mint)] text-primary">
-                      <step.icon className="h-5 w-5" />
-                    </span>
-                    <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/60">
-                      Step {String(i + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {step.body}
-                    </p>
-                  </div>
-                </div>
+              {services.map((service) => (
+                <OrbitItem key={service.name} service={service} />
               ))}
             </div>
-          </Reveal>
-        </div>
+          </div>
 
-        <div className="mt-12 flex justify-center">
-          <BookButton>Book your first visit</BookButton>
+          {/* Right — typographic content */}
+          <div className="lg:col-span-7 lg:pl-2 xl:pl-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
+              How It Works
+            </p>
+            <h2
+              id="diagram-heading"
+              className="max-w-2xl text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl"
+            >
+              One Team. One Record.{" "}
+              <span className="font-display italic font-medium text-primary">One Umbrella.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Your primary care physician, specialists, diagnostics, and preventive health strategy
+              all work from the same information. Every test, every result, and every decision stays
+              connected, so your care moves faster and makes more sense.
+            </p>
+            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground/90">
+              Ten specialties and diagnostics pathways — unified in one record, coordinated by one
+              team, designed for how New Yorkers actually live.
+            </p>
+            <div className="mt-10">
+              <BookButton>Book your first visit with us</BookButton>
+            </div>
+          </div>
         </div>
       </Container>
     </section>
