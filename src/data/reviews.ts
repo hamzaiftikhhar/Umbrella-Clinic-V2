@@ -15,7 +15,7 @@ export const patientReviews = [
     name: "Desja Tionna",
     time: "a month ago",
     quote:
-      "As a first timer my experience was wonderful! The wait time wasn't long at all and the space was very clean and inviting. Donieta checked me in super fast and she was very kind and funny. Dr. McCall was super welcoming and understanding and ... More",
+      "As a first timer my experience was wonderful! The wait time wasn’t long at all and the space was very clean and inviting. Donieta checked me in super fast and she was very kind and funny. Dr. McCall was super welcoming and understanding and gave me all the blood work I requested! My EKG came back abnormal and she was attentive and requested it be ran again to rule anything out. Genesis did my blood work and she was super gentle. I have tiny veins and this was the first time I have gotten it effectively out of my arm and not my hand! I was so surprised. Umbrella Health as a whole was an excellent experience, especially as someone new to NYC and trying to find a PCP. I will recommend this facility to many.",
   },
   {
     name: "Moet Minamoto",
