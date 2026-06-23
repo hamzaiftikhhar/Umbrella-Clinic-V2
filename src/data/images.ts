@@ -14,6 +14,10 @@ export const IMG = {
   sleepStudy: u("photo-1520206183501-b80df61043c2", 1400),
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
+  // Local assets (public/images)
+  premiumDoctorPortrait: "/images/premium-doctor-portrait.png",
+  clinicExterior: "/images/street-view.png",
+
   // People
   founder: u("photo-1612349317150-e413f6a5b16d", 1200),
   founderAlt: u("photo-1622253692010-333f2da6031d", 1200),

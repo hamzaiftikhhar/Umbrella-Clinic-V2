@@ -122,7 +122,7 @@ export function LeafPage({ config }: { config: LeafConfig }) {
         </section>
       )}
 
-      <CTABanner title={c.cta?.title} italic={c.cta?.italic} image={c.cta?.image} />
+      <CTABanner title={c.cta?.title} italic={c.cta?.italic} />
     </main>
   );
 }

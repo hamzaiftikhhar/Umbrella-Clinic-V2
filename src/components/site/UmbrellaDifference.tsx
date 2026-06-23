@@ -69,10 +69,10 @@ export function UmbrellaDifference() {
           <Reveal delay={0.1}>
             <div className="group relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-[var(--shadow-elegant)]">
               <Image
-                src={IMG.founder}
-                alt="Umbrella Health founding physician"
+                src={IMG.premiumDoctorPortrait}
+                alt="Board-certified physician at Umbrella Health"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                 sizes="(max-width: 768px) 100vw, 480px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -85,9 +85,9 @@ export function UmbrellaDifference() {
               </button>
               <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8">
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-                  Founding physician
+                  Lead physician
                 </p>
-                <p className="mt-1 font-display text-2xl italic text-white">Dr. Anjali Rao</p>
+                <p className="mt-1 font-display text-2xl italic text-white">Dr. Rajat</p>
               </div>
             </div>
           </Reveal>
