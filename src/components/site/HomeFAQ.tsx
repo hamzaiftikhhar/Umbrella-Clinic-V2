@@ -5,28 +5,36 @@ import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
 
 export const homeFaqs: QA[] = [
   {
-    q: "Do you take my insurance?",
-    a: "We work with most major plans including Aetna, BCBS, Cigna, United, EmblemHealth, and Medicare. Verify your coverage on our Insurance page — most members pay only their copay.",
+    q: "Do you accept insurance?",
+    a: "Yes. Umbrella Health works with most major insurance plans for medical services and offers transparent self-pay options for preventive and specialized programs.",
   },
   {
-    q: "What's actually different about Umbrella?",
-    a: "Three things. We own our diagnostics (no waiting on outside labs), we're truly multispecialty under one roof (primary care, cardiology, neuro, sleep, pain), and we publish a longevity program with measured outcomes — not vibes.",
+    q: "What services do you provide?",
+    a: "We offer primary care, cardiology, neurology, sleep medicine, interventional pain management, medical weight loss, advanced diagnostics, and preventive health services.",
   },
   {
-    q: "How fast can I be seen?",
-    a: "Most new patients book within 3–5 business days online via Zocdoc. Sick visits often same-day; telehealth available across NY State.",
+    q: "Do I need referrals for specialists?",
+    a: "Many specialty services are available directly through Umbrella Health, reducing the need for outside referrals and multiple appointments.",
   },
   {
-    q: "Do you offer GLP-1 (Ozempic / Mounjaro) for weight loss?",
-    a: "Yes — a fully medically-supervised program with baseline labs, body composition, and monthly clinical follow-up. See the Weight Loss page for pricing and what's included.",
+    q: "What makes Umbrella Health different?",
+    a: "Unlike traditional practices, Umbrella combines primary care, specialists, diagnostics, and preventive medicine under one roof with a data-driven approach to healthcare.",
   },
   {
-    q: "Is the longevity program available now?",
-    a: "Executive physicals and biomarker panels are live. The full healthspan dashboard launches in 2026 — join the waitlist to be first.",
+    q: "Do you offer sleep studies?",
+    a: "Yes. We provide convenient home sleep studies and comprehensive sleep evaluations.",
+  },
+  {
+    q: "Do you offer medical weight loss programs?",
+    a: "Yes. Our physician-supervised weight loss programs include GLP-1 medications when appropriate, along with metabolic assessments and ongoing monitoring.",
   },
   {
     q: "Where are you located?",
-    a: "Our flagship clinic is at 200 Lafayette Street in NoHo, NYC. Telehealth is available statewide, and we serve patients across Union Square, Tribeca, SoHo, and Brooklyn.",
+    a: "Umbrella Health is located in Union Square, serving patients throughout Lower Manhattan, Downtown NYC, and surrounding neighborhoods.",
+  },
+  {
+    q: "How do I book an appointment?",
+    a: "Appointments can be scheduled online or by contacting our office directly.",
   },
 ];
 
@@ -38,10 +46,8 @@ export function HomeFAQ() {
           <Reveal>
             <SectionHeading
               as="h2"
-              eyebrow="FAQ"
-              title="Questions?"
-              accent="We got you."
-              description="Straight answers about insurance, visits, GLP-1, longevity, and how to find us in NYC."
+              eyebrow="Why Umbrella"
+              title="Frequently Asked Questions"
             />
           </Reveal>
           <Reveal delay={0.08}>

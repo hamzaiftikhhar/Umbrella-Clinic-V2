@@ -17,7 +17,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-5 pt-20 pb-10 sm:px-8 sm:pt-24">
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-12">
           <div>
-            <Wordmark light />
+            <Wordmark light imageClassName="h-32 sm:h-40" />
             <p className="mt-6 max-w-sm font-display text-4xl italic leading-tight text-primary-foreground/95 sm:text-5xl">
               Connect with us.
             </p>

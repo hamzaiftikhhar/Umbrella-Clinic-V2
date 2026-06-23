@@ -43,7 +43,7 @@ export function InsuranceLogoBar() {
               <img
                 src={item.src}
                 alt={`${item.name} logo`}
-                className="h-7 sm:h-9 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                className="h-10 sm:h-14 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                 loading="lazy"
               />
             </li>

@@ -21,15 +21,14 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
           : "bg-background/85 backdrop-blur-md border-b border-transparent"
-      }`}
+        }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link to="/" aria-label="Umbrella Health home">
-          <Wordmark />
+        <Link to="/" aria-label="Umbrella Health home" className="pt-2">
+          <Wordmark imageClassName="h-[5rem] sm:h-[6.5rem] scale-[1.35] origin-left translate-y-2" />
         </Link>
 
         <nav aria-label="Primary" className="hidden xl:block">
