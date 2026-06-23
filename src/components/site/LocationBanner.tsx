@@ -18,11 +18,11 @@ export function LocationBanner() {
           <path d="M0,0 L1440,0 L1440,20 C1000,120 400,100 0,10 Z" />
         </svg>
 
-        <div className="relative w-full">
+        <div className="relative w-full pt-12 sm:pt-16 bg-background">
           <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2400&q=80"
-            alt="Umbrella Health reception with sage green millwork and warm wood accents"
-            className="h-[500px] w-full object-cover sm:h-[600px]"
+            src="/images/street-view.png"
+            alt="Umbrella Health clinic exterior at 32w14 in New York City"
+            className="h-[500px] w-full object-cover object-top sm:h-[600px]"
             loading="lazy"
           />
 

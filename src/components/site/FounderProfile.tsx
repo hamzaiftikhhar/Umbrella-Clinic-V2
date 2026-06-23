@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, GraduationCap, Award, BadgeCheck } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
@@ -18,14 +19,20 @@ export function FounderProfile() {
         <div className="grid items-center gap-12 md:grid-cols-[minmax(0,0.9fr)_1.1fr] md:gap-16">
           <Reveal>
             <div className="relative mx-auto aspect-square w-full max-w-sm">
-              <div className="absolute inset-0 -z-10 rounded-full bg-[color:var(--mint)] blur-3xl opacity-60" />
-              <img
-                src={IMG.founder}
-                alt="Dr. Anjali Rao, founding physician at Umbrella Health"
-                className="h-full w-full rounded-full object-cover shadow-[var(--shadow-elegant)]"
-                loading="lazy"
+              <div
+                className="absolute inset-0 -z-10 rounded-full bg-[color:var(--mint)] opacity-60 blur-3xl"
+                aria-hidden
               />
-              <div className="absolute bottom-2 left-2 rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-lg">
+              <div className="relative h-full w-full overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-elegant)]">
+                <Image
+                  src={IMG.founder}
+                  alt="Dr. Anjali Rao, founding physician at Umbrella Health"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 80vw, 384px"
+                />
+              </div>
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-primary px-5 py-2 text-xs font-medium text-primary-foreground shadow-lg">
                 Meet Dr. Rao
               </div>
             </div>
@@ -43,10 +50,15 @@ export function FounderProfile() {
               NewYork-Presbyterian before founding Umbrella to build the clinic she wished existed —
               rigorous, calm, and built around the patient.
             </p>
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-8 grid gap-3 sm:grid-cols-1">
               {creds.map((c) => (
-                <li key={c.label} className="flex items-center gap-3 text-sm text-foreground/80">
-                  <c.icon className="h-4 w-4 text-primary" />
+                <li
+                  key={c.label}
+                  className="flex items-center gap-3 rounded-2xl border border-border/60 bg-card px-4 py-3.5 text-sm text-foreground/85 shadow-[var(--shadow-card)]"
+                >
+                  <span className="inline-grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[color:var(--mint)] text-primary">
+                    <c.icon className="h-4 w-4" />
+                  </span>
                   {c.label}
                 </li>
               ))}
@@ -58,9 +70,7 @@ export function FounderProfile() {
               Meet the whole team
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
-            <div className="mt-8 font-display text-3xl italic text-foreground/80">
-              Anjali Rao, MD
-            </div>
+            <p className="mt-8 font-display text-3xl italic text-foreground/80">Anjali Rao, MD</p>
           </Reveal>
         </div>
       </Container>

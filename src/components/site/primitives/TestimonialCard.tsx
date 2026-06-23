@@ -25,7 +25,7 @@ export function TestimonialCard({ name, quote, time, rating = 5 }: TestimonialCa
   }, [quote]);
 
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-border/60 bg-card p-6 shadow-[var(--shadow-card)]">
+    <article className="flex h-full flex-col rounded-[1.75rem] border border-border/60 bg-card p-6 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)]">
       <div className="flex items-center gap-1.5">
         <p className="text-sm font-medium text-foreground">{name}</p>
         <CheckCircle2 className="h-4 w-4 text-emerald-600" />

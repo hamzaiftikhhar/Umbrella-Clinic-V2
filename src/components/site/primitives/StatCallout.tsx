@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { BookButton } from "./BookButton";
@@ -18,31 +19,50 @@ export function StatCallout({
   imageAlt: string;
   cta?: ReactNode;
 }) {
+  const isRemote = image.startsWith("http");
+
   return (
     <section className="py-16 sm:py-24" aria-label="Outcomes">
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[28px] bg-[color:var(--mist)] sm:rounded-[36px]">
-            <div className="grid items-stretch gap-0 md:grid-cols-2">
-              <div className="flex flex-col justify-center p-8 sm:p-12 md:p-16">
-                <p className="font-display text-6xl font-medium leading-none tracking-tight text-foreground sm:text-7xl md:text-8xl">
+          <div className="overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-elegant)]">
+            <div className="grid items-stretch md:grid-cols-2">
+              <div className="flex flex-col justify-center bg-primary p-8 text-primary-foreground sm:p-12 md:p-14">
+                <p className="text-xs font-medium uppercase tracking-[0.22em] text-primary-foreground/70">
+                  Patient outcomes
+                </p>
+                <p className="mt-4 font-display text-6xl font-medium leading-none tracking-tight sm:text-7xl md:text-8xl">
                   {stat}
                 </p>
-                <h2 className="mt-4 max-w-md text-balance text-2xl font-semibold text-foreground sm:text-3xl">
+                <h2 className="mt-5 max-w-md text-balance text-2xl font-semibold sm:text-3xl">
                   {title}
                 </h2>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground/70 sm:text-base">
+                <p className="mt-3 max-w-md text-sm leading-relaxed text-primary-foreground/80 sm:text-base">
                   {description}
                 </p>
-                <div className="mt-7">{cta ?? <BookButton>Book appointment</BookButton>}</div>
+                <div className="mt-8">
+                  {cta ?? <BookButton variant="light">Book appointment</BookButton>}
+                </div>
               </div>
-              <div className="relative min-h-[280px]">
-                <img
-                  src={image}
-                  alt={imageAlt}
-                  className="absolute inset-0 h-full w-full object-cover"
-                  loading="lazy"
-                />
+
+              <div className="relative min-h-[300px] md:min-h-full">
+                {isRemote ? (
+                  <img
+                    src={image}
+                    alt={imageAlt}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Image
+                    src={image}
+                    alt={imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:bg-gradient-to-l md:from-primary/20 md:to-transparent" />
               </div>
             </div>
           </div>

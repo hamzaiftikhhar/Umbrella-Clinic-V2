@@ -1,5 +1,6 @@
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
+import { Reveal } from "./primitives/Reveal";
 import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
 
 export const homeFaqs: QA[] = [
@@ -31,13 +32,23 @@ export const homeFaqs: QA[] = [
 
 export function HomeFAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-24 sm:py-32 bg-secondary/30">
+    <section id="faq" aria-labelledby="faq-heading" className="bg-secondary/30 py-24 sm:py-32">
       <Container size="lg">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:gap-16">
-          <SectionHeading as="h2" title="Questions?" accent="We got you." />
-          <div>
-            <FAQList items={homeFaqs} />
-          </div>
+        <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:items-start md:gap-16">
+          <Reveal>
+            <SectionHeading
+              as="h2"
+              eyebrow="FAQ"
+              title="Questions?"
+              accent="We got you."
+              description="Straight answers about insurance, visits, GLP-1, longevity, and how to find us in NYC."
+            />
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="rounded-[1.75rem] border border-border/60 bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
+              <FAQList items={homeFaqs} />
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HomeHero } from "@/components/site/HomeHero";
 import { InsuranceLogoBar } from "@/components/site/InsuranceLogoBar";
 import { LocationBanner } from "@/components/site/LocationBanner";
-import { PillarsGrid } from "@/components/site/PillarsGrid";
+import { ClinicalServicesGrid } from "@/components/site/ClinicalServicesGrid";
 import { CareDiagram } from "@/components/site/CareDiagram";
 import { UmbrellaDifference } from "@/components/site/UmbrellaDifference";
 import { StatCallout } from "@/components/site/primitives/StatCallout";
@@ -10,7 +10,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FounderProfile } from "@/components/site/FounderProfile";
 import { EmployersStrip } from "@/components/site/EmployersStrip";
 import { HomeFAQ, homeFaqs } from "@/components/site/HomeFAQ";
-import { CTABanner } from "@/components/site/primitives/CTABanner";
+import { GalleryBanner } from "@/components/site/primitives/GalleryBanner";
 import { faqSchema } from "@/components/site/primitives/FAQList";
 import { JsonLd } from "@/components/JsonLd";
 import { IMG } from "@/data/images";
@@ -83,21 +83,21 @@ export default function HomePage() {
         <HomeHero />
         <InsuranceLogoBar />
         <LocationBanner />
-        <PillarsGrid />
+        <ClinicalServicesGrid />
         <CareDiagram />
         <UmbrellaDifference />
         <StatCallout
-          stat="94%"
+          stat="92%"
           title="of members rate their care 5 stars after their first visit."
           description="Multispecialty under one roof, data-driven care plans, and a team that actually picks up the phone."
-          image={IMG.patientHappy}
-          imageAlt="Smiling patient at Umbrella Health"
+          image="/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.jpg"
+          imageAlt="Relaxing waiting area with green moss wall"
         />
         <Testimonials />
         <FounderProfile />
         <EmployersStrip />
         <HomeFAQ />
-        <CTABanner />
+        <GalleryBanner />
       </main>
     </>
   );

@@ -1,77 +1,100 @@
-import {
-  HeartPulse,
-  Stethoscope,
-  Brain,
-  Moon,
-  Activity,
-  FlaskConical,
-  ScanLine,
-  Syringe,
-} from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, ClipboardList, FlaskConical, Users } from "lucide-react";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
 import { BookButton } from "./primitives/BookButton";
+import { Reveal } from "./primitives/Reveal";
+import { IMG } from "@/data/images";
 
-const orbit = [
-  { icon: HeartPulse, label: "Cardiology", angle: 0 },
-  { icon: Brain, label: "Neurology", angle: 45 },
-  { icon: Moon, label: "Sleep", angle: 90 },
-  { icon: Activity, label: "Pain Mgmt", angle: 135 },
-  { icon: Stethoscope, label: "Primary Care", angle: 180 },
-  { icon: FlaskConical, label: "Biomarkers", angle: 225 },
-  { icon: ScanLine, label: "Imaging", angle: 270 },
-  { icon: Syringe, label: "GLP-1", angle: 315 },
+const journeySteps = [
+  {
+    icon: Users,
+    title: "Your primary care home",
+    body: "One physician who knows your history, goals, and the full picture — not a rotating cast.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Diagnostics, same week",
+    body: "Labs, imaging, sleep studies, and biomarkers run in-house — results in context, not in a portal black hole.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Specialists, one chart",
+    body: "Cardiology, neurology, sleep, and pain under the same roof, reading the same record.",
+  },
 ];
 
 export function CareDiagram() {
   return (
-    <section id="how" aria-labelledby="diagram-heading" className="overflow-hidden py-24 sm:py-32">
+    <section
+      id="how"
+      aria-labelledby="diagram-heading"
+      className="overflow-hidden bg-secondary/30 py-24 sm:py-32"
+    >
       <Container>
-        <div className="grid items-center gap-12 md:grid-cols-[1fr_1.1fr] md:gap-20">
-          <SectionHeading
-            as="h2"
-            eyebrow="How it works"
-            title="One team. One record."
-            accent="One Umbrella."
-            description="Your primary doctor, your specialists, your labs, your imaging,
-            your longevity plan — all looking at the same data, in the same place."
-          />
+        <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-4 lg:pt-4">
+            <SectionHeading
+              as="h2"
+              eyebrow="How it works"
+              title="One team. One record."
+              accent="One Umbrella."
+              description="Your primary doctor, your specialists, your labs, your imaging, and your longevity plan — all looking at the same data, in the same place."
+            />
+            <a
+              href="#services"
+              className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary"
+            >
+              See our clinical services
+              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </a>
+          </Reveal>
 
-          <div className="relative mx-auto h-[420px] w-[420px] sm:h-[520px] sm:w-[520px]">
-            {/* Center disc */}
-            <div className="absolute left-1/2 top-1/2 grid h-32 w-32 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-primary text-primary-foreground shadow-[var(--shadow-elegant)] sm:h-40 sm:w-40">
-              <div className="text-center">
-                <p className="font-display text-xl italic">Umbrella</p>
-                <p className="text-[10px] uppercase tracking-[0.18em] opacity-80">one record</p>
+          <Reveal delay={0.08} className="lg:col-span-8">
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div className="relative min-h-[340px] overflow-hidden rounded-[2rem] sm:col-span-2 sm:min-h-[380px]">
+                <Image
+                  src={IMG.reception}
+                  alt="Umbrella Health modern clinic reception"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8">
+                  <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/70">
+                    Unified care
+                  </p>
+                  <p className="mt-2 font-display text-3xl italic text-white sm:text-4xl">
+                    One chart. Every specialty.
+                  </p>
+                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-stone-200">
+                    No faxing records between offices. No starting over with each referral.
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* Orbit ring */}
-            <div className="absolute inset-8 rounded-full border border-dashed border-primary/20" />
-
-            {orbit.map((o, i) => {
-              const r = 180;
-              const rad = (o.angle * Math.PI) / 180;
-              const x = Math.cos(rad) * r;
-              const y = Math.sin(rad) * r;
-              return (
+              {journeySteps.map((step, i) => (
                 <div
-                  key={o.label}
-                  className="absolute left-1/2 top-1/2"
-                  style={{ transform: `translate(${x}px, ${y}px)` }}
+                  key={step.title}
+                  className="flex flex-col justify-between rounded-[1.75rem] border border-border/60 bg-card p-6 shadow-[var(--shadow-card)] transition-shadow hover:shadow-[var(--shadow-elegant)]"
                 >
-                  <div className="-translate-x-1/2 -translate-y-1/2">
-                    <div className="grid h-16 w-16 place-items-center rounded-full bg-card text-primary shadow-[var(--shadow-card)] sm:h-20 sm:w-20">
-                      <o.icon className="h-6 w-6 sm:h-7 sm:w-7" />
-                    </div>
-                    <p className="mt-1.5 text-center text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                      {o.label}
+                  <div>
+                    <span className="inline-grid h-11 w-11 place-items-center rounded-full bg-[color:var(--mint)] text-primary">
+                      <step.icon className="h-5 w-5" />
+                    </span>
+                    <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary/60">
+                      Step {String(i + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-2 text-lg font-semibold text-foreground">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {step.body}
                     </p>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
 
         <div className="mt-12 flex justify-center">
