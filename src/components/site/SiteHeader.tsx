@@ -22,16 +22,18 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled
-          ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
-          : "bg-background/85 backdrop-blur-md border-b border-transparent"
+        ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
+        : "bg-background/85 backdrop-blur-md border-b border-transparent"
         }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link to="/" aria-label="Umbrella Health home" className="pt-2">
-          <Wordmark imageClassName="h-[5rem] sm:h-[6.5rem] scale-[1.35] origin-left translate-y-2" />
-        </Link>
+      <div className="w-full grid grid-cols-2 xl:grid-cols-[1fr_auto_1fr] items-center h-16 px-4 xl:px-8">
+        <div className="flex justify-start items-center">
+          <Link to="/" aria-label="Umbrella Health home" className="flex-shrink-0 translate-y-1">
+            <Wordmark imageClassName="h-[4rem] sm:h-[4.5rem] scale-[1.3] origin-left" />
+          </Link>
+        </div>
 
-        <nav aria-label="Primary" className="hidden xl:block">
+        <nav aria-label="Primary" className="hidden xl:flex justify-center -translate-y-1">
           <ul className="flex items-center gap-0.5">
             {PRIMARY_NAV.map((item) => (
               <li key={item.to}>
@@ -56,7 +58,7 @@ export function SiteHeader() {
                 More <ChevronDown className="h-3.5 w-3.5" />
               </button>
               {moreOpen && (
-                <div className="absolute right-0 top-full min-w-[220px] pt-2">
+                <div className="absolute right-0 top-full min-w-[220px] pt-2 z-50">
                   <ul className="rounded-2xl border border-border/60 bg-card p-2 shadow-[var(--shadow-card)]">
                     {MORE_NAV.map((m) => (
                       <li key={m.to}>
@@ -75,18 +77,20 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <div className="hidden xl:block">
+        <div className="hidden xl:flex justify-end items-center -translate-y-1">
           <BookButton showArrow={false}>Book appointment</BookButton>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="rounded-full border border-border/70 bg-background/60 p-2.5 backdrop-blur xl:hidden"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex justify-end xl:hidden">
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="rounded-full border border-border/70 bg-background/60 p-2.5 backdrop-blur"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
