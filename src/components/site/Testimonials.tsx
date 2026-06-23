@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
@@ -13,30 +12,21 @@ export function Testimonials() {
     <section
       id="reviews"
       aria-labelledby="reviews-heading"
-      className="bg-secondary/30 py-24 sm:py-32"
+      className="bg-secondary/30 py-16 sm:py-24"
     >
       <Container>
         <Reveal>
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <SectionHeading
-              as="h2"
-              eyebrow="Patient reviews"
-              title="Real stories from"
-              accent="real people."
-              description="See why patients across New York trust Umbrella Health for primary care."
-            />
-            <Link
-              to="/reviews"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-border/60 bg-card px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] text-foreground transition-all hover:border-primary/30 hover:text-primary"
-            >
-              More reviews
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-            </Link>
-          </div>
+          <SectionHeading
+            as="h2"
+            eyebrow="Patient reviews"
+            title="Real stories from"
+            accent="real people."
+            description="See why patients across New York trust Umbrella Health for primary care, specialty medicine, diagnostics, and preventive health."
+          />
         </Reveal>
       </Container>
 
-      <div className="relative mt-14 w-full">
+      <div className="relative mt-12 w-full">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent sm:w-24 xl:w-[calc((100vw-1216px)/2+2rem)]" />
 
         <div className="flex gap-5 overflow-x-auto px-5 pb-8 sm:px-8 xl:px-[calc((100vw-1216px)/2+2rem)] snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

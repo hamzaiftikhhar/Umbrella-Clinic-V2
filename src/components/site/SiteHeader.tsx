@@ -2,24 +2,26 @@
 
 import { Link } from "@/components/AppLink";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { BookButton } from "./primitives/BookButton";
 import { Wordmark } from "./primitives/Wordmark";
-import { PRIMARY_NAV, MORE_NAV } from "@/data/nav";
+import { PRIMARY_NAV, SPECIALTIES_NAV } from "@/data/nav";
 
 export function SiteHeader() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
+  const [specialtiesOpen, setSpecialtiesOpen] = useState(false);
+  const [mobileSpecialtiesOpen, setMobileSpecialtiesOpen] = useState(false);
   const lastScrollY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
       const currentY = window.scrollY;
-      // Mark as scrolled past threshold for background styling
       setScrolled(currentY > 12);
-      // Hide on scroll down (after 80px), show on scroll up
       if (currentY > lastScrollY.current && currentY > 80) {
         setHidden(true);
       } else {
@@ -38,21 +40,60 @@ export function SiteHeader() {
         hidden ? "-translate-y-full" : "translate-y-0"
       } ${
         scrolled
-          ? "bg-background/95 backdrop-blur-xl border-b border-border/60 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]"
-          : "bg-background/85 backdrop-blur-md border-b border-transparent"
+          ? "border-b border-border/60 bg-background/95 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] backdrop-blur-xl"
+          : "border-b border-transparent bg-background/85 backdrop-blur-md"
       }`}
     >
-      <div className="w-full grid grid-cols-2 xl:grid-cols-[1fr_auto_1fr] items-center h-16 px-4 xl:px-8">
-        <div className="flex justify-start items-center">
+      <div className="grid h-16 w-full grid-cols-2 items-center px-4 xl:grid-cols-[1fr_auto_1fr] xl:px-8">
+        <div className="flex items-center justify-start">
           <Link to="/" aria-label="Umbrella Health home" className="flex-shrink-0 translate-y-1">
             <Wordmark imageClassName="h-[4rem] sm:h-[4.5rem] scale-[1.3] origin-left" />
           </Link>
         </div>
 
-        <nav aria-label="Primary" className="hidden xl:flex justify-center -translate-y-1">
+        <nav aria-label="Primary" className="-translate-y-1 hidden justify-center xl:flex">
           <ul className="flex items-center gap-0.5">
-            {PRIMARY_NAV.map((item) => (
-              <li key={item.to}>
+            {!isHome && (
+              <li>
+                <Link
+                  to="/"
+                  activeProps={{ className: "text-primary font-medium" }}
+                  className="rounded-full px-3 py-2 text-sm text-foreground/75 transition-colors hover:text-primary"
+                >
+                  Home
+                </Link>
+              </li>
+            )}
+            <li
+              className="relative"
+              onMouseEnter={() => setSpecialtiesOpen(true)}
+              onMouseLeave={() => setSpecialtiesOpen(false)}
+            >
+              <button
+                type="button"
+                className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground/75 transition-colors hover:text-primary"
+              >
+                Our Specialties <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+              {specialtiesOpen && (
+                <div className="absolute left-0 top-full z-50 min-w-[280px] pt-2">
+                  <ul className="rounded-2xl border border-border/60 bg-card p-2 shadow-[var(--shadow-card)]">
+                    {SPECIALTIES_NAV.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={item.to}
+                          className="block rounded-xl px-3 py-2.5 text-sm text-foreground/80 hover:bg-secondary"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </li>
+            {PRIMARY_NAV.filter((item) => item.label !== "Home").map((item) => (
+              <li key={item.to + item.label}>
                 <Link
                   to={item.to}
                   activeProps={{ className: "text-primary font-medium" }}
@@ -62,38 +103,10 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
-            <li
-              className="relative"
-              onMouseEnter={() => setMoreOpen(true)}
-              onMouseLeave={() => setMoreOpen(false)}
-            >
-              <button
-                type="button"
-                className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground/75 transition-colors hover:text-primary"
-              >
-                More <ChevronDown className="h-3.5 w-3.5" />
-              </button>
-              {moreOpen && (
-                <div className="absolute right-0 top-full min-w-[220px] pt-2 z-50">
-                  <ul className="rounded-2xl border border-border/60 bg-card p-2 shadow-[var(--shadow-card)]">
-                    {MORE_NAV.map((m) => (
-                      <li key={m.to}>
-                        <Link
-                          to={m.to}
-                          className="block rounded-xl px-3 py-2 text-sm text-foreground/80 hover:bg-secondary"
-                        >
-                          {m.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </li>
           </ul>
         </nav>
 
-        <div className="hidden xl:flex justify-end items-center -translate-y-1">
+        <div className="-translate-y-1 hidden items-center justify-end xl:flex">
           <BookButton showArrow={false}>Book appointment</BookButton>
         </div>
 
@@ -113,8 +126,46 @@ export function SiteHeader() {
         <div className="max-h-[80vh] overflow-y-auto border-t border-border/60 bg-background/95 backdrop-blur-xl xl:hidden">
           <nav aria-label="Mobile" className="mx-auto max-w-7xl px-5 py-5 sm:px-8">
             <ul className="flex flex-col gap-0.5">
-              {[...PRIMARY_NAV, ...MORE_NAV].map((item) => (
-                <li key={item.to}>
+              {!isHome && (
+                <li>
+                  <Link
+                    to="/"
+                    onClick={() => setOpen(false)}
+                    className="block rounded-xl px-3 py-3 text-base text-foreground/85 hover:bg-secondary"
+                  >
+                    Home
+                  </Link>
+                </li>
+              )}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setMobileSpecialtiesOpen((v) => !v)}
+                  className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-base text-foreground/85 hover:bg-secondary"
+                >
+                  Our Specialties
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform ${mobileSpecialtiesOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {mobileSpecialtiesOpen && (
+                  <ul className="mb-2 ml-3 border-l border-border/60 pl-3">
+                    {SPECIALTIES_NAV.map((item) => (
+                      <li key={item.label}>
+                        <Link
+                          to={item.to}
+                          onClick={() => setOpen(false)}
+                          className="block rounded-lg px-3 py-2.5 text-sm text-foreground/75 hover:bg-secondary"
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              {PRIMARY_NAV.filter((item) => item.label !== "Home").map((item) => (
+                <li key={item.to + item.label}>
                   <Link
                     to={item.to}
                     onClick={() => setOpen(false)}

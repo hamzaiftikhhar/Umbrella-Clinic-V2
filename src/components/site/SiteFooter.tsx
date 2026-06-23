@@ -1,6 +1,7 @@
 import { Link } from "@/components/AppLink";
 import { Instagram, Facebook } from "lucide-react";
 import { FOOTER_COLUMNS } from "@/data/nav";
+import { FOOTER_DESCRIPTION, FOOTER_TAGLINE } from "@/data/site-content";
 import { SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
 import { Wordmark } from "./primitives/Wordmark";
 
@@ -14,18 +15,17 @@ export function SiteFooter() {
         Site footer
       </h2>
 
-      <div className="mx-auto max-w-7xl px-5 pt-20 pb-10 sm:px-8 sm:pt-24">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr] md:gap-12">
-          <div>
-            <Wordmark light imageClassName="h-32 sm:h-40" />
-            <p className="mt-6 max-w-sm font-display text-4xl italic leading-tight text-primary-foreground/95 sm:text-5xl">
-              Connect with us.
+      <div className="mx-auto max-w-7xl px-5 pb-12 pt-28 sm:px-8 sm:pb-14 sm:pt-32">
+        <div className="grid gap-14 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:gap-10 lg:gap-14">
+          <div className="flex flex-col justify-end">
+            <Wordmark light imageClassName="h-28 sm:h-36" />
+            <p className="mt-10 max-w-sm font-display text-4xl font-light italic leading-tight text-primary-foreground/95 sm:text-5xl">
+              {FOOTER_TAGLINE}
             </p>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-              Modern, data-driven medicine for New Yorkers — primary care, specialty, diagnostics
-              and longevity under one roof.
+              {FOOTER_DESCRIPTION}
             </p>
-            <div className="mt-7 flex gap-3">
+            <div className="mt-8 flex gap-3">
               {[Instagram, Facebook, TikTokIcon].map((Icon, i) => (
                 <a
                   key={i}
@@ -40,11 +40,11 @@ export function SiteFooter() {
           </div>
 
           {FOOTER_COLUMNS.map((col) => (
-            <nav key={col.title} aria-label={col.title}>
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground/60">
+            <nav key={col.title} aria-label={col.title} className="pt-4 md:pt-16">
+              <p className="mb-5 text-xs font-medium uppercase tracking-[0.18em] text-primary-foreground/60">
                 {col.title}
               </p>
-              <ul className="space-y-3">
+              <ul className="space-y-3.5">
                 {col.links.map((link) => (
                   <li key={link.to}>
                     <Link
@@ -60,7 +60,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-primary-foreground/15 pt-8 text-xs text-primary-foreground/60 sm:flex-row sm:items-center">
+        <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-primary-foreground/15 pt-10 text-xs text-primary-foreground/60 sm:flex-row sm:items-center">
           <p>
             {SITE_ADDRESS} · {SITE_PHONE}
           </p>

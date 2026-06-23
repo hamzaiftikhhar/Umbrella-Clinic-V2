@@ -22,7 +22,7 @@ export function StatCallout({
   const isRemote = image.startsWith("http");
 
   return (
-    <section className="py-16 sm:py-24" aria-label="Outcomes">
+    <section className="py-12 sm:py-16" aria-label="Outcomes">
       <Container>
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-elegant)]">

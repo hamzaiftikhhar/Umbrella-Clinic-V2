@@ -13,7 +13,7 @@ export function LocationBanner() {
     <section aria-labelledby="location-heading" className="relative w-full bg-background">
       <Reveal>
         <div className="relative w-full overflow-hidden">
-          <div className="relative h-[620px] w-full sm:h-[720px] md:h-[800px]">
+          <div className="relative h-[720px] w-full sm:h-[840px] md:h-[920px] lg:h-[1000px]">
             <Image
               src={IMG.clinicExterior}
               alt="Umbrella Health clinic at 32 W 14th St, New York"
@@ -23,38 +23,41 @@ export function LocationBanner() {
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-            {/* Wavy top edge — cream section above flows into the photo */}
+            {/* Asymmetric organic wave — high left, dips past center, rises right */}
             <svg
               className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full fill-background"
-              viewBox="0 0 1440 120"
+              viewBox="0 0 1440 160"
               preserveAspectRatio="none"
-              style={{ height: "6vw", minHeight: "52px", maxHeight: "96px" }}
+              style={{ height: "7.5vw", minHeight: "58px", maxHeight: "112px" }}
               aria-hidden
             >
-              <path d="M0,0 L1440,0 L1440,28 C1080,118 360,98 0,18 Z" />
+              <path d="M0,0 L1440,0 L1440,52 C1310,78 1120,138 760,128 C460,118 200,42 0,12 Z" />
             </svg>
 
-            <div className="pointer-events-none absolute inset-0 z-20 flex items-end pb-8 sm:pb-12 md:pb-14">
+            <div className="pointer-events-none absolute inset-0 z-20 flex items-center pb-0">
               <Container className="pointer-events-auto pb-0">
-                <div className="max-w-xl text-primary-foreground">
-                  <p className="text-sm font-medium tracking-wide text-primary-foreground/85 sm:text-base">
-                    <span className="block">Visit us in</span>
-                    <span className="mt-1 block font-display text-3xl italic leading-none sm:text-4xl md:text-5xl">
-                      New York City
-                    </span>
+                <div className="max-w-2xl text-primary-foreground">
+                  <p className="text-base font-medium tracking-tight text-primary-foreground/90 sm:text-lg">
+                    Visit Us
                   </p>
 
                   <h2
                     id="location-heading"
-                    className="mt-6 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl md:text-[2.125rem]"
+                    className="mt-3 max-w-lg text-balance text-xl font-semibold leading-snug tracking-tight sm:text-2xl md:text-[1.75rem]"
                   >
                     Modern Medicine In The Heart Of Lower Manhattan
                   </h2>
 
-                  <p className="mt-4 flex items-start gap-2 text-sm text-primary-foreground/90 sm:text-base">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
+                    Conveniently located near Union Square, Umbrella Health serves patients across
+                    Flatiron, Gramercy, Greenwich Village, Chelsea, SoHo, Tribeca, FiDi, and Downtown
+                    NYC.
+                  </p>
+
+                  <p className="mt-4 flex items-center gap-2 text-sm text-primary-foreground/90 sm:text-base">
+                    <MapPin className="h-4 w-4 shrink-0" aria-hidden />
                     <span>32 W 14th St, New York</span>
                   </p>
 

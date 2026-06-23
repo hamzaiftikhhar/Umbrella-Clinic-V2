@@ -1,21 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Fraunces } from "next/font/google";
 import { SiteLayout } from "@/components/SiteLayout";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
+import { gtAlpina, haffer } from "@/lib/fonts";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-display-next",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://umbrellahealth.com"),
@@ -47,7 +35,7 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${haffer.variable} ${gtAlpina.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <JsonLd data={organizationSchema} />
         <SiteLayout>{children}</SiteLayout>

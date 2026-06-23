@@ -11,6 +11,7 @@ import { FounderProfile } from "@/components/site/FounderProfile";
 import { EmployersStrip } from "@/components/site/EmployersStrip";
 import { HomeFAQ, homeFaqs } from "@/components/site/HomeFAQ";
 import { GalleryBanner } from "@/components/site/primitives/GalleryBanner";
+import { BookButton } from "@/components/site/primitives/BookButton";
 import { faqSchema } from "@/components/site/primitives/FAQList";
 import { JsonLd } from "@/components/JsonLd";
 import { IMG } from "@/data/images";
@@ -65,10 +66,10 @@ const medicalClinicSchema = {
   url: "/",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "200 Lafayette Street",
+    streetAddress: "32 W 14th St",
     addressLocality: "New York",
     addressRegion: "NY",
-    postalCode: "10012",
+    postalCode: "10011",
     addressCountry: "US",
   },
   areaServed: "New York City",
@@ -89,7 +90,8 @@ export default function HomePage() {
         <StatCallout
           stat="92%"
           title="of members rate their care 5 stars after their first visit."
-          description="Multispecialty care, advanced diagnostics, and a team that knows your history, not just your appointment slot. "
+          description="Multispecialty care, advanced diagnostics, and a team that knows your history, not just your appointment slot."
+          cta={<BookButton>Book Appointment</BookButton>}
           image="/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.jpg"
           imageAlt="Relaxing waiting area with green moss wall"
         />

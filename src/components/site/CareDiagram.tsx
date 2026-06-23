@@ -149,16 +149,16 @@ export function CareDiagram() {
       className="relative overflow-hidden bg-background py-20 sm:py-28"
     >
       <div
-        className="pointer-events-none absolute top-1/2 left-[22%] h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--mint)]/30 blur-[100px]"
+        className="pointer-events-none absolute top-1/2 left-[38%] h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--mint)]/30 blur-[100px]"
         aria-hidden
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 xl:gap-24">
-          {/* Left — orbital infographic (dead-zone padding on the right edge) */}
-          <div className="lg:col-span-5 lg:pr-10 xl:pr-14">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-12 lg:pl-10 xl:gap-16 xl:pl-16 2xl:pl-24">
+          {/* Orbital graphic — wider column, shifted right for visual centering */}
+          <div className="lg:col-span-7 lg:pr-4 xl:pr-8">
             <div
-              className="orbit-system orbit-system--split relative mx-auto aspect-square w-full max-w-[min(680px,100%)] lg:mx-0 lg:mr-auto lg:max-w-[620px]"
+              className="orbit-system orbit-system--split relative mx-auto aspect-square w-full max-w-[min(720px,100%)] lg:ml-auto lg:max-w-none"
               style={{ maxHeight: `${CANVAS_SIZE}px` }}
             >
               <OrbitArcs />
@@ -173,29 +173,25 @@ export function CareDiagram() {
             </div>
           </div>
 
-          {/* Right — typographic content */}
-          <div className="lg:col-span-7 lg:pl-2 xl:pl-6">
+          {/* Copy — narrower column */}
+          <div className="lg:col-span-5 lg:pl-2 xl:pl-4">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
               How It Works
             </p>
             <h2
               id="diagram-heading"
-              className="max-w-2xl text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl"
+              className="max-w-lg text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-[2.75rem]"
             >
               One Team. One Record.{" "}
-              <span className="font-display italic font-medium text-primary">One Umbrella.</span>
+              <span className="font-display font-light text-primary">One Umbrella.</span>
             </h2>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
               Your primary care physician, specialists, diagnostics, and preventive health strategy
               all work from the same information. Every test, every result, and every decision stays
               connected, so your care moves faster and makes more sense.
             </p>
-            <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted-foreground/90">
-              Ten specialties and diagnostics pathways — unified in one record, coordinated by one
-              team, designed for how New Yorkers actually live.
-            </p>
             <div className="mt-10">
-              <BookButton>Book your first visit with us</BookButton>
+              <BookButton>Book Your First Visit with Us</BookButton>
             </div>
           </div>
         </div>

@@ -82,7 +82,7 @@ export function CTABanner({
                 )}
                 <h2 className="mt-3 text-balance text-3xl font-semibold sm:text-4xl">
                   {title}{" "}
-                  <span className="font-display italic font-medium">{italic}</span>
+                  <span className="font-display font-light italic">{italic}</span>
                 </h2>
                 <div className="mt-6">
                   <BookButton variant="light">{ctaLabel}</BookButton>
