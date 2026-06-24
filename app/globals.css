@@ -73,18 +73,18 @@
   --popover-foreground: #0c1422;
 
   /* Anchor blue — deep clinical navy */
-  --primary: #122b4e;
+  --primary: #0a4e83;
   --primary-foreground: #f7f9fc;
   --primary-glow: #1e4478;
 
   --secondary: #eef2f7;
-  --secondary-foreground: #122b4e;
+  --secondary-foreground: #0a4e83;
 
   --muted: #f2efe9;
   --muted-foreground: #5c6578;
 
   --accent: #e4ebf5;
-  --accent-foreground: #122b4e;
+  --accent-foreground: #0a4e83;
 
   --destructive: #b42318;
   --destructive-foreground: #fffaf8;
@@ -98,7 +98,7 @@
   --mist: #f3f0eb;
   --mint: #eef3fa;
 
-  --chart-1: #122b4e;
+  --chart-1: #0a4e83;
   --chart-2: #2a5a96;
   --chart-3: #4a6f9c;
   --chart-4: #8fb4dc;
@@ -106,10 +106,10 @@
 
   --sidebar: #f5f3ef;
   --sidebar-foreground: #0c1422;
-  --sidebar-primary: #122b4e;
+  --sidebar-primary: #0a4e83;
   --sidebar-primary-foreground: #f7f9fc;
   --sidebar-accent: #eef2f7;
-  --sidebar-accent-foreground: #122b4e;
+  --sidebar-accent-foreground: #0a4e83;
   --sidebar-border: #e6e1d9;
   --sidebar-ring: #1e4478;
 

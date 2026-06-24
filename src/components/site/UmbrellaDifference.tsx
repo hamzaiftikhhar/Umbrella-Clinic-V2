@@ -39,7 +39,8 @@ export function UmbrellaDifference() {
               id="difference-heading"
               className="max-w-xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl"
             >
-              A Better Way To Navigate Healthcare
+              A Better Way To{" "}
+              <span className="font-display font-light italic text-primary">Navigate Healthcare</span>
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Most healthcare systems are fragmented. Umbrella brings primary care, specialists,

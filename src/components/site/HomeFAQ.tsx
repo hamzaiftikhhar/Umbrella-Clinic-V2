@@ -10,7 +10,7 @@ export function HomeFAQ() {
     <section id="faq" aria-labelledby="faq-heading" className="bg-secondary/30 py-20 sm:py-28">
       <Container size="lg">
         <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:items-start md:gap-16">
-          <SectionHeading as="h2" title="Frequently Asked Questions" />
+          <SectionHeading as="h2" title="Frequently Asked" accent="Questions" />
           <div className="rounded-[1.75rem] border border-border/60 bg-card p-6 shadow-[var(--shadow-card)] sm:p-8">
             <FAQList items={homeFaqs} />
           </div>

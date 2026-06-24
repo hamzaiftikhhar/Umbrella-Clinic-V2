@@ -68,7 +68,8 @@ export function ClinicalServicesGrid() {
             id="services-heading"
             className="text-balance text-3xl font-semibold leading-[1.05] text-foreground sm:text-4xl md:text-5xl"
           >
-            Everything Under One Roof, One Umbrella
+            Everything Under One Roof,{" "}
+            <span className="font-display font-light italic text-primary">One Umbrella</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
             Built for busy New Yorkers who want primary care, specialists, diagnostics, and
