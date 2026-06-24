@@ -3,7 +3,7 @@
 import { Link } from "@/components/AppLink";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { BookButton } from "./primitives/BookButton";
 import { Wordmark } from "./primitives/Wordmark";
 import { PRIMARY_NAV, SPECIALTIES_NAV } from "@/data/nav";
@@ -12,22 +12,13 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
   const [specialtiesOpen, setSpecialtiesOpen] = useState(false);
   const [mobileSpecialtiesOpen, setMobileSpecialtiesOpen] = useState(false);
-  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
-      const currentY = window.scrollY;
-      setScrolled(currentY > 12);
-      if (currentY > lastScrollY.current && currentY > 80) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-      lastScrollY.current = currentY;
+      setScrolled(window.scrollY > 12);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -36,12 +27,10 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        hidden ? "-translate-y-full" : "translate-y-0"
-      } ${
+      className={`sticky top-0 z-50 transition-[background-color,box-shadow,border-color] duration-200 ${
         scrolled
-          ? "border-b border-border/60 bg-background/95 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] backdrop-blur-xl"
-          : "border-b border-transparent bg-background/85 backdrop-blur-md"
+          ? "border-b border-border/50 bg-background/95 shadow-sm"
+          : "border-b border-transparent bg-background/90"
       }`}
     >
       <div className="grid h-16 w-full grid-cols-2 items-center px-4 xl:grid-cols-[1fr_auto_1fr] xl:px-8">
@@ -114,7 +103,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="rounded-full border border-border/70 bg-background/60 p-2.5 backdrop-blur"
+            className="rounded-full border border-border/70 bg-card p-2.5"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -123,7 +112,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-border/60 bg-background/95 backdrop-blur-xl xl:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-border/60 bg-background xl:hidden">
           <nav aria-label="Mobile" className="mx-auto max-w-7xl px-5 py-5 sm:px-8">
             <ul className="flex flex-col gap-0.5">
               {!isHome && (

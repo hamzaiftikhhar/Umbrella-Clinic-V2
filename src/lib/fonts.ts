@@ -1,6 +1,6 @@
 import { DM_Sans, Instrument_Serif } from "next/font/google";
 
-/** Haffer SQ stand-in until brand WOFF files are added to public/fonts/ */
+/** Primary — Haffer SQ (web stand-in: DM Sans until brand WOFF files are added) */
 export const haffer = DM_Sans({
   subsets: ["latin"],
   variable: "--font-haffer-fallback",
@@ -8,7 +8,7 @@ export const haffer = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-/** GT Alpina stand-in until brand WOFF files are added to public/fonts/ */
+/** Secondary — GT Alpina (web stand-in: Instrument Serif until brand WOFF files are added) */
 export const gtAlpina = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-gt-alpina-fallback",

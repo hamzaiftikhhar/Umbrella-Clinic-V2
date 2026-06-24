@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { Container } from "./Container";
-import { Reveal } from "./Reveal";
 import { BookButton } from "./BookButton";
 
 export function StatCallout({
@@ -24,9 +23,8 @@ export function StatCallout({
   return (
     <section className="py-12 sm:py-16" aria-label="Outcomes">
       <Container>
-        <Reveal>
-          <div className="overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-elegant)]">
-            <div className="grid items-stretch md:grid-cols-2">
+        <div className="overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-card)]">
+          <div className="grid items-stretch md:grid-cols-2">
               <div className="flex flex-col justify-center bg-primary p-8 text-primary-foreground sm:p-12 md:p-14">
                 <p className="text-xs font-medium uppercase tracking-[0.22em] text-primary-foreground/70">
                   Patient outcomes
@@ -65,8 +63,7 @@ export function StatCallout({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent md:bg-gradient-to-l md:from-primary/20 md:to-transparent" />
               </div>
             </div>
-          </div>
-        </Reveal>
+        </div>
       </Container>
     </section>
   );

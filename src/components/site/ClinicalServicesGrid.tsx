@@ -1,7 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
-import { Reveal } from "./primitives/Reveal";
 import {
   ClinicalServiceCard,
   type ClinicalServiceCardProps,
@@ -77,23 +76,19 @@ export function ClinicalServicesGrid() {
           </p>
         </div>
 
-        <Reveal>
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/specialties"
-              className="group inline-flex items-center gap-2.5 rounded-full border border-primary/15 bg-white/60 px-6 py-3 text-sm font-medium text-primary shadow-[0_8px_30px_-12px_color-mix(in_oklab,var(--primary)_25%,transparent)] backdrop-blur-xl transition-all duration-500 ease-out hover:scale-[1.02] hover:border-primary/30 hover:bg-white/80"
-            >
-              See our clinical services
-              <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-        </Reveal>
+        <div className="mt-8 flex justify-center">
+          <Link
+            to="/specialties"
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-primary/30"
+          >
+            See our clinical services
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
 
         <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {clinicalServices.map((service, i) => (
-            <Reveal key={service.title} delay={i * 0.05}>
-              <ClinicalServiceCard {...service} />
-            </Reveal>
+          {clinicalServices.map((service) => (
+            <ClinicalServiceCard key={service.title} {...service} />
           ))}
         </div>
       </Container>

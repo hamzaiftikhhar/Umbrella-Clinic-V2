@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
-import { Reveal } from "./primitives/Reveal";
 import { IMG } from "@/data/images";
 
 const GOOGLE_MAPS_URL =
@@ -11,16 +10,14 @@ const GOOGLE_MAPS_URL =
 export function LocationBanner() {
   return (
     <section aria-labelledby="location-heading" className="relative w-full bg-background">
-      <Reveal>
         <div className="relative w-full overflow-hidden">
-          <div className="relative h-[720px] w-full sm:h-[840px] md:h-[920px] lg:h-[1000px]">
+          <div className="relative h-[424px] w-full sm:h-[494px] md:h-[541px] lg:h-[588px]">
             <Image
-              src={IMG.clinicExterior}
-              alt="Umbrella Health clinic at 32 W 14th St, New York"
+              src={IMG.clinicInterior}
+              alt="Inside Umbrella Health clinic in New York City"
               fill
               className="object-cover object-[center_42%]"
               sizes="100vw"
-              priority
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
@@ -84,7 +81,6 @@ export function LocationBanner() {
             </div>
           </div>
         </div>
-      </Reveal>
     </section>
   );
 }

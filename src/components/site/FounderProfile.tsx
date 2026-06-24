@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ArrowRight, Award, BadgeCheck, GraduationCap } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
-import { Reveal } from "./primitives/Reveal";
 import { IMG } from "@/data/images";
 
 const credentials = [
@@ -17,70 +16,63 @@ export function FounderProfile() {
     <section id="founder" aria-labelledby="founder-heading" className="bg-background py-20 sm:py-28">
       <Container size="lg">
         <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.95fr)_1.05fr] md:gap-16 lg:gap-20">
-          <Reveal>
-            <div className="relative mx-auto w-full max-w-[22rem] md:mx-0">
-              <div className="relative aspect-square overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-elegant)]">
-                <Image
-                  src={IMG.premiumDoctorPortrait}
-                  alt="Dr. Rajat, founding physician at Umbrella Health"
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 80vw, 352px"
-                />
-              </div>
-
-              <div className="absolute bottom-6 left-0 max-w-[13.5rem] rounded-xl bg-primary px-4 py-3 text-primary-foreground shadow-lg">
-                <p className="flex items-center gap-2 text-sm font-semibold">
-                  Dr. Rajat
-                  <BadgeCheck className="h-4 w-4 shrink-0 text-primary-foreground/90" />
-                </p>
-                <p className="mt-0.5 text-xs text-primary-foreground/75">Umbrella physician</p>
-              </div>
+          <div className="relative mx-auto w-full max-w-[22rem] md:mx-0">
+            <div className="relative aspect-square overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-card)]">
+              <Image
+                src={IMG.premiumDoctorPortrait}
+                alt="Dr. Rajat, founding physician at Umbrella Health"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 80vw, 352px"
+              />
             </div>
-          </Reveal>
 
-          <Reveal delay={0.1}>
-            <div className="max-w-xl">
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
-                Founding Physicians
+            <div className="absolute bottom-6 left-0 max-w-[13.5rem] rounded-xl bg-primary px-4 py-3 text-primary-foreground shadow-md">
+              <p className="flex items-center gap-2 text-sm font-semibold">
+                Dr. Rajat
+                <BadgeCheck className="h-4 w-4 shrink-0 text-primary-foreground/90" />
               </p>
-              <h2
-                id="founder-heading"
-                className="text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl"
-              >
-                Physician-led care that{" "}
-                <span className="font-display font-light italic text-primary">puts you first.</span>
-              </h2>
-              <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Dr. Rajat founded Umbrella Health to create a more connected model of healthcare, one
-                where primary care, specialty medicine, and diagnostics work together to deliver
-                better outcomes.
-              </p>
-
-              <ul className="mt-8 space-y-3">
-                {credentials.map((item) => (
-                  <li
-                    key={item.label}
-                    className="flex items-center gap-3 text-sm text-foreground/85"
-                  >
-                    <span className="inline-grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[color:var(--mint)] text-primary">
-                      <item.icon className="h-4 w-4" />
-                    </span>
-                    {item.label}
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                to="/our-physicians"
-                className="group mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors hover:text-primary"
-              >
-                Meet The Whole Team
-                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-              </Link>
-              <div className="mt-10 h-px w-full max-w-md bg-border/80" aria-hidden />
+              <p className="mt-0.5 text-xs text-primary-foreground/75">Umbrella physician</p>
             </div>
-          </Reveal>
+          </div>
+
+          <div className="max-w-xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
+              Founding Physicians
+            </p>
+            <h2
+              id="founder-heading"
+              className="text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-5xl"
+            >
+              Physician-led care that{" "}
+              <span className="font-display font-light italic text-primary">puts you first.</span>
+            </h2>
+            <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Dr. Rajat founded Umbrella Health to create a more connected model of healthcare, one
+              where primary care, specialty medicine, and diagnostics work together to deliver better
+              outcomes.
+            </p>
+
+            <ul className="mt-8 space-y-3">
+              {credentials.map((item) => (
+                <li key={item.label} className="flex items-center gap-3 text-sm text-foreground/85">
+                  <span className="inline-grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mint text-primary">
+                    <item.icon className="h-4 w-4" />
+                  </span>
+                  {item.label}
+                </li>
+              ))}
+            </ul>
+
+            <Link
+              to="/our-physicians"
+              className="group mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors hover:text-primary"
+            >
+              Meet The Whole Team
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <div className="mt-10 h-px w-full max-w-md bg-border/80" aria-hidden />
+          </div>
         </div>
       </Container>
     </section>

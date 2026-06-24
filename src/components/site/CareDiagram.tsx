@@ -1,5 +1,3 @@
-"use client";
-
 import type { CSSProperties } from "react";
 import Image from "next/image";
 import { Link } from "@/components/AppLink";
@@ -149,12 +147,12 @@ export function CareDiagram() {
       className="relative overflow-hidden bg-background py-20 sm:py-28"
     >
       <div
-        className="pointer-events-none absolute top-1/2 left-[38%] h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--mint)]/30 blur-[100px]"
+        className="pointer-events-none absolute top-1/2 left-[38%] h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint/25"
         aria-hidden
       />
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-12 lg:pl-10 xl:gap-16 xl:pl-16 2xl:pl-24">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-10 xl:gap-14">
           {/* Orbital graphic — wider column, shifted right for visual centering */}
           <div className="lg:col-span-7 lg:pr-4 xl:pr-8">
             <div
@@ -183,7 +181,7 @@ export function CareDiagram() {
               className="max-w-lg text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-[2.75rem]"
             >
               One Team. One Record.{" "}
-              <span className="font-display font-light text-primary">One Umbrella.</span>
+              <span className="font-display font-light italic text-primary">One Umbrella.</span>
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
               Your primary care physician, specialists, diagnostics, and preventive health strategy

@@ -17,6 +17,8 @@ export const IMG = {
   // Local assets (public/images)
   premiumDoctorPortrait: "/images/premium-doctor-portrait.png",
   clinicExterior: "/images/street-view.png",
+  clinicInterior:
+    "/images/APNQkAG2VC7P3b3M7-u1nk5TVqiBrhB-Jb-5gMl7-7wE-NF0Kcu7wYmgGbcKNfvO6wNuHyqWjKZXLFcLcvM0DbAWHqx-CAt3pFKtN5_lavgX1uEgq4VCtVczKo-eZe09-F_0mwaJxsD03Qw3890-h2918-k-no.jpg",
 
   // People
   founder: u("photo-1612349317150-e413f6a5b16d", 1200),
