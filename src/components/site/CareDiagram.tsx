@@ -156,7 +156,7 @@ export function CareDiagram() {
           {/* Orbital graphic — wider column, shifted right for visual centering */}
           <div className="lg:col-span-7 lg:pr-4 xl:pr-8">
             <div
-              className="orbit-system orbit-system--split relative mx-auto aspect-square w-full max-w-[min(720px,100%)] lg:ml-auto lg:max-w-none"
+              className="orbit-system orbit-system--split relative mx-auto aspect-square w-full max-w-[min(720px,100%)] overflow-hidden lg:ml-auto lg:max-w-none"
               style={{ maxHeight: `${CANVAS_SIZE}px` }}
             >
               <OrbitArcs />

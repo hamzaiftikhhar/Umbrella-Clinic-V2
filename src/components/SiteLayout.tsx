@@ -28,12 +28,12 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div className="relative isolate">
+    <div className="relative isolate overflow-x-clip bg-primary">
       <SiteHeader />
 
       {/* Solid cream mask — scrolls over the footer beneath */}
       <div
-        className="relative z-10 min-h-screen bg-background"
+        className="relative z-10 min-h-screen overflow-x-clip bg-background"
         style={{ marginBottom: footerHeight }}
       >
         {children}
