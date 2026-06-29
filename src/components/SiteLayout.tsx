@@ -1,49 +1,71 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useLayoutEffect, useRef, type ReactNode } from "react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
-/** Initial fallback so layout is stable before first paint measurement. */
-const FOOTER_HEIGHT_FALLBACK = 580;
+/** Desktop parallax reveal — xl matches the desktop nav breakpoint. */
+const DESKTOP_REVEAL_MQ = "(min-width: 1280px)";
+const FOOTER_HEIGHT_FALLBACK = "580px";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   const footerRef = useRef<HTMLDivElement>(null);
-  const [footerHeight, setFooterHeight] = useState(FOOTER_HEIGHT_FALLBACK);
 
   useLayoutEffect(() => {
     const el = footerRef.current;
     if (!el) return;
 
-    const measure = () => {
+    const syncFooterHeight = () => {
       const h = el.offsetHeight;
-      if (h > 0) setFooterHeight(h);
+      if (h > 0) {
+        document.documentElement.style.setProperty("--site-footer-height", `${h}px`);
+      }
     };
 
-    measure();
+    syncFooterHeight();
 
-    const ro = new ResizeObserver(measure);
+    const ro = new ResizeObserver(syncFooterHeight);
     ro.observe(el);
-    return () => ro.disconnect();
+
+    const mq = window.matchMedia(DESKTOP_REVEAL_MQ);
+    mq.addEventListener("change", syncFooterHeight);
+
+    return () => {
+      ro.disconnect();
+      mq.removeEventListener("change", syncFooterHeight);
+    };
   }, []);
 
   return (
-    <div className="relative isolate overflow-x-clip bg-primary">
+    /*
+     * Mobile / tablet: normal flex column, cream shell — footer is the document end.
+     * Desktop (xl+): parallax reveal — cream mask scrolls over the navy footer.
+     *
+     * Root cause of iOS overscroll blue bleed: bg-primary + negative footer margins
+     * on mobile created extra scroll depth and exposed the blue layer behind content.
+     */
+    <div className="flex min-h-dvh flex-col bg-background xl:block xl:min-h-0 xl:bg-primary xl:overflow-x-clip">
       <SiteHeader />
 
-      {/* Solid cream mask — scrolls over the footer beneath */}
       <div
-        className="relative z-10 min-h-screen overflow-x-clip bg-background"
-        style={{ marginBottom: footerHeight }}
+        className="flex-1 xl:relative xl:z-10 xl:min-h-screen xl:flex-none xl:overflow-x-clip xl:bg-background xl:shadow-[0_28px_64px_-24px_rgba(12,20,34,0.18)] xl:mb-[var(--site-footer-height,var(--site-footer-fallback))] xl:rounded-b-[3.5rem] 2xl:rounded-b-[5rem]"
+        style={
+          {
+            "--site-footer-fallback": FOOTER_HEIGHT_FALLBACK,
+          } as React.CSSProperties
+        }
       >
         {children}
       </div>
 
-      {/* Sticky footer revealed as the mask scrolls away */}
       <div
         ref={footerRef}
-        className="sticky bottom-0 -z-10 w-full"
-        style={{ marginTop: -footerHeight }}
+        className="xl:sticky xl:bottom-0 xl:-z-10 xl:w-full xl:-mt-[var(--site-footer-height,var(--site-footer-fallback))]"
+        style={
+          {
+            "--site-footer-fallback": FOOTER_HEIGHT_FALLBACK,
+          } as React.CSSProperties
+        }
       >
         <SiteFooter />
       </div>

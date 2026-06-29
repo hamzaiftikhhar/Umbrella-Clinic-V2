@@ -154,6 +154,8 @@
   html {
     scroll-behavior: smooth;
     overflow-x: clip;
+    min-height: 100%;
+    background-color: var(--color-background);
   }
   body {
     background-color: var(--color-background);
@@ -162,6 +164,7 @@
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
+    min-height: 100dvh;
   }
   h1,
   h2,
