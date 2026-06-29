@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { BookButton } from "./primitives/BookButton";
 import { Wordmark } from "./primitives/Wordmark";
 import { PRIMARY_NAV, SPECIALTIES_NAV } from "@/data/nav";
+import { cn } from "@/lib/utils";
 
 const DESKTOP_NAV_MQ = "(min-width: 1280px)";
 
@@ -70,20 +71,29 @@ export function SiteHeader() {
   }, [open]);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open || isDesktop) return;
+
+    const { documentElement: html, body } = document;
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
     return () => {
-      document.body.style.overflow = "";
+      html.style.overflow = "";
+      body.style.overflow = "";
     };
-  }, [open]);
+  }, [open, isDesktop]);
 
   return (
     <>
       <header
-        className={`sticky top-0 z-[100] transition-[background-color,box-shadow,border-color] duration-200 ${
+        className={cn(
+          "top-0 z-[100] w-full transition-[background-color,box-shadow,border-color] duration-200",
+          /* Sticky breaks when body scroll is locked mid-page; pin bar while menu is open */
+          open && !isDesktop ? "fixed inset-x-0" : "sticky",
           scrolled
             ? "border-b border-border/50 bg-background shadow-sm"
-            : "border-b border-border/40 bg-background"
-        }`}
+            : "border-b border-border/40 bg-background",
+        )}
       >
         <div className="grid h-16 w-full grid-cols-2 items-center px-4 xl:grid-cols-[1fr_auto_1fr] xl:px-8">
           <div className="relative z-10 flex items-center justify-start">
