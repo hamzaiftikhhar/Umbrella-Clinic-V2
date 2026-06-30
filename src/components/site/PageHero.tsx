@@ -73,10 +73,10 @@ export function PageHero({
                 {eyebrow}
               </p>
             )}
-            <h1 className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-[3.25rem]">
+            <h1 className="font-display text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] sm:text-5xl md:text-[3.25rem]">
               {italic ? (
                 <>
-                  <span className="font-display italic font-medium">{italic} </span>
+                  <span className="italic font-normal">{italic} </span>
                   {title}
                 </>
               ) : (

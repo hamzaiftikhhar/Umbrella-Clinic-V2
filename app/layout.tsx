@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
-import { gtAlpina, haffer } from "@/lib/fonts";
+import { fraunces, gtAlpina, haffer } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#122B4E",
+  themeColor: "#122b4e",
 };
 
 const organizationSchema = {
@@ -35,7 +35,11 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${haffer.variable} ${gtAlpina.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${haffer.variable} ${gtAlpina.variable} ${fraunces.variable}`}
+      suppressHydrationWarning
+    >
       <body suppressHydrationWarning>
         <JsonLd data={organizationSchema} />
         <SiteLayout>{children}</SiteLayout>

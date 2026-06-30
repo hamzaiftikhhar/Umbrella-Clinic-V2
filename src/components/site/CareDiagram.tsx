@@ -168,14 +168,14 @@ export function CareDiagram() {
         <div className="flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-14">
           <div className="lg:col-span-5 lg:pl-2 xl:pl-4">
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
-              How It Works
+              One connected record
             </p>
             <h2
               id="diagram-heading"
-              className="max-w-lg text-balance text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]"
+              className="font-display max-w-lg text-balance text-3xl font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
             >
               One Team. One Record.{" "}
-              <span className="font-display font-light italic text-primary">One Umbrella.</span>
+              <span className="font-light italic text-primary">One Umbrella.</span>
             </h2>
             <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
               Your primary care physician, specialists, diagnostics, and preventive health strategy

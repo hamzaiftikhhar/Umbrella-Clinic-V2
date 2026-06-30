@@ -19,9 +19,9 @@ const rows = [
 ];
 
 const statusClass = {
-  optimal: "bg-[color:var(--mint)] text-primary",
-  watch: "bg-yellow-100 text-yellow-900",
-  low: "bg-orange-100 text-orange-900",
+  optimal: "bg-accent-emerald-surface text-accent-emerald",
+  watch: "bg-accent-amber-surface text-accent-amber",
+  low: "bg-destructive/10 text-destructive",
 } as const;
 
 const seo = buildPageSeo({

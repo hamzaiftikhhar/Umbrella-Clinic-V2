@@ -16,7 +16,7 @@ export function Testimonials() {
       <Container>
         <SectionHeading
           as="h2"
-          eyebrow="Patient reviews"
+          eyebrow="Verified patient reviews"
           title="Real stories from"
           accent="real people."
           description="See why patients across New York trust Umbrella Health for primary care, specialty medicine, diagnostics, and preventive health."
