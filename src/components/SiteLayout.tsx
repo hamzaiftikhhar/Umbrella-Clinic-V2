@@ -1,71 +1,78 @@
 "use client";
 
-import { useLayoutEffect, useRef, type ReactNode } from "react";
+import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { cn } from "@/lib/utils";
 
-/** Desktop parallax reveal — xl matches the desktop nav breakpoint. */
-const DESKTOP_REVEAL_MQ = "(min-width: 1280px)";
-const FOOTER_HEIGHT_FALLBACK = "580px";
+/** Prevents layout shift before footer is measured on desktop. */
+const FOOTER_HEIGHT_FALLBACK = 580;
+
+const DESKTOP_LAYOUT_MQ = "(min-width: 768px)";
+
+function useDesktopLayout() {
+  const [isDesktopLayout, setIsDesktopLayout] = useState(false);
+
+  useLayoutEffect(() => {
+    const mq = window.matchMedia(DESKTOP_LAYOUT_MQ);
+    const update = () => setIsDesktopLayout(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  return isDesktopLayout;
+}
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   const footerRef = useRef<HTMLDivElement>(null);
+  const [footerHeight, setFooterHeight] = useState(FOOTER_HEIGHT_FALLBACK);
+  const isDesktopLayout = useDesktopLayout();
 
   useLayoutEffect(() => {
+    if (!isDesktopLayout) return;
+
     const el = footerRef.current;
     if (!el) return;
 
-    const syncFooterHeight = () => {
+    const measure = () => {
       const h = el.offsetHeight;
-      if (h > 0) {
-        document.documentElement.style.setProperty("--site-footer-height", `${h}px`);
-      }
+      if (h > 0) setFooterHeight(h);
     };
 
-    syncFooterHeight();
+    measure();
 
-    const ro = new ResizeObserver(syncFooterHeight);
+    const ro = new ResizeObserver(measure);
     ro.observe(el);
-
-    const mq = window.matchMedia(DESKTOP_REVEAL_MQ);
-    mq.addEventListener("change", syncFooterHeight);
-
-    return () => {
-      ro.disconnect();
-      mq.removeEventListener("change", syncFooterHeight);
-    };
-  }, []);
+    return () => ro.disconnect();
+  }, [isDesktopLayout]);
 
   return (
-    /*
-     * Mobile / tablet: normal flex column, cream shell — footer is the document end.
-     * Desktop (xl+): parallax reveal — cream mask scrolls over the navy footer.
-     *
-     * Root cause of iOS overscroll blue bleed: bg-primary + negative footer margins
-     * on mobile created extra scroll depth and exposed the blue layer behind content.
-     */
-    <div className="flex min-h-dvh flex-col bg-background xl:block xl:min-h-0 xl:bg-primary xl:overflow-x-clip">
+    <div
+      className={cn(
+        "relative isolate overflow-x-clip",
+        /* Mobile: cream canvas, footer in normal flow — no blue layer under content */
+        "flex min-h-dvh flex-col bg-background",
+        /* Desktop: parallax reveal — blue canvas behind the scrolling cream mask */
+        "md:block md:min-h-0 md:bg-primary",
+      )}
+    >
       <SiteHeader />
 
       <div
-        className="flex-1 xl:relative xl:z-10 xl:min-h-screen xl:flex-none xl:overflow-x-clip xl:bg-background xl:shadow-[0_28px_64px_-24px_rgba(12,20,34,0.18)] xl:mb-[var(--site-footer-height,var(--site-footer-fallback))] xl:rounded-b-[3.5rem] 2xl:rounded-b-[5rem]"
-        style={
-          {
-            "--site-footer-fallback": FOOTER_HEIGHT_FALLBACK,
-          } as React.CSSProperties
-        }
+        className={cn(
+          "relative z-10 bg-background",
+          "flex-1 md:flex-none md:min-h-screen md:overflow-x-clip",
+        )}
+        style={isDesktopLayout ? { marginBottom: footerHeight } : undefined}
       >
         {children}
       </div>
 
       <div
         ref={footerRef}
-        className="xl:sticky xl:bottom-0 xl:-z-10 xl:w-full xl:-mt-[var(--site-footer-height,var(--site-footer-fallback))]"
-        style={
-          {
-            "--site-footer-fallback": FOOTER_HEIGHT_FALLBACK,
-          } as React.CSSProperties
-        }
+        className={cn("w-full shrink-0", isDesktopLayout && "sticky bottom-0 -z-10")}
+        style={isDesktopLayout ? { marginTop: -footerHeight } : undefined}
       >
         <SiteFooter />
       </div>

@@ -16,7 +16,7 @@ export function SiteFooter() {
         Site footer
       </h2>
 
-      <div className="mx-auto max-w-7xl px-5 pb-6 pt-10 sm:px-8 md:pb-14 md:pt-32">
+      <div className="mx-auto max-w-7xl px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-10 sm:px-8 md:pb-14 md:pt-32">
         <div className="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:gap-10 lg:gap-14">
           {/* Brand — compact row on mobile, full column on desktop */}
           <div className="flex flex-col justify-end">
