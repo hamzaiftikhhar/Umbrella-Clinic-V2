@@ -20,7 +20,7 @@ export function HomeHero() {
 
         <h1
           id="hero-heading"
-          className="text-balance text-5xl font-normal leading-[1.02] tracking-tight text-foreground sm:text-6xl md:text-7xl"
+          className="font-display text-balance text-5xl font-normal leading-[1.0] tracking-[-0.02em] text-foreground sm:text-6xl md:text-7xl"
         >
           {words.map((w, i) => (
             <span key={i} className="inline-block pr-[0.25em] font-normal">

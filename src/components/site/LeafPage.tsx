@@ -115,7 +115,7 @@ export function LeafPage({ config }: { config: LeafConfig }) {
         <section className="py-20 sm:py-28">
           <Container size="lg">
             <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:gap-16">
-              <SectionHeading as="h2" title="Questions?" accent="We got you." />
+              <SectionHeading as="h2" title="Common questions," accent="answered." />
               <FAQList items={c.faqs} />
             </div>
           </Container>

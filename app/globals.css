@@ -14,11 +14,12 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Primary: Haffer · Secondary: GT Alpina */
+  /* Primary: Haffer (sans) · Display: Fraunces editorial serif · Secondary: GT Alpina italic accents */
   --font-primary: "Haffer", "Haffer SQ", var(--font-haffer-fallback), Arial, sans-serif;
   --font-secondary: "GT Alpina", var(--font-gt-alpina-fallback), Georgia, serif;
+  --font-editorial: "GT Alpina Display", var(--font-fraunces), Georgia, serif;
   --font-sans: var(--font-primary);
-  --font-display: var(--font-secondary);
+  --font-display: var(--font-editorial);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -44,6 +45,29 @@
   --color-sage: var(--sage);
   --color-mist: var(--mist);
   --color-mint: var(--mint);
+
+  /* Warm surface ramp */
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-warm: var(--surface-warm);
+
+  /* Navy scale */
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+
+  /* Precision data accents */
+  --color-accent-emerald: var(--accent-emerald);
+  --color-accent-emerald-foreground: var(--accent-emerald-foreground);
+  --color-accent-emerald-surface: var(--accent-emerald-surface);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-teal-foreground: var(--accent-teal-foreground);
+  --color-accent-teal-surface: var(--accent-teal-surface);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-amber-foreground: var(--accent-amber-foreground);
+  --color-accent-amber-surface: var(--accent-amber-surface);
+  --color-rating-star: var(--rating-star);
+
   --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -63,6 +87,15 @@
 :root {
   --radius: 1rem;
 
+  /* Premium easing for micro-interactions */
+  --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Deep clinical navy scale */
+  --navy-900: #0a1f3a;
+  --navy-800: #122b4e;
+  --navy-700: #0a4e83;
+  --navy-600: #1e4478;
+
   /* Warm premium canvas — Nectar-adjacent */
   --background: #faf9f6;
   --foreground: #0c1422;
@@ -72,46 +105,63 @@
   --popover: #ffffff;
   --popover-foreground: #0c1422;
 
+  /* Warm surface ramp for spa-like depth */
+  --surface-raised: #ffffff;
+  --surface-warm: #f3efe8;
+
   /* Anchor blue — deep clinical navy */
-  --primary: #0a4e83;
+  --primary: var(--navy-800);
   --primary-foreground: #f7f9fc;
-  --primary-glow: #1e4478;
+  --primary-glow: var(--navy-700);
 
   --secondary: #eef2f7;
-  --secondary-foreground: #0a4e83;
+  --secondary-foreground: var(--navy-800);
 
-  --muted: #f2efe9;
-  --muted-foreground: #5c6578;
+  --muted: #f1ede6;
+  --muted-foreground: #5b6373;
 
   --accent: #e4ebf5;
-  --accent-foreground: #0a4e83;
+  --accent-foreground: var(--navy-800);
 
   --destructive: #b42318;
   --destructive-foreground: #fffaf8;
 
-  --border: #e6e1d9;
-  --input: #e6e1d9;
-  --ring: #1e4478;
+  /* Precision data-visualization accents (used sparingly to encode metrics) */
+  --accent-emerald: #1f7a5a;
+  --accent-emerald-foreground: #f4fbf8;
+  --accent-emerald-surface: #e7f2ed;
+  --accent-teal: #0f6e74;
+  --accent-teal-foreground: #f2fbfb;
+  --accent-teal-surface: #e4f1f1;
+  --accent-amber: #b67324;
+  --accent-amber-foreground: #fef8f0;
+  --accent-amber-surface: #f6ecdc;
+  --rating-star: #e0a73a;
+
+  --border: #e8e2d8;
+  --input: #e8e2d8;
+  --ring: var(--navy-600);
 
   --cream: #faf9f6;
   --sage: #dce6f2;
   --mist: #f3f0eb;
   --mint: #eef3fa;
 
-  --chart-1: #0a4e83;
-  --chart-2: #2a5a96;
-  --chart-3: #4a6f9c;
-  --chart-4: #8fb4dc;
-  --chart-5: #c5d8ef;
+  /* Multi-hue precision palette for diagnostic data viz */
+  --chart-1: var(--navy-700);
+  --chart-2: #1f7a5a;
+  --chart-3: #0f6e74;
+  --chart-4: #b67324;
+  --chart-5: #8fb4dc;
 
   --sidebar: #f5f3ef;
   --sidebar-foreground: #0c1422;
-  --sidebar-primary: #0a4e83;
+  --sidebar-primary: var(--navy-800);
   --sidebar-primary-foreground: #f7f9fc;
   --sidebar-accent: #eef2f7;
-  --sidebar-accent-foreground: #0a4e83;
-  --sidebar-border: #e6e1d9;
-  --sidebar-ring: #1e4478;
+  --sidebar-accent-foreground: var(--navy-800);
+  --sidebar-border: #e8e2d8;
+  --sidebar-ring: var(--navy-600);
 
   --shadow-elegant: 0 24px 60px -36px rgba(12, 20, 34, 0.28);
   --shadow-soft: 0 8px 28px -18px rgba(12, 20, 34, 0.14);
@@ -123,7 +173,7 @@
     transparent 70%
   );
   --gradient-mint: linear-gradient(180deg, var(--mint) 0%, var(--cream) 100%);
-  --gradient-forest: linear-gradient(160deg, var(--primary) 0%, #0a1f3a 100%);
+  --gradient-forest: linear-gradient(160deg, var(--primary) 0%, var(--navy-900) 100%);
 }
 
 .dark {
@@ -174,7 +224,7 @@
 }
 
 @utility font-display {
-  font-family: var(--font-secondary);
+  font-family: var(--font-editorial);
   font-optical-sizing: auto;
 }
 
@@ -194,6 +244,11 @@
 
 @utility text-balance {
   text-wrap: balance;
+}
+
+@utility transition-premium {
+  transition-timing-function: var(--ease-premium);
+  transition-duration: 300ms;
 }
 
 /* How It Works — solar system orbit */

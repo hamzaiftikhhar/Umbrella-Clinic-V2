@@ -37,10 +37,10 @@ export function UmbrellaDifference() {
             </p>
             <h2
               id="difference-heading"
-              className="max-w-xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl"
+              className="font-display max-w-xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl"
             >
               A Better Way To{" "}
-              <span className="font-display font-light italic text-primary">Navigate Healthcare</span>
+              <span className="font-light italic text-primary">Navigate Healthcare</span>
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Most healthcare systems are fragmented. Umbrella brings primary care, specialists,
