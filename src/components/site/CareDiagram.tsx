@@ -157,7 +157,7 @@ export function CareDiagram() {
     <section
       id="how"
       aria-labelledby="diagram-heading"
-      className="relative overflow-hidden bg-background py-16 sm:py-28"
+      className="relative overflow-hidden bg-secondary/30 py-16 sm:py-24"
     >
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 hidden h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint/25 lg:block"

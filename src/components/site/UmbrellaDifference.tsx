@@ -27,7 +27,7 @@ export function UmbrellaDifference() {
     <section
       id="difference"
       aria-labelledby="difference-heading"
-      className="bg-background py-20 sm:py-24"
+      className="bg-background py-16 sm:py-24"
     >
       <Container>
         <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">

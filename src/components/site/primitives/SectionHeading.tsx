@@ -8,6 +8,7 @@ interface SectionHeadingProps {
   align?: "left" | "center";
   as?: "h1" | "h2" | "h3";
   className?: string;
+  id?: string;
 }
 
 export function SectionHeading({
@@ -18,6 +19,7 @@ export function SectionHeading({
   align = "left",
   as: Tag = "h2",
   className,
+  id,
 }: SectionHeadingProps) {
   return (
     <div className={cn("max-w-2xl", align === "center" && "mx-auto text-center", className)}>
@@ -26,7 +28,10 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <Tag className="font-display text-3xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl">
+      <Tag
+        id={id}
+        className="font-display text-3xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
+      >
         {title}{" "}
         {accent && <span className="font-light italic text-primary">{accent}</span>}
       </Tag>

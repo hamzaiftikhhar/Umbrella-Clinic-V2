@@ -6,7 +6,7 @@ const MAP_EMBED_URL =
 
 export function ClinicMap() {
   return (
-    <section aria-labelledby="map-heading" className="bg-background py-20 sm:py-28">
+    <section aria-labelledby="map-heading" className="bg-secondary/30 py-16 sm:py-24">
       <Container size="lg">
         <div className="mb-10 max-w-2xl">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-primary/70">

@@ -11,7 +11,7 @@ export function Testimonials() {
     <section
       id="reviews"
       aria-labelledby="reviews-heading"
-      className="bg-secondary/30 py-16 sm:py-24"
+      className="bg-background py-16 sm:py-24"
     >
       <Container>
         <SectionHeading
