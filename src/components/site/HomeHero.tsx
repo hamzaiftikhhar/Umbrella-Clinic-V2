@@ -54,7 +54,7 @@ export function HomeHero() {
         <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] border border-border/50 sm:rounded-[36px]">
           <Image
             src="/images/Dr-rajat-hero-section.png"
-            alt="Dr. Rajat at Umbrella Health clinic in New York City"
+            alt="Dr. Rajat Lamington at Umbrella Health clinic in New York City"
             fill
             priority
             className="object-cover"

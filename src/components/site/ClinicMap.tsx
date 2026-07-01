@@ -1,0 +1,37 @@
+import { Container } from "./primitives/Container";
+import { SITE_NAME } from "@/lib/site";
+
+const MAP_EMBED_URL =
+  "https://www.google.com/maps?q=Umbrella+Health,+32+W+14th+St,+New+York,+NY+10011&output=embed";
+
+export function ClinicMap() {
+  return (
+    <section aria-labelledby="map-heading" className="bg-background py-20 sm:py-28">
+      <Container size="lg">
+        <div className="mb-10 max-w-2xl">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.22em] text-primary/70">
+            Find us
+          </p>
+          <h2
+            id="map-heading"
+            className="font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
+          >
+            In the heart of{" "}
+            <span className="font-light italic text-primary">Lower Manhattan.</span>
+          </h2>
+        </div>
+
+        <div className="group relative overflow-hidden rounded-[1.75rem] border border-border/60 shadow-[var(--shadow-card)]">
+          <iframe
+            title={`Map showing ${SITE_NAME} in New York`}
+            src={MAP_EMBED_URL}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+            className="block h-[420px] w-full border-0 transition-[filter] duration-500 ease-[var(--ease-premium)] [filter:grayscale(0.4)_contrast(1.02)] group-hover:[filter:grayscale(0)] sm:h-[500px]"
+          />
+        </div>
+      </Container>
+    </section>
+  );
+}
