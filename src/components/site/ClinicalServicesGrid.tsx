@@ -57,7 +57,7 @@ export function ClinicalServicesGrid() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="bg-background py-20 sm:py-28"
+      className="bg-background py-16 sm:py-24"
     >
       <Container>
         <div className="mx-auto max-w-2xl text-center">

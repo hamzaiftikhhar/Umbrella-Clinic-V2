@@ -13,7 +13,7 @@ const credentials = [
 
 export function FounderProfile() {
   return (
-    <section id="founder" aria-labelledby="founder-heading" className="bg-background py-20 sm:py-28">
+    <section id="founder" aria-labelledby="founder-heading" className="bg-secondary/30 py-16 sm:py-24">
       <Container size="lg">
         <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.95fr)_1.05fr] md:gap-16 lg:gap-20">
           <div className="relative mx-auto w-full max-w-[22rem] md:mx-0">
