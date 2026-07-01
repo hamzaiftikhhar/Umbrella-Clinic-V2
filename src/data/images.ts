@@ -15,20 +15,21 @@ export const IMG = {
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
   // Local assets (public/images)
-  premiumDoctorPortrait: "/images/premium-doctor-portrait.png",
+  drRajat: "/images/dr-rajat.png",
+  premiumDoctorPortrait: "/images/dr-rajat.png",
   clinicExterior: "/images/street-view.png",
   clinicInterior:
     "/images/APNQkAG2VC7P3b3M7-u1nk5TVqiBrhB-Jb-5gMl7-7wE-NF0Kcu7wYmgGbcKNfvO6wNuHyqWjKZXLFcLcvM0DbAWHqx-CAt3pFKtN5_lavgX1uEgq4VCtVczKo-eZe09-F_0mwaJxsD03Qw3890-h2918-k-no.jpg",
 
-  // People
-  founder: u("photo-1612349317150-e413f6a5b16d", 1200),
-  founderAlt: u("photo-1622253692010-333f2da6031d", 1200),
-  doctorWoman1: u("photo-1559839734-2b71ea197ec2", 900),
-  doctorMan1: u("photo-1537368910025-700350fe46c7", 900),
-  doctorWoman2: u("photo-1594824476967-48c8b964273f", 900),
-  doctorMan2: u("photo-1622902046580-2b47f47f5471", 900),
-  doctorWoman3: u("photo-1551601651-2a8555f1a136", 900),
-  doctorMan3: u("photo-1612531386530-97286d97c2d2", 900),
+  // People — real founding physician photo stands in for placeholder portraits
+  founder: "/images/dr-rajat.png",
+  founderAlt: "/images/dr-rajat.png",
+  doctorWoman1: "/images/dr-rajat.png",
+  doctorMan1: "/images/dr-rajat.png",
+  doctorWoman2: "/images/dr-rajat.png",
+  doctorMan2: "/images/dr-rajat.png",
+  doctorWoman3: "/images/dr-rajat.png",
+  doctorMan3: "/images/dr-rajat.png",
 
   // Lifestyle / patients
   glp1Hero: u("photo-1571019613454-1cb2f99b2d8b", 1600),

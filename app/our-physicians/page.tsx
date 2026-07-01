@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/site/PageHero";
@@ -47,31 +48,22 @@ function Page() {
         <section className="py-16 sm:py-24" aria-labelledby="founder-heading">
           <Container size="lg">
             <div className="grid items-stretch gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
-              <div className="relative isolate overflow-hidden rounded-[2rem] bg-primary text-primary-foreground shadow-[var(--shadow-elegant)]">
-                <svg
-                  className="pointer-events-none absolute inset-0 h-full w-full text-primary-foreground/[0.07]"
-                  aria-hidden
-                >
-                  <defs>
-                    <pattern
-                      id="founder-grid"
-                      width="32"
-                      height="32"
-                      patternUnits="userSpaceOnUse"
-                    >
-                      <path d="M32 0H0V32" fill="none" stroke="currentColor" strokeWidth="1" />
-                    </pattern>
-                  </defs>
-                  <rect width="100%" height="100%" fill="url(#founder-grid)" />
-                </svg>
+              <div className="relative isolate aspect-[4/5] overflow-hidden rounded-[2rem] bg-primary text-primary-foreground shadow-[var(--shadow-elegant)]">
+                <Image
+                  src={IMG.drRajat}
+                  alt={`${founder.name}, ${founder.title} at Umbrella Health`}
+                  fill
+                  priority
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 90vw, 480px"
+                />
                 <div
-                  className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent-teal/20 blur-3xl"
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent"
                   aria-hidden
                 />
-                <div className="relative flex aspect-[4/5] items-end p-8 sm:p-10">
-                  <span className="font-display text-[6rem] font-medium leading-none tracking-tight text-primary-foreground/90">
-                    R
-                  </span>
+                <div className="absolute bottom-5 left-5 rounded-xl bg-primary/85 px-4 py-2.5 backdrop-blur-sm">
+                  <p className="text-sm font-semibold text-primary-foreground">{founder.name}</p>
+                  <p className="text-xs text-primary-foreground/75">{founder.title}</p>
                 </div>
               </div>
 
