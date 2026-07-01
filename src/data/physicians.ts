@@ -1,50 +1,90 @@
 export type PhysicianAccent = "navy" | "emerald" | "teal" | "amber";
 
+export interface PhysicianSocial {
+  label: string;
+  href: string;
+  platform: "facebook" | "twitter" | "linkedin" | "instagram";
+}
+
 export interface Physician {
   /** Stable id for keys/anchors */
   id: string;
+  /** Display name including honorific, e.g. "Dr. Rajat Lamington" */
   name: string;
-  /** Role/title — kept neutral until verified credentials are supplied */
-  title: string;
-  /** Short, model-focused bio. Placeholder copy until real bios are provided. */
-  bio: string;
-  /** Areas of focus shown as tags */
-  focus: string[];
-  /** Art-directed placeholder accent (no stock photography) */
+  /** Primary specialty line shown under the name */
+  specialty: string;
+  /** Professional portrait (public/images) */
+  image: string;
+  /** Accessible alt text override (defaults to name + specialty) */
+  imageAlt?: string;
+  /** Optional short bio for future detail views */
+  bio?: string;
+  /** Art-directed accent used for fallbacks/tints */
   accent: PhysicianAccent;
-  /** Marks the featured founder block */
+  /** Marks the founding physician */
   founder?: boolean;
+  /** Optional social links (defaults applied in the card) */
+  socials?: PhysicianSocial[];
 }
 
-/**
- * Real physicians validated by patient reviews. Credentials and photography are
- * intentionally omitted until verified assets are supplied — the cards render an
- * art-directed monogram placeholder rather than stock faces or invented bios.
- */
+/** Practice-level social channels used as the default card links. */
+export const DEFAULT_PHYSICIAN_SOCIALS: PhysicianSocial[] = [
+  { label: "Facebook", href: "#", platform: "facebook" },
+  { label: "X (Twitter)", href: "#", platform: "twitter" },
+  { label: "LinkedIn", href: "#", platform: "linkedin" },
+  { label: "Instagram", href: "#", platform: "instagram" },
+];
+
 export const PHYSICIANS: Physician[] = [
   {
-    id: "dr-rajat",
-    name: "Dr. Rajat",
-    title: "Founding Physician",
+    id: "dr-rajat-lamington",
+    name: "Dr. Rajat Lamington",
+    specialty: "Interventional Pain & Family Medicine",
+    image: "/images/dr-rajat.png",
     bio: "Founder of Umbrella Health, building a connected model where primary care, specialty medicine, and diagnostics work from a single record.",
-    focus: ["Primary Care", "Pain Management", "Preventive Health"],
     accent: "navy",
     founder: true,
   },
   {
-    id: "dr-cole-li",
-    name: "Dr. Cole Li",
-    title: "Physician",
-    bio: "Sees patients across primary and specialty care with a calm, methodical, data-led approach the team is known for.",
-    focus: ["Primary Care", "Diagnostics"],
+    id: "dr-archimedes-jao",
+    name: "Dr. Archimedes Jao",
+    specialty: "Primary Care",
+    image: "/images/dr-archimedes-jao.png",
+    accent: "teal",
+  },
+  {
+    id: "dr-jennifer-soung",
+    name: "Dr. Jennifer Soung",
+    specialty: "Primary Care",
+    image: "/images/dr-jennifer-soung.png",
     accent: "emerald",
   },
   {
-    id: "dr-mccall",
-    name: "Dr. McCall",
-    title: "Physician",
-    bio: "Focused on coordinated, evidence-based care that keeps every result connected to the bigger picture of your health.",
-    focus: ["Internal Medicine", "Preventive Health"],
+    id: "dr-courtney-mccall",
+    name: "Dr. Courtney McCall",
+    specialty: "Family Medicine",
+    image: "/images/dr-courtney-mccall.png",
+    accent: "amber",
+  },
+  {
+    id: "dr-cale-li",
+    name: "Dr. Cale Li",
+    specialty: "Internal Medicine",
+    image: "/images/dr-cale-li.png",
     accent: "teal",
+  },
+  {
+    id: "dr-masrai-williams",
+    name: "Dr. Masrai Williams",
+    specialty: "Neurology & Sleep Medicine",
+    image: "/images/dr-masrai-williams.png",
+    accent: "emerald",
+  },
+  {
+    id: "dr-tawseef-dar",
+    name: "Dr. Tawseef Dar",
+    specialty: "Interventional Cardiology",
+    image: "/images/dr-tawseef-dar.png",
+    accent: "navy",
   },
 ];

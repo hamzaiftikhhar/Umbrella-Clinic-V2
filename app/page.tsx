@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { FounderProfile } from "@/components/site/FounderProfile";
 import { EmployersStrip } from "@/components/site/EmployersStrip";
 import { HomeFAQ, homeFaqs } from "@/components/site/HomeFAQ";
+import { ClinicMap } from "@/components/site/ClinicMap";
 import { GalleryBanner } from "@/components/site/primitives/GalleryBanner";
 import { BookButton } from "@/components/site/primitives/BookButton";
 import { faqSchema } from "@/components/site/primitives/FAQList";
@@ -98,6 +99,7 @@ export default function HomePage() {
         <Testimonials />
         <FounderProfile />
         <EmployersStrip />
+        <ClinicMap />
         <HomeFAQ />
         <GalleryBanner />
       </main>
