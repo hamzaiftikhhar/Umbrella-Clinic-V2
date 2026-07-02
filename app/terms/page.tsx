@@ -6,7 +6,7 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Terms of Service — Umbrella Health",
+  title: "Terms of Service  Umbrella Health",
   description: "Terms governing your use of the Umbrella Health website.",
   path: "/terms",
   crumbs: [{ label: "Home", to: "/" }, { label: "Terms" }],

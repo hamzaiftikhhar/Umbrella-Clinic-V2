@@ -1,6 +1,5 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { Syringe, LineChart, ClipboardCheck } from "lucide-react";
 import { LeafPage, faqSchema } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
@@ -24,7 +23,7 @@ const faqs = [
 ];
 
 const seo = buildPageSeo({
-  title: "GLP-1 Weight Loss NYC — Medically Supervised | Umbrella",
+  title: "GLP-1 Weight Loss NYC  Medically Supervised | Umbrella",
   description:
     "Medically supervised GLP-1 weight loss with baseline labs, body composition, and monthly clinical follow-up. Insurance-friendly. Book in NYC.",
   path: "/weight-loss-glp1",
@@ -44,7 +43,7 @@ export default function RoutePage() {
             italic: "Medically supervised.",
             title: "Metabolically measured.",
             description:
-              "A real clinical program — baseline labs, body composition, monthly check-ins — not a prescription mill. Semaglutide and tirzepatide where appropriate.",
+              "A real clinical program  baseline labs, body composition, monthly check-ins  not a prescription mill. Semaglutide and tirzepatide where appropriate.",
             image: IMG.glp1Hero,
             imageAlt: "Patient and clinician reviewing weight loss plan",
             crumbs: [{ label: "Home", to: "/" }, { label: "Weight Loss (GLP-1)" }],
@@ -55,19 +54,19 @@ export default function RoutePage() {
             body: "GLP-1 medications work. They work better when someone is actually watching the data and tuning the plan.",
             bullets: [
               {
-                icon: Syringe,
+                iconKey: "syringe",
                 title: "Clinical prescribing",
                 body: "Semaglutide and tirzepatide where clinically indicated, managed by physicians.",
               },
               {
-                icon: LineChart,
+                iconKey: "line-chart",
                 title: "Body comp + labs",
                 body: "Baseline + interval body composition, lipid, A1c, and metabolic tracking.",
               },
               {
-                icon: ClipboardCheck,
+                iconKey: "clipboard-check",
                 title: "Monthly follow-ups",
-                body: "Titration, side effects, lifestyle — managed every month, not once a quarter.",
+                body: "Titration, side effects, lifestyle  managed every month, not once a quarter.",
               },
             ],
           },

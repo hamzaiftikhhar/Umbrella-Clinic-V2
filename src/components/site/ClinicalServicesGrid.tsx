@@ -1,54 +1,58 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import {
-  ClinicalServiceCard,
+  ClinicalServiceRows,
   type ClinicalServiceCardProps,
 } from "./primitives/ClinicalServiceCard";
 import { IMG } from "@/data/images";
 
 const clinicalServices: ClinicalServiceCardProps[] = [
   {
-    title: "Primary Care",
+    title: "Primary Care NYC",
     description:
-      "Your first call for annual physicals, preventive care, chronic disease management, and everyday health concerns.",
+      "Build a healthier future with comprehensive primary care focused on preventive care, annual physicals, chronic disease management, and personalized treatment for every stage of life.",
     imageUrl: IMG.consult,
-    href: "/specialties/primary-care",
   },
   {
-    title: "Cardiology",
+    title: "Cardiology & Vascular Medicine",
     description:
-      "Heart health evaluations, EKGs, telemetry monitoring, echocardiograms, and expert cardiovascular care, all in-house.",
+      "Protect your heart with expert cardiovascular care, advanced diagnostic testing, and personalized treatment plans designed to support lifelong heart health.",
     imageUrl: IMG.ekg,
-    href: "/specialties/cardiology-vascular",
   },
   {
-    title: "Medical Weight Loss",
+    title: "Medical Weight Loss NYC",
     description:
-      "Physician-guided GLP-1 weight loss programs supported by labs, metabolic insights, and long-term planning.",
+      "Achieve sustainable weight loss with physician-supervised programs, personalized nutrition guidance, and evidence-based medical treatments.",
     imageUrl: IMG.glp1Hero,
-    href: "/weight-loss-glp1",
   },
   {
-    title: "Diagnostics & Biomarkers",
+    title: "Diagnostics & Testing",
     description:
-      "Advanced testing, imaging, metabolic assessments, and biomarker tracking that turn data into action.",
+      "Get accurate answers faster with advanced diagnostic testing, laboratory services, and preventive health screenings that support timely diagnosis and treatment.",
     imageUrl: IMG.lab,
-    href: "/diagnostics",
   },
   {
     title: "Sleep Medicine",
     description:
-      "Convenient home sleep studies and comprehensive sleep evaluations designed for busy professionals.",
+      "Improve your sleep and overall well-being with comprehensive sleep evaluations, advanced sleep studies, and personalized treatment for sleep disorders.",
     imageUrl: IMG.sleepStudy,
-    href: "/specialties/sleep-medicine",
   },
   {
-    title: "Neurology & Pain",
+    title: "Neurology",
     description:
-      "Integrated care for headaches, nerve conditions, chronic pain, and musculoskeletal concerns.",
+      "Receive expert diagnosis and treatment for neurological conditions with personalized care focused on improving brain, spine, and nervous system health.",
     imageUrl: IMG.doctorPatient,
-    href: "/specialties/neurology",
+  },
+  {
+    title: "Interventional Pain Management",
+    description:
+      "Find lasting relief from chronic pain through personalized, minimally invasive treatments that improve mobility, function, and quality of life.",
+    imageUrl: IMG.examRoom,
+  },
+  {
+    title: "Medical Spa Services NYC",
+    description:
+      "Refresh your appearance with physician-guided aesthetic treatments, including skin rejuvenation, anti-aging solutions, and personalized wellness services.",
+    imageUrl: IMG.ultrasound,
   },
 ];
 
@@ -59,38 +63,27 @@ export function ClinicalServicesGrid() {
       aria-labelledby="services-heading"
       className="bg-background py-16 sm:py-24"
     >
-      <Container>
-        <div className="mx-auto max-w-2xl text-center">
+      <Container size="lg">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-primary/70">
-            Comprehensive care, coordinated
+            Everything Under One Roof, One Umbrella
           </p>
           <h2
             id="services-heading"
             className="font-display text-balance text-3xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
           >
-            Everything Under One Roof,{" "}
-            <span className="font-light italic text-primary">One Umbrella</span>
+            NYC Primary Care Doctors{" "}
+            <span className="font-light italic text-primary">& Board-Certified Specialists</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Built for busy New Yorkers who want primary care, specialists, diagnostics, and
-            preventive health working together, not scattered across five different offices.
+            Umbrella Health brings together primary care doctors, internal medicine physicians, and
+            board-certified specialists to deliver coordinated, patient-centered healthcare under one
+            roof.
           </p>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <Link
-            to="/specialties"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-medium text-primary transition-colors hover:border-primary/30"
-          >
-            See our clinical services
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {clinicalServices.map((service) => (
-            <ClinicalServiceCard key={service.title} {...service} />
-          ))}
+        <div className="mt-12 overflow-visible sm:mt-14">
+          <ClinicalServiceRows services={clinicalServices} />
         </div>
       </Container>
     </section>

@@ -68,6 +68,10 @@
   --color-accent-amber-surface: var(--accent-amber-surface);
   --color-rating-star: var(--rating-star);
 
+  /* Premium icon tiles */
+  --color-icon-premium-surface: var(--icon-premium-surface);
+  --color-icon-premium: var(--icon-premium-color);
+
   --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -90,13 +94,18 @@
   /* Premium easing for micro-interactions */
   --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
 
+  /* Premium icon tiles  aligned to clinical navy palette */
+  --icon-premium-surface: #eef3fa;
+  --icon-premium-color: var(--navy-700);
+  --icon-premium-shadow: 0 8px 30px rgba(12, 20, 34, 0.06);
+
   /* Deep clinical navy scale */
   --navy-900: #0a1f3a;
   --navy-800: #122b4e;
   --navy-700: #0a4e83;
   --navy-600: #1e4478;
 
-  /* Warm premium canvas — Nectar-adjacent */
+  /* Warm premium canvas  Nectar-adjacent */
   --background: #faf9f6;
   --foreground: #0c1422;
 
@@ -109,7 +118,7 @@
   --surface-raised: #ffffff;
   --surface-warm: #f3efe8;
 
-  /* Anchor blue — deep clinical navy */
+  /* Anchor blue  deep clinical navy */
   --primary: var(--navy-800);
   --primary-foreground: #f7f9fc;
   --primary-glow: var(--navy-700);
@@ -251,7 +260,7 @@
   transition-duration: 300ms;
 }
 
-/* How It Works — solar system orbit */
+/* How It Works  solar system orbit */
 .orbit-system {
   --orbit-scale: 1;
 }

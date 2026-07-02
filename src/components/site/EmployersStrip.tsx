@@ -1,5 +1,6 @@
-import { ArrowUpRight, Building2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
+import { PremiumIcon } from "@/components/site/primitives/IconBadge";
 import { FEATURED_SERVICE_COPY } from "@/data/site-content";
 import { Container } from "./primitives/Container";
 
@@ -13,9 +14,7 @@ export function EmployersStrip() {
             aria-hidden
           />
           <div className="relative grid items-center gap-6 sm:grid-cols-[auto_1fr_auto]">
-            <span className="grid h-14 w-14 place-items-center rounded-full bg-primary-foreground/10 text-primary-foreground ring-1 ring-primary-foreground/20">
-              <Building2 className="h-6 w-6" />
-            </span>
+            <PremiumIcon iconKey="scale" tone="inverse" className="shrink-0" />
             <div>
               <h2 id="featured-service-heading" className="text-xl font-semibold sm:text-2xl">
                 {FEATURED_SERVICE_COPY.title}

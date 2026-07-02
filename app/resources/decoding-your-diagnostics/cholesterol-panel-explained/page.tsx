@@ -6,7 +6,7 @@ import { articles } from "@/data/articles";
 const article = articles.find((a) => a.slug === "cholesterol-panel-explained")!;
 
 const seo = buildPageSeo({
-  title: `${article.title} — Umbrella Health`,
+  title: `${article.title}  Umbrella Health`,
   description: article.excerpt,
   path: `/resources/decoding-your-diagnostics/${article.slug}`,
   type: "article",

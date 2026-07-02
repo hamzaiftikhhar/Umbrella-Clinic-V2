@@ -1,24 +1,31 @@
 import Image from "next/image";
-import { ArrowRight, Database, Layers, Play, User } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
+import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
+import type { LucideIconKey } from "@/components/icons/icon-keys";
 
-const points = [
+const points: { iconKey: LucideIconKey; title: string }[] = [
   {
-    icon: Database,
-    title: "Data-Driven",
-    body: "Advanced diagnostics, biomarker testing, imaging, sleep studies, and objective measurements that help guide every decision.",
+    iconKey: "stethoscope",
+    title: "Experienced Primary Care Physicians & Specialists",
   },
   {
-    icon: Layers,
-    title: "Multispecialty",
-    body: "Primary care, cardiology, neurology, sleep medicine, pain management, and more—all working together in one practice.",
-  },
-  {
-    icon: User,
+    iconKey: "heart-handshake",
     title: "Built Around You",
-    body: "Longer-term relationships, coordinated care, and a team that understands your history—not just today's appointment.",
+  },
+  {
+    iconKey: "scan-line",
+    title: "Advanced Diagnostics",
+  },
+  {
+    iconKey: "hospital",
+    title: "Multispeciality Healthcare",
+  },
+  {
+    iconKey: "clock",
+    title: "Same-Day Appointments & Coordinated Care",
   },
 ];
 
@@ -30,37 +37,20 @@ export function UmbrellaDifference() {
       className="bg-background py-16 sm:py-24"
     >
       <Container>
-        <div className="grid items-start gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16 xl:gap-20">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
-              Why Umbrella Health
-            </p>
             <h2
               id="difference-heading"
               className="font-display max-w-xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl"
             >
-              A Better Way To{" "}
-              <span className="font-light italic text-primary">Navigate Healthcare</span>
+              Why Patients Choose Umbrella Health In{" "}
+              <span className="font-light italic text-primary">New York?</span>
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Most healthcare systems are fragmented. Umbrella brings primary care, specialists,
-              diagnostics, and preventive medicine together so you spend less time coordinating your
-              care and more time improving your health.
+              Experience patient-centered healthcare from trusted primary care doctors in NYC. At
+              Umbrella Health, we combine clinical expertise, compassionate care, and personalized
+              treatment to help you achieve better long-term health.
             </p>
-
-            <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-6 lg:gap-8">
-              {points.map((p) => (
-                <div key={p.title} className="flex flex-col">
-                  <span className="inline-grid h-11 w-11 place-items-center rounded-xl bg-mint text-primary">
-                    <p.icon className="h-5 w-5" strokeWidth={1.75} />
-                  </span>
-                  <h3 className="mt-4 text-base font-semibold leading-snug text-foreground">
-                    {p.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                </div>
-              ))}
-            </div>
 
             <div className="mt-10">
               <Link
@@ -73,13 +63,13 @@ export function UmbrellaDifference() {
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[480px] overflow-hidden rounded-[1.75rem] bg-muted shadow-[var(--shadow-card)] lg:mx-0 lg:ml-auto">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[1.75rem] bg-muted shadow-[var(--shadow-card)] lg:mx-0 lg:ml-auto lg:max-w-none">
             <Image
               src={IMG.premiumDoctorPortrait}
               alt="Board-certified physician at Umbrella Health"
               fill
               className="object-cover object-top"
-              sizes="(max-width: 1024px) 90vw, 480px"
+              sizes="(max-width: 1024px) 90vw, 520px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
             <button
@@ -90,6 +80,21 @@ export function UmbrellaDifference() {
               <Play className="ml-0.5 h-6 w-6 fill-current" />
             </button>
           </div>
+        </div>
+
+        {/* Uniform 5-point grid — equal columns, consistent card height */}
+        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-5">
+          {points.map((p) => (
+            <div
+              key={p.title}
+              className="flex h-full min-h-[11.5rem] flex-col rounded-[1.25rem] border border-border/60 bg-card p-5 shadow-[var(--shadow-card)] sm:p-6"
+            >
+              <PremiumIcon iconKey={p.iconKey} size="md" />
+              <h3 className="mt-4 flex-1 text-sm font-semibold leading-snug text-foreground sm:text-base">
+                {p.title}
+              </h3>
+            </div>
+          ))}
         </div>
       </Container>
     </section>

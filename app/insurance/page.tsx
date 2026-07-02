@@ -42,7 +42,7 @@ const steps = [
   {
     n: 1,
     title: "Book online via Zocdoc",
-    body: "Pick a time that works. New patient or returning — both flow through Zocdoc.",
+    body: "Pick a time that works. New patient or returning  both flow through Zocdoc.",
   },
   {
     n: 2,
@@ -64,7 +64,7 @@ const steps = [
 const faqs = [
   {
     q: "Do you take my plan?",
-    a: "Most likely yes — we work with all of the major carriers listed above and many sub-plans. Verify before your visit if you'd like certainty.",
+    a: "Most likely yes  we work with all of the major carriers listed above and many sub-plans. Verify before your visit if you'd like certainty.",
   },
   {
     q: "What if you're out-of-network?",
@@ -72,13 +72,13 @@ const faqs = [
   },
   {
     q: "Are longevity programs covered by insurance?",
-    a: "Most longevity and executive-physical add-ons are cash-pay and not covered by insurance — they're FSA/HSA-eligible where applicable.",
+    a: "Most longevity and executive-physical add-ons are cash-pay and not covered by insurance  they're FSA/HSA-eligible where applicable.",
   },
   { q: "Do you accept FSA/HSA?", a: "Yes, for qualifying medical services and self-pay add-ons." },
 ];
 
 const seo = buildPageSeo({
-  title: "Insurance & Pricing — Umbrella Health NYC",
+  title: "Insurance & Pricing  Umbrella Health NYC",
   description:
     "We accept most major insurance plans and offer transparent cash-pay for longevity and self-pay services.",
   path: "/insurance",
@@ -128,7 +128,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Don't see yours? Verify your coverage at booking — we work with many additional plans.
+            Don't see yours? Verify your coverage at booking  we work with many additional plans.
           </p>
         </Container>
       </section>
@@ -150,7 +150,7 @@ function Page() {
             ))}
           </ol>
           <div className="mt-12 flex justify-center">
-            <BookButton>Book — we'll verify coverage</BookButton>
+            <BookButton>Book  we'll verify coverage</BookButton>
           </div>
         </Container>
       </section>

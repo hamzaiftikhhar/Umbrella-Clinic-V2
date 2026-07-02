@@ -8,7 +8,7 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Patient Portal — Umbrella Health",
+  title: "Patient Portal  Umbrella Health",
   description: "Access your records, messages, results, and scheduling.",
   path: "/portal",
   crumbs: [{ label: "Home", to: "/" }, { label: "Patient Portal" }],

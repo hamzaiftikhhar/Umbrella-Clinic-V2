@@ -19,7 +19,7 @@ const GALLERY_IMAGES = [
   "/images/APNQkAE3aRckid3msJlKgTpj6ZemfukqgTeRybAw3fyQR3cHS302IFTaomOuHAdO04rb2vYv4VC1f5jtD-5X-ny4QmQzzbjDk_ajwNTKfMjgc0l1wHpeiEOdRT_DNZ0i46xFhzUqu6ipw4032-h3024-k-no.jpg",
 ] as const;
 
-/** Homepage “Our space” — approved carousel layout with clinic photography */
+/** Homepage “Our space”  approved carousel layout with clinic photography */
 export function GalleryBanner() {
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 

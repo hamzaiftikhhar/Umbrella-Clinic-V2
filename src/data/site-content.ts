@@ -17,16 +17,16 @@ export const SITE_FAQS = [
     a: "Unlike traditional practices, Umbrella combines primary care, specialists, diagnostics, and preventive medicine under one roof with a data-driven approach to healthcare.",
   },
   {
-    q: "Do you offer sleep studies?",
-    a: "Yes. We provide convenient home sleep studies and comprehensive sleep evaluations.",
+    q: "How can I find a primary care doctor near me?",
+    a: "If you're looking for a primary care doctor near you, choose a provider who offers comprehensive healthcare, preventive services, and convenient access to specialists when needed. At Umbrella Health, our experienced primary care doctors in Lower Manhattan provide personalized care for adults, with same-day appointments available whenever possible.",
   },
   {
-    q: "Do you offer medical weight loss programs?",
-    a: "Yes. Our physician-supervised weight loss programs include GLP-1 medications when appropriate, along with metabolic assessments and ongoing monitoring.",
+    q: "Are your primary care doctors accepting new patients?",
+    a: "Yes. Our primary care doctors are accepting new patients and welcome adults seeking preventive care, annual physical exams, chronic disease management, and ongoing primary healthcare. Contact our office to schedule your first appointment.",
   },
   {
-    q: "Where are you located?",
-    a: "Umbrella Health is located in Union Square, serving patients throughout Lower Manhattan, Downtown NYC, and surrounding neighborhoods.",
+    q: "Do you accept Medicaid for adult primary care?",
+    a: "Umbrella Health works with a variety of insurance plans, including certain Medicaid plans. Since eligibility and coverage depend on your specific plan, we encourage you to contact our office before your visit. Our staff will gladly verify your insurance and explain your coverage options.",
   },
   {
     q: "How do I book an appointment?",

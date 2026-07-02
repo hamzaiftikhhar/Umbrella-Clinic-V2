@@ -10,7 +10,7 @@ import { ArticleCard } from "@/components/site/ArticleCard";
 const p = pillars["longevity"];
 
 const seo = buildPageSeo({
-  title: `${p.title} — Umbrella Health Resources`,
+  title: `${p.title}  Umbrella Health Resources`,
   description: p.description,
   path: `/resources/${p.slug}`,
   crumbs: [

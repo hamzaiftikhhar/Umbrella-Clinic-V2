@@ -26,7 +26,7 @@ const places = [
 ];
 
 const seo = buildPageSeo({
-  title: "Neighborhoods We Serve — Umbrella Health NYC",
+  title: "Neighborhoods We Serve  Umbrella Health NYC",
   description:
     "Multispecialty care from one NoHo clinic serving Union Square, Tribeca/FiDi, SoHo, and Brooklyn.",
   path: "/locations",

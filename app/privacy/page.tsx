@@ -6,7 +6,7 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Privacy Policy — Umbrella Health",
+  title: "Privacy Policy  Umbrella Health",
   description: "How Umbrella Health collects, uses, and protects your information.",
   path: "/privacy",
   crumbs: [{ label: "Home", to: "/" }, { label: "Privacy" }],

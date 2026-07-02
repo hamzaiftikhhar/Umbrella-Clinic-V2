@@ -4,9 +4,9 @@ import { NeighborhoodPage } from "@/components/site/NeighborhoodPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Care for Brooklyn Professionals — Umbrella Health NYC",
+  title: "Care for Brooklyn Professionals  Umbrella Health NYC",
   description:
-    "Multispecialty care commutable from Williamsburg, Brooklyn Heights, and DUMBO — concierge-quality without concierge pricing.",
+    "Multispecialty care commutable from Williamsburg, Brooklyn Heights, and DUMBO  concierge-quality without concierge pricing.",
   path: "/locations/brooklyn",
   crumbs: [
     { label: "Home", to: "/" },
@@ -25,7 +25,7 @@ export default function RoutePage() {
           name: "Brooklyn",
           italic: "A 20-minute commute to",
           description:
-            "Easily commutable from Williamsburg, Brooklyn Heights, and DUMBO — and worth the trip for genuinely integrated specialty care.",
+            "Easily commutable from Williamsburg, Brooklyn Heights, and DUMBO  and worth the trip for genuinely integrated specialty care.",
           image: IMG.brooklyn,
           imageAlt: "Brooklyn cityscape",
           transit: "L from Bedford Ave (15 min); A/C from High St (12 min); F from York (10 min)",

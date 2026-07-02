@@ -10,9 +10,9 @@ import { PHYSICIANS } from "@/data/physicians";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Our Physicians — Umbrella Health NYC",
+  title: "Our Physicians  Umbrella Health NYC",
   description:
-    "Meet the physicians behind Umbrella Health — a multispecialty team delivering coordinated, data-led care in Lower Manhattan.",
+    "Meet the physicians behind Umbrella Health  a multispecialty team delivering coordinated, data-led care in Lower Manhattan.",
   path: "/our-physicians",
   crumbs: [{ label: "Home", to: "/" }, { label: "Our Physicians" }],
   extraSchema: PHYSICIANS.map((p) => ({
@@ -32,7 +32,7 @@ function Page() {
         eyebrow="The care team"
         italic="The people behind"
         title="your numbers."
-        description="A multispecialty team practicing from one connected record — so primary care, specialists, and diagnostics move together, not in silos."
+        description="A multispecialty team practicing from one connected record  so primary care, specialists, and diagnostics move together, not in silos."
         image={IMG.drRajat}
         imageAlt="Umbrella Health founding physician Dr. Rajat Lamington"
         crumbs={[{ label: "Home", to: "/" }, { label: "Our Physicians" }]}

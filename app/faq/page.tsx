@@ -11,9 +11,9 @@ import { IMG } from "@/data/images";
 const faqs = [...SITE_FAQS];
 
 const seo = buildPageSeo({
-  title: "FAQ — Umbrella Health NYC",
+  title: "FAQ  Umbrella Health NYC",
   description:
-    "Answers to the most common questions about Umbrella Health — insurance, booking, services, location, and more.",
+    "Answers to the most common questions about Umbrella Health  insurance, booking, services, location, and more.",
   path: "/faq",
   crumbs: [{ label: "Home", to: "/" }, { label: "FAQ" }],
   extraSchema: [faqSchema(faqs)],

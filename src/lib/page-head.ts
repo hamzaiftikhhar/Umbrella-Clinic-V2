@@ -64,7 +64,7 @@ export function buildPageSeo({
   return { metadata, jsonLd };
 }
 
-/** @deprecated TanStack Start helper — use buildPageSeo for Next.js pages. */
+/** @deprecated TanStack Start helper  use buildPageSeo for Next.js pages. */
 export function pageHead(opts: HeadOpts) {
   const { jsonLd } = buildPageSeo(opts);
   const scripts = jsonLd.map((s) => ({

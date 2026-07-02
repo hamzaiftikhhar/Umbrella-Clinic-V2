@@ -1,38 +1,62 @@
 import Image from "next/image";
-import { ArrowRight, Award, BadgeCheck, GraduationCap } from "lucide-react";
+import { ArrowRight, BadgeCheck } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
+import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
+import type { LucideIconKey } from "@/components/icons/icon-keys";
 
-const credentials = [
-  { icon: GraduationCap, label: "Columbia University Trained" },
-  { icon: GraduationCap, label: "NewYork-Presbyterian Trained" },
-  { icon: BadgeCheck, label: "Board-Certified Family Medicine" },
-  { icon: Award, label: "Fellowship-Trained Interventional Pain Management" },
+const credentials: {
+  iconKey: LucideIconKey;
+  title: string;
+  subtitle: string;
+}[] = [
+  {
+    iconKey: "graduation-cap",
+    title: "Medical Education",
+    subtitle: "Odessa National Medical University",
+  },
+  {
+    iconKey: "hospital",
+    title: "Residency",
+    subtitle: "Columbia University Irving Medical Center",
+  },
+  {
+    iconKey: "medal",
+    title: "Fellowship",
+    subtitle: "Weill Cornell Medicine • Pain Medicine",
+  },
+  {
+    iconKey: "badge-check",
+    title: "Board Certified",
+    subtitle: "American Board of Family Medicine",
+  },
 ];
 
 export function FounderProfile() {
   return (
     <section id="founder" aria-labelledby="founder-heading" className="bg-secondary/30 py-16 sm:py-24">
       <Container size="lg">
-        <div className="grid items-center gap-14 md:grid-cols-[minmax(0,0.95fr)_1.05fr] md:gap-16 lg:gap-20">
-          <div className="relative mx-auto w-full max-w-[22rem] md:mx-0">
-            <div className="relative aspect-square overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-card)]">
-              <Image
-                src={IMG.premiumDoctorPortrait}
-                alt="Dr. Rajat Lamington, founding physician at Umbrella Health"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 80vw, 352px"
-              />
-            </div>
+        <div className="grid items-stretch gap-14 md:grid-cols-[minmax(0,1fr)_1.05fr] md:gap-16 lg:gap-20">
+          <div className="relative flex items-center justify-center md:justify-start">
+            <div className="relative aspect-square w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem]">
+              <div className="relative h-full w-full overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-card)]">
+                <Image
+                  src={IMG.premiumDoctorPortrait}
+                  alt="Dr. Rajat Lamington, founding physician at Umbrella Health"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 80vw, (max-width: 1024px) 448px, 512px"
+                />
+              </div>
 
-            <div className="absolute bottom-6 left-0 max-w-[13.5rem] rounded-xl bg-primary px-4 py-3 text-primary-foreground shadow-md">
+              <div className="absolute bottom-6 left-0 max-w-[13.5rem] rounded-xl bg-primary px-4 py-3 text-primary-foreground shadow-md sm:bottom-8">
               <p className="flex items-center gap-2 text-sm font-semibold">
                 Dr. Rajat Lamington
                 <BadgeCheck className="h-4 w-4 shrink-0 text-primary-foreground/90" />
               </p>
               <p className="mt-0.5 text-xs text-primary-foreground/75">Founding physician</p>
+            </div>
             </div>
           </div>
 
@@ -53,13 +77,16 @@ export function FounderProfile() {
               to deliver better outcomes.
             </p>
 
-            <ul className="mt-8 space-y-3">
+            <ul className="mt-10 space-y-5">
               {credentials.map((item) => (
-                <li key={item.label} className="flex items-center gap-3 text-sm text-foreground/85">
-                  <span className="inline-grid h-9 w-9 shrink-0 place-items-center rounded-full bg-mint text-primary">
-                    <item.icon className="h-4 w-4" />
-                  </span>
-                  {item.label}
+                <li key={item.title} className="flex items-start gap-4">
+                  <PremiumIcon iconKey={item.iconKey} size="sm" className="mt-0.5" />
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{item.title}</p>
+                    <p className="mt-0.5 text-sm leading-relaxed text-muted-foreground">
+                      {item.subtitle}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>

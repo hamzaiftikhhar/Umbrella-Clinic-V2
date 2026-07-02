@@ -7,8 +7,8 @@ import { BookButton } from "./primitives/BookButton";
 import { CTABanner } from "./primitives/CTABanner";
 import { PillList } from "./PageBuilding";
 import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
-import { IconBadge } from "./primitives/IconBadge";
-import type { LucideIcon } from "lucide-react";
+import { PremiumIcon } from "./primitives/IconBadge";
+import type { LucideIconKey } from "@/components/icons/icon-keys";
 
 export interface LeafConfig {
   hero: {
@@ -25,7 +25,7 @@ export interface LeafConfig {
     heading: string;
     accent?: string;
     body: string;
-    bullets?: { icon: LucideIcon; title: string; body: string }[];
+    bullets?: { iconKey: LucideIconKey; title: string; body: string }[];
   };
   pills?: { label: string; items: string[] };
   related?: {
@@ -63,7 +63,7 @@ export function LeafPage({ config }: { config: LeafConfig }) {
                   <ul className="mt-8 space-y-6">
                     {c.intro.bullets.map((b) => (
                       <li key={b.title} className="flex gap-4">
-                        <IconBadge icon={b.icon} />
+                        <PremiumIcon iconKey={b.iconKey} size="lg" />
                         <div>
                           <h3 className="text-base font-semibold text-foreground">{b.title}</h3>
                           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

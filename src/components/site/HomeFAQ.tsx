@@ -54,7 +54,7 @@ export function HomeFAQ() {
               id="faq-heading"
               title="Frequently Asked"
               accent="Questions"
-              description="Insurance, services, referrals, and how to book — the essentials before your first visit."
+              description="Insurance, services, referrals, and how to book  the essentials before your first visit."
             />
 
             <FAQHelpContact className="mt-8 border-t border-border/60 pt-8 md:sticky md:top-24 md:mt-10" />

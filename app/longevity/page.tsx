@@ -22,13 +22,13 @@ const programs = [
   },
   {
     title: "Hormone & Metabolic Optimization",
-    description: "Clinical, evidence-based — not wellness-spa adjacent.",
+    description: "Clinical, evidence-based  not wellness-spa adjacent.",
     to: "/longevity/hormone-optimization",
   },
 ];
 
 const seo = buildPageSeo({
-  title: "Longevity & Healthspan Medicine NYC — Umbrella Health",
+  title: "Longevity & Healthspan Medicine NYC  Umbrella Health",
   description:
     "Executive physicals, biomarker panels, and healthspan programs from a real multispecialty clinic. Measured optimization, not vibes.",
   path: "/longevity",
@@ -43,7 +43,7 @@ function Page() {
         eyebrow="Longevity"
         italic="The next 30 years,"
         title="measured and optimized."
-        description="Longevity medicine done with rigor — executive physicals, biomarker programs, and metabolic optimization, run by physicians who own the diagnostics."
+        description="Longevity medicine done with rigor  executive physicals, biomarker programs, and metabolic optimization, run by physicians who own the diagnostics."
         image={IMG.longevityHero}
         imageAlt="Longevity program patient in NYC clinic"
         crumbs={[{ label: "Home", to: "/" }, { label: "Longevity" }]}
@@ -69,7 +69,7 @@ function Page() {
               Full healthspan dashboard launches 2026.
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-              Join the waitlist to be first — and to lock in founding-member pricing.
+              Join the waitlist to be first  and to lock in founding-member pricing.
             </p>
             <Link
               href="/longevity/waitlist"

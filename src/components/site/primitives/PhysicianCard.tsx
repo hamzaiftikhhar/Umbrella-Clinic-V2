@@ -19,7 +19,7 @@ type PhysicianCardProps = Pick<
 > & { className?: string; priority?: boolean };
 
 /**
- * Premium provider card — portrait with a floating social pill overlapping the
+ * Premium provider card  portrait with a floating social pill overlapping the
  * bottom edge, and the name + specialty set beneath on the page canvas.
  */
 export function PhysicianCard({
@@ -45,7 +45,7 @@ export function PhysicianCard({
           />
         </div>
 
-        {/* Floating social pill — overlaps the bottom edge */}
+        {/* Floating social pill  overlaps the bottom edge */}
         {socials.length > 0 && (
           <div className="absolute bottom-0 left-1/2 flex -translate-x-1/2 translate-y-1/2 items-center gap-1 rounded-full border border-border/50 bg-background px-2 py-1.5 shadow-[var(--shadow-soft)]">
             {socials.map((s) => {

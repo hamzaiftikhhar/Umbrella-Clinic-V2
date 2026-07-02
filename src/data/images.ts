@@ -21,7 +21,7 @@ export const IMG = {
   clinicInterior:
     "/images/APNQkAG2VC7P3b3M7-u1nk5TVqiBrhB-Jb-5gMl7-7wE-NF0Kcu7wYmgGbcKNfvO6wNuHyqWjKZXLFcLcvM0DbAWHqx-CAt3pFKtN5_lavgX1uEgq4VCtVczKo-eZe09-F_0mwaJxsD03Qw3890-h2918-k-no.jpg",
 
-  // People — real founding physician photo stands in for placeholder portraits
+  // People  real founding physician photo stands in for placeholder portraits
   founder: "/images/dr-rajat.png",
   founderAlt: "/images/dr-rajat.png",
   doctorWoman1: "/images/dr-rajat.png",

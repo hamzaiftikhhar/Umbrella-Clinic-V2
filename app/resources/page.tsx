@@ -12,7 +12,7 @@ import { IMG } from "@/data/images";
 import { ArrowRight } from "lucide-react";
 
 const seo = buildPageSeo({
-  title: "Resources — Umbrella Health Learning Hub",
+  title: "Resources  Umbrella Health Learning Hub",
   description:
     "Plain-English health writing across diagnostics, longevity, and real-world health for busy professionals.",
   path: "/resources",
@@ -27,7 +27,7 @@ function Page() {
         eyebrow="Resources"
         italic="Plain-English"
         title="health writing."
-        description="From decoding biomarkers to thinking clearly about longevity — written by clinicians, for the people they actually treat."
+        description="From decoding biomarkers to thinking clearly about longevity  written by clinicians, for the people they actually treat."
         image={IMG.busyPro}
         imageAlt="Reading Umbrella resources"
         crumbs={[{ label: "Home", to: "/" }, { label: "Resources" }]}

@@ -15,7 +15,7 @@ export interface CTABannerProps {
 
 /**
  * Page-closing call-to-action. Art-directed precision panel (tokenized navy +
- * data-grid motif) — replaces the repeated clinic-photo carousel.
+ * data-grid motif)  replaces the repeated clinic-photo carousel.
  */
 export function CTABanner({
   eyebrow,

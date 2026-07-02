@@ -1,4 +1,6 @@
 import { Container } from "./primitives/Container";
+import { InsuranceFinderDialog } from "./InsuranceFinderDialog";
+import { TOTAL_IN_NETWORK_PLANS } from "@/data/insurance-network";
 
 const items = [
   {
@@ -31,19 +33,25 @@ export function InsuranceLogoBar() {
   return (
     <section aria-label="Accepted insurance" className="py-12 sm:py-16">
       <Container>
-        <p className="mb-8 text-center text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-          We accept most major insurance
-        </p>
+        <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+          <div className="text-center sm:text-left">
+            <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
+              We accept {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ insurance plans and in-network plans across NYC
+            </p>
+          </div>
+          <InsuranceFinderDialog />
+        </div>
+
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 lg:gap-4">
           {items.map((item) => (
             <li
               key={item.name}
-              className="flex h-20 sm:h-24 items-center justify-center rounded-2xl border border-border/60 bg-card px-4 py-4 transition-colors hover:bg-muted/50"
+              className="flex h-20 items-center justify-center rounded-2xl border border-border/60 bg-card px-4 py-4 sm:h-24 transition-colors hover:bg-muted/50"
             >
               <img
                 src={item.src}
                 alt={`${item.name} logo`}
-                className="h-10 sm:h-14 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                className="h-10 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-14"
                 loading="lazy"
               />
             </li>

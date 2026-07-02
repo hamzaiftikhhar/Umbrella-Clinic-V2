@@ -20,7 +20,7 @@ export const PRIMARY_NAV: NavItem[] = [
   { label: "Contact Us", to: "/visit-us" },
 ];
 
-/** @deprecated Use PRIMARY_NAV + SPECIALTIES_NAV — kept for any legacy imports */
+/** @deprecated Use PRIMARY_NAV + SPECIALTIES_NAV  kept for any legacy imports */
 export const MORE_NAV: NavItem[] = [
   { label: "FAQ", to: "/faq" },
   { label: "Resources", to: "/resources" },

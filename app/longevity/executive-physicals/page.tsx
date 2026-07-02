@@ -1,13 +1,12 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { ClipboardCheck, ScanLine, FlaskConical } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Executive Physicals NYC — Umbrella Health",
+  title: "Executive Physicals NYC  Umbrella Health",
   description:
-    "A half-day clinical deep dive for principals and partners — imaging, biomarkers, cardiac and metabolic profiling, all in one place.",
+    "A half-day clinical deep dive for principals and partners  imaging, biomarkers, cardiac and metabolic profiling, all in one place.",
   path: "/longevity/executive-physicals",
   crumbs: [
     { label: "Home", to: "/" },
@@ -28,7 +27,7 @@ export default function RoutePage() {
             italic: "A half-day,",
             title: "for the next decade.",
             description:
-              "The most comprehensive single-visit workup we offer — imaging, advanced labs, cardiac, sleep, and a written plan.",
+              "The most comprehensive single-visit workup we offer  imaging, advanced labs, cardiac, sleep, and a written plan.",
             image: IMG.exec,
             imageAlt: "Executive physical at Umbrella",
             tone: "mint",
@@ -41,20 +40,20 @@ export default function RoutePage() {
           intro: {
             heading: "What's",
             accent: "included.",
-            body: "One scheduled day. Multiple specialties. A single, clear summary — and a plan we'll run with you all year.",
+            body: "One scheduled day. Multiple specialties. A single, clear summary  and a plan we'll run with you all year.",
             bullets: [
               {
-                icon: ClipboardCheck,
+                iconKey: "clipboard-check",
                 title: "Full medical workup",
                 body: "Internal medicine, cardiology, and longevity-medicine touchpoints in one day.",
               },
               {
-                icon: ScanLine,
+                iconKey: "scan-line",
                 title: "Comprehensive imaging",
                 body: "EKG, vascular ultrasound, and selected screening imaging.",
               },
               {
-                icon: FlaskConical,
+                iconKey: "flask-conical",
                 title: "Advanced biomarkers",
                 body: "Full lipid (ApoB/Lp(a)), metabolic, hormonal, and inflammation panels.",
               },

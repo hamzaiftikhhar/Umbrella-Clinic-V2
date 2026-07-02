@@ -4,7 +4,7 @@ import { NeighborhoodPage } from "@/components/site/NeighborhoodPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Primary & Specialty Care near Tribeca / FiDi — Umbrella",
+  title: "Primary & Specialty Care near Tribeca / FiDi  Umbrella",
   description:
     "Concierge-quality multispecialty care for finance and law professionals near Tribeca and the Financial District.",
   path: "/locations/tribeca-fidi",
@@ -25,10 +25,10 @@ export default function RoutePage() {
           name: "Tribeca & FiDi",
           italic: "Concierge-quality care",
           description:
-            "Built for downtown firms — executive physicals, longevity, GLP-1, and multispecialty under one roof, insurance accepted.",
+            "Built for downtown firms  executive physicals, longevity, GLP-1, and multispecialty under one roof, insurance accepted.",
           image: IMG.tribeca,
           imageAlt: "Tribeca / Financial District street view",
-          transit: "6 at Canal — 8-minute walk; 4/5 at Brooklyn Bridge — 12 minutes",
+          transit: "6 at Canal  8-minute walk; 4/5 at Brooklyn Bridge  12 minutes",
           serves: "Tribeca, Financial District, Battery Park City",
           why: [
             "Executive physical programs designed for principals and partners",

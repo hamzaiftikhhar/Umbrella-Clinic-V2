@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { EmployersPageClient } from "./employers-page-client";
 
 const seo = buildPageSeo({
-  title: "For Employers — Executive Health & Longevity | Umbrella",
+  title: "For Employers  Executive Health & Longevity | Umbrella",
   description:
     "Executive physicals, longevity programs, and on-site days for NYC firms. Concierge-quality care for your team.",
   path: "/employers",
