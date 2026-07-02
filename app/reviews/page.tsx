@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { ReviewsPageClient } from "./reviews-page-client";
 
 const seo = buildPageSeo({
-  title: "Patient Reviews — Umbrella Health NYC",
+  title: "Patient Reviews  Umbrella Health NYC",
   description: "Real reviews from real Umbrella Health patients across NYC.",
   path: "/reviews",
   crumbs: [{ label: "Home", to: "/" }, { label: "Patient Reviews" }],

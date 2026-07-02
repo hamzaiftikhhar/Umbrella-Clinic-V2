@@ -1,13 +1,12 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { FlaskConical, Activity, ShieldCheck } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Hormone & Metabolic Optimization NYC — Umbrella",
+  title: "Hormone & Metabolic Optimization NYC  Umbrella",
   description:
-    "Evidence-based hormone and metabolic optimization — by physicians, not influencers.",
+    "Evidence-based hormone and metabolic optimization  by physicians, not influencers.",
   path: "/longevity/hormone-optimization",
   crumbs: [
     { label: "Home", to: "/" },
@@ -44,17 +43,17 @@ export default function RoutePage() {
             body: "We don't add a supplement aisle to the visit. We measure, we explain, we adjust.",
             bullets: [
               {
-                icon: FlaskConical,
+                iconKey: "flask-conical",
                 title: "Comprehensive hormonal panels",
-                body: "Thyroid, sex hormones, cortisol — interpreted in clinical context.",
+                body: "Thyroid, sex hormones, cortisol  interpreted in clinical context.",
               },
               {
-                icon: Activity,
+                iconKey: "activity",
                 title: "Metabolic optimization",
                 body: "Insulin resistance, lipid optimization, body composition.",
               },
               {
-                icon: ShieldCheck,
+                iconKey: "shield-check",
                 title: "Physician oversight",
                 body: "No nurse-only telehealth shortcuts. Real clinical accountability.",
               },

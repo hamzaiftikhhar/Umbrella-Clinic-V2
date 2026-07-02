@@ -1,13 +1,12 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { HeartPulse, Activity, ScanLine } from "lucide-react";
 import { LeafPage, faqSchema } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const faqs = [
   {
     q: "Do you do EKG and echo on-site?",
-    a: "Yes — EKG, ambulatory telemetry, and vascular ultrasound are all owned and read in-house.",
+    a: "Yes  EKG, ambulatory telemetry, and vascular ultrasound are all owned and read in-house.",
   },
   {
     q: "How fast do I get results?",
@@ -16,7 +15,7 @@ const faqs = [
 ];
 
 const seo = buildPageSeo({
-  title: "Cardiology & Vascular Care NYC — Umbrella Health",
+  title: "Cardiology & Vascular Care NYC  Umbrella Health",
   description:
     "In-house EKG, telemetry, and vascular ultrasound from board-certified cardiologists. Same-day results, integrated with your primary care.",
   path: "/specialties/cardiology-vascular",
@@ -40,7 +39,7 @@ export default function RoutePage() {
             italic: "Your heart, ",
             title: "in real time.",
             description:
-              "Board-certified cardiologists with owned diagnostics — so the answer arrives the same day, not the next week.",
+              "Board-certified cardiologists with owned diagnostics  so the answer arrives the same day, not the next week.",
             image: IMG.ekg,
             imageAlt: "Cardiac diagnostic equipment at Umbrella Health",
             crumbs: [
@@ -52,20 +51,20 @@ export default function RoutePage() {
           intro: {
             heading: "Faster results,",
             accent: "same team.",
-            body: "Owning the diagnostics means your cardiologist reads your own data — not a referral packet from a stranger.",
+            body: "Owning the diagnostics means your cardiologist reads your own data  not a referral packet from a stranger.",
             bullets: [
               {
-                icon: HeartPulse,
+                iconKey: "heart-pulse",
                 title: "In-house EKG & telemetry",
                 body: "Resting EKG and ambulatory monitoring done at the clinic.",
               },
               {
-                icon: ScanLine,
+                iconKey: "scan-line",
                 title: "Vascular ultrasound",
                 body: "Carotid, abdominal, and peripheral vascular ultrasound on-site.",
               },
               {
-                icon: Activity,
+                iconKey: "activity",
                 title: "Risk stratification",
                 body: "Advanced lipid panels and longitudinal tracking against your baseline.",
               },

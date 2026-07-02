@@ -68,6 +68,10 @@
   --color-accent-amber-surface: var(--accent-amber-surface);
   --color-rating-star: var(--rating-star);
 
+  /* Premium icon tiles */
+  --color-icon-premium-surface: var(--icon-premium-surface);
+  --color-icon-premium: var(--icon-premium-color);
+
   --color-ring-offset-background: var(--background);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
@@ -89,6 +93,11 @@
 
   /* Premium easing for micro-interactions */
   --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Premium icon tiles — aligned to clinical navy palette */
+  --icon-premium-surface: #eef3fa;
+  --icon-premium-color: var(--navy-700);
+  --icon-premium-shadow: 0 8px 30px rgba(12, 20, 34, 0.06);
 
   /* Deep clinical navy scale */
   --navy-900: #0a1f3a;
@@ -249,6 +258,47 @@
 @utility transition-premium {
   transition-timing-function: var(--ease-premium);
   transition-duration: 300ms;
+}
+
+/* Homepage section rhythm — uniform vertical padding */
+@utility section-py {
+  @apply py-10 sm:py-14;
+}
+
+@utility section-py-compact {
+  @apply py-6 sm:py-8;
+}
+
+@keyframes reviews-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reviews-marquee-track {
+  animation: reviews-marquee 90s linear infinite;
+}
+
+.reviews-marquee:hover .reviews-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .reviews-marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-marquee-track {
+    animation: none;
+  }
 }
 
 /* How It Works — solar system orbit */

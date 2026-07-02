@@ -1,24 +1,32 @@
-import { ArrowRight, Stethoscope, FlaskConical, Activity } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
+import { PremiumIcon } from "./primitives/IconBadge";
 import { Reveal } from "./primitives/Reveal";
 import { IMG } from "@/data/images";
+import type { LucideIconKey } from "@/components/icons/icon-keys";
 
-const pillars = [
+const pillars: {
+  title: string;
+  description: string;
+  to: string;
+  iconKey: LucideIconKey;
+  image: string;
+}[] = [
   {
     title: "Specialties",
     description:
-      "Primary care, cardiology, neurology, sleep, and interventional pain — one coordinated team.",
+      "Primary care, cardiology, neurology, sleep, and interventional pain  one coordinated team.",
     to: "/specialties",
-    icon: Stethoscope,
+    iconKey: "stethoscope",
     image: IMG.examRoom,
   },
   {
     title: "Diagnostics & Data",
     description: "In-house imaging, labs, sleep, and biomarker panels. Results faster, in context.",
     to: "/diagnostics",
-    icon: FlaskConical,
+    iconKey: "flask-conical",
     image: IMG.lab,
   },
   {
@@ -26,7 +34,7 @@ const pillars = [
     description:
       "Executive physicals, healthspan programs, hormone & metabolic optimization. Measured.",
     to: "/longevity",
-    icon: Activity,
+    iconKey: "activity",
     image: IMG.longevityHero,
   },
 ];
@@ -57,9 +65,7 @@ export function PillarsGrid() {
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     loading="lazy"
                   />
-                  <span className="absolute left-4 top-4 inline-grid h-10 w-10 place-items-center rounded-full bg-background/95 text-primary">
-                    <p.icon className="h-5 w-5" />
-                  </span>
+                  <PremiumIcon iconKey={p.iconKey} size="md" tone="glass" className="absolute left-4 top-4" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-semibold text-foreground">{p.title}</h3>

@@ -16,7 +16,7 @@ const roles = [
 ];
 
 const seo = buildPageSeo({
-  title: "Careers at Umbrella Health — NYC",
+  title: "Careers at Umbrella Health  NYC",
   description: "Build a modern clinic with us. Open roles at Umbrella Health.",
   path: "/careers",
   crumbs: [{ label: "Home", to: "/" }, { label: "Careers" }],
@@ -32,7 +32,7 @@ export default function RoutePage() {
           eyebrow="Careers"
           italic="Build a"
           title="modern clinic with us."
-          description="We're a small, calm team building the multispecialty clinic we always wished existed. If that sounds right — say hi."
+          description="We're a small, calm team building the multispecialty clinic we always wished existed. If that sounds right  say hi."
           image={IMG.founderAlt}
           imageAlt="Umbrella Health team"
           crumbs={[{ label: "Home", to: "/" }, { label: "Careers" }]}

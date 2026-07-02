@@ -1,13 +1,12 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { Moon, Activity, ClipboardList } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Sleep Medicine & Home Sleep Study NYC — Umbrella Health",
+  title: "Sleep Medicine & Home Sleep Study NYC  Umbrella Health",
   description:
-    "Home sleep studies and apnea care designed for busy professionals. Diagnose, treat, and track — without an overnight lab.",
+    "Home sleep studies and apnea care designed for busy professionals. Diagnose, treat, and track  without an overnight lab.",
   path: "/specialties/sleep-medicine",
   crumbs: [
     { label: "Home", to: "/" },
@@ -40,20 +39,20 @@ export default function RoutePage() {
           intro: {
             heading: "Designed for",
             accent: "real lives.",
-            body: "A traditional sleep lab is a hassle. We start at home — with calibrated devices and full clinical interpretation.",
+            body: "A traditional sleep lab is a hassle. We start at home  with calibrated devices and full clinical interpretation.",
             bullets: [
               {
-                icon: Moon,
+                iconKey: "moon",
                 title: "Home sleep study",
                 body: "Diagnostic-grade at-home apnea testing with same-week results.",
               },
               {
-                icon: Activity,
+                iconKey: "activity",
                 title: "CPAP, oral appliance, lifestyle",
                 body: "Treatment options matched to your sleep pattern and travel schedule.",
               },
               {
-                icon: ClipboardList,
+                iconKey: "clipboard-list",
                 title: "Cardio-coordinated",
                 body: "We loop in cardiology when apnea is a heart risk factor.",
               },

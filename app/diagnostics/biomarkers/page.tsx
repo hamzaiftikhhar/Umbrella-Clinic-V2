@@ -1,11 +1,10 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { FlaskConical, LineChart, ClipboardList } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Advanced Biomarker & Lab Panels NYC — Umbrella",
+  title: "Advanced Biomarker & Lab Panels NYC  Umbrella",
   description:
     "Comprehensive lipid, metabolic, hormonal, and inflammation panels mapped to a real plan you can follow.",
   path: "/diagnostics/biomarkers",
@@ -28,7 +27,7 @@ export default function RoutePage() {
             italic: "The next 30 years,",
             title: "in your bloodwork.",
             description:
-              "Advanced biomarker panels — ApoB, Lp(a), HOMA-IR, hormones, hsCRP — interpreted against your baseline and explained in plain English.",
+              "Advanced biomarker panels  ApoB, Lp(a), HOMA-IR, hormones, hsCRP  interpreted against your baseline and explained in plain English.",
             image: IMG.microscope,
             imageAlt: "Laboratory microscope",
             crumbs: [
@@ -40,20 +39,20 @@ export default function RoutePage() {
           intro: {
             heading: "Numbers that",
             accent: "make sense.",
-            body: "A panel is only useful when someone walks you through it. We bridge bloodwork to a plan — the plan is the deliverable.",
+            body: "A panel is only useful when someone walks you through it. We bridge bloodwork to a plan  the plan is the deliverable.",
             bullets: [
               {
-                icon: FlaskConical,
+                iconKey: "flask-conical",
                 title: "Advanced panels",
-                body: "Beyond a basic CMP/lipid — ApoB, Lp(a), hsCRP, HOMA-IR, hormonal panels.",
+                body: "Beyond a basic CMP/lipid  ApoB, Lp(a), hsCRP, HOMA-IR, hormonal panels.",
               },
               {
-                icon: LineChart,
+                iconKey: "line-chart",
                 title: "Longitudinal tracking",
-                body: "We watch trends, not just snapshots — your numbers stack over years.",
+                body: "We watch trends, not just snapshots  your numbers stack over years.",
               },
               {
-                icon: ClipboardList,
+                iconKey: "clipboard-list",
                 title: "Plan-first explanation",
                 body: "Every panel ends with what we're going to do about it.",
               },

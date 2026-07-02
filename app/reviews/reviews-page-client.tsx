@@ -19,7 +19,7 @@ export function ReviewsPageClient() {
         eyebrow="Reviews"
         italic="Real stories from"
         title="real patients."
-        description="What it actually feels like to be a patient at Umbrella. Help others find data-driven care — leave a review after your visit."
+        description="What it actually feels like to be a patient at Umbrella. Help others find data-driven care  leave a review after your visit."
         image={IMG.patientHappy}
         imageAlt="Smiling Umbrella Health patient"
         crumbs={[{ label: "Home", to: "/" }, { label: "Reviews" }]}

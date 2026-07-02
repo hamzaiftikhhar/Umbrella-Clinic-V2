@@ -36,9 +36,9 @@ const specialties = [
 ];
 
 const seo = buildPageSeo({
-  title: "Specialties — Umbrella Health NYC",
+  title: "Specialties  Umbrella Health NYC",
   description:
-    "Primary care, cardiology, neurology, sleep, and pain management — one multispecialty NYC clinic, one record, one team.",
+    "Primary care, cardiology, neurology, sleep, and pain management  one multispecialty NYC clinic, one record, one team.",
   path: "/specialties",
   crumbs: [{ label: "Home", to: "/" }, { label: "Specialties" }],
 });
@@ -51,7 +51,7 @@ function Page() {
         eyebrow="Departments"
         title="under one roof."
         italic="Multispecialty care,"
-        description="From annual physicals to interventional cardiology and pain procedures — our specialists share a record, a hallway, and a plan for you."
+        description="From annual physicals to interventional cardiology and pain procedures  our specialists share a record, a hallway, and a plan for you."
         image={IMG.doctorPatient}
         imageAlt="Umbrella Health specialist with patient"
       />

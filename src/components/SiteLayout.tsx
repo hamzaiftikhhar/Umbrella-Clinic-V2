@@ -51,9 +51,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div
       className={cn(
         "relative isolate overflow-x-clip",
-        /* Mobile: cream canvas, footer in normal flow — no blue layer under content */
+        /* Mobile: cream canvas, footer in normal flow  no blue layer under content */
         "flex min-h-dvh flex-col bg-background",
-        /* Desktop: parallax reveal — blue canvas behind the scrolling cream mask */
+        /* Desktop: parallax reveal  blue canvas behind the scrolling cream mask */
         "md:block md:min-h-0 md:bg-primary",
       )}
     >

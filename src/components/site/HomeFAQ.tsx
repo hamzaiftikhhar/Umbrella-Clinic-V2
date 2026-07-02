@@ -45,7 +45,7 @@ function FAQHelpContact({ className }: { className?: string }) {
 
 export function HomeFAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="bg-background py-10 sm:py-14">
+    <section id="faq" aria-labelledby="faq-heading" className="section-py bg-background">
       <Container size="lg">
         <div className="grid gap-8 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.55fr)] md:items-start md:gap-10 lg:gap-12">
           <div>

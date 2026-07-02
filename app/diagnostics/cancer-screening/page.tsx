@@ -1,13 +1,12 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { ShieldCheck, ScanLine, Calendar } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Cancer Screening & Preventive Radiology NYC — Umbrella",
+  title: "Cancer Screening & Preventive Radiology NYC  Umbrella",
   description:
-    "Coordinated cancer screening — colon, breast, skin, lung, prostate — built into annual preventive care.",
+    "Coordinated cancer screening  colon, breast, skin, lung, prostate  built into annual preventive care.",
   path: "/diagnostics/cancer-screening",
   crumbs: [
     { label: "Home", to: "/" },
@@ -28,7 +27,7 @@ export default function RoutePage() {
             italic: "Prevention,",
             title: "on schedule.",
             description:
-              "Modern preventive screening coordinated by your primary doctor — so you're not chasing 12 different reminders from 12 different offices.",
+              "Modern preventive screening coordinated by your primary doctor  so you're not chasing 12 different reminders from 12 different offices.",
             image: IMG.examRoom,
             imageAlt: "Screening exam room",
             crumbs: [
@@ -40,20 +39,20 @@ export default function RoutePage() {
           intro: {
             heading: "Screening,",
             accent: "stewarded.",
-            body: "Guideline-based screening that fits your risk profile — and a system that actually keeps you on cadence.",
+            body: "Guideline-based screening that fits your risk profile  and a system that actually keeps you on cadence.",
             bullets: [
               {
-                icon: ShieldCheck,
+                iconKey: "shield-check",
                 title: "Guideline-based intervals",
                 body: "USPSTF and specialty-society aligned, adjusted for personal risk.",
               },
               {
-                icon: ScanLine,
+                iconKey: "scan-line",
                 title: "Coordinated imaging",
-                body: "Mammography, low-dose lung CT, colonoscopy — managed for you.",
+                body: "Mammography, low-dose lung CT, colonoscopy  managed for you.",
               },
               {
-                icon: Calendar,
+                iconKey: "calendar",
                 title: "We keep the calendar",
                 body: "Annual reminders, prep instructions, and follow-up baked in.",
               },

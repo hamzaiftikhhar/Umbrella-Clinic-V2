@@ -11,7 +11,7 @@ import { IMG } from "@/data/images";
 const diagnostics = [
   {
     title: "In-House Imaging & Cardiac Testing",
-    description: "Ultrasound, EKG, telemetry — read by the team that knows your history.",
+    description: "Ultrasound, EKG, telemetry  read by the team that knows your history.",
     to: "/diagnostics/imaging-cardiac",
     badge: "Owned",
   },
@@ -22,7 +22,7 @@ const diagnostics = [
   },
   {
     title: "Advanced Biomarker & Lab Panels",
-    description: "Full lipid, hormonal, metabolic — mapped to your plan.",
+    description: "Full lipid, hormonal, metabolic  mapped to your plan.",
     to: "/diagnostics/biomarkers",
   },
   {
@@ -44,7 +44,7 @@ const diagnostics = [
 ];
 
 const seo = buildPageSeo({
-  title: "In-House Diagnostics & Data — Umbrella Health NYC",
+  title: "In-House Diagnostics & Data  Umbrella Health NYC",
   description:
     "Imaging, labs, sleep, autonomic, and biomarker testing all owned in-house. Faster answers, in context with your care team.",
   path: "/diagnostics",
@@ -59,7 +59,7 @@ function Page() {
         eyebrow="Diagnostics & Data"
         italic="Your numbers,"
         title="in our walls."
-        description="Most clinics send your tests away. We own ours — imaging, labs, sleep, biomarkers, autonomic. The team that orders is the team that reads."
+        description="Most clinics send your tests away. We own ours  imaging, labs, sleep, biomarkers, autonomic. The team that orders is the team that reads."
         image={IMG.lab}
         imageAlt="Umbrella Health in-house lab"
         crumbs={[{ label: "Home", to: "/" }, { label: "Diagnostics" }]}

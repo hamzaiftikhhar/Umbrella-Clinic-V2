@@ -8,22 +8,22 @@ import { PremiumButton } from "@/components/site/primitives/PremiumButton";
 import { SectionHeading } from "@/components/site/primitives/SectionHeading";
 import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IconBadge } from "@/components/site/primitives/IconBadge";
-import { Heart, Users, Gift } from "lucide-react";
 import { IMG } from "@/data/images";
+import type { LucideIconKey } from "@/components/icons/icon-keys";
 
-const perks = [
+const perks: { iconKey: LucideIconKey; title: string; body: string }[] = [
   {
-    icon: Heart,
+    iconKey: "heart",
     title: "Bring a partner",
     body: "Refer your spouse or partner and both visits get prioritized scheduling.",
   },
   {
-    icon: Users,
+    iconKey: "users",
     title: "Family bundle",
     body: "When three family members enroll, the fourth annual physical is on us.",
   },
   {
-    icon: Gift,
+    iconKey: "gift",
     title: "Longevity credit",
     body: "Every successful referral earns $100 toward a longevity panel or executive physical.",
   },
@@ -68,7 +68,7 @@ export function ReferAFriendPageClient() {
             {perks.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.05}>
                 <div className="h-full rounded-3xl border border-border/60 bg-card p-7 text-center shadow-[var(--shadow-card)]">
-                  <IconBadge icon={p.icon} className="mx-auto" />
+                  <IconBadge iconKey={p.iconKey} className="mx-auto" />
                   <h3 className="mt-5 text-lg font-semibold text-foreground">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
                 </div>
@@ -84,7 +84,7 @@ export function ReferAFriendPageClient() {
           <Reveal>
             {submitted ? (
               <div className="mt-10 rounded-3xl border border-border/60 bg-card p-10 text-center shadow-[var(--shadow-card)]">
-                <p className="font-display text-2xl italic">Sent — thanks for thinking of them.</p>
+                <p className="font-display text-2xl italic">Sent  thanks for thinking of them.</p>
               </div>
             ) : (
               <form

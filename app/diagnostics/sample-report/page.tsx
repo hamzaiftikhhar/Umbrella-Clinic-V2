@@ -25,9 +25,9 @@ const statusClass = {
 } as const;
 
 const seo = buildPageSeo({
-  title: "Sample Biomarker Report — Umbrella Health",
+  title: "Sample Biomarker Report  Umbrella Health",
   description:
-    "See what an Umbrella diagnostic report actually looks like — your numbers, your targets, your plan.",
+    "See what an Umbrella diagnostic report actually looks like  your numbers, your targets, your plan.",
   path: "/diagnostics/sample-report",
   crumbs: [
     { label: "Home", to: "/" },
@@ -44,7 +44,7 @@ function Page() {
         eyebrow="Sample report"
         italic="What your numbers"
         title="actually mean."
-        description="A de-identified example. This is what shows up in your portal after a panel — and what we walk through with you at the follow-up."
+        description="A de-identified example. This is what shows up in your portal after a panel  and what we walk through with you at the follow-up."
         image={IMG.microscope}
         imageAlt="Umbrella sample biomarker report"
         crumbs={[
@@ -62,7 +62,7 @@ function Page() {
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary/70">
                   Panel · Q4 2026
                 </p>
-                <h2 className="mt-1 font-display text-2xl italic">Jordan A. — annual baseline</h2>
+                <h2 className="mt-1 font-display text-2xl italic">Jordan A.  annual baseline</h2>
               </div>
               <div className="divide-y divide-border/60">
                 {rows.map((r) => (

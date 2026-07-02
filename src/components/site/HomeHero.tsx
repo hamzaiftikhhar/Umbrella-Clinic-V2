@@ -3,11 +3,9 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
 
-const words = ["Modern", "medicine,"];
-
 export function HomeHero() {
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-16" aria-labelledby="hero-heading">
+    <section className="relative overflow-hidden pb-10 pt-10 sm:pb-12 sm:pt-14" aria-labelledby="hero-heading">
       <div
         className="absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_50%_0%,color-mix(in_oklab,var(--primary)_8%,transparent),transparent_70%)]"
         aria-hidden
@@ -20,22 +18,21 @@ export function HomeHero() {
 
         <h1
           id="hero-heading"
-          className="font-display text-balance text-5xl font-normal leading-[1.0] tracking-[-0.02em] text-foreground sm:text-6xl md:text-7xl"
+          className="font-display text-balance text-4xl font-normal leading-[1.02] tracking-[-0.02em] text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          {words.map((w, i) => (
-            <span key={i} className="inline-block pr-[0.25em] font-normal">
-              {w}
-            </span>
-          ))}
+          Primary Care & Specialists in{" "}
           <span className="block font-display text-[1.05em] font-light italic leading-none text-primary">
-            measured.
+            NYC
           </span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Primary care, specialty medicine, advanced diagnostics, and preventive health, all under
-          one roof in Lower Manhattan. From cardiology and sleep medicine to GLP-1 weight loss and
-          in-house testing, every decision is backed by your numbers, not guesswork.
+          Your health deserves expert care at every stage. Umbrella Health brings together experienced
+          primary care doctors in NYC, board-certified specialists, advanced diagnostics, and
+          personalized treatment plans all under one roof. Conveniently located in Lower Manhattan,
+          just minutes from Union Square, Greenwich Village, and the Flatiron District, we make
+          high-quality, patient-centered healthcare easily accessible for individuals, families, and
+          professionals across New York City.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
@@ -50,7 +47,7 @@ export function HomeHero() {
         </div>
       </Container>
 
-      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto mt-10 max-w-6xl px-5 sm:mt-12 sm:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] border border-border/50 sm:rounded-[36px]">
           <Image
             src="/images/Dr-rajat-hero-section.png"

@@ -1,13 +1,12 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { HeartPulse, ScanLine, Clock } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "In-House Imaging & Cardiac Testing NYC — Umbrella",
+  title: "In-House Imaging & Cardiac Testing NYC  Umbrella",
   description:
-    "On-site EKG, ambulatory telemetry, and vascular ultrasound — read by the same team that treats you.",
+    "On-site EKG, ambulatory telemetry, and vascular ultrasound  read by the same team that treats you.",
   path: "/diagnostics/imaging-cardiac",
   crumbs: [
     { label: "Home", to: "/" },
@@ -28,7 +27,7 @@ export default function RoutePage() {
             italic: "Faster answers,",
             title: "same team.",
             description:
-              "EKG, telemetry, and vascular ultrasound, owned and read in-house — so the cardiologist treating you is reading your own data.",
+              "EKG, telemetry, and vascular ultrasound, owned and read in-house  so the cardiologist treating you is reading your own data.",
             image: IMG.ultrasound,
             imageAlt: "Vascular ultrasound at Umbrella",
             crumbs: [
@@ -43,17 +42,17 @@ export default function RoutePage() {
             body: "No outside imaging centers, no faxed reports, no week-long waits. The diagnostic is part of the appointment.",
             bullets: [
               {
-                icon: HeartPulse,
+                iconKey: "heart-pulse",
                 title: "EKG & telemetry",
                 body: "Resting EKG, event monitoring, and ambulatory telemetry.",
               },
               {
-                icon: ScanLine,
+                iconKey: "scan-line",
                 title: "Vascular ultrasound",
                 body: "Carotid, abdominal, and peripheral vascular ultrasound.",
               },
               {
-                icon: Clock,
+                iconKey: "clock",
                 title: "Same-day reading",
                 body: "Most results reviewed before you leave the building.",
               },

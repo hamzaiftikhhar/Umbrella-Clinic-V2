@@ -1,11 +1,10 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { FlaskConical, ClipboardList, Activity } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Allergy Testing NYC — Umbrella Health",
+  title: "Allergy Testing NYC  Umbrella Health",
   description:
     "Comprehensive skin and lab-based allergy testing for environmental, food, and contact allergies.",
   path: "/diagnostics/allergy-testing",
@@ -43,17 +42,17 @@ export default function RoutePage() {
             body: "We identify the actual triggers and build a treatment plan that integrates with your overall medical record.",
             bullets: [
               {
-                icon: FlaskConical,
+                iconKey: "flask-conical",
                 title: "Skin & lab panels",
                 body: "Skin-prick and serum IgE testing for common allergens.",
               },
               {
-                icon: Activity,
+                iconKey: "activity",
                 title: "Treatment options",
                 body: "From medication to immunotherapy referrals when appropriate.",
               },
               {
-                icon: ClipboardList,
+                iconKey: "clipboard-list",
                 title: "Integrated record",
                 body: "Results live alongside primary care and pulmonary.",
               },

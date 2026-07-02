@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { cn } from "@/lib/utils";
 
@@ -21,30 +21,65 @@ export function ClinicalServiceCard({
   className,
 }: ClinicalServiceCardProps) {
   return (
-    <Link href={href} className={cn("group block h-full", className)}>
-      <article className="relative h-[400px] w-full overflow-hidden rounded-[2rem]">
-        <Image
-          src={imageUrl}
-          alt=""
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/80"
-          aria-hidden
-        />
-        <div className="absolute inset-0 flex flex-col justify-between p-6 sm:p-8">
-          <div>
-            <h3 className="mb-3 text-xl font-semibold text-white sm:text-2xl">{title}</h3>
-            <p className="max-w-[90%] text-sm leading-relaxed text-stone-200">{description}</p>
-          </div>
-          <span className="inline-flex items-center gap-2 text-sm font-medium text-white">
-            Learn More
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+    <div className={cn("group/card relative min-w-0", className)}>
+      <Link href={href} className="block">
+        <article className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
+          <Image
+            src={imageUrl}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-700 ease-[var(--ease-premium)] group-hover/card:scale-[1.05]"
+            sizes="(max-width: 640px) 50vw, 25vw"
+          />
+
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-black/30 transition-opacity duration-300 group-hover/card:opacity-0"
+            aria-hidden
+          />
+          <h3 className="absolute left-4 top-4 z-10 max-w-[85%] text-balance text-base font-semibold leading-snug text-white transition-opacity duration-300 group-hover/card:opacity-0 sm:left-5 sm:top-5 sm:text-lg">
+            {title}
+          </h3>
+
+          <span
+            className="absolute bottom-4 right-4 z-30 grid h-10 w-10 place-items-center rounded-full border border-white/35 bg-white/15 text-white backdrop-blur-sm transition-all duration-300 group-hover/card:bottom-auto group-hover/card:right-4 group-hover/card:top-4 group-hover/card:border-white/60 group-hover/card:bg-white group-hover/card:text-primary sm:bottom-5 sm:right-5 sm:group-hover/card:top-5"
+            aria-hidden
+          >
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5" />
           </span>
+          <span className="sr-only">Learn more about {title}</span>
+
+          <div className="absolute inset-0 z-20 flex flex-col justify-end bg-gradient-to-t from-black/95 via-black/75 to-black/40 p-5 pb-5 opacity-0 transition-opacity duration-300 group-hover/card:opacity-100 sm:p-6 sm:pb-6 max-lg:hidden">
+            <h3 className="mb-2 pr-2 text-base font-semibold leading-snug text-white sm:text-lg">
+              {title}
+            </h3>
+            <p className="line-clamp-5 text-sm leading-relaxed text-white/85 sm:line-clamp-6">
+              {description}
+            </p>
+          </div>
+        </article>
+      </Link>
+
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground lg:hidden">{description}</p>
+    </div>
+  );
+}
+
+export function ClinicalServiceRows({
+  services,
+}: {
+  services: ClinicalServiceCardProps[];
+}) {
+  const rows = [services.slice(0, 4), services.slice(4, 8)];
+
+  return (
+    <div className="space-y-4 sm:space-y-5">
+      {rows.map((row, rowIndex) => (
+        <div key={rowIndex} className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+          {row.map((service) => (
+            <ClinicalServiceCard key={service.title} {...service} />
+          ))}
         </div>
-      </article>
-    </Link>
+      ))}
+    </div>
   );
 }

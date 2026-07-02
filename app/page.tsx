@@ -18,7 +18,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { IMG } from "@/data/images";
 import { SITE_NAME } from "@/lib/site";
 
-const TITLE = "Umbrella Health — Modern Multispecialty Care in NYC";
+const TITLE = "Umbrella Health  Modern Multispecialty Care in NYC";
 const DESCRIPTION =
   "Primary care, specialists, in-house diagnostics, GLP-1 weight loss, and longevity programs under one roof in NYC. Insurance accepted. Book online.";
 

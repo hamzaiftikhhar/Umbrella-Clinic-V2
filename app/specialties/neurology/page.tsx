@@ -1,11 +1,10 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { Brain, ClipboardList, Activity } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Neurology NYC — Umbrella Health",
+  title: "Neurology NYC  Umbrella Health",
   description:
     "Board-certified neurology for headaches, neuropathy, cognitive concerns and more. Coordinated workups, no referral runaround.",
   path: "/specialties/neurology",
@@ -28,7 +27,7 @@ export default function RoutePage() {
             italic: "Clarity for",
             title: "complex symptoms.",
             description:
-              "Diagnostic workups that pull together imaging, autonomic testing, and your primary care record — so the answer lands faster.",
+              "Diagnostic workups that pull together imaging, autonomic testing, and your primary care record  so the answer lands faster.",
             image: IMG.doctorWoman2,
             imageAlt: "Neurologist consulting with patient",
             crumbs: [
@@ -43,17 +42,17 @@ export default function RoutePage() {
             body: "When symptoms span multiple specialties, the worst experience is being sent in circles. We pull the team to the patient.",
             bullets: [
               {
-                icon: Brain,
+                iconKey: "brain",
                 title: "Comprehensive workup",
                 body: "History, exam, imaging, and labs coordinated in one visit cycle.",
               },
               {
-                icon: Activity,
+                iconKey: "activity",
                 title: "Autonomic testing in-house",
                 body: "Sudomotor and autonomic studies for unexplained fatigue, dizziness, and neuropathy.",
               },
               {
-                icon: ClipboardList,
+                iconKey: "clipboard-list",
                 title: "Plan you can follow",
                 body: "Clear next steps written for you, not for the chart.",
               },

@@ -41,7 +41,7 @@ export function WaitlistPageClient() {
         eyebrow="Longevity waitlist"
         italic="Be first."
         title="Founding-member pricing."
-        description="Join the waitlist and we'll let you know the moment the full healthspan dashboard opens — with founding-member pricing locked in."
+        description="Join the waitlist and we'll let you know the moment the full healthspan dashboard opens  with founding-member pricing locked in."
         image={IMG.longevityHero}
         imageAlt="Longevity waitlist"
         crumbs={[

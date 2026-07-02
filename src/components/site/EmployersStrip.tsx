@@ -1,11 +1,12 @@
-import { ArrowUpRight, Building2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
+import { PremiumIcon } from "@/components/site/primitives/IconBadge";
 import { FEATURED_SERVICE_COPY } from "@/data/site-content";
 import { Container } from "./primitives/Container";
 
 export function EmployersStrip() {
   return (
-    <section aria-labelledby="featured-service-heading" className="px-5 pb-16 sm:px-8 sm:pb-24">
+    <section aria-labelledby="featured-service-heading" className="section-py px-5 sm:px-8">
       <Container>
         <div className="relative overflow-hidden rounded-[2rem] border border-border/60 bg-primary p-8 text-primary-foreground shadow-[var(--shadow-card)] sm:p-10">
           <div
@@ -13,9 +14,7 @@ export function EmployersStrip() {
             aria-hidden
           />
           <div className="relative grid items-center gap-6 sm:grid-cols-[auto_1fr_auto]">
-            <span className="grid h-14 w-14 place-items-center rounded-full bg-primary-foreground/10 text-primary-foreground ring-1 ring-primary-foreground/20">
-              <Building2 className="h-6 w-6" />
-            </span>
+            <PremiumIcon iconKey="scale" tone="inverse" className="shrink-0" />
             <div>
               <h2 id="featured-service-heading" className="text-xl font-semibold sm:text-2xl">
                 {FEATURED_SERVICE_COPY.title}

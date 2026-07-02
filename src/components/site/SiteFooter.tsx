@@ -18,7 +18,7 @@ export function SiteFooter() {
 
       <div className="mx-auto max-w-7xl px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-10 sm:px-8 md:pb-14 md:pt-32">
         <div className="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:gap-10 lg:gap-14">
-          {/* Brand — compact row on mobile, full column on desktop */}
+          {/* Brand  compact row on mobile, full column on desktop */}
           <div className="flex flex-col justify-end">
             <div className="flex items-start justify-between gap-4 md:block">
               <Wordmark light imageClassName="h-14 w-auto md:h-28 lg:h-36" />
@@ -43,7 +43,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          {/* Link columns — 3-up on mobile, grid children on desktop */}
+          {/* Link columns  3-up on mobile, grid children on desktop */}
           <div className="grid grid-cols-3 gap-x-3 gap-y-4 md:contents">
             {FOOTER_COLUMNS.map((col) => (
               <nav key={col.title} aria-label={col.title} className="min-w-0 md:pt-16">

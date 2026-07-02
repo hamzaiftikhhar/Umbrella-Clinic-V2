@@ -1,11 +1,10 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { Activity, Award, Stethoscope } from "lucide-react";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "Interventional Pain Management NYC — Umbrella Health",
+  title: "Interventional Pain Management NYC  Umbrella Health",
   description:
     "Fellowship-trained interventional pain procedures and integrated care for chronic and complex pain. NYC clinic.",
   path: "/specialties/pain-management",
@@ -28,7 +27,7 @@ export default function RoutePage() {
             italic: "Pain treated,",
             title: "not just managed.",
             description:
-              "Fellowship-trained interventional procedures combined with primary care continuity — so chronic pain isn't a parallel medical life.",
+              "Fellowship-trained interventional procedures combined with primary care continuity  so chronic pain isn't a parallel medical life.",
             image: IMG.examRoom,
             imageAlt: "Pain management procedure room at Umbrella Health",
             crumbs: [
@@ -40,20 +39,20 @@ export default function RoutePage() {
           intro: {
             heading: "Founder-led,",
             accent: "fellowship-trained.",
-            body: "Our founding physician completed an interventional pain fellowship — this is the specialty Umbrella was built around.",
+            body: "Our founding physician completed an interventional pain fellowship  this is the specialty Umbrella was built around.",
             bullets: [
               {
-                icon: Award,
+                iconKey: "award",
                 title: "Fellowship credentials",
                 body: "Interventional pain trained at an academic medical center.",
               },
               {
-                icon: Activity,
+                iconKey: "activity",
                 title: "Procedures we offer",
                 body: "Epidural steroid injections, facet joint blocks, radiofrequency ablation, trigger point therapy.",
               },
               {
-                icon: Stethoscope,
+                iconKey: "stethoscope",
                 title: "Integrated medical care",
                 body: "Pain plans coordinated with primary care, neurology, and PT recommendations.",
               },

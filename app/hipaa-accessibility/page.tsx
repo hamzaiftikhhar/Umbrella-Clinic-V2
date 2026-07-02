@@ -6,7 +6,7 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
-  title: "HIPAA & Accessibility — Umbrella Health",
+  title: "HIPAA & Accessibility  Umbrella Health",
   description: "Our HIPAA compliance and accessibility commitments.",
   path: "/hipaa-accessibility",
   crumbs: [{ label: "Home", to: "/" }, { label: "HIPAA & Accessibility" }],

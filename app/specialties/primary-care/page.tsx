@@ -1,17 +1,16 @@
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { Stethoscope, ClipboardList, Heart } from "lucide-react";
 import { LeafPage, faqSchema } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
 
 const faqs = [
   {
     q: "Do you handle annual physicals?",
-    a: "Yes — comprehensive physicals are core to primary care at Umbrella, with same-day labs and EKG when needed.",
+    a: "Yes  comprehensive physicals are core to primary care at Umbrella, with same-day labs and EKG when needed.",
   },
   {
     q: "Can I keep one doctor over time?",
-    a: "Yes. Continuity is the point — your primary doctor stays with you across years and coordinates every specialist visit.",
+    a: "Yes. Continuity is the point  your primary doctor stays with you across years and coordinates every specialist visit.",
   },
   {
     q: "Do you offer telehealth?",
@@ -20,7 +19,7 @@ const faqs = [
 ];
 
 const seo = buildPageSeo({
-  title: "Primary Care & Internal Medicine NYC — Umbrella Health",
+  title: "Primary Care & Internal Medicine NYC  Umbrella Health",
   description:
     "Comprehensive primary care for busy New Yorkers. One doctor, one record, coordinated specialists. Insurance accepted.",
   path: "/specialties/primary-care",
@@ -59,19 +58,19 @@ export default function RoutePage() {
             body: "Most NYC clinics treat you like a 15-minute slot. We treat you like someone with a 30-year health story we're trying to make better.",
             bullets: [
               {
-                icon: Stethoscope,
+                iconKey: "stethoscope",
                 title: "Annual physicals + same-day diagnostics",
                 body: "Labs, EKG, and ultrasound on the same visit when needed.",
               },
               {
-                icon: Heart,
+                iconKey: "heart",
                 title: "Chronic disease management",
-                body: "Hypertension, diabetes, cholesterol, thyroid — measured and tracked over time.",
+                body: "Hypertension, diabetes, cholesterol, thyroid  measured and tracked over time.",
               },
               {
-                icon: ClipboardList,
+                iconKey: "clipboard-list",
                 title: "Coordinated specialists",
-                body: "Cardiology, neuro, sleep, pain — all in the same record, all in the same building.",
+                body: "Cardiology, neuro, sleep, pain  all in the same record, all in the same building.",
               },
             ],
           },
@@ -94,7 +93,7 @@ export default function RoutePage() {
             cards: [
               {
                 title: "Advanced Biomarker Panels",
-                description: "Full lipid, metabolic, hormonal — explained.",
+                description: "Full lipid, metabolic, hormonal  explained.",
                 to: "/diagnostics/biomarkers",
                 badge: "Owned",
               },

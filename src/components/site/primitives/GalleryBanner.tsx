@@ -24,7 +24,7 @@ export function GalleryBanner() {
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
   return (
-    <section aria-label="Inside Umbrella Health" className="px-5 pb-16 sm:px-8 sm:pb-24">
+    <section aria-label="Inside Umbrella Health" className="section-py px-5 sm:px-8">
       <Container>
         <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-card)]">
           <Carousel plugins={[plugin.current]} className="w-full" opts={{ loop: true }}>
