@@ -19,12 +19,12 @@ const GALLERY_IMAGES = [
   "/images/APNQkAE3aRckid3msJlKgTpj6ZemfukqgTeRybAw3fyQR3cHS302IFTaomOuHAdO04rb2vYv4VC1f5jtD-5X-ny4QmQzzbjDk_ajwNTKfMjgc0l1wHpeiEOdRT_DNZ0i46xFhzUqu6ipw4032-h3024-k-no.jpg",
 ] as const;
 
-/** Homepage “Our space”  approved carousel layout with clinic photography */
+/** Homepage “Our space” — approved carousel layout with clinic photography */
 export function GalleryBanner() {
   const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
   return (
-    <section aria-label="Inside Umbrella Health" className="px-5 pb-16 sm:px-8 sm:pb-24">
+    <section aria-label="Inside Umbrella Health" className="section-py px-5 sm:px-8">
       <Container>
         <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-card)]">
           <Carousel plugins={[plugin.current]} className="w-full" opts={{ loop: true }}>

@@ -157,7 +157,7 @@ export function CareDiagram() {
     <section
       id="how"
       aria-labelledby="diagram-heading"
-      className="relative overflow-hidden bg-secondary/30 py-16 sm:py-24"
+      className="section-py-compact relative overflow-hidden bg-secondary/30"
     >
       <div
         className="pointer-events-none absolute top-1/2 left-1/2 hidden h-[min(640px,55vw)] w-[min(640px,55vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint/25 lg:block"
@@ -165,9 +165,9 @@ export function CareDiagram() {
       />
 
       <Container className="relative z-10">
-        <div className="flex flex-col gap-10 lg:grid lg:grid-cols-12 lg:items-center lg:gap-10 xl:gap-14">
+        <div className="flex flex-col gap-6 lg:grid lg:grid-cols-12 lg:items-center lg:gap-8 xl:gap-10">
           <div className="lg:col-span-5 lg:pl-2 xl:pl-4">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
               One connected record
             </p>
             <h2
@@ -177,12 +177,12 @@ export function CareDiagram() {
               One Team. One Record.{" "}
               <span className="font-light italic text-primary">One Umbrella.</span>
             </h2>
-            <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground sm:mt-6 sm:text-lg">
+            <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
               Your primary care physician, specialists, diagnostics, and preventive health strategy
               all work from the same information. Every test, every result, and every decision stays
               connected, so your care moves faster and makes more sense.
             </p>
-            <div className="mt-8 sm:mt-10">
+            <div className="mt-6 sm:mt-7">
               <BookButton>Book Your First Visit with Us</BookButton>
             </div>
           </div>

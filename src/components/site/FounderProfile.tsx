@@ -35,9 +35,9 @@ const credentials: {
 
 export function FounderProfile() {
   return (
-    <section id="founder" aria-labelledby="founder-heading" className="bg-secondary/30 py-16 sm:py-24">
+    <section id="founder" aria-labelledby="founder-heading" className="section-py bg-secondary/30">
       <Container size="lg">
-        <div className="grid items-stretch gap-14 md:grid-cols-[minmax(0,1fr)_1.05fr] md:gap-16 lg:gap-20">
+        <div className="grid items-stretch gap-10 md:grid-cols-[minmax(0,1fr)_1.05fr] md:gap-12 lg:gap-14">
           <div className="relative flex items-center justify-center md:justify-start">
             <div className="relative aspect-square w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem]">
               <div className="relative h-full w-full overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-card)]">

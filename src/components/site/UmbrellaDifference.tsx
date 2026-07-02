@@ -1,10 +1,19 @@
 import Image from "next/image";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Shield, Star } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
+
+const IMAGE_RADIUS = "1.75rem";
+const FRAME_OFFSET = "14px";
+
+const stats = [
+  { value: "12k+", label: "Patients cared for" },
+  { value: "6+", label: "Specialists on staff" },
+  { value: "4.6", label: "Average patient rating" },
+] as const;
 
 const points: { iconKey: LucideIconKey; title: string }[] = [
   {
@@ -34,67 +43,152 @@ export function UmbrellaDifference() {
     <section
       id="difference"
       aria-labelledby="difference-heading"
-      className="bg-background py-16 sm:py-24"
+      className="section-py bg-background"
     >
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16 xl:gap-20">
+        {/* Inspired hero panel — site palette, reference layout */}
+        <div className="overflow-hidden rounded-[2rem] border border-border/50 bg-gradient-to-br from-card via-secondary/25 to-background p-8 shadow-[var(--shadow-card)] sm:p-10 lg:grid lg:grid-cols-[1fr_0.92fr] lg:items-center lg:gap-12 lg:p-12 xl:gap-16">
           <div>
+            <p className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/80 px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/80 sm:text-xs">
+              <Shield className="h-3.5 w-3.5" aria-hidden />
+              Trusted NYC Healthcare
+            </p>
+
             <h2
               id="difference-heading"
-              className="font-display max-w-xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl"
+              className="font-display mt-6 max-w-xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl"
             >
               Why Patients Choose Umbrella Health In{" "}
               <span className="font-light italic text-primary">New York?</span>
             </h2>
+
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
               Experience patient-centered healthcare from trusted primary care doctors in NYC. At
               Umbrella Health, we combine clinical expertise, compassionate care, and personalized
               treatment to help you achieve better long-term health.
             </p>
 
-            <div className="mt-10">
+            <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
               <Link
                 to="/specialties"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-glow"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
               >
                 See How We&apos;re Different
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </Link>
+
+              <div className="flex items-center gap-2.5 border-border/60 sm:border-l sm:pl-6">
+                <div className="flex gap-0.5 text-rating-star" aria-hidden>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Rated <span className="font-semibold text-foreground">4.6</span> by patients
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-10 border-t border-border/50 pt-8">
+              <dl className="grid grid-cols-3 gap-4 sm:gap-8">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <dt className="font-display text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
+                      {stat.value}
+                    </dt>
+                    <dd className="mt-1.5 text-xs leading-snug text-muted-foreground sm:text-sm">
+                      {stat.label}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
 
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[1.75rem] bg-muted shadow-[var(--shadow-card)] lg:mx-0 lg:ml-auto lg:max-w-none">
-            <Image
-              src={IMG.premiumDoctorPortrait}
-              alt="Board-certified physician at Umbrella Health"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 1024px) 90vw, 520px"
+          {/* Portrait — offset floating frame (flush top-left, extends top-right / right / bottom) */}
+          <div
+            className="relative mx-auto mt-10 w-full max-w-[480px] pr-[14px] pb-[14px] lg:mx-0 lg:mt-0 lg:ml-auto lg:max-w-none"
+          >
+            <div
+              className="pointer-events-none absolute left-0 top-0 z-0 border-[1.5px] border-primary/20"
+              style={{
+                width: `calc(100% + ${FRAME_OFFSET})`,
+                height: `calc(100% + ${FRAME_OFFSET})`,
+                borderRadius: IMAGE_RADIUS,
+              }}
+              aria-hidden
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
-            <button
-              type="button"
-              aria-label="Play physician introduction"
-              className="absolute inset-0 m-auto grid h-[4.5rem] w-[4.5rem] place-items-center rounded-full bg-white/90 text-primary shadow-md"
+
+            <div
+              className="relative z-10 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-muted shadow-[var(--shadow-elegant)]"
             >
-              <Play className="ml-0.5 h-6 w-6 fill-current" />
-            </button>
+              <Image
+                src={IMG.premiumDoctorPortrait}
+                alt="Board-certified physician at Umbrella Health"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 90vw, 480px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
+
+              <button
+                type="button"
+                aria-label="Play physician introduction"
+                className="absolute inset-0 m-auto grid h-[4.5rem] w-[4.5rem] place-items-center rounded-full bg-card/95 text-primary shadow-[var(--shadow-card)] backdrop-blur-sm transition-transform duration-300 hover:scale-105"
+              >
+                <Play className="ml-0.5 h-6 w-6 fill-current" />
+              </button>
+
+              <div className="absolute bottom-5 right-5 z-20 flex items-center gap-3 rounded-xl border border-border/40 bg-card/95 px-4 py-3 shadow-[var(--shadow-soft)] backdrop-blur-sm sm:bottom-6 sm:right-6">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-icon-premium-surface text-icon-premium">
+                  <Shield className="h-4 w-4" aria-hidden />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold leading-tight text-foreground">
+                    Board-Certified Care
+                  </p>
+                  <p className="text-xs text-muted-foreground">Accredited NYC providers</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Uniform 5-point grid — equal columns, consistent card height */}
-        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 xl:grid-cols-5">
-          {points.map((p) => (
-            <div
-              key={p.title}
-              className="flex h-full min-h-[11.5rem] flex-col rounded-[1.25rem] border border-border/60 bg-card p-5 shadow-[var(--shadow-card)] sm:p-6"
-            >
-              <PremiumIcon iconKey={p.iconKey} size="md" />
-              <h3 className="mt-4 flex-1 text-sm font-semibold leading-snug text-foreground sm:text-base">
-                {p.title}
-              </h3>
-            </div>
-          ))}
+        {/* Premium feature panel — unified grid with dividers */}
+        <div className="relative mt-12 overflow-hidden rounded-[1.75rem] border border-border/50 bg-gradient-to-b from-secondary/35 via-card to-background shadow-[var(--shadow-card)] sm:mt-14">
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,color-mix(in_oklab,var(--primary)_12%,transparent),transparent_70%)]"
+            aria-hidden
+          />
+          <div className="relative grid grid-cols-1 gap-px bg-border/35 sm:grid-cols-2 xl:grid-cols-5">
+            {points.map((p, index) => (
+              <div
+                key={p.title}
+                className="group relative flex min-h-[10.5rem] flex-col justify-between bg-card/95 p-6 transition-colors duration-300 hover:bg-secondary/25 sm:min-h-[11.5rem] sm:p-7"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <PremiumIcon
+                    iconKey={p.iconKey}
+                    size="md"
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <span
+                    className="font-display text-2xl font-light leading-none tabular-nums text-primary/15 transition-colors duration-300 group-hover:text-primary/30"
+                    aria-hidden
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-sm font-semibold leading-snug text-foreground sm:text-[0.9375rem]">
+                  {p.title}
+                </h3>
+                <div
+                  className="absolute bottom-0 left-6 right-6 h-px scale-x-0 bg-primary/25 transition-transform duration-500 group-hover:scale-x-100 sm:left-7 sm:right-7"
+                  aria-hidden
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

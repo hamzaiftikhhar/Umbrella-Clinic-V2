@@ -5,7 +5,7 @@ import { BookButton } from "./primitives/BookButton";
 
 export function HomeHero() {
   return (
-    <section className="relative overflow-hidden pt-12 sm:pt-16" aria-labelledby="hero-heading">
+    <section className="relative overflow-hidden pb-10 pt-10 sm:pb-12 sm:pt-14" aria-labelledby="hero-heading">
       <div
         className="absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_50%_0%,color-mix(in_oklab,var(--primary)_8%,transparent),transparent_70%)]"
         aria-hidden
@@ -47,7 +47,7 @@ export function HomeHero() {
         </div>
       </Container>
 
-      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-8">
+      <div className="mx-auto mt-10 max-w-6xl px-5 sm:mt-12 sm:px-8">
         <div className="relative aspect-[16/9] overflow-hidden rounded-[28px] border border-border/50 sm:rounded-[36px]">
           <Image
             src="/images/Dr-rajat-hero-section.png"

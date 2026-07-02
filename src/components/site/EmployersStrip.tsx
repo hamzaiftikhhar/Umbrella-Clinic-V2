@@ -6,7 +6,7 @@ import { Container } from "./primitives/Container";
 
 export function EmployersStrip() {
   return (
-    <section aria-labelledby="featured-service-heading" className="px-5 pb-16 sm:px-8 sm:pb-24">
+    <section aria-labelledby="featured-service-heading" className="section-py px-5 sm:px-8">
       <Container>
         <div className="relative overflow-hidden rounded-[2rem] border border-border/60 bg-primary p-8 text-primary-foreground shadow-[var(--shadow-card)] sm:p-10">
           <div

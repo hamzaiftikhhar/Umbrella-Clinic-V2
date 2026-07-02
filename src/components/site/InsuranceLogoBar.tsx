@@ -31,9 +31,9 @@ const items = [
 
 export function InsuranceLogoBar() {
   return (
-    <section aria-label="Accepted insurance" className="py-12 sm:py-16">
+    <section aria-label="Accepted insurance" className="section-py">
       <Container>
-        <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
+        <div className="mb-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           <div className="text-center sm:text-left">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
               We accept {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ insurance plans and in-network plans across NYC

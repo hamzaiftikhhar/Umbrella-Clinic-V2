@@ -94,7 +94,7 @@
   /* Premium easing for micro-interactions */
   --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Premium icon tiles  aligned to clinical navy palette */
+  /* Premium icon tiles — aligned to clinical navy palette */
   --icon-premium-surface: #eef3fa;
   --icon-premium-color: var(--navy-700);
   --icon-premium-shadow: 0 8px 30px rgba(12, 20, 34, 0.06);
@@ -105,7 +105,7 @@
   --navy-700: #0a4e83;
   --navy-600: #1e4478;
 
-  /* Warm premium canvas  Nectar-adjacent */
+  /* Warm premium canvas — Nectar-adjacent */
   --background: #faf9f6;
   --foreground: #0c1422;
 
@@ -118,7 +118,7 @@
   --surface-raised: #ffffff;
   --surface-warm: #f3efe8;
 
-  /* Anchor blue  deep clinical navy */
+  /* Anchor blue — deep clinical navy */
   --primary: var(--navy-800);
   --primary-foreground: #f7f9fc;
   --primary-glow: var(--navy-700);
@@ -260,7 +260,48 @@
   transition-duration: 300ms;
 }
 
-/* How It Works  solar system orbit */
+/* Homepage section rhythm — uniform vertical padding */
+@utility section-py {
+  @apply py-10 sm:py-14;
+}
+
+@utility section-py-compact {
+  @apply py-6 sm:py-8;
+}
+
+@keyframes reviews-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.reviews-marquee-track {
+  animation: reviews-marquee 90s linear infinite;
+}
+
+.reviews-marquee:hover .reviews-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .reviews-marquee::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-marquee-track {
+    animation: none;
+  }
+}
+
+/* How It Works — solar system orbit */
 .orbit-system {
   --orbit-scale: 1;
 }

@@ -21,7 +21,7 @@ export function StatCallout({
   const isRemote = image.startsWith("http");
 
   return (
-    <section className="bg-secondary/30 py-16 sm:py-24" aria-label="Outcomes">
+    <section className="section-py bg-secondary/30" aria-label="Outcomes">
       <Container>
         <div className="overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-card)]">
           <div className="grid items-stretch md:grid-cols-2">
