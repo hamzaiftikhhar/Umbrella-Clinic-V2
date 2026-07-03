@@ -21,7 +21,7 @@ export function HomeHeroSpecialtySelect() {
     setMenuStyle({
       top: rect.bottom + 8,
       left: rect.left,
-      width: Math.max(rect.width, 280),
+      width: Math.max(rect.width, 340),
     });
   };
 
@@ -62,7 +62,7 @@ export function HomeHeroSpecialtySelect() {
           width: menuStyle.width,
           zIndex: 200,
         }}
-        className="max-h-64 overflow-y-auto rounded-xl border border-border/60 bg-card p-1.5 shadow-[var(--shadow-elegant)]"
+        className="overflow-y-auto rounded-xl border border-border/60 bg-card p-1.5 shadow-[var(--shadow-elegant)]"
       >
         {CLINICAL_SERVICES.map((service) => {
           const isSelected = selected.href === service.href;
@@ -74,13 +74,13 @@ export function HomeHeroSpecialtySelect() {
                   setSelected(service);
                   setOpen(false);
                 }}
-                className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm transition-colors ${
+                className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm leading-snug transition-colors ${
                   isSelected
                     ? "bg-secondary font-medium text-primary"
                     : "text-foreground/85 hover:bg-secondary/70"
                 }`}
               >
-                <span className="truncate">{service.label}</span>
+                <span>{service.label}</span>
                 {isSelected && <Check className="h-4 w-4 shrink-0 text-primary" aria-hidden />}
               </button>
             </li>

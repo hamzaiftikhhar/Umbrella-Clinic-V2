@@ -14,6 +14,12 @@ export const IMG = {
   sleepStudy: u("photo-1520206183501-b80df61043c2", 1400),
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
+  /** Clinical service cards — homepage grid (URLs verified on Unsplash CDN) */
+  primaryCareHero: u("photo-1559839734-2b71ea197ec2", 1800),
+  neurologyHero: u("photo-1612349317150-e413f6a5b16d", 1600),
+  painManagementHero: u("photo-1544367567-0f2fcb009e0b", 1600),
+  medicalSpaHero: u("photo-1515377905703-c4788e51af15", 1800),
+
   // Local assets (public/images)
   drRajat: "/images/dr-rajat.png",
   premiumDoctorPortrait: "/images/dr-rajat.png",
@@ -21,7 +27,7 @@ export const IMG = {
   clinicInterior:
     "/images/APNQkAG2VC7P3b3M7-u1nk5TVqiBrhB-Jb-5gMl7-7wE-NF0Kcu7wYmgGbcKNfvO6wNuHyqWjKZXLFcLcvM0DbAWHqx-CAt3pFKtN5_lavgX1uEgq4VCtVczKo-eZe09-F_0mwaJxsD03Qw3890-h2918-k-no.jpg",
 
-  // People  real founding physician photo stands in for placeholder portraits
+  // People — real founding physician photo stands in for placeholder portraits
   founder: "/images/dr-rajat.png",
   founderAlt: "/images/dr-rajat.png",
   doctorWoman1: "/images/dr-rajat.png",

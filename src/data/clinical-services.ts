@@ -18,7 +18,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     summary: "Annual physicals, chronic disease management, and preventive care for every stage of life.",
     description:
       "Build a healthier future with comprehensive primary care focused on preventive care, annual physicals, chronic disease management, and personalized treatment for every stage of life.",
-    imageUrl: IMG.consult,
+    imageUrl: IMG.primaryCareHero,
   },
   {
     label: "Cardiology & Vascular Medicine",
@@ -58,7 +58,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     summary: "Headache, neuropathy, and cognitive concerns with integrated diagnostic workup.",
     description:
       "Receive expert diagnosis and treatment for neurological conditions with personalized care focused on improving brain, spine, and nervous system health.",
-    imageUrl: IMG.doctorPatient,
+    imageUrl: IMG.neurologyHero,
   },
   {
     label: "Interventional Pain Management",
@@ -66,7 +66,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     summary: "Fellowship-trained procedures for chronic and complex pain.",
     description:
       "Find lasting relief from chronic pain through personalized, minimally invasive treatments that improve mobility, function, and quality of life.",
-    imageUrl: IMG.examRoom,
+    imageUrl: IMG.painManagementHero,
   },
   {
     label: "Medical Spa Services NYC",
@@ -74,7 +74,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     summary: "Physician-guided aesthetic treatments and skin rejuvenation.",
     description:
       "Refresh your appearance with physician-guided aesthetic treatments, including skin rejuvenation, anti-aging solutions, and personalized wellness services.",
-    imageUrl: IMG.ultrasound,
+    imageUrl: IMG.medicalSpaHero,
   },
 ];
 

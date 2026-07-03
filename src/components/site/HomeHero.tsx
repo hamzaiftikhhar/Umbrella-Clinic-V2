@@ -47,10 +47,12 @@ export function HomeHero() {
 
             <h1
               id="hero-heading"
-              className="font-display mt-6 text-balance text-[2.2rem] font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-5xl lg:text-[3.15rem]"
+              className="font-display mt-6 text-balance text-[2.2rem] font-normal leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl lg:text-[3.25rem]"
             >
-              Healthcare designed for{" "}
-              <span className="font-light italic text-primary">humanity.</span>
+              Primary Care & Specialists in{" "}
+              <span className="block font-display text-[1.05em] font-light italic leading-none text-primary">
+                NYC
+              </span>
             </h1>
 
             <p className="mt-5 text-pretty text-base leading-relaxed text-muted-foreground sm:text-[1.02rem]">
