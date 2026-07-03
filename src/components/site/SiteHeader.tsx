@@ -129,7 +129,7 @@ export function SiteHeader() {
                     Our Specialties <ChevronDown className="h-3.5 w-3.5" />
                   </button>
                   {specialtiesOpen && (
-                    <div className="absolute left-0 top-full z-50 min-w-[280px] pt-2">
+                    <div className="absolute left-0 top-full z-50 min-w-[min(100vw-2rem,22rem)] pt-2">
                       <ul className="rounded-2xl border border-border/60 bg-card p-2 shadow-[var(--shadow-card)]">
                         {SPECIALTIES_NAV.map((item) => (
                           <li key={item.label}>

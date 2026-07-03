@@ -11,6 +11,11 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { ALL_INSURANCE_PLANS, TOTAL_IN_NETWORK_PLANS } from "@/data/insurance-network";
+import {
+  ALL_INSURANCE_CARRIER_NAMES,
+  POPULAR_INSURANCE_CARRIERS,
+  TOTAL_INSURANCE_CARRIERS,
+} from "@/data/insurance-carriers";
 import { SITE_PHONE } from "@/lib/site";
 
 const MAX_RESULTS = 40;
@@ -19,25 +24,53 @@ function normalize(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 }
 
+type SearchResult =
+  | { type: "plan"; carrier: string; plan: string; key: string }
+  | { type: "carrier"; name: string; popular: boolean; key: string };
+
 export function InsuranceFinderDialog() {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
 
-  const results = useMemo(() => {
+  const results = useMemo((): SearchResult[] => {
     const q = normalize(query);
     if (q.length < 2) return [];
 
-    return ALL_INSURANCE_PLANS.filter(({ carrier, plan }) => {
+    const planMatches: SearchResult[] = ALL_INSURANCE_PLANS.filter(({ carrier, plan }) => {
       const haystack = normalize(`${carrier} ${plan}`);
       return haystack.includes(q);
-    }).slice(0, MAX_RESULTS);
+    }).map(({ carrier, plan }) => ({
+      type: "plan" as const,
+      carrier,
+      plan,
+      key: `plan-${carrier}-${plan}`,
+    }));
+
+    const carrierMatches: SearchResult[] = ALL_INSURANCE_CARRIER_NAMES.filter((name) => {
+      if (planMatches.some((match) => match.type === "plan" && match.carrier === name)) {
+        return false;
+      }
+      return normalize(name).includes(q);
+    }).map((name) => ({
+      type: "carrier" as const,
+      name,
+      popular: POPULAR_INSURANCE_CARRIERS.includes(
+        name as (typeof POPULAR_INSURANCE_CARRIERS)[number],
+      ),
+      key: `carrier-${name}`,
+    }));
+
+    return [...carrierMatches, ...planMatches].slice(0, MAX_RESULTS);
   }, [query]);
 
   const exactMatch = useMemo(() => {
     const q = normalize(query);
     if (q.length < 2) return false;
-    return ALL_INSURANCE_PLANS.some(
-      ({ carrier, plan }) => normalize(plan) === q || normalize(carrier) === q,
+
+    return (
+      ALL_INSURANCE_PLANS.some(
+        ({ carrier, plan }) => normalize(plan) === q || normalize(carrier) === q,
+      ) || ALL_INSURANCE_CARRIER_NAMES.some((name) => normalize(name) === q)
     );
   }, [query]);
 
@@ -59,8 +92,9 @@ export function InsuranceFinderDialog() {
             Find your insurance
           </DialogTitle>
           <DialogDescription>
-            Search {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans. We&apos;ll verify
-            your exact coverage before your visit.
+            Search {TOTAL_INSURANCE_CARRIERS.toLocaleString()}+ carriers and{" "}
+            {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans. We&apos;ll verify your exact
+            coverage before your visit.
           </DialogDescription>
         </DialogHeader>
 
@@ -80,10 +114,24 @@ export function InsuranceFinderDialog() {
 
         <div className="max-h-[min(50vh,420px)] overflow-y-auto px-6 py-4">
           {query.length < 2 ? (
-            <p className="text-sm text-muted-foreground">
-              Try searching &ldquo;Aetna&rdquo;, &ldquo;Empire&rdquo;, &ldquo;Oxford&rdquo;, or your
-              specific plan name.
-            </p>
+            <div className="space-y-4">
+              <p className="text-sm text-muted-foreground">
+                Popular carriers we accept in NYC:
+              </p>
+              <ul className="flex flex-wrap gap-2">
+                {POPULAR_INSURANCE_CARRIERS.map((carrier) => (
+                  <li key={carrier}>
+                    <button
+                      type="button"
+                      onClick={() => setQuery(carrier)}
+                      className="rounded-full border border-border/60 bg-card px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-primary/30 hover:bg-secondary"
+                    >
+                      {carrier}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ) : results.length === 0 ? (
             <div className="rounded-xl border border-border/60 bg-muted/30 p-4 text-sm">
               <p className="font-medium text-foreground">No exact match found</p>
@@ -103,13 +151,24 @@ export function InsuranceFinderDialog() {
                   <span>Likely in-network — our team will confirm at booking.</span>
                 </li>
               )}
-              {results.map(({ carrier, plan }) => (
+              {results.map((result) => (
                 <li
-                  key={`${carrier}-${plan}`}
+                  key={result.key}
                   className="rounded-xl border border-border/50 bg-card px-3.5 py-3"
                 >
-                  <p className="text-sm font-medium text-foreground">{plan}</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{carrier}</p>
+                  {result.type === "carrier" ? (
+                    <>
+                      <p className="text-sm font-medium text-foreground">{result.name}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">
+                        {result.popular ? "Popular carrier" : "Insurance carrier"}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-sm font-medium text-foreground">{result.plan}</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">{result.carrier}</p>
+                    </>
+                  )}
                 </li>
               ))}
               {results.length === MAX_RESULTS && (

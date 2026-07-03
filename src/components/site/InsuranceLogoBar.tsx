@@ -1,6 +1,7 @@
 import { Container } from "./primitives/Container";
 import { InsuranceFinderDialog } from "./InsuranceFinderDialog";
 import { TOTAL_IN_NETWORK_PLANS } from "@/data/insurance-network";
+import { TOTAL_INSURANCE_CARRIERS } from "@/data/insurance-carriers";
 
 const items = [
   {
@@ -36,7 +37,8 @@ export function InsuranceLogoBar() {
         <div className="mb-6 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6">
           <div className="text-center sm:text-left">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-muted-foreground">
-              We accept {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ insurance plans and in-network plans across NYC
+              We accept {TOTAL_INSURANCE_CARRIERS.toLocaleString()}+ carriers and{" "}
+              {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans across NYC
             </p>
           </div>
           <InsuranceFinderDialog />
