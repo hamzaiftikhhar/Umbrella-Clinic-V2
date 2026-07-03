@@ -1,8 +1,5 @@
 import { Container } from "./primitives/Container";
-import { SITE_NAME } from "@/lib/site";
-
-const MAP_EMBED_URL =
-  "https://www.google.com/maps?q=Umbrella+Health,+32+W+14th+St,+New+York,+NY+10011&output=embed";
+import { CLINIC_MAP_EMBED_URL, SITE_NAME } from "@/lib/site";
 
 export function ClinicMap() {
   return (
@@ -24,7 +21,7 @@ export function ClinicMap() {
         <div className="group relative overflow-hidden rounded-[1.75rem] border border-border/60 shadow-[var(--shadow-card)]">
           <iframe
             title={`Map showing ${SITE_NAME} in New York`}
-            src={MAP_EMBED_URL}
+            src={CLINIC_MAP_EMBED_URL}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen

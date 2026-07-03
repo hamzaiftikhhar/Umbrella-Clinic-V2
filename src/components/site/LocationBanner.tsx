@@ -3,9 +3,7 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { IMG } from "@/data/images";
-
-const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/place/Umbrella+Health/@40.7366832,-73.9952339,4z/data=!4m16!1m9!3m8!1s0x89c259dd725169a1:0xe7be074e390093f4!2sUmbrella+Health!8m2!3d40.7363331!4d-73.9952765!9m1!1b1!16s%2Fg%2F11v5wmp9bk!3m5!1s0x89c259dd725169a1:0xe7be074e390093f4!8m2!3d40.7363331!4d-73.9952765!16s%2Fg%2F11v5wmp9bk?entry=ttu";
+import { CLINIC_GOOGLE_MAPS_URL, SITE_ADDRESS } from "@/lib/site";
 
 export function LocationBanner() {
   return (
@@ -53,7 +51,7 @@ export function LocationBanner() {
 
                   <p className="mt-4 flex items-center gap-2 text-sm text-primary-foreground/90 sm:text-base">
                     <MapPin className="h-4 w-4 shrink-0" aria-hidden />
-                    <span>32 W 14th St, New York</span>
+                    <span>{SITE_ADDRESS}</span>
                   </p>
 
                   <div className="mt-7 flex flex-wrap items-center gap-3">
@@ -65,7 +63,7 @@ export function LocationBanner() {
                       <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </Link>
                     <a
-                      href={GOOGLE_MAPS_URL}
+                      href={CLINIC_GOOGLE_MAPS_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-transparent px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-300 hover:border-primary-foreground/45 hover:bg-primary-foreground/10"

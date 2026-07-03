@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Star, CheckCircle2 } from "lucide-react";
+import { CLINIC_GOOGLE_MAPS_URL } from "@/lib/site";
 
 interface TestimonialCardProps {
   name: string;
@@ -9,9 +10,6 @@ interface TestimonialCardProps {
   time?: string;
   rating?: number;
 }
-
-const GOOGLE_MAPS_LINK =
-  "https://www.google.com/maps/place/Umbrella+Health/@40.747257,-145.7226562,4z/data=!4m8!3m7!1s0x89c259dd725169a1:0xe7be074e390093f4!8m2!3d40.7363331!4d-73.9952765!9m1!1b1!16s%2Fg%2F11v5wmp9bk?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D";
 
 export function TestimonialCard({
   name,
@@ -65,7 +63,7 @@ export function TestimonialCard({
 
       <div className="mt-6 flex items-center justify-start">
         <a
-          href={GOOGLE_MAPS_LINK}
+          href={CLINIC_GOOGLE_MAPS_URL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="View on Google Maps"

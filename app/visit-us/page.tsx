@@ -9,9 +9,7 @@ import { BookButton } from "@/components/site/primitives/BookButton";
 import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
-
-const VISIT_US_MAP_EMBED =
-  "https://www.google.com/maps?q=Umbrella+Health,+200+Lafayette+Street,+New+York,+NY+10012&output=embed";
+import { CLINIC_MAP_EMBED_URL } from "@/lib/site";
 
 const seo = buildPageSeo({
   title: "Visit Us — Umbrella Health NYC | 200 Lafayette St",
@@ -102,7 +100,7 @@ function Page() {
               <div className="group relative h-full min-h-[420px] overflow-hidden rounded-3xl border border-border/60 bg-[color:var(--mint)] shadow-[var(--shadow-card)]">
                 <iframe
                   title="Map showing Umbrella Health at 200 Lafayette Street, New York"
-                  src={VISIT_US_MAP_EMBED}
+                  src={CLINIC_MAP_EMBED_URL}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
