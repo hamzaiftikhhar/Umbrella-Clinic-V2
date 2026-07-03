@@ -22,7 +22,7 @@ export function LocationBanner() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-            {/* Asymmetric organic wave  high left, dips past center, rises right */}
+            {/* Asymmetric organic wave — high left, dips past center, rises right */}
             <svg
               className="pointer-events-none absolute inset-x-0 top-0 z-10 w-full fill-background"
               viewBox="0 0 1440 160"
