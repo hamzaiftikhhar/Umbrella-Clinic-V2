@@ -9,12 +9,6 @@ import type { LucideIconKey } from "@/components/icons/icon-keys";
 const IMAGE_RADIUS = "1.75rem";
 const FRAME_OFFSET = "14px";
 
-const stats = [
-  { value: "12k+", label: "Patients cared for" },
-  { value: "6+", label: "Specialists on staff" },
-  { value: "4.6", label: "Average patient rating" },
-] as const;
-
 const points: { iconKey: LucideIconKey; title: string }[] = [
   {
     iconKey: "stethoscope",
@@ -68,7 +62,7 @@ export function UmbrellaDifference() {
               treatment to help you achieve better long-term health.
             </p>
 
-            <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+            <div className="mt-10 flex flex-col gap-5 border-t border-border/50 pt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
               <Link
                 to="/specialties"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-foreground transition-colors hover:text-primary"
@@ -87,21 +81,6 @@ export function UmbrellaDifference() {
                   Rated <span className="font-semibold text-foreground">4.6</span> by patients
                 </p>
               </div>
-            </div>
-
-            <div className="mt-10 border-t border-border/50 pt-8">
-              <dl className="grid grid-cols-3 gap-4 sm:gap-8">
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <dt className="font-display text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
-                      {stat.value}
-                    </dt>
-                    <dd className="mt-1.5 text-xs leading-snug text-muted-foreground sm:text-sm">
-                      {stat.label}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </div>
 
