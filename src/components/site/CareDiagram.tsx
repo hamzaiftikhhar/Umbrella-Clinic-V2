@@ -46,7 +46,6 @@ const outerRingSeeds: ServiceSeed[] = [
   },
 ];
 
-const allServices = [...innerRingSeeds, ...outerRingSeeds];
 const services: OrbitService[] = [
   ...innerRingSeeds.map((seed, i) => ({
     ...seed,
@@ -122,36 +121,6 @@ function OrbitItem({ service }: { service: OrbitService }) {
   );
 }
 
-function MobileServiceCards() {
-  return (
-    <div className="grid grid-cols-2 gap-3 sm:gap-3.5">
-      {allServices.map((service) => (
-        <Link
-          key={service.name}
-          href={service.href}
-          className="group relative overflow-hidden rounded-[1.35rem] bg-primary shadow-[0_12px_32px_-16px_rgba(12,20,34,0.35)] ring-1 ring-black/5 transition-transform duration-300 active:scale-[0.98]"
-        >
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <Image
-              src={service.image}
-              alt=""
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 46vw, 220px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/45 to-primary/5" />
-            <div className="absolute inset-x-0 bottom-0 p-3.5 pt-10">
-              <span className="block text-[10px] font-semibold uppercase leading-tight tracking-[0.14em] text-primary-foreground sm:text-[11px]">
-                {service.name}
-              </span>
-            </div>
-          </div>
-        </Link>
-      ))}
-    </div>
-  );
-}
-
 export function CareDiagram() {
   return (
     <section
@@ -187,13 +156,9 @@ export function CareDiagram() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 lg:pr-4 xl:pr-8">
-            <div className="lg:hidden">
-              <MobileServiceCards />
-            </div>
-
+          <div className="hidden lg:col-span-7 lg:block lg:pr-4 xl:pr-8">
             <div
-              className="orbit-system orbit-system--split relative mx-auto hidden aspect-square w-full max-w-[min(720px,100%)] overflow-hidden lg:ml-auto lg:block lg:max-w-none"
+              className="orbit-system orbit-system--split relative mx-auto aspect-square w-full max-w-[min(720px,100%)] overflow-hidden lg:ml-auto lg:max-w-none"
               style={{ maxHeight: `${CANVAS_SIZE}px` }}
             >
               <OrbitArcs />

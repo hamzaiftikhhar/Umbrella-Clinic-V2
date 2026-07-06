@@ -45,8 +45,13 @@ export function LocationBanner() {
                     Modern Medicine In The Heart Of Lower Manhattan
                   </h2>
 
-                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
-                  Conveniently located in Lower Manhattan, near Union Square, Greenwich Village, and the Flatiron District, Umbrella Health provides easy access to trusted primary care doctors and board-certified specialists for patients across New York City. Experience comprehensive, patient-centered healthcare all under one roof.
+                  {/* Short version — mobile only */}
+                  <p className="mt-4 max-w-xl text-sm leading-relaxed text-primary-foreground/90 sm:hidden">
+                    Located in Lower Manhattan, Umbrella Health offers trusted primary care, board-certified specialists, and comprehensive care for patients across New York City.
+                  </p>
+                  {/* Full version — sm and above */}
+                  <p className="mt-4 hidden max-w-xl text-sm leading-relaxed text-primary-foreground/90 sm:block sm:text-base">
+                    Conveniently located in Lower Manhattan, near Union Square, Greenwich Village, and the Flatiron District, Umbrella Health provides easy access to trusted primary care doctors and board-certified specialists for patients across New York City. Experience comprehensive, patient-centered healthcare all under one roof.
                   </p>
 
                   <p className="mt-4 flex items-center gap-2 text-sm text-primary-foreground/90 sm:text-base">
