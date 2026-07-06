@@ -9,7 +9,7 @@ import { BOOKING_URL } from "@/lib/site";
 
 const HERO_STATS = [
   { value: "12k+", label: "Patients served" },
-  { value: "7", label: "Specialists on staff" },
+  { value: "5", label: "Specialists on staff" },
   { value: "4.6/5", label: "Patient rating", star: true },
 ] as const;
 
