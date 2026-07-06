@@ -53,20 +53,6 @@ export const PHYSICIANS: Physician[] = [
     accent: "teal",
   },
   {
-    id: "dr-jennifer-soung",
-    name: "Dr. Jennifer Soung",
-    specialty: "Primary Care",
-    image: "/images/dr-jennifer-soung.png",
-    accent: "emerald",
-  },
-  {
-    id: "dr-courtney-mccall",
-    name: "Dr. Courtney McCall",
-    specialty: "Family Medicine",
-    image: "/images/dr-courtney-mccall.png",
-    accent: "amber",
-  },
-  {
     id: "dr-cale-li",
     name: "Dr. Cale Li",
     specialty: "Internal Medicine",
