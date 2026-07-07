@@ -65,7 +65,7 @@ export default function RoutePage() {
               {
                 title: "Primary Care",
                 description: "Build a baseline that holds up.",
-                to: "/specialties/primary-care",
+                to: "/specialties/primary-care-nyc",
               },
               {
                 title: "Longevity programs",

@@ -476,7 +476,7 @@ export function schemaDebugBundle() {
     service: medicalServiceSchema({
       name: "Primary Care in Lower Manhattan",
       description: "Comprehensive primary care at Umbrella Health NYC.",
-      path: "/specialties/primary-care",
+      path: "/specialties/primary-care-nyc",
       serviceType: "Primary Care",
     }),
     aggregateRating: aggregateRatingSchema(),

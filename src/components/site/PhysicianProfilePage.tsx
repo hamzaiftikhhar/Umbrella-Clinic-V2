@@ -31,7 +31,7 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <AppLink href="/our-physicians" className="hover:underline">
+                <AppLink href="/our-team" className="hover:underline">
                   Our Physicians
                 </AppLink>
               </li>

@@ -1,21 +1,22 @@
-import { SPECIALTIES_NAV } from "./clinical-services";
+import { HEADER_NAV_ITEMS, ROUTES, SPECIALTY_NAV_ITEMS } from "./site-architecture";
 
 export type NavItem = { label: string; to: string };
 
-export { SPECIALTIES_NAV };
+/** Our Specialties dropdown — hub children only */
+export const SPECIALTIES_NAV: NavItem[] = SPECIALTY_NAV_ITEMS.map(({ label, to }) => ({
+  label,
+  to,
+}));
 
-export const PRIMARY_NAV: NavItem[] = [
-  { label: "Home", to: "/" },
-  { label: "Our Team", to: "/our-physicians" },
-  { label: "Patient Reviews", to: "/reviews" },
-  { label: "Contact Us", to: "/visit-us" },
-];
+/** Top-level header links (excluding Home and Specialties dropdown) */
+export const PRIMARY_NAV: NavItem[] = HEADER_NAV_ITEMS.map(({ label, to }) => ({
+  label,
+  to,
+}));
 
-/** @deprecated Use PRIMARY_NAV + SPECIALTIES_NAV — kept for any legacy imports */
 export const MORE_NAV: NavItem[] = [
   { label: "FAQ", to: "/faq" },
   { label: "Resources", to: "/resources" },
-  { label: "Insurance", to: "/insurance" },
   { label: "For Employers", to: "/employers" },
   { label: "Patient Portal", to: "/portal" },
 ];
@@ -28,8 +29,9 @@ export const FOOTER_COLUMNS = [
   {
     title: "Services",
     links: [
-      { label: "Longevity Programs", to: "/longevity" },
-      { label: "Insurance & Pricing", to: "/insurance" },
+      { label: "Diagnostics & Testing", to: ROUTES.diagnostics },
+      { label: "Medical Spa Services", to: ROUTES.medicalSpa },
+      { label: "Insurance & Pricing", to: ROUTES.insurance },
       { label: "For Employers", to: "/employers" },
       { label: "Patient Resources", to: "/resources" },
     ],
@@ -37,9 +39,10 @@ export const FOOTER_COLUMNS = [
   {
     title: "Clinic",
     links: [
-      { label: "Our Team", to: "/our-physicians" },
-      { label: "Patient Reviews", to: "/reviews" },
-      { label: "Visit Us", to: "/visit-us" },
+      { label: "Our Team", to: ROUTES.ourTeam },
+      { label: "Patient Reviews", to: ROUTES.patientReviews },
+      { label: "Contact Us", to: ROUTES.contactUs },
+      { label: "Blog", to: ROUTES.blog },
       { label: "FAQ", to: "/faq" },
     ],
   },

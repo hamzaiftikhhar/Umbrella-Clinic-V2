@@ -45,7 +45,7 @@ export function generateLlmsTxt(full = false): string {
     "",
     "## Locations served",
     "- Lower Manhattan, NoHo, Union Square, SoHo, Tribeca, Greenwich Village, Flatiron, Brooklyn (commutable)",
-    `- Visit us: ${SITE_URL}/visit-us`,
+    `- Visit us: ${SITE_URL}/contact-us`,
     "",
     "## FAQ",
     `- ${SITE_URL}/faq`,
