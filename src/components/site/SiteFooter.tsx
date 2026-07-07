@@ -3,8 +3,14 @@ import { Link } from "@/components/AppLink";
 import { Facebook, Instagram } from "lucide-react";
 import { FOOTER_COLUMNS } from "@/data/nav";
 import { FOOTER_DESCRIPTION, FOOTER_TAGLINE } from "@/data/site-content";
-import { SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
+import { CLINIC_SOCIAL_LINKS, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
 import { Wordmark } from "./primitives/Wordmark";
+
+const FOOTER_SOCIAL = [
+  { href: CLINIC_SOCIAL_LINKS.instagram, label: "Umbrella Health on Instagram", Icon: Instagram },
+  { href: CLINIC_SOCIAL_LINKS.facebook, label: "Umbrella Health on Facebook", Icon: Facebook },
+  { href: CLINIC_SOCIAL_LINKS.tiktok, label: "Umbrella Health on TikTok", Icon: TikTokIcon },
+] as const;
 
 export function SiteFooter() {
   return (
@@ -23,11 +29,13 @@ export function SiteFooter() {
             <div className="flex items-start justify-between gap-4 md:block">
               <Wordmark light imageClassName="h-14 w-auto md:h-28 lg:h-36" />
               <div className="flex shrink-0 gap-2 md:mt-8 md:gap-3">
-                {[Instagram, Facebook, TikTokIcon].map((Icon, i) => (
+                {FOOTER_SOCIAL.map(({ href, label, Icon }) => (
                   <a
-                    key={i}
-                    href="#"
-                    aria-label="Social link"
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
                     className="grid h-8 w-8 place-items-center rounded-full border border-primary-foreground/25 text-primary-foreground/90 transition-colors hover:bg-primary-foreground hover:text-primary md:h-10 md:w-10"
                   >
                     <Icon className="h-3.5 w-3.5 md:h-4 md:w-4" />

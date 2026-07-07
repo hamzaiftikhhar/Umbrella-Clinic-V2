@@ -4,7 +4,21 @@ export const BOOKING_URL =
 export const SITE_NAME = "Umbrella Health";
 export const SITE_TAGLINE = "Modern medicine, measured.";
 export const SITE_PHONE = "(212) 555-0188";
+export const SITE_EMAIL = "info@myumbrellahealth.com";
 export const SITE_ADDRESS = "200 Lafayette Street, New York, NY 10012";
+
+/** Official clinic social profiles — used in schema and footer. */
+export const CLINIC_SOCIAL_LINKS = {
+  facebook: "https://www.facebook.com/profile.php?id=61590819788355",
+  instagram: "https://www.instagram.com/umbrellahealth.nyc/",
+  tiktok: "https://www.tiktok.com/@umbrella.health",
+} as const;
+
+export const CLINIC_SOCIAL_SAME_AS = [
+  CLINIC_SOCIAL_LINKS.facebook,
+  CLINIC_SOCIAL_LINKS.instagram,
+  CLINIC_SOCIAL_LINKS.tiktok,
+] as const;
 
 /** Google Maps place listing — Umbrella Health, 200 Lafayette St, NoHo. */
 export const CLINIC_GOOGLE_MAPS_URL =

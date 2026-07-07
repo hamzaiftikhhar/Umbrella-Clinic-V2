@@ -1,15 +1,18 @@
 import type { Physician } from "@/data/physicians";
 import { PHYSICIANS, physicianProfilePath } from "@/data/physicians";
 import type { QA } from "@/components/site/primitives/FAQList";
+import { ROUTES } from "@/data/site-architecture";
 import {
   absoluteUrl,
   CLINIC_COORDS,
   CLINIC_GOOGLE_MAPS_URL,
   SITE_ADDRESS,
+  SITE_EMAIL,
   SITE_NAME,
   SITE_PHONE,
   SITE_TAGLINE,
   SITE_URL,
+  CLINIC_SOCIAL_SAME_AS,
 } from "@/lib/site";
 
 export const DEFAULT_OG_IMAGE = "/images/street-view.png";
@@ -33,6 +36,12 @@ export const CLINIC_MEDICAL_SPECIALTIES = [
 
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const CLINIC_ID = `${SITE_URL}/#medical-clinic`;
+export const CLINIC_SCHEMA_ID = `${SITE_URL}/#clinic`;
+export const CATALOG_SCHEMA_ID = `${SITE_URL}/#catalog`;
+export const LOGO_SCHEMA_ID = `${SITE_URL}/#logo`;
+export const HOMEPAGE_SCHEMA_ID = `${SITE_URL}/#homepage`;
+export const HOMEPAGE_FAQ_SCHEMA_ID = `${SITE_URL}/#faq`;
+export const HERO_IMAGE_SCHEMA_ID = `${SITE_URL}/#hero`;
 
 export function postalAddressSchema() {
   return {
@@ -351,6 +360,166 @@ export function specialtyPageSchemaGraph(
   return { "@context": "https://schema.org", "@graph": graph };
 }
 
+const PRIMARY_CARE_SCHEMA_PATH = "/specialties/primary-care-nyc";
+
+/** Structured data graph for the Primary Care NYC landing page. */
+export function primaryCareNycPageSchemaGraph() {
+  const pageUrl = absoluteUrl(PRIMARY_CARE_SCHEMA_PATH);
+  const serviceId = `${pageUrl}#service`;
+  const webpageId = `${pageUrl}#webpage`;
+  const faqId = `${pageUrl}#faq`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": ORGANIZATION_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        logo: { "@id": LOGO_SCHEMA_ID },
+      },
+      {
+        "@type": "MedicalClinic",
+        "@id": CLINIC_SCHEMA_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        parentOrganization: { "@id": ORGANIZATION_ID },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "32 W 14th Street",
+          addressLocality: "New York",
+          addressRegion: "NY",
+          postalCode: "10011",
+          addressCountry: "US",
+        },
+        medicalSpecialty: ["PrimaryCare", "InternalMedicine", "PreventiveMedicine"],
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: "Primary Care Doctor in New York City",
+        serviceType: "Primary Care",
+        provider: { "@id": CLINIC_SCHEMA_ID },
+        areaServed: [
+          { "@type": "City", name: "New York" },
+          { "@type": "Place", name: "Lower Manhattan" },
+          { "@type": "Place", name: "Union Square" },
+          { "@type": "Place", name: "Chelsea" },
+          { "@type": "Place", name: "Greenwich Village" },
+          { "@type": "Place", name: "Flatiron District" },
+          { "@type": "Place", name: "SoHo" },
+          { "@type": "Place", name: "NoHo" },
+          { "@type": "Place", name: "Gramercy" },
+          { "@type": "Place", name: "East Village" },
+          { "@type": "Place", name: "West Village" },
+        ],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Primary Care Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Annual Physical Exams" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Preventive Care" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Women's Primary Care" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Men's Primary Care" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "LGBTQ+ Primary Care" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Transgender Primary Care" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Concierge Primary Care" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "Service", name: "Chronic Disease Management" },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "MedicalWebPage",
+        "@id": webpageId,
+        url: pageUrl,
+        name: "Primary Care Doctor in New York City",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": serviceId },
+        mainEntity: { "@id": serviceId },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: absoluteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Primary Care",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": faqId,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Do you accept new patients?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We welcome new patients seeking comprehensive primary care in New York City.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you provide annual physicals?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We provide annual physical exams, preventive screenings and wellness visits.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer LGBTQ+ primary care?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. We provide inclusive, patient-centered LGBTQ+ primary care.",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: absoluteUrl("/"),
+        name: SITE_NAME,
+        publisher: { "@id": ORGANIZATION_ID },
+      },
+    ],
+  };
+}
+
 export function faqPageSchema(items: QA[]) {
   return {
     "@context": "https://schema.org",
@@ -442,24 +611,123 @@ export function articleSchema(article: ArticleSchemaInput) {
   };
 }
 
-const PHYSICIAN_IMAGE_OBJECTS = PHYSICIANS.map((p) =>
-  imageObjectSchema(
-    p.image,
-    p.imageAlt ?? `${p.name}, board-certified ${p.specialty} at Umbrella Health NYC`,
-    `${absoluteUrl(physicianProfilePath(p.id))}#image`,
-  ),
-);
+const HOME_SERVICE_CATALOG = [
+  { name: "Primary Care", path: ROUTES.primaryCare },
+  { name: "Internal Medicine", path: ROUTES.primaryCare },
+  { name: "Cardiology & Vascular Medicine", path: ROUTES.cardiology },
+  { name: "Neurology", path: ROUTES.neurology },
+  { name: "Sleep Medicine", path: ROUTES.sleepMedicine },
+  { name: "Interventional Pain Management", path: ROUTES.painManagement },
+  { name: "Medical Weight Loss", path: ROUTES.medicalWeightLoss },
+  { name: "Diagnostics & Testing", path: ROUTES.diagnostics },
+  { name: "Medical Spa Services", path: ROUTES.medicalSpa },
+] as const;
 
-/** Combined entity graph for homepage — no duplicate FAQ (canonical FAQ lives on /faq). */
+/** Combined entity graph for the homepage. */
 export function homePageSchemaGraph() {
   return {
     "@context": "https://schema.org",
     "@graph": [
-      organizationSchema(),
-      webSiteSchema(),
-      medicalClinicSchema({ includeHours: true, includeRating: true }),
-      videoObjectSchema(),
-      ...PHYSICIAN_IMAGE_OBJECTS,
+      {
+        "@type": "Organization",
+        "@id": ORGANIZATION_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        logo: { "@id": LOGO_SCHEMA_ID },
+        description: "Primary Care & Specialists in NYC.",
+        telephone: SITE_PHONE_SCHEMA,
+        email: SITE_EMAIL,
+        sameAs: [...CLINIC_SOCIAL_SAME_AS],
+      },
+      {
+        "@type": "MedicalClinic",
+        "@id": CLINIC_SCHEMA_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        parentOrganization: { "@id": ORGANIZATION_ID },
+        address: postalAddressSchema(),
+        geo: geoCoordinatesSchema(),
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "09:00",
+            closes: "17:00",
+          },
+        ],
+        medicalSpecialty: [
+          "PrimaryCare",
+          "InternalMedicine",
+          "Cardiovascular",
+          "Neurology",
+          "SleepMedicine",
+        ],
+        hasOfferCatalog: { "@id": CATALOG_SCHEMA_ID },
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": CATALOG_SCHEMA_ID,
+        name: "Medical Services",
+        itemListElement: HOME_SERVICE_CATALOG.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: service.name,
+            url: absoluteUrl(service.path),
+          },
+        })),
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: absoluteUrl("/"),
+        name: SITE_NAME,
+        publisher: { "@id": ORGANIZATION_ID },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${absoluteUrl("/")}?s={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": HOMEPAGE_SCHEMA_ID,
+        url: absoluteUrl("/"),
+        name: "Primary Care & Specialists in NYC",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": CLINIC_SCHEMA_ID },
+        primaryImageOfPage: { "@id": HERO_IMAGE_SCHEMA_ID },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": HOMEPAGE_FAQ_SCHEMA_ID,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How can I find a primary care doctor near me?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Choose a provider offering preventive care, coordinated specialists and convenient access. Umbrella Health serves patients in Lower Manhattan.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are your primary care doctors accepting new patients?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, new patients are welcome. Contact us to schedule an appointment.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you accept Medicaid for adult primary care?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Certain Medicaid plans are accepted. Contact us to verify your coverage.",
+            },
+          },
+        ],
+      },
     ],
   };
 }
