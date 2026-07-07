@@ -65,12 +65,12 @@ export default function RoutePage() {
               {
                 title: "Cardiology & Vascular",
                 description: "Specialists who read your own data.",
-                to: "/specialties/cardiology-vascular",
+                to: "/specialties/cardiologist-nyc",
               },
               {
                 title: "Primary Care",
                 description: "Integrated annual physicals.",
-                to: "/specialties/primary-care",
+                to: "/specialties/primary-care-nyc",
               },
               {
                 title: "Sample report",

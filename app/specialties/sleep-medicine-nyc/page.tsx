@@ -5,7 +5,7 @@ import { SPECIALTY_AEO } from "@/data/specialty-content";
 import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
 
 const aeo = SPECIALTY_AEO["sleep-medicine"];
-const seo = buildSpecialtyPageSeo("/specialties/sleep-medicine", [
+const seo = buildSpecialtyPageSeo("/specialties/sleep-medicine-nyc", [
   { label: "Home", to: "/" },
   { label: "Specialties", to: "/specialties" },
   { label: "Sleep Medicine" },

@@ -5,7 +5,7 @@ import { SPECIALTY_AEO } from "@/data/specialty-content";
 import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
 
 const aeo = SPECIALTY_AEO["cardiology-vascular"];
-const seo = buildSpecialtyPageSeo("/specialties/cardiology-vascular", [
+const seo = buildSpecialtyPageSeo("/specialties/cardiologist-nyc", [
   { label: "Home", to: "/" },
   { label: "Specialties", to: "/specialties" },
   { label: "Cardiology & Vascular" },

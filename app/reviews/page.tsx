@@ -11,7 +11,7 @@ const seo = buildPageSeo({
   title: "Patient Reviews — Umbrella Health NYC",
   description:
     "Read real patient reviews for Umbrella Health in Lower Manhattan. Rated 4.6/5 on Google — primary care, specialists, and diagnostics under one roof.",
-  path: "/reviews",
+  path: "/patient-reviews",
   crumbs: [{ label: "Home", to: "/" }, { label: "Patient Reviews" }],
   geo: true,
   extraSchema: [medicalClinicSchema({ includeRating: true }), ...reviewSchemas(patientReviews)],

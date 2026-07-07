@@ -33,7 +33,7 @@ function FAQHelpContact({ className }: { className?: string }) {
       <p className="mt-4 text-base text-foreground">
         Need more help?{" "}
         <Link
-          href="/visit-us"
+          href="/contact-us"
           className="font-medium text-accent-emerald underline decoration-accent-emerald/50 underline-offset-[6px] transition-colors hover:text-accent-emerald/80 hover:decoration-accent-emerald"
         >
           Contact us

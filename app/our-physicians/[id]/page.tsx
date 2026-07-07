@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     ogImage: physician.image,
     crumbs: [
       { label: "Home", to: "/" },
-      { label: "Our Physicians", to: "/our-physicians" },
+      { label: "Our Team", to: "/our-team" },
       { label: physician.name },
     ],
   });

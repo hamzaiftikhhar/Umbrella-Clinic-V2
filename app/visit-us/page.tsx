@@ -13,11 +13,11 @@ import { CLINIC_MAP_EMBED_URL } from "@/lib/site";
 import { medicalClinicSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
-  title: "Visit Us — Umbrella Health NYC | 200 Lafayette St",
+  title: "Contact Us — Umbrella Health NYC | 200 Lafayette St",
   description:
     "Visit Umbrella Health in NoHo, Lower Manhattan. Hours, directions, accessibility, languages spoken, and how to get here by subway.",
-  path: "/visit-us",
-  crumbs: [{ label: "Home", to: "/" }, { label: "Visit Us" }],
+  path: "/contact-us",
+  crumbs: [{ label: "Home", to: "/" }, { label: "Contact Us" }],
   geo: true,
   ogImage: "/images/street-view.png",
   extraSchema: [medicalClinicSchema({ includeHours: true })],
@@ -52,13 +52,13 @@ function Page() {
   return (
     <main>
       <PageHero
-        eyebrow="Visit Us"
+        eyebrow="Contact Us"
         italic="The Umbrella clinic,"
         title="in NoHo."
         description="Designed to feel calm. Built to deliver clinically. Around the corner from the 6 at Spring Street."
         image={IMG.reception}
         imageAlt="Umbrella Health reception in NoHo"
-        crumbs={[{ label: "Home", to: "/" }, { label: "Visit Us" }]}
+        crumbs={[{ label: "Home", to: "/" }, { label: "Contact Us" }]}
       />
       <section className="py-20 sm:py-28">
         <Container>

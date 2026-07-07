@@ -44,7 +44,7 @@ export const FEATURED_SERVICE_COPY = {
   description:
     "Sustainable weight loss starts with understanding your metabolism. Our physician-led GLP-1 programs combine medical supervision, advanced testing, and ongoing support to help you achieve lasting results, not quick fixes.",
   cta: "Explore Weight Loss Programs",
-  href: "/weight-loss-glp1",
+  href: "/specialties/medical-weight-loss-nyc",
 } as const;
 
 export type SiteFaq = (typeof SITE_FAQS)[number];

@@ -37,7 +37,13 @@ export const IMG = {
   doctorWoman3: "/images/dr-rajat.png",
   doctorMan3: "/images/dr-rajat.png",
 
-  // Lifestyle / patients
+  /** Audience-specific primary care imagery */
+  womensHealth: u("photo-1573497019940-1c28c88b4f3e", 1800),
+  mensHealth: "/images/premium-doctor-portrait.png",
+  inclusiveCare: u("photo-1582719508461-905c673771fd", 1800),
+  transgenderCare:
+    "/images/APNQkAFOczQSQGPfH60lyTslmZBtZS0FORi3PpPqefEzCy0rafeDlr1WtadgUpPDgQLDBYTpu_fsIF7J0xfmK1rBpLbTIVvqlr4bMDIdleffPWPsFhTPFAm57JFQdgpaB6R4K4DeLYlkw3627-h3024-k-no.jpg",
+  conciergeCare: u("photo-1521119989659-a83eee488004", 1800),
   glp1Hero: u("photo-1571019613454-1cb2f99b2d8b", 1600),
   longevityHero: u("photo-1571902943202-507ec2618e8f", 1600),
   patientHappy: u("photo-1582719508461-905c673771fd", 1600),

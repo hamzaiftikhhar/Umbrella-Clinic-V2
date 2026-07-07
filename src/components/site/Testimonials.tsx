@@ -24,7 +24,7 @@ export function Testimonials() {
             className="max-w-2xl"
           />
           <Link
-            to="/reviews"
+            to="/patient-reviews"
             className="inline-flex shrink-0 items-center gap-2 rounded-full border border-border/70 bg-card px-5 py-2.5 text-sm font-medium text-primary transition-colors hover:border-primary/30 hover:bg-muted/40"
           >
             View all reviews

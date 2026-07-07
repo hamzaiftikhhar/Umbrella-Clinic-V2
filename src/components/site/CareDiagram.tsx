@@ -27,15 +27,15 @@ interface OrbitService extends ServiceSeed {
 }
 
 const innerRingSeeds: ServiceSeed[] = [
-  { name: "Primary Care", image: IMG.consult, href: "/specialties/primary-care" },
-  { name: "Cardiology", image: IMG.ekg, href: "/specialties/cardiology-vascular" },
-  { name: "Neurology", image: IMG.doctorPatient, href: "/specialties/neurology" },
-  { name: "Sleep Medicine", image: IMG.sleepStudy, href: "/specialties/sleep-medicine" },
-  { name: "Pain Management", image: IMG.examRoom, href: "/specialties/pain-management" },
+  { name: "Primary Care", image: IMG.consult, href: "/specialties/primary-care-nyc" },
+  { name: "Cardiology", image: IMG.ekg, href: "/specialties/cardiologist-nyc" },
+  { name: "Neurology", image: IMG.doctorPatient, href: "/specialties/neurologist-nyc" },
+  { name: "Sleep Medicine", image: IMG.sleepStudy, href: "/specialties/sleep-medicine-nyc" },
+  { name: "Pain Management", image: IMG.examRoom, href: "/specialties/pain-management-nyc" },
 ];
 
 const outerRingSeeds: ServiceSeed[] = [
-  { name: "GLP-1 Weight Loss", image: IMG.glp1Hero, href: "/weight-loss-glp1" },
+  { name: "GLP-1 Weight Loss", image: IMG.glp1Hero, href: "/specialties/medical-weight-loss-nyc" },
   { name: "Diagnostics", image: IMG.microscope, href: "/diagnostics" },
   { name: "Biomarkers", image: IMG.lab, href: "/diagnostics/biomarkers" },
   { name: "Imaging", image: IMG.ekg, href: "/diagnostics/imaging-cardiac" },

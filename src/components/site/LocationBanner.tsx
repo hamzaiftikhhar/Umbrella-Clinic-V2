@@ -61,7 +61,7 @@ export function LocationBanner() {
 
                   <div className="mt-7 flex flex-wrap items-center gap-3">
                     <Link
-                      to="/visit-us"
+                      to="/contact-us"
                       className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/35 bg-primary-foreground/10 px-6 py-2.5 text-sm font-medium text-primary-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary-foreground/55 hover:bg-primary-foreground/15"
                     >
                       Our Clinics
