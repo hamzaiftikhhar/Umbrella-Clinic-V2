@@ -206,6 +206,48 @@ function StickyTimeline({ activeIndex }: { activeIndex: number }) {
   );
 }
 
+function PathwayPortrait({
+  segment,
+  index,
+  className,
+  mobile = false,
+}: {
+  segment: AudienceSegment;
+  index: number;
+  className?: string;
+  mobile?: boolean;
+}) {
+  return (
+    <div
+      className={cn(
+        "relative mx-auto w-full max-w-[300px] sm:max-w-[340px] lg:mx-0 lg:max-w-none",
+        className,
+      )}
+    >
+      <div
+        className="absolute -right-3 -top-3 h-20 w-20 rounded-full opacity-40 blur-2xl lg:h-24 lg:w-24"
+        style={{ backgroundColor: segment.accent }}
+        aria-hidden
+      />
+      <div
+        className={cn(
+          "relative overflow-hidden rounded-[1.5rem] shadow-[var(--shadow-card)] ring-1 ring-border/40 lg:rounded-[1.75rem] lg:shadow-[var(--shadow-elegant)]",
+          mobile ? "aspect-[16/10] sm:aspect-[5/3]" : "aspect-[3/4]",
+        )}
+      >
+        <Image
+          src={segment.image}
+          alt={segment.imageAlt}
+          fill
+          className="object-cover"
+          sizes={mobile ? "(max-width: 1024px) 100vw, 320px" : "(max-width: 1024px) 260px, 280px"}
+          priority={index === 0}
+        />
+      </div>
+    </div>
+  );
+}
+
 function PathwayChapter({
   segment,
   index,
@@ -263,23 +305,29 @@ function PathwayChapter({
             {segment.title}
           </h3>
 
-          <p className="mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground sm:text-lg sm:leading-[1.75]">
+          <div className="my-8 lg:hidden">
+            <PathwayPortrait segment={segment} index={index} mobile />
+          </div>
+
+          <p className="max-w-2xl text-base leading-[1.8] text-muted-foreground sm:text-lg sm:leading-[1.75] lg:mt-6">
             {segment.body}
           </p>
 
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-x-6">
-            {segment.items.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/88">
-                <span
-                  className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full"
-                  style={{ backgroundColor: segment.accentSurface }}
-                >
-                  <Check className="h-3 w-3" style={{ color: segment.accent }} aria-hidden />
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
+          {segment.items.length > 0 && (
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-x-6">
+              {segment.items.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/88">
+                  <span
+                    className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full"
+                    style={{ backgroundColor: segment.accentSurface }}
+                  >
+                    <Check className="h-3 w-3" style={{ color: segment.accent }} aria-hidden />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <BookButton>{segment.cta}</BookButton>
@@ -290,24 +338,8 @@ function PathwayChapter({
           </div>
         </div>
 
-        <div className="lg:sticky lg:top-32">
-          <div className="relative mx-auto w-full max-w-[260px] lg:mx-0 lg:max-w-none">
-            <div
-              className="absolute -right-3 -top-3 h-20 w-20 rounded-full opacity-40 blur-2xl"
-              style={{ backgroundColor: segment.accent }}
-              aria-hidden
-            />
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[1.5rem] shadow-[var(--shadow-card)] ring-1 ring-border/40">
-              <Image
-                src={segment.image}
-                alt={segment.imageAlt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 260px, 280px"
-                priority={index === 0}
-              />
-            </div>
-          </div>
+        <div className="hidden lg:sticky lg:top-32 lg:block">
+          <PathwayPortrait segment={segment} index={index} />
         </div>
       </motion.div>
     </article>
