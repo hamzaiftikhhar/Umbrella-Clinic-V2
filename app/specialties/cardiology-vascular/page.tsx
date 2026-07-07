@@ -1,31 +1,15 @@
-import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { LeafPage, faqSchema } from "@/components/site/LeafPage";
+import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
+import { SPECIALTY_AEO } from "@/data/specialty-content";
+import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
 
-const faqs = [
-  {
-    q: "Do you do EKG and echo on-site?",
-    a: "Yes  EKG, ambulatory telemetry, and vascular ultrasound are all owned and read in-house.",
-  },
-  {
-    q: "How fast do I get results?",
-    a: "Most cardiac and vascular results are reviewed the same day, with a follow-up plan inside 48 hours.",
-  },
-];
-
-const seo = buildPageSeo({
-  title: "Cardiology & Vascular Care NYC  Umbrella Health",
-  description:
-    "In-house EKG, telemetry, and vascular ultrasound from board-certified cardiologists. Same-day results, integrated with your primary care.",
-  path: "/specialties/cardiology-vascular",
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Cardiology & Vascular" },
-  ],
-  extraSchema: [faqSchema(faqs)],
-});
+const aeo = SPECIALTY_AEO["cardiology-vascular"];
+const seo = buildSpecialtyPageSeo("/specialties/cardiology-vascular", [
+  { label: "Home", to: "/" },
+  { label: "Specialties", to: "/specialties" },
+  { label: "Cardiology & Vascular" },
+], aeo);
 export const metadata = seo.metadata;
 
 export default function RoutePage() {
@@ -39,9 +23,9 @@ export default function RoutePage() {
             italic: "Your heart, ",
             title: "in real time.",
             description:
-              "Board-certified cardiologists with owned diagnostics  so the answer arrives the same day, not the next week.",
+              "Board-certified cardiologists with owned diagnostics — so the answer arrives the same day, not the next week.",
             image: IMG.ekg,
-            imageAlt: "Cardiac diagnostic equipment at Umbrella Health",
+            imageAlt: "Cardiac diagnostic equipment at Umbrella Health NYC",
             crumbs: [
               { label: "Home", to: "/" },
               { label: "Specialties", to: "/specialties" },
@@ -51,7 +35,7 @@ export default function RoutePage() {
           intro: {
             heading: "Faster results,",
             accent: "same team.",
-            body: "Owning the diagnostics means your cardiologist reads your own data  not a referral packet from a stranger.",
+            body: "Owning the diagnostics means your cardiologist reads your own data — not a referral packet from a stranger.",
             bullets: [
               {
                 iconKey: "heart-pulse",
@@ -104,7 +88,7 @@ export default function RoutePage() {
               },
             ],
           },
-          faqs,
+          aeo,
         }}
       />
     </>

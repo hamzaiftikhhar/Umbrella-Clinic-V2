@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { Crumb } from "@/components/site/PageHero";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 
 interface HeadOpts {
   title: string;
@@ -9,11 +10,24 @@ interface HeadOpts {
   type?: "website" | "article";
   crumbs?: Crumb[];
   extraSchema?: object[];
+  /** Override default OG/Twitter image path (relative to public/). */
+  ogImage?: string;
+  /** Optional keywords for high-intent landing pages. */
+  keywords?: string[];
+  /** Add NYC geo meta tags for local landing pages. */
+  geo?: boolean;
+  /** Override robots directives (defaults to index, follow). */
+  robots?: Metadata["robots"];
 }
 
 export interface PageSeo {
   metadata: Metadata;
   jsonLd: object[];
+}
+
+function ogImages(imagePath: string) {
+  const url = absoluteUrl(imagePath);
+  return [{ url, width: 1200, height: 630, alt: SITE_NAME }];
 }
 
 export function buildPageSeo({
@@ -23,6 +37,10 @@ export function buildPageSeo({
   type = "website",
   crumbs,
   extraSchema = [],
+  ogImage = DEFAULT_OG_IMAGE,
+  keywords,
+  geo = false,
+  robots = { index: true, follow: true },
 }: HeadOpts): PageSeo {
   const jsonLd: object[] = [];
 
@@ -41,9 +59,13 @@ export function buildPageSeo({
 
   jsonLd.push(...extraSchema);
 
+  const images = ogImages(ogImage);
+
   const metadata: Metadata = {
     title,
     description,
+    keywords,
+    robots,
     alternates: {
       canonical: path,
     },
@@ -53,18 +75,29 @@ export function buildPageSeo({
       type,
       url: path,
       siteName: SITE_NAME,
+      images,
+      locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [absoluteUrl(ogImage)],
     },
+    ...(geo
+      ? {
+          other: {
+            "geo.region": "US-NY",
+            "geo.placename": "New York City",
+          },
+        }
+      : {}),
   };
 
   return { metadata, jsonLd };
 }
 
-/** @deprecated TanStack Start helper  use buildPageSeo for Next.js pages. */
+/** @deprecated TanStack Start helper — use buildPageSeo for Next.js pages. */
 export function pageHead(opts: HeadOpts) {
   const { jsonLd } = buildPageSeo(opts);
   const scripts = jsonLd.map((s) => ({

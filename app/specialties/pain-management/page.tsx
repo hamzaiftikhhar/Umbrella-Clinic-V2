@@ -1,19 +1,15 @@
-import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
+import { SPECIALTY_AEO } from "@/data/specialty-content";
+import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
 
-const seo = buildPageSeo({
-  title: "Interventional Pain Management NYC  Umbrella Health",
-  description:
-    "Fellowship-trained interventional pain procedures and integrated care for chronic and complex pain. NYC clinic.",
-  path: "/specialties/pain-management",
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Pain Management" },
-  ],
-});
+const aeo = SPECIALTY_AEO["pain-management"];
+const seo = buildSpecialtyPageSeo("/specialties/pain-management", [
+  { label: "Home", to: "/" },
+  { label: "Specialties", to: "/specialties" },
+  { label: "Pain Management" },
+], aeo);
 export const metadata = seo.metadata;
 
 export default function RoutePage() {
@@ -27,9 +23,9 @@ export default function RoutePage() {
             italic: "Pain treated,",
             title: "not just managed.",
             description:
-              "Fellowship-trained interventional procedures combined with primary care continuity  so chronic pain isn't a parallel medical life.",
+              "Fellowship-trained interventional procedures combined with primary care continuity — so chronic pain isn't a parallel medical life.",
             image: IMG.examRoom,
-            imageAlt: "Pain management procedure room at Umbrella Health",
+            imageAlt: "Pain management procedure room at Umbrella Health NYC",
             crumbs: [
               { label: "Home", to: "/" },
               { label: "Specialties", to: "/specialties" },
@@ -39,7 +35,7 @@ export default function RoutePage() {
           intro: {
             heading: "Founder-led,",
             accent: "fellowship-trained.",
-            body: "Our founding physician completed an interventional pain fellowship  this is the specialty Umbrella was built around.",
+            body: "Our founding physician completed an interventional pain fellowship — this is the specialty Umbrella was built around.",
             bullets: [
               {
                 iconKey: "award",
@@ -70,6 +66,7 @@ export default function RoutePage() {
               "Myofascial pain",
             ],
           },
+          aeo,
         }}
       />
     </>

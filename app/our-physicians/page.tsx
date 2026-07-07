@@ -8,20 +8,17 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { SectionHeading } from "@/components/site/primitives/SectionHeading";
 import { PHYSICIANS } from "@/data/physicians";
 import { IMG } from "@/data/images";
+import { physiciansSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
-  title: "Our Physicians  Umbrella Health NYC",
+  title: "Our Physicians — Umbrella Health NYC",
   description:
-    "Meet the physicians behind Umbrella Health  a multispecialty team delivering coordinated, data-led care in Lower Manhattan.",
+    "Meet the board-certified physicians at Umbrella Health — a multispecialty team delivering coordinated primary care and specialty medicine in Lower Manhattan, NYC.",
   path: "/our-physicians",
   crumbs: [{ label: "Home", to: "/" }, { label: "Our Physicians" }],
-  extraSchema: PHYSICIANS.map((p) => ({
-    "@context": "https://schema.org",
-    "@type": "Physician",
-    name: p.name,
-    medicalSpecialty: p.specialty,
-    worksFor: { "@type": "MedicalClinic", name: "Umbrella Health" },
-  })),
+  geo: true,
+  ogImage: "/images/dr-rajat.png",
+  extraSchema: physiciansSchema(PHYSICIANS),
 });
 export const metadata = seo.metadata;
 
@@ -57,11 +54,11 @@ function Page() {
             {PHYSICIANS.map((p, i) => (
               <PhysicianCard
                 key={p.id}
+                id={p.id}
                 name={p.name}
                 specialty={p.specialty}
                 image={p.image}
                 imageAlt={p.imageAlt}
-                socials={p.socials}
                 priority={i < 3}
               />
             ))}

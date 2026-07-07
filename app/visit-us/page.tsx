@@ -10,30 +10,17 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
 import { CLINIC_MAP_EMBED_URL } from "@/lib/site";
+import { medicalClinicSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
   title: "Visit Us — Umbrella Health NYC | 200 Lafayette St",
   description:
-    "Visit Umbrella Health in NoHo, NYC. Hours, accessibility, languages spoken, and how to get here.",
+    "Visit Umbrella Health in NoHo, Lower Manhattan. Hours, directions, accessibility, languages spoken, and how to get here by subway.",
   path: "/visit-us",
   crumbs: [{ label: "Home", to: "/" }, { label: "Visit Us" }],
-  extraSchema: [
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalClinic",
-      name: "Umbrella Health",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "200 Lafayette Street",
-        addressLocality: "New York",
-        addressRegion: "NY",
-        postalCode: "10012",
-        addressCountry: "US",
-      },
-      telephone: "+1-212-555-0188",
-      openingHours: ["Mo-Fr 08:00-19:00", "Sa 09:00-15:00"],
-    },
-  ],
+  geo: true,
+  ogImage: "/images/street-view.png",
+  extraSchema: [medicalClinicSchema({ includeHours: true })],
 });
 export const metadata = seo.metadata;
 

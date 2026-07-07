@@ -92,7 +92,7 @@ export function FounderProfile() {
             </ul>
 
             <Link
-              to="/our-physicians"
+              to="/our-physicians/dr-rajat-lamington"
               className="group mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground transition-colors hover:text-primary"
             >
               Meet The Whole Team

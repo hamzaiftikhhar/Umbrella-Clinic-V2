@@ -2,17 +2,21 @@ import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { NeighborhoodPage } from "@/components/site/NeighborhoodPage";
 import { IMG } from "@/data/images";
+import { NEIGHBORHOOD_AREAS } from "@/data/seo-faqs";
+import { localClinicSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
-  title: "Primary & Specialty Care near Union Square  Umbrella",
+  title: "Primary & Specialty Care near Union Square — Umbrella Health",
   description:
-    "Modern multispecialty care a short walk from Union Square. Primary care, cardiology, diagnostics, longevity.",
+    "Board-certified primary care and specialists a short walk from Union Square, NYC. In-house diagnostics, insurance accepted — book online.",
   path: "/locations/union-square",
+  geo: true,
   crumbs: [
     { label: "Home", to: "/" },
     { label: "Locations", to: "/locations" },
     { label: "Union Square" },
   ],
+  extraSchema: [localClinicSchema("Union Square", [...NEIGHBORHOOD_AREAS["union-square"]])],
 });
 export const metadata = seo.metadata;
 
