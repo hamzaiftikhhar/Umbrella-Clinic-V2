@@ -8,7 +8,10 @@ import { CTABanner } from "./primitives/CTABanner";
 import { PillList } from "./PageBuilding";
 import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
 import { PremiumIcon } from "./primitives/IconBadge";
+import { PhysicianCard } from "./primitives/PhysicianCard";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
+import type { SpecialtyAeoContent } from "@/data/specialty-content";
+import { physiciansForSpecialty } from "@/data/physicians";
 
 export interface LeafConfig {
   hero: {
@@ -35,6 +38,8 @@ export interface LeafConfig {
   };
   faqs?: QA[];
   cta?: { title?: string; italic?: string; image?: string };
+  /** AEO-rich specialty sections (symptoms, treatments, physicians, unique FAQs). */
+  aeo?: SpecialtyAeoContent;
 }
 
 export function LeafPage({ config }: { config: LeafConfig }) {
@@ -83,6 +88,80 @@ export function LeafPage({ config }: { config: LeafConfig }) {
         </section>
       )}
 
+      {c.aeo && (
+        <>
+          <section className="border-t border-border/60 bg-secondary/20 py-20 sm:py-28" aria-labelledby="symptoms-heading">
+            <Container size="lg">
+              <SectionHeading as="h2" id="symptoms-heading" title="Symptoms" accent="we evaluate" />
+              <div className="mt-8">
+                <PillList items={c.aeo.symptoms} />
+              </div>
+            </Container>
+          </section>
+
+          <section className="py-20 sm:py-28" aria-labelledby="when-heading">
+            <Container size="lg">
+              <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:gap-16">
+                <SectionHeading as="h2" id="when-heading" title="When to see" accent="a specialist" />
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{c.aeo.whenToSee.title}</h3>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">{c.aeo.whenToSee.body}</p>
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          <section className="border-y border-border/60 bg-secondary/20 py-20 sm:py-28" aria-labelledby="treatments-heading">
+            <Container size="lg">
+              <SectionHeading as="h2" id="treatments-heading" title="Treatments" accent="& services" />
+              <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+                {c.aeo.treatments.map((treatment) => (
+                  <li key={treatment} className="flex gap-3 text-sm text-foreground/80">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
+                    {treatment}
+                  </li>
+                ))}
+              </ul>
+            </Container>
+          </section>
+
+          <section className="py-20 sm:py-28" aria-labelledby="specialty-insurance-heading">
+            <Container size="lg">
+              <SectionHeading
+                as="h2"
+                id="specialty-insurance-heading"
+                title="Insurance"
+                accent="accepted"
+                description={c.aeo.insuranceNote}
+              />
+              <div className="mt-8">
+                <BookButton>Check insurance & book</BookButton>
+              </div>
+            </Container>
+          </section>
+
+          {physiciansForSpecialty(c.aeo.specialtyKey).length > 0 && (
+            <section className="border-t border-border/60 py-20 sm:py-28" aria-labelledby="specialty-physicians-heading">
+              <Container size="lg">
+                <SectionHeading as="h2" id="specialty-physicians-heading" title="Your" accent="physicians" />
+                <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:max-w-3xl">
+                  {physiciansForSpecialty(c.aeo.specialtyKey).map((p) => (
+                    <PhysicianCard
+                      key={p.id}
+                      id={p.id}
+                      name={p.name}
+                      specialty={p.specialty}
+                      image={p.image}
+                      imageAlt={p.imageAlt}
+                    />
+                  ))}
+                </div>
+              </Container>
+            </section>
+          )}
+        </>
+      )}
+
       {c.pills && (
         <section className="pb-20">
           <Container size="lg">
@@ -111,12 +190,12 @@ export function LeafPage({ config }: { config: LeafConfig }) {
         </section>
       )}
 
-      {c.faqs && c.faqs.length > 0 && (
+      {(c.faqs ?? c.aeo?.faqs) && (c.faqs ?? c.aeo?.faqs)!.length > 0 && (
         <section className="py-20 sm:py-28">
           <Container size="lg">
             <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:gap-16">
               <SectionHeading as="h2" title="Common questions," accent="answered." />
-              <FAQList items={c.faqs} />
+              <FAQList items={c.faqs ?? c.aeo!.faqs} />
             </div>
           </Container>
         </section>

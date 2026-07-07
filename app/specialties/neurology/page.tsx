@@ -1,19 +1,15 @@
-import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
+import { SPECIALTY_AEO } from "@/data/specialty-content";
+import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
 
-const seo = buildPageSeo({
-  title: "Neurology NYC  Umbrella Health",
-  description:
-    "Board-certified neurology for headaches, neuropathy, cognitive concerns and more. Coordinated workups, no referral runaround.",
-  path: "/specialties/neurology",
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Neurology" },
-  ],
-});
+const aeo = SPECIALTY_AEO.neurology;
+const seo = buildSpecialtyPageSeo("/specialties/neurology", [
+  { label: "Home", to: "/" },
+  { label: "Specialties", to: "/specialties" },
+  { label: "Neurology" },
+], aeo);
 export const metadata = seo.metadata;
 
 export default function RoutePage() {
@@ -27,9 +23,9 @@ export default function RoutePage() {
             italic: "Clarity for",
             title: "complex symptoms.",
             description:
-              "Diagnostic workups that pull together imaging, autonomic testing, and your primary care record  so the answer lands faster.",
+              "Diagnostic workups that pull together imaging, autonomic testing, and your primary care record — so the answer lands faster.",
             image: IMG.doctorWoman2,
-            imageAlt: "Neurologist consulting with patient",
+            imageAlt: "Neurologist consulting with patient at Umbrella Health NYC",
             crumbs: [
               { label: "Home", to: "/" },
               { label: "Specialties", to: "/specialties" },
@@ -92,6 +88,7 @@ export default function RoutePage() {
               },
             ],
           },
+          aeo,
         }}
       />
     </>

@@ -6,6 +6,7 @@ import { Container } from "@/components/site/primitives/Container";
 import { Reveal } from "@/components/site/primitives/Reveal";
 import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { IMG } from "@/data/images";
+import { medicalClinicSchema } from "@/lib/schema";
 import { ArrowRight } from "lucide-react";
 
 const places = [
@@ -26,11 +27,13 @@ const places = [
 ];
 
 const seo = buildPageSeo({
-  title: "Neighborhoods We Serve  Umbrella Health NYC",
+  title: "Neighborhoods We Serve — Umbrella Health NYC",
   description:
-    "Multispecialty care from one NoHo clinic serving Union Square, Tribeca/FiDi, SoHo, and Brooklyn.",
+    "Multispecialty care from one NoHo clinic serving Union Square, Tribeca/FiDi, SoHo, Greenwich Village, and commutable Brooklyn neighborhoods.",
   path: "/locations",
+  geo: true,
   crumbs: [{ label: "Home", to: "/" }, { label: "Locations" }],
+  extraSchema: [medicalClinicSchema({ includeHours: true })],
 });
 export const metadata = seo.metadata;
 
@@ -43,7 +46,7 @@ function Page() {
         title="serving downtown."
         description="Our NoHo flagship serves patients across Union Square, Tribeca/FiDi, SoHo, and commutable Brooklyn neighborhoods."
         image={IMG.nyc}
-        imageAlt="New York City"
+        imageAlt="Umbrella Health clinic neighborhood — Lower Manhattan, NYC"
         crumbs={[{ label: "Home", to: "/" }, { label: "Locations" }]}
       />
       <section className="py-20 sm:py-28">
@@ -58,7 +61,7 @@ function Page() {
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
                       src={p.img}
-                      alt=""
+                      alt={`${p.name} neighborhood near Umbrella Health clinic in Lower Manhattan`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                       loading="lazy"
                     />
@@ -67,7 +70,7 @@ function Page() {
                     <h3 className="text-base font-semibold text-foreground">{p.name}</h3>
                     <p className="mt-1 text-sm text-muted-foreground">{p.blurb}</p>
                     <span className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                      Learn more{" "}
+                      Primary care near {p.name}{" "}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>

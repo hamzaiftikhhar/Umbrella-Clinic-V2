@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/site/primitives/SectionHeading";
 import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { BookButton } from "@/components/site/primitives/BookButton";
 import { FAQList, faqSchema } from "@/components/site/primitives/FAQList";
+import { InsurancePageSearch } from "@/components/site/InsurancePageSearch";
 import { IMG } from "@/data/images";
 
 const carriers = [
@@ -100,6 +101,7 @@ function Page() {
         crumbs={[{ label: "Home", to: "/" }, { label: "Insurance & Pricing" }]}
         tone="mint"
       />
+      <InsurancePageSearch />
       <section className="py-20 sm:py-28">
         <Container size="lg">
           <SectionHeading
@@ -128,7 +130,7 @@ function Page() {
             ))}
           </div>
           <p className="mt-4 text-xs text-muted-foreground">
-            Don't see yours? Verify your coverage at booking  we work with many additional plans.
+            Don&apos;t see yours? Use the search above — we work with many additional plans.
           </p>
         </Container>
       </section>

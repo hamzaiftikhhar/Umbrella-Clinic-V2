@@ -1,19 +1,15 @@
-import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { LeafPage } from "@/components/site/LeafPage";
 import { IMG } from "@/data/images";
+import { SPECIALTY_AEO } from "@/data/specialty-content";
+import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
 
-const seo = buildPageSeo({
-  title: "Sleep Medicine & Home Sleep Study NYC  Umbrella Health",
-  description:
-    "Home sleep studies and apnea care designed for busy professionals. Diagnose, treat, and track  without an overnight lab.",
-  path: "/specialties/sleep-medicine",
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Sleep Medicine" },
-  ],
-});
+const aeo = SPECIALTY_AEO["sleep-medicine"];
+const seo = buildSpecialtyPageSeo("/specialties/sleep-medicine", [
+  { label: "Home", to: "/" },
+  { label: "Specialties", to: "/specialties" },
+  { label: "Sleep Medicine" },
+], aeo);
 export const metadata = seo.metadata;
 
 export default function RoutePage() {
@@ -29,7 +25,7 @@ export default function RoutePage() {
             description:
               "Home sleep studies, apnea care, and treatment plans tuned for the way New Yorkers actually live and travel.",
             image: IMG.sleepStudy,
-            imageAlt: "Patient using a home sleep study device",
+            imageAlt: "Patient using a home sleep study device at Umbrella Health NYC",
             crumbs: [
               { label: "Home", to: "/" },
               { label: "Specialties", to: "/specialties" },
@@ -39,7 +35,7 @@ export default function RoutePage() {
           intro: {
             heading: "Designed for",
             accent: "real lives.",
-            body: "A traditional sleep lab is a hassle. We start at home  with calibrated devices and full clinical interpretation.",
+            body: "A traditional sleep lab is a hassle. We start at home — with calibrated devices and full clinical interpretation.",
             bullets: [
               {
                 iconKey: "moon",
@@ -69,6 +65,7 @@ export default function RoutePage() {
               "Travel & jet lag",
             ],
           },
+          aeo,
         }}
       />
     </>

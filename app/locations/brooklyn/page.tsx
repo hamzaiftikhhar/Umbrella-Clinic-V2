@@ -2,17 +2,21 @@ import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { NeighborhoodPage } from "@/components/site/NeighborhoodPage";
 import { IMG } from "@/data/images";
+import { NEIGHBORHOOD_AREAS } from "@/data/seo-faqs";
+import { localClinicSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
-  title: "Care for Brooklyn Professionals  Umbrella Health NYC",
+  title: "Care for Brooklyn Professionals — Umbrella Health NYC",
   description:
-    "Multispecialty care commutable from Williamsburg, Brooklyn Heights, and DUMBO  concierge-quality without concierge pricing.",
+    "Board-certified primary care and specialists commutable from Williamsburg, DUMBO, and Brooklyn Heights. One NoHo clinic, insurance accepted.",
   path: "/locations/brooklyn",
+  geo: true,
   crumbs: [
     { label: "Home", to: "/" },
     { label: "Locations", to: "/locations" },
     { label: "Brooklyn" },
   ],
+  extraSchema: [localClinicSchema("Brooklyn", [...NEIGHBORHOOD_AREAS.brooklyn])],
 });
 export const metadata = seo.metadata;
 

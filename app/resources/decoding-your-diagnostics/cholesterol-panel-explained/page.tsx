@@ -2,14 +2,17 @@ import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { ArticlePage } from "@/components/site/ArticlePage";
 import { articles } from "@/data/articles";
+import { articleSchema } from "@/lib/schema";
 
 const article = articles.find((a) => a.slug === "cholesterol-panel-explained")!;
+const articlePath = `/resources/decoding-your-diagnostics/${article.slug}`;
 
 const seo = buildPageSeo({
-  title: `${article.title}  Umbrella Health`,
+  title: `${article.title} — Umbrella Health`,
   description: article.excerpt,
-  path: `/resources/decoding-your-diagnostics/${article.slug}`,
+  path: articlePath,
   type: "article",
+  ogImage: article.image,
   crumbs: [
     { label: "Home", to: "/" },
     { label: "Resources", to: "/resources" },
@@ -17,12 +20,12 @@ const seo = buildPageSeo({
     { label: article.title },
   ],
   extraSchema: [
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: article.title,
-      description: article.excerpt,
-    },
+    articleSchema({
+      title: article.title,
+      excerpt: article.excerpt,
+      path: articlePath,
+      image: article.image,
+    }),
   ],
 });
 export const metadata = seo.metadata;
