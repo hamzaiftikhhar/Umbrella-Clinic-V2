@@ -1,6 +1,10 @@
 import type { Physician } from "@/data/physicians";
 import { PHYSICIANS, physicianProfilePath } from "@/data/physicians";
 import type { QA } from "@/components/site/primitives/FAQList";
+import {
+  PRIMARY_CARE_CLINIC_EMAIL,
+  PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+} from "@/data/primary-care-nyc-content";
 import { ROUTES } from "@/data/site-architecture";
 import {
   absoluteUrl,
@@ -387,12 +391,14 @@ export function primaryCareNycPageSchemaGraph() {
         parentOrganization: { "@id": ORGANIZATION_ID },
         address: {
           "@type": "PostalAddress",
-          streetAddress: "32 W 14th Street",
+          streetAddress: "32 West 14th Street",
           addressLocality: "New York",
           addressRegion: "NY",
           postalCode: "10011",
           addressCountry: "US",
         },
+        telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+        email: PRIMARY_CARE_CLINIC_EMAIL,
         medicalSpecialty: ["PrimaryCare", "InternalMedicine", "PreventiveMedicine"],
       },
       {

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { BookButton } from "./primitives/BookButton";
 import { Container } from "./primitives/Container";
 import { IMG } from "@/data/images";
@@ -11,9 +11,11 @@ import { cn } from "@/lib/utils";
 
 export interface AudienceSegment {
   id: string;
-  label: string;
+  /** Short label for scroll timeline UI only — not a page heading. */
+  navLabel: string;
   title: string;
   body: string;
+  itemsLabel?: string;
   items: string[];
   cta: string;
   image: string;
@@ -25,9 +27,10 @@ export interface AudienceSegment {
 export const PRIMARY_CARE_AUDIENCE_SEGMENTS: AudienceSegment[] = [
   {
     id: "womens",
-    label: "Women's health",
+    navLabel: "Women's health",
     title: "Women's Primary Care in New York City",
     body: "Women's health needs change throughout every stage of life. Our physicians provide personalized women's primary care in New York City, focusing on preventive care, wellness, chronic disease management, and coordinated specialty care when needed.",
+    itemsLabel: "Women's Healthcare Services",
     items: [
       "Annual Wellness Exams",
       "Preventive Screenings",
@@ -44,9 +47,10 @@ export const PRIMARY_CARE_AUDIENCE_SEGMENTS: AudienceSegment[] = [
   },
   {
     id: "mens",
-    label: "Men's health",
+    navLabel: "Men's health",
     title: "Men's Primary Care in New York City",
     body: "Our physicians help men stay healthy through preventive medicine, early diagnosis, and long-term health management tailored to individual needs.",
+    itemsLabel: "Men's Healthcare Includes",
     items: [
       "Annual Physicals",
       "Heart Health Screening",
@@ -63,9 +67,10 @@ export const PRIMARY_CARE_AUDIENCE_SEGMENTS: AudienceSegment[] = [
   },
   {
     id: "lgbtq",
-    label: "Inclusive care",
+    navLabel: "Inclusive care",
     title: "Inclusive LGBTQ+ Primary Care in New York City",
-    body: "Healthcare should be welcoming, respectful, and personalized. Our practice proudly provides LGBTQ+ primary care in New York City with confidential services tailored to each patient's unique healthcare needs.",
+    body: "Healthcare should be welcoming, respectful, and personalized. Our practice proudly provides LGBTQ+ primary care in New York City, including compassionate care for LGBTQ+ individuals, with confidential services tailored to each patient's unique healthcare needs.",
+    itemsLabel: "Inclusive Services",
     items: [
       "Preventive Healthcare",
       "HIV/STI Screening",
@@ -82,17 +87,10 @@ export const PRIMARY_CARE_AUDIENCE_SEGMENTS: AudienceSegment[] = [
   },
   {
     id: "transgender",
-    label: "Transgender care",
+    navLabel: "Transgender care",
     title: "Compassionate Transgender Primary Care",
     body: "We are committed to providing respectful transgender primary care in New York City, supporting patients with preventive care, wellness visits, chronic disease management, and coordinated referrals in an inclusive clinical environment.",
-    items: [
-      "Preventive Wellness Visits",
-      "Chronic Disease Management",
-      "Coordinated Specialist Referrals",
-      "Routine Lab Testing",
-      "Mental Health Coordination",
-      "Personalized Care Plans",
-    ],
+    items: [],
     cta: "Book your appointment online",
     image: IMG.transgenderCare,
     imageAlt: "Welcoming clinic environment for transgender primary care NYC",
@@ -101,9 +99,10 @@ export const PRIMARY_CARE_AUDIENCE_SEGMENTS: AudienceSegment[] = [
   },
   {
     id: "concierge",
-    label: "Concierge model",
+    navLabel: "Concierge model",
     title: "Concierge Primary Care in New York City",
     body: "Our concierge primary care model offers enhanced access, personalized attention, and a stronger physician-patient relationship for individuals seeking a more customized healthcare experience.",
+    itemsLabel: "Benefits",
     items: [
       "Longer Appointments",
       "Direct Physician Access",
@@ -111,7 +110,7 @@ export const PRIMARY_CARE_AUDIENCE_SEGMENTS: AudienceSegment[] = [
       "Personalized Wellness Strategies",
       "Coordinated Care",
     ],
-    cta: "Book online",
+    cta: "Book Online",
     image: IMG.conciergeCare,
     imageAlt: "Concierge primary care experience at Umbrella Health NYC",
     accent: "var(--primary)",
@@ -196,7 +195,7 @@ function StickyTimeline({ activeIndex }: { activeIndex: number }) {
                 )}
                 style={isActive ? { color: segment.accent } : undefined}
               >
-                {segment.label}
+                {segment.navLabel}
               </span>
             </li>
           );
@@ -275,32 +274,9 @@ function PathwayChapter({
         className="grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_260px] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_280px] xl:gap-14"
       >
         <div className="min-w-0">
-          <div className="mb-6 flex items-center gap-4 lg:hidden">
-            <span className="font-display text-4xl font-light tabular-nums text-foreground/15" aria-hidden>
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <span
-              className="rounded-full px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em]"
-              style={{ backgroundColor: segment.accentSurface, color: segment.accent }}
-            >
-              {segment.label}
-            </span>
-          </div>
-
-          <span
-            className="hidden rounded-full border px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] lg:inline-flex"
-            style={{
-              borderColor: `color-mix(in oklab, ${segment.accent} 22%, transparent)`,
-              backgroundColor: segment.accentSurface,
-              color: segment.accent,
-            }}
-          >
-            {segment.label}
-          </span>
-
           <h3
             id={`pathway-title-${segment.id}`}
-            className="font-display mt-5 text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-4xl lg:mt-6"
+            className="font-display text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-4xl"
           >
             {segment.title}
           </h3>
@@ -309,32 +285,33 @@ function PathwayChapter({
             <PathwayPortrait segment={segment} index={index} mobile />
           </div>
 
-          <p className="max-w-2xl text-base leading-[1.8] text-muted-foreground sm:text-lg sm:leading-[1.75] lg:mt-6">
+          <p className="mt-6 max-w-2xl text-base leading-[1.8] text-muted-foreground sm:text-lg sm:leading-[1.75]">
             {segment.body}
           </p>
 
           {segment.items.length > 0 && (
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2 sm:gap-x-6">
-              {segment.items.map((item) => (
-                <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/88">
-                  <span
-                    className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full"
-                    style={{ backgroundColor: segment.accentSurface }}
-                  >
-                    <Check className="h-3 w-3" style={{ color: segment.accent }} aria-hidden />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <>
+              {segment.itemsLabel && (
+                <h4 className="mt-8 text-base font-semibold text-foreground">{segment.itemsLabel}</h4>
+              )}
+              <ul className={cn("grid gap-3 sm:grid-cols-2 sm:gap-x-6", segment.itemsLabel ? "mt-4" : "mt-8")}>
+                {segment.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/88">
+                    <span
+                      className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full"
+                      style={{ backgroundColor: segment.accentSurface }}
+                    >
+                      <Check className="h-3 w-3" style={{ color: segment.accent }} aria-hidden />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </>
           )}
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          <div className="mt-10">
             <BookButton>{segment.cta}</BookButton>
-            <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-              <ArrowRight className="h-3.5 w-3.5" aria-hidden />
-              Same physicians, tailored approach
-            </span>
           </div>
         </div>
 
@@ -376,7 +353,7 @@ export function PrimaryCareAudienceShowcase() {
         setActiveIndex(bestIndex);
         if (liveRef.current) {
           const s = SEGMENTS[bestIndex];
-          liveRef.current.textContent = `${s.label}: ${s.title}`;
+          liveRef.current.textContent = `${s.title}`;
         }
       }
     };
@@ -401,12 +378,9 @@ export function PrimaryCareAudienceShowcase() {
 
   if (reduceMotion) {
     return (
-      <section className="section-py bg-[color:var(--cream)]" aria-labelledby="audience-showcase-heading">
+      <section className="section-py bg-[color:var(--cream)]" aria-label="Specialized primary care services">
         <Container size="lg">
-          <h2 id="audience-showcase-heading" className="font-display text-center text-4xl font-medium text-foreground">
-            Care designed for <span className="italic text-primary">who you are</span>
-          </h2>
-          <div className="mt-16 space-y-20">
+          <div className="space-y-20">
             {SEGMENTS.map((segment, index) => (
               <PathwayChapter
                 key={segment.id}
@@ -422,29 +396,9 @@ export function PrimaryCareAudienceShowcase() {
   }
 
   return (
-    <section aria-labelledby="audience-showcase-heading" className="bg-[color:var(--cream)]">
-      <div className="px-5 py-20 sm:px-8 sm:py-28">
-        <Container size="lg">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/70">
-              Personalized pathways
-            </p>
-            <h2
-              id="audience-showcase-heading"
-              className="font-display mt-6 text-balance text-4xl font-medium leading-[1.05] tracking-[-0.03em] text-foreground sm:text-5xl"
-            >
-              Care designed for{" "}
-              <span className="font-light italic text-primary">who you are</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Five physician-led pathways — scroll naturally through each chapter.
-            </p>
-          </div>
-        </Container>
-      </div>
-
+    <section aria-label="Specialized primary care services" className="bg-[color:var(--cream)]">
       {/* Mobile progress */}
-      <Container size="lg" className="mb-2 px-5 sm:px-8 lg:hidden">
+      <Container size="lg" className="px-5 pt-12 sm:px-8 lg:hidden">
         <div className="flex gap-1.5" aria-hidden>
           {SEGMENTS.map((s, i) => (
             <div key={s.id} className="h-0.5 flex-1 overflow-hidden rounded-full bg-border/50">
