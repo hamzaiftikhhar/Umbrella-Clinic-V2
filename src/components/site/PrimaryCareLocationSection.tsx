@@ -2,28 +2,20 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ExternalLink, MapPin, Train } from "lucide-react";
-import { Link } from "@/components/AppLink";
+import { ExternalLink, MapPin, Phone } from "lucide-react";
 import { Container } from "./primitives/Container";
 import { IMG } from "@/data/images";
-import { CLINIC_GOOGLE_MAPS_URL, SITE_ADDRESS } from "@/lib/site";
+import {
+  PRIMARY_CARE_CLINIC_ADDRESS,
+  PRIMARY_CARE_CLINIC_EMAIL,
+  PRIMARY_CARE_CLINIC_PHONE,
+  PRIMARY_CARE_LOCATION,
+  PRIMARY_CARE_NEIGHBORHOODS,
+} from "@/data/primary-care-nyc-content";
+import { CLINIC_GOOGLE_MAPS_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-const NEIGHBORHOODS = [
-  "Lower Manhattan",
-  "Union Square",
-  "Greenwich Village",
-  "Chelsea",
-  "Flatiron District",
-  "SoHo",
-  "NoHo",
-  "Gramercy",
-  "East Village",
-  "West Village",
-  "Midtown Manhattan",
-  "Throughout New York City",
-];
-
+const NEIGHBORHOODS = [...PRIMARY_CARE_NEIGHBORHOODS];
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 function LocationImageCard() {
@@ -38,19 +30,17 @@ function LocationImageCard() {
       <div className="relative aspect-[5/4] sm:aspect-[4/3] lg:aspect-[5/4] lg:min-h-[440px]">
         <Image
           src={IMG.clinicExterior}
-          alt="Umbrella Health clinic at 200 Lafayette Street, NoHo, New York City"
+          alt={PRIMARY_CARE_LOCATION.imageAlt}
           fill
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] group-focus-visible:scale-[1.03]"
           sizes="(max-width: 1024px) 100vw, 560px"
         />
 
-        {/* Default caption — fades on hover */}
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-7 transition-opacity duration-500 group-hover:opacity-0 group-focus-visible:opacity-0 sm:p-8">
-          <p className="font-display text-2xl italic text-white">NoHo, NYC</p>
-          <p className="mt-1 text-sm text-white/85">200 Lafayette Street</p>
+          <p className="font-display text-2xl italic text-white">Lower Manhattan, NYC</p>
+          <p className="mt-1 text-sm text-white/85">32 West 14th Street</p>
         </div>
 
-        {/* Hover overlay + single CTA */}
         <div
           className="absolute inset-0 flex items-center justify-center bg-primary/55 opacity-0 backdrop-blur-[2px] transition-all duration-500 group-hover:opacity-100 group-focus-visible:opacity-100"
           aria-hidden
@@ -62,7 +52,6 @@ function LocationImageCard() {
         </div>
       </div>
 
-      {/* Mobile — always show button hint */}
       <p className="border-t border-border/50 bg-background px-5 py-3 text-center text-xs text-muted-foreground sm:hidden">
         Tap to open in Google Maps
       </p>
@@ -84,7 +73,6 @@ export function PrimaryCareLocationSection() {
       />
 
       <Container size="lg" className="relative">
-        {/* Header + image */}
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16 xl:gap-20">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, y: 24 }}
@@ -92,21 +80,15 @@ export function PrimaryCareLocationSection() {
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.55, ease: EASE }}
           >
-            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-teal)]">
-              Our location
-            </p>
-
             <h2
               id="location-heading"
-              className="font-display mt-6 max-w-lg text-balance text-4xl font-medium leading-[1.04] tracking-[-0.03em] text-foreground sm:text-5xl"
+              className="font-display max-w-lg text-balance text-4xl font-medium leading-[1.04] tracking-[-0.03em] text-foreground sm:text-5xl"
             >
-              Conveniently located in{" "}
-              <span className="font-light italic text-primary">Lower Manhattan</span>
+              {PRIMARY_CARE_LOCATION.heading}
             </h2>
 
             <p className="mt-8 max-w-md text-lg leading-[1.8] text-muted-foreground">
-              {SITE_ADDRESS}. A calm, modern clinic in NoHo — steps from Spring Street and
-              accessible from across Manhattan.
+              {PRIMARY_CARE_LOCATION.intro}
             </p>
 
             <ul className="mt-10 space-y-5 border-t border-border/50 pt-10">
@@ -116,29 +98,42 @@ export function PrimaryCareLocationSection() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Clinic address</p>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{SITE_ADDRESS}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {PRIMARY_CARE_CLINIC_ADDRESS}
+                  </p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[color:var(--mint)]">
-                  <Train className="h-4 w-4 text-primary" aria-hidden />
+                  <Phone className="h-4 w-4 text-primary" aria-hidden />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Getting here</p>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    6 train at Spring Street · walkable from SoHo, Chelsea & Union Square
-                  </p>
+                  <p className="text-sm font-semibold text-foreground">Phone</p>
+                  <a
+                    href={`tel:${PRIMARY_CARE_CLINIC_PHONE.replace(/\D/g, "")}`}
+                    className="mt-1 block text-sm leading-relaxed text-muted-foreground hover:text-primary"
+                  >
+                    {PRIMARY_CARE_CLINIC_PHONE}
+                  </a>
+                </div>
+              </li>
+              <li className="flex gap-4">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[color:var(--accent-amber-surface)]">
+                  <span className="text-xs font-semibold text-[color:var(--accent-amber)]" aria-hidden>
+                    @
+                  </span>
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Email</p>
+                  <a
+                    href={`mailto:${PRIMARY_CARE_CLINIC_EMAIL}`}
+                    className="mt-1 block text-sm leading-relaxed text-muted-foreground hover:text-primary"
+                  >
+                    {PRIMARY_CARE_CLINIC_EMAIL}
+                  </a>
                 </div>
               </li>
             </ul>
-
-            <Link
-              href="/contact-us"
-              className="group mt-10 inline-flex items-center gap-2 text-sm font-medium text-primary"
-            >
-              Full directions & hours
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
-            </Link>
           </motion.div>
 
           <motion.div
@@ -154,7 +149,6 @@ export function PrimaryCareLocationSection() {
           </motion.div>
         </div>
 
-        {/* Neighborhoods — full-width panel */}
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,20 +157,6 @@ export function PrimaryCareLocationSection() {
           className="mt-20 lg:mt-28"
         >
           <div className="overflow-hidden rounded-[1.75rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-soft)]">
-            <div className="flex flex-col gap-4 border-b border-border/50 px-6 py-8 sm:flex-row sm:items-end sm:justify-between sm:px-10 sm:py-10">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.26em] text-muted-foreground">
-                  Service area
-                </p>
-                <h3 className="font-display mt-3 text-2xl font-medium text-foreground sm:text-3xl">
-                  Neighborhoods we serve
-                </h3>
-              </div>
-              <p className="max-w-sm text-sm leading-relaxed text-muted-foreground sm:text-right">
-                Primary care for adults across Lower Manhattan and nearby communities.
-              </p>
-            </div>
-
             <ul className="grid gap-px bg-border/45 sm:grid-cols-2 lg:grid-cols-3">
               {NEIGHBORHOODS.map((name, i) => (
                 <li
