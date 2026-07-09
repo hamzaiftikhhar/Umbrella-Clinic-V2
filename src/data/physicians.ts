@@ -137,74 +137,6 @@ export const PHYSICIANS: Physician[] = [
     accent: "navy",
   },
   {
-    id: "dr-archimedes-jao",
-    name: "Dr. Archimedes Jao",
-    credentials: "MD",
-    title: "Primary Care Doctor",
-    specialty: "Primary Care & Preventive Medicine",
-    image: "/images/dr-archimedes-jao.png",
-    imageAlt: "Dr. Archimedes Jao, board-certified primary care physician at Umbrella Health NYC",
-    zocdocUrl:
-      "https://www.zocdoc.com/doctor/archimedes-jao-md-591531?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",
-    npi: "1932438470",
-    rating: { value: 4.64, reviewCount: 136, waitTime: 4.68, bedsideManner: 4.81 },
-    bio: "Dr. Archimedes Jao is a board-certified physician in Public Health and Preventive Medicine with expertise in addiction medicine and HIV care. He trained at Virginia Commonwealth University and completed residency and MPH training at Stony Brook University. He has served as Medical Director at community health centers across New York City and is valued for preventive guidance, Saturday availability, and data-driven comprehensive care.",
-    education: [
-      { institution: "Virginia Commonwealth University", credential: "Doctor of Medicine" },
-      { institution: "Stony Brook University", credential: "Master of Public Health" },
-      { institution: "Stony Brook University", credential: "Residency in Preventive Medicine" },
-    ],
-    boardCertifications: ["American Board of Preventive Medicine"],
-    languages: ["English"],
-    conditionsTreated: [
-      "Hypertension",
-      "Diabetes",
-      "HIV care",
-      "Chronic disease",
-      "Infectious disease",
-      "Behavioral health",
-      "Allergies",
-      "Obesity",
-    ],
-    services: [
-      "Annual physical exams",
-      "Same-day sick visits",
-      "Saturday appointments",
-      "HIV care and PrEP",
-      "Sexual health",
-      "Medication management",
-      "On-site EKG and lab work",
-      "Home sleep studies",
-    ],
-    insurance: [...COMMON_INSURANCE],
-    highlights: [
-      "94% of patients waited less than 30 minutes",
-      "Saturday appointments available",
-      "HIV and preventive medicine specialist",
-    ],
-    reviewHighlight: {
-      quote:
-        "He took the time to listen carefully to my symptoms and asked deeper, thoughtful questions to better understand what was going on.",
-      author: "Samantha S.",
-      date: "March 2026",
-    },
-    faqs: [
-      {
-        q: "Does Dr. Jao offer Saturday appointments?",
-        a: "Yes. Dr. Jao offers Saturday availability for primary care, preventive visits, and same-day sick appointments at Umbrella Health.",
-      },
-      {
-        q: "Can Dr. Jao help with HIV care and PrEP?",
-        a: "Yes. Dr. Jao has specialized experience in HIV care, PrEP, and sexual health as part of comprehensive primary care.",
-      },
-      {
-        q: "What diagnostics are available during my visit?",
-        a: "Umbrella Health offers on-site EKG, lab work, home sleep studies, cardiac testing, allergy testing, and diagnostic ultrasound during your visit.",
-      },
-    ],
-    accent: "teal",
-  },
-  {
     id: "dr-cale-li",
     name: "Dr. Cale Li",
     credentials: "MD",
@@ -412,7 +344,7 @@ export function physicianProfilePath(id: string): string {
 
 export function physiciansForSpecialty(specialtyKey: string): Physician[] {
   const map: Record<string, string[]> = {
-    "primary-care": ["dr-archimedes-jao", "dr-cale-li", "dr-rajat-lamington"],
+    "primary-care": ["dr-cale-li", "dr-rajat-lamington"],
     "cardiology-vascular": ["dr-tawseef-dar"],
     neurology: ["dr-masrai-williams"],
     "sleep-medicine": ["dr-masrai-williams"],

@@ -42,12 +42,6 @@ export const patientReviews = [
       "Dr Cale li is amazing! And his service provided was very helpful.\n\nFront desk did a really great job I wish I remembered her name but she is amazing!\nGenerally I’d recommend this any day anytime to anyone.",
   },
   {
-    name: "mark shin",
-    time: "a month ago",
-    quote:
-      "I have been multiple place to find out the nice and good primary doctor\n\nI have seen Dr Jao for 6 months he is best of the best in this town\n\nHe always welcome me and make nice conversation for issue of physical thing and tried to understand me what’s my job and all the other things\n\nI was asking him to try something new treatment or pills he does not push to do something\n\nAlways make simple and best counseling from my side\n\nI am not the type to write down the review, but I’m sure doctor must like him with full of trust and reliable\n\nTMI : he looks way better clean nice well dressed person Zocdoc profile pics little bit weird",
-  },
-  {
     name: "Genesis Gomez",
     time: "a month ago",
     quote:
