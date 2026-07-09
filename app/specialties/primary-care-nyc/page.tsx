@@ -18,7 +18,7 @@ const seo = buildPageSeo({
     "annual physical NYC",
     "same day doctor NYC",
   ],
-  ogImage: "/images/dr-archimedes-jao.png",
+  ogImage: "/images/dr-rajat.png",
   extraSchema: [primaryCareNycPageSchemaGraph()],
 });
 export const metadata = seo.metadata;

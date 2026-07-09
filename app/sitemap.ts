@@ -33,7 +33,6 @@ const entries: SitemapEntry[] = [
   { path: "/longevity/waitlist", changefreq: "monthly", priority: 0.6 },
   { path: ROUTES.ourTeam, changefreq: "monthly", priority: 0.8 },
   { path: "/our-physicians/dr-rajat-lamington", changefreq: "monthly", priority: 0.75 },
-  { path: "/our-physicians/dr-archimedes-jao", changefreq: "monthly", priority: 0.75 },
   { path: "/our-physicians/dr-cale-li", changefreq: "monthly", priority: 0.75 },
   { path: "/our-physicians/dr-masrai-williams", changefreq: "monthly", priority: 0.75 },
   { path: "/our-physicians/dr-tawseef-dar", changefreq: "monthly", priority: 0.75 },
