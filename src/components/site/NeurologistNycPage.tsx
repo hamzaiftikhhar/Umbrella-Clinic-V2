@@ -24,6 +24,7 @@ import {
 } from "@/components/icons/neurology-glyphs";
 import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
+import { PhysicianCard } from "./primitives/PhysicianCard";
 import { IMG } from "@/data/images";
 import { ROUTES } from "@/data/site-architecture";
 import { physiciansForSpecialty, physicianProfilePath } from "@/data/physicians";
@@ -776,56 +777,55 @@ export function NeurologistNycPage() {
               </div>
             </Fade>
 
-            <div className="mt-8 space-y-6">
+            <div className="mt-12 space-y-16">
               {physicians.map((p, i) => (
                 <Fade key={p.id} delay={0.05 + i * 0.05}>
-                  <article className="overflow-hidden rounded-2xl border border-border/50 bg-[color:var(--cream)]/40 shadow-[var(--shadow-soft)] transition-shadow hover:shadow-[var(--shadow-card)] sm:flex">
-                    <Link
-                      href={physicianProfilePath(p.id) as "/our-physicians/dr-masrai-williams"}
-                      className="group relative block shrink-0 sm:w-52 lg:w-56"
-                    >
-                      <div className="relative aspect-[5/6] max-h-[240px] sm:aspect-auto sm:h-full sm:max-h-none sm:min-h-[220px]">
-                        <Image
-                          src={p.image}
-                          alt={p.imageAlt ?? `${p.name}, ${p.specialty}`}
-                          fill
-                          priority={i === 0}
-                          className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-                          sizes="224px"
-                        />
-                      </div>
-                    </Link>
+                  <article className="grid gap-10 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-16">
+                    <PhysicianCard
+                      id={p.id}
+                      name={p.name}
+                      specialty={p.specialty}
+                      image={p.image}
+                      imageAlt={p.imageAlt}
+                      priority={i === 0}
+                      className="mx-auto w-full max-w-[300px] lg:mx-0"
+                    />
 
-                    <div className="flex min-w-0 flex-1 flex-col justify-center p-6 sm:p-7">
-                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary/70">
-                        {p.credentials} · {p.title}
-                      </p>
-                      <Link
-                        href={physicianProfilePath(p.id) as "/our-physicians/dr-masrai-williams"}
-                        className="mt-2 block font-display text-xl font-medium tracking-[-0.02em] text-foreground transition-colors hover:text-primary sm:text-2xl"
-                      >
-                        <h3 className="text-[length:inherit] font-[inherit] leading-[inherit] tracking-[inherit]">
-                          {p.name}
-                        </h3>
-                      </Link>
-                      <p className="mt-1 text-sm font-medium text-primary/80">{p.specialty}</p>
-                      <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                    <div className="flex min-w-0 flex-col justify-center">
+                      <p className="text-base leading-[1.75] text-muted-foreground sm:text-lg">
                         {p.bio}
                       </p>
 
                       {p.highlights && p.highlights.length > 0 && (
-                        <p className="mt-3 text-xs leading-relaxed text-muted-foreground/90">
-                          {p.highlights.slice(0, 2).join(" · ")}
+                        <ul className="mt-6 space-y-2.5" aria-label={`${p.name} highlights`}>
+                          {p.highlights.map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/85"
+                            >
+                              <span
+                                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                                aria-hidden
+                              />
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {p.boardCertifications && p.boardCertifications.length > 0 && (
+                        <p className="mt-5 text-sm text-muted-foreground">
+                          Board certified: {p.boardCertifications.join(", ")}
                         </p>
                       )}
 
-                      <div className="mt-5 flex flex-wrap items-center gap-3">
+                      <div className="mt-8 flex flex-wrap items-center gap-3">
                         <BookButton>Book appointment</BookButton>
                         <Link
                           href={physicianProfilePath(p.id) as "/our-physicians/dr-masrai-williams"}
-                          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                         >
-                          View profile
+                          View full profile
                           <ArrowRight {...PHOSPHOR_UI} size={14} />
                         </Link>
                       </div>
