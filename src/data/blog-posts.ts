@@ -22,7 +22,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Primary Care",
     readTime: "6 min read",
     publishedAt: "2026-06-12",
-    image: IMG.doctorPatient,
+    image: IMG.consult,
     imageAlt: "Primary care physician consulting with patient in NYC clinic",
     author: "Umbrella Health",
     body: [

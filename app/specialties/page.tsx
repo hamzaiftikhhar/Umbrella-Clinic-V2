@@ -31,8 +31,8 @@ function Page() {
         title="under one roof."
         italic="Multispecialty care,"
         description="From annual physicals to interventional cardiology and pain procedures — our specialists share a record, a hallway, and a plan for you."
-        image={IMG.doctorPatient}
-        imageAlt="Umbrella Health specialist with patient"
+        image={IMG.clinicInterior}
+        imageAlt="Umbrella Health multispecialty clinic interior"
       />
       <section className="py-20 sm:py-28">
         <Container>

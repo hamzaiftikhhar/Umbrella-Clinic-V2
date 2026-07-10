@@ -1,96 +1,44 @@
+import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { LeafPage } from "@/components/site/LeafPage";
+import { NeurologistNycPage } from "@/components/site/NeurologistNycPage";
+import { neurologistNycPageSchemaGraph } from "@/lib/schema";
+import { ROUTES } from "@/data/site-architecture";
+import { NEUROLOGIST_NYC_SEO } from "@/data/neurologist-nyc-content";
 import { IMG } from "@/data/images";
-import { SPECIALTY_AEO } from "@/data/specialty-content";
-import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
+import { absoluteUrl } from "@/lib/site";
 
-const aeo = SPECIALTY_AEO.neurology;
-const seo = buildSpecialtyPageSeo("/specialties/neurologist-nyc", [
-  { label: "Home", to: "/" },
-  { label: "Specialties", to: "/specialties" },
-  { label: "Neurology" },
-], aeo);
+const heroImageUrl = IMG.neurologyHero.startsWith("http")
+  ? IMG.neurologyHero
+  : absoluteUrl(IMG.neurologyHero);
+
+const seo = buildPageSeo({
+  title: NEUROLOGIST_NYC_SEO.title,
+  description: NEUROLOGIST_NYC_SEO.description,
+  path: ROUTES.neurology,
+  geo: true,
+  keywords: [
+    "neurologist NYC",
+    "neurologist for tremors nyc",
+    "neurologist for dystonia nyc",
+    "neurologist in nyc",
+    "sleep disorders neurologist nyc",
+    "best pediatric neurologist nyc",
+    "neurologist for sleep disorders nyc",
+    "neurologist for dementia nyc",
+    "neurologist nyc queens",
+    "brain specialist NYC",
+    "migraine neurologist NYC",
+  ],
+  ogImage: IMG.neurologyHero,
+  extraSchema: [neurologistNycPageSchemaGraph(heroImageUrl)],
+});
 export const metadata = seo.metadata;
 
-export default function RoutePage() {
+export default function NeurologistNycRoute() {
   return (
     <>
       <JsonLd data={seo.jsonLd} />
-      <LeafPage
-        config={{
-          hero: {
-            eyebrow: "Neurology",
-            italic: "Clarity for",
-            title: "complex symptoms.",
-            description:
-              "Diagnostic workups that pull together imaging, autonomic testing, and your primary care record — so the answer lands faster.",
-            image: IMG.doctorWoman2,
-            imageAlt: "Neurologist consulting with patient at Umbrella Health NYC",
-            crumbs: [
-              { label: "Home", to: "/" },
-              { label: "Specialties", to: "/specialties" },
-              { label: "Neurology" },
-            ],
-          },
-          intro: {
-            heading: "Coordinated workups,",
-            accent: "calmer answers.",
-            body: "When symptoms span multiple specialties, the worst experience is being sent in circles. We pull the team to the patient.",
-            bullets: [
-              {
-                iconKey: "brain",
-                title: "Comprehensive workup",
-                body: "History, exam, imaging, and labs coordinated in one visit cycle.",
-              },
-              {
-                iconKey: "activity",
-                title: "Autonomic testing in-house",
-                body: "Sudomotor and autonomic studies for unexplained fatigue, dizziness, and neuropathy.",
-              },
-              {
-                iconKey: "clipboard-list",
-                title: "Plan you can follow",
-                body: "Clear next steps written for you, not for the chart.",
-              },
-            ],
-          },
-          pills: {
-            label: "Conditions we treat",
-            items: [
-              "Headache & migraine",
-              "Peripheral neuropathy",
-              "Dizziness & syncope",
-              "Cognitive concerns",
-              "Sleep-related neurology",
-              "Tremor",
-              "Numbness & tingling",
-            ],
-          },
-          related: {
-            heading: "Diagnostics",
-            accent: "we own.",
-            cards: [
-              {
-                title: "Autonomic & Sudomotor",
-                description: "Specialized testing rarely in-house.",
-                to: "/diagnostics/autonomic-testing",
-                badge: "Owned",
-              },
-              {
-                title: "Imaging & Cardiac",
-                description: "Imaging coordinated with workup.",
-                to: "/diagnostics/imaging-cardiac",
-              },
-              {
-                title: "Sleep & Pulmonary",
-                description: "Home sleep studies and PFT.",
-                to: "/diagnostics/sleep-pulmonary",
-              },
-            ],
-          },
-          aeo,
-        }}
-      />
+      <NeurologistNycPage />
     </>
   );
 }

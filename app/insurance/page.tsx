@@ -96,8 +96,8 @@ function Page() {
         italic="We accept"
         title="most major plans."
         description="Insurance for your medical care. Transparent cash-pay for longevity and self-pay add-ons. No surprise bills."
-        image={IMG.doctorPatient}
-        imageAlt="Patient with insurance card"
+        image={IMG.reception}
+        imageAlt="Umbrella Health reception and patient check-in"
         crumbs={[{ label: "Home", to: "/" }, { label: "Insurance & Pricing" }]}
         tone="mint"
       />
