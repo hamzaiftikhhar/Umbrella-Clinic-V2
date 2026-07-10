@@ -232,8 +232,8 @@ export function NeurologistNycPage() {
             </ol>
           </nav>
 
-          <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <Fade>
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
+            <Fade className="flex flex-col justify-center">
               <SectionLabel>Neurologist NYC</SectionLabel>
               <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {NEUROLOGIST_HERO.h1}
@@ -258,34 +258,32 @@ export function NeurologistNycPage() {
               </div>
             </Fade>
 
-            <Fade delay={0.08}>
-              <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+            <Fade delay={0.08} className="flex">
+              <div className="relative flex w-full flex-1 flex-col">
                 <motion.div
                   className="absolute -right-6 top-8 hidden h-24 w-24 rounded-full border border-[color:var(--navy-700)]/20 lg:block"
                   animate={reduceMotion ? undefined : { rotate: [0, 90, 0] }}
                   transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
                   aria-hidden
                 />
-                <div className="relative overflow-hidden rounded-[2rem] border border-border/50 shadow-[var(--shadow-elegant)]">
-                  <div className="relative aspect-[5/4] sm:aspect-[4/3] lg:aspect-[16/11]">
-                    <Image
-                      src={IMG.neurologyHero}
-                      alt={NEUROLOGIST_NYC_SEO.heroImageAlt}
-                      fill
-                      priority
-                      className="object-cover"
-                      sizes="(max-width: 1024px) 90vw, 560px"
-                    />
-                    <div
-                      className="absolute inset-0 bg-gradient-to-tr from-[color:var(--navy-900)]/45 via-transparent to-transparent"
-                      aria-hidden
-                    />
-                    <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/20 bg-[color:var(--navy-900)]/55 px-4 py-3 backdrop-blur-sm">
-                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
-                        In-house neurology diagnostics
-                      </p>
-                      <p className="mt-1 text-sm text-white/90">EEG · EMG · Coordinated brain imaging</p>
-                    </div>
+                <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
+                  <Image
+                    src={IMG.neurologyHero}
+                    alt={NEUROLOGIST_NYC_SEO.heroImageAlt}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 90vw, 50vw"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-tr from-[color:var(--navy-900)]/45 via-transparent to-transparent"
+                    aria-hidden
+                  />
+                  <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/20 bg-[color:var(--navy-900)]/55 px-4 py-3 backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
+                      In-house neurology diagnostics
+                    </p>
+                    <p className="mt-1 text-sm text-white/90">EEG · EMG · Coordinated brain imaging</p>
                   </div>
                 </div>
               </div>
