@@ -29,7 +29,7 @@ interface OrbitService extends ServiceSeed {
 const innerRingSeeds: ServiceSeed[] = [
   { name: "Primary Care", image: IMG.consult, href: "/specialties/primary-care-nyc" },
   { name: "Cardiology", image: IMG.ekg, href: "/specialties/cardiologist-nyc" },
-  { name: "Neurology", image: IMG.doctorPatient, href: "/specialties/neurologist-nyc" },
+  { name: "Neurology", image: IMG.neurologyBrainModel, href: "/specialties/neurologist-nyc" },
   { name: "Sleep Medicine", image: IMG.sleepStudy, href: "/specialties/sleep-medicine-nyc" },
   { name: "Pain Management", image: IMG.examRoom, href: "/specialties/pain-management-nyc" },
 ];

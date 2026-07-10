@@ -5,18 +5,30 @@ const u = (id: string, w = 1600) =>
 export const IMG = {
   // Clinical
   consult: u("photo-1631815588090-d4bfec5b1ccb", 1800),
-  doctorPatient: u("photo-1559757148-5c350d0d3c56", 1600),
+  /** @deprecated Use consult, reception, or specialty-specific imagery instead. */
+  doctorPatient: u("photo-1631815588090-d4bfec5b1ccb", 1800),
   reception: u("photo-1629909613654-28e377c37b09", 2000),
   examRoom: u("photo-1666214280557-f1b5022eb634", 1600),
   ekg: u("photo-1576091160550-2173dba999ef", 1400),
   lab: u("photo-1579154204601-01588f351e67", 1400),
-  ultrasound: u("photo-1666214277657-50d76b1d0d6f", 1400),
+  ultrasound: u("photo-1579154204601-01588f351e67", 1400),
   sleepStudy: u("photo-1520206183501-b80df61043c2", 1400),
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
   /** Clinical service cards — homepage grid (URLs verified on Unsplash CDN) */
   primaryCareHero: u("photo-1559839734-2b71ea197ec2", 1800),
-  neurologyHero: u("photo-1612349317150-e413f6a5b16d", 1600),
+  /** Brain imaging & clinical neuroscience — neurology hero & homepage grid */
+  neurologyHero: u("photo-1530026405186-ed1f139313f8", 1800),
+  /** 3D brain model — conditions feature */
+  neurologyBrainModel: u("photo-1559757175-0eb30cd8c063", 1600),
+  /** Advanced lab diagnostics */
+  neurologyDiagnostics: u("photo-1579154204601-01588f351e67", 1600),
+  /** EEG / neural waveform lab aesthetic */
+  neurologyEegLab: u("photo-1576091160550-2173dba999ef", 1600),
+  /** MRI suite environment */
+  neurologyImagingSuite: u("photo-1582719471384-894fbb16e074", 1600),
+  /** Cognitive assessment & memory care */
+  neurologyMemoryCare: u("photo-1454165804606-c3d57bc86b40", 1600),
   painManagementHero: u("photo-1544367567-0f2fcb009e0b", 1600),
   medicalSpaHero: u("photo-1515377905703-c4788e51af15", 1800),
 

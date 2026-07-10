@@ -365,6 +365,7 @@ export function specialtyPageSchemaGraph(
 }
 
 const PRIMARY_CARE_SCHEMA_PATH = "/specialties/primary-care-nyc";
+const NEUROLOGIST_NYC_SCHEMA_PATH = ROUTES.neurology;
 
 /** Structured data graph for the Primary Care NYC landing page. */
 export function primaryCareNycPageSchemaGraph() {
@@ -521,6 +522,136 @@ export function primaryCareNycPageSchemaGraph() {
         url: absoluteUrl("/"),
         name: SITE_NAME,
         publisher: { "@id": ORGANIZATION_ID },
+      },
+    ],
+  };
+}
+
+/** Structured data graph for the Neurologist NYC landing page. */
+export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
+  const pageUrl = absoluteUrl(NEUROLOGIST_NYC_SCHEMA_PATH);
+  const webpageId = `${pageUrl}#webpage`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const serviceId = `${pageUrl}#service`;
+  const imageId = `${pageUrl}#image`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": webpageId,
+        url: pageUrl,
+        name: "Neurologist NYC | Umbrella Health",
+        headline: "Neurologist NYC",
+        description:
+          "Expert neurologists in NYC providing diagnosis and treatment for migraines, headaches, memory loss, tremors, neuropathy, sleep disorders, seizures, dizziness and neurological disorders.",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": ORGANIZATION_ID },
+        breadcrumb: { "@id": breadcrumbId },
+        primaryImageOfPage: { "@id": imageId },
+        mainEntity: { "@id": serviceId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: absoluteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Specialties",
+            item: absoluteUrl("/specialties"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Neurologist NYC",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: "Neurologist NYC",
+        serviceType: "Neurology",
+        description:
+          "Comprehensive neurology services including diagnosis, neurological evaluations, advanced diagnostic testing and personalized treatment.",
+        provider: { "@id": ORGANIZATION_ID },
+        areaServed: { "@type": "City", name: "New York City" },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: pageUrl,
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Neurology Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Neurological Consultation" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Migraine Evaluation" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Memory Assessment" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "EEG Testing" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "MedicalProcedure",
+                name: "EMG & Nerve Conduction Studies",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "MedicalSpecialty",
+        name: "Neurology",
+      },
+      {
+        "@type": "ImageObject",
+        "@id": imageId,
+        contentUrl: heroImageUrl,
+        caption: "Neurologist NYC - Umbrella Health",
+      },
+      {
+        "@type": "MedicalClinic",
+        "@id": ORGANIZATION_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+        email: PRIMARY_CARE_CLINIC_EMAIL,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "32 West 14th Street",
+          addressLocality: "New York",
+          addressRegion: "NY",
+          postalCode: "10011",
+          addressCountry: "US",
+        },
+        medicalSpecialty: [
+          "PrimaryCare",
+          "Neurology",
+          "Cardiology",
+          "SleepMedicine",
+          "PainManagement",
+        ],
       },
     ],
   };
