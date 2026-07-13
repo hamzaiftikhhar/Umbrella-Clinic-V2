@@ -42,12 +42,12 @@ export default function RoutePage() {
             body: "No outside imaging centers, no faxed reports, no week-long waits. The diagnostic is part of the appointment.",
             bullets: [
               {
-                iconKey: "heart-pulse",
+                healthIcon: "ekg",
                 title: "EKG & telemetry",
                 body: "Resting EKG, event monitoring, and ambulatory telemetry.",
               },
               {
-                iconKey: "scan-line",
+                healthIcon: "scanner",
                 title: "Vascular ultrasound",
                 body: "Carotid, abdominal, and peripheral vascular ultrasound.",
               },

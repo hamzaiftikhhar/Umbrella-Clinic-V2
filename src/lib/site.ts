@@ -3,9 +3,10 @@ export const BOOKING_URL =
 
 export const SITE_NAME = "Umbrella Health";
 export const SITE_TAGLINE = "Modern medicine, measured.";
-export const SITE_PHONE = "(212) 555-0188";
-export const SITE_EMAIL = "info@myumbrellahealth.com";
-export const SITE_ADDRESS = "200 Lafayette Street, New York, NY 10012";
+/** Canonical clinic contact — matches Primary Care / Neurologist SEO schemas. */
+export const SITE_PHONE = "(347) 667-8272";
+export const SITE_EMAIL = "admin@myumbrellahealth.com";
+export const SITE_ADDRESS = "32 West 14th Street, New York, NY 10011";
 
 /** Official clinic social profiles — used in schema and footer. */
 export const CLINIC_SOCIAL_LINKS = {
@@ -20,18 +21,19 @@ export const CLINIC_SOCIAL_SAME_AS = [
   CLINIC_SOCIAL_LINKS.tiktok,
 ] as const;
 
-/** Google Maps place listing — Umbrella Health, 200 Lafayette St, NoHo. */
+/** Google Maps place for Umbrella Health — 32 West 14th Street, NYC. */
 export const CLINIC_GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/place/Umbrella+Health/@40.7363784,-73.9952539,20.37z/data=!4m10!1m2!2m1!1sUmbrella+Health,+200+Lafayette+Street,+New+York,+NY+10012!3m6!1s0x89c259dd725169a1:0xe7be074e390093f4!8m2!3d40.7363331!4d-73.9952765!15sCjlVbWJyZWxsYSBIZWFsdGgsIDIwMCBMYWZheWV0dGUgU3RyZWV0LCBOZXcgWW9yaywgTlkgMTAwMTJaOCI2dW1icmVsbGEgaGVhbHRoIDIwMCBsYWZheWV0dGUgc3RyZWV0IG5ldyB5b3JrIG55IDEwMDEykgEObWVkaWNhbF9jZW50ZXKaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMjVrTW1WSVdsaE5SbEkyWTNrd05WVnRkRzVWTWs1SFkwVTBNVTFWUlJBQuABAPoBBAgAED8!16s%2Fg%2F11v5wmp9bk?hl=en-US&entry=ttu";
+  "https://www.google.com/maps/search/?api=1&query=Umbrella+Health+32+West+14th+Street+New+York+NY+10011";
 
-export const CLINIC_COORDS = { lat: 40.7363331, lng: -73.9952765 } as const;
+/** OpenStreetMap Nominatim geocode for 32 West 14th Street, New York, NY 10011. */
+export const CLINIC_COORDS = { lat: 40.7363792, lng: -73.9947294 } as const;
 
 export const CLINIC_MAP_EMBED_URL =
-  "https://www.google.com/maps?q=Umbrella+Health,+200+Lafayette+Street,+New+York,+NY+10012&ll=40.7363331,-73.9952765&z=17&hl=en&output=embed";
+  "https://www.google.com/maps?q=32+West+14th+Street,+New+York,+NY+10011&ll=40.7363792,-73.9947294&z=17&hl=en&output=embed";
 
 /** Set via NEXT_PUBLIC_SITE_URL in production for absolute canonical/OG URLs. */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://umbrellahealth.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://myumbrellahealth.com";
 
 export function absoluteUrl(path: string): string {
   if (path.startsWith("http")) return path;

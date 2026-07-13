@@ -42,17 +42,17 @@ export default function RoutePage() {
             body: "Sudomotor and autonomic testing quantify small-fiber and autonomic nervous system function  the system behind a lot of 'all your labs are normal' presentations.",
             bullets: [
               {
-                iconKey: "activity",
+                healthIcon: "nervous-system",
                 title: "Sudomotor (QSART-style)",
                 body: "Quantitative sweat response  small-fiber neuropathy screening.",
               },
               {
-                iconKey: "brain",
+                healthIcon: "neurology",
                 title: "Autonomic profile",
                 body: "Heart rate variability and tilt response for dysautonomia workups.",
               },
               {
-                iconKey: "clipboard-list",
+                healthIcon: "lab-tube",
                 title: "Integrated workup",
                 body: "Read alongside neurology, cardiology, and labs.",
               },

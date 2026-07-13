@@ -38,17 +38,17 @@ export default function RoutePage() {
             body: "A traditional sleep lab is a hassle. We start at home — with calibrated devices and full clinical interpretation.",
             bullets: [
               {
-                iconKey: "moon",
+                healthIcon: "sleep",
                 title: "Home sleep study",
                 body: "Diagnostic-grade at-home apnea testing with same-week results.",
               },
               {
-                iconKey: "activity",
+                healthIcon: "pill",
                 title: "CPAP, oral appliance, lifestyle",
                 body: "Treatment options matched to your sleep pattern and travel schedule.",
               },
               {
-                iconKey: "clipboard-list",
+                healthIcon: "heart-rate",
                 title: "Cardio-coordinated",
                 body: "We loop in cardiology when apnea is a heart risk factor.",
               },

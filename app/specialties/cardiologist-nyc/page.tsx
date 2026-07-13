@@ -38,17 +38,17 @@ export default function RoutePage() {
             body: "Owning the diagnostics means your cardiologist reads your own data — not a referral packet from a stranger.",
             bullets: [
               {
-                iconKey: "heart-pulse",
+                healthIcon: "heart-rate",
                 title: "In-house EKG & telemetry",
                 body: "Resting EKG and ambulatory monitoring done at the clinic.",
               },
               {
-                iconKey: "scan-line",
+                healthIcon: "scanner",
                 title: "Vascular ultrasound",
                 body: "Carotid, abdominal, and peripheral vascular ultrasound on-site.",
               },
               {
-                iconKey: "activity",
+                healthIcon: "ekg",
                 title: "Risk stratification",
                 body: "Advanced lipid panels and longitudinal tracking against your baseline.",
               },

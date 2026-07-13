@@ -5,37 +5,42 @@ import { SectionHeading } from "./primitives/SectionHeading";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { Reveal } from "./primitives/Reveal";
 import { IMG } from "@/data/images";
-import type { LucideIconKey } from "@/components/icons/icon-keys";
+import { getImageAlt, imageGeoProps } from "@/data/image-seo";
+import type { HealthIconName } from "@/components/icons/icon-keys";
 
 const pillars: {
   title: string;
   description: string;
   to: string;
-  iconKey: LucideIconKey;
+  healthIcon: HealthIconName;
   image: string;
+  altKey: "examRoom" | "lab" | "longevityHero";
 }[] = [
   {
     title: "Specialties",
     description:
       "Primary care, cardiology, neurology, sleep, and interventional pain  one coordinated team.",
     to: "/specialties",
-    iconKey: "stethoscope",
+    healthIcon: "hospital",
     image: IMG.examRoom,
+    altKey: "examRoom",
   },
   {
     title: "Diagnostics & Data",
     description: "In-house imaging, labs, sleep, and biomarker panels. Results faster, in context.",
     to: "/diagnostics",
-    iconKey: "flask-conical",
+    healthIcon: "lab-tube",
     image: IMG.lab,
+    altKey: "lab",
   },
   {
     title: "Longevity",
     description:
       "Executive physicals, healthspan programs, hormone & metabolic optimization. Measured.",
     to: "/longevity",
-    iconKey: "activity",
+    healthIcon: "heart-rate",
     image: IMG.longevityHero,
+    altKey: "longevityHero",
   },
 ];
 
@@ -61,11 +66,12 @@ export function PillarsGrid() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={p.image}
-                    alt=""
+                    alt={getImageAlt(p.altKey)}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     loading="lazy"
+                    {...imageGeoProps()}
                   />
-                  <PremiumIcon iconKey={p.iconKey} size="md" tone="glass" className="absolute left-4 top-4" />
+                  <PremiumIcon healthIcon={p.healthIcon} size="md" tone="glass" className="absolute left-4 top-4" />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-semibold text-foreground">{p.title}</h3>

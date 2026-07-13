@@ -38,17 +38,17 @@ export default function RoutePage() {
             body: "Our founding physician completed an interventional pain fellowship — this is the specialty Umbrella was built around.",
             bullets: [
               {
-                iconKey: "award",
+                healthIcon: "bandage",
                 title: "Fellowship credentials",
                 body: "Interventional pain trained at an academic medical center.",
               },
               {
-                iconKey: "activity",
+                healthIcon: "nervous-system",
                 title: "Procedures we offer",
                 body: "Epidural steroid injections, facet joint blocks, radiofrequency ablation, trigger point therapy.",
               },
               {
-                iconKey: "stethoscope",
+                healthIcon: "stethoscope",
                 title: "Integrated medical care",
                 body: "Pain plans coordinated with primary care, neurology, and PT recommendations.",
               },

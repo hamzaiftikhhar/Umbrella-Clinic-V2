@@ -4,26 +4,26 @@ import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
-import type { LucideIconKey } from "@/components/icons/icon-keys";
+import type { HealthIconName, LucideIconKey } from "@/components/icons/icon-keys";
 
 const IMAGE_RADIUS = "1.75rem";
 const FRAME_OFFSET = "14px";
 
-const points: { iconKey: LucideIconKey; title: string }[] = [
+const points: { healthIcon?: HealthIconName; iconKey?: LucideIconKey; title: string }[] = [
   {
-    iconKey: "stethoscope",
+    healthIcon: "stethoscope",
     title: "Experienced Primary Care Physicians & Specialists",
   },
   {
-    iconKey: "heart-handshake",
+    healthIcon: "heart-rate",
     title: "Built Around You",
   },
   {
-    iconKey: "scan-line",
+    healthIcon: "scanner",
     title: "Advanced Diagnostics",
   },
   {
-    iconKey: "hospital",
+    healthIcon: "hospital",
     title: "Multispeciality Healthcare",
   },
   {
@@ -147,6 +147,7 @@ export function UmbrellaDifference() {
               >
                 <div className="flex items-start justify-between gap-3">
                   <PremiumIcon
+                    healthIcon={p.healthIcon}
                     iconKey={p.iconKey}
                     size="md"
                     className="transition-transform duration-300 group-hover:scale-105"

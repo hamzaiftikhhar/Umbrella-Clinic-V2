@@ -36,7 +36,7 @@ const seo = buildPageSeo({
     "NoHo medical clinic",
   ],
   geo: true,
-  ogImage: "/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.jpg",
+  ogImage: IMG.homepageHero,
 });
 
 export const metadata = seo.metadata;
@@ -57,8 +57,8 @@ export default function HomePage() {
           title="of members rate their care 5 stars after their first visit."
           description="Multispecialty care, advanced diagnostics, and a team that knows your history, not just your appointment slot."
           cta={<BookButton>Book Appointment</BookButton>}
-          image="/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.jpg"
-          imageAlt="Relaxing waiting area with green moss wall at Umbrella Health NYC clinic"
+          image={IMG.homepageHero}
+          imageAlt="Primary care & specialists in NYC Umbrella Health clinic"
         />
         <Testimonials />
         <FounderProfile />

@@ -7,6 +7,7 @@ const clinicalServices = CLINICAL_SERVICES.map((service) => ({
   href: service.href,
   description: service.description,
   imageUrl: service.imageUrl,
+  imageAlt: `${service.label} Umbrella Health NYC`,
 }));
 
 export function ClinicalServicesGrid() {
