@@ -1,0 +1,212 @@
+/**
+ * SEO alt text (2 keywords each) + clinic geo for site imagery.
+ * Geo matches Umbrella Health at 32 West 14th Street, New York, NY 10011.
+ */
+import { CLINIC_COORDS } from "@/lib/site";
+
+export const IMAGE_GEO = {
+  latitude: CLINIC_COORDS.lat,
+  longitude: CLINIC_COORDS.lng,
+  name: "Umbrella Health",
+  address: "32 West 14th Street, New York, NY 10011",
+} as const;
+
+export type ImageSeoEntry = {
+  alt: string;
+  keywords: readonly [string, string];
+};
+
+/** Alt text pairs keyword-focused for local SEO. */
+export const IMAGE_ALT = {
+  consult: {
+    alt: "Primary care doctor NYC consultation at Umbrella Health Lower Manhattan",
+    keywords: ["primary care doctor NYC", "Lower Manhattan"] as const,
+  },
+  reception: {
+    alt: "Multispecialty clinic NYC reception desk at Umbrella Health",
+    keywords: ["multispecialty clinic NYC", "Umbrella Health"] as const,
+  },
+  examRoom: {
+    alt: "Primary care NYC exam room at Umbrella Health clinic",
+    keywords: ["primary care NYC", "exam room"] as const,
+  },
+  ekg: {
+    alt: "Cardiac diagnostics NYC EKG testing at Umbrella Health",
+    keywords: ["cardiac diagnostics NYC", "EKG testing"] as const,
+  },
+  lab: {
+    alt: "In-house diagnostics NYC laboratory at Umbrella Health",
+    keywords: ["in-house diagnostics NYC", "laboratory"] as const,
+  },
+  ultrasound: {
+    alt: "Imaging and cardiac testing NYC ultrasound at Umbrella Health",
+    keywords: ["imaging and cardiac testing NYC", "ultrasound"] as const,
+  },
+  sleepStudy: {
+    alt: "Sleep medicine NYC home sleep study diagnostics",
+    keywords: ["sleep medicine NYC", "sleep study"] as const,
+  },
+  microscope: {
+    alt: "Advanced biomarkers NYC lab microscopy at Umbrella Health",
+    keywords: ["advanced biomarkers NYC", "lab diagnostics"] as const,
+  },
+  primaryCareHero: {
+    alt: "Primary care physician New York City at Umbrella Health",
+    keywords: ["primary care physician New York City", "Umbrella Health"] as const,
+  },
+  neurologyHero: {
+    alt: "Neurologist NYC brain imaging and clinical neuroscience",
+    keywords: ["neurologist NYC", "brain imaging"] as const,
+  },
+  neurologyBrainModel: {
+    alt: "Neurologist in NYC brain model for neurological conditions",
+    keywords: ["neurologist in NYC", "neurological conditions"] as const,
+  },
+  neurologyDiagnostics: {
+    alt: "Neurologist NYC advanced neurological diagnostic testing",
+    keywords: ["neurologist NYC", "neurological diagnostic testing"] as const,
+  },
+  neurologyEegLab: {
+    alt: "EEG testing neurologist NYC for seizures and epilepsy",
+    keywords: ["EEG testing", "neurologist NYC"] as const,
+  },
+  neurologyImagingSuite: {
+    alt: "Brain specialist NYC imaging suite at Umbrella Health",
+    keywords: ["brain specialist NYC", "imaging suite"] as const,
+  },
+  neurologyMemoryCare: {
+    alt: "Neurologist for dementia NYC memory and cognitive assessment",
+    keywords: ["neurologist for dementia NYC", "cognitive assessment"] as const,
+  },
+  painManagementHero: {
+    alt: "Interventional pain management NYC treatment at Umbrella Health",
+    keywords: ["interventional pain management NYC", "Umbrella Health"] as const,
+  },
+  medicalSpaHero: {
+    alt: "Medical spa services NYC wellness care at Umbrella Health",
+    keywords: ["medical spa services NYC", "wellness care"] as const,
+  },
+  drRajat: {
+    alt: "Dr. Rajat Lamington primary care doctor NYC Umbrella Health",
+    keywords: ["primary care doctor NYC", "Dr. Rajat Lamington"] as const,
+  },
+  premiumDoctorPortrait: {
+    alt: "Board certified physicians NYC at Umbrella Health clinic",
+    keywords: ["board certified physicians NYC", "Umbrella Health"] as const,
+  },
+  clinicExterior: {
+    alt: "Umbrella Health primary care NYC clinic exterior Lower Manhattan",
+    keywords: ["primary care NYC", "Lower Manhattan clinic"] as const,
+  },
+  clinicInterior: {
+    alt: "Umbrella Health multispecialty clinic NYC interior waiting area",
+    keywords: ["multispecialty clinic NYC", "clinic interior"] as const,
+  },
+  founder: {
+    alt: "Founding physician primary care NYC Dr. Rajat Lamington",
+    keywords: ["primary care NYC", "founding physician"] as const,
+  },
+  womensHealth: {
+    alt: "Women's primary care NYC physician consultation",
+    keywords: ["women's primary care NYC", "physician consultation"] as const,
+  },
+  mensHealth: {
+    alt: "Men's primary care NYC doctor at Umbrella Health",
+    keywords: ["men's primary care NYC", "Umbrella Health"] as const,
+  },
+  inclusiveCare: {
+    alt: "LGBTQ+ primary care NYC inclusive patient care",
+    keywords: ["LGBTQ+ primary care NYC", "inclusive care"] as const,
+  },
+  transgenderCare: {
+    alt: "Transgender primary care NYC affirming medical care",
+    keywords: ["transgender primary care NYC", "affirming care"] as const,
+  },
+  conciergeCare: {
+    alt: "Concierge primary care NYC executive health services",
+    keywords: ["concierge primary care NYC", "executive health"] as const,
+  },
+  glp1Hero: {
+    alt: "GLP-1 weight loss NYC medical weight loss program",
+    keywords: ["GLP-1 weight loss NYC", "medical weight loss"] as const,
+  },
+  longevityHero: {
+    alt: "Longevity medicine NYC healthspan and executive physicals",
+    keywords: ["longevity medicine NYC", "executive physicals"] as const,
+  },
+  patientHappy: {
+    alt: "Patient reviews NYC satisfied patient at Umbrella Health",
+    keywords: ["patient reviews NYC", "Umbrella Health"] as const,
+  },
+  patientReading: {
+    alt: "Preventive care NYC patient education at Umbrella Health",
+    keywords: ["preventive care NYC", "patient education"] as const,
+  },
+  patientDog: {
+    alt: "Patient-centered care NYC lifestyle wellness support",
+    keywords: ["patient-centered care NYC", "wellness"] as const,
+  },
+  busyPro: {
+    alt: "Same day doctor NYC appointment for busy professionals",
+    keywords: ["same day doctor NYC", "busy professionals"] as const,
+  },
+  exec: {
+    alt: "Executive physicals NYC longevity and preventive screening",
+    keywords: ["executive physicals NYC", "preventive screening"] as const,
+  },
+  nyc: {
+    alt: "Primary care doctors Lower Manhattan New York City skyline",
+    keywords: ["primary care doctors Lower Manhattan", "New York City"] as const,
+  },
+  brooklyn: {
+    alt: "Umbrella Health NYC accessible care near Brooklyn patients",
+    keywords: ["Umbrella Health NYC", "Brooklyn patients"] as const,
+  },
+  soho: {
+    alt: "Primary care doctor SoHo NYC near Umbrella Health",
+    keywords: ["primary care doctor SoHo", "Umbrella Health NYC"] as const,
+  },
+  unionSquare: {
+    alt: "Primary care doctor Union Square NYC Umbrella Health",
+    keywords: ["primary care doctor Union Square", "Umbrella Health NYC"] as const,
+  },
+  tribeca: {
+    alt: "Primary care Tribeca NYC nearby Umbrella Health clinic",
+    keywords: ["primary care Tribeca NYC", "Umbrella Health"] as const,
+  },
+  homepageHero: {
+    alt: "Primary care & specialists in NYC Umbrella Health clinic",
+    keywords: ["primary care NYC", "specialists in NYC"] as const,
+  },
+  logo: {
+    alt: "Umbrella Health primary care NYC logo",
+    keywords: ["Umbrella Health", "primary care NYC"] as const,
+  },
+  galleryInterior1: {
+    alt: "Umbrella Health clinic NYC exam and consultation space",
+    keywords: ["clinic NYC", "consultation space"] as const,
+  },
+  galleryInterior2: {
+    alt: "Umbrella Health Lower Manhattan medical office interior",
+    keywords: ["Lower Manhattan", "medical office"] as const,
+  },
+  galleryInterior3: {
+    alt: "Umbrella Health NYC patient care environment",
+    keywords: ["Umbrella Health NYC", "patient care"] as const,
+  },
+} as const satisfies Record<string, ImageSeoEntry>;
+
+export type ImageAltKey = keyof typeof IMAGE_ALT;
+
+export function getImageAlt(key: ImageAltKey): string {
+  return IMAGE_ALT[key].alt;
+}
+
+/** HTML geo microdata-friendly attributes for images. */
+export function imageGeoProps() {
+  return {
+    "data-geo-lat": String(IMAGE_GEO.latitude),
+    "data-geo-lng": String(IMAGE_GEO.longitude),
+    "data-geo-place": IMAGE_GEO.address,
+  } as const;
+}

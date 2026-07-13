@@ -9,6 +9,7 @@ export interface ClinicalServiceCardProps {
   title: string;
   description: string;
   imageUrl: string;
+  imageAlt?: string;
   href: string;
   className?: string;
 }
@@ -17,6 +18,7 @@ export function ClinicalServiceCard({
   title,
   description,
   imageUrl,
+  imageAlt,
   href,
   className,
 }: ClinicalServiceCardProps) {
@@ -26,10 +28,13 @@ export function ClinicalServiceCard({
         <article className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
           <Image
             src={imageUrl}
-            alt=""
+            alt={imageAlt ?? `${title} at Umbrella Health NYC`}
             fill
             className="object-cover transition-transform duration-700 ease-[var(--ease-premium)] group-hover/card:scale-[1.05]"
             sizes="(max-width: 640px) 50vw, 25vw"
+            data-geo-lat="40.7363792"
+            data-geo-lng="-73.9947294"
+            data-geo-place="32 West 14th Street, New York, NY 10011"
           />
 
           <div

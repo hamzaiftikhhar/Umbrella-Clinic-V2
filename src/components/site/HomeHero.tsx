@@ -5,6 +5,7 @@ import { HomeHeroBookingCard } from "./HomeHeroBookingCard";
 import { HomeHeroSatisfactionBadge } from "./HomeHeroSatisfactionBadge";
 import { HomeHeroSpecialtySelect } from "./HomeHeroSpecialtySelect";
 import { IMG } from "@/data/images";
+import { getImageAlt, imageGeoProps } from "@/data/image-seo";
 import { BOOKING_URL } from "@/lib/site";
 
 const HERO_STATS = [
@@ -21,11 +22,12 @@ export function HomeHero() {
     >
       <Image
         src={IMG.clinicInterior}
-        alt=""
+        alt={getImageAlt("clinicInterior")}
         fill
         priority
         className="object-cover object-[72%_42%]"
         sizes="100vw"
+        {...imageGeoProps()}
       />
 
       <div

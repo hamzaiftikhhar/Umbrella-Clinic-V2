@@ -36,11 +36,29 @@ export const LUCIDE_ICON_KEYS = [
 
 export type LucideIconKey = (typeof LUCIDE_ICON_KEYS)[number];
 
-export type HealthIconName =
-  | "cardiology"
-  | "neurology"
-  | "sleep"
-  | "diagnostics"
-  | "primary-care"
-  | "weight-loss"
-  | "pain";
+/** Contextual health icons from SVG Repo (themed duotone / medical glyphs). */
+export const SVGREPO_HEALTH_ICON_NAMES = [
+  "brain",
+  "headache",
+  "nervous-system",
+  "ekg",
+  "scanner",
+  "sleep",
+  "hospital",
+  "heart-rate",
+  "pill",
+  "lab-tube",
+  "bandage",
+  "stethoscope",
+  "cardiology",
+  "neurology",
+  "diagnostics",
+  "primary-care",
+  "weight-loss",
+  "pain",
+] as const;
+
+export type SvgRepoHealthIconName = (typeof SVGREPO_HEALTH_ICON_NAMES)[number];
+
+/** @deprecated Use SvgRepoHealthIconName — kept for PremiumIcon prop compatibility. */
+export type HealthIconName = SvgRepoHealthIconName;

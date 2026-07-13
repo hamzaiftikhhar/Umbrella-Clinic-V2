@@ -13,10 +13,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import { IMG } from "@/data/images";
+import { getImageAlt, imageGeoProps } from "@/data/image-seo";
+
 const GALLERY_IMAGES = [
-  "/images/APNQkAG2VC7P3b3M7-u1nk5TVqiBrhB-Jb-5gMl7-7wE-NF0Kcu7wYmgGbcKNfvO6wNuHyqWjKZXLFcLcvM0DbAWHqx-CAt3pFKtN5_lavgX1uEgq4VCtVczKo-eZe09-F_0mwaJxsD03Qw3890-h2918-k-no.jpg",
-  "/images/APNQkAFOczQSQGPfH60lyTslmZBtZS0FORi3PpPqefEzCy0rafeDlr1WtadgUpPDgQLDBYTpu_fsIF7J0xfmK1rBpLbTIVvqlr4bMDIdleffPWPsFhTPFAm57JFQdgpaB6R4K4DeLYlkw3627-h3024-k-no.jpg",
-  "/images/APNQkAE3aRckid3msJlKgTpj6ZemfukqgTeRybAw3fyQR3cHS302IFTaomOuHAdO04rb2vYv4VC1f5jtD-5X-ny4QmQzzbjDk_ajwNTKfMjgc0l1wHpeiEOdRT_DNZ0i46xFhzUqu6ipw4032-h3024-k-no.jpg",
+  { src: IMG.galleryInterior1, altKey: "galleryInterior1" as const },
+  { src: IMG.galleryInterior2, altKey: "galleryInterior2" as const },
+  { src: IMG.galleryInterior3, altKey: "galleryInterior3" as const },
 ] as const;
 
 /** Homepage “Our space” — approved carousel layout with clinic photography */
@@ -29,15 +32,16 @@ export function GalleryBanner() {
         <div className="relative overflow-hidden rounded-[2rem] border border-border/60 shadow-[var(--shadow-card)]">
           <Carousel plugins={[plugin.current]} className="w-full" opts={{ loop: true }}>
             <CarouselContent>
-              {GALLERY_IMAGES.map((src, index) => (
+              {GALLERY_IMAGES.map(({ src, altKey }) => (
                 <CarouselItem key={src}>
                   <div className="relative h-[360px] w-full sm:h-[420px]">
                     <Image
                       src={src}
-                      alt={`Inside Umbrella Health ${index + 1}`}
+                      alt={getImageAlt(altKey)}
                       fill
                       className="object-cover"
                       sizes="(max-width: 1280px) 100vw, 1216px"
+                      {...imageGeoProps()}
                     />
                   </div>
                 </CarouselItem>

@@ -5,6 +5,7 @@ import { SectionHeading } from "./primitives/SectionHeading";
 import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
 import { PHYSICIANS } from "@/data/physicians";
 import { SITE_FAQS } from "@/data/site-content";
+import { imageGeoProps } from "@/data/image-seo";
 
 export const homeFaqs: QA[] = [...SITE_FAQS];
 
@@ -22,10 +23,11 @@ function FAQHelpContact({ className }: { className?: string }) {
           >
             <Image
               src={physician.image}
-              alt=""
+              alt={`${physician.name} ${physician.specialty} at Umbrella Health NYC`}
               fill
               className="object-cover object-top"
               sizes="48px"
+              {...imageGeoProps()}
             />
           </div>
         ))}

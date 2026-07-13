@@ -5,15 +5,16 @@ import { type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
-  ArrowSquareOut,
+  ArrowUpRight,
   Calendar,
-  ClockCounterClockwise,
+  Clock,
+  History,
   MapPin,
   Phone,
-  Pulse,
+  Activity,
   Star,
   Target,
-} from "@phosphor-icons/react";
+} from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { MedicalIconFrame } from "@/components/icons/MedicalIcon";
 import {
@@ -26,6 +27,7 @@ import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
 import { PhysicianCard } from "./primitives/PhysicianCard";
 import { IMG } from "@/data/images";
+import { getImageAlt } from "@/data/image-seo";
 import { ROUTES } from "@/data/site-architecture";
 import { physiciansForSpecialty, physicianProfilePath } from "@/data/physicians";
 import { PRIMARY_CARE_CLINIC_ADDRESS } from "@/data/primary-care-nyc-content";
@@ -58,8 +60,6 @@ const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const FAQS = [...NEUROLOGIST_NYC_FAQS];
 const NEIGHBORHOODS = [...NEUROLOGIST_NEIGHBORHOODS];
 const PHONE_TEL = NEUROLOGIST_CLINIC_PHONE.replace(/\D/g, "");
-
-const PHOSPHOR_UI = { weight: "regular" as const, size: 20 };
 
 function Fade({
   children,
@@ -130,12 +130,12 @@ const CARE_PATHWAY_NODES = [
   {
     label: "Your symptoms",
     detail: "Mapped to neurological patterns & severity",
-    icon: Pulse,
+    icon: Activity,
   },
   {
     label: "Your history",
     detail: "Medications, prior workups & daily rhythms",
-    icon: ClockCounterClockwise,
+    icon: History,
   },
   {
     label: "Your goals",
@@ -168,7 +168,7 @@ function PersonalizedCareVisual() {
                   {step}
                 </span>
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--navy-800)]/8 text-[color:var(--navy-800)] ring-1 ring-[color:var(--navy-800)]/10">
-                  <Icon weight="regular" size={20} aria-hidden />
+                  <Icon className="h-5 w-5" aria-hidden />
                 </span>
               </div>
               <div className="min-w-0 pt-0.5">
@@ -253,7 +253,7 @@ export function NeurologistNycPage() {
                   href={`tel:${PHONE_TEL}`}
                   className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background px-6 py-3 text-sm font-medium text-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:border-primary/25"
                 >
-                  <Phone {...PHOSPHOR_UI} className="text-primary" aria-hidden />
+                  <Phone className="h-5 w-5 text-primary" aria-hidden />
                   {NEUROLOGIST_HERO.callCta}
                 </a>
               </div>
@@ -321,7 +321,7 @@ export function NeurologistNycPage() {
                   <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[color:var(--navy-800)]/20 bg-[color:var(--navy-800)] p-8 text-white shadow-[var(--shadow-elegant)] sm:p-10">
                     <Image
                       src={IMG.neurologyBrainModel}
-                      alt=""
+                      alt={getImageAlt("neurologyBrainModel")}
                       fill
                       className="object-cover object-right opacity-40 mix-blend-luminosity transition-transform duration-700 group-hover:scale-[1.03]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
@@ -701,7 +701,7 @@ export function NeurologistNycPage() {
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-7">
                     <p className="font-display text-2xl italic text-white">Lower Manhattan, NYC</p>
                     <p className="mt-1 flex items-center gap-1.5 text-sm text-white/85">
-                      <MapPin {...PHOSPHOR_UI} size={14} aria-hidden />
+                      <MapPin className="h-3.5 w-3.5" aria-hidden />
                       {PRIMARY_CARE_CLINIC_ADDRESS.split(",")[0]}
                     </p>
                   </div>
@@ -711,7 +711,7 @@ export function NeurologistNycPage() {
                   >
                     <span className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[var(--shadow-elegant)]">
                       Open in Google Maps
-                      <ArrowSquareOut {...PHOSPHOR_UI} size={16} />
+                      <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
                 </div>
@@ -772,7 +772,7 @@ export function NeurologistNycPage() {
                   className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   {NEUROLOGIST_SPECIALISTS.cta}
-                  <ArrowRight {...PHOSPHOR_UI} size={16} />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             </Fade>
@@ -826,7 +826,7 @@ export function NeurologistNycPage() {
                           className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                         >
                           View full profile
-                          <ArrowRight {...PHOSPHOR_UI} size={14} />
+                          <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                       </div>
                     </div>
@@ -847,7 +847,9 @@ export function NeurologistNycPage() {
                 className="group flex h-full flex-col rounded-[1.75rem] border border-border/50 bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
                 aria-labelledby="insurance-heading"
               >
-                <InsuranceSectionGlyph weight="regular" size={32} className="text-primary" aria-hidden />
+                <MedicalIconFrame variant="primary" size="md" className="h-14 w-14 rounded-2xl">
+                  <InsuranceSectionGlyph size={28} />
+                </MedicalIconFrame>
                 <h2
                   id="insurance-heading"
                   className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
@@ -862,11 +864,7 @@ export function NeurologistNycPage() {
                   className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   {NEUROLOGIST_INSURANCE.cta}
-                  <ArrowRight
-                    {...PHOSPHOR_UI}
-                    size={16}
-                    className="transition-transform group-hover:translate-x-0.5"
-                  />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </article>
             </Fade>
@@ -880,9 +878,7 @@ export function NeurologistNycPage() {
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      weight="fill"
-                      size={20}
-                      className="text-[color:var(--accent-amber)]"
+                      className="h-5 w-5 fill-[color:var(--accent-amber)] text-[color:var(--accent-amber)]"
                       aria-hidden
                     />
                   ))}
@@ -901,11 +897,7 @@ export function NeurologistNycPage() {
                   className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
                 >
                   {NEUROLOGIST_REVIEWS.cta}
-                  <ArrowRight
-                    {...PHOSPHOR_UI}
-                    size={16}
-                    className="transition-transform group-hover:translate-x-0.5"
-                  />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </article>
             </Fade>
@@ -956,7 +948,7 @@ export function NeurologistNycPage() {
                 className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-[color:var(--navy-800)]/8 blur-2xl"
                 aria-hidden
               />
-              <Calendar {...PHOSPHOR_UI} size={40} className="mx-auto text-primary" aria-hidden />
+              <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
               <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
                 {NEUROLOGIST_FINAL_CTA.heading}
               </h2>
@@ -972,7 +964,7 @@ export function NeurologistNycPage() {
                   href={`tel:${PHONE_TEL}`}
                   className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5"
                 >
-                  <Phone {...PHOSPHOR_UI} size={16} aria-hidden />
+                  <Phone className="h-4 w-4" aria-hidden />
                   {NEUROLOGIST_FINAL_CTA.callCta}
                 </a>
               </div>

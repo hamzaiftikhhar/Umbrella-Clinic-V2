@@ -74,7 +74,7 @@ export const PHYSICIANS: Physician[] = [
     credentials: "MD",
     title: "Family Physician & Pain Management Specialist",
     specialty: "Interventional Pain & Family Medicine",
-    image: "/images/dr-rajat.png",
+    image: "/images/dr-rajat.webp",
     imageAlt: "Dr. Rajat Lamington, board-certified family medicine and pain management physician at Umbrella Health NYC",
     founder: true,
     zocdocUrl:
@@ -142,7 +142,7 @@ export const PHYSICIANS: Physician[] = [
     credentials: "MD",
     title: "Internist",
     specialty: "Internal Medicine",
-    image: "/images/dr-cale-li.png",
+    image: "/images/dr-cale-li.webp",
     imageAlt: "Dr. Cale Li, internal medicine physician at Umbrella Health NYC",
     zocdocUrl:
       "https://www.zocdoc.com/doctor/cale-li-md-604186?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",
@@ -208,7 +208,7 @@ export const PHYSICIANS: Physician[] = [
     credentials: "MD",
     title: "Neurologist",
     specialty: "Neurology & Sleep Medicine",
-    image: "/images/dr-masrai-williams.png",
+    image: "/images/dr-masrai-williams.webp",
     imageAlt: "Dr. Masrai Williams, neurologist and sleep medicine physician at Umbrella Health NYC",
     zocdocUrl:
       "https://www.zocdoc.com/doctor/masrai-williams-md-720861?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",
@@ -267,7 +267,7 @@ export const PHYSICIANS: Physician[] = [
     credentials: "MD",
     title: "Interventional Cardiologist",
     specialty: "Interventional Cardiology",
-    image: "/images/dr-tawseef-dar.png",
+    image: "/images/dr-tawseef-dar.webp",
     imageAlt: "Dr. Tawseef Dar, interventional cardiologist at Umbrella Health NYC",
     zocdocUrl:
       "https://www.zocdoc.com/doctor/tawseef-dar-md-639362?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",

@@ -5,8 +5,8 @@ export function Wordmark({ className, imageClassName, light }: { className?: str
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src="/images/combination-mark.png"
-        alt="Umbrella Health"
+        src="/images/combination-mark.webp"
+        alt="Umbrella Health primary care NYC logo"
         width={800}
         height={200}
         className={cn("h-20 sm:h-24 w-auto object-contain", light && "brightness-0 invert", imageClassName)}

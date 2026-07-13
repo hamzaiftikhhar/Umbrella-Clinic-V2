@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { Crumb } from "@/components/site/PageHero";
-import { SITE_NAME, absoluteUrl } from "@/lib/site";
+import { CLINIC_COORDS, SITE_NAME, absoluteUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 
 interface HeadOpts {
@@ -89,6 +89,8 @@ export function buildPageSeo({
           other: {
             "geo.region": "US-NY",
             "geo.placename": "New York City",
+            "geo.position": `${CLINIC_COORDS.lat};${CLINIC_COORDS.lng}`,
+            ICBM: `${CLINIC_COORDS.lat}, ${CLINIC_COORDS.lng}`,
           },
         }
       : {}),

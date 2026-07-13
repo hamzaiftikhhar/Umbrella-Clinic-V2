@@ -59,7 +59,7 @@ export function NeighborhoodPage({ config }: { config: NeighborhoodConfig }) {
                 <ul className="mt-6 space-y-4 text-sm text-foreground/80">
                   <li className="flex gap-3">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    200 Lafayette Street, NoHo
+                    32 West 14th Street, Lower Manhattan
                   </li>
                   <li className="flex gap-3">
                     <Train className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

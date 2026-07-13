@@ -19,7 +19,7 @@ const seo = buildPageSeo({
   path: "/contact-us",
   crumbs: [{ label: "Home", to: "/" }, { label: "Contact Us" }],
   geo: true,
-  ogImage: "/images/street-view.png",
+  ogImage: "/images/street-view.webp",
   extraSchema: [medicalClinicSchema({ includeHours: true })],
 });
 export const metadata = seo.metadata;

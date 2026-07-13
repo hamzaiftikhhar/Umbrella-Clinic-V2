@@ -9,7 +9,7 @@ import { PillList } from "./PageBuilding";
 import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { PhysicianCard } from "./primitives/PhysicianCard";
-import type { LucideIconKey } from "@/components/icons/icon-keys";
+import type { HealthIconName, LucideIconKey } from "@/components/icons/icon-keys";
 import type { SpecialtyAeoContent } from "@/data/specialty-content";
 import { physiciansForSpecialty } from "@/data/physicians";
 
@@ -28,7 +28,7 @@ export interface LeafConfig {
     heading: string;
     accent?: string;
     body: string;
-    bullets?: { iconKey: LucideIconKey; title: string; body: string }[];
+    bullets?: { iconKey?: LucideIconKey; healthIcon?: HealthIconName; title: string; body: string }[];
   };
   pills?: { label: string; items: string[] };
   related?: {
@@ -68,7 +68,7 @@ export function LeafPage({ config }: { config: LeafConfig }) {
                   <ul className="mt-8 space-y-6">
                     {c.intro.bullets.map((b) => (
                       <li key={b.title} className="flex gap-4">
-                        <PremiumIcon iconKey={b.iconKey} size="lg" />
+                        <PremiumIcon healthIcon={b.healthIcon} iconKey={b.iconKey} size="lg" />
                         <div>
                           <h3 className="text-base font-semibold text-foreground">{b.title}</h3>
                           <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

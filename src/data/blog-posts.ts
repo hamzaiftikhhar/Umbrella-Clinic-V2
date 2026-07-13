@@ -85,7 +85,7 @@ export const BLOG_POSTS: BlogPost[] = [
     body: [
       "When you wake up with a fever, persistent cough, or sudden symptoms, the last thing you want is a week-long wait for an appointment — or hours in an emergency room for something your primary care doctor could handle.",
       "Same-day sick visits are designed for acute concerns: cold and flu, sore throat, urinary symptoms, minor infections, rashes, and flare-ups of known conditions. If you're unsure whether your issue is urgent, call the office — our team can help you decide.",
-      "Our NoHo clinic at 200 Lafayette Street is two blocks from the Spring Street subway, making it accessible from Union Square, SoHo, Chelsea, and the West Village.",
+      "Our Lower Manhattan clinic at 32 West 14th Street is accessible from Union Square, SoHo, Chelsea, and the West Village.",
       "Many appointments include on-site testing when needed — strep, flu, COVID, urinalysis, and basic labs — so you leave with a diagnosis and treatment plan, not another appointment to schedule.",
       "For established patients, telehealth across New York State is available for select follow-ups and acute concerns when an in-person visit isn't necessary.",
     ],

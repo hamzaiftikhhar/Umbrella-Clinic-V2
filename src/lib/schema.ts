@@ -19,8 +19,9 @@ import {
   CLINIC_SOCIAL_SAME_AS,
 } from "@/lib/site";
 
-export const DEFAULT_OG_IMAGE = "/images/street-view.png";
-export const SITE_LOGO = "/images/combination-mark.png";
+export const DEFAULT_OG_IMAGE = "/images/street-view.webp";
+export const SITE_LOGO = "/images/combination-mark.webp";
+export const HERO_IMAGE_PATH = "/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.webp";
 
 export const CLINIC_OPENING_HOURS = [
   "Mo-Fr 08:00-19:00",
@@ -28,7 +29,7 @@ export const CLINIC_OPENING_HOURS = [
 ] as const;
 
 /** E.164 for schema.org telephone fields. */
-export const SITE_PHONE_SCHEMA = "+1-212-555-0188";
+export const SITE_PHONE_SCHEMA = "+1-347-667-8272";
 
 export const CLINIC_MEDICAL_SPECIALTIES = [
   "PrimaryCare",
@@ -50,10 +51,10 @@ export const HERO_IMAGE_SCHEMA_ID = `${SITE_URL}/#hero`;
 export function postalAddressSchema() {
   return {
     "@type": "PostalAddress" as const,
-    streetAddress: "200 Lafayette Street",
+    streetAddress: "32 West 14th Street",
     addressLocality: "New York",
     addressRegion: "NY",
-    postalCode: "10012",
+    postalCode: "10011",
     addressCountry: "US",
   };
 }
@@ -158,7 +159,7 @@ export const CLINIC_INTRO_VIDEO = {
   name: "Why Patients Choose Umbrella Health in New York",
   description:
     "Board-certified primary care and specialists in Lower Manhattan — one connected record, in-house diagnostics, and patient-centered care at Umbrella Health NYC.",
-  thumbnailUrl: "/images/premium-doctor-portrait.png",
+  thumbnailUrl: "/images/premium-doctor-portrait.webp",
   uploadDate: "2025-06-01",
 } as const;
 
@@ -192,13 +193,22 @@ export const MAJOR_INSURANCE_ENTITIES = [
   "UnitedHealthcare",
 ].map(insuranceOrganizationSchema);
 
+/** ImageObject with clinic geo tags (32 West 14th Street, NYC). */
 export function imageObjectSchema(url: string, caption: string, id?: string) {
   return {
     "@type": "ImageObject",
     ...(id ? { "@id": id } : {}),
+    contentUrl: absoluteUrl(url),
     url: absoluteUrl(url),
     caption,
-    contentLocation: lowerManhattanPlaceSchema(),
+    name: caption,
+    contentLocation: {
+      "@type": "Place",
+      name: "Umbrella Health",
+      address: postalAddressSchema(),
+      geo: geoCoordinatesSchema(),
+      containedInPlace: lowerManhattanPlaceSchema(),
+    },
   };
 }
 
@@ -384,6 +394,7 @@ export function primaryCareNycPageSchemaGraph() {
         url: absoluteUrl("/"),
         logo: { "@id": LOGO_SCHEMA_ID },
       },
+      imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
       {
         "@type": "MedicalClinic",
         "@id": CLINIC_SCHEMA_ID,
@@ -398,6 +409,7 @@ export function primaryCareNycPageSchemaGraph() {
           postalCode: "10011",
           addressCountry: "US",
         },
+        geo: geoCoordinatesSchema(),
         telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
         email: PRIMARY_CARE_CLINIC_EMAIL,
         medicalSpecialty: ["PrimaryCare", "InternalMedicine", "PreventiveMedicine"],
@@ -534,6 +546,7 @@ export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
   const breadcrumbId = `${pageUrl}#breadcrumb`;
   const serviceId = `${pageUrl}#service`;
   const imageId = `${pageUrl}#image`;
+  const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
 
   return {
     "@context": "https://schema.org",
@@ -584,7 +597,7 @@ export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
         serviceType: "Neurology",
         description:
           "Comprehensive neurology services including diagnosis, neurological evaluations, advanced diagnostic testing and personalized treatment.",
-        provider: { "@id": ORGANIZATION_ID },
+        provider: { "@id": CLINIC_SCHEMA_ID },
         areaServed: { "@type": "City", name: "New York City" },
         availableChannel: {
           "@type": "ServiceChannel",
@@ -627,14 +640,31 @@ export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
       {
         "@type": "ImageObject",
         "@id": imageId,
-        contentUrl: heroImageUrl,
+        contentUrl: heroUrl,
+        url: heroUrl,
         caption: "Neurologist NYC - Umbrella Health",
+        name: "Neurologist NYC brain imaging and clinical neuroscience",
+        contentLocation: {
+          "@type": "Place",
+          name: "Umbrella Health",
+          address: postalAddressSchema(),
+          geo: geoCoordinatesSchema(),
+        },
       },
       {
-        "@type": "MedicalClinic",
+        "@type": "Organization",
         "@id": ORGANIZATION_ID,
         name: SITE_NAME,
         url: absoluteUrl("/"),
+        logo: { "@id": LOGO_SCHEMA_ID },
+      },
+      imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
+      {
+        "@type": "MedicalClinic",
+        "@id": CLINIC_SCHEMA_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        parentOrganization: { "@id": ORGANIZATION_ID },
         telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
         email: PRIMARY_CARE_CLINIC_EMAIL,
         address: {
@@ -645,6 +675,7 @@ export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
           postalCode: "10011",
           addressCountry: "US",
         },
+        geo: geoCoordinatesSchema(),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -784,6 +815,8 @@ export function homePageSchemaGraph() {
         parentOrganization: { "@id": ORGANIZATION_ID },
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
+        telephone: SITE_PHONE_SCHEMA,
+        email: SITE_EMAIL,
         openingHoursSpecification: [
           {
             "@type": "OpeningHoursSpecification",
@@ -835,6 +868,16 @@ export function homePageSchemaGraph() {
         about: { "@id": CLINIC_SCHEMA_ID },
         primaryImageOfPage: { "@id": HERO_IMAGE_SCHEMA_ID },
       },
+      imageObjectSchema(
+        SITE_LOGO,
+        "Umbrella Health primary care NYC logo",
+        LOGO_SCHEMA_ID,
+      ),
+      imageObjectSchema(
+        HERO_IMAGE_PATH,
+        "Primary care & specialists in NYC Umbrella Health clinic",
+        HERO_IMAGE_SCHEMA_ID,
+      ),
       {
         "@type": "FAQPage",
         "@id": HOMEPAGE_FAQ_SCHEMA_ID,
