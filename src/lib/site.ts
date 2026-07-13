@@ -25,11 +25,11 @@ export const CLINIC_SOCIAL_SAME_AS = [
 export const CLINIC_GOOGLE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=Umbrella+Health+32+West+14th+Street+New+York+NY+10011";
 
-/** OpenStreetMap Nominatim geocode for 32 West 14th Street, New York, NY 10011. */
-export const CLINIC_COORDS = { lat: 40.7363792, lng: -73.9947294 } as const;
+/** Google Business pin coordinates for Umbrella Health (use for ImageObject / EXIF geo). */
+export const CLINIC_COORDS = { lat: 40.7363331, lng: -73.9952765 } as const;
 
 export const CLINIC_MAP_EMBED_URL =
-  "https://www.google.com/maps?q=32+West+14th+Street,+New+York,+NY+10011&ll=40.7363792,-73.9947294&z=17&hl=en&output=embed";
+  "https://www.google.com/maps?q=Umbrella+Health&ll=40.7363331,-73.9952765&z=17&hl=en&output=embed";
 
 /** Set via NEXT_PUBLIC_SITE_URL in production for absolute canonical/OG URLs. */
 export const SITE_URL =

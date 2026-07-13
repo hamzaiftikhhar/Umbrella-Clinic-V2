@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
+import { imageGeoProps } from "@/data/image-seo";
 import { cn } from "@/lib/utils";
 
 export interface ClinicalServiceCardProps {
@@ -32,9 +33,7 @@ export function ClinicalServiceCard({
             fill
             className="object-cover transition-transform duration-700 ease-[var(--ease-premium)] group-hover/card:scale-[1.05]"
             sizes="(max-width: 640px) 50vw, 25vw"
-            data-geo-lat="40.7363792"
-            data-geo-lng="-73.9947294"
-            data-geo-place="32 West 14th Street, New York, NY 10011"
+            {...imageGeoProps()}
           />
 
           <div
