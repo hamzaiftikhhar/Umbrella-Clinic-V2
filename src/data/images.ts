@@ -13,6 +13,10 @@ export const IMG = {
   lab: u("photo-1579154204601-01588f351e67", 1400),
   ultrasound: u("photo-1579154204601-01588f351e67", 1400),
   sleepStudy: u("photo-1520206183501-b80df61043c2", 1400),
+  /** Premium sleep outcome — peaceful rest (Sleep Medicine hero) */
+  sleepMedicineHero: "/images/sleep-medicine-hero.webp",
+  /** Premium sleep consult — female clinician with patient & iPad in clinic */
+  sleepMedicineConsultation: "/images/sleep-medicine-consultation.webp",
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
   /** Clinical service cards — homepage grid */

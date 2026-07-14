@@ -55,8 +55,6 @@ const carriers = [
     name: "EmblemHealth",
     src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a739b76071499f949_emblem-health-logo.svg",
   },
-  { name: "Oxford" },
-  { name: "Empire" },
 ];
 
 const steps = [
