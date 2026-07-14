@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
         destination: "/our-physicians",
         permanent: true,
       },
+      {
+        source: "/specialties/sleep-medicine-nyc",
+        destination: "/specialties/sleep-medicine-services-nyc",
+        permanent: true,
+      },
     ];
   },
   images: {

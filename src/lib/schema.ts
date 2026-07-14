@@ -688,6 +688,213 @@ export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
   };
 }
 
+const SLEEP_MEDICINE_NYC_SCHEMA_PATH = ROUTES.sleepMedicine;
+
+/** Structured data graph for the Sleep Medicine Services NYC landing page. */
+export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
+  const pageUrl = absoluteUrl(SLEEP_MEDICINE_NYC_SCHEMA_PATH);
+  const webpageId = `${pageUrl}#webpage`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const serviceId = `${pageUrl}#service`;
+  const imageId = `${pageUrl}#image`;
+  const faqId = `${pageUrl}#faq`;
+  const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": webpageId,
+        url: pageUrl,
+        name: "Sleep Medicine Services NYC | Sleep Specialists | Umbrella Health",
+        headline: "Sleep Medicine Services NYC",
+        description:
+          "Sleep Medicine Services NYC for sleep apnea, insomnia, snoring, narcolepsy, and other sleep disorders. Expert diagnosis, home sleep studies, and personalized treatment",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": ORGANIZATION_ID },
+        breadcrumb: { "@id": breadcrumbId },
+        primaryImageOfPage: { "@id": imageId },
+        mainEntity: { "@id": serviceId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: absoluteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Specialties",
+            item: absoluteUrl("/specialties"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Sleep Medicine Services NYC",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: "Sleep Medicine Services NYC",
+        serviceType: "Sleep Medicine",
+        description:
+          "Expert diagnosis and treatment for sleep apnea, insomnia, snoring, narcolepsy, and other sleep disorders with home sleep studies and personalized care.",
+        provider: { "@id": CLINIC_SCHEMA_ID },
+        areaServed: { "@type": "City", name: "New York City" },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: pageUrl,
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Sleep Medicine Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Comprehensive Sleep Evaluations" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Home Sleep Studies" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Sleep Apnea Testing" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Insomnia Treatment" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "MedicalProcedure",
+                name: "Personalized Sleep Treatment Plans",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "MedicalSpecialty",
+        name: "SleepMedicine",
+      },
+      {
+        "@type": "ImageObject",
+        "@id": imageId,
+        contentUrl: heroUrl,
+        url: heroUrl,
+        caption: "Sleep Medicine Services NYC - Umbrella Health",
+        name: "Sleep medicine services NYC — best sleep clinic near me and sleep disorder center",
+        contentLocation: {
+          "@type": "Place",
+          name: "Umbrella Health",
+          address: postalAddressSchema(),
+          geo: geoCoordinatesSchema(),
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": ORGANIZATION_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        logo: { "@id": LOGO_SCHEMA_ID },
+      },
+      imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
+      {
+        "@type": "MedicalClinic",
+        "@id": CLINIC_SCHEMA_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        parentOrganization: { "@id": ORGANIZATION_ID },
+        telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+        email: PRIMARY_CARE_CLINIC_EMAIL,
+        address: postalAddressSchema(),
+        geo: geoCoordinatesSchema(),
+        medicalSpecialty: [
+          "PrimaryCare",
+          "Neurology",
+          "Cardiology",
+          "SleepMedicine",
+          "PainManagement",
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": faqId,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What does a sleep medicine specialist treat?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Sleep medicine specialists diagnose and treat sleep apnea, insomnia, snoring, narcolepsy, restless legs syndrome, circadian rhythm disorders, and other sleep disorders.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When should I see a sleep specialist?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You should schedule an appointment if you experience loud snoring, excessive daytime fatigue, difficulty sleeping, breathing interruptions during sleep, or persistent poor sleep quality.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What is a sleep study?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "A sleep study evaluates your breathing, oxygen levels, heart rate, and sleep patterns to diagnose conditions such as sleep apnea and other sleep disorders.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can insomnia be treated?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Many patients experience significant improvement with personalized treatment plans that address the underlying causes of insomnia.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do I need a referral to see a sleep medicine specialist?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Some insurance plans require a referral, while others allow direct appointments. Our team can help verify your coverage before your visit.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Does insurance cover sleep studies?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Many insurance providers cover medically necessary sleep evaluations and sleep studies. Contact our office to verify your specific benefits.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Where is your sleep medicine clinic located?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Our clinic is conveniently located in Lower Manhattan, serving patients from Union Square, Greenwich Village, Flatiron District, and throughout New York City.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function faqPageSchema(items: QA[]) {
   return {
     "@context": "https://schema.org",

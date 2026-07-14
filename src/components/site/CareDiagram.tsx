@@ -5,6 +5,7 @@ import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
 import { Wordmark } from "./primitives/Wordmark";
 import { IMG } from "@/data/images";
+import { ROUTES } from "@/data/site-architecture";
 
 const INNER_RING_RADIUS = 200;
 const OUTER_RING_RADIUS = 325;
@@ -30,7 +31,7 @@ const innerRingSeeds: ServiceSeed[] = [
   { name: "Primary Care", image: IMG.consult, href: "/specialties/primary-care-nyc" },
   { name: "Cardiology", image: IMG.ekg, href: "/specialties/cardiologist-nyc" },
   { name: "Neurology", image: IMG.neurologyBrainModel, href: "/specialties/neurologist-nyc" },
-  { name: "Sleep Medicine", image: IMG.sleepStudy, href: "/specialties/sleep-medicine-nyc" },
+  { name: "Sleep Medicine", image: IMG.sleepStudy, href: ROUTES.sleepMedicine },
   { name: "Pain Management", image: IMG.examRoom, href: "/specialties/pain-management-nyc" },
 ];
 
