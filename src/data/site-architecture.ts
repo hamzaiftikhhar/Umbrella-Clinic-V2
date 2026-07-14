@@ -5,7 +5,7 @@ export const ROUTES = {
   primaryCare: "/specialties/primary-care-nyc",
   cardiology: "/specialties/cardiologist-nyc",
   neurology: "/specialties/neurologist-nyc",
-  sleepMedicine: "/specialties/sleep-medicine-nyc",
+  sleepMedicine: "/specialties/sleep-medicine-services-nyc",
   painManagement: "/specialties/pain-management-nyc",
   medicalWeightLoss: "/specialties/medical-weight-loss-nyc",
   diagnostics: "/diagnostics",

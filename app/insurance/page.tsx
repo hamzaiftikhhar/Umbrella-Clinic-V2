@@ -13,27 +13,47 @@ import { IMG } from "@/data/images";
 const carriers = [
   {
     name: "Aetna",
-    src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a7db6b20963494b44_aetna-logo.svg",
+    src: "/images/insurance/aetna.png",
   },
   {
     name: "Blue Cross Blue Shield",
-    src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a5799a3a0e3973b9e_blue-cross-blueshield-logo.svg",
+    src: "/images/insurance/bluecross-blueshield.png",
   },
   {
     name: "Cigna",
-    src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a8f79d6bf6a47cee8_cigna-logo.svg",
+    src: "/images/insurance/cigna.png",
   },
   {
     name: "United Healthcare",
-    src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a9e64826d7d172c17_united-healthcare-logo.svg",
+    src: "/images/insurance/united-healthcare.png",
+  },
+  {
+    name: "Medicare",
+    src: "/images/insurance/medicare.png",
+  },
+  {
+    name: "Medica",
+    src: "/images/insurance/medica.png",
+  },
+  {
+    name: "Health Partners",
+    src: "/images/insurance/health-partners.jpg",
+  },
+  {
+    name: "Sanford Health",
+    src: "/images/insurance/sanford-health.png",
+  },
+  {
+    name: "TRICARE",
+    src: "/images/insurance/tricare.png",
+  },
+  {
+    name: "UMR",
+    src: "/images/insurance/umr.png",
   },
   {
     name: "EmblemHealth",
     src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a739b76071499f949_emblem-health-logo.svg",
-  },
-  {
-    name: "Medicare",
-    src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a8d1a144876308656_medicare-logo.svg",
   },
   { name: "Oxford" },
   { name: "Empire" },
