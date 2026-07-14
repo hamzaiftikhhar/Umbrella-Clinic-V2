@@ -7,9 +7,7 @@ import { SLEEP_MEDICINE_NYC_SEO } from "@/data/sleep-medicine-nyc-content";
 import { IMG } from "@/data/images";
 import { absoluteUrl } from "@/lib/site";
 
-const heroImageUrl = IMG.sleepStudy.startsWith("http")
-  ? IMG.sleepStudy
-  : absoluteUrl(IMG.sleepStudy);
+const heroImageUrl = absoluteUrl(IMG.sleepMedicineHero);
 
 const seo = buildPageSeo({
   title: SLEEP_MEDICINE_NYC_SEO.title,
@@ -30,7 +28,7 @@ const seo = buildPageSeo({
     "sleep medicine near me",
     "sleep specialists NYC",
   ],
-  ogImage: IMG.sleepStudy,
+  ogImage: IMG.sleepMedicineHero,
   crumbs: [
     { label: "Home", to: "/" },
     { label: "Specialties", to: "/specialties" },

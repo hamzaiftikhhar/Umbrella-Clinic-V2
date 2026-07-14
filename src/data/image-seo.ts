@@ -46,6 +46,14 @@ export const IMAGE_ALT = {
     alt: "Sleep medicine NYC home sleep study diagnostics",
     keywords: ["sleep medicine NYC", "sleep study"] as const,
   },
+  sleepMedicineHero: {
+    alt: "Restorative sleep after sleep medicine services NYC — best sleep clinic near me",
+    keywords: ["sleep medicine services NYC", "best sleep clinic near me"] as const,
+  },
+  sleepMedicineConsultation: {
+    alt: "Somnologist near me reviewing sleep plan with patient at Umbrella Health sleep disorder center",
+    keywords: ["somnologist near me", "sleep disorder center"] as const,
+  },
   microscope: {
     alt: "Advanced biomarkers NYC lab microscopy at Umbrella Health",
     keywords: ["advanced biomarkers NYC", "lab diagnostics"] as const,

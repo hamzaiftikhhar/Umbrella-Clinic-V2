@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { type ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -23,6 +22,7 @@ import {
 import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
 import { PhysicianCard } from "./primitives/PhysicianCard";
+import { SeoImage } from "./primitives/SeoImage";
 import { IMG } from "@/data/images";
 import { ROUTES } from "@/data/site-architecture";
 import { physiciansForSpecialty, physicianProfilePath } from "@/data/physicians";
@@ -55,32 +55,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const FAQS = [...SLEEP_MEDICINE_NYC_FAQS];
 const NEIGHBORHOODS = [...SLEEP_MEDICINE_NEIGHBORHOODS];
 const PHONE_TEL = SLEEP_MEDICINE_CLINIC_PHONE.replace(/\D/g, "");
 
-function Fade({
+function Block({
   children,
   className,
-  delay = 0,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
 }) {
-  const reduceMotion = useReducedMotion();
-  return (
-    <motion.div
-      className={className}
-      initial={reduceMotion ? false : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.65, delay, ease: EASE }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 function SectionLabel({ children }: { children: ReactNode }) {
@@ -91,7 +78,6 @@ function SectionLabel({ children }: { children: ReactNode }) {
 
 export function SleepMedicineNycPage() {
   const physicians = physiciansForSpecialty("sleep-medicine");
-  const reduceMotion = useReducedMotion();
 
   return (
     <main className="overflow-x-clip">
@@ -103,18 +89,6 @@ export function SleepMedicineNycPage() {
         />
         <div
           className="pointer-events-none absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-[color:var(--navy-700)]/10 blur-3xl"
-          aria-hidden
-        />
-        <motion.div
-          className="pointer-events-none absolute right-[10%] top-32 hidden h-2 w-2 rounded-full bg-primary/40 lg:block"
-          animate={reduceMotion ? undefined : { y: [0, -12, 0], opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          aria-hidden
-        />
-        <motion.div
-          className="pointer-events-none absolute right-[18%] top-48 hidden h-1.5 w-1.5 rounded-full bg-[color:var(--navy-600)]/50 lg:block"
-          animate={reduceMotion ? undefined : { y: [0, 10, 0], opacity: [0.3, 0.9, 0.3] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           aria-hidden
         />
 
@@ -140,7 +114,7 @@ export function SleepMedicineNycPage() {
           </nav>
 
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
-            <Fade className="flex flex-col justify-center">
+            <Block className="flex flex-col justify-center">
               <SectionLabel>Sleep Medicine NYC</SectionLabel>
               <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {SLEEP_MEDICINE_HERO.h1}
@@ -157,41 +131,34 @@ export function SleepMedicineNycPage() {
                 <BookButton>{SLEEP_MEDICINE_HERO.bookCta}</BookButton>
                 <a
                   href={`tel:${PHONE_TEL}`}
-                  className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background px-6 py-3 text-sm font-medium text-foreground shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:border-primary/25"
+                  className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background px-6 py-3 text-sm font-medium text-foreground shadow-[var(--shadow-soft)] hover:border-primary/25"
                 >
                   <Phone className="h-5 w-5 text-primary" aria-hidden />
                   {SLEEP_MEDICINE_HERO.callCta}
                 </a>
               </div>
-            </Fade>
+            </Block>
 
-            <Fade delay={0.08} className="flex">
+            <Block delay={0.08} className="flex">
               <div className="relative flex w-full flex-1 flex-col">
-                <motion.div
-                  className="absolute -right-6 top-8 hidden h-24 w-24 rounded-full border border-[color:var(--navy-700)]/20 lg:block"
-                  animate={reduceMotion ? undefined : { rotate: [0, 90, 0] }}
-                  transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-                  aria-hidden
-                />
-                <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
-                  <Image
-                    src={IMG.sleepStudy}
+                <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
+                  <SeoImage
+                    src={IMG.sleepMedicineHero}
                     alt={SLEEP_MEDICINE_NYC_SEO.heroImageAlt}
                     fill
                     priority
-                    className="object-cover"
+                    unoptimized
+                    quality={100}
+                    className="object-cover object-[center_40%]"
                     sizes="(max-width: 1024px) 90vw, 50vw"
                   />
                   <div
-                    className="absolute inset-0 bg-gradient-to-tr from-[color:var(--navy-900)]/45 via-transparent to-transparent"
+                    className="absolute inset-0 bg-gradient-to-tr from-[color:var(--navy-900)]/25 via-transparent to-transparent"
                     aria-hidden
                   />
-                  <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-white/20 bg-[color:var(--navy-900)]/55 px-4 py-3 backdrop-blur-sm">
-                    <p className="text-sm text-white/90">Home sleep studies · Personalized care</p>
-                  </div>
                 </div>
               </div>
-            </Fade>
+            </Block>
           </div>
         </Container>
       </section>
@@ -199,7 +166,7 @@ export function SleepMedicineNycPage() {
       {/* 2. Intro */}
       <section className="section-py bg-background" aria-labelledby="sleep-intro-heading">
         <Container size="lg">
-          <Fade>
+          <Block>
             <div className="max-w-3xl">
               <h2
                 id="sleep-intro-heading"
@@ -214,14 +181,14 @@ export function SleepMedicineNycPage() {
                 {SLEEP_MEDICINE_INTRO.paragraph2}
               </p>
             </div>
-          </Fade>
+          </Block>
         </Container>
       </section>
 
       {/* 3. Why Choose */}
       <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="why-heading">
         <Container size="lg">
-          <Fade>
+          <Block>
             <div className="max-w-3xl">
               <SectionLabel>Your care team</SectionLabel>
               <h2
@@ -234,11 +201,11 @@ export function SleepMedicineNycPage() {
                 {SLEEP_MEDICINE_WHY_CHOOSE.intro}
               </p>
             </div>
-          </Fade>
+          </Block>
 
           <ul className="mt-14 grid gap-3 sm:grid-cols-2">
             {SLEEP_MEDICINE_WHY_CHOOSE.items.map((item, i) => (
-              <Fade key={item} delay={i * 0.02}>
+              <Block key={item} delay={i * 0.02}>
                 <li className="flex items-start gap-3 rounded-2xl border border-border/50 bg-background px-5 py-4 shadow-[var(--shadow-soft)]">
                   <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
                     <Check className="h-3.5 w-3.5" aria-hidden />
@@ -247,20 +214,20 @@ export function SleepMedicineNycPage() {
                     {item}
                   </span>
                 </li>
-              </Fade>
+              </Block>
             ))}
           </ul>
 
-          <Fade delay={0.1} className="mt-10">
+          <Block delay={0.1} className="mt-10">
             <BookButton>{SLEEP_MEDICINE_WHY_CHOOSE.bookCta}</BookButton>
-          </Fade>
+          </Block>
         </Container>
       </section>
 
       {/* 4. Conditions */}
       <section className="section-py bg-background" aria-labelledby="conditions-heading">
         <Container size="lg">
-          <Fade>
+          <Block>
             <div className="max-w-3xl">
               <SectionLabel>What we treat</SectionLabel>
               <h2
@@ -273,20 +240,20 @@ export function SleepMedicineNycPage() {
                 {SLEEP_MEDICINE_CONDITIONS.intro}
               </p>
             </div>
-          </Fade>
+          </Block>
 
           <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
             {(() => {
               const item = SLEEP_MEDICINE_CONDITIONS.items[0];
               const Glyph = SLEEP_CONDITION_GLYPHS[0];
               return (
-                <Fade className="lg:col-span-7">
+                <Block className="lg:col-span-7">
                   <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[color:var(--navy-800)]/20 bg-[color:var(--navy-800)] p-8 text-white shadow-[var(--shadow-elegant)] sm:p-10">
                     <Image
                       src={IMG.sleepStudy}
                       alt={SLEEP_MEDICINE_NYC_SEO.conditionsImageAlt}
                       fill
-                      className="object-cover object-right opacity-40 mix-blend-luminosity transition-transform duration-700 group-hover:scale-[1.03]"
+                      className="object-cover object-right opacity-40"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       aria-hidden
                     />
@@ -299,7 +266,7 @@ export function SleepMedicineNycPage() {
                       <div className="mt-4 flex items-start gap-4">
                         <MedicalIconFrame
                           variant="condition"
-                          className="bg-white/10 text-white group-hover:bg-white/15 group-hover:text-white"
+                          className="bg-white/10 text-white"
                         >
                           <Glyph size={22} />
                         </MedicalIconFrame>
@@ -312,7 +279,7 @@ export function SleepMedicineNycPage() {
                       </div>
                     </div>
                   </article>
-                </Fade>
+                </Block>
               );
             })()}
 
@@ -320,14 +287,14 @@ export function SleepMedicineNycPage() {
               const item = SLEEP_MEDICINE_CONDITIONS.items[1];
               const Glyph = SLEEP_CONDITION_GLYPHS[1];
               return (
-                <Fade delay={0.06} className="lg:col-span-5">
+                <Block delay={0.06} className="lg:col-span-5">
                   <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-card)]">
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--cream)]">
                       <Image
-                        src={IMG.patientReading}
+                        src={IMG.sleepMedicineConsultation}
                         alt={SLEEP_MEDICINE_NYC_SEO.conditionsImageAlt}
                         fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        className="object-cover object-[center_30%]"
                         sizes="(max-width: 1024px) 100vw, 40vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)]/55 to-transparent" />
@@ -343,7 +310,7 @@ export function SleepMedicineNycPage() {
                       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
                     </div>
                   </article>
-                </Fade>
+                </Block>
               );
             })()}
           </div>
@@ -353,8 +320,8 @@ export function SleepMedicineNycPage() {
               const Glyph = SLEEP_CONDITION_GLYPHS[i + 2] ?? SLEEP_CONDITION_GLYPHS[0];
               const index = String(i + 3).padStart(2, "0");
               return (
-                <Fade key={item.title} delay={i * 0.03}>
-                  <li className="group flex flex-col gap-5 p-6 transition-colors hover:bg-background sm:flex-row sm:items-center sm:gap-8 sm:p-7">
+                <Block key={item.title} delay={i * 0.03}>
+                  <li className="group flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:gap-8 sm:p-7">
                     <div className="flex items-center gap-5 sm:w-72 sm:shrink-0">
                       <span className="font-display text-2xl font-light tabular-nums text-primary/25">{index}</span>
                       <MedicalIconFrame variant="condition" size="sm">
@@ -366,7 +333,7 @@ export function SleepMedicineNycPage() {
                       {item.body}
                     </p>
                   </li>
-                </Fade>
+                </Block>
               );
             })}
           </ul>
@@ -379,7 +346,7 @@ export function SleepMedicineNycPage() {
         aria-labelledby="diagnostics-heading"
       >
         <Container size="lg" className="relative">
-          <Fade>
+          <Block>
             <div className="mx-auto max-w-3xl text-center">
               <SectionLabel>Precision testing</SectionLabel>
               <h2
@@ -392,7 +359,7 @@ export function SleepMedicineNycPage() {
                 {SLEEP_MEDICINE_DIAGNOSTICS.intro}
               </p>
             </div>
-          </Fade>
+          </Block>
 
           <div className="mt-16 space-y-5">
             {SLEEP_MEDICINE_DIAGNOSTICS.items.map((item, i) => {
@@ -401,7 +368,7 @@ export function SleepMedicineNycPage() {
 
               if (item.title === "Home Sleep Studies") {
                 return (
-                  <Fade key={item.title} delay={0.05}>
+                  <Block key={item.title} delay={0.05}>
                     <article className="group overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)] lg:grid lg:grid-cols-[1.1fr_0.9fr]">
                       <div className="border-b border-border/50 p-8 sm:p-10 lg:border-b-0 lg:border-r">
                         <span className="font-display text-sm font-medium tracking-[0.2em] text-primary/60">
@@ -424,19 +391,19 @@ export function SleepMedicineNycPage() {
                           src={IMG.sleepStudy}
                           alt={SLEEP_MEDICINE_NYC_SEO.diagnosticsImageAlt}
                           fill
-                          className="object-cover opacity-75 mix-blend-luminosity"
+                          className="object-cover opacity-75"
                           sizes="(max-width: 1024px) 100vw, 45vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--navy-900)]/30 to-[color:var(--navy-800)]/80" />
                       </div>
                     </article>
-                  </Fade>
+                  </Block>
                 );
               }
 
               return (
-                <Fade key={item.title} delay={0.04 + i * 0.03}>
-                  <article className="group flex gap-5 rounded-2xl border border-border/45 bg-background/90 p-5 backdrop-blur-sm transition-all hover:border-primary/20 hover:shadow-[var(--shadow-soft)] sm:items-center sm:gap-8 sm:p-6">
+                <Block key={item.title} delay={0.04 + i * 0.03}>
+                  <article className="group flex gap-5 rounded-2xl border border-border/45 bg-background/90 p-5 backdrop-blur-sm sm:items-center sm:gap-8 sm:p-6">
                     <span className="hidden font-display text-3xl font-light tabular-nums text-primary/20 sm:block sm:w-12">
                       {step}
                     </span>
@@ -448,7 +415,7 @@ export function SleepMedicineNycPage() {
                       <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
                     </div>
                   </article>
-                </Fade>
+                </Block>
               );
             })}
           </div>
@@ -458,7 +425,7 @@ export function SleepMedicineNycPage() {
       {/* 6. Trust */}
       <section className="section-py bg-background" aria-labelledby="trust-heading">
         <Container size="lg">
-          <Fade>
+          <Block>
             <div className="max-w-3xl">
               <SectionLabel>Patient trust</SectionLabel>
               <h2
@@ -471,15 +438,15 @@ export function SleepMedicineNycPage() {
                 {SLEEP_MEDICINE_TRUST.intro}
               </p>
             </div>
-          </Fade>
+          </Block>
 
           <div className="mt-14 grid gap-4 sm:grid-cols-2">
             {SLEEP_MEDICINE_TRUST.items.map((item, i) => {
               const Glyph = SLEEP_TRUST_GLYPHS[i] ?? SLEEP_TRUST_GLYPHS[0];
               const index = String(i + 1).padStart(2, "0");
               return (
-                <Fade key={item.title} delay={i * 0.04}>
-                  <article className="group relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-background p-7 shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)] sm:p-8">
+                <Block key={item.title} delay={i * 0.04}>
+                  <article className="group relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-background p-7 shadow-[var(--shadow-soft)] sm:p-8">
                     <span className="font-display text-5xl font-light text-primary/10">{index}</span>
                     <MedicalIconFrame variant="primary" className="mt-4 rounded-full">
                       <Glyph size={20} />
@@ -487,7 +454,7 @@ export function SleepMedicineNycPage() {
                     <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
                   </article>
-                </Fade>
+                </Block>
               );
             })}
           </div>
@@ -506,7 +473,7 @@ export function SleepMedicineNycPage() {
 
         <Container size="lg" className="relative">
           <div className="grid gap-14 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:gap-20">
-            <Fade>
+            <Block>
               <h2
                 id="sleep-location-heading"
                 className="font-display max-w-xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
@@ -519,9 +486,9 @@ export function SleepMedicineNycPage() {
               <p className="mt-8 text-sm font-semibold text-foreground">
                 {SLEEP_MEDICINE_LOCATION.serveHeading}
               </p>
-            </Fade>
+            </Block>
 
-            <Fade delay={0.08}>
+            <Block delay={0.08}>
               <a
                 href={CLINIC_GOOGLE_MAPS_URL}
                 target="_blank"
@@ -529,12 +496,12 @@ export function SleepMedicineNycPage() {
                 className="group relative block overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 aria-label="Open Umbrella Health sleep medicine clinic in Google Maps"
               >
-                <div className="relative aspect-[5/4] sm:aspect-[4/3]">
+                <div className="relative aspect-[5/4] bg-[color:var(--cream)] sm:aspect-[4/3]">
                   <Image
                     src={IMG.clinicExterior}
                     alt={SLEEP_MEDICINE_NYC_SEO.locationImageAlt}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 480px"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/20 to-transparent p-7">
@@ -544,33 +511,18 @@ export function SleepMedicineNycPage() {
                       {PRIMARY_CARE_CLINIC_ADDRESS.split(",")[0]}
                     </p>
                   </div>
-                  <div
-                    className="absolute inset-0 flex items-center justify-center bg-primary/55 opacity-0 backdrop-blur-[2px] transition-opacity duration-500 group-hover:opacity-100"
-                    aria-hidden
-                  >
-                    <span className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary shadow-[var(--shadow-elegant)]">
-                      Open in Google Maps
-                      <ArrowUpRight className="h-4 w-4" />
-                    </span>
-                  </div>
                 </div>
               </a>
-            </Fade>
+            </Block>
           </div>
 
-          <Fade delay={0.05} className="mt-16 lg:mt-24">
+          <Block delay={0.05} className="mt-16 lg:mt-24">
             <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
               {NEIGHBORHOODS.map((name, i) => (
-                <motion.li
-                  key={name}
-                  initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.02, duration: 0.35, ease: EASE }}
-                >
+                <li key={name}>
                   <span
                     className={cn(
-                      "flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background px-4 py-3 text-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[var(--shadow-soft)]",
+                      "flex items-center justify-between gap-3 rounded-xl border border-border/50 bg-background px-4 py-3 text-sm",
                       i === 0 && "border-primary/25 bg-primary/[0.04]",
                     )}
                   >
@@ -581,10 +533,10 @@ export function SleepMedicineNycPage() {
                       {String(i + 1).padStart(2, "0")}
                     </span>
                   </span>
-                </motion.li>
+                </li>
               ))}
             </ul>
-          </Fade>
+          </Block>
         </Container>
       </section>
 
@@ -592,7 +544,7 @@ export function SleepMedicineNycPage() {
       {physicians.length > 0 && (
         <section className="section-py bg-background" aria-labelledby="specialists-heading">
           <Container size="lg">
-            <Fade>
+            <Block>
               <div className="flex flex-col gap-6 border-b border-border/50 pb-8 sm:flex-row sm:items-end sm:justify-between">
                 <div className="max-w-2xl">
                   <SectionLabel>Sleep medicine team</SectionLabel>
@@ -608,17 +560,17 @@ export function SleepMedicineNycPage() {
                 </div>
                 <Link
                   href={ROUTES.ourTeam}
-                  className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80"
                 >
                   {SLEEP_MEDICINE_SPECIALISTS.cta}
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-            </Fade>
+            </Block>
 
             <div className="mt-12 space-y-16">
               {physicians.map((p, i) => (
-                <Fade key={p.id} delay={0.05 + i * 0.05}>
+                <Block key={p.id} delay={0.05 + i * 0.05}>
                   <article className="grid gap-10 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-16">
                     <PhysicianCard
                       id={p.id}
@@ -662,7 +614,7 @@ export function SleepMedicineNycPage() {
                         <BookButton>Book appointment</BookButton>
                         <Link
                           href={physicianProfilePath(p.id) as "/our-physicians/dr-masrai-williams"}
-                          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80"
                         >
                           View full profile
                           <ArrowRight className="h-3.5 w-3.5" />
@@ -670,7 +622,7 @@ export function SleepMedicineNycPage() {
                       </div>
                     </div>
                   </article>
-                </Fade>
+                </Block>
               ))}
             </div>
           </Container>
@@ -681,9 +633,9 @@ export function SleepMedicineNycPage() {
       <section className="section-py bg-[color:var(--cream)]/60" aria-label="Insurance and patient reviews">
         <Container size="lg">
           <div className="grid gap-6 md:grid-cols-2">
-            <Fade>
+            <Block>
               <article
-                className="group flex h-full flex-col rounded-[1.75rem] border border-border/50 bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+                className="group flex h-full flex-col rounded-[1.75rem] border border-border/50 bg-background p-8 shadow-[var(--shadow-soft)]"
                 aria-labelledby="insurance-heading"
               >
                 <MedicalIconFrame variant="primary" size="md" className="h-14 w-14 rounded-2xl">
@@ -700,17 +652,17 @@ export function SleepMedicineNycPage() {
                 </p>
                 <Link
                   href={ROUTES.insurance}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80"
                 >
                   {SLEEP_MEDICINE_INSURANCE.cta}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </article>
-            </Fade>
+            </Block>
 
-            <Fade delay={0.06}>
+            <Block delay={0.06}>
               <article
-                className="group flex h-full flex-col rounded-[1.75rem] border border-border/50 bg-background p-8 shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+                className="group flex h-full flex-col rounded-[1.75rem] border border-border/50 bg-background p-8 shadow-[var(--shadow-soft)]"
                 aria-labelledby="reviews-heading"
               >
                 <div className="flex gap-1" aria-hidden>
@@ -733,13 +685,13 @@ export function SleepMedicineNycPage() {
                 </p>
                 <Link
                   href={ROUTES.patientReviews}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80"
                 >
                   {SLEEP_MEDICINE_REVIEWS.cta}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  <ArrowRight className="h-4 w-4" />
                 </Link>
               </article>
-            </Fade>
+            </Block>
           </div>
         </Container>
       </section>
@@ -747,7 +699,7 @@ export function SleepMedicineNycPage() {
       {/* 10. Related specialties */}
       <section className="section-py bg-background" aria-labelledby="related-heading">
         <Container size="lg">
-          <Fade>
+          <Block>
             <div className="max-w-3xl">
               <SectionLabel>Related care</SectionLabel>
               <h2
@@ -760,24 +712,24 @@ export function SleepMedicineNycPage() {
                 {SLEEP_MEDICINE_RELATED.intro}
               </p>
             </div>
-          </Fade>
+          </Block>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {SLEEP_MEDICINE_RELATED.cards.map((card, i) => (
-              <Fade key={card.routeKey} delay={i * 0.04}>
+              <Block key={card.routeKey} delay={i * 0.04}>
                 <Link
                   href={ROUTES[card.routeKey]}
-                  className="group flex h-full flex-col justify-between rounded-[1.75rem] border border-border/50 bg-[color:var(--cream)]/40 p-6 shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[var(--shadow-card)] sm:p-7"
+                  className="group flex h-full flex-col justify-between rounded-[1.75rem] border border-border/50 bg-[color:var(--cream)]/40 p-6 shadow-[var(--shadow-soft)] sm:p-7"
                 >
                   <h3 className="text-base font-semibold leading-snug text-foreground sm:text-lg">
                     {card.label}
                   </h3>
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
                     Explore
-                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <ArrowUpRight className="h-4 w-4" />
                   </span>
                 </Link>
-              </Fade>
+              </Block>
             ))}
           </div>
         </Container>
@@ -787,15 +739,15 @@ export function SleepMedicineNycPage() {
       <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="sleep-faq-heading">
         <Container size="lg">
           <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
-            <Fade>
+            <Block>
               <h2
                 id="sleep-faq-heading"
                 className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {SLEEP_MEDICINE_FAQ_HEADING}
               </h2>
-            </Fade>
-            <Fade delay={0.06}>
+            </Block>
+            <Block delay={0.06}>
               <Accordion type="single" collapsible className="w-full">
                 {FAQS.map((item, i) => (
                   <AccordionItem key={i} value={`faq-${i}`} className="border-border/60">
@@ -808,7 +760,7 @@ export function SleepMedicineNycPage() {
                   </AccordionItem>
                 ))}
               </Accordion>
-            </Fade>
+            </Block>
           </div>
         </Container>
       </section>
@@ -816,7 +768,7 @@ export function SleepMedicineNycPage() {
       {/* 12. Final CTA */}
       <section className="section-py border-t border-border/50 bg-[color:var(--cream)]">
         <Container size="lg">
-          <Fade>
+          <Block>
             <div className="relative overflow-hidden rounded-[2rem] border border-border/50 bg-gradient-to-br from-background via-[color:var(--secondary)]/40 to-[color:var(--accent)]/30 px-8 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-14 sm:py-16">
               <div
                 className="pointer-events-none absolute -left-16 -bottom-16 h-48 w-48 rounded-full bg-[color:var(--navy-700)]/12 blur-2xl"
@@ -837,7 +789,7 @@ export function SleepMedicineNycPage() {
                 <BookButton>{SLEEP_MEDICINE_FINAL_CTA.bookCta}</BookButton>
               </div>
             </div>
-          </Fade>
+          </Block>
         </Container>
       </section>
     </main>

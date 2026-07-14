@@ -267,7 +267,7 @@ export function NeurologistNycPage() {
                   transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
                   aria-hidden
                 />
-                <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
+                <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
                   <Image
                     src={IMG.neurologyHero}
                     alt={NEUROLOGIST_NYC_SEO.heroImageAlt}
@@ -323,7 +323,7 @@ export function NeurologistNycPage() {
                       src={IMG.neurologyBrainModel}
                       alt={getImageAlt("neurologyBrainModel")}
                       fill
-                      className="object-cover object-right opacity-40 mix-blend-luminosity transition-transform duration-700 group-hover:scale-[1.03]"
+                      className="object-cover object-right opacity-40 transition-transform duration-700 group-hover:scale-[1.03]"
                       sizes="(max-width: 1024px) 100vw, 60vw"
                       aria-hidden
                     />
@@ -360,7 +360,7 @@ export function NeurologistNycPage() {
               return (
                 <Fade delay={0.06} className="lg:col-span-5">
                   <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-card)]">
-                    <div className="relative aspect-[16/10] overflow-hidden">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--cream)]">
                       <Image
                         src={IMG.neurologyMemoryCare}
                         alt={NEUROLOGIST_NYC_SEO.dementiaImageAlt}
@@ -467,7 +467,7 @@ export function NeurologistNycPage() {
                           src={IMG.neurologyEegLab}
                           alt={NEUROLOGIST_NYC_SEO.diagnosticsImageAlt}
                           fill
-                          className="object-cover opacity-75 mix-blend-luminosity"
+                          className="object-cover opacity-75"
                           sizes="(max-width: 1024px) 100vw, 45vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--navy-900)]/30 to-[color:var(--navy-800)]/80" />
@@ -481,7 +481,7 @@ export function NeurologistNycPage() {
                 return (
                   <Fade key={item.title} delay={0.08}>
                     <article className="group relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-[color:var(--navy-800)] shadow-[var(--shadow-elegant)] lg:grid lg:grid-cols-[0.95fr_1.05fr]">
-                      <div className="relative min-h-[240px] lg:min-h-[320px]">
+                      <div className="relative min-h-[240px] bg-[color:var(--navy-900)] lg:min-h-[320px]">
                         <Image
                           src={IMG.neurologyImagingSuite}
                           alt="MRI and brain imaging coordination for neurology patients in NYC"
@@ -603,7 +603,7 @@ export function NeurologistNycPage() {
                     </div>
                     <div
                       className={cn(
-                        "relative min-h-[200px] border-t border-border/40 lg:min-h-[280px] lg:border-t-0",
+                        "relative min-h-[200px] border-t border-border/40 bg-[color:var(--cream)] lg:min-h-[280px] lg:border-t-0",
                         isPersonalized
                           ? "border-l-0 lg:order-1 lg:border-r"
                           : "lg:border-l lg:border-white/10",
@@ -690,7 +690,7 @@ export function NeurologistNycPage() {
                 className="group relative block overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 aria-label="Open Umbrella Health neurology clinic in Google Maps"
               >
-                <div className="relative aspect-[5/4] sm:aspect-[4/3]">
+                <div className="relative aspect-[5/4] bg-[color:var(--cream)] sm:aspect-[4/3]">
                   <Image
                     src={IMG.clinicExterior}
                     alt={NEUROLOGIST_NYC_SEO.locationImageAlt}
