@@ -8,6 +8,7 @@ import {
 import { ROUTES } from "@/data/site-architecture";
 import {
   absoluteUrl,
+  BOOKING_URL,
   CLINIC_COORDS,
   CLINIC_GOOGLE_MAPS_URL,
   SITE_ADDRESS,
@@ -694,10 +695,14 @@ const SLEEP_MEDICINE_NYC_SCHEMA_PATH = ROUTES.sleepMedicine;
 export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
   const pageUrl = absoluteUrl(SLEEP_MEDICINE_NYC_SCHEMA_PATH);
   const webpageId = `${pageUrl}#webpage`;
+  const pageId = `${pageUrl}#page`;
   const breadcrumbId = `${pageUrl}#breadcrumb`;
   const serviceId = `${pageUrl}#service`;
   const imageId = `${pageUrl}#image`;
   const faqId = `${pageUrl}#faq`;
+  const audienceId = `${pageUrl}#audience`;
+  const contactId = `${pageUrl}#contact`;
+  const conditionsBaseId = `${pageUrl}#condition`;
   const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
 
   return {
@@ -712,11 +717,32 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
         description:
           "Sleep Medicine Services NYC for sleep apnea, insomnia, snoring, narcolepsy, and other sleep disorders. Expert diagnosis, home sleep studies, and personalized treatment",
         isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": ORGANIZATION_ID },
+        about: [
+          { "@id": ORGANIZATION_ID },
+          { "@id": `${conditionsBaseId}-sleep-apnea` },
+          { "@id": `${conditionsBaseId}-chronic-insomnia` },
+          { "@id": `${conditionsBaseId}-snoring` },
+          { "@id": `${conditionsBaseId}-restless-legs-syndrome` },
+          { "@id": `${conditionsBaseId}-narcolepsy` },
+          { "@id": `${conditionsBaseId}-circadian-rhythm-sleep-disorders` },
+          { "@id": `${conditionsBaseId}-excessive-daytime-sleepiness` },
+          { "@id": `${conditionsBaseId}-parasomnias` },
+        ],
         breadcrumb: { "@id": breadcrumbId },
         primaryImageOfPage: { "@id": imageId },
         mainEntity: { "@id": serviceId },
         inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: "Sleep Medicine Services NYC | Sleep Specialists | Umbrella Health",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "#sleep-intro-heading + p", "#sleep-intro-heading + p + p"],
+        },
       },
       {
         "@type": "BreadcrumbList",
@@ -751,9 +777,22 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
           "Expert diagnosis and treatment for sleep apnea, insomnia, snoring, narcolepsy, and other sleep disorders with home sleep studies and personalized care.",
         provider: { "@id": CLINIC_SCHEMA_ID },
         areaServed: { "@type": "City", name: "New York City" },
+        audience: { "@id": audienceId },
+        potentialAction: {
+          "@type": "ReserveAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: BOOKING_URL,
+            actionPlatform: [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform",
+            ],
+          },
+        },
         availableChannel: {
           "@type": "ServiceChannel",
           serviceUrl: pageUrl,
+          servicePhone: SITE_PHONE_SCHEMA,
         },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
@@ -790,6 +829,61 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
         name: "SleepMedicine",
       },
       {
+        "@type": "MedicalAudience",
+        "@id": audienceId,
+        audienceType: "Adults",
+        name: "Adults in New York City",
+        geographicArea: { "@type": "City", name: "New York City" },
+      },
+      {
+        "@type": "ContactPoint",
+        "@id": contactId,
+        telephone: SITE_PHONE_SCHEMA,
+        contactType: "customer service",
+        areaServed: "US-NY",
+        availableLanguage: ["en"],
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-sleep-apnea`,
+        name: "Sleep Apnea",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-chronic-insomnia`,
+        name: "Chronic Insomnia",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-snoring`,
+        name: "Snoring",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-restless-legs-syndrome`,
+        name: "Restless Legs Syndrome (RLS)",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-narcolepsy`,
+        name: "Narcolepsy",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-circadian-rhythm-sleep-disorders`,
+        name: "Circadian Rhythm Sleep Disorders",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-excessive-daytime-sleepiness`,
+        name: "Excessive Daytime Sleepiness",
+      },
+      {
+        "@type": "MedicalCondition",
+        "@id": `${conditionsBaseId}-parasomnias`,
+        name: "Parasomnias",
+      },
+      {
         "@type": "ImageObject",
         "@id": imageId,
         contentUrl: heroUrl,
@@ -809,6 +903,7 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
         name: SITE_NAME,
         url: absoluteUrl("/"),
         logo: { "@id": LOGO_SCHEMA_ID },
+        contactPoint: [{ "@id": contactId }],
       },
       imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
       {
@@ -821,6 +916,21 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
         email: PRIMARY_CARE_CLINIC_EMAIL,
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
+        hasMap: CLINIC_GOOGLE_MAPS_URL,
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "19:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday"],
+            opens: "09:00",
+            closes: "15:00",
+          },
+        ],
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
