@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
+import { GeoImage, geoImgProps } from "./GeoImage";
 import { Container } from "./Container";
 import { BookButton } from "./BookButton";
 
@@ -50,9 +50,10 @@ export function StatCallout({
                     alt={imageAlt}
                     className="absolute inset-0 h-full w-full object-cover"
                     loading="lazy"
+                    {...geoImgProps(imageAlt)}
                   />
                 ) : (
-                  <Image
+                  <GeoImage
                     src={image}
                     alt={imageAlt}
                     fill

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { Reveal } from "./primitives/Reveal";
@@ -39,7 +39,7 @@ export function BlogIndexPage() {
                 className="group grid overflow-hidden rounded-[1.75rem] border border-border/60 bg-card shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)] lg:grid-cols-2"
               >
                 <div className="relative aspect-[16/10] lg:aspect-auto lg:min-h-[320px]">
-                  <Image
+                  <GeoImage
                     src={featured.image}
                     alt={featured.imageAlt}
                     fill
@@ -76,7 +76,7 @@ export function BlogIndexPage() {
                   className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/60 bg-card shadow-[var(--shadow-soft)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
+                    <GeoImage
                       src={post.image}
                       alt={post.imageAlt}
                       fill

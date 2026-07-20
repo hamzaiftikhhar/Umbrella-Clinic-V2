@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
@@ -268,7 +268,7 @@ export function NeurologistNycPage() {
                   aria-hidden
                 />
                 <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
-                  <Image
+                  <GeoImage
                     src={IMG.neurologyHero}
                     alt={NEUROLOGIST_NYC_SEO.heroImageAlt}
                     fill
@@ -319,7 +319,7 @@ export function NeurologistNycPage() {
               return (
                 <Fade className="lg:col-span-7">
                   <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[color:var(--navy-800)]/20 bg-[color:var(--navy-800)] p-8 text-white shadow-[var(--shadow-elegant)] sm:p-10">
-                    <Image
+                    <GeoImage
                       src={IMG.neurologyBrainModel}
                       alt={getImageAlt("neurologyBrainModel")}
                       fill
@@ -361,7 +361,7 @@ export function NeurologistNycPage() {
                 <Fade delay={0.06} className="lg:col-span-5">
                   <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-card)]">
                     <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--cream)]">
-                      <Image
+                      <GeoImage
                         src={IMG.neurologyMemoryCare}
                         alt={NEUROLOGIST_NYC_SEO.dementiaImageAlt}
                         fill
@@ -463,7 +463,7 @@ export function NeurologistNycPage() {
                         <EegWaveform className="mt-8 opacity-80 transition-opacity group-hover:opacity-100" />
                       </div>
                       <div className="relative min-h-[220px] bg-[color:var(--navy-900)] lg:min-h-full">
-                        <Image
+                        <GeoImage
                           src={IMG.neurologyEegLab}
                           alt={NEUROLOGIST_NYC_SEO.diagnosticsImageAlt}
                           fill
@@ -482,7 +482,7 @@ export function NeurologistNycPage() {
                   <Fade key={item.title} delay={0.08}>
                     <article className="group relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-[color:var(--navy-800)] shadow-[var(--shadow-elegant)] lg:grid lg:grid-cols-[0.95fr_1.05fr]">
                       <div className="relative min-h-[240px] bg-[color:var(--navy-900)] lg:min-h-[320px]">
-                        <Image
+                        <GeoImage
                           src={IMG.neurologyImagingSuite}
                           alt="MRI and brain imaging coordination for neurology patients in NYC"
                           fill
@@ -611,7 +611,7 @@ export function NeurologistNycPage() {
                     >
                       {i === 0 ? (
                         <>
-                          <Image
+                          <GeoImage
                             src={IMG.neurologyDiagnostics}
                             alt="Advanced neurological diagnostics at Umbrella Health NYC"
                             fill
@@ -691,7 +691,7 @@ export function NeurologistNycPage() {
                 aria-label="Open Umbrella Health neurology clinic in Google Maps"
               >
                 <div className="relative aspect-[5/4] bg-[color:var(--cream)] sm:aspect-[4/3]">
-                  <Image
+                  <GeoImage
                     src={IMG.clinicExterior}
                     alt={NEUROLOGIST_NYC_SEO.locationImageAlt}
                     fill

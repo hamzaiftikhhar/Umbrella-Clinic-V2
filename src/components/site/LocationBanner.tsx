@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
@@ -10,7 +10,7 @@ export function LocationBanner() {
     <section aria-labelledby="location-heading" className="relative w-full bg-background">
         <div className="relative w-full overflow-hidden">
           <div className="relative h-[424px] w-full sm:h-[494px] md:h-[541px] lg:h-[588px]">
-            <Image
+            <GeoImage
               src={IMG.clinicInterior}
               alt="Inside Umbrella Health clinic in New York City"
               fill

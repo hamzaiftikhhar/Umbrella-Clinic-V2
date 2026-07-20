@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { BadgeCheck, Calendar, Phone } from "lucide-react";
@@ -123,7 +123,7 @@ export function PrimaryCareNycPage() {
                 />
                 <div className="relative overflow-hidden rounded-[2rem] border border-border/50 shadow-[var(--shadow-elegant)]">
                   <div className="relative aspect-[4/5] sm:aspect-[5/6]">
-                    <Image
+                    <GeoImage
                       src={IMG.primaryCareHero}
                       alt={PRIMARY_CARE_SEO.heroImageAlt}
                       fill

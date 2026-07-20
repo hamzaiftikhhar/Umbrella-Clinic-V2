@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
@@ -111,7 +111,7 @@ function OrbitItem({ service }: { service: OrbitService }) {
         className="group flex w-[4.75rem] flex-col items-center outline-none"
       >
         <div className="orbit-sphere relative h-[3.25rem] w-[3.25rem] shrink-0 overflow-hidden rounded-full ring-2 ring-white transition-all duration-500 ease-out group-hover:-translate-y-1.5 group-hover:scale-110 group-hover:ring-primary/30 sm:h-[3.75rem] sm:w-[3.75rem]">
-          <Image src={service.image} alt="" fill className="object-cover" sizes="64px" />
+          <GeoImage src={service.image} alt="" fill className="object-cover" sizes="64px" />
           <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-br from-white/50 via-transparent to-black/35" />
         </div>
         <span className="orbit-label mt-1.5 w-full text-center text-[8px] font-semibold uppercase leading-[1.25] tracking-[0.1em] text-muted-foreground transition-colors duration-500 group-hover:text-primary sm:text-[9px] sm:tracking-[0.12em]">

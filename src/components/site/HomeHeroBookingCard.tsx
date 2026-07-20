@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { useEffect, useState } from "react";
 import { ArrowUpRight, Clock } from "lucide-react";
 import { PHYSICIANS } from "@/data/physicians";
@@ -53,7 +53,7 @@ export function HomeHeroBookingCard() {
             style={{ zIndex: PHYSICIANS.length - index }}
             title={physician.name}
           >
-            <Image
+            <GeoImage
               src={physician.image}
               alt={physician.name}
               fill

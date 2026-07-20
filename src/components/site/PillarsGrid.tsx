@@ -5,7 +5,8 @@ import { SectionHeading } from "./primitives/SectionHeading";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { Reveal } from "./primitives/Reveal";
 import { IMG } from "@/data/images";
-import { getImageAlt, imageGeoProps } from "@/data/image-seo";
+import { getImageAlt } from "@/data/image-seo";
+import { geoImgProps } from "./primitives/GeoImage";
 import type { HealthIconName } from "@/components/icons/icon-keys";
 
 const pillars: {
@@ -69,7 +70,7 @@ export function PillarsGrid() {
                     alt={getImageAlt(p.altKey)}
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     loading="lazy"
-                    {...imageGeoProps()}
+                    {...geoImgProps(getImageAlt(p.altKey))}
                   />
                   <PremiumIcon healthIcon={p.healthIcon} size="md" tone="glass" className="absolute left-4 top-4" />
                 </div>

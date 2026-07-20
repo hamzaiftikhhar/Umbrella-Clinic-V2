@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { Star, MapPin, GraduationCap, Award, Languages, Stethoscope, Shield } from "lucide-react";
 import { Link as AppLink } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
@@ -100,7 +100,7 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
 
             <Reveal delay={0.1}>
               <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.75rem] border border-border/60 shadow-[var(--shadow-elegant)] lg:max-w-none">
-                <Image
+                <GeoImage
                   src={physician.image}
                   alt={physician.imageAlt ?? `${physician.name}, ${physician.specialty}`}
                   fill

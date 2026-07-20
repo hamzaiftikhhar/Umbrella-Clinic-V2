@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
@@ -38,7 +38,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
         </header>
 
         <div className="relative mx-auto aspect-[21/9] max-w-5xl overflow-hidden">
-          <Image
+          <GeoImage
             src={post.image}
             alt={post.imageAlt}
             fill

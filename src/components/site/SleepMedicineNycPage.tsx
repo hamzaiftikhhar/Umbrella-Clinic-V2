@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { type ReactNode } from "react";
 import {
   ArrowRight,
@@ -249,7 +249,7 @@ export function SleepMedicineNycPage() {
               return (
                 <Block className="lg:col-span-7">
                   <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[color:var(--navy-800)]/20 bg-[color:var(--navy-800)] p-8 text-white shadow-[var(--shadow-elegant)] sm:p-10">
-                    <Image
+                    <GeoImage
                       src={IMG.sleepStudy}
                       alt={SLEEP_MEDICINE_NYC_SEO.conditionsImageAlt}
                       fill
@@ -290,7 +290,7 @@ export function SleepMedicineNycPage() {
                 <Block delay={0.06} className="lg:col-span-5">
                   <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-card)]">
                     <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--cream)]">
-                      <Image
+                      <GeoImage
                         src={IMG.sleepMedicineConsultation}
                         alt={SLEEP_MEDICINE_NYC_SEO.conditionsImageAlt}
                         fill
@@ -387,7 +387,7 @@ export function SleepMedicineNycPage() {
                         </div>
                       </div>
                       <div className="relative min-h-[220px] bg-[color:var(--navy-900)] lg:min-h-full">
-                        <Image
+                        <GeoImage
                           src={IMG.sleepStudy}
                           alt={SLEEP_MEDICINE_NYC_SEO.diagnosticsImageAlt}
                           fill
@@ -497,7 +497,7 @@ export function SleepMedicineNycPage() {
                 aria-label="Open Umbrella Health sleep medicine clinic in Google Maps"
               >
                 <div className="relative aspect-[5/4] bg-[color:var(--cream)] sm:aspect-[4/3]">
-                  <Image
+                  <GeoImage
                     src={IMG.clinicExterior}
                     alt={SLEEP_MEDICINE_NYC_SEO.locationImageAlt}
                     fill
