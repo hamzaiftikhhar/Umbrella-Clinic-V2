@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { ArrowRight, BadgeCheck } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
@@ -41,7 +41,7 @@ export function FounderProfile() {
           <div className="relative flex items-center justify-center md:justify-start">
             <div className="relative aspect-square w-full max-w-[20rem] sm:max-w-[24rem] md:max-w-[28rem] lg:max-w-[32rem]">
               <div className="relative h-full w-full overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-card)]">
-                <Image
+                <GeoImage
                   src={IMG.premiumDoctorPortrait}
                   alt="Dr. Rajat Lamington, founding physician at Umbrella Health"
                   fill

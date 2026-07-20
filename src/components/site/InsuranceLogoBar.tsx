@@ -1,5 +1,6 @@
 import { Container } from "./primitives/Container";
 import { InsuranceFinderDialog } from "./InsuranceFinderDialog";
+import { geoImgProps } from "./primitives/GeoImage";
 import { TOTAL_IN_NETWORK_PLANS } from "@/data/insurance-network";
 import { TOTAL_INSURANCE_CARRIERS } from "@/data/insurance-carriers";
 
@@ -55,6 +56,7 @@ export function InsuranceLogoBar() {
                 alt={`${item.name} logo`}
                 className="h-10 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-14"
                 loading="lazy"
+                {...geoImgProps(`${item.name} insurance accepted at Umbrella Health NYC`)}
               />
             </li>
           ))}

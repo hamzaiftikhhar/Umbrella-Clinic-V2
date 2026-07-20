@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { GeoImage } from "./GeoImage";
 
 export function Wordmark({ className, imageClassName, light }: { className?: string; imageClassName?: string; light?: boolean }) {
   return (
     <span className={cn("inline-flex items-center", className)}>
-      <Image
+      <GeoImage
         src="/images/combination-mark.webp"
         alt="Umbrella Health primary care NYC logo"
         width={800}

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { motion, useReducedMotion } from "framer-motion";
 import { ExternalLink, MapPin, Phone } from "lucide-react";
 import { Container } from "./primitives/Container";
@@ -28,7 +28,7 @@ function LocationImageCard() {
       aria-label="Open Umbrella Health location in Google Maps"
     >
       <div className="relative aspect-[5/4] sm:aspect-[4/3] lg:aspect-[5/4] lg:min-h-[440px]">
-        <Image
+        <GeoImage
           src={IMG.clinicExterior}
           alt={PRIMARY_CARE_LOCATION.imageAlt}
           fill

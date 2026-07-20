@@ -1,3 +1,4 @@
+import { geoImgProps } from "@/components/site/primitives/GeoImage";
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/site/PageHero";
@@ -140,6 +141,7 @@ function Page() {
                     alt={`${c.name} logo`}
                     className="h-8 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-10"
                     loading="lazy"
+                    {...geoImgProps(`${c.name} insurance accepted at Umbrella Health NYC`)}
                   />
                 ) : (
                   c.name

@@ -1,11 +1,11 @@
-import Image from "next/image";
 import { MapPin, Search } from "lucide-react";
+import { GeoImage } from "./primitives/GeoImage";
 import { Container } from "./primitives/Container";
 import { HomeHeroBookingCard } from "./HomeHeroBookingCard";
 import { HomeHeroSatisfactionBadge } from "./HomeHeroSatisfactionBadge";
 import { HomeHeroSpecialtySelect } from "./HomeHeroSpecialtySelect";
 import { IMG } from "@/data/images";
-import { getImageAlt, imageGeoProps } from "@/data/image-seo";
+import { getImageAlt } from "@/data/image-seo";
 import { BOOKING_URL } from "@/lib/site";
 
 const HERO_STATS = [
@@ -20,14 +20,13 @@ export function HomeHero() {
       className="relative min-h-[min(92vh,880px)] overflow-x-hidden"
       aria-labelledby="hero-heading"
     >
-      <Image
+      <GeoImage
         src={IMG.clinicInterior}
         alt={getImageAlt("clinicInterior")}
         fill
         priority
         className="object-cover object-[72%_42%]"
         sizes="100vw"
-        {...imageGeoProps()}
       />
 
       <div

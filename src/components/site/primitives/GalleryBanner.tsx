@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
+import { GeoImage } from "./GeoImage";
 import Autoplay from "embla-carousel-autoplay";
 import { Container } from "./Container";
 import { BookButton } from "./BookButton";
@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/carousel";
 
 import { IMG } from "@/data/images";
-import { getImageAlt, imageGeoProps } from "@/data/image-seo";
+import { getImageAlt } from "@/data/image-seo";
 
 const GALLERY_IMAGES = [
   { src: IMG.galleryInterior1, altKey: "galleryInterior1" as const },
@@ -35,13 +35,12 @@ export function GalleryBanner() {
               {GALLERY_IMAGES.map(({ src, altKey }) => (
                 <CarouselItem key={src}>
                   <div className="relative h-[360px] w-full sm:h-[420px]">
-                    <Image
+                    <GeoImage
                       src={src}
                       alt={getImageAlt(altKey)}
                       fill
                       className="object-cover"
                       sizes="(max-width: 1280px) 100vw, 1216px"
-                      {...imageGeoProps()}
                     />
                   </div>
                 </CarouselItem>

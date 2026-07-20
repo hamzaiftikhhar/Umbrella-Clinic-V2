@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { BookButton } from "./primitives/BookButton";
@@ -234,7 +234,7 @@ function PathwayPortrait({
           mobile ? "aspect-[16/10] sm:aspect-[5/3]" : "aspect-[3/4]",
         )}
       >
-        <Image
+        <GeoImage
           src={segment.image}
           alt={segment.imageAlt}
           fill

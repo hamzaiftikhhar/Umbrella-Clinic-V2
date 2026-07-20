@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./GeoImage";
 import { Facebook, Instagram, Linkedin, Twitter, type LucideIcon } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import {
@@ -44,7 +44,7 @@ export function PhysicianCard({
       <div className="relative">
         <Link href={profilePath} className="block">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-border/50 bg-secondary/50 shadow-[var(--shadow-card)] transition-premium group-hover:-translate-y-1 group-hover:shadow-[var(--shadow-elegant)]">
-            <Image
+            <GeoImage
               src={image}
               alt={imageAlt ?? `${name}, ${specialty} at Umbrella Health`}
               fill

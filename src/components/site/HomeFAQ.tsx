@@ -1,11 +1,10 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { SectionHeading } from "./primitives/SectionHeading";
 import { FAQList, faqSchema, type QA } from "./primitives/FAQList";
 import { PHYSICIANS } from "@/data/physicians";
 import { SITE_FAQS } from "@/data/site-content";
-import { imageGeoProps } from "@/data/image-seo";
 
 export const homeFaqs: QA[] = [...SITE_FAQS];
 
@@ -21,13 +20,12 @@ function FAQHelpContact({ className }: { className?: string }) {
             className="relative -ml-3 h-11 w-11 overflow-hidden rounded-full border-2 border-background bg-muted shadow-[var(--shadow-soft)] first:ml-0 sm:h-12 sm:w-12"
             style={{ zIndex: HELP_AVATARS.length - index }}
           >
-            <Image
+            <GeoImage
               src={physician.image}
               alt={`${physician.name} ${physician.specialty} at Umbrella Health NYC`}
               fill
               className="object-cover object-top"
               sizes="48px"
-              {...imageGeoProps()}
             />
           </div>
         ))}

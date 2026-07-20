@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { GeoImage } from "./primitives/GeoImage";
 import { ArrowRight, Play, Shield, Star } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
@@ -101,9 +101,9 @@ export function UmbrellaDifference() {
             <div
               className="relative z-10 aspect-[4/5] overflow-hidden rounded-[1.75rem] bg-muted shadow-[var(--shadow-elegant)]"
             >
-              <Image
+              <GeoImage
                 src={IMG.premiumDoctorPortrait}
-                alt="Board-certified physician at Umbrella Health"
+                alt="Dr. Rajat Lamington, board-certified physician at Umbrella Health NYC"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 90vw, 480px"

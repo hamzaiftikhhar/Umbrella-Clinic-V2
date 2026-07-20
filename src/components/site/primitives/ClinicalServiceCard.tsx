@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
+import { GeoImage } from "./GeoImage";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "@/components/AppLink";
-import { imageGeoProps } from "@/data/image-seo";
 import { cn } from "@/lib/utils";
 
 export interface ClinicalServiceCardProps {
@@ -27,13 +26,12 @@ export function ClinicalServiceCard({
     <div className={cn("group/card relative min-w-0", className)}>
       <Link href={href} className="block">
         <article className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
-          <Image
+          <GeoImage
             src={imageUrl}
             alt={imageAlt ?? `${title} at Umbrella Health NYC`}
             fill
             className="object-cover transition-transform duration-700 ease-[var(--ease-premium)] group-hover/card:scale-[1.05]"
             sizes="(max-width: 640px) 50vw, 25vw"
-            {...imageGeoProps()}
           />
 
           <div
