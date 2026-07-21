@@ -17,6 +17,17 @@ export const IMG = {
   sleepMedicineHero: "/images/sleep-medicine-hero.webp",
   /** Premium sleep consult — female clinician with patient & iPad in clinic */
   sleepMedicineConsultation: "/images/sleep-medicine-consultation.webp",
+  /** Cardiology NYC hero */
+  cardiologyHero: "/images/cardiology/hero.webp",
+  /** Professional cardiology consultation hero */
+  cardiologyProfessionalHero: "/images/cardiology/hero-professional.webp",
+  /** Cardiologist reviewing ECG results with a patient */
+  cardiologyServicesEcg: "/images/cardiology/services-ecg.webp",
+  /** Soft-gradient outcome cards (Sword-inspired) */
+  cardiologyOutcomeOnboarding: "/images/cardiology/outcome-onboarding.webp",
+  cardiologyOutcomeResults: "/images/cardiology/outcome-results.webp",
+  /** Homepage Siri-style sphere video poster */
+  siriSpherePoster: "/images/siri-sphere-poster.webp",
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
   /** Clinical service cards — homepage grid */
@@ -33,7 +44,16 @@ export const IMG = {
   neurologyImagingSuite: u("photo-1582719471384-894fbb16e074", 1600),
   /** Cognitive assessment & memory care */
   neurologyMemoryCare: u("photo-1454165804606-c3d57bc86b40", 1600),
+  /** @deprecated Prefer specialty-local pain imagery below. */
   painManagementHero: u("photo-1544367567-0f2fcb009e0b", 1600),
+  /** Pain Management NYC — physician consultation hero */
+  painManagementProfessionalHero: "/images/pain-management/physio.webp",
+  /** Interventional / procedure suite */
+  painManagementProcedure: "/images/pain-management/spine.webp",
+  /** Modern interventional care environment */
+  painManagementClinicCare: "/images/pain-management/clinic-care.webp",
+  /** Exam / evaluation context */
+  painManagementExam: "/images/pain-management/exam.webp",
   medicalSpaHero: u("photo-1515377905703-c4788e51af15", 1800),
 
   // Local WebP assets (public/images)

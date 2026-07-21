@@ -54,6 +54,46 @@ export const IMAGE_ALT = {
     alt: "Somnologist near me reviewing sleep plan with patient at Umbrella Health sleep disorder center",
     keywords: ["somnologist near me", "sleep disorder center"] as const,
   },
+  cardiologyHero: {
+    alt: "NYC top Cardiologist cardiac care at Umbrella Health",
+    keywords: ["NYC top Cardiologist", "Cardiologist NYC"] as const,
+  },
+  cardiologyProfessionalHero: {
+    alt: "NYC top Cardiologist providing personalized cardiology care at Umbrella Health",
+    keywords: ["NYC top Cardiologist", "Cardiologist NYC"] as const,
+  },
+  cardiologyServicesEcg: {
+    alt: "Best in class NYC Cardiologist reviewing cardiac evaluation at Umbrella Health",
+    keywords: ["best in class NYC Cardiologist", "Cardiologist NYC"] as const,
+  },
+  painManagementProfessionalHero: {
+    alt: "Pain management doctor providing personalized pain treatment at Umbrella Health NYC",
+    keywords: ["pain management doctor", "pain management NYC"] as const,
+  },
+  painManagementProcedure: {
+    alt: "Modern pain management procedure suite at Umbrella Health NYC",
+    keywords: ["modern pain management", "pain management services"] as const,
+  },
+  painManagementClinicCare: {
+    alt: "Interventional pain management clinic near me at Umbrella Health",
+    keywords: ["pain management clinic near me", "interventional pain management"] as const,
+  },
+  painManagementExam: {
+    alt: "Pain specialist near me evaluating acute pain management at Umbrella Health",
+    keywords: ["pain specialist near me", "acute pain management"] as const,
+  },
+  cardiologyOutcomeOnboarding: {
+    alt: "Best Cardiologist in midtown NYC coordinated care at Umbrella Health",
+    keywords: ["best Cardiologist in midtown NYC", "Cardiologist NYC"] as const,
+  },
+  cardiologyOutcomeResults: {
+    alt: "Best rated NYC Cardiologist patient outcomes at Umbrella Health",
+    keywords: ["best rated NYC Cardiologist", "top NYC Cardiologist"] as const,
+  },
+  siriSpherePoster: {
+    alt: "Umbrella Health connected care visualization NYC",
+    keywords: ["Umbrella Health", "connected care NYC"] as const,
+  },
   microscope: {
     alt: "Advanced biomarkers NYC lab microscopy at Umbrella Health",
     keywords: ["advanced biomarkers NYC", "lab diagnostics"] as const,
