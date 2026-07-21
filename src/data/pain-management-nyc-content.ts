@@ -8,6 +8,8 @@ export const PAIN_NYC_SEO = {
     "Looking for pain management in NYC? Umbrella Health treats chronic pain, back pain, sciatica, nerve pain, joint pain, and more. Book today",
   heroImageAlt:
     "Pain management doctor providing personalized pain treatment at Umbrella Health NYC",
+  heroActiveImageAlt:
+    "Patients living active, pain-free lives after pain management treatment at Umbrella Health NYC",
   conditionsImageAlt:
     "Pain management clinic near me evaluating spine and joint pain at Umbrella Health",
   interventionalImageAlt:
