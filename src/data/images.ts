@@ -54,6 +54,8 @@ export const IMG = {
   painManagementClinicCare: "/images/pain-management/clinic-care.webp",
   /** Exam / evaluation context */
   painManagementExam: "/images/pain-management/exam.webp",
+  /** Active, pain-free lifestyle — hero accent */
+  painManagementCareTeam: "/images/pain-management/care-team.webp",
   medicalSpaHero: u("photo-1515377905703-c4788e51af15", 1800),
 
   // Local WebP assets (public/images)

@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
   Activity,
   AlertTriangle,
@@ -90,6 +90,59 @@ function SectionLabel({ children }: { children: ReactNode }) {
   );
 }
 
+/** Reveals children with a fade-up transition once scrolled into view. */
+function ScrollReveal({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setShown(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setShown(true);
+            observer.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -12% 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: shown ? 1 : 0,
+        transform: shown ? "translateY(0)" : "translateY(28px)",
+        transition: "opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)",
+        transitionDelay: `${delay}ms`,
+        willChange: "opacity, transform",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
 export function PainManagementNycPage() {
   const physicians = physiciansForSpecialty("pain-management");
 
@@ -166,6 +219,19 @@ export function PainManagementNycPage() {
                     className="absolute inset-0 bg-gradient-to-tr from-[color:var(--navy-900)]/25 via-transparent to-transparent"
                     aria-hidden
                   />
+
+                  <div className="absolute bottom-5 right-5 w-28 overflow-hidden rounded-2xl border-[3px] border-white bg-white shadow-[var(--shadow-elegant)] sm:bottom-6 sm:right-6 sm:w-36 lg:w-44">
+                    <div className="relative aspect-[130/161]">
+                      <SeoImage
+                        src={IMG.painManagementCareTeam}
+                        alt={PAIN_NYC_SEO.heroActiveImageAlt}
+                        fill
+                        quality={100}
+                        className="object-cover object-center"
+                        sizes="(max-width: 1024px) 40vw, 180px"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </Block>
@@ -271,7 +337,7 @@ export function PainManagementNycPage() {
             <div className="relative overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)]">
               <div className="relative aspect-[16/8] min-h-[280px] sm:aspect-[21/8]">
                 <GeoImage
-                  src={IMG.painManagementExam}
+                  src={IMG.painManagementClinicCare}
                   alt={PAIN_NYC_SEO.conditionsImageAlt}
                   fill
                   quality={100}
@@ -311,30 +377,32 @@ export function PainManagementNycPage() {
             </div>
           </Block>
 
-          {/* Treatment pathways */}
+          {/* Treatment pathways — sticky image with scroll reveal */}
           <Block className="mt-16">
-            <div className="overflow-hidden rounded-[2.25rem] border border-border/50 bg-[color:var(--navy-900)] shadow-[var(--shadow-elegant)]">
+            <div className="rounded-[2.25rem] border border-border/50 bg-[color:var(--navy-900)] shadow-[var(--shadow-elegant)]">
               <div className="grid lg:grid-cols-[0.78fr_1.22fr]">
-                <div className="relative min-h-[420px] overflow-hidden lg:min-h-full">
-                  <GeoImage
-                    src={IMG.painManagementProcedure}
-                    alt={PAIN_NYC_SEO.interventionalImageAlt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                  <div
-                    className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)] via-[color:var(--navy-900)]/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[color:var(--navy-900)]/55"
-                    aria-hidden
-                  />
-                  <div className="absolute inset-x-7 bottom-7 rounded-2xl border border-white/15 bg-[color:var(--navy-900)]/75 p-6 text-white backdrop-blur-md sm:inset-x-9 sm:bottom-9">
-                    <PremiumIcon healthIcon="bandage" size="md" tone="inverse" />
-                    <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-                      One coordinated plan
-                    </p>
-                    <p className="mt-2 font-display text-2xl leading-tight text-white">
-                      From identifying the source to improving daily function.
-                    </p>
+                <div className="p-3 sm:p-4 lg:sticky lg:top-24 lg:self-start">
+                  <div className="relative min-h-[360px] overflow-hidden rounded-[1.9rem] sm:min-h-[440px] lg:min-h-[600px]">
+                    <GeoImage
+                      src={IMG.painManagementProcedure}
+                      alt={PAIN_NYC_SEO.interventionalImageAlt}
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                    />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)] via-[color:var(--navy-900)]/25 to-transparent"
+                      aria-hidden
+                    />
+                    <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/15 bg-[color:var(--navy-900)]/75 p-6 text-white backdrop-blur-md sm:inset-x-7 sm:bottom-7">
+                      <PremiumIcon healthIcon="bandage" size="md" tone="inverse" />
+                      <p className="mt-5 text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
+                        One coordinated plan
+                      </p>
+                      <p className="mt-2 font-display text-2xl leading-tight text-white">
+                        From identifying the source to improving daily function.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -347,23 +415,22 @@ export function PainManagementNycPage() {
                       { data: PAIN_NERVE, icon: "nervous-system" as const },
                       { data: PAIN_JOINT, icon: "stethoscope" as const },
                     ].map(({ data, icon }, index) => (
-                      <article
-                        key={data.heading}
-                        className="group grid gap-4 rounded-[1.5rem] border border-transparent px-4 py-5 transition-colors hover:border-white/10 hover:bg-white/[0.05] sm:grid-cols-[auto_1fr] sm:gap-5"
-                      >
-                        <div className="flex items-center gap-3 sm:flex-col">
-                          <PremiumIcon healthIcon={icon} size="sm" tone="inverse" />
-                          <span className="font-display text-xl text-white/25">0{index + 1}</span>
-                        </div>
-                        <div>
-                          <h3 className="font-display text-xl font-medium leading-tight text-white sm:text-2xl">
-                            {data.heading}
-                          </h3>
-                          <p className="mt-3 text-sm leading-[1.7] text-white/65 sm:text-base">
-                            {data.body}
-                          </p>
-                        </div>
-                      </article>
+                      <ScrollReveal key={data.heading} delay={index * 90}>
+                        <article className="group grid gap-4 rounded-[1.5rem] border border-transparent px-4 py-5 transition-colors hover:border-white/10 hover:bg-white/[0.05] sm:grid-cols-[auto_1fr] sm:gap-5">
+                          <div className="flex items-center gap-3 sm:flex-col">
+                            <PremiumIcon healthIcon={icon} size="sm" tone="inverse" />
+                            <span className="font-display text-xl text-white/25">0{index + 1}</span>
+                          </div>
+                          <div>
+                            <h3 className="font-display text-xl font-medium leading-tight text-white sm:text-2xl">
+                              {data.heading}
+                            </h3>
+                            <p className="mt-3 text-sm leading-[1.7] text-white/65 sm:text-base">
+                              {data.body}
+                            </p>
+                          </div>
+                        </article>
+                      </ScrollReveal>
                     ))}
                   </div>
                   <div className="mt-8 border-t border-white/10 pt-8">
