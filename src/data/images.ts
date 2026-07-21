@@ -44,7 +44,16 @@ export const IMG = {
   neurologyImagingSuite: u("photo-1582719471384-894fbb16e074", 1600),
   /** Cognitive assessment & memory care */
   neurologyMemoryCare: u("photo-1454165804606-c3d57bc86b40", 1600),
+  /** @deprecated Prefer specialty-local pain imagery below. */
   painManagementHero: u("photo-1544367567-0f2fcb009e0b", 1600),
+  /** Pain Management NYC — physician consultation hero */
+  painManagementProfessionalHero: "/images/pain-management/physio.webp",
+  /** Interventional / procedure suite */
+  painManagementProcedure: "/images/pain-management/spine.webp",
+  /** Modern interventional care environment */
+  painManagementClinicCare: "/images/pain-management/clinic-care.webp",
+  /** Exam / evaluation context */
+  painManagementExam: "/images/pain-management/exam.webp",
   medicalSpaHero: u("photo-1515377905703-c4788e51af15", 1800),
 
   // Local WebP assets (public/images)

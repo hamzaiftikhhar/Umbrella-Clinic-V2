@@ -1,74 +1,47 @@
+import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
-import { LeafPage } from "@/components/site/LeafPage";
+import { PainManagementNycPage } from "@/components/site/PainManagementNycPage";
+import { painManagementNycPageSchemaGraph } from "@/lib/schema";
+import { ROUTES } from "@/data/site-architecture";
+import { PAIN_NYC_SEO } from "@/data/pain-management-nyc-content";
 import { IMG } from "@/data/images";
-import { SPECIALTY_AEO } from "@/data/specialty-content";
-import { buildSpecialtyPageSeo } from "@/lib/specialty-seo";
+import { absoluteUrl } from "@/lib/site";
 
-const aeo = SPECIALTY_AEO["pain-management"];
-const seo = buildSpecialtyPageSeo("/specialties/pain-management-nyc", [
-  { label: "Home", to: "/" },
-  { label: "Specialties", to: "/specialties" },
-  { label: "Pain Management" },
-], aeo);
+const heroImageUrl = absoluteUrl(IMG.painManagementProfessionalHero);
+
+const seo = buildPageSeo({
+  title: PAIN_NYC_SEO.title,
+  description: PAIN_NYC_SEO.description,
+  path: ROUTES.painManagement,
+  geo: true,
+  keywords: [
+    "Pain Management NYC",
+    "pain management",
+    "pain treatment near me",
+    "pain management services",
+    "pain management clinic near me",
+    "modern pain management",
+    "acute pain management",
+    "pain clinic near me",
+    "pain management doctor",
+    "pain management doctor near me",
+    "pain specialist near me",
+  ],
+  ogImage: IMG.painManagementProfessionalHero,
+  crumbs: [
+    { label: "Home", to: "/" },
+    { label: "Specialties", to: "/specialties" },
+    { label: "Pain Management NYC" },
+  ],
+  extraSchema: [painManagementNycPageSchemaGraph(heroImageUrl)],
+});
 export const metadata = seo.metadata;
 
-export default function RoutePage() {
+export default function PainManagementNycRoute() {
   return (
     <>
       <JsonLd data={seo.jsonLd} />
-      <LeafPage
-        config={{
-          hero: {
-            eyebrow: "Interventional Pain",
-            italic: "Pain treated,",
-            title: "not just managed.",
-            description:
-              "Fellowship-trained interventional procedures combined with primary care continuity — so chronic pain isn't a parallel medical life.",
-            image: IMG.examRoom,
-            imageAlt: "Pain management procedure room at Umbrella Health NYC",
-            crumbs: [
-              { label: "Home", to: "/" },
-              { label: "Specialties", to: "/specialties" },
-              { label: "Pain Management" },
-            ],
-          },
-          intro: {
-            heading: "Founder-led,",
-            accent: "fellowship-trained.",
-            body: "Our founding physician completed an interventional pain fellowship — this is the specialty Umbrella was built around.",
-            bullets: [
-              {
-                healthIcon: "bandage",
-                title: "Fellowship credentials",
-                body: "Interventional pain trained at an academic medical center.",
-              },
-              {
-                healthIcon: "nervous-system",
-                title: "Procedures we offer",
-                body: "Epidural steroid injections, facet joint blocks, radiofrequency ablation, trigger point therapy.",
-              },
-              {
-                healthIcon: "stethoscope",
-                title: "Integrated medical care",
-                body: "Pain plans coordinated with primary care, neurology, and PT recommendations.",
-              },
-            ],
-          },
-          pills: {
-            label: "Conditions we treat",
-            items: [
-              "Low back pain",
-              "Sciatica",
-              "Cervical radiculopathy",
-              "Facet joint pain",
-              "Migraine procedures",
-              "Post-surgical pain",
-              "Myofascial pain",
-            ],
-          },
-          aeo,
-        }}
-      />
+      <PainManagementNycPage />
     </>
   );
 }

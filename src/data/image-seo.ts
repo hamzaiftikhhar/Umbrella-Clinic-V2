@@ -66,6 +66,22 @@ export const IMAGE_ALT = {
     alt: "Best in class NYC Cardiologist reviewing cardiac evaluation at Umbrella Health",
     keywords: ["best in class NYC Cardiologist", "Cardiologist NYC"] as const,
   },
+  painManagementProfessionalHero: {
+    alt: "Pain management doctor providing personalized pain treatment at Umbrella Health NYC",
+    keywords: ["pain management doctor", "pain management NYC"] as const,
+  },
+  painManagementProcedure: {
+    alt: "Modern pain management procedure suite at Umbrella Health NYC",
+    keywords: ["modern pain management", "pain management services"] as const,
+  },
+  painManagementClinicCare: {
+    alt: "Interventional pain management clinic near me at Umbrella Health",
+    keywords: ["pain management clinic near me", "interventional pain management"] as const,
+  },
+  painManagementExam: {
+    alt: "Pain specialist near me evaluating acute pain management at Umbrella Health",
+    keywords: ["pain specialist near me", "acute pain management"] as const,
+  },
   cardiologyOutcomeOnboarding: {
     alt: "Best Cardiologist in midtown NYC coordinated care at Umbrella Health",
     keywords: ["best Cardiologist in midtown NYC", "Cardiologist NYC"] as const,
