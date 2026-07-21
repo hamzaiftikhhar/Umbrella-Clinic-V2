@@ -1005,6 +1005,288 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
   };
 }
 
+const CARDIOLOGY_NYC_SCHEMA_PATH = ROUTES.cardiology;
+
+/** Structured data graph for the Cardiologist NYC landing page. */
+export function cardiologistNycPageSchemaGraph(heroImageUrl: string) {
+  const pageUrl = absoluteUrl(CARDIOLOGY_NYC_SCHEMA_PATH);
+  const webpageId = `${pageUrl}#webpage`;
+  const pageId = `${pageUrl}#page`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const serviceId = `${pageUrl}#service`;
+  const imageId = `${pageUrl}#image`;
+  const faqId = `${pageUrl}#faq`;
+  const audienceId = `${pageUrl}#audience`;
+  const contactId = `${pageUrl}#contact`;
+  const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": webpageId,
+        url: pageUrl,
+        name: "Cardiologist NYC | Cardiology & Vascular Medicine | Umbrella Health",
+        headline: "Cardiologist NYC",
+        description:
+          "Looking for a trusted Cardiologist in NYC? Umbrella Health provides personalized cardiology and vascular medicine for patients throughout New York",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": ORGANIZATION_ID },
+        breadcrumb: { "@id": breadcrumbId },
+        primaryImageOfPage: { "@id": imageId },
+        mainEntity: { "@id": serviceId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: "Cardiologist NYC | Cardiology & Vascular Medicine | Umbrella Health",
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "#why-heading + p", "#why-heading + p + p"],
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Specialties",
+            item: absoluteUrl("/specialties"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Cardiologist NYC",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: "Cardiology & Vascular Medicine NYC",
+        serviceType: "Cardiology",
+        description:
+          "Personalized cardiology and vascular medicine including preventive cardiology, cardiovascular risk assessment, sports cardiology, and vascular evaluations in New York City.",
+        provider: { "@id": CLINIC_SCHEMA_ID },
+        areaServed: { "@type": "City", name: "New York City" },
+        audience: { "@id": audienceId },
+        potentialAction: {
+          "@type": "ReserveAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: BOOKING_URL,
+            actionPlatform: [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform",
+            ],
+          },
+        },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: pageUrl,
+          servicePhone: SITE_PHONE_SCHEMA,
+        },
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Cardiology Services",
+          itemListElement: [
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "MedicalProcedure",
+                name: "Comprehensive cardiac evaluations",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Preventive cardiology" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "MedicalProcedure",
+                name: "Cardiovascular risk assessment",
+              },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: { "@type": "MedicalProcedure", name: "Sports cardiology" },
+            },
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "MedicalProcedure",
+                name: "Vascular health evaluation",
+              },
+            },
+          ],
+        },
+      },
+      {
+        "@type": "MedicalSpecialty",
+        name: "Cardiovascular",
+      },
+      {
+        "@type": "MedicalAudience",
+        "@id": audienceId,
+        audienceType: "Adults",
+        name: "Adults in New York City",
+        geographicArea: { "@type": "City", name: "New York City" },
+      },
+      {
+        "@type": "ContactPoint",
+        "@id": contactId,
+        telephone: SITE_PHONE_SCHEMA,
+        contactType: "customer service",
+        areaServed: "US-NY",
+        availableLanguage: ["en"],
+      },
+      {
+        "@type": "ImageObject",
+        "@id": imageId,
+        contentUrl: heroUrl,
+        url: heroUrl,
+        caption: "Cardiologist NYC - Umbrella Health",
+        name: "NYC top Cardiologist — personalized cardiology care at Umbrella Health",
+        contentLocation: {
+          "@type": "Place",
+          name: "Umbrella Health",
+          address: postalAddressSchema(),
+          geo: geoCoordinatesSchema(),
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": ORGANIZATION_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        logo: { "@id": LOGO_SCHEMA_ID },
+        contactPoint: [{ "@id": contactId }],
+      },
+      imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
+      {
+        "@type": "MedicalClinic",
+        "@id": CLINIC_SCHEMA_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        parentOrganization: { "@id": ORGANIZATION_ID },
+        telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+        email: PRIMARY_CARE_CLINIC_EMAIL,
+        address: postalAddressSchema(),
+        geo: geoCoordinatesSchema(),
+        hasMap: CLINIC_GOOGLE_MAPS_URL,
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "19:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday"],
+            opens: "09:00",
+            closes: "15:00",
+          },
+        ],
+        medicalSpecialty: [
+          "PrimaryCare",
+          "Neurology",
+          "Cardiology",
+          "SleepMedicine",
+          "PainManagement",
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": faqId,
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "How Do I Choose the Best Cardiologist in NYC?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Choose a Cardiologist based on expertise in your condition, cardiovascular risk assessment, diagnostic evaluation, and treatment planning. Umbrella Health is a leading cardiology center in NYC providing comprehensive cardiac and vascular care.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When Should I See a Cardiologist in NYC?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You should see a Cardiologist for chest pain, palpitations, dyspnea, syncope, uncontrolled hypertension, hyperlipidemia, abnormal ECG results, or a family history of premature cardiovascular disease.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Should I See a Cardiologist for High Blood Pressure?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You should see a Cardiologist when hypertension remains uncontrolled, requires multiple medications, or occurs with coronary artery disease, arrhythmia, heart failure, kidney disease, or other cardiovascular risk factors.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can a Cardiologist Help With High Cholesterol?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. A Cardiologist can assess your ASCVD risk, evaluate lipid levels, and develop a cholesterol management plan to help reduce the risk of coronary artery disease, heart attack, and stroke.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do Athletes Need a Sports Cardiologist?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Athletes may benefit from sports cardiology evaluation for exertional chest pain, unexplained syncope, palpitations during exercise, abnormal cardiac testing, or cardiovascular risk before returning to high-intensity training.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can I See a Cardiologist for Preventive Heart Care?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Preventive cardiology evaluates cardiovascular risk factors such as hypertension, dyslipidemia, diabetes, obesity, smoking history, and family history to support long-term heart disease prevention.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "What Is the Best Cardiology Center in NYC?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "The best cardiology center depends on the cardiovascular condition and level of care required. Umbrella Health is a leading cardiology and vascular medicine center in NYC, providing cardiac evaluation, cardiovascular risk assessment, preventive cardiology, and vascular care.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "When Should I See a Vascular Medicine Specialist?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "You should see a vascular medicine specialist for intermittent claudication, leg swelling, suspected peripheral artery disease, carotid artery disease, abnormal circulation, or other symptoms involving the arteries, veins, or blood flow.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Can Umbrella Health Evaluate Cardiovascular Risk?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Umbrella Health provides cardiovascular risk assessment based on factors including blood pressure, lipid levels, diabetes, family history, smoking history, obesity, and other risk factors associated with cardiovascular disease.",
+            },
+          },
+        ],
+      },
+    ],
+  };
+}
+
 export function faqPageSchema(items: QA[]) {
   return {
     "@context": "https://schema.org",

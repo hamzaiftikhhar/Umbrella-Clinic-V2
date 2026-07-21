@@ -17,6 +17,17 @@ export const IMG = {
   sleepMedicineHero: "/images/sleep-medicine-hero.webp",
   /** Premium sleep consult — female clinician with patient & iPad in clinic */
   sleepMedicineConsultation: "/images/sleep-medicine-consultation.webp",
+  /** Cardiology NYC hero */
+  cardiologyHero: "/images/cardiology/hero.webp",
+  /** Professional cardiology consultation hero */
+  cardiologyProfessionalHero: "/images/cardiology/hero-professional.webp",
+  /** Cardiologist reviewing ECG results with a patient */
+  cardiologyServicesEcg: "/images/cardiology/services-ecg.webp",
+  /** Soft-gradient outcome cards (Sword-inspired) */
+  cardiologyOutcomeOnboarding: "/images/cardiology/outcome-onboarding.webp",
+  cardiologyOutcomeResults: "/images/cardiology/outcome-results.webp",
+  /** Homepage Siri-style sphere video poster */
+  siriSpherePoster: "/images/siri-sphere-poster.webp",
   microscope: u("photo-1582719471384-894fbb16e074", 1400),
 
   /** Clinical service cards — homepage grid */

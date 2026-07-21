@@ -1,8 +1,9 @@
 import { GeoImage } from "./primitives/GeoImage";
-import { ArrowRight, Play, Shield, Star } from "lucide-react";
+import { ArrowRight, Shield, Star } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { PremiumIcon } from "./primitives/IconBadge";
+import { SiriSphereAccent } from "./SiriSphereAccent";
 import { IMG } from "@/data/images";
 import type { HealthIconName, LucideIconKey } from "@/components/icons/icon-keys";
 
@@ -110,14 +111,6 @@ export function UmbrellaDifference() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
 
-              <button
-                type="button"
-                aria-label="Play physician introduction"
-                className="absolute inset-0 m-auto grid h-[4.5rem] w-[4.5rem] place-items-center rounded-full bg-card/95 text-primary shadow-[var(--shadow-card)] backdrop-blur-sm transition-transform duration-300 hover:scale-105"
-              >
-                <Play className="ml-0.5 h-6 w-6 fill-current" />
-              </button>
-
               <div className="absolute bottom-5 right-5 z-20 flex items-center gap-3 rounded-xl border border-border/40 bg-card/95 px-4 py-3 shadow-[var(--shadow-soft)] backdrop-blur-sm sm:bottom-6 sm:right-6">
                 <div className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-icon-premium-surface text-icon-premium">
                   <Shield className="h-4 w-4" aria-hidden />
@@ -129,6 +122,11 @@ export function UmbrellaDifference() {
                   <p className="text-xs text-muted-foreground">Accredited NYC providers</p>
                 </div>
               </div>
+            </div>
+
+            {/* Diamond-on-the-ring accent — Siri-style sphere */}
+            <div className="pointer-events-none absolute -bottom-8 -left-6 z-30 sm:-bottom-10 sm:-left-10 lg:-left-14">
+              <SiriSphereAccent size={148} className="drop-shadow-[0_20px_40px_rgba(15,40,60,0.18)]" />
             </div>
           </div>
         </div>
