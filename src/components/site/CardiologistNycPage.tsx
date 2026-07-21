@@ -180,66 +180,76 @@ export function CardiologistNycPage() {
       {/* 2. Why Choose */}
       <section className="section-py bg-background" aria-labelledby="why-heading">
         <Container size="lg">
-          <div className="relative overflow-hidden rounded-[2.25rem] bg-[color:var(--navy-900)] px-7 py-10 text-white shadow-[var(--shadow-elegant)] sm:px-10 sm:py-12 lg:px-14 lg:py-16">
-            <div
-              className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl"
-              aria-hidden
-            />
-            <div
-              className="pointer-events-none absolute -bottom-32 left-1/4 h-72 w-72 rounded-full bg-[color:var(--navy-700)]/60 blur-3xl"
-              aria-hidden
-            />
-            <Block className="relative">
-              <div className="grid gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
-                <div>
-                  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                    Your care team
-                  </p>
-                  <h2
-                    id="why-heading"
-                    className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-white sm:text-4xl lg:text-[2.75rem]"
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 xl:gap-20">
+            <Block>
+              <SectionLabel>Your care team</SectionLabel>
+              <h2
+                id="why-heading"
+                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+              >
+                {CARDIOLOGY_WHY_CHOOSE.heading}
+              </h2>
+              <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
+                {CARDIOLOGY_WHY_CHOOSE.paragraph1}
+              </p>
+              <p className="mt-4 text-base leading-[1.75] text-muted-foreground sm:text-lg">
+                {CARDIOLOGY_WHY_CHOOSE.paragraph2}
+              </p>
+
+              <dl className="mt-9 grid gap-4 sm:grid-cols-3">
+                {[
+                  { icon: "badge-check" as const, label: "Board-certified cardiology" },
+                  { icon: "heart-pulse" as const, label: "Personalized heart care" },
+                  { icon: "users" as const, label: "Coordinated specialists" },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-center gap-3 rounded-2xl border border-border/50 bg-[color:var(--cream)]/50 px-4 py-4"
                   >
-                    {CARDIOLOGY_WHY_CHOOSE.heading}
-                  </h2>
-                  <div className="mt-9">
-                    <BookButton>{CARDIOLOGY_WHY_CHOOSE.bookCta}</BookButton>
+                    <PremiumIcon iconKey={item.icon} size="sm" />
+                    <dt className="text-sm font-semibold leading-snug text-foreground">
+                      {item.label}
+                    </dt>
                   </div>
+                ))}
+              </dl>
+
+              <div className="mt-9">
+                <BookButton>{CARDIOLOGY_WHY_CHOOSE.bookCta}</BookButton>
+              </div>
+            </Block>
+
+            <Block>
+              <div className="relative">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:aspect-[5/6]">
+                  <GeoImage
+                    src={IMG.galleryInterior2}
+                    alt="Umbrella Health cardiology clinic care team in Lower Manhattan NYC"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 1024px) 90vw, 45vw"
+                  />
+                  <div
+                    className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)]/45 via-transparent to-transparent"
+                    aria-hidden
+                  />
                 </div>
 
-                <div className="space-y-4">
-                  {[
-                    {
-                      icon: <PremiumIcon healthIcon="heart-rate" size="lg" tone="inverse" />,
-                      text: CARDIOLOGY_WHY_CHOOSE.paragraph1,
-                    },
-                    {
-                      icon: <PremiumIcon iconKey="heart-handshake" size="lg" tone="inverse" />,
-                      text: CARDIOLOGY_WHY_CHOOSE.paragraph2,
-                    },
-                  ].map((item, index) => (
-                    <article
-                      key={item.text}
-                      className="grid gap-6 rounded-[1.6rem] border border-white/12 bg-white/[0.07] p-6 backdrop-blur-sm sm:grid-cols-[auto_1fr_auto] sm:items-start sm:p-7"
-                    >
-                      {item.icon}
-                      <p className="text-base leading-[1.75] text-white/75 sm:text-lg">
-                        {item.text}
+                <div className="absolute -bottom-6 left-6 right-6 rounded-2xl border border-border/50 bg-background/95 p-5 shadow-[var(--shadow-elegant)] backdrop-blur-md sm:left-8 sm:right-auto sm:max-w-[280px] sm:p-6">
+                  <div className="flex items-center gap-4">
+                    <PremiumIcon healthIcon="heart-rate" size="md" />
+                    <div>
+                      <p className="font-display text-2xl font-medium leading-none text-foreground">
+                        Umbrella Health
                       </p>
-                      <span className="font-display text-3xl text-white/20">0{index + 1}</span>
-                    </article>
-                  ))}
+                      <p className="mt-1.5 text-sm text-muted-foreground">
+                        Cardiovascular care center · NYC
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Block>
-            <div
-              className="pointer-events-none relative mt-12 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"
-              aria-hidden
-            />
-            <div className="relative mx-auto mt-7 flex max-w-xl items-center gap-4 text-white/25">
-              <span className="h-px flex-1 bg-current" />
-              <HeartPulse className="h-7 w-7 text-white/45" strokeWidth={1.4} aria-hidden />
-              <span className="h-px flex-1 bg-current" />
-            </div>
           </div>
         </Container>
       </section>
