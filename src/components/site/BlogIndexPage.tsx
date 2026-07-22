@@ -10,7 +10,7 @@ export function BlogIndexPage() {
 
   return (
     <main>
-      <section className="border-b border-border/60 bg-gradient-to-b from-secondary/40 to-background pt-28 pb-16 sm:pt-36 sm:pb-20">
+      <section className="border-b border-border/60 bg-gradient-to-b from-secondary/40 to-background pt-24 pb-16 sm:pt-28 sm:pb-20">
         <Container size="lg">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
             <ol className="flex items-center gap-1.5">

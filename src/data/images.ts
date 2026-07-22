@@ -21,6 +21,8 @@ export const IMG = {
   cardiologyHero: "/images/cardiology/hero.webp",
   /** Professional cardiology consultation hero */
   cardiologyProfessionalHero: "/images/cardiology/hero-professional.webp",
+  /** Anatomical heart model — cardiology hero & homepage card */
+  cardiologyHeartModel: u("photo-1530026405186-ed1f139313f8", 1800),
   /** Cardiologist reviewing ECG results with a patient */
   cardiologyServicesEcg: "/images/cardiology/services-ecg.webp",
   /** Soft-gradient outcome cards (Sword-inspired) */
@@ -32,8 +34,8 @@ export const IMG = {
 
   /** Clinical service cards — homepage grid */
   primaryCareHero: u("photo-1559839734-2b71ea197ec2", 1800),
-  /** Brain imaging & clinical neuroscience — neurology hero & homepage grid */
-  neurologyHero: u("photo-1530026405186-ed1f139313f8", 1800),
+  /** 3D brain model — neurology hero & homepage grid */
+  neurologyHero: u("photo-1559757175-0eb30cd8c063", 1800),
   /** 3D brain model — conditions feature */
   neurologyBrainModel: u("photo-1559757175-0eb30cd8c063", 1600),
   /** Advanced lab diagnostics */

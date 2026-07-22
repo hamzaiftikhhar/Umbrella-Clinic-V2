@@ -57,7 +57,7 @@ export function PrimaryCareNycPage() {
 
   return (
     <main className="overflow-x-clip">
-      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-28 sm:pt-36">
+      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-24 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_-10%,color-mix(in_oklab,var(--sage)_70%,transparent),transparent)]"
           aria-hidden
@@ -153,21 +153,27 @@ export function PrimaryCareNycPage() {
               <p className="text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PRIMARY_CARE_WHY_CHOOSE.intro}
               </p>
-              <p className="mt-6 text-sm font-semibold text-foreground">{PRIMARY_CARE_WHY_CHOOSE.listLabel}</p>
             </Fade>
 
-            <div className="grid gap-3 sm:grid-cols-2">
-              {PRIMARY_CARE_WHY_CHOOSE.items.map((item, i) => (
-                <Fade key={item} delay={i * 0.04}>
-                  <div className="group flex h-full items-start gap-3 rounded-2xl border border-border/50 bg-[color:var(--cream)]/50 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[var(--shadow-card)]">
-                    <BadgeCheck
-                      className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--accent-emerald)]"
-                      aria-hidden
-                    />
-                    <span className="text-sm leading-relaxed text-foreground/90">{item}</span>
-                  </div>
-                </Fade>
-              ))}
+            <div>
+              <Fade>
+                <p className="mb-5 text-sm font-semibold text-foreground">
+                  {PRIMARY_CARE_WHY_CHOOSE.listLabel}
+                </p>
+              </Fade>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {PRIMARY_CARE_WHY_CHOOSE.items.map((item, i) => (
+                  <Fade key={item} delay={i * 0.04}>
+                    <div className="group flex h-full items-start gap-3 rounded-2xl border border-border/50 bg-[color:var(--cream)]/50 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[var(--shadow-card)]">
+                      <BadgeCheck
+                        className="mt-0.5 h-4 w-4 shrink-0 text-[color:var(--accent-emerald)]"
+                        aria-hidden
+                      />
+                      <span className="text-sm leading-relaxed text-foreground/90">{item}</span>
+                    </div>
+                  </Fade>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
@@ -179,7 +185,7 @@ export function PrimaryCareNycPage() {
       >
         <Container size="lg">
           <Fade>
-            <div className="max-w-3xl">
+            <div className="mx-auto max-w-3xl text-center">
               <h2
                 id="services-heading"
                 className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
@@ -189,7 +195,9 @@ export function PrimaryCareNycPage() {
               <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PRIMARY_CARE_SERVICES.intro}
               </p>
-              <p className="mt-4 text-sm font-semibold text-foreground">{PRIMARY_CARE_SERVICES.listLabel}</p>
+              <h3 className="mt-6 font-display text-2xl font-medium tracking-[-0.01em] text-foreground sm:text-3xl">
+                {PRIMARY_CARE_SERVICES.listLabel}
+              </h3>
             </div>
           </Fade>
 
@@ -232,26 +240,28 @@ export function PrimaryCareNycPage() {
                   <p className="mt-5 text-base leading-[1.75] text-muted-foreground">
                     {PRIMARY_CARE_CONDITIONS.intro}
                   </p>
-                  <h3 className="mt-8 text-lg font-semibold text-foreground">
-                    {PRIMARY_CARE_CONDITIONS.subheading}
-                  </h3>
                 </div>
 
-                <ul className="flex flex-wrap gap-2.5">
-                  {PRIMARY_CARE_CONDITIONS.items.map((condition, i) => (
-                    <motion.li
-                      key={condition}
-                      initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.03, duration: 0.4, ease: EASE }}
-                    >
-                      <span className="inline-flex rounded-full border border-border/60 bg-background/90 px-4 py-2 text-sm text-foreground/90 shadow-[var(--shadow-soft)] transition-colors hover:border-primary/25 hover:bg-[color:var(--mint)]">
-                        {condition}
-                      </span>
-                    </motion.li>
-                  ))}
-                </ul>
+                <div>
+                  <h3 className="mb-6 text-lg font-semibold text-foreground">
+                    {PRIMARY_CARE_CONDITIONS.subheading}
+                  </h3>
+                  <ul className="flex flex-wrap gap-2.5">
+                    {PRIMARY_CARE_CONDITIONS.items.map((condition, i) => (
+                      <motion.li
+                        key={condition}
+                        initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.03, duration: 0.4, ease: EASE }}
+                      >
+                        <span className="inline-flex rounded-full border border-border/60 bg-background/90 px-4 py-2 text-sm text-foreground/90 shadow-[var(--shadow-soft)] transition-colors hover:border-primary/25 hover:bg-[color:var(--mint)]">
+                          {condition}
+                        </span>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </Fade>
           </div>

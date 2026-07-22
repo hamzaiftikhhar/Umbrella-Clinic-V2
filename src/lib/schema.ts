@@ -1018,6 +1018,7 @@ export function cardiologistNycPageSchemaGraph(heroImageUrl: string) {
   const faqId = `${pageUrl}#faq`;
   const audienceId = `${pageUrl}#audience`;
   const contactId = `${pageUrl}#contact`;
+  const specialtyId = `${pageUrl}#specialty`;
   const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
 
   return {
@@ -1033,6 +1034,7 @@ export function cardiologistNycPageSchemaGraph(heroImageUrl: string) {
           "Looking for a trusted Cardiologist in NYC? Umbrella Health provides personalized cardiology and vascular medicine for patients throughout New York",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": ORGANIZATION_ID },
+        specialty: { "@id": specialtyId },
         breadcrumb: { "@id": breadcrumbId },
         primaryImageOfPage: { "@id": imageId },
         mainEntity: { "@id": serviceId },
@@ -1132,6 +1134,7 @@ export function cardiologistNycPageSchemaGraph(heroImageUrl: string) {
       },
       {
         "@type": "MedicalSpecialty",
+        "@id": specialtyId,
         name: "Cardiovascular",
       },
       {
@@ -1300,6 +1303,7 @@ export function painManagementNycPageSchemaGraph(heroImageUrl: string) {
   const faqId = `${pageUrl}#faq`;
   const audienceId = `${pageUrl}#audience`;
   const contactId = `${pageUrl}#contact`;
+  const specialtyId = `${pageUrl}#specialty`;
   const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
 
   return {
@@ -1315,6 +1319,7 @@ export function painManagementNycPageSchemaGraph(heroImageUrl: string) {
           "Looking for pain management in NYC? Umbrella Health treats chronic pain, back pain, sciatica, nerve pain, joint pain, and more. Book today",
         isPartOf: { "@id": `${SITE_URL}/#website` },
         about: { "@id": ORGANIZATION_ID },
+        specialty: { "@id": specialtyId },
         breadcrumb: { "@id": breadcrumbId },
         primaryImageOfPage: { "@id": imageId },
         mainEntity: { "@id": serviceId },
@@ -1417,6 +1422,7 @@ export function painManagementNycPageSchemaGraph(heroImageUrl: string) {
       },
       {
         "@type": "MedicalSpecialty",
+        "@id": specialtyId,
         name: "PainMedicine",
       },
       {

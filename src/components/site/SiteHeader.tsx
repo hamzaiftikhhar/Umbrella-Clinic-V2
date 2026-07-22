@@ -161,7 +161,9 @@ export function SiteHeader() {
           )}
 
           <div className="-translate-y-1 hidden items-center justify-end xl:flex">
-            <BookButton showArrow={false}>Book appointment</BookButton>
+            <BookButton showArrow={false} className="whitespace-nowrap">
+              Book appointment
+            </BookButton>
           </div>
 
           <div className="relative z-10 flex justify-end xl:hidden">

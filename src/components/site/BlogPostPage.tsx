@@ -8,7 +8,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
   return (
     <main>
       <article>
-        <header className="border-b border-border/60 bg-secondary/25 pt-28 pb-12 sm:pt-36 sm:pb-16">
+        <header className="border-b border-border/60 bg-secondary/25 pt-24 pb-12 sm:pt-28 sm:pb-16">
           <Container size="lg">
             <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
               <ol className="flex flex-wrap items-center gap-1.5">

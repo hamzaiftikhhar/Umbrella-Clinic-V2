@@ -27,7 +27,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     summary: "In-house EKG, telemetry, and vascular ultrasound with same-day results.",
     description:
       "Protect your heart with expert cardiovascular care, advanced diagnostic testing, and personalized treatment plans designed to support lifelong heart health.",
-    imageUrl: IMG.ekg,
+    imageUrl: IMG.cardiologyHeartModel,
   },
   {
     label: "Medical Weight Loss NYC",
