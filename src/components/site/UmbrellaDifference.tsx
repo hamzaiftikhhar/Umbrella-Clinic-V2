@@ -124,10 +124,6 @@ export function UmbrellaDifference() {
               </div>
             </div>
 
-            {/* Diamond-on-the-ring accent — Siri-style sphere */}
-            <div className="pointer-events-none absolute -bottom-8 -left-6 z-30 sm:-bottom-10 sm:-left-10 lg:-left-14">
-              <SiriSphereAccent size={148} className="drop-shadow-[0_20px_40px_rgba(15,40,60,0.18)]" />
-            </div>
           </div>
         </div>
 

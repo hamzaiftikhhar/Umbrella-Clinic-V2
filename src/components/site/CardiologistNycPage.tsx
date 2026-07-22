@@ -213,10 +213,6 @@ export function CardiologistNycPage() {
                   </div>
                 ))}
               </dl>
-
-              <div className="mt-9">
-                <BookButton>{CARDIOLOGY_WHY_CHOOSE.bookCta}</BookButton>
-              </div>
             </Block>
 
             <Block>
@@ -253,82 +249,6 @@ export function CardiologistNycPage() {
           </div>
         </Container>
       </section>
-
-      {/* Physicians */}
-      {physicians.length > 0 && (
-        <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="specialists-heading">
-          <Container size="lg">
-            <div className="space-y-16">
-              {physicians.map((p, i) => (
-                <Block key={p.id}>
-                  <article
-                    className="grid gap-10 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-16"
-                    aria-labelledby={i === 0 ? "specialists-heading" : undefined}
-                  >
-                    <PhysicianCard
-                      id={p.id}
-                      name={p.name}
-                      specialty={p.specialty}
-                      image={p.image}
-                      imageAlt={p.imageAlt}
-                      priority={i === 0}
-                      className="mx-auto w-full max-w-[300px] lg:mx-0"
-                    />
-
-                    <div className="flex min-w-0 flex-col justify-center">
-                      <SectionLabel>Cardiology team</SectionLabel>
-                      <h2
-                        id={i === 0 ? "specialists-heading" : undefined}
-                        className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
-                      >
-                        {p.name}
-                      </h2>
-                      <p className="mt-2 text-sm font-medium text-primary">{p.specialty}</p>
-                      <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
-                        {p.bio}
-                      </p>
-
-                      {p.highlights && p.highlights.length > 0 && (
-                        <ul className="mt-6 space-y-2.5" aria-label={`${p.name} highlights`}>
-                          {p.highlights.map((highlight) => (
-                            <li
-                              key={highlight}
-                              className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/85"
-                            >
-                              <span
-                                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                                aria-hidden
-                              />
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-
-                      {p.boardCertifications && p.boardCertifications.length > 0 && (
-                        <p className="mt-5 text-sm text-muted-foreground">
-                          Board certified: {p.boardCertifications.join(", ")}
-                        </p>
-                      )}
-
-                      <div className="mt-8 flex flex-wrap items-center gap-3">
-                        <BookButton>Book appointment</BookButton>
-                        <Link
-                          href={physicianProfilePath(p.id) as "/our-physicians/dr-tawseef-dar"}
-                          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80"
-                        >
-                          View full profile
-                          <ArrowRight className="h-3.5 w-3.5" />
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                </Block>
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* 3. Services */}
       <section className="section-py bg-background" aria-labelledby="services-heading">
@@ -371,7 +291,7 @@ export function CardiologistNycPage() {
             <div className="rounded-[2rem] border border-border/50 bg-[color:var(--cream)]/40 p-6 shadow-[var(--shadow-soft)] sm:p-8">
               <div className="flex flex-col items-center gap-3 text-center">
                 <PremiumIcon healthIcon="heart-rate" size="sm" />
-                <h3 className="text-sm font-semibold text-foreground">
+                <h3 className="font-display text-2xl font-medium tracking-[-0.01em] text-foreground sm:text-3xl">
                   {CARDIOLOGY_SERVICES.listLabel}
                 </h3>
               </div>
@@ -668,6 +588,82 @@ export function CardiologistNycPage() {
           </Block>
         </Container>
       </section>
+
+      {/* Physicians */}
+      {physicians.length > 0 && (
+        <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="specialists-heading">
+          <Container size="lg">
+            <div className="space-y-16">
+              {physicians.map((p, i) => (
+                <Block key={p.id}>
+                  <article
+                    className="grid gap-10 lg:grid-cols-[minmax(0,300px)_1fr] lg:items-center lg:gap-14 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-16"
+                    aria-labelledby={i === 0 ? "specialists-heading" : undefined}
+                  >
+                    <PhysicianCard
+                      id={p.id}
+                      name={p.name}
+                      specialty={p.specialty}
+                      image={p.image}
+                      imageAlt={p.imageAlt}
+                      priority={i === 0}
+                      className="mx-auto w-full max-w-[300px] lg:mx-0"
+                    />
+
+                    <div className="flex min-w-0 flex-col justify-center">
+                      <SectionLabel>Cardiology team</SectionLabel>
+                      <h2
+                        id={i === 0 ? "specialists-heading" : undefined}
+                        className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                      >
+                        {p.name}
+                      </h2>
+                      <p className="mt-2 text-sm font-medium text-primary">{p.specialty}</p>
+                      <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
+                        {p.bio}
+                      </p>
+
+                      {p.highlights && p.highlights.length > 0 && (
+                        <ul className="mt-6 space-y-2.5" aria-label={`${p.name} highlights`}>
+                          {p.highlights.map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/85"
+                            >
+                              <span
+                                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                                aria-hidden
+                              />
+                              {highlight}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {p.boardCertifications && p.boardCertifications.length > 0 && (
+                        <p className="mt-5 text-sm text-muted-foreground">
+                          Board certified: {p.boardCertifications.join(", ")}
+                        </p>
+                      )}
+
+                      <div className="mt-8 flex flex-wrap items-center gap-3">
+                        <BookButton>Book appointment</BookButton>
+                        <Link
+                          href={physicianProfilePath(p.id) as "/our-physicians/dr-tawseef-dar"}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary/80"
+                        >
+                          View full profile
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </article>
+                </Block>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* 6. Final CTA */}
       <section className="section-py border-t border-border/50 bg-[color:var(--cream)]">

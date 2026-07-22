@@ -195,7 +195,9 @@ export function PrimaryCareNycPage() {
               <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PRIMARY_CARE_SERVICES.intro}
               </p>
-              <p className="mt-4 text-sm font-semibold text-foreground">{PRIMARY_CARE_SERVICES.listLabel}</p>
+              <h3 className="mt-6 font-display text-2xl font-medium tracking-[-0.01em] text-foreground sm:text-3xl">
+                {PRIMARY_CARE_SERVICES.listLabel}
+              </h3>
             </div>
           </Fade>
 
