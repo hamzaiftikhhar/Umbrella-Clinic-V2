@@ -62,7 +62,9 @@ export function buildPageSeo({
   const images = ogImages(ogImage);
 
   const metadata: Metadata = {
-    title,
+    // SEO titles that already include the brand shouldn't get the
+    // "%s — Umbrella Health" layout template appended (avoids duplication).
+    title: title.includes(SITE_NAME) ? { absolute: title } : title,
     description,
     keywords,
     robots,

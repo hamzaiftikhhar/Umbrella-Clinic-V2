@@ -27,7 +27,6 @@ import { Container } from "./primitives/Container";
 import { BookButton } from "./primitives/BookButton";
 import { PhysicianCard } from "./primitives/PhysicianCard";
 import { IMG } from "@/data/images";
-import { getImageAlt } from "@/data/image-seo";
 import { ROUTES } from "@/data/site-architecture";
 import { physiciansForSpecialty, physicianProfilePath } from "@/data/physicians";
 import { PRIMARY_CARE_CLINIC_ADDRESS } from "@/data/primary-care-nyc-content";
@@ -190,7 +189,7 @@ export function NeurologistNycPage() {
   return (
     <main className="overflow-x-clip">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-28 sm:pt-36">
+      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-24 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_80%_-20%,color-mix(in_oklab,var(--navy-700)_25%,transparent),transparent)]"
           aria-hidden
@@ -311,104 +310,40 @@ export function NeurologistNycPage() {
             </div>
           </Fade>
 
-          <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
-            {/* Featured — Migraine */}
-            {(() => {
-              const item = NEUROLOGIST_CONDITIONS.items[0];
-              const Glyph = NEUROLOGY_CONDITION_GLYPHS[0];
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+            {NEUROLOGIST_CONDITIONS.items.map((item, i) => {
+              const Glyph = NEUROLOGY_CONDITION_GLYPHS[i] ?? NEUROLOGY_CONDITION_GLYPHS[0];
+              const index = String(i + 1).padStart(2, "0");
               return (
-                <Fade className="lg:col-span-7">
-                  <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[color:var(--navy-800)]/20 bg-[color:var(--navy-800)] p-8 text-white shadow-[var(--shadow-elegant)] sm:p-10">
-                    <GeoImage
-                      src={IMG.neurologyBrainModel}
-                      alt={getImageAlt("neurologyBrainModel")}
-                      fill
-                      className="object-cover object-right opacity-40 transition-transform duration-700 group-hover:scale-[1.03]"
-                      sizes="(max-width: 1024px) 100vw, 60vw"
-                      aria-hidden
-                    />
+                <Fade key={item.title} delay={(i % 3) * 0.05}>
+                  <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/50 bg-background p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[var(--shadow-card)] sm:p-8">
                     <div
-                      className="absolute inset-0 bg-gradient-to-r from-[color:var(--navy-900)] via-[color:var(--navy-800)]/92 to-[color:var(--navy-800)]/55"
+                      className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--navy-700)]/[0.05] blur-2xl transition-opacity duration-500 group-hover:bg-primary/10"
                       aria-hidden
                     />
-                    <div className="relative">
-                      <span className="font-display text-6xl font-light text-white/15 sm:text-7xl">01</span>
-                      <div className="mt-4 flex items-start gap-4">
-                        <MedicalIconFrame
-                          variant="condition"
-                          className="bg-white/10 text-white group-hover:bg-white/15 group-hover:text-white"
-                        >
-                          <Glyph size={22} />
-                        </MedicalIconFrame>
-                        <div>
-                          <h3 className="text-xl font-semibold leading-snug sm:text-2xl">{item.title}</h3>
-                          <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/78 sm:text-base">
-                            {item.body}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </Fade>
-              );
-            })()}
-
-            {/* Featured — Memory & Dementia */}
-            {(() => {
-              const item = NEUROLOGIST_CONDITIONS.items[1];
-              const Glyph = NEUROLOGY_CONDITION_GLYPHS[1];
-              return (
-                <Fade delay={0.06} className="lg:col-span-5">
-                  <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-card)]">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--cream)]">
-                      <GeoImage
-                        src={IMG.neurologyMemoryCare}
-                        alt={NEUROLOGIST_NYC_SEO.dementiaImageAlt}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                        sizes="(max-width: 1024px) 100vw, 40vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)]/55 to-transparent" />
-                      <span className="absolute left-5 top-5 font-display text-5xl font-light text-white/90">
-                        02
-                      </span>
-                    </div>
-                    <div className="flex flex-1 flex-col p-7 sm:p-8">
-                      <MedicalIconFrame variant="condition" className="mb-5">
+                    <div className="relative flex items-center justify-between">
+                      <MedicalIconFrame variant="condition">
                         <Glyph size={22} />
                       </MedicalIconFrame>
-                      <h3 className="text-xl font-semibold leading-snug text-foreground">{item.title}</h3>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                      <span className="font-display text-4xl font-light tabular-nums text-primary/12 transition-colors duration-300 group-hover:text-primary/25">
+                        {index}
+                      </span>
                     </div>
-                  </article>
-                </Fade>
-              );
-            })()}
-          </div>
-
-          {/* Remaining conditions — editorial list */}
-          <ul className="mt-5 divide-y divide-border/60 rounded-[1.5rem] border border-border/50 bg-[color:var(--cream)]/50">
-            {NEUROLOGIST_CONDITIONS.items.slice(2).map((item, i) => {
-              const Glyph = NEUROLOGY_CONDITION_GLYPHS[i + 2] ?? NEUROLOGY_CONDITION_GLYPHS[0];
-              const index = String(i + 3).padStart(2, "0");
-              return (
-                <Fade key={item.title} delay={i * 0.03}>
-                  <li className="group flex flex-col gap-5 p-6 transition-colors hover:bg-background sm:flex-row sm:items-center sm:gap-8 sm:p-7">
-                    <div className="flex items-center gap-5 sm:w-72 sm:shrink-0">
-                      <span className="font-display text-2xl font-light tabular-nums text-primary/25">{index}</span>
-                      <MedicalIconFrame variant="condition" size="sm">
-                        <Glyph size={20} />
-                      </MedicalIconFrame>
-                      <h3 className="text-base font-semibold text-foreground sm:text-lg">{item.title}</h3>
-                    </div>
-                    <p className="flex-1 text-sm leading-relaxed text-muted-foreground sm:border-l sm:border-border/50 sm:pl-8">
+                    <h3 className="relative mt-6 text-lg font-semibold leading-snug text-foreground sm:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="relative mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {item.body}
                     </p>
-                  </li>
+                    <span
+                      className="relative mt-6 h-0.5 w-0 rounded-full bg-[color:var(--navy-700)]/70 transition-all duration-500 group-hover:w-12"
+                      aria-hidden
+                    />
+                  </article>
                 </Fade>
               );
             })}
-          </ul>
+          </div>
         </Container>
       </section>
 

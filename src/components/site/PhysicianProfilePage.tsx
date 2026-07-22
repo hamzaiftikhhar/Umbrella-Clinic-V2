@@ -20,7 +20,7 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
 
   return (
     <main>
-      <section className="border-b border-border/60 bg-secondary/20 pt-28 pb-16 sm:pt-36 sm:pb-20">
+      <section className="border-b border-border/60 bg-secondary/20 pt-24 pb-16 sm:pt-28 sm:pb-20">
         <Container size="lg">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-1.5">

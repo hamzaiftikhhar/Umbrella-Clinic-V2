@@ -40,7 +40,7 @@ export function PageHero({
         : "bg-background text-foreground";
 
   return (
-    <section className={`relative overflow-hidden pt-28 pb-24 sm:pt-36 sm:pb-32 ${bg}`}>
+    <section className={`relative overflow-hidden pt-24 pb-24 sm:pt-28 sm:pb-32 ${bg}`}>
       <Container>
         {crumbs && crumbs.length > 0 && (
           <nav

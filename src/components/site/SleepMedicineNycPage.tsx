@@ -82,7 +82,7 @@ export function SleepMedicineNycPage() {
   return (
     <main className="overflow-x-clip">
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-28 sm:pt-36">
+      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-24 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_80%_-20%,color-mix(in_oklab,var(--navy-700)_25%,transparent),transparent)]"
           aria-hidden
@@ -242,101 +242,40 @@ export function SleepMedicineNycPage() {
             </div>
           </Block>
 
-          <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-12 lg:gap-5">
-            {(() => {
-              const item = SLEEP_MEDICINE_CONDITIONS.items[0];
-              const Glyph = SLEEP_CONDITION_GLYPHS[0];
+          <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+            {SLEEP_MEDICINE_CONDITIONS.items.map((item, i) => {
+              const Glyph = SLEEP_CONDITION_GLYPHS[i] ?? SLEEP_CONDITION_GLYPHS[0];
+              const index = String(i + 1).padStart(2, "0");
               return (
-                <Block className="lg:col-span-7">
-                  <article className="group relative flex min-h-[320px] flex-col justify-end overflow-hidden rounded-[1.75rem] border border-[color:var(--navy-800)]/20 bg-[color:var(--navy-800)] p-8 text-white shadow-[var(--shadow-elegant)] sm:p-10">
-                    <GeoImage
-                      src={IMG.sleepStudy}
-                      alt={SLEEP_MEDICINE_NYC_SEO.conditionsImageAlt}
-                      fill
-                      className="object-cover object-right opacity-40"
-                      sizes="(max-width: 1024px) 100vw, 60vw"
-                      aria-hidden
-                    />
+                <Block key={item.title} delay={(i % 3) * 0.05}>
+                  <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/50 bg-background p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[var(--shadow-card)] sm:p-8">
                     <div
-                      className="absolute inset-0 bg-gradient-to-r from-[color:var(--navy-900)] via-[color:var(--navy-800)]/92 to-[color:var(--navy-800)]/55"
+                      className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[color:var(--navy-700)]/[0.05] blur-2xl transition-opacity duration-500 group-hover:bg-primary/10"
                       aria-hidden
                     />
-                    <div className="relative">
-                      <span className="font-display text-6xl font-light text-white/15 sm:text-7xl">01</span>
-                      <div className="mt-4 flex items-start gap-4">
-                        <MedicalIconFrame
-                          variant="condition"
-                          className="bg-white/10 text-white"
-                        >
-                          <Glyph size={22} />
-                        </MedicalIconFrame>
-                        <div>
-                          <h3 className="text-xl font-semibold leading-snug sm:text-2xl">{item.title}</h3>
-                          <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/78 sm:text-base">
-                            {item.body}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </Block>
-              );
-            })()}
-
-            {(() => {
-              const item = SLEEP_MEDICINE_CONDITIONS.items[1];
-              const Glyph = SLEEP_CONDITION_GLYPHS[1];
-              return (
-                <Block delay={0.06} className="lg:col-span-5">
-                  <article className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-card)]">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-[color:var(--cream)]">
-                      <GeoImage
-                        src={IMG.sleepMedicineConsultation}
-                        alt={SLEEP_MEDICINE_NYC_SEO.conditionsImageAlt}
-                        fill
-                        className="object-cover object-[center_30%]"
-                        sizes="(max-width: 1024px) 100vw, 40vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)]/55 to-transparent" />
-                      <span className="absolute left-5 top-5 font-display text-5xl font-light text-white/90">
-                        02
-                      </span>
-                    </div>
-                    <div className="flex flex-1 flex-col p-7 sm:p-8">
-                      <MedicalIconFrame variant="condition" className="mb-5">
+                    <div className="relative flex items-center justify-between">
+                      <MedicalIconFrame variant="condition">
                         <Glyph size={22} />
                       </MedicalIconFrame>
-                      <h3 className="text-xl font-semibold leading-snug text-foreground">{item.title}</h3>
-                      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                      <span className="font-display text-4xl font-light tabular-nums text-primary/12 transition-colors duration-300 group-hover:text-primary/25">
+                        {index}
+                      </span>
                     </div>
-                  </article>
-                </Block>
-              );
-            })()}
-          </div>
-
-          <ul className="mt-5 divide-y divide-border/60 rounded-[1.5rem] border border-border/50 bg-[color:var(--cream)]/50">
-            {SLEEP_MEDICINE_CONDITIONS.items.slice(2).map((item, i) => {
-              const Glyph = SLEEP_CONDITION_GLYPHS[i + 2] ?? SLEEP_CONDITION_GLYPHS[0];
-              const index = String(i + 3).padStart(2, "0");
-              return (
-                <Block key={item.title} delay={i * 0.03}>
-                  <li className="group flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:gap-8 sm:p-7">
-                    <div className="flex items-center gap-5 sm:w-72 sm:shrink-0">
-                      <span className="font-display text-2xl font-light tabular-nums text-primary/25">{index}</span>
-                      <MedicalIconFrame variant="condition" size="sm">
-                        <Glyph size={20} />
-                      </MedicalIconFrame>
-                      <h3 className="text-base font-semibold text-foreground sm:text-lg">{item.title}</h3>
-                    </div>
-                    <p className="flex-1 text-sm leading-relaxed text-muted-foreground sm:border-l sm:border-border/50 sm:pl-8">
+                    <h3 className="relative mt-6 text-lg font-semibold leading-snug text-foreground sm:text-xl">
+                      {item.title}
+                    </h3>
+                    <p className="relative mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {item.body}
                     </p>
-                  </li>
+                    <span
+                      className="relative mt-6 h-0.5 w-0 rounded-full bg-[color:var(--navy-700)]/70 transition-all duration-500 group-hover:w-12"
+                      aria-hidden
+                    />
+                  </article>
                 </Block>
               );
             })}
-          </ul>
+          </div>
         </Container>
       </section>
 

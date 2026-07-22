@@ -24,7 +24,7 @@ export function HeroSplit({
   const isForest = tone === "forest";
   return (
     <section
-      className={`relative overflow-hidden pt-28 pb-24 sm:pt-36 sm:pb-32 ${
+      className={`relative overflow-hidden pt-24 pb-24 sm:pt-28 sm:pb-32 ${
         isForest ? "bg-primary text-primary-foreground" : "bg-[color:var(--mint)] text-foreground"
       }`}
     >

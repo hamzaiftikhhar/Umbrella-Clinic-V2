@@ -22,8 +22,8 @@ export function SiteFooter() {
         Site footer
       </h2>
 
-      <div className="mx-auto max-w-7xl px-5 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-10 sm:px-8 md:pb-14 md:pt-32">
-        <div className="grid gap-8 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:gap-10 lg:gap-14">
+      <div className="mx-auto max-w-7xl px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-7 sm:px-8 md:pb-14 md:pt-32">
+        <div className="grid gap-6 md:grid-cols-[1.5fr_1fr_1fr_1fr] md:gap-10 lg:gap-14">
           {/* Brand  compact row on mobile, full column on desktop */}
           <div className="flex flex-col justify-end">
             <div className="flex items-start justify-between gap-4 md:block">
@@ -43,7 +43,7 @@ export function SiteFooter() {
                 ))}
               </div>
             </div>
-            <p className="mt-4 max-w-sm font-display text-2xl font-light italic leading-tight text-primary-foreground/95 md:mt-10 md:text-4xl lg:text-5xl">
+            <p className="mt-3 max-w-sm font-display text-xl font-light italic leading-tight text-primary-foreground/95 md:mt-10 md:text-4xl lg:text-5xl">
               {FOOTER_TAGLINE}
             </p>
             <p className="mt-6 hidden max-w-sm text-sm leading-relaxed text-primary-foreground/70 md:block">
@@ -75,7 +75,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 border-t border-primary-foreground/15 pt-5 text-[10px] text-primary-foreground/60 md:mt-20 md:gap-4 md:pt-10 md:text-xs">
+        <div className="mt-5 flex flex-col gap-2.5 border-t border-primary-foreground/15 pt-4 text-[10px] text-primary-foreground/60 md:mt-20 md:gap-4 md:pt-10 md:text-xs">
           <p className="leading-snug md:leading-normal">
             {SITE_ADDRESS} · {SITE_PHONE}
           </p>

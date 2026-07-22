@@ -7,7 +7,7 @@ import { CARDIOLOGY_NYC_SEO } from "@/data/cardiologist-nyc-content";
 import { IMG } from "@/data/images";
 import { absoluteUrl } from "@/lib/site";
 
-const heroImageUrl = absoluteUrl(IMG.cardiologyProfessionalHero);
+const heroImageUrl = absoluteUrl(IMG.cardiologyHeartModel);
 
 const seo = buildPageSeo({
   title: CARDIOLOGY_NYC_SEO.title,
@@ -28,7 +28,7 @@ const seo = buildPageSeo({
     "top NYC Cardiologist",
     "sports Cardiologist NYC",
   ],
-  ogImage: IMG.cardiologyProfessionalHero,
+  ogImage: IMG.cardiologyHeartModel,
   crumbs: [
     { label: "Home", to: "/" },
     { label: "Specialties", to: "/specialties" },

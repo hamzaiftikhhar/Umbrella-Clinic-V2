@@ -97,7 +97,7 @@ export function CardiologistNycPage() {
   return (
     <main className="overflow-x-clip">
       {/* 1. Hero */}
-      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-28 sm:pt-36">
+      <section className="relative overflow-hidden bg-[color:var(--cream)] pt-24 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_80%_-20%,color-mix(in_oklab,var(--navy-700)_25%,transparent),transparent)]"
           aria-hidden
@@ -158,7 +158,7 @@ export function CardiologistNycPage() {
               <div className="relative flex w-full flex-1 flex-col">
                 <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
                   <SeoImage
-                    src={IMG.cardiologyProfessionalHero}
+                    src={IMG.cardiologyHeartModel}
                     alt={CARDIOLOGY_NYC_SEO.heroImageAlt}
                     fill
                     priority
@@ -333,8 +333,8 @@ export function CardiologistNycPage() {
       {/* 3. Services */}
       <section className="section-py bg-background" aria-labelledby="services-heading">
         <Container size="lg">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end lg:gap-16">
-            <Block>
+          <Block>
+            <div className="mx-auto max-w-3xl text-center">
               <SectionLabel>What we offer</SectionLabel>
               <h2
                 id="services-heading"
@@ -342,13 +342,11 @@ export function CardiologistNycPage() {
               >
                 {CARDIOLOGY_SERVICES.heading}
               </h2>
-            </Block>
-            <Block>
-              <p className="text-base leading-[1.75] text-muted-foreground sm:text-lg">
+              <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {CARDIOLOGY_SERVICES.intro}
               </p>
-            </Block>
-          </div>
+            </div>
+          </Block>
 
           <Block className="mt-12">
             <div className="relative overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)]">
@@ -371,11 +369,11 @@ export function CardiologistNycPage() {
 
           <Block className="mt-10">
             <div className="rounded-[2rem] border border-border/50 bg-[color:var(--cream)]/40 p-6 shadow-[var(--shadow-soft)] sm:p-8">
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col items-center gap-3 text-center">
                 <PremiumIcon healthIcon="heart-rate" size="sm" />
-                <p className="text-sm font-semibold text-foreground">
+                <h3 className="text-sm font-semibold text-foreground">
                   {CARDIOLOGY_SERVICES.listLabel}
-                </p>
+                </h3>
               </div>
               <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
                 {CARDIOLOGY_SERVICES.items.map((item) => (
