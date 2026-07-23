@@ -7,6 +7,10 @@ import { HealthIcon } from "@/components/icons/HealthIcon";
 import { getLucideIcon } from "@/components/icons/icon-registry";
 
 const SIZE = {
+  xs: {
+    box: "h-9 w-9 rounded-xl",
+    icon: "h-4 w-4",
+  },
   sm: {
     box: "h-12 w-12 rounded-2xl",
     icon: "h-6 w-6",

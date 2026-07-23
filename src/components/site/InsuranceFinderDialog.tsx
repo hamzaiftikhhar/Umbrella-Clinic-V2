@@ -43,7 +43,7 @@ export function InsuranceFinderDialog() {
 
       <DialogContent className="max-h-[min(85vh,720px)] max-w-xl gap-0 overflow-hidden p-0 sm:rounded-[1.5rem]">
         <DialogHeader className="space-y-1 border-b border-border/60 px-6 pb-5 pt-6 text-left">
-          <DialogTitle className="font-display text-2xl font-medium tracking-tight">
+          <DialogTitle className="font-display text-2xl font-semibold tracking-tight">
             Find your insurance
           </DialogTitle>
           <DialogDescription>

@@ -131,7 +131,7 @@ export function CardiologistNycPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
             <Block className="flex flex-col justify-center">
               <SectionLabel>Cardiology NYC</SectionLabel>
-              <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display text-balance text-[2.2rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {CARDIOLOGY_HERO.h1}
               </h1>
 
@@ -185,7 +185,7 @@ export function CardiologistNycPage() {
               <SectionLabel>Your care team</SectionLabel>
               <h2
                 id="why-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {CARDIOLOGY_WHY_CHOOSE.heading}
               </h2>
@@ -235,7 +235,7 @@ export function CardiologistNycPage() {
                   <div className="flex items-center gap-4">
                     <PremiumIcon healthIcon="heart-rate" size="md" />
                     <div>
-                      <p className="font-display text-2xl font-medium leading-none text-foreground">
+                      <p className="font-display text-2xl font-semibold leading-none text-foreground">
                         Umbrella Health
                       </p>
                       <p className="mt-1.5 text-sm text-muted-foreground">
@@ -258,7 +258,7 @@ export function CardiologistNycPage() {
               <SectionLabel>What we offer</SectionLabel>
               <h2
                 id="services-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {CARDIOLOGY_SERVICES.heading}
               </h2>
@@ -291,7 +291,7 @@ export function CardiologistNycPage() {
             <div className="rounded-[2rem] border border-border/50 bg-[color:var(--cream)]/40 p-6 shadow-[var(--shadow-soft)] sm:p-8">
               <div className="flex flex-col items-center gap-3 text-center">
                 <PremiumIcon healthIcon="heart-rate" size="sm" />
-                <h3 className="font-display text-2xl font-medium tracking-[-0.01em] text-foreground sm:text-3xl">
+                <h3 className="font-display text-2xl font-semibold tracking-[-0.01em] text-foreground sm:text-3xl">
                   {CARDIOLOGY_SERVICES.listLabel}
                 </h3>
               </div>
@@ -329,7 +329,7 @@ export function CardiologistNycPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)]/35 to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col p-8 sm:p-9">
-                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-[1.65rem]">
+                  <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-[1.65rem]">
                     {CARDIOLOGY_PREVENTIVE.heading}
                   </h3>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -354,7 +354,7 @@ export function CardiologistNycPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--navy-900)]/40 to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col p-8 sm:p-9">
-                  <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-[1.65rem]">
+                  <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-[1.65rem]">
                     {CARDIOLOGY_SPORTS.heading}
                   </h3>
                   <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -381,7 +381,7 @@ export function CardiologistNycPage() {
               <SectionLabel>Vascular medicine</SectionLabel>
               <h2
                 id="vascular-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {CARDIOLOGY_VASCULAR.heading}
               </h2>
@@ -409,7 +409,7 @@ export function CardiologistNycPage() {
           {/* H3 Conditions */}
           <Block className="mt-16">
             <div className="max-w-3xl">
-              <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl">
+              <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
                 {CARDIOLOGY_CONDITIONS.heading}
               </h3>
               <p className="mt-4 text-base leading-[1.75] text-muted-foreground">
@@ -444,7 +444,7 @@ export function CardiologistNycPage() {
                     aria-hidden
                   />
                   <PremiumIcon healthIcon="heart-rate" tone="inverse" />
-                  <h3 className="font-display relative mt-8 text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-white">
+                  <h3 className="font-display relative mt-8 text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-white">
                     {CARDIOLOGY_WHEN_TO_SEE.heading}
                   </h3>
                   <div className="relative mt-8">
@@ -472,7 +472,7 @@ export function CardiologistNycPage() {
           {/* H3 Personalized */}
           <Block className="mt-16">
             <div className="max-w-3xl">
-              <h3 className="font-display text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl">
+              <h3 className="font-display text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
                 {CARDIOLOGY_PERSONALIZED.heading}
               </h3>
               <p className="mt-5 text-base leading-[1.75] text-muted-foreground">
@@ -520,7 +520,7 @@ export function CardiologistNycPage() {
               <SectionLabel>Locations</SectionLabel>
               <h2
                 id="locations-heading"
-                className="font-display max-w-xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display max-w-xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {CARDIOLOGY_LOCATIONS.heading}
               </h2>
@@ -565,7 +565,7 @@ export function CardiologistNycPage() {
             <div className="overflow-hidden rounded-[2rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)]">
               <div className="border-b border-border/50 bg-gradient-to-r from-[color:var(--cream)] via-background to-[color:var(--secondary)]/30 px-8 py-9 sm:px-10">
                 <PremiumIcon iconKey="clipboard-check" size="lg" />
-                <h3 className="font-display mt-6 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl">
+                <h3 className="font-display mt-6 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
                 {CARDIOLOGY_FIRST_VISIT.heading}
                 </h3>
               </div>
@@ -614,7 +614,7 @@ export function CardiologistNycPage() {
                       <SectionLabel>Cardiology team</SectionLabel>
                       <h2
                         id={i === 0 ? "specialists-heading" : undefined}
-                        className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                        className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                       >
                         {p.name}
                       </h2>
@@ -679,7 +679,7 @@ export function CardiologistNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {CARDIOLOGY_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">
@@ -731,7 +731,7 @@ export function CardiologistNycPage() {
               <SectionLabel>Related care</SectionLabel>
               <h2
                 id="related-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {CARDIOLOGY_RELATED.heading}
               </h2>
@@ -784,7 +784,7 @@ export function CardiologistNycPage() {
             <Block>
               <h2
                 id="cardio-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {CARDIOLOGY_FAQ_HEADING}
               </h2>

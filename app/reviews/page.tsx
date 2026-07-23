@@ -14,6 +14,7 @@ const seo = buildPageSeo({
   path: "/patient-reviews",
   crumbs: [{ label: "Home", to: "/" }, { label: "Patient Reviews" }],
   geo: true,
+  ogImage: "/images/patient-reviews-hero.webp",
   extraSchema: [medicalClinicSchema({ includeRating: true }), ...reviewSchemas(patientReviews)],
 });
 export const metadata = seo.metadata;

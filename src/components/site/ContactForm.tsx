@@ -26,7 +26,7 @@ function Label({ htmlFor, children }: { htmlFor: string; children: React.ReactNo
   );
 }
 
-export function ContactForm() {
+export function ContactForm({ className }: { className?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -70,11 +70,16 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex h-full min-h-[420px] flex-col items-center justify-center rounded-3xl border border-border/60 bg-card p-10 text-center shadow-[var(--shadow-card)]">
-        <span className="grid h-16 w-16 place-items-center rounded-full bg-[color:var(--accent-emerald)]/12 text-[color:var(--accent-emerald)]">
+      <div
+        className={cn(
+          "flex h-full min-h-[360px] flex-col items-center justify-center text-center",
+          className,
+        )}
+      >
+        <span className="grid h-16 w-16 place-items-center rounded-full bg-success-surface text-success">
           <CheckCircle2 className="h-8 w-8" aria-hidden />
         </span>
-        <h3 className="mt-6 font-display text-2xl font-medium text-foreground">Message sent</h3>
+        <h3 className="mt-6 font-display text-2xl font-semibold text-foreground">Message sent</h3>
         <p className="mt-3 max-w-sm text-sm leading-relaxed text-muted-foreground">
           Thank you for reaching out. A member of our team will get back to you within one business
           day.
@@ -91,110 +96,103 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      noValidate
-      className="rounded-3xl border border-border/60 bg-card p-6 shadow-[var(--shadow-card)] sm:p-8"
-    >
-      <div className="grid gap-5">
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div>
-            <Label htmlFor="contact-name">Full name</Label>
-            <input
-              id="contact-name"
-              name="name"
-              type="text"
-              autoComplete="name"
-              required
-              placeholder="Jane Doe"
-              className={fieldClass}
-            />
-          </div>
-          <div>
-            <Label htmlFor="contact-email">Email</Label>
-            <input
-              id="contact-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              placeholder="jane@email.com"
-              className={fieldClass}
-            />
-          </div>
-        </div>
-
-        <div className="grid gap-5 sm:grid-cols-2">
-          <div>
-            <Label htmlFor="contact-phone">Phone (optional)</Label>
-            <input
-              id="contact-phone"
-              name="phone"
-              type="tel"
-              autoComplete="tel"
-              placeholder="(212) 555-0100"
-              className={fieldClass}
-            />
-          </div>
-          <div>
-            <Label htmlFor="contact-reason">Reason for contact</Label>
-            <select id="contact-reason" name="reason" defaultValue={REASONS[0]} className={fieldClass}>
-              {REASONS.map((reason) => (
-                <option key={reason} value={reason}>
-                  {reason}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
+    <form onSubmit={handleSubmit} noValidate className={cn("grid gap-5", className)}>
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <Label htmlFor="contact-message">How can we help?</Label>
-          <textarea
-            id="contact-message"
-            name="message"
-            rows={5}
+          <Label htmlFor="contact-name">Full name</Label>
+          <input
+            id="contact-name"
+            name="name"
+            type="text"
+            autoComplete="name"
             required
-            placeholder="Share a few details so we can point you to the right team…"
-            className={cn(fieldClass, "resize-y")}
+            placeholder="Jane Doe"
+            className={fieldClass}
           />
         </div>
-
-        {/* Honeypot — hidden from users, catches bots */}
-        <div aria-hidden className="hidden">
-          <label htmlFor="contact-company">Company</label>
-          <input id="contact-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+        <div>
+          <Label htmlFor="contact-email">Email</Label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+            placeholder="jane@email.com"
+            className={fieldClass}
+          />
         </div>
-
-        {status === "error" && error && (
-          <p role="alert" className="text-sm font-medium text-[color:var(--destructive,#dc2626)]">
-            {error}
-          </p>
-        )}
-
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-[0_10px_32px_-14px_color-mix(in_oklab,var(--primary)_65%,transparent)] ring-1 ring-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-glow disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
-        >
-          {status === "submitting" ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-              Sending…
-            </>
-          ) : (
-            <>
-              Send message
-              <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-            </>
-          )}
-        </button>
-
-        <p className="text-center text-xs leading-relaxed text-muted-foreground">
-          By submitting, you agree to be contacted about your enquiry. Please don&apos;t share
-          sensitive medical details here.
-        </p>
       </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <Label htmlFor="contact-phone">Phone (optional)</Label>
+          <input
+            id="contact-phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="(212) 555-0100"
+            className={fieldClass}
+          />
+        </div>
+        <div>
+          <Label htmlFor="contact-reason">Reason</Label>
+          <select id="contact-reason" name="reason" defaultValue={REASONS[0]} className={fieldClass}>
+            {REASONS.map((reason) => (
+              <option key={reason} value={reason}>
+                {reason}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <Label htmlFor="contact-message">How can we help?</Label>
+        <textarea
+          id="contact-message"
+          name="message"
+          rows={5}
+          required
+          placeholder="Share a few details so we can point you to the right team…"
+          className={cn(fieldClass, "resize-y")}
+        />
+      </div>
+
+      <div aria-hidden className="hidden">
+        <label htmlFor="contact-company">Company</label>
+        <input id="contact-company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
+      {status === "error" && error && (
+        <p role="alert" className="text-sm font-medium text-[color:var(--destructive,#dc2626)]">
+          {error}
+        </p>
+      )}
+
+      <button
+        type="submit"
+        disabled={status === "submitting"}
+        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-[0_10px_32px_-14px_color-mix(in_oklab,var(--primary)_65%,transparent)] ring-1 ring-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-glow disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+      >
+        {status === "submitting" ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+            Sending…
+          </>
+        ) : (
+          <>
+            Send message
+            <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+          </>
+        )}
+      </button>
+
+      <p className="text-center text-xs leading-relaxed text-muted-foreground">
+        By submitting, you agree to be contacted about your enquiry. Please don&apos;t share
+        sensitive medical details here.
+      </p>
     </form>
   );
 }

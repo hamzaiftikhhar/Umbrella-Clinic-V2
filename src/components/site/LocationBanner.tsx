@@ -40,7 +40,7 @@ export function LocationBanner() {
 
                   <h2
                     id="location-heading"
-                    className="mt-3 max-w-lg text-balance font-display text-xl font-light italic leading-snug tracking-tight text-primary-foreground sm:text-2xl md:text-[1.75rem]"
+                    className="mt-3 max-w-lg text-balance font-display text-xl font-semibold leading-snug tracking-tight text-primary-foreground sm:text-2xl md:text-[1.75rem]"
                   >
                     Modern Medicine In The Heart Of Lower Manhattan
                   </h2>

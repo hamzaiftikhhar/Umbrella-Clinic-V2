@@ -44,8 +44,8 @@ export default function RoutePage() {
             title: "Metabolically measured.",
             description:
               "A real clinical program  baseline labs, body composition, monthly check-ins  not a prescription mill. Semaglutide and tirzepatide where appropriate.",
-            image: IMG.glp1Hero,
-            imageAlt: "Patient and clinician reviewing weight loss plan",
+            image: IMG.medicalWeightLossConsult,
+            imageAlt: "Medical weight loss consultation measuring waist circumference at Umbrella Health NYC",
             crumbs: [{ label: "Home", to: "/" }, { label: "Weight Loss (GLP-1)" }],
           },
           intro: {

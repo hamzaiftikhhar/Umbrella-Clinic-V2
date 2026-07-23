@@ -19,7 +19,7 @@ export default function SchemaDebugPage() {
       <JsonLd data={[]} />
       <main className="section-py bg-background">
         <Container size="lg">
-          <h1 className="font-display text-3xl font-medium text-foreground sm:text-4xl">
+          <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
             Structured data preview
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">

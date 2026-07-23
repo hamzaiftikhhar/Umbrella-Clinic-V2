@@ -163,7 +163,7 @@ function PersonalizedCareVisual() {
               className="flex items-start gap-4 rounded-2xl border border-border/45 bg-background/95 px-5 py-5 shadow-[var(--shadow-soft)] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
             >
               <div className="flex shrink-0 flex-col items-center gap-2">
-                <span className="font-display text-xs font-medium tabular-nums tracking-widest text-primary/45">
+                <span className="font-display text-xs font-semibold tabular-nums tracking-widest text-primary/45">
                   {step}
                 </span>
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--navy-800)]/8 text-[color:var(--navy-800)] ring-1 ring-[color:var(--navy-800)]/10">
@@ -235,7 +235,7 @@ export function NeurologistNycPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
             <Fade className="flex flex-col justify-center">
               <SectionLabel>Neurologist NYC</SectionLabel>
-              <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display text-balance text-[2.2rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {NEUROLOGIST_HERO.h1}
               </h1>
 
@@ -300,7 +300,7 @@ export function NeurologistNycPage() {
               <SectionLabel>What we treat</SectionLabel>
               <h2
                 id="conditions-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {NEUROLOGIST_CONDITIONS.heading}
               </h2>
@@ -358,7 +358,7 @@ export function NeurologistNycPage() {
               <SectionLabel>Precision testing</SectionLabel>
               <h2
                 id="diagnostics-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {NEUROLOGIST_DIAGNOSTICS.heading}
               </h2>
@@ -381,7 +381,7 @@ export function NeurologistNycPage() {
                   <Fade key={item.title} delay={0.05}>
                     <article className="group overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)] lg:grid lg:grid-cols-[1.1fr_0.9fr]">
                       <div className="border-b border-border/50 p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                        <span className="font-display text-sm font-medium tracking-[0.2em] text-primary/60">
+                        <span className="font-display text-sm font-semibold tracking-[0.2em] text-primary/60">
                           STEP {step}
                         </span>
                         <div className="mt-6 flex items-start gap-4">
@@ -428,7 +428,7 @@ export function NeurologistNycPage() {
                         <div className="absolute inset-0 bg-[color:var(--navy-900)]/25" />
                       </div>
                       <div className="relative flex flex-col justify-center p-8 text-white sm:p-10">
-                        <span className="font-display text-sm font-medium tracking-[0.2em] text-white/55">
+                        <span className="font-display text-sm font-semibold tracking-[0.2em] text-white/55">
                           STEP {step}
                         </span>
                         <div className="mt-6 flex items-start gap-4">
@@ -478,7 +478,7 @@ export function NeurologistNycPage() {
               <SectionLabel>Your care team</SectionLabel>
               <h2
                 id="why-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {NEUROLOGIST_WHY_CHOOSE.heading}
               </h2>
@@ -510,7 +510,7 @@ export function NeurologistNycPage() {
                     >
                       <span
                         className={cn(
-                          "font-display text-sm font-medium tracking-[0.2em]",
+                          "font-display text-sm font-semibold tracking-[0.2em]",
                           isPersonalized ? "text-primary/60" : "text-white/55",
                         )}
                       >
@@ -601,7 +601,7 @@ export function NeurologistNycPage() {
             <Fade>
               <h2
                 id="neuro-location-heading"
-                className="font-display max-w-xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display max-w-xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {NEUROLOGIST_LOCATION.heading}
               </h2>
@@ -694,7 +694,7 @@ export function NeurologistNycPage() {
                   <SectionLabel>Neurology team</SectionLabel>
                   <h2
                     id="specialists-heading"
-                    className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                    className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                   >
                     {NEUROLOGIST_SPECIALISTS.heading}
                   </h2>
@@ -787,7 +787,7 @@ export function NeurologistNycPage() {
                 </MedicalIconFrame>
                 <h2
                   id="insurance-heading"
-                  className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
+                  className="font-display mt-5 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
                 >
                   {NEUROLOGIST_INSURANCE.heading}
                 </h2>
@@ -820,7 +820,7 @@ export function NeurologistNycPage() {
                 </div>
                 <h2
                   id="reviews-heading"
-                  className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
+                  className="font-display mt-5 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
                 >
                   {NEUROLOGIST_REVIEWS.heading}
                 </h2>
@@ -847,7 +847,7 @@ export function NeurologistNycPage() {
             <Fade>
               <h2
                 id="neuro-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {NEUROLOGIST_FAQ_HEADING}
               </h2>
@@ -884,7 +884,7 @@ export function NeurologistNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {NEUROLOGIST_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">

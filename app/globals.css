@@ -14,12 +14,12 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Primary: Haffer (sans) · Display: Fraunces editorial serif · Secondary: GT Alpina italic accents */
+  /* One sans family across the site (Haffer / DM Sans). */
   --font-primary: "Haffer", "Haffer SQ", var(--font-haffer-fallback), Arial, sans-serif;
-  --font-secondary: "GT Alpina", var(--font-gt-alpina-fallback), Georgia, serif;
-  --font-editorial: "GT Alpina Display", var(--font-fraunces), Georgia, serif;
+  --font-secondary: var(--font-primary);
+  --font-editorial: var(--font-primary);
   --font-sans: var(--font-primary);
-  --font-display: var(--font-editorial);
+  --font-display: var(--font-primary);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -56,6 +56,11 @@
   --color-navy-700: var(--navy-700);
   --color-navy-600: var(--navy-600);
 
+  /* Success — Nectar green */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-surface: var(--success-surface);
+
   /* Precision data accents */
   --color-accent-emerald: var(--accent-emerald);
   --color-accent-emerald-foreground: var(--accent-emerald-foreground);
@@ -89,51 +94,56 @@
 }
 
 :root {
-  --radius: 1rem;
+  --radius: 1.25rem;
 
   /* Premium easing for micro-interactions */
   --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Premium icon tiles — aligned to clinical navy palette */
-  --icon-premium-surface: #eef3fa;
-  --icon-premium-color: var(--navy-700);
-  --icon-premium-shadow: 0 8px 30px rgba(12, 20, 34, 0.06);
+  /* Premium duotone icon tiles — primary-blue glyphs on a soft blue tile */
+  --icon-premium-surface: #e7f0fe;
+  --icon-premium-color: #2563eb;
+  --icon-premium-shadow: 0 8px 30px rgba(24, 58, 105, 0.08);
 
-  /* Deep clinical navy scale */
-  --navy-900: #0a1f3a;
-  --navy-800: #122b4e;
-  --navy-700: #0a4e83;
-  --navy-600: #1e4478;
+  /* Navy — used as an accent, not the dominant UI color */
+  --navy-900: #0f2748;
+  --navy-800: #183a69;
+  --navy-700: #1e4a85;
+  --navy-600: #2a5c9e;
 
-  /* Warm premium canvas — Nectar-adjacent */
-  --background: #faf9f6;
-  --foreground: #0c1422;
+  /* Cool premium canvas */
+  --background: #f8fbff;
+  --foreground: #0c1a2e;
 
   --card: #ffffff;
-  --card-foreground: #0c1422;
+  --card-foreground: #0c1a2e;
   --popover: #ffffff;
-  --popover-foreground: #0c1422;
+  --popover-foreground: #0c1a2e;
 
-  /* Warm surface ramp for spa-like depth */
+  /* Surface ramp */
   --surface-raised: #ffffff;
-  --surface-warm: #f3efe8;
+  --surface-warm: #eef4ff;
 
-  /* Anchor blue — deep clinical navy */
-  --primary: var(--navy-800);
-  --primary-foreground: #f7f9fc;
-  --primary-glow: var(--navy-700);
+  /* Primary — bright clinical blue */
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --primary-glow: #2563eb;
 
-  --secondary: #eef2f7;
+  --secondary: #eaf2fe;
   --secondary-foreground: var(--navy-800);
 
-  --muted: #f1ede6;
-  --muted-foreground: #5b6373;
+  --muted: #eef3fb;
+  --muted-foreground: #566276;
 
-  --accent: #e4ebf5;
+  --accent: #dbeafe;
   --accent-foreground: var(--navy-800);
 
   --destructive: #b42318;
   --destructive-foreground: #fffaf8;
+
+  /* Success — Nectar green */
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+  --success-surface: #e8f8ee;
 
   /* Precision data-visualization accents (used sparingly to encode metrics) */
   --accent-emerald: #1f7a5a;
@@ -147,14 +157,14 @@
   --accent-amber-surface: #f6ecdc;
   --rating-star: #e0a73a;
 
-  --border: #e8e2d8;
-  --input: #e8e2d8;
-  --ring: var(--navy-600);
+  --border: #e2e8f2;
+  --input: #e2e8f2;
+  --ring: var(--primary);
 
-  --cream: #faf9f6;
-  --sage: #dce6f2;
-  --mist: #f3f0eb;
-  --mint: #eef3fa;
+  --cream: #eef4ff;
+  --sage: #dbe8fb;
+  --mist: #eef3fb;
+  --mint: #e7f0fe;
 
   /* Multi-hue precision palette for diagnostic data viz */
   --chart-1: var(--navy-700);
@@ -172,9 +182,9 @@
   --sidebar-border: #e8e2d8;
   --sidebar-ring: var(--navy-600);
 
-  --shadow-elegant: 0 24px 60px -36px rgba(12, 20, 34, 0.28);
-  --shadow-soft: 0 8px 28px -18px rgba(12, 20, 34, 0.14);
-  --shadow-card: 0 1px 2px rgba(12, 20, 34, 0.04), 0 10px 32px -22px rgba(12, 20, 34, 0.12);
+  --shadow-elegant: 0 20px 48px -28px rgba(24, 58, 105, 0.18);
+  --shadow-soft: 0 8px 24px -16px rgba(24, 58, 105, 0.12);
+  --shadow-card: 0 1px 2px rgba(24, 58, 105, 0.04), 0 12px 28px -18px rgba(24, 58, 105, 0.1);
   --gradient-card-overlay: linear-gradient(180deg, transparent 35%, rgba(18, 43, 78, 0.78) 100%);
   --gradient-hero: radial-gradient(
     60% 80% at 50% 0%,
@@ -219,6 +229,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 400;
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
@@ -228,12 +239,27 @@
   h2,
   h3,
   h4 {
+    font-family: var(--font-primary);
     letter-spacing: -0.02em;
+  }
+  h1 {
+    font-weight: 500;
+  }
+  h2 {
+    font-weight: 500;
+  }
+  h3,
+  h4 {
+    font-weight: 600;
+  }
+  button,
+  [type="submit"] {
+    font-weight: 600;
   }
 }
 
 @utility font-display {
-  font-family: var(--font-editorial);
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
 }
 
@@ -242,7 +268,7 @@
 }
 
 @utility font-secondary {
-  font-family: var(--font-secondary);
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
 }
 
@@ -260,13 +286,20 @@
   transition-duration: 300ms;
 }
 
-/* Homepage section rhythm — uniform vertical padding */
+/* Homepage section rhythm — generous white space between sections */
 @utility section-py {
-  @apply py-10 sm:py-14;
+  @apply py-14 sm:py-20;
 }
 
 @utility section-py-compact {
-  @apply py-6 sm:py-8;
+  @apply py-8 sm:py-12;
+}
+
+/* Soft card surface — 20–24px radius + soft shadow */
+@utility card-surface {
+  border-radius: 1.375rem; /* 22px */
+  background-color: var(--card);
+  box-shadow: var(--shadow-card);
 }
 
 @keyframes reviews-marquee {

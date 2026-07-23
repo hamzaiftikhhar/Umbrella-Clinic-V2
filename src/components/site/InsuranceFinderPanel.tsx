@@ -40,7 +40,7 @@ export function InsuranceFinderPanel({ variant = "inline", className }: Insuranc
         <div className="mb-6 max-w-2xl">
           <h2
             id="insurance-search-heading"
-            className="font-display text-2xl font-medium tracking-tight text-foreground sm:text-3xl"
+            className="font-display text-2xl font-semibold tracking-tight text-foreground sm:text-3xl"
           >
             Check if we&apos;re in your network
           </h2>

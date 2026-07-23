@@ -142,7 +142,7 @@ export function CareDiagram() {
             </p>
             <h2
               id="diagram-heading"
-              className="font-display max-w-lg text-balance text-3xl font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+              className="font-display max-w-lg text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
             >
               One Team. One Record.{" "}
               <span className="font-light italic text-primary">One Umbrella.</span>

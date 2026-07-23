@@ -22,7 +22,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
               {post.category}
             </p>
-            <h1 className="font-display mt-4 max-w-3xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="font-display mt-4 max-w-3xl text-balance text-3xl font-bold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
               {post.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
@@ -57,7 +57,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
             ))}
           </div>
           <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-border/60 bg-secondary/30 p-8 text-center">
-            <p className="font-display text-xl font-medium text-foreground">
+            <p className="font-display text-xl font-semibold text-foreground">
               Ready to establish care in NYC?
             </p>
             <p className="mt-2 text-sm text-muted-foreground">

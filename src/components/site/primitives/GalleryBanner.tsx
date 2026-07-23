@@ -57,8 +57,8 @@ export function GalleryBanner() {
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/70">
                 Our space
               </p>
-              <h2 className="mt-3 font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.02em] sm:text-4xl">
-                Inside <span className="font-light italic">Umbrella Health.</span>
+              <h2 className="mt-3 font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-4xl">
+                Inside <span className="text-primary-foreground/90">Umbrella Health.</span>
               </h2>
               <div className="mt-6">
                 <BookButton variant="light">Book your appointment</BookButton>

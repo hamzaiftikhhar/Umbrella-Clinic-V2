@@ -276,7 +276,7 @@ function PathwayChapter({
         <div className="min-w-0">
           <h3
             id={`pathway-title-${segment.id}`}
-            className="font-display text-balance text-3xl font-medium leading-[1.08] tracking-[-0.03em] text-foreground sm:text-4xl"
+            className="font-display text-balance text-3xl font-semibold leading-[1.08] tracking-[-0.03em] text-foreground sm:text-4xl"
           >
             {segment.title}
           </h3>

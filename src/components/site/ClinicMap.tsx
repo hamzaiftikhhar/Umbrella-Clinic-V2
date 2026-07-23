@@ -11,10 +11,10 @@ export function ClinicMap() {
           </p>
           <h2
             id="map-heading"
-            className="font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
+            className="font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
           >
             In the heart of{" "}
-            <span className="font-light italic text-primary">Lower Manhattan.</span>
+            <span className="text-primary">Lower Manhattan.</span>
           </h2>
         </div>
 

@@ -66,10 +66,10 @@ export function FounderProfile() {
             </p>
             <h2
               id="founder-heading"
-              className="font-display text-balance text-4xl font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-5xl"
+              className="font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-foreground sm:text-5xl"
             >
               Physician-led care that{" "}
-              <span className="font-light italic text-primary">puts you first.</span>
+              <span className="text-primary">puts you first.</span>
             </h2>
             <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               Dr. Rajat Lamington founded Umbrella Health to create a more connected model of

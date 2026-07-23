@@ -57,8 +57,8 @@ export default function HomePage() {
           title="of members rate their care 5 stars after their first visit."
           description="Multispecialty care, advanced diagnostics, and a team that knows your history, not just your appointment slot."
           cta={<BookButton>Book Appointment</BookButton>}
-          image={IMG.homepageHero}
-          imageAlt="Primary care & specialists in NYC Umbrella Health clinic"
+          image={IMG.patientReviewsHero}
+          imageAlt="Patient rating care 5 stars after visit at Umbrella Health NYC"
         />
         <Testimonials />
         <FounderProfile />

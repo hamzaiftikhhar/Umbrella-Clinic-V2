@@ -82,7 +82,7 @@ export function PrimaryCareLocationSection() {
           >
             <h2
               id="location-heading"
-              className="font-display max-w-lg text-balance text-4xl font-medium leading-[1.04] tracking-[-0.03em] text-foreground sm:text-5xl"
+              className="font-display max-w-lg text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.03em] text-foreground sm:text-5xl"
             >
               {PRIMARY_CARE_LOCATION.heading}
             </h2>

@@ -27,9 +27,9 @@ export function ClinicalServicesGrid() {
             className="font-display text-balance text-3xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
           >
             NYC Primary Care Doctors{" "}
-            <span className="font-light italic text-primary">& Board-Certified Specialists</span>
+            <span className="text-primary">& Board-Certified Specialists</span>
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-5 text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">
             Umbrella Health brings together primary care doctors, internal medicine physicians, and
             board-certified specialists to deliver coordinated, patient-centered healthcare under one
             roof.

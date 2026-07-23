@@ -3,7 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE, organizationSchema, webSiteSchema } from "@/lib/schema";
-import { fraunces, gtAlpina, haffer } from "@/lib/fonts";
+import { haffer } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -28,16 +28,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#122b4e",
+  themeColor: "#3B82F6",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${haffer.variable} ${gtAlpina.variable} ${fraunces.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={haffer.variable} suppressHydrationWarning>
       <body suppressHydrationWarning>
         <JsonLd data={[organizationSchema(), webSiteSchema()]} />
         <SiteLayout>{children}</SiteLayout>

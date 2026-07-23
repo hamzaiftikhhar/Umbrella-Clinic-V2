@@ -45,8 +45,8 @@ function Page() {
         italic="Physician-guided"
         title="aesthetics & wellness."
         description="Medical spa services backed by board-certified physicians — skin rejuvenation, hormone optimization, and evidence-based anti-aging care."
-        image={IMG.medicalSpaHero}
-        imageAlt="Medical spa treatment at Umbrella Health NYC"
+        image={IMG.medicalSpaFacial}
+        imageAlt="Medical spa facial treatment at Umbrella Health NYC"
         crumbs={[{ label: "Home", to: "/" }, { label: "Medical Spa Services" }]}
         tone="mint"
       />

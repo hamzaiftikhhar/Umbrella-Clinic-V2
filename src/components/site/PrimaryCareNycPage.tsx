@@ -90,7 +90,7 @@ export function PrimaryCareNycPage() {
 
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <Fade>
-              <h1 className="font-display text-balance text-[2.35rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.5rem]">
+              <h1 className="font-display text-balance text-[2.35rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.5rem]">
                 {PRIMARY_CARE_HERO.h1}
               </h1>
 
@@ -143,7 +143,7 @@ export function PrimaryCareNycPage() {
         <Container size="lg">
           <h2
             id="why-heading"
-            className="font-display max-w-3xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+            className="font-display max-w-3xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
           >
             {PRIMARY_CARE_WHY_CHOOSE.heading}
           </h2>
@@ -188,14 +188,14 @@ export function PrimaryCareNycPage() {
             <div className="mx-auto max-w-3xl text-center">
               <h2
                 id="services-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {PRIMARY_CARE_SERVICES.heading}
               </h2>
               <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PRIMARY_CARE_SERVICES.intro}
               </p>
-              <h3 className="mt-6 font-display text-2xl font-medium tracking-[-0.01em] text-foreground sm:text-3xl">
+              <h3 className="mt-6 font-display text-2xl font-semibold tracking-[-0.01em] text-foreground sm:text-3xl">
                 {PRIMARY_CARE_SERVICES.listLabel}
               </h3>
             </div>
@@ -233,7 +233,7 @@ export function PrimaryCareNycPage() {
                 <div>
                   <h2
                     id="conditions-heading"
-                    className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                    className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                   >
                     {PRIMARY_CARE_CONDITIONS.heading}
                   </h2>
@@ -272,7 +272,7 @@ export function PrimaryCareNycPage() {
         <section className="section-py border-t border-border/50 bg-[color:var(--mist)]/50" aria-label="Primary care physicians">
           <Container size="lg">
             <Fade>
-              <p className="mb-12 max-w-2xl font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl">
+              <p className="mb-12 max-w-2xl font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl">
                 Meet your primary care physicians
               </p>
             </Fade>
@@ -301,7 +301,7 @@ export function PrimaryCareNycPage() {
             <Fade>
               <h2
                 id="pcp-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 FAQS
               </h2>
@@ -322,7 +322,7 @@ export function PrimaryCareNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {PRIMARY_CARE_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">

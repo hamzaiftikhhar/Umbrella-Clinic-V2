@@ -19,7 +19,7 @@ export function BlogIndexPage() {
               <li><span aria-current="page">Blog</span></li>
             </ol>
           </nav>
-          <h1 className="font-display max-w-3xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
+          <h1 className="font-display max-w-3xl text-balance text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
             Health insights for{" "}
             <span className="font-light italic text-primary">New Yorkers</span>
           </h1>
@@ -52,7 +52,7 @@ export function BlogIndexPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
                     {featured.category} · Featured
                   </p>
-                  <h2 className="font-display mt-3 text-2xl font-medium leading-tight text-foreground sm:text-3xl">
+                  <h2 className="font-display mt-3 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
                     {featured.title}
                   </h2>
                   <p className="mt-3 text-base leading-relaxed text-muted-foreground">{featured.excerpt}</p>

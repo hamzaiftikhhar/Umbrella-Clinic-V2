@@ -47,7 +47,7 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
                 {physician.title}
               </p>
-              <h1 className="font-display mt-3 text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
+              <h1 className="font-display mt-3 text-balance text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
                 {fullName}
               </h1>
               <p className="mt-2 text-lg font-medium text-primary">{physician.specialty}</p>

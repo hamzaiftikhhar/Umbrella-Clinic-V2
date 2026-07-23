@@ -27,7 +27,7 @@ export function CTABanner({
   return (
     <section aria-label={ariaLabel} className="px-5 pb-24 sm:px-8 sm:pb-32">
       <Container>
-        <div className="relative isolate overflow-hidden rounded-[2rem] bg-primary px-8 py-16 text-primary-foreground shadow-[var(--shadow-elegant)] sm:px-14 sm:py-20">
+        <div className="relative isolate overflow-hidden rounded-[1.5rem] bg-primary px-8 py-16 text-primary-foreground shadow-[var(--shadow-elegant)] sm:px-14 sm:py-20">
           {/* Precision data grid */}
           <svg
             className="pointer-events-none absolute inset-0 h-full w-full text-primary-foreground/[0.06]"
@@ -58,8 +58,8 @@ export function CTABanner({
                 {eyebrow}
               </p>
             )}
-            <h2 className="font-display text-balance text-3xl font-medium leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
-              {title} <span className="font-light italic text-primary-foreground/90">{italic}</span>
+            <h2 className="font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
+              {title} <span className="text-primary-foreground/90">{italic}</span>
             </h2>
             <div className="mt-8">
               <BookButton variant="light">{ctaLabel}</BookButton>
