@@ -7,12 +7,10 @@ import { SectionHeading } from "@/components/site/primitives/SectionHeading";
 import { PremiumIcon } from "@/components/site/primitives/IconBadge";
 import { BookButton } from "@/components/site/primitives/BookButton";
 import { CTABanner } from "@/components/site/primitives/CTABanner";
-import { ContactForm } from "@/components/site/ContactForm";
 import { GeoImage } from "@/components/site/primitives/GeoImage";
-import { Mail, Phone } from "lucide-react";
 import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
-import { CLINIC_MAP_EMBED_URL, SITE_EMAIL, SITE_PHONE } from "@/lib/site";
+import { CLINIC_MAP_EMBED_URL } from "@/lib/site";
 import { medicalClinicSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
@@ -142,63 +140,6 @@ function Page() {
                 </div>
               </div>
             </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      {/* Form section — redesigned, no “Contact Us” label */}
-      <section className="border-t border-border/50 bg-background py-20 sm:py-28">
-        <Container>
-          <div className="overflow-hidden rounded-[1.5rem] border border-border/50 bg-card shadow-[var(--shadow-card)]">
-            <div className="grid md:grid-cols-[0.9fr_1.1fr]">
-              <div className="flex flex-col justify-center bg-[color:var(--cream)]/70 p-8 sm:p-10 lg:p-12">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                  Get in touch
-                </p>
-                <h2 className="font-display mt-3 text-balance text-3xl font-medium tracking-[-0.02em] text-foreground sm:text-4xl">
-                  Send us a message
-                </h2>
-                <p className="mt-4 max-w-md text-base leading-relaxed text-muted-foreground">
-                  Questions about appointments, insurance, or a new patient visit? Our team replies
-                  within one business day.
-                </p>
-                <dl className="mt-8 space-y-5">
-                  <div className="flex gap-4">
-                    <span className="mt-0.5 grid h-11 w-11 shrink-0 place-items-center rounded-[1.25rem] bg-primary/10 text-primary">
-                      <Mail className="h-5 w-5" aria-hidden />
-                    </span>
-                    <div>
-                      <dt className="text-sm font-semibold text-foreground">Email</dt>
-                      <dd className="mt-1 text-sm text-muted-foreground">
-                        <a href={`mailto:${SITE_EMAIL}`} className="hover:text-primary">
-                          {SITE_EMAIL}
-                        </a>
-                      </dd>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="mt-0.5 grid h-11 w-11 shrink-0 place-items-center rounded-[1.25rem] bg-primary/10 text-primary">
-                      <Phone className="h-5 w-5" aria-hidden />
-                    </span>
-                    <div>
-                      <dt className="text-sm font-semibold text-foreground">Phone</dt>
-                      <dd className="mt-1 text-sm text-muted-foreground">
-                        <a
-                          href={`tel:${SITE_PHONE.replace(/\D/g, "")}`}
-                          className="hover:text-primary"
-                        >
-                          {SITE_PHONE}
-                        </a>
-                      </dd>
-                    </div>
-                  </div>
-                </dl>
-              </div>
-
-              <div className="p-6 sm:p-8 lg:p-10">
-                <ContactForm />
-              </div>
-            </div>
           </div>
         </Container>
       </section>

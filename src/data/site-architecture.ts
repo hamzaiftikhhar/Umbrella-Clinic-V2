@@ -7,7 +7,7 @@ export const ROUTES = {
   neurology: "/specialties/neurologist-nyc",
   sleepMedicine: "/specialties/sleep-medicine-services-nyc",
   painManagement: "/specialties/pain-management-nyc",
-  medicalWeightLoss: "/specialties/medical-weight-loss-nyc",
+  medicalWeightLoss: "/specialties/medical-weight-loss-clinic-nyc",
   diagnostics: "/diagnostics",
   medicalSpa: "/medical-spa",
   ourTeam: "/our-team",

@@ -59,9 +59,13 @@ export const IMG = {
   /** Active, pain-free lifestyle — hero accent */
   painManagementCareTeam: "/images/pain-management/care-team.webp",
   /** Homepage specialty card — medical spa */
-  medicalSpaHero: "/images/medical-spa-services-nyc.webp",
-  /** Medical spa page — facial treatment */
-  medicalSpaFacial: "/images/medical-spa-facial.webp",
+  medicalSpaHero: "/images/medical-spa-microneedling-treatment.webp",
+  /** Medical spa page — facial mask treatment */
+  medicalSpaFacial: "/images/medical-spa-facial-mask-treatment.webp",
+  /** Medical spa — microneedling close-up */
+  medicalSpaMicroneedling: "/images/medical-spa-microneedling-treatment.webp",
+  /** Medical spa — facial mask application */
+  medicalSpaFacialMask: "/images/medical-spa-facial-mask-treatment.webp",
 
   // Local WebP assets (public/images)
   drRajat: "/images/dr-rajat.webp",
@@ -87,9 +91,13 @@ export const IMG = {
   transgenderCare:
     "/images/APNQkAFOczQSQGPfH60lyTslmZBtZS0FORi3PpPqefEzCy0rafeDlr1WtadgUpPDgQLDBYTpu_fsIF7J0xfmK1rBpLbTIVvqlr4bMDIdleffPWPsFhTPFAm57JFQdgpaB6R4K4DeLYlkw3627-h3024-k-no.webp",
   conciergeCare: u("photo-1521119989659-a83eee488004", 1800),
-  glp1Hero: "/images/medical-weight-loss-nyc.webp",
+  glp1Hero: "/images/medical-weight-loss-clinic-hero.webp",
   /** Medical weight loss service page */
   medicalWeightLossConsult: "/images/medical-weight-loss-consult.webp",
+  /** Medical weight loss clinic NYC — premium hero */
+  medicalWeightLossClinicHero: "/images/medical-weight-loss-clinic-hero.webp",
+  /** Medical weight loss — nutrition & lifestyle guidance */
+  medicalWeightLossNutrition: "/images/medical-weight-loss-nutrition-guidance.webp",
   longevityHero: u("photo-1571902943202-507ec2618e8f", 1600),
   patientHappy: u("photo-1582719508461-905c673771fd", 1600),
   patientReading: u("photo-1573497019940-1c28c88b4f3e", 1600),

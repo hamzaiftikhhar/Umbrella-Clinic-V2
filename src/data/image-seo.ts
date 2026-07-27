@@ -147,8 +147,24 @@ export const IMAGE_ALT = {
     keywords: ["medical spa services NYC", "skin rejuvenation"] as const,
   },
   medicalSpaFacial: {
-    alt: "Medical spa NYC facial treatment at Umbrella Health",
+    alt: "Medical spa NYC facial mask treatment at Umbrella Health",
     keywords: ["medical spa NYC", "facial treatment"] as const,
+  },
+  medicalSpaMicroneedling: {
+    alt: "Medical spa microneedling treatment NYC at Umbrella Health",
+    keywords: ["medical spa NYC", "microneedling"] as const,
+  },
+  medicalSpaFacialMask: {
+    alt: "Medical spa facial mask application NYC at Umbrella Health",
+    keywords: ["medical spa NYC", "facial mask treatment"] as const,
+  },
+  medicalWeightLossClinicHero: {
+    alt: "Medical weight loss clinic NYC physician-supervised care at Umbrella Health",
+    keywords: ["medical weight loss clinic", "medical weight loss nyc"] as const,
+  },
+  medicalWeightLossNutrition: {
+    alt: "Medical weight loss NYC nutrition guidance healthy meal planning",
+    keywords: ["medical weight loss service", "weight loss service"] as const,
   },
   medicalWeightLossConsult: {
     alt: "Medical weight loss consultation measuring waist at Umbrella Health NYC",
@@ -195,8 +211,8 @@ export const IMAGE_ALT = {
     keywords: ["concierge primary care NYC", "executive health"] as const,
   },
   glp1Hero: {
-    alt: "Medical weight loss NYC waist measurement at Umbrella Health",
-    keywords: ["medical weight loss NYC", "weight loss doctor near me"] as const,
+    alt: "Medical weight loss clinic NYC physician-supervised weight management",
+    keywords: ["medical weight loss clinic", "medical weight loss nyc"] as const,
   },
   longevityHero: {
     alt: "Longevity medicine NYC healthspan and executive physicals",

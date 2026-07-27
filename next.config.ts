@@ -14,6 +14,11 @@ const nextConfig: NextConfig = {
         destination: "/specialties/sleep-medicine-services-nyc",
         permanent: true,
       },
+      {
+        source: "/specialties/medical-weight-loss-nyc",
+        destination: "/specialties/medical-weight-loss-clinic-nyc",
+        permanent: true,
+      },
     ];
   },
   images: {
