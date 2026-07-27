@@ -166,6 +166,18 @@ export const IMAGE_ALT = {
     alt: "Medical weight loss NYC nutrition guidance healthy meal planning",
     keywords: ["medical weight loss service", "weight loss service"] as const,
   },
+  medicalWeightLossHydration: {
+    alt: "Medical weight loss NYC hydration lifestyle wellness at Umbrella Health",
+    keywords: ["medical weight loss nyc", "weight loss service"] as const,
+  },
+  medicalWeightLossHealthyEating: {
+    alt: "Medical weight loss clinic NYC healthy eating lifestyle results",
+    keywords: ["medical weight loss clinic", "medical weight loss service"] as const,
+  },
+  medicalWeightLossNutritionConsult: {
+    alt: "Medical weight loss service NYC physician nutrition consultation",
+    keywords: ["medical weight loss service", "medical weight loss nyc"] as const,
+  },
   medicalWeightLossConsult: {
     alt: "Medical weight loss consultation measuring waist at Umbrella Health NYC",
     keywords: ["medical weight loss NYC", "GLP-1 weight loss"] as const,

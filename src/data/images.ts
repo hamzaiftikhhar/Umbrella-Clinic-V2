@@ -98,6 +98,12 @@ export const IMG = {
   medicalWeightLossClinicHero: "/images/medical-weight-loss-clinic-hero.webp",
   /** Medical weight loss — nutrition & lifestyle guidance */
   medicalWeightLossNutrition: "/images/medical-weight-loss-nutrition-guidance.webp",
+  /** Medical weight loss — hydration & lifestyle */
+  medicalWeightLossHydration: "/images/medical-weight-loss-hydration-lifestyle.webp",
+  /** Medical weight loss — healthy eating lifestyle */
+  medicalWeightLossHealthyEating: "/images/medical-weight-loss-healthy-eating.webp",
+  /** Medical weight loss — physician nutrition consultation */
+  medicalWeightLossNutritionConsult: "/images/medical-weight-loss-nutrition-consultation.webp",
   longevityHero: u("photo-1571902943202-507ec2618e8f", 1600),
   patientHappy: u("photo-1582719508461-905c673771fd", 1600),
   patientReading: u("photo-1573497019940-1c28c88b4f3e", 1600),
