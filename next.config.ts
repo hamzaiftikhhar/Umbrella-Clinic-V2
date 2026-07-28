@@ -19,6 +19,11 @@ const nextConfig: NextConfig = {
         destination: "/specialties/medical-weight-loss-clinic-nyc",
         permanent: true,
       },
+      {
+        source: "/diagnostics",
+        destination: "/specialties/diagnostic-testing-nyc",
+        permanent: true,
+      },
     ];
   },
   images: {

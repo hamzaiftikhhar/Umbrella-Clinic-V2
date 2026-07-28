@@ -29,7 +29,7 @@ export const FOOTER_COLUMNS = [
   {
     title: "Services",
     links: [
-      { label: "Diagnostics & Testing", to: ROUTES.diagnostics },
+      { label: "Diagnostic Testing NYC", to: ROUTES.diagnostics },
       { label: "Medical Spa Services", to: ROUTES.medicalSpa },
       { label: "Insurance & Pricing", to: ROUTES.insurance },
       { label: "For Employers", to: "/employers" },

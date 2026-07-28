@@ -8,7 +8,7 @@ export const ROUTES = {
   sleepMedicine: "/specialties/sleep-medicine-services-nyc",
   painManagement: "/specialties/pain-management-nyc",
   medicalWeightLoss: "/specialties/medical-weight-loss-clinic-nyc",
-  diagnostics: "/diagnostics",
+  diagnostics: "/specialties/diagnostic-testing-nyc",
   medicalSpa: "/medical-spa",
   ourTeam: "/our-team",
   patientReviews: "/patient-reviews",
@@ -29,7 +29,7 @@ export const SPECIALTY_NAV_ITEMS = [
 
 /** Top-level header navigation (excluding specialties dropdown). Blog hidden until redesign. */
 export const HEADER_NAV_ITEMS = [
-  { label: "Diagnostics & Testing", to: ROUTES.diagnostics },
+  { label: "Diagnostic Testing NYC", to: ROUTES.diagnostics },
   { label: "Medical Spa Services", to: ROUTES.medicalSpa },
   { label: "Our Team", to: ROUTES.ourTeam },
   { label: "Patient Reviews", to: ROUTES.patientReviews },

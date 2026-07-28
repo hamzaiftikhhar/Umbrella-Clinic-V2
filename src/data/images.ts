@@ -10,7 +10,7 @@ export const IMG = {
   reception: "/images/clinic-reception-contact.webp",
   examRoom: u("photo-1666214280557-f1b5022eb634", 1600),
   ekg: u("photo-1576091160550-2173dba999ef", 1400),
-  lab: "/images/diagnostics-and-testing.webp",
+  lab: "/images/diagnostic-testing-laboratory-blood-work.webp",
   ultrasound: u("photo-1579154204601-01588f351e67", 1400),
   sleepStudy: u("photo-1520206183501-b80df61043c2", 1400),
   /** Premium sleep outcome — peaceful rest (Sleep Medicine hero) */
@@ -104,6 +104,22 @@ export const IMG = {
   medicalWeightLossHealthyEating: "/images/medical-weight-loss-healthy-eating.webp",
   /** Medical weight loss — physician nutrition consultation */
   medicalWeightLossNutritionConsult: "/images/medical-weight-loss-nutrition-consultation.webp",
+  /** Diagnostic Testing NYC — premium hero */
+  diagnosticTestingHero: "/images/diagnostic-testing-nyc-hero.webp",
+  /** Diagnostic Testing — laboratory & blood work */
+  diagnosticTestingLabBlood: "/images/diagnostic-testing-laboratory-blood-work.webp",
+  /** Diagnostic Testing — genetic / in vitro lab analysis */
+  diagnosticTestingGeneticLab: "/images/diagnostic-testing-genetic-lab.webp",
+  /** Diagnostic Testing — cardiovascular evaluation */
+  diagnosticTestingCardiovascular: "/images/diagnostic-testing-cardiovascular.webp",
+  /** Diagnostic Testing — pain / musculoskeletal evaluation */
+  diagnosticTestingPainEval: "/images/diagnostic-testing-pain-evaluation.webp",
+  /** Diagnostic Testing — specimen scan / STD & lab workflow */
+  diagnosticTestingSpecimenScan: "/images/diagnostic-testing-lab-specimen-scan.webp",
+  /** Diagnostic Testing — preventive health screening */
+  diagnosticTestingPreventive: "/images/diagnostic-testing-preventive-screening.webp",
+  /** Diagnostic Testing — lab analysis / pipette */
+  diagnosticTestingLabAnalysis: "/images/diagnostic-testing-lab-analysis.webp",
   longevityHero: u("photo-1571902943202-507ec2618e8f", 1600),
   patientHappy: u("photo-1582719508461-905c673771fd", 1600),
   patientReading: u("photo-1573497019940-1c28c88b4f3e", 1600),

@@ -7,6 +7,7 @@ import { Reveal } from "./primitives/Reveal";
 import { IMG } from "@/data/images";
 import { getImageAlt } from "@/data/image-seo";
 import { geoImgProps } from "./primitives/GeoImage";
+import { ROUTES } from "@/data/site-architecture";
 import type { HealthIconName } from "@/components/icons/icon-keys";
 
 const pillars: {
@@ -29,9 +30,9 @@ const pillars: {
   {
     title: "Diagnostics & Data",
     description: "In-house imaging, labs, sleep, and biomarker panels. Results faster, in context.",
-    to: "/diagnostics",
+    to: ROUTES.diagnostics,
     healthIcon: "lab-tube",
-    image: IMG.lab,
+    image: IMG.diagnosticTestingHero,
     altKey: "lab",
   },
   {

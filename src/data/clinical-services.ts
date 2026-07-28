@@ -44,12 +44,12 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     healthIcon: "weight-loss",
   },
   {
-    label: "Diagnostics & Testing",
+    label: "Diagnostic Testing NYC",
     href: ROUTES.diagnostics,
     summary: "Advanced lab work, imaging, and screenings under one roof.",
     description:
       "Get accurate answers faster with advanced diagnostic testing, laboratory services, and preventive health screenings that support timely diagnosis and treatment.",
-    imageUrl: IMG.lab,
+    imageUrl: IMG.diagnosticTestingHero,
     healthIcon: "diagnostics",
   },
   {

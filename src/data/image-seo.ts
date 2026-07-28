@@ -47,8 +47,8 @@ export const IMAGE_ALT = {
     keywords: ["cardiac diagnostics NYC", "EKG testing"] as const,
   },
   lab: {
-    alt: "Diagnostics and testing NYC laboratory specialist at Umbrella Health",
-    keywords: ["diagnostics and testing NYC", "laboratory specialist"] as const,
+    alt: "Diagnostic lab testing blood work at Umbrella Health NYC",
+    keywords: ["diagnostic lab testing", "diagnostic testing nyc"] as const,
   },
   ultrasound: {
     alt: "Imaging and cardiac testing NYC ultrasound at Umbrella Health",
@@ -177,6 +177,41 @@ export const IMAGE_ALT = {
   medicalWeightLossNutritionConsult: {
     alt: "Medical weight loss service NYC physician nutrition consultation",
     keywords: ["medical weight loss service", "medical weight loss nyc"] as const,
+  },
+  diagnosticTestingHero: {
+    alt: "Diagnostic testing NYC cardiac diagnostic testing at Umbrella Health",
+    keywords: ["diagnostic testing nyc", "cardiac diagnostic testing"] as const,
+  },
+  diagnosticTestingLabBlood: {
+    alt: "Diagnostic lab testing blood work at Umbrella Health NYC",
+    keywords: ["diagnostic lab testing", "diagnostic testing nyc"] as const,
+  },
+  diagnosticTestingGeneticLab: {
+    alt: "Genetic diagnostic testing and in vitro diagnostic liquid biopsy testing market lab work NYC",
+    keywords: [
+      "genetic diagnostic testing",
+      "in vitro diagnostic liquid biopsy testing market",
+    ] as const,
+  },
+  diagnosticTestingCardiovascular: {
+    alt: "Cardiac diagnostic testing NYC physician evaluation at Umbrella Health",
+    keywords: ["cardiac diagnostic testing", "diagnostic testing nyc"] as const,
+  },
+  diagnosticTestingPainEval: {
+    alt: "Diagnostic testing NYC musculoskeletal pain evaluation at Umbrella Health",
+    keywords: ["diagnostic testing nyc", "diagnostic lab testing"] as const,
+  },
+  diagnosticTestingSpecimenScan: {
+    alt: "Diagnostic testing of stds market and diagnostic lab testing specimen scanning NYC",
+    keywords: ["diagnostic testing of stds market", "diagnostic lab testing"] as const,
+  },
+  diagnosticTestingPreventive: {
+    alt: "Cardiac diagnostic testing preventive health screening NYC Umbrella Health",
+    keywords: ["cardiac diagnostic testing", "diagnostic testing nyc"] as const,
+  },
+  diagnosticTestingLabAnalysis: {
+    alt: "Rubella diagnostic testing market and diagnostic lab testing analysis NYC",
+    keywords: ["rubella diagnostic testing market", "diagnostic lab testing"] as const,
   },
   medicalWeightLossConsult: {
     alt: "Medical weight loss consultation measuring waist at Umbrella Health NYC",

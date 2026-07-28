@@ -36,8 +36,8 @@ const innerRingSeeds: ServiceSeed[] = [
 ];
 
 const outerRingSeeds: ServiceSeed[] = [
-  { name: "GLP-1 Weight Loss", image: IMG.glp1Hero, href: "/specialties/medical-weight-loss-nyc" },
-  { name: "Diagnostics", image: IMG.microscope, href: "/diagnostics" },
+  { name: "GLP-1 Weight Loss", image: IMG.glp1Hero, href: ROUTES.medicalWeightLoss },
+  { name: "Diagnostics", image: IMG.diagnosticTestingHero, href: ROUTES.diagnostics },
   { name: "Biomarkers", image: IMG.lab, href: "/diagnostics/biomarkers" },
   { name: "Imaging", image: IMG.ekg, href: "/diagnostics/imaging-cardiac" },
   {
