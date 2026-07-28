@@ -58,7 +58,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     summary: "Home sleep studies and apnea care designed for busy professionals.",
     description:
       "Improve your sleep and overall well-being with comprehensive sleep evaluations, advanced sleep studies, and personalized treatment for sleep disorders.",
-    imageUrl: IMG.sleepStudy,
+    imageUrl: IMG.sleepMedicineHero,
     healthIcon: "sleep",
   },
   {

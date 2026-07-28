@@ -327,7 +327,7 @@ export function SleepMedicineNycPage() {
                       </div>
                       <div className="relative min-h-[220px] bg-[color:var(--navy-900)] lg:min-h-full">
                         <GeoImage
-                          src={IMG.sleepStudy}
+                          src={IMG.sleepMedicineConsultation}
                           alt={SLEEP_MEDICINE_NYC_SEO.diagnosticsImageAlt}
                           fill
                           className="object-cover opacity-75"

@@ -53,25 +53,25 @@ function Page() {
   return (
     <main>
       {/* Clinic hero — local WebP */}
-      <section className="relative min-h-[min(72vh,640px)] overflow-hidden bg-background pt-24 sm:pt-28">
+      <section className="relative min-h-[min(88vh,820px)] overflow-hidden bg-background pt-24 sm:pt-28">
         <GeoImage
           src={IMG.clinicReceptionContact}
           alt="Umbrella Health clinic interior in NoHo Lower Manhattan NYC"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[center_40%] scale-105"
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-background via-background/92 to-background/35"
+          className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/45 to-transparent"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40"
+          className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/20"
           aria-hidden
         />
 
-        <Container size="lg" className="relative z-10 flex min-h-[min(56vh,520px)] flex-col justify-center pb-16">
+        <Container size="lg" className="relative z-10 flex min-h-[min(72vh,700px)] flex-col justify-center pb-16">
           <nav aria-label="Breadcrumb" className="mb-8 text-xs text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
