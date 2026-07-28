@@ -135,21 +135,25 @@ export function MedicalWeightLossClinicNycPage() {
         </Container>
       </section>
 
-      {/* Why choose — consultation focus */}
+      {/* Why choose — landscape consultation visual */}
       <section className="section-py bg-background" aria-labelledby="why-heading">
         <Container size="lg">
           <div className="overflow-hidden rounded-[1.75rem] border border-border/50 bg-card shadow-[var(--shadow-card)]">
-            <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="relative min-h-[300px] lg:min-h-full">
-                <GeoImage
-                  src={IMG.medicalWeightLossPhysicianConsult}
-                  alt={getImageAlt("medicalWeightLossPhysicianConsult")}
-                  fill
-                  className="object-cover object-[30%_center]"
-                  sizes="(max-width: 1024px) 100vw, 48vw"
-                />
-              </div>
-              <div className="p-8 sm:p-10 lg:p-12">
+            <div className="relative aspect-[16/9] min-h-[220px] w-full sm:min-h-[280px] lg:min-h-[340px]">
+              <GeoImage
+                src={IMG.medicalWeightLossPhysicianConsult}
+                alt={getImageAlt("medicalWeightLossPhysicianConsult")}
+                fill
+                className="object-cover object-[center_35%]"
+                sizes="100vw"
+              />
+              <div
+                className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-80"
+                aria-hidden
+              />
+            </div>
+            <div className="p-8 sm:p-10 lg:p-12">
+              <div className="max-w-3xl">
                 <h2
                   id="why-heading"
                   className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
@@ -162,9 +166,9 @@ export function MedicalWeightLossClinicNycPage() {
                 <h3 className="mt-8 font-display text-xl font-medium text-foreground sm:text-2xl">
                   {WEIGHT_LOSS_CLINIC_WHY.listLabel}
                 </h3>
-                <CheckList items={WEIGHT_LOSS_CLINIC_WHY.items} />
-                <SectionCta label={WEIGHT_LOSS_CLINIC_WHY.cta} />
               </div>
+              <CheckList items={WEIGHT_LOSS_CLINIC_WHY.items} />
+              <SectionCta label={WEIGHT_LOSS_CLINIC_WHY.cta} />
             </div>
           </div>
         </Container>
@@ -458,24 +462,39 @@ export function MedicalWeightLossClinicNycPage() {
         </Container>
       </section>
 
-      {/* vs dieting */}
+      {/* vs dieting — editorial split with consultation image */}
       <section className="section-py bg-background" aria-labelledby="vs-diet-heading">
         <Container size="lg">
-          <div className="mx-auto max-w-3xl rounded-[1.5rem] border border-border/50 bg-gradient-to-br from-card via-secondary/30 to-background p-8 text-center shadow-[var(--shadow-card)] sm:p-12">
-            <h2
-              id="vs-diet-heading"
-              className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
-            >
-              {WEIGHT_LOSS_CLINIC_VS_DIETING.heading}
-            </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base font-normal leading-[1.75] text-muted-foreground sm:text-lg">
-              {WEIGHT_LOSS_CLINIC_VS_DIETING.paragraph1}
-            </p>
-            <p className="mx-auto mt-4 max-w-2xl text-base font-normal leading-[1.75] text-muted-foreground">
-              {WEIGHT_LOSS_CLINIC_VS_DIETING.paragraph2}
-            </p>
-            <div className="mt-8 flex justify-center">
-              <BookButton>{WEIGHT_LOSS_CLINIC_VS_DIETING.cta}</BookButton>
+          <div className="overflow-hidden rounded-[1.75rem] border border-border/50 bg-card shadow-[var(--shadow-card)]">
+            <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+              <div className="relative order-2 min-h-[260px] lg:order-1 lg:min-h-full">
+                <div className="relative h-full min-h-[260px] aspect-[16/10] lg:absolute lg:inset-0 lg:aspect-auto">
+                  <GeoImage
+                    src={IMG.doctorConsultationPhysio}
+                    alt={getImageAlt("doctorConsultationPhysio")}
+                    fill
+                    className="object-cover object-[center_30%]"
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                  />
+                </div>
+              </div>
+              <div className="order-1 flex flex-col justify-center p-8 sm:p-10 lg:order-2 lg:p-12">
+                <h2
+                  id="vs-diet-heading"
+                  className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                >
+                  {WEIGHT_LOSS_CLINIC_VS_DIETING.heading}
+                </h2>
+                <p className="mt-5 text-base font-normal leading-[1.75] text-muted-foreground sm:text-lg">
+                  {WEIGHT_LOSS_CLINIC_VS_DIETING.paragraph1}
+                </p>
+                <p className="mt-4 text-base font-normal leading-[1.75] text-muted-foreground">
+                  {WEIGHT_LOSS_CLINIC_VS_DIETING.paragraph2}
+                </p>
+                <div className="mt-8">
+                  <BookButton>{WEIGHT_LOSS_CLINIC_VS_DIETING.cta}</BookButton>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
