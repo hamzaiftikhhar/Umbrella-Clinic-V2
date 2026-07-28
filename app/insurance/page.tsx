@@ -15,46 +15,57 @@ const carriers = [
   {
     name: "Aetna",
     src: "/images/insurance/aetna.png",
+    imgClass: "max-h-6 sm:max-h-7 scale-90",
   },
   {
     name: "Blue Cross Blue Shield",
     src: "/images/insurance/bluecross-blueshield.png",
+    imgClass: "max-h-12 sm:max-h-14 scale-110",
   },
   {
     name: "Cigna",
     src: "/images/insurance/cigna.png",
+    imgClass: "max-h-8 sm:max-h-10",
   },
   {
     name: "United Healthcare",
     src: "/images/insurance/united-healthcare.png",
+    imgClass: "max-h-8 sm:max-h-10",
   },
   {
     name: "Medicare",
     src: "/images/insurance/medicare.png",
+    imgClass: "max-h-8 sm:max-h-10",
   },
   {
     name: "Medica",
     src: "/images/insurance/medica.png",
+    imgClass: "max-h-7 sm:max-h-8 scale-95",
   },
   {
     name: "Health Partners",
     src: "/images/insurance/health-partners.jpg",
+    imgClass: "max-h-7 sm:max-h-8 scale-95",
   },
   {
     name: "Sanford Health",
     src: "/images/insurance/sanford-health.png",
+    imgClass: "max-h-8 sm:max-h-10",
   },
   {
     name: "TRICARE",
     src: "/images/insurance/tricare.png",
+    imgClass: "max-h-8 sm:max-h-10",
   },
   {
     name: "UMR",
     src: "/images/insurance/umr.png",
+    imgClass: "max-h-8 sm:max-h-10",
   },
   {
     name: "EmblemHealth",
     src: "https://cdn.prod.website-files.com/671689b64db775dfa0909ffe/6717f73a739b76071499f949_emblem-health-logo.svg",
+    imgClass: "max-h-8 sm:max-h-10",
   },
 ];
 
@@ -184,13 +195,13 @@ function Page() {
             {carriers.map((c) => (
               <div
                 key={c.name}
-                className="flex items-center justify-center rounded-2xl border border-border/60 bg-card px-5 py-6 text-center text-sm font-medium text-foreground transition-colors hover:bg-muted/50"
+                className="flex h-24 items-center justify-center rounded-2xl border border-border/60 bg-card px-5 py-4 text-center text-sm font-medium text-foreground transition-colors hover:bg-muted/50 sm:h-28"
               >
                 {c.src ? (
                   <img
                     src={c.src}
                     alt={`${c.name} logo`}
-                    className="h-8 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:h-10"
+                    className={`w-auto max-w-[88%] object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 ${c.imgClass}`}
                     loading="lazy"
                   />
                 ) : (
