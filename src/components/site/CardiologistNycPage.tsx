@@ -22,6 +22,7 @@ import { PhysicianCard } from "./primitives/PhysicianCard";
 import { GeoImage } from "./primitives/GeoImage";
 import { SeoImage } from "./primitives/SeoImage";
 import { PremiumIcon } from "./primitives/IconBadge";
+import { getImageAlt } from "@/data/image-seo";
 import { IMG } from "@/data/images";
 import { ROUTES } from "@/data/site-architecture";
 import { physiciansForSpecialty, physicianProfilePath } from "@/data/physicians";
@@ -158,7 +159,7 @@ export function CardiologistNycPage() {
               <div className="relative flex w-full flex-1 flex-col">
                 <div className="relative min-h-[360px] flex-1 overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:min-h-[400px] lg:min-h-[500px] xl:min-h-[540px]">
                   <SeoImage
-                    src={IMG.cardiologyHeartModel}
+                    src={IMG.cardiologyProfessionalHero}
                     alt={CARDIOLOGY_NYC_SEO.heroImageAlt}
                     fill
                     priority
@@ -219,8 +220,8 @@ export function CardiologistNycPage() {
               <div className="relative">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border/50 bg-[color:var(--cream)] shadow-[var(--shadow-elegant)] sm:aspect-[5/6]">
                   <GeoImage
-                    src={IMG.galleryInterior2}
-                    alt="Umbrella Health cardiology clinic care team in Lower Manhattan NYC"
+                    src={IMG.doctorConsultationPhysio}
+                    alt={getImageAlt("doctorConsultationPhysio")}
                     fill
                     className="object-cover object-center"
                     sizes="(max-width: 1024px) 90vw, 45vw"
@@ -320,7 +321,7 @@ export function CardiologistNycPage() {
               <article className="relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-soft)]">
                 <div className="relative aspect-[16/9] overflow-hidden bg-[color:var(--cream)]">
                   <GeoImage
-                    src={IMG.patientHappy}
+                    src={IMG.cardiologyHeartModel}
                     alt="Preventive Cardiology for Long-Term Heart Health at Umbrella Health"
                     fill
                     className="object-cover object-center"

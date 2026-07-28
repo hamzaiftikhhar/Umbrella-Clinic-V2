@@ -178,6 +178,18 @@ export const IMAGE_ALT = {
     alt: "Medical weight loss service NYC physician nutrition consultation",
     keywords: ["medical weight loss service", "medical weight loss nyc"] as const,
   },
+  medicalWeightLossPhysicianConsult: {
+    alt: "Medical weight loss clinic NYC physician consultation personalized plan",
+    keywords: ["medical weight loss clinic", "medical weight loss nyc"] as const,
+  },
+  medicalWeightLossBeforeAfter: {
+    alt: "Medical weight loss NYC before and after results Umbrella Health",
+    keywords: ["medical weight loss nyc", "weight loss service"] as const,
+  },
+  doctorConsultationPhysio: {
+    alt: "Doctor consultation NYC patient exam at Umbrella Health",
+    keywords: ["doctor consultation NYC", "Umbrella Health"] as const,
+  },
   diagnosticTestingHero: {
     alt: "Diagnostic testing NYC cardiac diagnostic testing at Umbrella Health",
     keywords: ["diagnostic testing nyc", "cardiac diagnostic testing"] as const,

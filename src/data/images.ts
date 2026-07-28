@@ -104,6 +104,12 @@ export const IMG = {
   medicalWeightLossHealthyEating: "/images/medical-weight-loss-healthy-eating.webp",
   /** Medical weight loss — physician nutrition consultation */
   medicalWeightLossNutritionConsult: "/images/medical-weight-loss-nutrition-consultation.webp",
+  /** Medical weight loss — physician patient consultation */
+  medicalWeightLossPhysicianConsult: "/images/medical-weight-loss-physician-consultation.webp",
+  /** Medical weight loss — before & after results */
+  medicalWeightLossBeforeAfter: "/images/medical-weight-loss-before-after-results.webp",
+  /** Doctor–patient consultation (versatile across specialties) */
+  doctorConsultationPhysio: "/images/doctor-consultation-physio.webp",
   /** Diagnostic Testing NYC — premium hero */
   diagnosticTestingHero: "/images/diagnostic-testing-nyc-hero.webp",
   /** Diagnostic Testing — laboratory & blood work */

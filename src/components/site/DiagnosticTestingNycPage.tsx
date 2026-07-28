@@ -189,7 +189,7 @@ export function DiagnosticTestingNycPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--navy-900)]/92 via-[color:var(--navy-900)]/75 to-[color:var(--navy-900)]/35" />
         </div>
         <Container size="lg" className="relative -mt-48 pb-16 sm:-mt-56 sm:pb-20">
-          <div className="max-w-xl rounded-[1.5rem] border border-white/15 bg-background/95 p-8 shadow-[var(--shadow-elegant)] backdrop-blur-sm sm:p-10">
+          <div className="max-w-2xl rounded-[1.5rem] border border-white/15 bg-background/95 p-8 shadow-[var(--shadow-elegant)] backdrop-blur-sm sm:p-10">
             <h2
               id="lab-heading"
               className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
@@ -361,14 +361,14 @@ export function DiagnosticTestingNycPage() {
       {/* Pain — magazine layout */}
       <section className="section-py bg-background" aria-labelledby="pain-heading">
         <Container size="lg">
-          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
             <div className="relative min-h-[360px] overflow-hidden rounded-[1.5rem] border border-border/50 shadow-[var(--shadow-elegant)] lg:min-h-[560px]">
               <GeoImage
                 src={IMG.diagnosticTestingPainEval}
                 alt={getImageAlt("diagnosticTestingPainEval")}
                 fill
                 className="object-cover object-[35%_center]"
-                sizes="(max-width: 1024px) 90vw, 40vw"
+                sizes="(max-width: 1024px) 90vw, 50vw"
               />
             </div>
             <div className="flex flex-col justify-center lg:pl-4">

@@ -135,35 +135,35 @@ export function MedicalWeightLossClinicNycPage() {
         </Container>
       </section>
 
-      {/* Why choose */}
+      {/* Why choose — consultation focus */}
       <section className="section-py bg-background" aria-labelledby="why-heading">
         <Container size="lg">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-            <div>
-              <h2
-                id="why-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
-              >
-                {WEIGHT_LOSS_CLINIC_WHY.heading}
-              </h2>
-              <p className="mt-5 text-base font-normal leading-[1.75] text-muted-foreground sm:text-lg">
-                {WEIGHT_LOSS_CLINIC_WHY.intro}
-              </p>
-              <h3 className="mt-8 font-display text-xl font-medium text-foreground sm:text-2xl">
-                {WEIGHT_LOSS_CLINIC_WHY.listLabel}
-              </h3>
-              <CheckList items={WEIGHT_LOSS_CLINIC_WHY.items} />
-              <SectionCta label={WEIGHT_LOSS_CLINIC_WHY.cta} />
-            </div>
-            <div className="relative overflow-hidden rounded-[1.5rem] border border-border/50 shadow-[var(--shadow-elegant)]">
-              <div className="relative aspect-[4/5] sm:aspect-[5/6]">
+          <div className="overflow-hidden rounded-[1.75rem] border border-border/50 bg-card shadow-[var(--shadow-card)]">
+            <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="relative min-h-[300px] lg:min-h-full">
                 <GeoImage
-                  src={IMG.medicalWeightLossHydration}
-                  alt={getImageAlt("medicalWeightLossHydration")}
+                  src={IMG.medicalWeightLossPhysicianConsult}
+                  alt={getImageAlt("medicalWeightLossPhysicianConsult")}
                   fill
-                  className="object-cover object-[40%_center]"
-                  sizes="(max-width: 1024px) 90vw, 45vw"
+                  className="object-cover object-[30%_center]"
+                  sizes="(max-width: 1024px) 100vw, 48vw"
                 />
+              </div>
+              <div className="p-8 sm:p-10 lg:p-12">
+                <h2
+                  id="why-heading"
+                  className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                >
+                  {WEIGHT_LOSS_CLINIC_WHY.heading}
+                </h2>
+                <p className="mt-5 text-base font-normal leading-[1.75] text-muted-foreground sm:text-lg">
+                  {WEIGHT_LOSS_CLINIC_WHY.intro}
+                </p>
+                <h3 className="mt-8 font-display text-xl font-medium text-foreground sm:text-2xl">
+                  {WEIGHT_LOSS_CLINIC_WHY.listLabel}
+                </h3>
+                <CheckList items={WEIGHT_LOSS_CLINIC_WHY.items} />
+                <SectionCta label={WEIGHT_LOSS_CLINIC_WHY.cta} />
               </div>
             </div>
           </div>
@@ -310,34 +310,58 @@ export function MedicalWeightLossClinicNycPage() {
         </Container>
       </section>
 
-      {/* What doctor can help with */}
+      {/* What doctor can help with + results visual */}
       <section className="section-py bg-background" aria-labelledby="help-heading">
         <Container size="lg">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2
-              id="help-heading"
-              className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
-            >
-              {WEIGHT_LOSS_CLINIC_HELP.heading}
-            </h2>
-            <p className="mt-5 text-base font-normal leading-[1.75] text-muted-foreground sm:text-lg">
-              {WEIGHT_LOSS_CLINIC_HELP.intro}
-            </p>
-            <h3 className="mt-8 text-lg font-semibold text-foreground">
-              {WEIGHT_LOSS_CLINIC_HELP.listLabel}
-            </h3>
-          </div>
-          <CheckList items={WEIGHT_LOSS_CLINIC_HELP.items} />
-          <div className="mt-10 text-center">
-            <BookButton>{WEIGHT_LOSS_CLINIC_HELP.cta}</BookButton>
+          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+            <div>
+              <h2
+                id="help-heading"
+                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+              >
+                {WEIGHT_LOSS_CLINIC_HELP.heading}
+              </h2>
+              <p className="mt-5 text-base font-normal leading-[1.75] text-muted-foreground sm:text-lg">
+                {WEIGHT_LOSS_CLINIC_HELP.intro}
+              </p>
+              <h3 className="mt-8 text-lg font-semibold text-foreground">
+                {WEIGHT_LOSS_CLINIC_HELP.listLabel}
+              </h3>
+              <CheckList items={WEIGHT_LOSS_CLINIC_HELP.items} />
+              <SectionCta label={WEIGHT_LOSS_CLINIC_HELP.cta} />
+            </div>
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-border/50 bg-[color:var(--cream)]/40 p-4 shadow-[var(--shadow-elegant)] sm:p-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.15rem]">
+                <GeoImage
+                  src={IMG.medicalWeightLossBeforeAfter}
+                  alt={getImageAlt("medicalWeightLossBeforeAfter")}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 90vw, 45vw"
+                />
+              </div>
+              <p className="mt-4 text-center text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                Physician-supervised progress · individualized results
+              </p>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Long-term health */}
-      <section className="section-py bg-[color:var(--cream)]/50" aria-labelledby="longterm-heading">
-        <Container size="lg">
-          <div className="mx-auto max-w-3xl">
+      {/* Long-term health — lifestyle band */}
+      <section className="relative overflow-hidden" aria-labelledby="longterm-heading">
+        <div className="relative min-h-[380px] lg:min-h-[460px]">
+          <GeoImage
+            src={IMG.medicalWeightLossHydration}
+            alt={getImageAlt("medicalWeightLossHydration")}
+            fill
+            className="object-cover object-[40%_center]"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--navy-900)]/90 via-[color:var(--navy-900)]/75 to-[color:var(--navy-900)]/40" />
+        </div>
+        <Container size="lg" className="relative -mt-44 pb-16 sm:-mt-52 sm:pb-20">
+          <div className="max-w-2xl rounded-[1.5rem] border border-white/15 bg-background/95 p-8 shadow-[var(--shadow-elegant)] sm:p-10">
             <h2
               id="longterm-heading"
               className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
@@ -350,7 +374,14 @@ export function MedicalWeightLossClinicNycPage() {
             <h3 className="mt-8 text-lg font-semibold text-foreground">
               {WEIGHT_LOSS_CLINIC_LONG_TERM.listLabel}
             </h3>
-            <CheckList items={WEIGHT_LOSS_CLINIC_LONG_TERM.items} />
+            <ul className="mt-5 columns-1 gap-x-8 space-y-2.5 sm:columns-2">
+              {WEIGHT_LOSS_CLINIC_LONG_TERM.items.map((item) => (
+                <li key={item} className="break-inside-avoid text-sm font-medium text-foreground">
+                  <span className="mr-2 text-primary">▹</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
             <SectionCta label={WEIGHT_LOSS_CLINIC_LONG_TERM.cta} />
           </div>
         </Container>
