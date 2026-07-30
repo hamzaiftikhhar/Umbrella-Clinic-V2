@@ -80,7 +80,7 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
     healthIcon: "pain",
   },
   {
-    label: "Medical Spa Services NYC",
+    label: "Medical Spa NYC",
     href: ROUTES.medicalSpa,
     summary: "Physician-guided aesthetic treatments and skin rejuvenation.",
     description:

@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
         destination: "/specialties/diagnostic-testing-nyc",
         permanent: true,
       },
+      {
+        source: "/medical-spa",
+        destination: "/specialties/medical-spa-nyc",
+        permanent: true,
+      },
     ];
   },
   images: {

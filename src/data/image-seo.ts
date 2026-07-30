@@ -143,20 +143,28 @@ export const IMAGE_ALT = {
     keywords: ["interventional pain management NYC", "pain management doctor"] as const,
   },
   medicalSpaHero: {
-    alt: "Medical spa services NYC microneedling treatment at Umbrella Health",
-    keywords: ["medical spa services NYC", "skin rejuvenation"] as const,
+    alt: "Medical Spa NYC premium aesthetic treatments at Umbrella Health",
+    keywords: ["Medical Spa NYC", "medical spa treatments nyc"] as const,
+  },
+  medicalSpaNycHero: {
+    alt: "Best medical spa treatments NYC facial rejuvenation at Umbrella Health",
+    keywords: ["best medical spa treatments nyc", "nyc medical spa"] as const,
+  },
+  medicalSpaFacialConsult: {
+    alt: "Best medical aesthetics spa in soho nyc consultation at Umbrella Health",
+    keywords: ["best medical aesthetics spa in soho nyc", "Medical Spa NYC"] as const,
   },
   medicalSpaFacial: {
-    alt: "Medical spa NYC facial mask treatment at Umbrella Health",
-    keywords: ["medical spa NYC", "facial treatment"] as const,
+    alt: "Medical spa nyc microdermabrasion facial mask treatment Umbrella Health",
+    keywords: ["medical spa nyc microdermabrasion", "medical spa treatments nyc"] as const,
   },
   medicalSpaMicroneedling: {
-    alt: "Medical spa microneedling treatment NYC at Umbrella Health",
-    keywords: ["medical spa NYC", "microneedling"] as const,
+    alt: "Best medical spa dermatology nyc microneedling at Umbrella Health",
+    keywords: ["best medical spa dermatology nyc", "medical spa treatments nyc"] as const,
   },
   medicalSpaFacialMask: {
-    alt: "Medical spa facial mask application NYC at Umbrella Health",
-    keywords: ["medical spa NYC", "facial mask treatment"] as const,
+    alt: "Best medical spa nyc you rejuvenated facial mask treatment",
+    keywords: ["best medical spa nyc you rejuvenated", "nyc medical spa"] as const,
   },
   medicalWeightLossClinicHero: {
     alt: "Medical weight loss clinic NYC physician-supervised care at Umbrella Health",

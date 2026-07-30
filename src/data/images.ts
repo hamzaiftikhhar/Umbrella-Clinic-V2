@@ -59,8 +59,12 @@ export const IMG = {
   /** Active, pain-free lifestyle — hero accent */
   painManagementCareTeam: "/images/pain-management/care-team.webp",
   /** Homepage specialty card — medical spa */
-  medicalSpaHero: "/images/medical-spa-microneedling-treatment.webp",
-  /** Medical spa page — facial mask treatment */
+  medicalSpaHero: "/images/medical-spa-nyc-hero.webp",
+  /** Medical spa NYC — premium hero */
+  medicalSpaNycHero: "/images/medical-spa-nyc-hero.webp",
+  /** Medical spa — facial consultation / aesthetics */
+  medicalSpaFacialConsult: "/images/medical-spa-facial-consultation.webp",
+  /** Medical spa — facial mask treatment */
   medicalSpaFacial: "/images/medical-spa-facial-mask-treatment.webp",
   /** Medical spa — microneedling close-up */
   medicalSpaMicroneedling: "/images/medical-spa-microneedling-treatment.webp",

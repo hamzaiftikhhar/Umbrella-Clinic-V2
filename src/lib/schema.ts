@@ -17,6 +17,12 @@ import {
   DIAGNOSTIC_TESTING_SEO,
   DIAGNOSTIC_TESTING_SERVICES,
 } from "@/data/diagnostic-testing-nyc-content";
+import {
+  MEDICAL_SPA_AREAS,
+  MEDICAL_SPA_FAQS,
+  MEDICAL_SPA_SEO,
+  MEDICAL_SPA_TREATMENTS,
+} from "@/data/medical-spa-nyc-content";
 import { ROUTES } from "@/data/site-architecture";
 import {
   absoluteUrl,
@@ -2058,6 +2064,241 @@ export function diagnosticTestingNycPageSchemaGraph(heroImageUrl: string) {
   };
 }
 
+const MEDICAL_SPA_NYC_SCHEMA_PATH = ROUTES.medicalSpa;
+
+/** Structured data graph for the Medical Spa NYC landing page. */
+export function medicalSpaNycPageSchemaGraph(heroImageUrl: string) {
+  const pageUrl = absoluteUrl(MEDICAL_SPA_NYC_SCHEMA_PATH);
+  const webpageId = `${pageUrl}#webpage`;
+  const pageId = `${pageUrl}#page`;
+  const breadcrumbId = `${pageUrl}#breadcrumb`;
+  const serviceId = `${pageUrl}#service`;
+  const catalogId = `${pageUrl}#catalog`;
+  const specialtyId = `${pageUrl}#specialty`;
+  const imageId = `${pageUrl}#image`;
+  const faqId = `${pageUrl}#faq`;
+  const audienceId = `${pageUrl}#audience`;
+  const contactId = `${pageUrl}#contact`;
+  const websiteId = `${SITE_URL}/#website`;
+  const heroUrl = heroImageUrl.startsWith("http") ? heroImageUrl : absoluteUrl(heroImageUrl);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": ORGANIZATION_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        logo: { "@id": LOGO_SCHEMA_ID },
+        description: "Primary Care & Specialists in NYC.",
+        telephone: SITE_PHONE_SCHEMA,
+        email: SITE_EMAIL,
+        sameAs: [...CLINIC_SOCIAL_SAME_AS],
+        contactPoint: [{ "@id": contactId }],
+      },
+      imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
+      {
+        "@type": "MedicalClinic",
+        "@id": CLINIC_SCHEMA_ID,
+        name: SITE_NAME,
+        url: absoluteUrl("/"),
+        parentOrganization: { "@id": ORGANIZATION_ID },
+        telephone: PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+        email: PRIMARY_CARE_CLINIC_EMAIL,
+        address: postalAddressSchema(),
+        geo: geoCoordinatesSchema(),
+        hasMap: CLINIC_GOOGLE_MAPS_URL,
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "08:00",
+            closes: "19:00",
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Saturday"],
+            opens: "09:00",
+            closes: "15:00",
+          },
+        ],
+        medicalSpecialty: [
+          "PrimaryCare",
+          "Neurology",
+          "Cardiology",
+          "SleepMedicine",
+          "PainManagement",
+          "Dermatologic",
+        ],
+        hasOfferCatalog: { "@id": catalogId },
+      },
+      {
+        "@type": "MedicalSpecialty",
+        "@id": specialtyId,
+        name: "Dermatologic",
+        alternateName: "Medical Spa",
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: "Medical Spa NYC",
+        serviceType: "Medical Spa",
+        description: MEDICAL_SPA_SEO.description,
+        provider: { "@id": CLINIC_SCHEMA_ID },
+        areaServed: [
+          { "@type": "City", name: "New York City" },
+          ...MEDICAL_SPA_AREAS.items.map((area) => ({
+            "@type": "Place" as const,
+            name: area,
+          })),
+        ],
+        audience: { "@id": audienceId },
+        potentialAction: {
+          "@type": "ReserveAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: BOOKING_URL,
+            actionPlatform: [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform",
+            ],
+          },
+        },
+        availableChannel: {
+          "@type": "ServiceChannel",
+          serviceUrl: pageUrl,
+          servicePhone: SITE_PHONE_SCHEMA,
+        },
+        hasOfferCatalog: { "@id": catalogId },
+      },
+      {
+        "@type": "OfferCatalog",
+        "@id": catalogId,
+        name: "Medical Spa Treatments NYC",
+        itemListElement: MEDICAL_SPA_TREATMENTS.items.map((name) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "MedicalProcedure",
+            name,
+          },
+        })),
+      },
+      {
+        "@type": "WebSite",
+        "@id": websiteId,
+        url: absoluteUrl("/"),
+        name: SITE_NAME,
+        publisher: { "@id": ORGANIZATION_ID },
+        potentialAction: {
+          "@type": "SearchAction",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${absoluteUrl("/specialties")}?q={search_term_string}`,
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "WebPage",
+        "@id": pageId,
+        url: pageUrl,
+        name: MEDICAL_SPA_SEO.title,
+        description: MEDICAL_SPA_SEO.description,
+        isPartOf: { "@id": websiteId },
+        about: { "@id": serviceId },
+        primaryImageOfPage: { "@id": imageId },
+        breadcrumb: { "@id": breadcrumbId },
+        speakable: {
+          "@type": "SpeakableSpecification",
+          cssSelector: ["h1", "#treatments-heading", "#treatments-heading + p"],
+        },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "MedicalWebPage",
+        "@id": webpageId,
+        url: pageUrl,
+        name: MEDICAL_SPA_SEO.title,
+        headline: "Medical Spa NYC",
+        description: MEDICAL_SPA_SEO.description,
+        isPartOf: { "@id": websiteId },
+        about: [{ "@id": ORGANIZATION_ID }, { "@id": specialtyId }],
+        specialty: { "@id": specialtyId },
+        breadcrumb: { "@id": breadcrumbId },
+        primaryImageOfPage: { "@id": imageId },
+        mainEntity: { "@id": serviceId },
+        inLanguage: "en-US",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: absoluteUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Specialties",
+            item: absoluteUrl(ROUTES.specialtiesHub),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Medical Spa NYC",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": faqId,
+        mainEntity: MEDICAL_SPA_FAQS.map((item) => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.a,
+          },
+        })),
+      },
+      {
+        "@type": "MedicalAudience",
+        "@id": audienceId,
+        audienceType: "Adults",
+        name: "Adults in New York City",
+        geographicArea: { "@type": "City", name: "New York City" },
+      },
+      {
+        "@type": "ContactPoint",
+        "@id": contactId,
+        telephone: SITE_PHONE_SCHEMA,
+        contactType: "customer service",
+        areaServed: "US-NY",
+        availableLanguage: ["en"],
+      },
+      {
+        "@type": "ImageObject",
+        "@id": imageId,
+        contentUrl: heroUrl,
+        url: heroUrl,
+        caption: MEDICAL_SPA_SEO.heroImageAlt,
+        name: "Medical Spa NYC — Botox, fillers, and skin rejuvenation",
+        contentLocation: {
+          "@type": "Place",
+          name: "Umbrella Health",
+          address: postalAddressSchema(),
+          geo: geoCoordinatesSchema(),
+        },
+      },
+    ],
+  };
+}
+
 export function faqPageSchema(items: QA[]) {
   return {
     "@context": "https://schema.org",
@@ -2158,7 +2399,7 @@ const HOME_SERVICE_CATALOG = [
   { name: "Interventional Pain Management", path: ROUTES.painManagement },
   { name: "Medical Weight Loss", path: ROUTES.medicalWeightLoss },
   { name: "Diagnostic Testing", path: ROUTES.diagnostics },
-  { name: "Medical Spa Services", path: ROUTES.medicalSpa },
+  { name: "Medical Spa NYC", path: ROUTES.medicalSpa },
 ] as const;
 
 /** Combined entity graph for the homepage. */

@@ -31,7 +31,7 @@ const innerRingSeeds: ServiceSeed[] = [
   { name: "Primary Care", image: IMG.consult, href: "/specialties/primary-care-nyc" },
   { name: "Cardiology", image: IMG.cardiologyHeartModel, href: "/specialties/cardiologist-nyc" },
   { name: "Neurology", image: IMG.neurologyBrainModel, href: "/specialties/neurologist-nyc" },
-  { name: "Sleep Medicine", image: IMG.sleepMedicineHero, href: ROUTES.sleepMedicine },
+  { name: "Sleep Medicine", image: IMG.sleepStudy, href: ROUTES.sleepMedicine },
   { name: "Pain Management", image: IMG.examRoom, href: "/specialties/pain-management-nyc" },
 ];
 
