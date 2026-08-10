@@ -35,8 +35,8 @@ export const IMAGE_ALT = {
     keywords: ["insurance accepted NYC", "Umbrella Health"] as const,
   },
   clinicReceptionContact: {
-    alt: "Umbrella Health clinic interior in NoHo Lower Manhattan NYC",
-    keywords: ["Umbrella Health clinic", "NoHo"] as const,
+    alt: "Umbrella Health clinic reception at 32 West 14th Street Lower Manhattan NYC",
+    keywords: ["Umbrella Health clinic", "Lower Manhattan NYC"] as const,
   },
   examRoom: {
     alt: "Primary care NYC exam room at Umbrella Health clinic",

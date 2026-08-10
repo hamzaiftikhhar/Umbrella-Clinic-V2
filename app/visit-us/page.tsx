@@ -7,16 +7,16 @@ import { SectionHeading } from "@/components/site/primitives/SectionHeading";
 import { PremiumIcon } from "@/components/site/primitives/IconBadge";
 import { BookButton } from "@/components/site/primitives/BookButton";
 import { CTABanner } from "@/components/site/primitives/CTABanner";
-import { GeoImage } from "@/components/site/primitives/GeoImage";
+import { SeoImage } from "@/components/site/primitives/SeoImage";
 import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
-import { CLINIC_MAP_EMBED_URL } from "@/lib/site";
+import { CLINIC_MAP_EMBED_URL, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
 import { medicalClinicSchema } from "@/lib/schema";
 
 const seo = buildPageSeo({
-  title: "Contact Us — Umbrella Health NYC | 200 Lafayette St",
+  title: "Contact Us — Umbrella Health NYC | 32 West 14th Street",
   description:
-    "Visit Umbrella Health in NoHo, Lower Manhattan. Hours, directions, accessibility, languages spoken, and how to get here by subway.",
+    "Visit Umbrella Health at 32 West 14th Street in Lower Manhattan. Hours, directions, accessibility, languages spoken, and how to get here by subway.",
   path: "/contact-us",
   crumbs: [{ label: "Home", to: "/" }, { label: "Contact Us" }],
   geo: true,
@@ -29,7 +29,7 @@ const facts: { iconKey: LucideIconKey; title: string; body: string }[] = [
   {
     iconKey: "map-pin",
     title: "Address",
-    body: "200 Lafayette Street\nNew York, NY 10012\nNoHo · 6 train at Spring St",
+    body: "32 West 14th Street\nNew York, NY 10011\nUnion Square · L/N/Q/R/W/4/5/6",
   },
   {
     iconKey: "clock",
@@ -52,22 +52,24 @@ const facts: { iconKey: LucideIconKey; title: string; body: string }[] = [
 function Page() {
   return (
     <main>
-      {/* Clinic hero — local WebP */}
+      {/* Clinic reception hero — full-quality geo-tagged WebP */}
       <section className="relative min-h-[min(88vh,820px)] overflow-hidden bg-background pt-24 sm:pt-28">
-        <GeoImage
+        <SeoImage
+          altKey="clinicReceptionContact"
           src={IMG.clinicReceptionContact}
-          alt="Umbrella Health clinic interior in NoHo Lower Manhattan NYC"
           fill
           priority
-          className="object-cover object-[center_40%] scale-105"
+          unoptimized
+          quality={100}
+          className="object-cover object-[center_40%]"
           sizes="100vw"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/45 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/30 to-transparent"
           aria-hidden
         />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-background/20"
+          className="absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/15"
           aria-hidden
         />
 
@@ -88,24 +90,29 @@ function Page() {
 
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Visit us</p>
           <h1 className="font-display mt-4 max-w-xl text-balance text-4xl font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-5xl lg:text-[3.25rem]">
-            The Umbrella clinic in NoHo
+            The Umbrella clinic in Lower Manhattan
           </h1>
           <p className="mt-5 max-w-md text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">
-            Designed to feel calm. Built to deliver clinically. Around the corner from the 6 at
-            Spring Street.
+            Designed to feel calm. Built to deliver clinically. Steps from Union Square at{" "}
+            {SITE_ADDRESS.split(",")[0]}.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-3">
             <BookButton>Book appointment</BookButton>
+            <a
+              href={`tel:${SITE_PHONE.replace(/\D/g, "")}`}
+              className="inline-flex items-center rounded-full border border-border/70 bg-background/80 px-6 py-3 text-sm font-medium text-foreground backdrop-blur-sm hover:border-primary/25"
+            >
+              {SITE_PHONE}
+            </a>
           </div>
         </Container>
       </section>
 
-      {/* Keep Lafayette section as-is */}
       <section className="py-20 sm:py-28">
         <Container>
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
             <Reveal>
-              <SectionHeading as="h2" eyebrow="Location" title="200 Lafayette," accent="NoHo." />
+              <SectionHeading as="h2" eyebrow="Location" title="32 West 14th Street," accent="NYC." />
               <ul className="mt-8 space-y-6">
                 {facts.map((f) => (
                   <li key={f.title} className="flex gap-4">
@@ -127,7 +134,7 @@ function Page() {
             <Reveal delay={0.1}>
               <div className="group relative h-full min-h-[420px] overflow-hidden rounded-3xl border border-border/60 bg-[color:var(--mint)] shadow-[var(--shadow-card)]">
                 <iframe
-                  title="Map showing Umbrella Health at 200 Lafayette Street, New York"
+                  title={`Map showing Umbrella Health at ${SITE_ADDRESS}`}
                   src={CLINIC_MAP_EMBED_URL}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -135,8 +142,8 @@ function Page() {
                   className="absolute inset-0 h-full w-full border-0 transition-[filter] duration-500 ease-[var(--ease-premium)] [filter:grayscale(0.35)_contrast(1.02)] group-hover:[filter:grayscale(0)]"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/45 to-transparent p-5 pt-12">
-                  <p className="font-display text-lg italic text-white">200 Lafayette Street</p>
-                  <p className="mt-0.5 text-sm text-white/85">NoHo · New York, NY 10012</p>
+                  <p className="font-display text-lg italic text-white">32 West 14th Street</p>
+                  <p className="mt-0.5 text-sm text-white/85">New York, NY 10011</p>
                 </div>
               </div>
             </Reveal>
