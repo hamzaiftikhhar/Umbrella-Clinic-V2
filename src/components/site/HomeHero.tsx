@@ -6,11 +6,12 @@ import { HomeHeroSatisfactionBadge } from "./HomeHeroSatisfactionBadge";
 import { HomeHeroSpecialtySelect } from "./HomeHeroSpecialtySelect";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
+import { PHYSICIANS } from "@/data/physicians";
 import { BOOKING_URL } from "@/lib/site";
 
 const HERO_STATS = [
   { value: "12000+", label: "Patients Served", healthIcon: "hospital" as const },
-  { value: "4", label: "Specialists", healthIcon: "stethoscope" as const },
+  { value: String(PHYSICIANS.length), label: "Specialists", healthIcon: "stethoscope" as const },
   { value: "4.6/5", label: "Rating", healthIcon: "heart-rate" as const, star: true },
   { value: "1", label: "Locations", iconKey: "map-pin" as const },
 ] as const;

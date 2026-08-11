@@ -23,7 +23,8 @@ const seo = buildPageSeo({
 });
 export const metadata = seo.metadata;
 
-const HERO_PORTRAITS = PHYSICIANS.slice(0, 4);
+/** Keep founder first; include full team in the hero collage. */
+const HERO_PORTRAITS = PHYSICIANS;
 
 function Page() {
   return (
@@ -69,13 +70,13 @@ function Page() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="relative mx-auto w-full max-w-2xl lg:max-w-none">
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                 {HERO_PORTRAITS.map((p, i) => (
                   <div
                     key={p.id}
                     className={`relative overflow-hidden rounded-[1.35rem] border border-border/50 bg-card shadow-[var(--shadow-elegant)] ${
-                      i % 2 === 1 ? "mt-6 sm:mt-10" : ""
+                      i % 2 === 1 ? "mt-5 sm:mt-8" : ""
                     }`}
                   >
                     <div className="relative aspect-[4/5]">
@@ -83,9 +84,9 @@ function Page() {
                         src={p.image}
                         alt={p.imageAlt ?? p.name}
                         fill
-                        priority={i < 2}
+                        priority={i < 3}
                         className="object-cover object-top"
-                        sizes="(max-width: 1024px) 45vw, 220px"
+                        sizes="(max-width: 1024px) 45vw, 200px"
                       />
                     </div>
                     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--navy-900)]/80 via-[color:var(--navy-900)]/30 to-transparent px-3 pb-3 pt-10">

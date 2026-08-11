@@ -8,7 +8,7 @@ import { SITE_FAQS } from "@/data/site-content";
 
 export const homeFaqs: QA[] = [...SITE_FAQS];
 
-const HELP_AVATARS = PHYSICIANS.slice(0, 4);
+const HELP_AVATARS = PHYSICIANS;
 
 function FAQHelpContact({ className }: { className?: string }) {
   return (

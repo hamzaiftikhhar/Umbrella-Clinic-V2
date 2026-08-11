@@ -73,6 +73,8 @@ export const IMG = {
 
   // Local WebP assets (public/images)
   drRajat: "/images/dr-rajat.webp",
+  /** Dr. Bhavana Sunkara — primary care physician portrait */
+  drBhavanaSunkara: "/images/dr-bhavana-sunkara-primary-care-nyc.webp",
   premiumDoctorPortrait: "/images/dr-rajat.webp",
   clinicExterior: "/images/street-view.webp",
   clinicInterior:

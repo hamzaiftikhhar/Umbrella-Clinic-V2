@@ -241,6 +241,10 @@ export const IMAGE_ALT = {
     alt: "Dr. Rajat Lamington primary care doctor NYC Umbrella Health",
     keywords: ["primary care doctor NYC", "Dr. Rajat Lamington"] as const,
   },
+  drBhavanaSunkara: {
+    alt: "Dr. Bhavana Sunkara primary care physician NYC Umbrella Health",
+    keywords: ["primary care physician NYC", "Dr. Bhavana Sunkara"] as const,
+  },
   premiumDoctorPortrait: {
     alt: "Board certified physicians NYC at Umbrella Health clinic",
     keywords: ["board certified physicians NYC", "Umbrella Health"] as const,

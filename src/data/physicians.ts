@@ -332,6 +332,72 @@ export const PHYSICIANS: Physician[] = [
     ],
     accent: "navy",
   },
+  {
+    id: "dr-bhavana-sunkara",
+    name: "Dr. Bhavana Sunkara",
+    credentials: "MD",
+    title: "Primary Care Physician",
+    specialty: "Primary Care & Family Medicine",
+    image: "/images/dr-bhavana-sunkara-primary-care-nyc.webp",
+    imageAlt:
+      "Dr. Bhavana Sunkara, primary care physician at Umbrella Health NYC Lower Manhattan",
+    zocdocUrl:
+      "https://www.zocdoc.com/practice/umbrella-health-109109?lock=true&isNewPatient=false&referrerType=widget",
+    rating: { value: 4.8, reviewCount: 12, waitTime: 4.6, bedsideManner: 4.9 },
+    bio: "Dr. Bhavana Sunkara is a full-time primary care physician at Umbrella Health in Lower Manhattan. She is known for a friendly, approachable bedside manner and for combining clear communication with thoughtful treatment plans. Patients appreciate her attentiveness for both urgent concerns and long-term health management — including annual physicals, same-day sick visits, chronic disease care, and preventive health.",
+    education: [
+      { institution: "U.S. Medical School", credential: "Doctor of Medicine" },
+      { institution: "Family Medicine Residency Program", credential: "Residency in Family Medicine" },
+    ],
+    boardCertifications: ["Board-certified in Family Medicine"],
+    languages: ["English"],
+    conditionsTreated: [
+      "High blood pressure",
+      "Diabetes",
+      "Asthma",
+      "Thyroid disorders",
+      "High cholesterol",
+      "Infections and injuries",
+      "Preventive health concerns",
+      "Sleep apnea consultation",
+    ],
+    services: [
+      "Annual physical exams",
+      "Same-day sick visits",
+      "Pre-operative clearance",
+      "Work and school physicals",
+      "STD testing and treatment",
+      "Hormone consultation and testing",
+      "Pain management consultation",
+      "Telehealth visits",
+    ],
+    insurance: [...COMMON_INSURANCE],
+    highlights: [
+      "Full-time primary care physician at Umbrella Health",
+      "New patient appointments available",
+      "On-site diagnostics under one roof",
+    ],
+    reviewHighlight: {
+      quote:
+        "Dr. Sunkara was very personable and took time with my concerns. Clear explanations and a thoughtful plan — I would highly recommend her.",
+      author: "Verified patient",
+    },
+    faqs: [
+      {
+        q: "Is Dr. Bhavana Sunkara accepting new patients?",
+        a: "Yes. Dr. Sunkara accepts new patients for primary care at Umbrella Health in Lower Manhattan. Book online or contact the clinic to schedule an in-person or telehealth visit.",
+      },
+      {
+        q: "What conditions does Dr. Sunkara treat?",
+        a: "Dr. Sunkara treats adults for a wide range of acute and chronic conditions, including high blood pressure, diabetes, asthma, thyroid disorders, high cholesterol, infections, injuries, and preventive health concerns.",
+      },
+      {
+        q: "Does Dr. Sunkara offer same-day sick visits?",
+        a: "Yes. Patients frequently book Dr. Sunkara for same-day sick visits, annual physicals, work and school physicals, and pre-operative clearance when clinically appropriate.",
+      },
+    ],
+    accent: "amber",
+  },
 ];
 
 export function getPhysicianById(id: string): Physician | undefined {
@@ -344,7 +410,7 @@ export function physicianProfilePath(id: string): string {
 
 export function physiciansForSpecialty(specialtyKey: string): Physician[] {
   const map: Record<string, string[]> = {
-    "primary-care": ["dr-cale-li", "dr-rajat-lamington"],
+    "primary-care": ["dr-cale-li", "dr-rajat-lamington", "dr-bhavana-sunkara"],
     "cardiology-vascular": ["dr-tawseef-dar"],
     neurology: ["dr-masrai-williams"],
     "sleep-medicine": ["dr-masrai-williams"],
