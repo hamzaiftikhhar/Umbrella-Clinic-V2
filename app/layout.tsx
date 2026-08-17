@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
+  verification: {
+    google: "9U7vikQAJ2yCFlbS18UpLzDc1y-rwyQ3UOGOh2OgaN4",
+  },
 };
 
 export const viewport: Viewport = {
