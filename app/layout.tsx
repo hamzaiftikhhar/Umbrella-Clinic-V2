@@ -7,7 +7,7 @@ import { haffer } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://umbrellahealth.com"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.myumbrellahealth.com"),
   title: {
     default: SITE_NAME,
     template: `%s — ${SITE_NAME}`,

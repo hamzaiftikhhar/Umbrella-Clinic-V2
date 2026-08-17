@@ -33,7 +33,7 @@ export const CLINIC_MAP_EMBED_URL =
 
 /** Set via NEXT_PUBLIC_SITE_URL in production for absolute canonical/OG URLs. */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://myumbrellahealth.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://www.myumbrellahealth.com";
 
 export function absoluteUrl(path: string): string {
   if (path.startsWith("http")) return path;
