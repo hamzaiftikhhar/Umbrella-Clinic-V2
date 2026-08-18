@@ -16,11 +16,6 @@ const seo = buildPageSeo({
   geo: true,
   keywords: [...WEIGHT_LOSS_CLINIC_SEO.keywords],
   ogImage: IMG.medicalWeightLossClinicHero,
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: ROUTES.specialtiesHub },
-    { label: "Medical Weight Loss Clinic NYC" },
-  ],
   extraSchema: [medicalWeightLossClinicNycPageSchemaGraph(heroImageUrl)],
 });
 export const metadata = seo.metadata;

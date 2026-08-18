@@ -69,7 +69,7 @@ function Page() {
               Full healthspan dashboard launches 2026.
             </p>
             <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-              Join the waitlist to be first  and to lock in founding-member pricing.
+              Join the waitlist to be first and to lock in founding-member pricing.
             </p>
             <Link
               href="/longevity/waitlist"

@@ -66,11 +66,7 @@ export function ClinicalServiceCard({
   );
 }
 
-export function ClinicalServiceRows({
-  services,
-}: {
-  services: ClinicalServiceCardProps[];
-}) {
+export function ClinicalServiceRows({ services }: { services: ClinicalServiceCardProps[] }) {
   const rows = [services.slice(0, 4), services.slice(4, 8)];
 
   return (

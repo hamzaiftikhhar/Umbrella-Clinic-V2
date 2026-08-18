@@ -31,7 +31,10 @@ export default function SchemaDebugPage() {
           <div className="mt-10 space-y-8">
             {Object.entries(bundle).map(([key, value]) => (
               <section key={key} aria-labelledby={`schema-${key}`}>
-                <h2 id={`schema-${key}`} className="text-lg font-semibold capitalize text-foreground">
+                <h2
+                  id={`schema-${key}`}
+                  className="text-lg font-semibold capitalize text-foreground"
+                >
                   {key.replace(/([A-Z])/g, " $1").trim()}
                 </h2>
                 <pre className="mt-3 overflow-x-auto rounded-2xl border border-border/60 bg-card p-5 text-xs leading-relaxed text-foreground/90">

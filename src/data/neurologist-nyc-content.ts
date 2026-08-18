@@ -202,8 +202,7 @@ export const NEUROLOGIST_FINAL_CTA = {
   callCta: "Call Our Team to Get Started",
 } as const;
 
-export const NEUROLOGIST_FAQ_HEADING =
-  "Frequently Asked Questions About Neurologists in NYC";
+export const NEUROLOGIST_FAQ_HEADING = "Frequently Asked Questions About Neurologists in NYC";
 
 export const NEUROLOGIST_NYC_FAQS = [
   {

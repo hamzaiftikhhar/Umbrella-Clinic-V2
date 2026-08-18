@@ -73,7 +73,10 @@ function Page() {
           aria-hidden
         />
 
-        <Container size="lg" className="relative z-10 flex min-h-[min(72vh,700px)] flex-col justify-center pb-16">
+        <Container
+          size="lg"
+          className="relative z-10 flex min-h-[min(72vh,700px)] flex-col justify-center pb-16"
+        >
           <nav aria-label="Breadcrumb" className="mb-8 text-xs text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
@@ -112,7 +115,12 @@ function Page() {
         <Container>
           <div className="grid gap-10 md:grid-cols-2 md:gap-16">
             <Reveal>
-              <SectionHeading as="h2" eyebrow="Location" title="32 West 14th Street," accent="NYC." />
+              <SectionHeading
+                as="h2"
+                eyebrow="Location"
+                title="32 West 14th Street,"
+                accent="NYC."
+              />
               <ul className="mt-8 space-y-6">
                 {facts.map((f) => (
                   <li key={f.title} className="flex gap-4">

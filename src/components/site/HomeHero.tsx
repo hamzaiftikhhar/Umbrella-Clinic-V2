@@ -8,13 +8,23 @@ import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
 import { PHYSICIANS } from "@/data/physicians";
 import { BOOKING_URL } from "@/lib/site";
+import { PENDING_VERIFICATION } from "@/data/pending-verification";
 
 const HERO_STATS = [
-  { value: "12000+", label: "Patients Served", healthIcon: "hospital" as const },
+  {
+    value: PENDING_VERIFICATION.patientsServed,
+    label: "Patients Served",
+    healthIcon: "hospital" as const,
+  },
   { value: String(PHYSICIANS.length), label: "Specialists", healthIcon: "stethoscope" as const },
-  { value: "4.6/5", label: "Rating", healthIcon: "heart-rate" as const, star: true },
+  {
+    value: PENDING_VERIFICATION.googleRating,
+    label: "Rating",
+    healthIcon: "heart-rate" as const,
+    star: true,
+  },
   { value: "1", label: "Locations", iconKey: "map-pin" as const },
-] as const;
+];
 
 export function HomeHero() {
   return (
@@ -52,8 +62,7 @@ export function HomeHero() {
               id="hero-heading"
               className="font-display mt-5 text-balance text-[2.15rem] font-medium leading-[1.05] tracking-[-0.02em] text-foreground sm:text-5xl lg:text-[3.15rem]"
             >
-              Primary Care & Specialists in{" "}
-              <span className="text-primary">NYC</span>
+              Primary Care & Specialists in <span className="text-primary">NYC</span>
             </h1>
 
             <p className="mt-4 max-w-md text-pretty text-base font-normal leading-relaxed text-muted-foreground sm:text-[1.05rem]">

@@ -51,12 +51,12 @@ export function FounderProfile() {
               </div>
 
               <div className="absolute bottom-6 left-0 max-w-[13.5rem] rounded-xl bg-primary px-4 py-3 text-primary-foreground shadow-md sm:bottom-8">
-              <p className="flex items-center gap-2 text-sm font-semibold">
-                Dr. Rajat Lamington
-                <BadgeCheck className="h-4 w-4 shrink-0 text-primary-foreground/90" />
-              </p>
-              <p className="mt-0.5 text-xs text-primary-foreground/75">Founding physician</p>
-            </div>
+                <p className="flex items-center gap-2 text-sm font-semibold">
+                  Dr. Rajat Lamington
+                  <BadgeCheck className="h-4 w-4 shrink-0 text-primary-foreground/90" />
+                </p>
+                <p className="mt-0.5 text-xs text-primary-foreground/75">Founding physician</p>
+              </div>
             </div>
           </div>
 
@@ -68,8 +68,7 @@ export function FounderProfile() {
               id="founder-heading"
               className="font-display text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.02em] text-foreground sm:text-5xl"
             >
-              Physician-led care that{" "}
-              <span className="text-primary">puts you first.</span>
+              Physician-led care that <span className="text-primary">puts you first.</span>
             </h2>
             <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               Dr. Rajat Lamington founded Umbrella Health to create a more connected model of

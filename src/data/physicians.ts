@@ -75,7 +75,8 @@ export const PHYSICIANS: Physician[] = [
     title: "Family Physician & Pain Management Specialist",
     specialty: "Interventional Pain & Family Medicine",
     image: "/images/dr-rajat.webp",
-    imageAlt: "Dr. Rajat Lamington, board-certified family medicine and pain management physician at Umbrella Health NYC",
+    imageAlt:
+      "Dr. Rajat Lamington, board-certified family medicine and pain management physician at Umbrella Health NYC",
     founder: true,
     zocdocUrl:
       "https://www.zocdoc.com/doctor/rajat-lamington-md-498179?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",
@@ -84,7 +85,10 @@ export const PHYSICIANS: Physician[] = [
     bio: "Dr. Rajat Lamington is a board-certified family medicine physician and interventional pain management specialist at Umbrella Health in Lower Manhattan. He earned his medical degree from Odessa National Medical University, completed family medicine residency at Columbia University Irving Medical Center, and a pain medicine fellowship at Weill Cornell Medicine. He is committed to attentive consultations and individualized treatment plans that help patients find lasting relief.",
     education: [
       { institution: "Odessa National Medical University", credential: "Doctor of Medicine" },
-      { institution: "Columbia University Irving Medical Center", credential: "Residency in Family Medicine" },
+      {
+        institution: "Columbia University Irving Medical Center",
+        credential: "Residency in Family Medicine",
+      },
       { institution: "Weill Cornell Medicine", credential: "Fellowship in Pain Medicine" },
     ],
     boardCertifications: ["American Board of Family Medicine"],
@@ -151,7 +155,10 @@ export const PHYSICIANS: Physician[] = [
     bio: "Dr. Cale Li provides comprehensive primary care for adults with a focus on preventive care, same-day visits, and efficient, high-quality treatment. He earned his medical degree at Columbia University College of Physicians and Surgeons and trained in Internal Medicine at NYU Langone. Patients choose Dr. Li for his calm, thorough approach — especially busy Manhattan professionals who want a responsive physician for both acute concerns and long-term health management.",
     education: [
       { institution: "Columbia University", credential: "Doctor of Medicine" },
-      { institution: "NYU Grossman School of Medicine", credential: "Residency in Internal Medicine" },
+      {
+        institution: "NYU Grossman School of Medicine",
+        credential: "Residency in Internal Medicine",
+      },
     ],
     boardCertifications: ["American Board of Internal Medicine"],
     languages: ["English"],
@@ -209,7 +216,8 @@ export const PHYSICIANS: Physician[] = [
     title: "Neurologist",
     specialty: "Neurology & Sleep Medicine",
     image: "/images/dr-masrai-williams.webp",
-    imageAlt: "Dr. Masrai Williams, neurologist and sleep medicine physician at Umbrella Health NYC",
+    imageAlt:
+      "Dr. Masrai Williams, neurologist and sleep medicine physician at Umbrella Health NYC",
     zocdocUrl:
       "https://www.zocdoc.com/doctor/masrai-williams-md-720861?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",
     npi: "1477130011",
@@ -275,8 +283,14 @@ export const PHYSICIANS: Physician[] = [
     rating: { value: 4.73, reviewCount: 30, waitTime: 4.67, bedsideManner: 4.79 },
     bio: "Dr. Tawseef Dar is an interventional cardiologist at Umbrella Health in Lower Manhattan. He earned his medical degree from the University of Kashmir and completed fellowships in cardiovascular disease at the University of Miami/Jackson and interventional cardiology at the Icahn School of Medicine at Mount Sinai. He is certified by the American Board of Internal Medicine in cardiovascular disease and interventional cardiology, and is devoted to thorough, compassionate heart care.",
     education: [
-      { institution: "University of Kashmir", credential: "Bachelor of Medicine, Bachelor of Surgery" },
-      { institution: "University of Miami/Jackson", credential: "Fellowship in Cardiovascular Disease" },
+      {
+        institution: "University of Kashmir",
+        credential: "Bachelor of Medicine, Bachelor of Surgery",
+      },
+      {
+        institution: "University of Miami/Jackson",
+        credential: "Fellowship in Cardiovascular Disease",
+      },
       {
         institution: "Icahn School of Medicine at Mount Sinai",
         credential: "Fellowship in Interventional Cardiology",
@@ -339,15 +353,17 @@ export const PHYSICIANS: Physician[] = [
     title: "Primary Care Physician",
     specialty: "Primary Care & Family Medicine",
     image: "/images/dr-bhavana-sunkara-primary-care-nyc.webp",
-    imageAlt:
-      "Dr. Bhavana Sunkara, primary care physician at Umbrella Health NYC Lower Manhattan",
+    imageAlt: "Dr. Bhavana Sunkara, primary care physician at Umbrella Health NYC Lower Manhattan",
     zocdocUrl:
       "https://www.zocdoc.com/practice/umbrella-health-109109?lock=true&isNewPatient=false&referrerType=widget",
     rating: { value: 4.8, reviewCount: 12, waitTime: 4.6, bedsideManner: 4.9 },
     bio: "Dr. Bhavana Sunkara is a full-time primary care physician at Umbrella Health in Lower Manhattan. She is known for a friendly, approachable bedside manner and for combining clear communication with thoughtful treatment plans. Patients appreciate her attentiveness for both urgent concerns and long-term health management — including annual physicals, same-day sick visits, chronic disease care, and preventive health.",
     education: [
       { institution: "U.S. Medical School", credential: "Doctor of Medicine" },
-      { institution: "Family Medicine Residency Program", credential: "Residency in Family Medicine" },
+      {
+        institution: "Family Medicine Residency Program",
+        credential: "Residency in Family Medicine",
+      },
     ],
     boardCertifications: ["Board-certified in Family Medicine"],
     languages: ["English"],

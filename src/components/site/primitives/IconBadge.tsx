@@ -63,9 +63,7 @@ export function PremiumIcon({
   const Icon = iconKey ? getLucideIcon(iconKey) : null;
 
   return (
-    <span
-      className={cn("inline-grid shrink-0 place-items-center", s.box, TONE[tone], className)}
-    >
+    <span className={cn("inline-grid shrink-0 place-items-center", s.box, TONE[tone], className)}>
       {healthIcon ? (
         <span className={cn("grid place-items-center", s.icon)}>
           <HealthIcon name={healthIcon} />

@@ -172,7 +172,9 @@ function Page() {
                 />
               </div>
               <div className="absolute -bottom-5 left-6 right-6 rounded-[1.25rem] border border-border/50 bg-card px-5 py-4 shadow-[var(--shadow-card)] sm:left-auto sm:right-8 sm:max-w-[260px]">
-                <p className="text-sm font-semibold text-foreground">Coverage verified before you visit</p>
+                <p className="text-sm font-semibold text-foreground">
+                  Coverage verified before you visit
+                </p>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
                   Our team confirms benefits so you know what to expect.
                 </p>
@@ -233,7 +235,7 @@ function Page() {
             ))}
           </ol>
           <div className="mt-12 flex justify-center">
-            <BookButton>Book  we'll verify coverage</BookButton>
+            <BookButton>Book we'll verify coverage</BookButton>
           </div>
         </Container>
       </section>

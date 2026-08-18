@@ -133,7 +133,8 @@ function ScrollReveal({
       style={{
         opacity: shown ? 1 : 0,
         transform: shown ? "translateY(0)" : "translateY(28px)",
-        transition: "opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)",
+        transition:
+          "opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",
       }}
@@ -538,7 +539,9 @@ export function PainManagementNycPage() {
               <p className="mt-6 max-w-xl text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PAIN_LOCATIONS.paragraph1}
               </p>
-              <p className="mt-8 text-sm font-semibold text-foreground">{PAIN_LOCATIONS.areasLabel}</p>
+              <p className="mt-8 text-sm font-semibold text-foreground">
+                {PAIN_LOCATIONS.areasLabel}
+              </p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {PAIN_LOCATIONS.areas.map((area) => (
                   <li
@@ -648,7 +651,10 @@ export function PainManagementNycPage() {
 
       {/* Physicians */}
       {physicians.length > 0 && (
-        <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="specialists-heading">
+        <section
+          className="section-py bg-[color:var(--cream)]/40"
+          aria-labelledby="specialists-heading"
+        >
           <Container size="lg">
             <div className="space-y-16">
               {physicians.map((p, i) => (

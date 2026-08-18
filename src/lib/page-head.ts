@@ -64,10 +64,7 @@ export function buildPageSeo({
   const metadata: Metadata = {
     // Complete SEO titles (brand already present, or written as "Keyword | Phrase")
     // must not get the layout template " — Umbrella Health" appended.
-    title:
-      title.includes(SITE_NAME) || title.includes(" | ")
-        ? { absolute: title }
-        : title,
+    title: title.includes(SITE_NAME) || title.includes(" | ") ? { absolute: title } : title,
     description,
     keywords,
     robots,

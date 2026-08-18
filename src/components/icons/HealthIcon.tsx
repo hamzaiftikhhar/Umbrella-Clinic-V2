@@ -50,7 +50,9 @@ interface HealthIconProps {
 export function HealthIcon({ name, className, size }: HealthIconProps) {
   const Glyph = GLYPHS[name];
   return (
-    <span className={cn("inline-flex shrink-0 items-center justify-center text-current", className)}>
+    <span
+      className={cn("inline-flex shrink-0 items-center justify-center text-current", className)}
+    >
       <Glyph size={size} />
     </span>
   );

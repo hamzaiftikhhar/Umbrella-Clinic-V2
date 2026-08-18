@@ -5,8 +5,7 @@ import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
   title: "Hormone & Metabolic Optimization NYC  Umbrella",
-  description:
-    "Evidence-based hormone and metabolic optimization  by physicians, not influencers.",
+  description: "Evidence-based hormone and metabolic optimization  by physicians, not influencers.",
   path: "/longevity/hormone-optimization",
   crumbs: [
     { label: "Home", to: "/" },

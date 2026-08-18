@@ -7,8 +7,7 @@ export const DIAGNOSTIC_TESTING_SEO = {
   title: "Diagnostic Testing NYC | Umbrella Health New York City",
   description:
     "Need diagnostic testing in NYC? Umbrella Health provides laboratory testing, preventive health screenings, cardiovascular, neurological, and sleep diagnostic evaluations. Book today.",
-  heroImageAlt:
-    "Diagnostic testing NYC comprehensive medical testing at Umbrella Health",
+  heroImageAlt: "Diagnostic testing NYC comprehensive medical testing at Umbrella Health",
   keywords: [
     "diagnostic testing nyc",
     "diagnostic lab testing",
@@ -88,8 +87,7 @@ export const DIAGNOSTIC_TESTING_CARDIO = {
     "Cholesterol testing",
     "Heart disease screening",
   ],
-  related:
-    "For advanced cardiovascular care, explore our Cardiology & Vascular Medicine services.",
+  related: "For advanced cardiovascular care, explore our Cardiology & Vascular Medicine services.",
   cta: "Schedule Cardiovascular Testing",
 } as const;
 

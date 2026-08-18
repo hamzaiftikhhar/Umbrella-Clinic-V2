@@ -3,11 +3,7 @@ import { notFound } from "next/navigation";
 import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { PhysicianProfilePage } from "@/components/site/PhysicianProfilePage";
-import {
-  PHYSICIANS,
-  getPhysicianById,
-  physicianProfilePath,
-} from "@/data/physicians";
+import { PHYSICIANS, getPhysicianById, physicianProfilePath } from "@/data/physicians";
 import { physicianProfilePageSchema } from "@/lib/schema";
 
 interface PageProps {

@@ -40,12 +40,10 @@ import {
 
 export const DEFAULT_OG_IMAGE = "/images/street-view.webp";
 export const SITE_LOGO = "/images/combination-mark.webp";
-export const HERO_IMAGE_PATH = "/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.webp";
+export const HERO_IMAGE_PATH =
+  "/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.webp";
 
-export const CLINIC_OPENING_HOURS = [
-  "Mo-Fr 08:00-19:00",
-  "Sa 09:00-15:00",
-] as const;
+export const CLINIC_OPENING_HOURS = ["Mo-Fr 08:00-19:00", "Sa 09:00-15:00"] as const;
 
 /** E.164 for schema.org telephone fields. */
 export const SITE_PHONE_SCHEMA = "+1-347-667-8272";
@@ -2479,11 +2477,7 @@ export function homePageSchemaGraph() {
         about: { "@id": CLINIC_SCHEMA_ID },
         primaryImageOfPage: { "@id": HERO_IMAGE_SCHEMA_ID },
       },
-      imageObjectSchema(
-        SITE_LOGO,
-        "Umbrella Health primary care NYC logo",
-        LOGO_SCHEMA_ID,
-      ),
+      imageObjectSchema(SITE_LOGO, "Umbrella Health primary care NYC logo", LOGO_SCHEMA_ID),
       imageObjectSchema(
         HERO_IMAGE_PATH,
         "Primary care & specialists in NYC Umbrella Health clinic",

@@ -2,10 +2,7 @@ import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { ReviewsPageClient } from "./reviews-page-client";
 import { patientReviews } from "@/data/reviews";
-import {
-  medicalClinicSchema,
-  reviewSchemas,
-} from "@/lib/schema";
+import { medicalClinicSchema, reviewSchemas } from "@/lib/schema";
 
 const seo = buildPageSeo({
   title: "Patient Reviews — Umbrella Health NYC",

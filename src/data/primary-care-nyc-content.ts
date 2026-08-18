@@ -93,8 +93,7 @@ export const PRIMARY_CARE_FINAL_CTA = {
   heading: "Schedule an Appointment With a Primary Care Doctor in New York City.",
   paragraph1:
     "Take the next step toward better health with personalized care from our experienced primary care doctors in New York City. Conveniently located at 32 W 14th Street, New York, NY 10011, in Lower Manhattan, we proudly serve patients throughout New York City, including Union Square, Chelsea, Greenwich Village, Flatiron District, SoHo, and NoHo.",
-  paragraph2:
-    "Ready to get started? Contact us today to Call Now or Book an Appointment Online.",
+  paragraph2: "Ready to get started? Contact us today to Call Now or Book an Appointment Online.",
   bookCta: "Book an Appointment Online",
   callCta: "Call Now",
 } as const;

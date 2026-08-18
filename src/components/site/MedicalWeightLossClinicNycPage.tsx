@@ -426,7 +426,10 @@ export function MedicalWeightLossClinicNycPage() {
       </section>
 
       {/* First visit */}
-      <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="first-visit-heading">
+      <section
+        className="section-py bg-[color:var(--cream)]/40"
+        aria-labelledby="first-visit-heading"
+      >
         <Container size="lg">
           <div className="mx-auto max-w-3xl">
             <h2

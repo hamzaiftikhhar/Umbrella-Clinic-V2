@@ -160,7 +160,9 @@ export function MedicalSpaNycPage() {
                 </div>
                 <div className="absolute -bottom-4 -left-2 rounded-[1.25rem] border border-border/50 bg-card/95 px-4 py-3 shadow-[var(--shadow-card)] sm:left-4">
                   <p className="text-sm font-semibold text-foreground">Natural-looking results</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">Physician-guided · personalized</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">
+                    Physician-guided · personalized
+                  </p>
                 </div>
               </div>
             </div>
@@ -169,7 +171,10 @@ export function MedicalSpaNycPage() {
       </section>
 
       {/* Botox + Fillers — dual editorial cards */}
-      <section className="section-py bg-[color:var(--cream)]/45" aria-labelledby="injectables-heading">
+      <section
+        className="section-py bg-[color:var(--cream)]/45"
+        aria-labelledby="injectables-heading"
+      >
         <Container size="lg">
           <h2 id="injectables-heading" className="sr-only">
             Botox and dermal fillers

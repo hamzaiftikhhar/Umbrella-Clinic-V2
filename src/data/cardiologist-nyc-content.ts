@@ -6,18 +6,14 @@ export const CARDIOLOGY_NYC_SEO = {
   title: "Cardiologist NYC | Cardiology & Vascular Medicine | Umbrella Health",
   description:
     "Looking for a trusted Cardiologist in NYC? Umbrella Health provides personalized cardiology and vascular medicine for patients throughout New York",
-  heroImageAlt:
-    "NYC top Cardiologist providing personalized cardiology care at Umbrella Health",
+  heroImageAlt: "NYC top Cardiologist providing personalized cardiology care at Umbrella Health",
   servicesImageAlt:
     "Best in class NYC Cardiologist reviewing cardiac evaluation at Umbrella Health",
-  sportsImageAlt:
-    "Sports Cardiologist NYC evaluating active patients at Umbrella Health",
-  vascularImageAlt:
-    "Cardiologist downtown NYC vascular medicine evaluation at Umbrella Health",
+  sportsImageAlt: "Sports Cardiologist NYC evaluating active patients at Umbrella Health",
+  vascularImageAlt: "Cardiologist downtown NYC vascular medicine evaluation at Umbrella Health",
   relatedImageAlt1:
     "Best Cardiologist in midtown NYC coordinated specialty care at Umbrella Health",
-  relatedImageAlt2:
-    "Best rated NYC Cardiologist patient outcomes at Umbrella Health",
+  relatedImageAlt2: "Best rated NYC Cardiologist patient outcomes at Umbrella Health",
 } as const;
 
 export const CARDIOLOGY_HERO = {

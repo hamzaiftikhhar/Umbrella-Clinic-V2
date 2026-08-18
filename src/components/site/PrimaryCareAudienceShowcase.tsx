@@ -292,11 +292,21 @@ function PathwayChapter({
           {segment.items.length > 0 && (
             <>
               {segment.itemsLabel && (
-                <h4 className="mt-8 text-base font-semibold text-foreground">{segment.itemsLabel}</h4>
+                <h4 className="mt-8 text-base font-semibold text-foreground">
+                  {segment.itemsLabel}
+                </h4>
               )}
-              <ul className={cn("grid gap-3 sm:grid-cols-2 sm:gap-x-6", segment.itemsLabel ? "mt-4" : "mt-8")}>
+              <ul
+                className={cn(
+                  "grid gap-3 sm:grid-cols-2 sm:gap-x-6",
+                  segment.itemsLabel ? "mt-4" : "mt-8",
+                )}
+              >
                 {segment.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/88">
+                  <li
+                    key={item}
+                    className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/88"
+                  >
                     <span
                       className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full"
                       style={{ backgroundColor: segment.accentSurface }}
@@ -378,7 +388,10 @@ export function PrimaryCareAudienceShowcase() {
 
   if (reduceMotion) {
     return (
-      <section className="section-py bg-[color:var(--cream)]" aria-label="Specialized primary care services">
+      <section
+        className="section-py bg-[color:var(--cream)]"
+        aria-label="Specialized primary care services"
+      >
         <Container size="lg">
           <div className="space-y-20">
             {SEGMENTS.map((segment, index) => (

@@ -82,7 +82,10 @@ export function DiagnosticTestingNycPage() {
           aria-hidden
         />
 
-        <Container size="lg" className="relative z-10 flex min-h-[min(78vh,760px)] flex-col justify-end pb-16 sm:pb-20">
+        <Container
+          size="lg"
+          className="relative z-10 flex min-h-[min(78vh,760px)] flex-col justify-end pb-16 sm:pb-20"
+        >
           <nav aria-label="Breadcrumb" className="mb-8 text-xs text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-1.5">
               <li>
@@ -289,7 +292,9 @@ export function DiagnosticTestingNycPage() {
               {DIAGNOSTIC_TESTING_NEURO.items.map((item) => (
                 <li key={item} className="relative pb-6 last:pb-0">
                   <span className="absolute -left-[41px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-primary bg-background" />
-                  <p className="text-sm font-medium leading-snug text-foreground sm:text-base">{item}</p>
+                  <p className="text-sm font-medium leading-snug text-foreground sm:text-base">
+                    {item}
+                  </p>
                 </li>
               ))}
             </ol>
@@ -407,7 +412,10 @@ export function DiagnosticTestingNycPage() {
       </section>
 
       {/* Preventive — asymmetric with analysis image */}
-      <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="preventive-heading">
+      <section
+        className="section-py bg-[color:var(--cream)]/40"
+        aria-labelledby="preventive-heading"
+      >
         <Container size="lg">
           <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-7">

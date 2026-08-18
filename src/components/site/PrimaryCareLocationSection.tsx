@@ -119,7 +119,10 @@ export function PrimaryCareLocationSection() {
               </li>
               <li className="flex gap-4">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[color:var(--accent-amber-surface)]">
-                  <span className="text-xs font-semibold text-[color:var(--accent-amber)]" aria-hidden>
+                  <span
+                    className="text-xs font-semibold text-[color:var(--accent-amber)]"
+                    aria-hidden
+                  >
                     @
                   </span>
                 </span>

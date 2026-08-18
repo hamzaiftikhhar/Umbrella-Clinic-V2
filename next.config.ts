@@ -20,8 +20,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/diagnostics",
-        destination: "/specialties/diagnostic-testing-nyc",
+        source: "/specialties/diagnostic-testing-nyc",
+        destination: "/diagnostics",
         permanent: true,
       },
       {

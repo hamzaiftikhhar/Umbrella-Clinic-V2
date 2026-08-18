@@ -6,8 +6,8 @@ export interface InsuranceCarrier {
 
 export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
   {
-    "name": "Aetna",
-    "plans": [
+    name: "Aetna",
+    plans: [
       "(POS)",
       "Advanced HSA Network Plus Minute Clinic",
       "Advanced Network Plus Walk Clinic",
@@ -166,50 +166,40 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "Vision Preferred",
       "Whole Health (HMO)",
       "Whole Network Minuteclinic",
-      "Whole Network Plus Minutecl"
-    ]
+      "Whole Network Plus Minutecl",
+    ],
   },
   {
-    "name": "Allegiance Life and Health",
-    "plans": [
-      "Allegiance Life & Health"
-    ]
+    name: "Allegiance Life and Health",
+    plans: ["Allegiance Life & Health"],
   },
   {
-    "name": "American Republic Insurance Company",
-    "plans": [
-      "First Health",
-      "PHCS PPO"
-    ]
+    name: "American Republic Insurance Company",
+    plans: ["First Health", "PHCS PPO"],
   },
   {
-    "name": "ArchCare",
-    "plans": [
-      "Advantage HMO (SNP)"
-    ]
+    name: "ArchCare",
+    plans: ["Advantage HMO (SNP)"],
   },
   {
-    "name": "Blue Cross Blue Shield",
-    "plans": [
+    name: "Blue Cross Blue Shield",
+    plans: [
       "BlueCard PPO",
       "BlueCard PPO Basic",
       "BlueCard Traditional (Indemnity)",
       "Federal Employee Program - Basic Option",
       "Federal Employee Program - Standard Option",
       "Medicare Advantage PPO",
-      "National HMO"
-    ]
+      "National HMO",
+    ],
   },
   {
-    "name": "Blue Cross Blue Shield Federal Employee Program",
-    "plans": [
-      "Basic Option",
-      "Standard Option"
-    ]
+    name: "Blue Cross Blue Shield Federal Employee Program",
+    plans: ["Basic Option", "Standard Option"],
   },
   {
-    "name": "CareFirst Blue Cross Blue Shield (Health)",
-    "plans": [
+    name: "CareFirst Blue Cross Blue Shield (Health)",
+    plans: [
       "BCBS Preferred PPO",
       "Blue Choice PPO",
       "Blue Preferred (PPO)",
@@ -219,19 +209,19 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "Davis Vision Bluevision",
       "Davis Vision Bluevision Plus",
       "Enhanced PPO",
-      "Select Vision"
-    ]
+      "Select Vision",
+    ],
   },
   {
-    "name": "Centers Plan for Healthy Living",
-    "plans": [
+    name: "Centers Plan for Healthy Living",
+    plans: [
       "Centers Plan for Dual Coverage Care (HMO SNP)",
-      "Managed Long Term Care Plan (Medicaid)"
-    ]
+      "Managed Long Term Care Plan (Medicaid)",
+    ],
   },
   {
-    "name": "Cigna",
-    "plans": [
+    name: "Cigna",
+    plans: [
       "Alliance Medicare",
       "Behavioral",
       "CDHP By Progressive",
@@ -275,12 +265,12 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "True Choice Courage Medicare",
       "True Choice Plus Medicare",
       "True Choice Savings Medicare",
-      "Vision PPO By AT&T"
-    ]
+      "Vision PPO By AT&T",
+    ],
   },
   {
-    "name": "Cigna-HealthSpring",
-    "plans": [
+    name: "Cigna-HealthSpring",
+    plans: [
       "Fundamental Medicare (HMO)",
       "HealthSpring Achieve (HMO C-SNP)",
       "HealthSpring Alliance (HMO)",
@@ -296,12 +286,12 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "HealthSpring True Choice (PPO)",
       "HealthSpring True Choice Core (PPO)",
       "HealthSpring True Choice Plus (PPO)",
-      "HealthSpring True Choice Savings (PPO)"
-    ]
+      "HealthSpring True Choice Savings (PPO)",
+    ],
   },
   {
-    "name": "EmblemHealth",
-    "plans": [
+    name: "EmblemHealth",
+    plans: [
       "CBP Network (PPO)",
       "Consumer Direct PPO",
       "DC37 Med-Team (PPO)",
@@ -309,12 +299,12 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "National Network (PPO)",
       "Network Access",
       "New York City Employees Plan (PPO)",
-      "Tri-State Network (PPO)"
-    ]
+      "Tri-State Network (PPO)",
+    ],
   },
   {
-    "name": "EmblemHealth (formerly known as GHI)",
-    "plans": [
+    name: "EmblemHealth (formerly known as GHI)",
+    plans: [
       "CBP PPO Network",
       "DC37 Med-Team",
       "EmblemHealth Group Access Rx (PPO)",
@@ -323,22 +313,16 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "GHI PPO",
       "National PPO Network",
       "New York City Employees PPO Plan",
-      "Tri-State PPO Network"
-    ]
+      "Tri-State PPO Network",
+    ],
   },
   {
-    "name": "EmblemHealth (formerly known as HIP)",
-    "plans": [
-      "HIP Access I",
-      "HIP Classic",
-      "HIP HMO Preferred",
-      "HIP Prime HMO",
-      "HIP Prime POS"
-    ]
+    name: "EmblemHealth (formerly known as HIP)",
+    plans: ["HIP Access I", "HIP Classic", "HIP HMO Preferred", "HIP Prime HMO", "HIP Prime POS"],
   },
   {
-    "name": "Empire Blue Cross Blue Shield (Health)",
-    "plans": [
+    name: "Empire Blue Cross Blue Shield (Health)",
+    plans: [
       "Access Blue New England HMO (OA)",
       "Access Blue New England HMO HSA (OA)",
       "Access Blue New England Open Access (HMO)",
@@ -571,12 +555,12 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "UK HMO",
       "UK PPO",
       "Value EPO",
-      "Value Priority Select HMO"
-    ]
+      "Value Priority Select HMO",
+    ],
   },
   {
-    "name": "Fidelis Care (NY)",
-    "plans": [
+    name: "Fidelis Care (NY)",
+    plans: [
       "Fidelis Care At Home MLTC",
       "Fidelis Care Child Health Plus",
       "Fidelis Care Medicaid Managed Care",
@@ -584,31 +568,24 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "WellCare Fidelis Assist",
       "WellCare Fidelis Dual Access",
       "WellCare Fidelis Dual Plus",
-      "WellCare Fidelis Simple"
-    ]
+      "WellCare Fidelis Simple",
+    ],
   },
   {
-    "name": "First Health (Coventry Health Care)",
-    "plans": [
-      "First Health Network PPO"
-    ]
+    name: "First Health (Coventry Health Care)",
+    plans: ["First Health Network PPO"],
   },
   {
-    "name": "Health Net",
-    "plans": [
-      "National PPO - First Health"
-    ]
+    name: "Health Net",
+    plans: ["National PPO - First Health"],
   },
   {
-    "name": "HealthEOS PPO",
-    "plans": [
-      "HealthEOS Plus+",
-      "PHCS Practioner Only"
-    ]
+    name: "HealthEOS PPO",
+    plans: ["HealthEOS Plus+", "PHCS Practioner Only"],
   },
   {
-    "name": "HealthFirst (NY)",
-    "plans": [
+    name: "HealthFirst (NY)",
+    plans: [
       "Essential (HMO)",
       "Gold Leaf Premier",
       "Gold Leaf Premier Plus",
@@ -637,12 +614,12 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "Leaf Premier (HMO)",
       "Leaf Premier Plus (HMO)",
       "Platinum Leaf Plan",
-      "Senior Health Partners Managed Long-Term Care"
-    ]
+      "Senior Health Partners Managed Long-Term Care",
+    ],
   },
   {
-    "name": "Highmark Blue Cross Blue Shield",
-    "plans": [
+    name: "Highmark Blue Cross Blue Shield",
+    plans: [
       "(PPO) Blue",
       "Affordablue (PPO)",
       "Blue Card (PPO)",
@@ -660,12 +637,12 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "Shared Cost (PPO)",
       "Shared Cost Blue PPO",
       "Simply Blue PPO",
-      "Traditional (PPO)"
-    ]
+      "Traditional (PPO)",
+    ],
   },
   {
-    "name": "Humana",
-    "plans": [
+    name: "Humana",
+    plans: [
       "Choice",
       "Choice PPO",
       "choice PPO Medicare Advantage Plan",
@@ -681,55 +658,46 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "Medicare Employer (PPO)",
       "Plus",
       "Usaa Honor Giveback (PPO)",
-      "Vision Care Plan"
-    ]
+      "Vision Care Plan",
+    ],
   },
   {
-    "name": "Johns Hopkins Employer Health Programs",
-    "plans": [
-      "Employer Health Programs (EHP)"
-    ]
+    name: "Johns Hopkins Employer Health Programs",
+    plans: ["Employer Health Programs (EHP)"],
   },
   {
-    "name": "MagnaCare",
-    "plans": [
-      "Kingston Trust Fund PPO"
-    ]
+    name: "MagnaCare",
+    plans: ["Kingston Trust Fund PPO"],
   },
   {
-    "name": "Meritain Health",
-    "plans": [
+    name: "Meritain Health",
+    plans: [
       "Aetna Choice POS II",
       "Aetna National PPO",
       "Choice POS II by Meta",
       "Open Choice PPO",
-      "Select Open Access"
-    ]
+      "Select Open Access",
+    ],
   },
   {
-    "name": "MultiPlan",
-    "plans": [
-      "First Health Network"
-    ]
+    name: "MultiPlan",
+    plans: ["First Health Network"],
   },
   {
-    "name": "Multiplan PHCS",
-    "plans": [
+    name: "Multiplan PHCS",
+    plans: [
       "MultiPlan Preventative Services Only",
       "PHCS Healthy Directions or Extended PPO",
-      "PHCS Preventative Service Only"
-    ]
+      "PHCS Preventative Service Only",
+    ],
   },
   {
-    "name": "Nippon Life Benefits",
-    "plans": [
-      "Evolution",
-      "Evolution Value"
-    ]
+    name: "Nippon Life Benefits",
+    plans: ["Evolution", "Evolution Value"],
   },
   {
-    "name": "NY State of Health (Marketplace)",
-    "plans": [
+    name: "NY State of Health (Marketplace)",
+    plans: [
       "Bronze",
       "Fidelis Care At Home",
       "Fidelis Simple (HMO-POS)",
@@ -740,37 +708,28 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "Part C: Advantage HMO plan",
       "Part C: Advantage MSA plan",
       "Part C: Advantage PPO plan",
-      "Part C: Advantage Special Needs Plan (SNP) plan"
-    ]
+      "Part C: Advantage Special Needs Plan (SNP) plan",
+    ],
   },
   {
-    "name": "Partners Health Plan",
-    "plans": [
-      "PHP Care Complete FIDA-IDD Plan"
-    ]
+    name: "Partners Health Plan",
+    plans: ["PHP Care Complete FIDA-IDD Plan"],
   },
   {
-    "name": "PHCS",
-    "plans": [
-      "Multiplan",
-      "MultiPlan Specific Services"
-    ]
+    name: "PHCS",
+    plans: ["Multiplan", "MultiPlan Specific Services"],
   },
   {
-    "name": "POMCO",
-    "plans": [
-      "PHCS/Multiplan"
-    ]
+    name: "POMCO",
+    plans: ["PHCS/Multiplan"],
   },
   {
-    "name": "Tufts Health Plan",
-    "plans": [
-      "PPO/PHCS Network"
-    ]
+    name: "Tufts Health Plan",
+    plans: ["PPO/PHCS Network"],
   },
   {
-    "name": "UnitedHealthcare",
-    "plans": [
+    name: "UnitedHealthcare",
+    plans: [
       "(PPO)",
       "AARP Medicare Advantage Choice Premier PPO",
       "AARP Medicare Advantage Essentials From UHC (HMO_POS)",
@@ -956,49 +915,38 @@ export const INSURANCE_CARRIERS: InsuranceCarrier[] = [
       "WHA HMO LG OP IP",
       "WHA HMO Small Group OP Day After Deductible Plus",
       "WHA HMO Small Group OP IP",
-      "WYNN Resorts Limited PPO"
-    ]
+      "WYNN Resorts Limited PPO",
+    ],
   },
   {
-    "name": "UnitedHealthcare Community Plan",
-    "plans": [
+    name: "UnitedHealthcare Community Plan",
+    plans: [
       "Essential",
       "UHC Community Plan Medicaid Managed Care",
       "UnitedHealthcare Dual Complete (HMO_POS)",
-      "UnitedHealthcare Dual Complete (PPO)"
-    ]
+      "UnitedHealthcare Dual Complete (PPO)",
+    ],
   },
   {
-    "name": "UnitedHealthcare Oxford",
-    "plans": [
-      "Freedom (EPO)",
-      "Freedom EPO",
-      "Liberty Network Select EPO HSA",
-      "Oxford Plan"
-    ]
+    name: "UnitedHealthcare Oxford",
+    plans: ["Freedom (EPO)", "Freedom EPO", "Liberty Network Select EPO HSA", "Oxford Plan"],
   },
   {
-    "name": "US Health Group",
-    "plans": [
-      "Private Healthcare Systems (PHCS) (PPO)"
-    ]
+    name: "US Health Group",
+    plans: ["Private Healthcare Systems (PHCS) (PPO)"],
   },
   {
-    "name": "ValuePoint by MultiPlan",
-    "plans": [
-      "MultiPlan Complementary",
-      "PHCS Limited Benefit Plan",
-      "PHCS Savility"
-    ]
+    name: "ValuePoint by MultiPlan",
+    plans: ["MultiPlan Complementary", "PHCS Limited Benefit Plan", "PHCS Savility"],
   },
   {
-    "name": "VillageCareMax",
-    "plans": [
+    name: "VillageCareMax",
+    plans: [
       "Medicare Total Advantage Plan (HMO D-SNP)",
       "VillageCareMAX Medicaid Managed Long-Term Care (MLTC)",
-      "VillageCareMAX Medicare Health Advantage (HMO D-SNP)"
-    ]
-  }
+      "VillageCareMAX Medicare Health Advantage (HMO D-SNP)",
+    ],
+  },
 ];
 
 export const TOTAL_IN_NETWORK_PLANS = 200;

@@ -73,7 +73,12 @@ export function PillarsGrid() {
                     loading="lazy"
                     {...geoImgProps(getImageAlt(p.altKey))}
                   />
-                  <PremiumIcon healthIcon={p.healthIcon} size="md" tone="glass" className="absolute left-4 top-4" />
+                  <PremiumIcon
+                    healthIcon={p.healthIcon}
+                    size="md"
+                    tone="glass"
+                    className="absolute left-4 top-4"
+                  />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-semibold text-foreground">{p.title}</h3>

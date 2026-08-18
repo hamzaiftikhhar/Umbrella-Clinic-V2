@@ -211,7 +211,9 @@ export function PrimaryCareNycPage() {
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">{service}</p>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">
+                    {service}
+                  </p>
                   <div
                     className="absolute bottom-0 left-0 h-0.5 w-0 bg-[color:var(--accent-teal)] transition-all duration-500 group-hover:w-full"
                     aria-hidden
@@ -269,7 +271,10 @@ export function PrimaryCareNycPage() {
       </section>
 
       {physicians.length > 0 && (
-        <section className="section-py border-t border-border/50 bg-[color:var(--mist)]/50" aria-label="Primary care physicians">
+        <section
+          className="section-py border-t border-border/50 bg-[color:var(--mist)]/50"
+          aria-label="Primary care physicians"
+        >
           <Container size="lg">
             <Fade>
               <p className="mb-12 max-w-2xl font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl">
@@ -309,6 +314,57 @@ export function PrimaryCareNycPage() {
             <Fade delay={0.06}>
               <FAQList items={FAQS} />
             </Fade>
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-py bg-[color:var(--cream)]/50" aria-labelledby="pc-diag-heading">
+        <Container size="lg">
+          <Fade>
+            <h2
+              id="pc-diag-heading"
+              className="font-display text-2xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-3xl"
+            >
+              In-house diagnostics your PCP can order
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Most labs go to a third-party. Ours don't. Your primary care physician orders, we
+              read, and the results feed directly into your care plan — no fax, no delay.
+            </p>
+          </Fade>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: "Biomarker & Lab Panels",
+                body: "Full lipid, hormonal, metabolic — mapped to your history.",
+                href: "/diagnostics/biomarkers",
+              },
+              {
+                title: "Imaging & Cardiac Testing",
+                body: "EKG, vascular ultrasound, and telemetry — read in-house.",
+                href: "/diagnostics/imaging-cardiac",
+              },
+              {
+                title: "Cancer Screening",
+                body: "Coordinated preventive screening as part of ongoing primary care.",
+                href: "/diagnostics/cancer-screening",
+              },
+            ].map((card) => (
+              <Fade key={card.href}>
+                <Link
+                  href={card.href}
+                  className="block rounded-2xl border border-border/60 bg-card p-5 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)]"
+                >
+                  <h3 className="text-sm font-semibold text-foreground">{card.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                    {card.body}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
+                    Learn more <span aria-hidden>→</span>
+                  </span>
+                </Link>
+              </Fade>
+            ))}
           </div>
         </Container>
       </section>

@@ -19,7 +19,8 @@ export const CLINICAL_SERVICES: ClinicalService[] = [
   {
     label: "Primary Care NYC",
     href: ROUTES.primaryCare,
-    summary: "Annual physicals, chronic disease management, and preventive care for every stage of life.",
+    summary:
+      "Annual physicals, chronic disease management, and preventive care for every stage of life.",
     description:
       "Build a healthier future with comprehensive primary care focused on preventive care, annual physicals, chronic disease management, and personalized treatment for every stage of life.",
     imageUrl: IMG.primaryCareHero,

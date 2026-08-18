@@ -63,8 +63,7 @@ export function UmbrellaDifference() {
               id="difference-heading"
               className="font-display mt-6 max-w-xl text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl"
             >
-              Why Patients Choose Umbrella Health In{" "}
-              <span className="text-primary">New York?</span>
+              Why Patients Choose Umbrella Health In <span className="text-primary">New York?</span>
             </h2>
 
             <p className="mt-5 max-w-xl text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">

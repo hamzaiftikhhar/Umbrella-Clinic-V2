@@ -22,8 +22,7 @@ const FRAME_STYLES = {
   condition:
     "bg-[color:var(--icon-premium-surface)] text-[color:var(--navy-700)] group-hover:text-[color:var(--navy-800)]",
   diagnostic: "bg-[color:var(--secondary)] text-[color:var(--navy-800)]",
-  primary:
-    "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground",
+  primary: "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground",
 } as const;
 
 /** Consistent icon tile used across neurology and specialty cards. */

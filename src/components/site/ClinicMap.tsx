@@ -13,8 +13,7 @@ export function ClinicMap() {
             id="map-heading"
             className="font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
           >
-            In the heart of{" "}
-            <span className="text-primary">Lower Manhattan.</span>
+            In the heart of <span className="text-primary">Lower Manhattan.</span>
           </h2>
         </div>
 

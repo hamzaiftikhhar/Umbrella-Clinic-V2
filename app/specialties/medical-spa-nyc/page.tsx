@@ -16,11 +16,6 @@ const seo = buildPageSeo({
   geo: true,
   keywords: [...MEDICAL_SPA_SEO.keywords],
   ogImage: IMG.medicalSpaNycHero,
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: ROUTES.specialtiesHub },
-    { label: "Medical Spa NYC" },
-  ],
   extraSchema: [medicalSpaNycPageSchemaGraph(heroImageUrl)],
 });
 export const metadata = seo.metadata;

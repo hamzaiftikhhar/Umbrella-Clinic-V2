@@ -12,11 +12,7 @@ const clinicalServices = CLINICAL_SERVICES.map((service) => ({
 
 export function ClinicalServicesGrid() {
   return (
-    <section
-      id="services"
-      aria-labelledby="services-heading"
-      className="section-py bg-background"
-    >
+    <section id="services" aria-labelledby="services-heading" className="section-py bg-background">
       <Container size="lg">
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-primary/70">
@@ -31,8 +27,8 @@ export function ClinicalServicesGrid() {
           </h2>
           <p className="mt-5 text-base font-normal leading-relaxed text-muted-foreground sm:text-lg">
             Umbrella Health brings together primary care doctors, internal medicine physicians, and
-            board-certified specialists to deliver coordinated, patient-centered healthcare under one
-            roof.
+            board-certified specialists to deliver coordinated, patient-centered healthcare under
+            one roof.
           </p>
         </div>
 

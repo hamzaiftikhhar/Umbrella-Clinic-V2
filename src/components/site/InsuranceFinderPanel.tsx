@@ -3,10 +3,7 @@
 import { useMemo, useState, type FormEvent } from "react";
 import { CheckCircle2, Search } from "lucide-react";
 import { TOTAL_IN_NETWORK_PLANS } from "@/data/insurance-network";
-import {
-  POPULAR_INSURANCE_CARRIERS,
-  TOTAL_INSURANCE_CARRIERS,
-} from "@/data/insurance-carriers";
+import { POPULAR_INSURANCE_CARRIERS, TOTAL_INSURANCE_CARRIERS } from "@/data/insurance-carriers";
 import {
   hasExactInsuranceMatch,
   MAX_INSURANCE_RESULTS,
@@ -46,8 +43,8 @@ export function InsuranceFinderPanel({ variant = "inline", className }: Insuranc
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
             Search {TOTAL_INSURANCE_CARRIERS.toLocaleString()}+ carriers and{" "}
-            {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans. Our team verifies your exact
-            benefits before your visit.
+            {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans. Our team verifies your
+            exact benefits before your visit.
           </p>
         </div>
       )}
@@ -125,10 +122,15 @@ export function InsuranceFinderPanel({ variant = "inline", className }: Insuranc
           </div>
         ) : results.length === 0 ? (
           <div className="rounded-2xl border border-border/60 bg-muted/30 p-5 text-sm">
-            <p className="font-medium text-foreground">No exact match for &ldquo;{activeQuery}&rdquo;</p>
+            <p className="font-medium text-foreground">
+              No exact match for &ldquo;{activeQuery}&rdquo;
+            </p>
             <p className="mt-1.5 text-muted-foreground">
               We may still accept your plan. Call{" "}
-              <a href={`tel:${SITE_PHONE.replace(/\D/g, "")}`} className="font-medium text-primary underline">
+              <a
+                href={`tel:${SITE_PHONE.replace(/\D/g, "")}`}
+                className="font-medium text-primary underline"
+              >
                 {SITE_PHONE}
               </a>{" "}
               and we&apos;ll verify before you book.
@@ -140,8 +142,8 @@ export function InsuranceFinderPanel({ variant = "inline", className }: Insuranc
               <div className="mb-4 flex items-start gap-2.5 rounded-2xl bg-accent-emerald-surface px-4 py-3 text-sm text-accent-emerald">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
                 <span>
-                  <strong className="font-semibold">Likely in-network.</strong> Our team will confirm
-                  your exact benefits at booking.
+                  <strong className="font-semibold">Likely in-network.</strong> Our team will
+                  confirm your exact benefits at booking.
                 </span>
               </div>
             )}

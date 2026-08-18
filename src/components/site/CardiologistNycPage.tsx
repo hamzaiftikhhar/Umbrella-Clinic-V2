@@ -567,7 +567,7 @@ export function CardiologistNycPage() {
               <div className="border-b border-border/50 bg-gradient-to-r from-[color:var(--cream)] via-background to-[color:var(--secondary)]/30 px-8 py-9 sm:px-10">
                 <PremiumIcon iconKey="clipboard-check" size="lg" />
                 <h3 className="font-display mt-6 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl">
-                {CARDIOLOGY_FIRST_VISIT.heading}
+                  {CARDIOLOGY_FIRST_VISIT.heading}
                 </h3>
               </div>
               <div className="grid divide-y divide-border/50 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
@@ -592,7 +592,10 @@ export function CardiologistNycPage() {
 
       {/* Physicians */}
       {physicians.length > 0 && (
-        <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="specialists-heading">
+        <section
+          className="section-py bg-[color:var(--cream)]/40"
+          aria-labelledby="specialists-heading"
+        >
           <Container size="lg">
             <div className="space-y-16">
               {physicians.map((p, i) => (
@@ -779,7 +782,10 @@ export function CardiologistNycPage() {
       </section>
 
       {/* 8. FAQ */}
-      <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="cardio-faq-heading">
+      <section
+        className="section-py bg-[color:var(--cream)]/40"
+        aria-labelledby="cardio-faq-heading"
+      >
         <Container size="lg">
           <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
             <Block>

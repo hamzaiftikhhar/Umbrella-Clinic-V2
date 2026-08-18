@@ -2,15 +2,7 @@
 
 import { GeoImage } from "./primitives/GeoImage";
 import { type ReactNode } from "react";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Calendar,
-  Check,
-  MapPin,
-  Phone,
-  Star,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Calendar, Check, MapPin, Phone, Star } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { MedicalIconFrame } from "@/components/icons/MedicalIcon";
 import {
@@ -72,7 +64,9 @@ function Block({
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">{children}</p>
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
+      {children}
+    </p>
   );
 }
 
@@ -318,7 +312,9 @@ export function SleepMedicineNycPage() {
                             <Glyph size={22} />
                           </MedicalIconFrame>
                           <div>
-                            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{item.title}</h3>
+                            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                              {item.title}
+                            </h3>
                             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                               {item.body}
                             </p>
@@ -350,8 +346,12 @@ export function SleepMedicineNycPage() {
                       <Glyph size={20} />
                     </MedicalIconFrame>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-base font-semibold text-foreground sm:text-lg">{item.title}</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                      <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                        {item.body}
+                      </p>
                     </div>
                   </article>
                 </Block>
@@ -386,12 +386,16 @@ export function SleepMedicineNycPage() {
               return (
                 <Block key={item.title} delay={i * 0.04}>
                   <article className="group relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-background p-7 shadow-[var(--shadow-soft)] sm:p-8">
-                    <span className="font-display text-5xl font-light text-primary/10">{index}</span>
+                    <span className="font-display text-5xl font-light text-primary/10">
+                      {index}
+                    </span>
                     <MedicalIconFrame variant="primary" className="mt-4 rounded-full">
                       <Glyph size={20} />
                     </MedicalIconFrame>
                     <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.body}
+                    </p>
                   </article>
                 </Block>
               );
@@ -465,7 +469,9 @@ export function SleepMedicineNycPage() {
                       i === 0 && "border-primary/25 bg-primary/[0.04]",
                     )}
                   >
-                    <span className={cn("font-medium", i === 0 ? "text-primary" : "text-foreground/90")}>
+                    <span
+                      className={cn("font-medium", i === 0 ? "text-primary" : "text-foreground/90")}
+                    >
                       {name}
                     </span>
                     <span className="font-display text-[10px] tabular-nums text-muted-foreground/40">
@@ -569,7 +575,10 @@ export function SleepMedicineNycPage() {
       )}
 
       {/* 9. Insurance & Reviews */}
-      <section className="section-py bg-[color:var(--cream)]/60" aria-label="Insurance and patient reviews">
+      <section
+        className="section-py bg-[color:var(--cream)]/60"
+        aria-label="Insurance and patient reviews"
+      >
         <Container size="lg">
           <div className="grid gap-6 md:grid-cols-2">
             <Block>
@@ -675,7 +684,10 @@ export function SleepMedicineNycPage() {
       </section>
 
       {/* 11. FAQ */}
-      <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="sleep-faq-heading">
+      <section
+        className="section-py bg-[color:var(--cream)]/40"
+        aria-labelledby="sleep-faq-heading"
+      >
         <Container size="lg">
           <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
             <Block>

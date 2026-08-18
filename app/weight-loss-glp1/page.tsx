@@ -45,7 +45,8 @@ export default function RoutePage() {
             description:
               "A real clinical program  baseline labs, body composition, monthly check-ins  not a prescription mill. Semaglutide and tirzepatide where appropriate.",
             image: IMG.medicalWeightLossConsult,
-            imageAlt: "Medical weight loss consultation measuring waist circumference at Umbrella Health NYC",
+            imageAlt:
+              "Medical weight loss consultation measuring waist circumference at Umbrella Health NYC",
             crumbs: [{ label: "Home", to: "/" }, { label: "Weight Loss (GLP-1)" }],
           },
           intro: {

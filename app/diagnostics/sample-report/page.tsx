@@ -62,7 +62,7 @@ function Page() {
                 <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary/70">
                   Panel · Q4 2026
                 </p>
-                <h2 className="mt-1 font-display text-2xl italic">Jordan A.  annual baseline</h2>
+                <h2 className="mt-1 font-display text-2xl italic">Jordan A. annual baseline</h2>
               </div>
               <div className="divide-y divide-border/60">
                 {rows.map((r) => (
