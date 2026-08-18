@@ -16,10 +16,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { IMG } from "@/data/images";
 import { buildPageSeo } from "@/lib/page-head";
 import { homePageSchemaGraph } from "@/lib/schema";
+import { PENDING_VERIFICATION } from "@/data/pending-verification";
 
-const TITLE = "Umbrella Health — Modern Multispecialty Care in NYC";
+const TITLE = "Primary Care & Specialists NYC | Umbrella Health";
 const DESCRIPTION =
-  "Primary care doctors and board-certified specialists in Lower Manhattan, NYC. In-house diagnostics, GLP-1 weight loss, and longevity programs. Insurance accepted — book online.";
+  "Find primary care doctors and board-certified specialists in NYC at Umbrella Health. Get personalized care, advanced diagnostics, and same-day visits.";
 
 const seo = buildPageSeo({
   title: TITLE,
@@ -33,7 +34,6 @@ const seo = buildPageSeo({
     "GLP-1 weight loss NYC",
     "longevity medicine NYC",
     "in-house diagnostics NYC",
-    "NoHo medical clinic",
   ],
   geo: true,
   ogImage: IMG.homepageHero,
@@ -53,7 +53,7 @@ export default function HomePage() {
         <CareDiagram />
         <UmbrellaDifference />
         <StatCallout
-          stat="92%"
+          stat={PENDING_VERIFICATION.firstVisitFiveStarPercent}
           title="of members rate their care 5 stars after their first visit."
           description="Multispecialty care, advanced diagnostics, and a team that knows your history, not just your appointment slot."
           cta={<BookButton>Book Appointment</BookButton>}
