@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { SiteLayout } from "@/components/SiteLayout";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_NAME, absoluteUrl } from "@/lib/site";
 import { DEFAULT_OG_IMAGE, organizationSchema, webSiteSchema } from "@/lib/schema";
 import { haffer } from "@/lib/fonts";
 import "./globals.css";
+
+const CLARITY_PROJECT_ID = "y4quth2g2h";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.myumbrellahealth.com"),
@@ -38,6 +41,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={haffer.variable} suppressHydrationWarning>
       <body suppressHydrationWarning>
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_PROJECT_ID}");`,
+          }}
+        />
         <JsonLd data={[organizationSchema(), webSiteSchema()]} />
         <SiteLayout>{children}</SiteLayout>
       </body>
