@@ -18,7 +18,7 @@ const seo = buildPageSeo({
     "annual physical NYC",
     "same day doctor NYC",
   ],
-  ogImage: "/images/dr-rajat.webp",
+  ogImage: "/images/dr-rajat-lamington-primary-care-nyc.webp",
   extraSchema: [primaryCareNycPageSchemaGraph()],
 });
 export const metadata = seo.metadata;
