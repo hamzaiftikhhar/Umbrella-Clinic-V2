@@ -238,8 +238,12 @@ export const IMAGE_ALT = {
     keywords: ["medical weight loss NYC", "GLP-1 weight loss"] as const,
   },
   drRajat: {
-    alt: "Dr. Rajat Lamington primary care doctor NYC Umbrella Health",
+    alt: "Dr. Rajat Lamington primary care doctor NYC Umbrella Health Lower Manhattan",
     keywords: ["primary care doctor NYC", "Dr. Rajat Lamington"] as const,
+  },
+  drRajatHero: {
+    alt: "Dr. Rajat Lamington primary care physician NYC Umbrella Health clinic",
+    keywords: ["primary care physician NYC", "Umbrella Health"] as const,
   },
   drBhavanaSunkara: {
     alt: "Dr. Bhavana Sunkara primary care physician NYC Umbrella Health",
@@ -258,7 +262,7 @@ export const IMAGE_ALT = {
     keywords: ["multispecialty clinic NYC", "clinic interior"] as const,
   },
   founder: {
-    alt: "Founding physician primary care NYC Dr. Rajat Lamington",
+    alt: "Dr. Rajat Lamington founding physician primary care NYC Lower Manhattan",
     keywords: ["primary care NYC", "founding physician"] as const,
   },
   womensHealth: {

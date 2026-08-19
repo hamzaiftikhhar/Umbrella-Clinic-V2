@@ -74,9 +74,9 @@ export const PHYSICIANS: Physician[] = [
     credentials: "MD",
     title: "Family Physician & Pain Management Specialist",
     specialty: "Interventional Pain & Family Medicine",
-    image: "/images/dr-rajat.webp",
+    image: "/images/dr-rajat-lamington-primary-care-nyc.webp",
     imageAlt:
-      "Dr. Rajat Lamington, board-certified family medicine and pain management physician at Umbrella Health NYC",
+      "Dr. Rajat Lamington, board-certified family medicine and pain management physician at Umbrella Health NYC Lower Manhattan",
     founder: true,
     zocdocUrl:
       "https://www.zocdoc.com/doctor/rajat-lamington-md-498179?reason_visit=-1&insuranceCarrier=-1&insurancePlan=-1&dr_specialty=-1&isNewPatient=false&referrerType=widget",

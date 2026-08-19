@@ -4,6 +4,7 @@ import { Container } from "./primitives/Container";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { GeoImage } from "./primitives/GeoImage";
 import { IMG } from "@/data/images";
+import { getImageAlt } from "@/data/image-seo";
 import type { HealthIconName, LucideIconKey } from "@/components/icons/icon-keys";
 
 const points: {
@@ -98,7 +99,7 @@ export function UmbrellaDifference() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-[1.375rem] bg-muted shadow-[var(--shadow-elegant)]">
               <GeoImage
                 src={IMG.premiumDoctorPortrait}
-                alt="Dr. Rajat Lamington, board-certified physician at Umbrella Health NYC"
+                alt={getImageAlt("drRajat")}
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 90vw, 480px"

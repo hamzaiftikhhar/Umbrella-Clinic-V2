@@ -72,23 +72,23 @@ export const IMG = {
   medicalSpaFacialMask: "/images/medical-spa-facial-mask-treatment.webp",
 
   // Local WebP assets (public/images)
-  drRajat: "/images/dr-rajat.webp",
+  drRajat: "/images/dr-rajat-lamington-primary-care-nyc.webp",
   /** Dr. Bhavana Sunkara — primary care physician portrait */
   drBhavanaSunkara: "/images/dr-bhavana-sunkara-primary-care-nyc.webp",
-  premiumDoctorPortrait: "/images/dr-rajat.webp",
+  premiumDoctorPortrait: "/images/dr-rajat-lamington-primary-care-nyc.webp",
   clinicExterior: "/images/street-view.webp",
   clinicInterior:
     "/images/APNQkAG2VC7P3b3M7-u1nk5TVqiBrhB-Jb-5gMl7-7wE-NF0Kcu7wYmgGbcKNfvO6wNuHyqWjKZXLFcLcvM0DbAWHqx-CAt3pFKtN5_lavgX1uEgq4VCtVczKo-eZe09-F_0mwaJxsD03Qw3890-h2918-k-no.webp",
 
   // People — founding physician photo stands in for placeholder portraits
-  founder: "/images/dr-rajat.webp",
-  founderAlt: "/images/dr-rajat.webp",
-  doctorWoman1: "/images/dr-rajat.webp",
-  doctorMan1: "/images/dr-rajat.webp",
-  doctorWoman2: "/images/dr-rajat.webp",
-  doctorMan2: "/images/dr-rajat.webp",
-  doctorWoman3: "/images/dr-rajat.webp",
-  doctorMan3: "/images/dr-rajat.webp",
+  founder: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  founderAlt: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  doctorWoman1: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  doctorMan1: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  doctorWoman2: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  doctorMan2: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  doctorWoman3: "/images/dr-rajat-lamington-primary-care-nyc.webp",
+  doctorMan3: "/images/dr-rajat-lamington-primary-care-nyc.webp",
 
   /** Audience-specific primary care imagery */
   womensHealth: u("photo-1573497019940-1c28c88b4f3e", 1800),
@@ -150,7 +150,7 @@ export const IMG = {
   homepageHero:
     "/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.webp",
   /** Doctor-focused homepage hero */
-  homepageDoctorHero: "/images/Dr-rajat-hero-section.webp",
+  homepageDoctorHero: "/images/dr-rajat-lamington-hero-section-nyc.webp",
   /** Doctor–patient consultation (patient outcomes) */
   doctorConsultation: u("photo-1631815588090-d4bfec5b1ccb", 1800),
   /** Patient reviews / 92% outcomes — satisfied patient consultation */

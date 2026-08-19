@@ -6,6 +6,7 @@ import { HomeHeroSatisfactionBadge } from "./HomeHeroSatisfactionBadge";
 import { HomeHeroSpecialtySelect } from "./HomeHeroSpecialtySelect";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
+import { getImageAlt } from "@/data/image-seo";
 import { PHYSICIANS } from "@/data/physicians";
 import { BOOKING_URL } from "@/lib/site";
 import { PENDING_VERIFICATION } from "@/data/pending-verification";
@@ -34,7 +35,7 @@ export function HomeHero() {
     >
       <GeoImage
         src={IMG.homepageDoctorHero}
-        alt="Board-certified physician at Umbrella Health NYC"
+        alt={getImageAlt("drRajatHero")}
         fill
         priority
         className="object-cover object-[68%_20%]"
