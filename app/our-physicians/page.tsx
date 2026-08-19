@@ -18,7 +18,7 @@ const seo = buildPageSeo({
   path: "/our-team",
   crumbs: [{ label: "Home", to: "/" }, { label: "Our Team" }],
   geo: true,
-  ogImage: "/images/dr-rajat.webp",
+  ogImage: "/images/dr-rajat-lamington-primary-care-nyc.webp",
   extraSchema: physiciansSchema(PHYSICIANS),
 });
 export const metadata = seo.metadata;
