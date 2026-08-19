@@ -4,6 +4,7 @@ import { Link } from "@/components/AppLink";
 import { Container } from "./primitives/Container";
 import { PremiumIcon } from "./primitives/IconBadge";
 import { IMG } from "@/data/images";
+import { getImageAlt } from "@/data/image-seo";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
 
 const credentials: {
@@ -43,7 +44,7 @@ export function FounderProfile() {
               <div className="relative h-full w-full overflow-hidden rounded-full border border-border/40 shadow-[var(--shadow-card)]">
                 <GeoImage
                   src={IMG.premiumDoctorPortrait}
-                  alt="Dr. Rajat Lamington, founding physician at Umbrella Health"
+                  alt={getImageAlt("founder")}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 80vw, (max-width: 1024px) 448px, 512px"
