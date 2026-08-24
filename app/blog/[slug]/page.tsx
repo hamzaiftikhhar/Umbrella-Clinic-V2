@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     type: "article",
     ogImage: post.image,
     crumbs: [{ label: "Home", to: "/" }, { label: "Blog", to: "/blog" }, { label: post.title }],
+    robots: { index: false, follow: false },
   });
   return seo.metadata;
 }
