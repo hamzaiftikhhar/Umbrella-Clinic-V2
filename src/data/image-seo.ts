@@ -23,8 +23,20 @@ export const IMAGE_ALT = {
     keywords: ["primary care doctor NYC", "Lower Manhattan"] as const,
   },
   reception: {
-    alt: "Multispecialty clinic NYC reception desk at Umbrella Health",
-    keywords: ["multispecialty clinic NYC", "Umbrella Health"] as const,
+    alt: "Umbrella Health clinic interior Lower Manhattan NYC",
+    keywords: ["Umbrella Health clinic", "Lower Manhattan"] as const,
+  },
+  patientReviewsHero: {
+    alt: "Patient rating care 5 stars after visit at Umbrella Health NYC",
+    keywords: ["patient reviews NYC", "5 star care"] as const,
+  },
+  insuranceAcceptedHero: {
+    alt: "Insurance accepted celebration at Umbrella Health NYC",
+    keywords: ["insurance accepted NYC", "Umbrella Health"] as const,
+  },
+  clinicReceptionContact: {
+    alt: "Umbrella Health clinic reception at 32 West 14th Street Lower Manhattan NYC",
+    keywords: ["Umbrella Health clinic", "Lower Manhattan NYC"] as const,
   },
   examRoom: {
     alt: "Primary care NYC exam room at Umbrella Health clinic",
@@ -35,8 +47,8 @@ export const IMAGE_ALT = {
     keywords: ["cardiac diagnostics NYC", "EKG testing"] as const,
   },
   lab: {
-    alt: "In-house diagnostics NYC laboratory at Umbrella Health",
-    keywords: ["in-house diagnostics NYC", "laboratory"] as const,
+    alt: "Diagnostic lab testing blood work at Umbrella Health NYC",
+    keywords: ["diagnostic lab testing", "diagnostic testing nyc"] as const,
   },
   ultrasound: {
     alt: "Imaging and cardiac testing NYC ultrasound at Umbrella Health",
@@ -67,8 +79,8 @@ export const IMAGE_ALT = {
     keywords: ["best in class NYC Cardiologist", "Cardiologist NYC"] as const,
   },
   painManagementProfessionalHero: {
-    alt: "Pain management doctor providing personalized pain treatment at Umbrella Health NYC",
-    keywords: ["pain management doctor", "pain management NYC"] as const,
+    alt: "Pain management doctor near me evaluating back pain at Umbrella Health NYC",
+    keywords: ["pain management doctor near me", "pain management NYC"] as const,
   },
   painManagementProcedure: {
     alt: "Modern pain management procedure suite at Umbrella Health NYC",
@@ -99,8 +111,8 @@ export const IMAGE_ALT = {
     keywords: ["advanced biomarkers NYC", "lab diagnostics"] as const,
   },
   primaryCareHero: {
-    alt: "Primary care physician New York City at Umbrella Health",
-    keywords: ["primary care physician New York City", "Umbrella Health"] as const,
+    alt: "Primary care NYC doctor treating child with parent at Umbrella Health",
+    keywords: ["primary care NYC", "primary care doctor near me"] as const,
   },
   neurologyHero: {
     alt: "Neurologist NYC brain imaging and clinical neuroscience",
@@ -127,16 +139,115 @@ export const IMAGE_ALT = {
     keywords: ["neurologist for dementia NYC", "cognitive assessment"] as const,
   },
   painManagementHero: {
-    alt: "Interventional pain management NYC treatment at Umbrella Health",
-    keywords: ["interventional pain management NYC", "Umbrella Health"] as const,
+    alt: "Interventional pain management NYC physician consult at Umbrella Health",
+    keywords: ["interventional pain management NYC", "pain management doctor"] as const,
   },
   medicalSpaHero: {
-    alt: "Medical spa services NYC wellness care at Umbrella Health",
-    keywords: ["medical spa services NYC", "wellness care"] as const,
+    alt: "Medical Spa NYC premium aesthetic treatments at Umbrella Health",
+    keywords: ["Medical Spa NYC", "medical spa treatments nyc"] as const,
+  },
+  medicalSpaNycHero: {
+    alt: "Best medical spa treatments NYC facial rejuvenation at Umbrella Health",
+    keywords: ["best medical spa treatments nyc", "nyc medical spa"] as const,
+  },
+  medicalSpaFacialConsult: {
+    alt: "Best medical aesthetics spa in soho nyc consultation at Umbrella Health",
+    keywords: ["best medical aesthetics spa in soho nyc", "Medical Spa NYC"] as const,
+  },
+  medicalSpaFacial: {
+    alt: "Medical spa nyc microdermabrasion facial mask treatment Umbrella Health",
+    keywords: ["medical spa nyc microdermabrasion", "medical spa treatments nyc"] as const,
+  },
+  medicalSpaMicroneedling: {
+    alt: "Best medical spa dermatology nyc microneedling at Umbrella Health",
+    keywords: ["best medical spa dermatology nyc", "medical spa treatments nyc"] as const,
+  },
+  medicalSpaFacialMask: {
+    alt: "Best medical spa nyc you rejuvenated facial mask treatment",
+    keywords: ["best medical spa nyc you rejuvenated", "nyc medical spa"] as const,
+  },
+  medicalWeightLossClinicHero: {
+    alt: "Medical weight loss clinic NYC physician-supervised care at Umbrella Health",
+    keywords: ["medical weight loss clinic", "medical weight loss nyc"] as const,
+  },
+  medicalWeightLossNutrition: {
+    alt: "Medical weight loss NYC nutrition guidance healthy meal planning",
+    keywords: ["medical weight loss service", "weight loss service"] as const,
+  },
+  medicalWeightLossHydration: {
+    alt: "Medical weight loss NYC hydration lifestyle wellness at Umbrella Health",
+    keywords: ["medical weight loss nyc", "weight loss service"] as const,
+  },
+  medicalWeightLossHealthyEating: {
+    alt: "Medical weight loss clinic NYC healthy eating lifestyle results",
+    keywords: ["medical weight loss clinic", "medical weight loss service"] as const,
+  },
+  medicalWeightLossNutritionConsult: {
+    alt: "Medical weight loss service NYC physician nutrition consultation",
+    keywords: ["medical weight loss service", "medical weight loss nyc"] as const,
+  },
+  medicalWeightLossPhysicianConsult: {
+    alt: "Medical weight loss clinic NYC physician consultation personalized plan",
+    keywords: ["medical weight loss clinic", "medical weight loss nyc"] as const,
+  },
+  medicalWeightLossBeforeAfter: {
+    alt: "Medical weight loss NYC before and after results Umbrella Health",
+    keywords: ["medical weight loss nyc", "weight loss service"] as const,
+  },
+  doctorConsultationPhysio: {
+    alt: "Doctor consultation NYC patient exam at Umbrella Health",
+    keywords: ["doctor consultation NYC", "Umbrella Health"] as const,
+  },
+  diagnosticTestingHero: {
+    alt: "Diagnostic testing NYC cardiac diagnostic testing at Umbrella Health",
+    keywords: ["diagnostic testing nyc", "cardiac diagnostic testing"] as const,
+  },
+  diagnosticTestingLabBlood: {
+    alt: "Diagnostic lab testing blood work at Umbrella Health NYC",
+    keywords: ["diagnostic lab testing", "diagnostic testing nyc"] as const,
+  },
+  diagnosticTestingGeneticLab: {
+    alt: "Genetic diagnostic testing and in vitro diagnostic liquid biopsy testing market lab work NYC",
+    keywords: [
+      "genetic diagnostic testing",
+      "in vitro diagnostic liquid biopsy testing market",
+    ] as const,
+  },
+  diagnosticTestingCardiovascular: {
+    alt: "Cardiac diagnostic testing NYC physician evaluation at Umbrella Health",
+    keywords: ["cardiac diagnostic testing", "diagnostic testing nyc"] as const,
+  },
+  diagnosticTestingPainEval: {
+    alt: "Diagnostic testing NYC musculoskeletal pain evaluation at Umbrella Health",
+    keywords: ["diagnostic testing nyc", "diagnostic lab testing"] as const,
+  },
+  diagnosticTestingSpecimenScan: {
+    alt: "Diagnostic testing of stds market and diagnostic lab testing specimen scanning NYC",
+    keywords: ["diagnostic testing of stds market", "diagnostic lab testing"] as const,
+  },
+  diagnosticTestingPreventive: {
+    alt: "Cardiac diagnostic testing preventive health screening NYC Umbrella Health",
+    keywords: ["cardiac diagnostic testing", "diagnostic testing nyc"] as const,
+  },
+  diagnosticTestingLabAnalysis: {
+    alt: "Rubella diagnostic testing market and diagnostic lab testing analysis NYC",
+    keywords: ["rubella diagnostic testing market", "diagnostic lab testing"] as const,
+  },
+  medicalWeightLossConsult: {
+    alt: "Medical weight loss consultation measuring waist at Umbrella Health NYC",
+    keywords: ["medical weight loss NYC", "GLP-1 weight loss"] as const,
   },
   drRajat: {
-    alt: "Dr. Rajat Lamington primary care doctor NYC Umbrella Health",
+    alt: "Dr. Rajat Lamington primary care doctor NYC Umbrella Health Lower Manhattan",
     keywords: ["primary care doctor NYC", "Dr. Rajat Lamington"] as const,
+  },
+  drRajatHero: {
+    alt: "Dr. Rajat Lamington primary care physician NYC Umbrella Health clinic",
+    keywords: ["primary care physician NYC", "Umbrella Health"] as const,
+  },
+  drBhavanaSunkara: {
+    alt: "Dr. Bhavana Sunkara primary care physician NYC Umbrella Health",
+    keywords: ["primary care physician NYC", "Dr. Bhavana Sunkara"] as const,
   },
   premiumDoctorPortrait: {
     alt: "Board certified physicians NYC at Umbrella Health clinic",
@@ -151,7 +262,7 @@ export const IMAGE_ALT = {
     keywords: ["multispecialty clinic NYC", "clinic interior"] as const,
   },
   founder: {
-    alt: "Founding physician primary care NYC Dr. Rajat Lamington",
+    alt: "Dr. Rajat Lamington founding physician primary care NYC Lower Manhattan",
     keywords: ["primary care NYC", "founding physician"] as const,
   },
   womensHealth: {
@@ -175,8 +286,8 @@ export const IMAGE_ALT = {
     keywords: ["concierge primary care NYC", "executive health"] as const,
   },
   glp1Hero: {
-    alt: "GLP-1 weight loss NYC medical weight loss program",
-    keywords: ["GLP-1 weight loss NYC", "medical weight loss"] as const,
+    alt: "Medical weight loss clinic NYC physician-supervised weight management",
+    keywords: ["medical weight loss clinic", "medical weight loss nyc"] as const,
   },
   longevityHero: {
     alt: "Longevity medicine NYC healthspan and executive physicals",

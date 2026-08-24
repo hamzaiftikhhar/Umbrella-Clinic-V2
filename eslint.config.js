@@ -3,12 +3,16 @@ import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 import globals from "globals";
 import reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
-import nextPlugin from "eslint-config-next/core-web-vitals.js";
+import nextPlugin from "@next/eslint-plugin-next";
 
 export default tseslint.config(
   { ignores: [".next", "node_modules", "dist", ".output", "scripts"] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, nextPlugin],
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      nextPlugin.configs["core-web-vitals"],
+    ],
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,

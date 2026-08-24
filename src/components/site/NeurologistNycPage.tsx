@@ -85,7 +85,9 @@ function Fade({
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">{children}</p>
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
+      {children}
+    </p>
   );
 }
 
@@ -163,7 +165,7 @@ function PersonalizedCareVisual() {
               className="flex items-start gap-4 rounded-2xl border border-border/45 bg-background/95 px-5 py-5 shadow-[var(--shadow-soft)] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-0.5"
             >
               <div className="flex shrink-0 flex-col items-center gap-2">
-                <span className="font-display text-xs font-medium tabular-nums tracking-widest text-primary/45">
+                <span className="font-display text-xs font-semibold tabular-nums tracking-widest text-primary/45">
                   {step}
                 </span>
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-[color:var(--navy-800)]/8 text-[color:var(--navy-800)] ring-1 ring-[color:var(--navy-800)]/10">
@@ -172,7 +174,9 @@ function PersonalizedCareVisual() {
               </div>
               <div className="min-w-0 pt-0.5">
                 <p className="text-base font-semibold leading-snug text-foreground">{node.label}</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{node.detail}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                  {node.detail}
+                </p>
               </div>
             </li>
           );
@@ -235,7 +239,7 @@ export function NeurologistNycPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
             <Fade className="flex flex-col justify-center">
               <SectionLabel>Neurologist NYC</SectionLabel>
-              <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display text-balance text-[2.2rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {NEUROLOGIST_HERO.h1}
               </h1>
 
@@ -283,7 +287,9 @@ export function NeurologistNycPage() {
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
                       In-house neurology diagnostics
                     </p>
-                    <p className="mt-1 text-sm text-white/90">EEG · EMG · Coordinated brain imaging</p>
+                    <p className="mt-1 text-sm text-white/90">
+                      EEG · EMG · Coordinated brain imaging
+                    </p>
                   </div>
                 </div>
               </div>
@@ -300,7 +306,7 @@ export function NeurologistNycPage() {
               <SectionLabel>What we treat</SectionLabel>
               <h2
                 id="conditions-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {NEUROLOGIST_CONDITIONS.heading}
               </h2>
@@ -358,7 +364,7 @@ export function NeurologistNycPage() {
               <SectionLabel>Precision testing</SectionLabel>
               <h2
                 id="diagnostics-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {NEUROLOGIST_DIAGNOSTICS.heading}
               </h2>
@@ -381,7 +387,7 @@ export function NeurologistNycPage() {
                   <Fade key={item.title} delay={0.05}>
                     <article className="group overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)] lg:grid lg:grid-cols-[1.1fr_0.9fr]">
                       <div className="border-b border-border/50 p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                        <span className="font-display text-sm font-medium tracking-[0.2em] text-primary/60">
+                        <span className="font-display text-sm font-semibold tracking-[0.2em] text-primary/60">
                           STEP {step}
                         </span>
                         <div className="mt-6 flex items-start gap-4">
@@ -389,7 +395,9 @@ export function NeurologistNycPage() {
                             <Glyph size={22} />
                           </MedicalIconFrame>
                           <div>
-                            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{item.title}</h3>
+                            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                              {item.title}
+                            </h3>
                             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                               {item.body}
                             </p>
@@ -428,7 +436,7 @@ export function NeurologistNycPage() {
                         <div className="absolute inset-0 bg-[color:var(--navy-900)]/25" />
                       </div>
                       <div className="relative flex flex-col justify-center p-8 text-white sm:p-10">
-                        <span className="font-display text-sm font-medium tracking-[0.2em] text-white/55">
+                        <span className="font-display text-sm font-semibold tracking-[0.2em] text-white/55">
                           STEP {step}
                         </span>
                         <div className="mt-6 flex items-start gap-4">
@@ -440,7 +448,9 @@ export function NeurologistNycPage() {
                           </MedicalIconFrame>
                           <div>
                             <h3 className="text-xl font-semibold sm:text-2xl">{item.title}</h3>
-                            <p className="mt-3 text-sm leading-relaxed text-white/78 sm:text-base">{item.body}</p>
+                            <p className="mt-3 text-sm leading-relaxed text-white/78 sm:text-base">
+                              {item.body}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -459,8 +469,12 @@ export function NeurologistNycPage() {
                       <Glyph size={20} />
                     </MedicalIconFrame>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-base font-semibold text-foreground sm:text-lg">{item.title}</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                      <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                        {item.body}
+                      </p>
                     </div>
                   </article>
                 </Fade>
@@ -478,7 +492,7 @@ export function NeurologistNycPage() {
               <SectionLabel>Your care team</SectionLabel>
               <h2
                 id="why-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {NEUROLOGIST_WHY_CHOOSE.heading}
               </h2>
@@ -510,7 +524,7 @@ export function NeurologistNycPage() {
                     >
                       <span
                         className={cn(
-                          "font-display text-sm font-medium tracking-[0.2em]",
+                          "font-display text-sm font-semibold tracking-[0.2em]",
                           isPersonalized ? "text-primary/60" : "text-white/55",
                         )}
                       >
@@ -519,7 +533,9 @@ export function NeurologistNycPage() {
                       <div className="mt-5 flex items-start gap-4">
                         <MedicalIconFrame
                           variant={isPersonalized ? "condition" : "diagnostic"}
-                          className={cn(!isPersonalized && "bg-white/10 text-white group-hover:bg-white/15")}
+                          className={cn(
+                            !isPersonalized && "bg-white/10 text-white group-hover:bg-white/15",
+                          )}
                         >
                           <Glyph size={22} />
                         </MedicalIconFrame>
@@ -572,12 +588,16 @@ export function NeurologistNycPage() {
               return (
                 <Fade key={item.title} delay={0.08 + i * 0.04}>
                   <article className="group relative overflow-hidden rounded-2xl border border-border/50 bg-background p-7 transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]">
-                    <span className="font-display text-5xl font-light text-primary/10">{index}</span>
+                    <span className="font-display text-5xl font-light text-primary/10">
+                      {index}
+                    </span>
                     <MedicalIconFrame variant="primary" className="mt-4 rounded-full">
                       <Glyph size={20} />
                     </MedicalIconFrame>
                     <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.body}
+                    </p>
                   </article>
                 </Fade>
               );
@@ -601,14 +621,16 @@ export function NeurologistNycPage() {
             <Fade>
               <h2
                 id="neuro-location-heading"
-                className="font-display max-w-xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display max-w-xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {NEUROLOGIST_LOCATION.heading}
               </h2>
               <p className="mt-6 max-w-xl text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {NEUROLOGIST_LOCATION.intro}
               </p>
-              <p className="mt-8 text-sm font-semibold text-foreground">{NEUROLOGIST_LOCATION.listLabel}</p>
+              <p className="mt-8 text-sm font-semibold text-foreground">
+                {NEUROLOGIST_LOCATION.listLabel}
+              </p>
               <p className="mt-6 max-w-xl text-base leading-[1.75] text-muted-foreground">
                 {NEUROLOGIST_LOCATION.closing}
               </p>
@@ -670,7 +692,9 @@ export function NeurologistNycPage() {
                       i === 0 && "border-primary/25 bg-primary/[0.04]",
                     )}
                   >
-                    <span className={cn("font-medium", i === 0 ? "text-primary" : "text-foreground/90")}>
+                    <span
+                      className={cn("font-medium", i === 0 ? "text-primary" : "text-foreground/90")}
+                    >
                       {name}
                     </span>
                     <span className="font-display text-[10px] tabular-nums text-muted-foreground/40">
@@ -694,7 +718,7 @@ export function NeurologistNycPage() {
                   <SectionLabel>Neurology team</SectionLabel>
                   <h2
                     id="specialists-heading"
-                    className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                    className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                   >
                     {NEUROLOGIST_SPECIALISTS.heading}
                   </h2>
@@ -774,7 +798,10 @@ export function NeurologistNycPage() {
       )}
 
       {/* Insurance & Reviews */}
-      <section className="section-py bg-[color:var(--cream)]/60" aria-label="Insurance and patient reviews">
+      <section
+        className="section-py bg-[color:var(--cream)]/60"
+        aria-label="Insurance and patient reviews"
+      >
         <Container size="lg">
           <div className="grid gap-6 md:grid-cols-2">
             <Fade>
@@ -787,7 +814,7 @@ export function NeurologistNycPage() {
                 </MedicalIconFrame>
                 <h2
                   id="insurance-heading"
-                  className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
+                  className="font-display mt-5 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
                 >
                   {NEUROLOGIST_INSURANCE.heading}
                 </h2>
@@ -820,7 +847,7 @@ export function NeurologistNycPage() {
                 </div>
                 <h2
                   id="reviews-heading"
-                  className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
+                  className="font-display mt-5 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
                 >
                   {NEUROLOGIST_REVIEWS.heading}
                 </h2>
@@ -847,7 +874,7 @@ export function NeurologistNycPage() {
             <Fade>
               <h2
                 id="neuro-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {NEUROLOGIST_FAQ_HEADING}
               </h2>
@@ -870,6 +897,61 @@ export function NeurologistNycPage() {
         </Container>
       </section>
 
+      {/* Diagnostics cross-links */}
+      <section
+        className="section-py bg-[color:var(--cream)]/50"
+        aria-labelledby="neuro-diag-heading"
+      >
+        <Container size="lg">
+          <Fade>
+            <h2
+              id="neuro-diag-heading"
+              className="font-display text-2xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-3xl"
+            >
+              Diagnostic testing that supports neurological care
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Our neurologists order and read these tests in-house — results feed directly into your
+              neurological workup without the usual referral chain.
+            </p>
+          </Fade>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: "Autonomic & Sudomotor Testing",
+                body: "Specialized autonomic workups rarely available in-house. Relevant to neuropathy, dysautonomia, and unexplained symptoms.",
+                href: "/diagnostics/autonomic-testing",
+              },
+              {
+                title: "Sleep & Pulmonary Diagnostics",
+                body: "Home sleep studies and pulmonary function testing for sleep disorders with neurological overlap.",
+                href: "/diagnostics/sleep-pulmonary",
+              },
+              {
+                title: "Biomarker & Lab Panels",
+                body: "Inflammatory, metabolic, and hormonal panels that inform neurological differentials.",
+                href: "/diagnostics/biomarkers",
+              },
+            ].map((card) => (
+              <Fade key={card.href}>
+                <Link
+                  href={card.href}
+                  className="block rounded-2xl border border-border/60 bg-card p-5 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)]"
+                >
+                  <h3 className="text-sm font-semibold text-foreground">{card.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                    {card.body}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
+                    Learn more <span aria-hidden>→</span>
+                  </span>
+                </Link>
+              </Fade>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* Final CTA */}
       <section className="section-py border-t border-border/50 bg-[color:var(--cream)]">
         <Container size="lg">
@@ -884,7 +966,7 @@ export function NeurologistNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {NEUROLOGIST_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">

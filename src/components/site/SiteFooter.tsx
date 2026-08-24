@@ -43,7 +43,7 @@ export function SiteFooter() {
                 ))}
               </div>
             </div>
-            <p className="mt-3 max-w-sm font-display text-xl font-light italic leading-tight text-primary-foreground/95 md:mt-10 md:text-4xl lg:text-5xl">
+            <p className="mt-3 max-w-sm font-display text-xl font-medium leading-tight text-primary-foreground/95 md:mt-10 md:text-4xl lg:text-5xl">
               {FOOTER_TAGLINE}
             </p>
             <p className="mt-6 hidden max-w-sm text-sm leading-relaxed text-primary-foreground/70 md:block">

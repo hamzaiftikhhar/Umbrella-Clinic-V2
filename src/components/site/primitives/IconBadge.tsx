@@ -7,6 +7,10 @@ import { HealthIcon } from "@/components/icons/HealthIcon";
 import { getLucideIcon } from "@/components/icons/icon-registry";
 
 const SIZE = {
+  xs: {
+    box: "h-9 w-9 rounded-xl",
+    icon: "h-4 w-4",
+  },
   sm: {
     box: "h-12 w-12 rounded-2xl",
     icon: "h-6 w-6",
@@ -59,9 +63,7 @@ export function PremiumIcon({
   const Icon = iconKey ? getLucideIcon(iconKey) : null;
 
   return (
-    <span
-      className={cn("inline-grid shrink-0 place-items-center", s.box, TONE[tone], className)}
-    >
+    <span className={cn("inline-grid shrink-0 place-items-center", s.box, TONE[tone], className)}>
       {healthIcon ? (
         <span className={cn("grid place-items-center", s.icon)}>
           <HealthIcon name={healthIcon} />

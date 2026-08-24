@@ -28,11 +28,6 @@ const seo = buildPageSeo({
     "pain specialist near me",
   ],
   ogImage: IMG.painManagementProfessionalHero,
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Pain Management NYC" },
-  ],
   extraSchema: [painManagementNycPageSchemaGraph(heroImageUrl)],
 });
 export const metadata = seo.metadata;

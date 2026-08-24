@@ -29,11 +29,6 @@ const seo = buildPageSeo({
     "sleep specialists NYC",
   ],
   ogImage: IMG.sleepMedicineHero,
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Sleep Medicine Services NYC" },
-  ],
   extraSchema: [sleepMedicineNycPageSchemaGraph(heroImageUrl)],
 });
 export const metadata = seo.metadata;

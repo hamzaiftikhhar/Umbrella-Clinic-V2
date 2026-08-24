@@ -37,7 +37,7 @@ export function PhysicianCard({
   className,
   priority,
 }: PhysicianCardProps) {
-  const profilePath = physicianProfilePath(id) as "/our-physicians/dr-rajat-lamington";
+  const profilePath = physicianProfilePath(id) as `/our-physicians/${string}`;
 
   return (
     <article className={`group text-center ${className ?? ""}`}>

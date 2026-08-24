@@ -40,7 +40,7 @@ export function HeroSplit({
                 {eyebrow}
               </p>
             )}
-            <h1 className="text-balance font-sans text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-[3.5rem]">
+            <h1 className="text-balance font-sans text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl md:text-[3.5rem]">
               {title}
             </h1>
             {description && (

@@ -47,7 +47,7 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/70">
                 {physician.title}
               </p>
-              <h1 className="font-display mt-3 text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
+              <h1 className="font-display mt-3 text-balance text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
                 {fullName}
               </h1>
               <p className="mt-2 text-lg font-medium text-primary">{physician.specialty}</p>
@@ -133,7 +133,10 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
               </h2>
               <ul className="mt-4 space-y-3">
                 {physician.education.map((edu) => (
-                  <li key={`${edu.institution}-${edu.credential}`} className="text-sm leading-relaxed text-muted-foreground">
+                  <li
+                    key={`${edu.institution}-${edu.credential}`}
+                    className="text-sm leading-relaxed text-muted-foreground"
+                  >
                     <span className="font-medium text-foreground">{edu.institution}</span>
                     <br />
                     {edu.credential}
@@ -156,7 +159,9 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
               </ul>
               {physician.hospitalAffiliations && physician.hospitalAffiliations.length > 0 && (
                 <>
-                  <h3 className="mt-6 text-sm font-semibold text-foreground">Hospital affiliations</h3>
+                  <h3 className="mt-6 text-sm font-semibold text-foreground">
+                    Hospital affiliations
+                  </h3>
                   <ul className="mt-2 space-y-1">
                     {physician.hospitalAffiliations.map((h) => (
                       <li key={h} className="text-sm text-muted-foreground">
@@ -198,7 +203,10 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
         </Container>
       </section>
 
-      <section className="border-t border-border/60 bg-secondary/20 py-16 sm:py-20" aria-labelledby="services-heading">
+      <section
+        className="border-t border-border/60 bg-secondary/20 py-16 sm:py-20"
+        aria-labelledby="services-heading"
+      >
         <Container size="lg">
           <SectionHeading as="h2" id="services-heading" title="Services" accent="offered" />
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -252,7 +260,12 @@ export function PhysicianProfilePage({ physician }: PhysicianProfilePageProps) {
       <section className="border-t border-border/60 py-16 sm:py-20" aria-labelledby="faq-heading">
         <Container size="lg">
           <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:gap-16">
-            <SectionHeading as="h2" id="faq-heading" title="Common questions" accent="about this doctor" />
+            <SectionHeading
+              as="h2"
+              id="faq-heading"
+              title="Common questions"
+              accent="about this doctor"
+            />
             <FAQList items={physician.faqs} />
           </div>
         </Container>

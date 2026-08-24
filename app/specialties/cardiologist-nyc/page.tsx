@@ -29,11 +29,6 @@ const seo = buildPageSeo({
     "sports Cardiologist NYC",
   ],
   ogImage: IMG.cardiologyHeartModel,
-  crumbs: [
-    { label: "Home", to: "/" },
-    { label: "Specialties", to: "/specialties" },
-    { label: "Cardiologist NYC" },
-  ],
   extraSchema: [cardiologistNycPageSchemaGraph(heroImageUrl)],
 });
 export const metadata = seo.metadata;

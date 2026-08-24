@@ -5,8 +5,7 @@ import { IMG } from "@/data/images";
 
 const seo = buildPageSeo({
   title: "Autonomic & Sudomotor Testing NYC  Umbrella",
-  description:
-    "Specialized autonomic and sudomotor testing  rarely in-house anywhere else in NYC.",
+  description: "Specialized autonomic and sudomotor testing  rarely in-house anywhere else in NYC.",
   path: "/diagnostics/autonomic-testing",
   crumbs: [
     { label: "Home", to: "/" },

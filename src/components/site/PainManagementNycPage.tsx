@@ -133,7 +133,8 @@ function ScrollReveal({
       style={{
         opacity: shown ? 1 : 0,
         transform: shown ? "translateY(0)" : "translateY(28px)",
-        transition: "opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)",
+        transition:
+          "opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)",
         transitionDelay: `${delay}ms`,
         willChange: "opacity, transform",
       }}
@@ -183,7 +184,7 @@ export function PainManagementNycPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
             <Block className="flex flex-col justify-center">
               <SectionLabel>Pain Management NYC</SectionLabel>
-              <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display text-balance text-[2.2rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {PAIN_HERO.h1}
               </h1>
 
@@ -247,7 +248,7 @@ export function PainManagementNycPage() {
               <SectionLabel>Conditions we treat</SectionLabel>
               <h2
                 id="conditions-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {PAIN_CONDITIONS.heading}
               </h2>
@@ -346,7 +347,7 @@ export function PainManagementNycPage() {
                             <span className="font-display text-xl text-white/25">0{index + 1}</span>
                           </div>
                           <div>
-                            <h3 className="font-display text-xl font-medium leading-tight text-white sm:text-2xl">
+                            <h3 className="font-display text-xl font-semibold leading-tight text-white sm:text-2xl">
                               {data.heading}
                             </h3>
                             <p className="mt-3 text-sm leading-[1.7] text-white/65 sm:text-base">
@@ -375,7 +376,7 @@ export function PainManagementNycPage() {
               <SectionLabel>Your care team</SectionLabel>
               <h2
                 id="why-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {PAIN_WHY_CHOOSE.heading}
               </h2>
@@ -426,7 +427,7 @@ export function PainManagementNycPage() {
                   <div className="flex items-center gap-4">
                     <PremiumIcon healthIcon="pain" size="md" />
                     <div>
-                      <p className="font-display text-2xl font-medium leading-none text-foreground">
+                      <p className="font-display text-2xl font-semibold leading-none text-foreground">
                         Umbrella Health
                       </p>
                       <p className="mt-1.5 text-sm text-muted-foreground">
@@ -452,7 +453,7 @@ export function PainManagementNycPage() {
               <SectionLabel>Personalized care</SectionLabel>
               <h2
                 id="personalized-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {PAIN_PERSONALIZED.heading}
               </h2>
@@ -489,7 +490,7 @@ export function PainManagementNycPage() {
                     aria-hidden
                   />
                   <PremiumIcon healthIcon="pain" tone="inverse" />
-                  <h3 className="font-display relative mt-8 text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-white">
+                  <h3 className="font-display relative mt-8 text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-white">
                     {PAIN_WHEN_TO_SEE.heading}
                   </h3>
                   <div className="relative mt-8">
@@ -531,14 +532,16 @@ export function PainManagementNycPage() {
               <SectionLabel>Locations</SectionLabel>
               <h2
                 id="locations-heading"
-                className="font-display max-w-xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display max-w-xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {PAIN_LOCATIONS.heading}
               </h2>
               <p className="mt-6 max-w-xl text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PAIN_LOCATIONS.paragraph1}
               </p>
-              <p className="mt-8 text-sm font-semibold text-foreground">{PAIN_LOCATIONS.areasLabel}</p>
+              <p className="mt-8 text-sm font-semibold text-foreground">
+                {PAIN_LOCATIONS.areasLabel}
+              </p>
               <ul className="mt-4 flex flex-wrap gap-2.5">
                 {PAIN_LOCATIONS.areas.map((area) => (
                   <li
@@ -598,7 +601,7 @@ export function PainManagementNycPage() {
                     </p>
                     <h3
                       id="first-visit-heading"
-                      className="font-display mt-4 text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-white sm:text-4xl"
+                      className="font-display mt-4 text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-white sm:text-4xl"
                     >
                       {PAIN_FIRST_VISIT.heading}
                     </h3>
@@ -648,7 +651,10 @@ export function PainManagementNycPage() {
 
       {/* Physicians */}
       {physicians.length > 0 && (
-        <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="specialists-heading">
+        <section
+          className="section-py bg-[color:var(--cream)]/40"
+          aria-labelledby="specialists-heading"
+        >
           <Container size="lg">
             <div className="space-y-16">
               {physicians.map((p, i) => (
@@ -671,7 +677,7 @@ export function PainManagementNycPage() {
                       <SectionLabel>Pain management team</SectionLabel>
                       <h2
                         id={i === 0 ? "specialists-heading" : undefined}
-                        className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                        className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                       >
                         {p.name}
                       </h2>
@@ -736,7 +742,7 @@ export function PainManagementNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {PAIN_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">
@@ -784,7 +790,7 @@ export function PainManagementNycPage() {
               <SectionLabel>Related care</SectionLabel>
               <h2
                 id="related-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {PAIN_RELATED.heading}
               </h2>
@@ -837,7 +843,7 @@ export function PainManagementNycPage() {
             <Block>
               <h2
                 id="pain-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {PAIN_FAQ_HEADING}
               </h2>

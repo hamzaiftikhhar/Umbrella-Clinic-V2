@@ -90,7 +90,7 @@ export function PrimaryCareNycPage() {
 
           <div className="grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
             <Fade>
-              <h1 className="font-display text-balance text-[2.35rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.5rem]">
+              <h1 className="font-display text-balance text-[2.35rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.5rem]">
                 {PRIMARY_CARE_HERO.h1}
               </h1>
 
@@ -143,7 +143,7 @@ export function PrimaryCareNycPage() {
         <Container size="lg">
           <h2
             id="why-heading"
-            className="font-display max-w-3xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+            className="font-display max-w-3xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
           >
             {PRIMARY_CARE_WHY_CHOOSE.heading}
           </h2>
@@ -188,14 +188,14 @@ export function PrimaryCareNycPage() {
             <div className="mx-auto max-w-3xl text-center">
               <h2
                 id="services-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {PRIMARY_CARE_SERVICES.heading}
               </h2>
               <p className="mt-6 text-base leading-[1.75] text-muted-foreground sm:text-lg">
                 {PRIMARY_CARE_SERVICES.intro}
               </p>
-              <h3 className="mt-6 font-display text-2xl font-medium tracking-[-0.01em] text-foreground sm:text-3xl">
+              <h3 className="mt-6 font-display text-2xl font-semibold tracking-[-0.01em] text-foreground sm:text-3xl">
                 {PRIMARY_CARE_SERVICES.listLabel}
               </h3>
             </div>
@@ -211,7 +211,9 @@ export function PrimaryCareNycPage() {
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">{service}</p>
+                  <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">
+                    {service}
+                  </p>
                   <div
                     className="absolute bottom-0 left-0 h-0.5 w-0 bg-[color:var(--accent-teal)] transition-all duration-500 group-hover:w-full"
                     aria-hidden
@@ -233,7 +235,7 @@ export function PrimaryCareNycPage() {
                 <div>
                   <h2
                     id="conditions-heading"
-                    className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                    className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                   >
                     {PRIMARY_CARE_CONDITIONS.heading}
                   </h2>
@@ -269,10 +271,13 @@ export function PrimaryCareNycPage() {
       </section>
 
       {physicians.length > 0 && (
-        <section className="section-py border-t border-border/50 bg-[color:var(--mist)]/50" aria-label="Primary care physicians">
+        <section
+          className="section-py border-t border-border/50 bg-[color:var(--mist)]/50"
+          aria-label="Primary care physicians"
+        >
           <Container size="lg">
             <Fade>
-              <p className="mb-12 max-w-2xl font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl">
+              <p className="mb-12 max-w-2xl font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl">
                 Meet your primary care physicians
               </p>
             </Fade>
@@ -301,7 +306,7 @@ export function PrimaryCareNycPage() {
             <Fade>
               <h2
                 id="pcp-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 FAQS
               </h2>
@@ -309,6 +314,57 @@ export function PrimaryCareNycPage() {
             <Fade delay={0.06}>
               <FAQList items={FAQS} />
             </Fade>
+          </div>
+        </Container>
+      </section>
+
+      <section className="section-py bg-[color:var(--cream)]/50" aria-labelledby="pc-diag-heading">
+        <Container size="lg">
+          <Fade>
+            <h2
+              id="pc-diag-heading"
+              className="font-display text-2xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-3xl"
+            >
+              In-house diagnostics your PCP can order
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Most labs go to a third-party. Ours don't. Your primary care physician orders, we
+              read, and the results feed directly into your care plan — no fax, no delay.
+            </p>
+          </Fade>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                title: "Biomarker & Lab Panels",
+                body: "Full lipid, hormonal, metabolic — mapped to your history.",
+                href: "/diagnostics/biomarkers",
+              },
+              {
+                title: "Imaging & Cardiac Testing",
+                body: "EKG, vascular ultrasound, and telemetry — read in-house.",
+                href: "/diagnostics/imaging-cardiac",
+              },
+              {
+                title: "Cancer Screening",
+                body: "Coordinated preventive screening as part of ongoing primary care.",
+                href: "/diagnostics/cancer-screening",
+              },
+            ].map((card) => (
+              <Fade key={card.href}>
+                <Link
+                  href={card.href}
+                  className="block rounded-2xl border border-border/60 bg-card p-5 shadow-[var(--shadow-card)] transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-elegant)]"
+                >
+                  <h3 className="text-sm font-semibold text-foreground">{card.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
+                    {card.body}
+                  </p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
+                    Learn more <span aria-hidden>→</span>
+                  </span>
+                </Link>
+              </Fade>
+            ))}
           </div>
         </Container>
       </section>
@@ -322,7 +378,7 @@ export function PrimaryCareNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {PRIMARY_CARE_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">

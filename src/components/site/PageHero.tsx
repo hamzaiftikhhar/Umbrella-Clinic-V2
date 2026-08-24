@@ -45,16 +45,12 @@ export function PageHero({
         {crumbs && crumbs.length > 0 && (
           <nav
             aria-label="Breadcrumb"
-            className={`mb-6 text-xs ${
-              dark ? "text-primary-foreground/60" : "text-foreground/55"
-            }`}
+            className={`mb-6 text-xs ${dark ? "text-primary-foreground/60" : "text-foreground/55"}`}
           >
             <ol className="flex flex-wrap items-center gap-1.5">
               {crumbs.map((c, i) => (
                 <li key={i} className="flex items-center gap-1.5">
-                  {i > 0 && (
-                    <ChevronRight className="h-3 w-3 shrink-0" aria-hidden="true" />
-                  )}
+                  {i > 0 && <ChevronRight className="h-3 w-3 shrink-0" aria-hidden="true" />}
                   {c.to ? (
                     <Link href={c.to} className="hover:underline">
                       {c.label}
@@ -78,10 +74,10 @@ export function PageHero({
                 {eyebrow}
               </p>
             )}
-            <h1 className="font-display text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] sm:text-5xl md:text-[3.25rem]">
+            <h1 className="font-display text-balance text-4xl font-bold leading-[1.04] tracking-[-0.02em] sm:text-5xl md:text-[3.25rem]">
               {italic ? (
                 <>
-                  <span className="italic font-normal">{italic} </span>
+                  <span className="font-medium">{italic} </span>
                   {title}
                 </>
               ) : (

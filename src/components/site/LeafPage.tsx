@@ -28,7 +28,12 @@ export interface LeafConfig {
     heading: string;
     accent?: string;
     body: string;
-    bullets?: { iconKey?: LucideIconKey; healthIcon?: HealthIconName; title: string; body: string }[];
+    bullets?: {
+      iconKey?: LucideIconKey;
+      healthIcon?: HealthIconName;
+      title: string;
+      body: string;
+    }[];
   };
   pills?: { label: string; items: string[] };
   related?: {
@@ -90,7 +95,10 @@ export function LeafPage({ config }: { config: LeafConfig }) {
 
       {c.aeo && (
         <>
-          <section className="border-t border-border/60 bg-secondary/20 py-20 sm:py-28" aria-labelledby="symptoms-heading">
+          <section
+            className="border-t border-border/60 bg-secondary/20 py-20 sm:py-28"
+            aria-labelledby="symptoms-heading"
+          >
             <Container size="lg">
               <SectionHeading as="h2" id="symptoms-heading" title="Symptoms" accent="we evaluate" />
               <div className="mt-8">
@@ -102,22 +110,40 @@ export function LeafPage({ config }: { config: LeafConfig }) {
           <section className="py-20 sm:py-28" aria-labelledby="when-heading">
             <Container size="lg">
               <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:gap-16">
-                <SectionHeading as="h2" id="when-heading" title="When to see" accent="a specialist" />
+                <SectionHeading
+                  as="h2"
+                  id="when-heading"
+                  title="When to see"
+                  accent="a specialist"
+                />
                 <div>
                   <h3 className="text-lg font-semibold text-foreground">{c.aeo.whenToSee.title}</h3>
-                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">{c.aeo.whenToSee.body}</p>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                    {c.aeo.whenToSee.body}
+                  </p>
                 </div>
               </div>
             </Container>
           </section>
 
-          <section className="border-y border-border/60 bg-secondary/20 py-20 sm:py-28" aria-labelledby="treatments-heading">
+          <section
+            className="border-y border-border/60 bg-secondary/20 py-20 sm:py-28"
+            aria-labelledby="treatments-heading"
+          >
             <Container size="lg">
-              <SectionHeading as="h2" id="treatments-heading" title="Treatments" accent="& services" />
+              <SectionHeading
+                as="h2"
+                id="treatments-heading"
+                title="Treatments"
+                accent="& services"
+              />
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
                 {c.aeo.treatments.map((treatment) => (
                   <li key={treatment} className="flex gap-3 text-sm text-foreground/80">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
+                    <span
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                      aria-hidden
+                    />
                     {treatment}
                   </li>
                 ))}
@@ -141,9 +167,17 @@ export function LeafPage({ config }: { config: LeafConfig }) {
           </section>
 
           {physiciansForSpecialty(c.aeo.specialtyKey).length > 0 && (
-            <section className="border-t border-border/60 py-20 sm:py-28" aria-labelledby="specialty-physicians-heading">
+            <section
+              className="border-t border-border/60 py-20 sm:py-28"
+              aria-labelledby="specialty-physicians-heading"
+            >
               <Container size="lg">
-                <SectionHeading as="h2" id="specialty-physicians-heading" title="Your" accent="physicians" />
+                <SectionHeading
+                  as="h2"
+                  id="specialty-physicians-heading"
+                  title="Your"
+                  accent="physicians"
+                />
                 <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:max-w-3xl">
                   {physiciansForSpecialty(c.aeo.specialtyKey).map((p) => (
                     <PhysicianCard

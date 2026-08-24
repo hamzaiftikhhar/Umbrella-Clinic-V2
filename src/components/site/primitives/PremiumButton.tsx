@@ -24,7 +24,7 @@ export const PremiumButton = forwardRef<HTMLButtonElement, PremiumButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium transition-all duration-500 ease-out hover:-translate-y-0.5 active:translate-y-0",
+          "group inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold transition-all duration-500 ease-out hover:-translate-y-0.5 active:translate-y-0",
           variants[variant],
           className,
         )}

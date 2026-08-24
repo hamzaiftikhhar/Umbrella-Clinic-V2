@@ -7,9 +7,9 @@ export const ROUTES = {
   neurology: "/specialties/neurologist-nyc",
   sleepMedicine: "/specialties/sleep-medicine-services-nyc",
   painManagement: "/specialties/pain-management-nyc",
-  medicalWeightLoss: "/specialties/medical-weight-loss-nyc",
-  diagnostics: "/diagnostics",
-  medicalSpa: "/medical-spa",
+  medicalWeightLoss: "/specialties/medical-weight-loss-clinic-nyc",
+  diagnostics: "/specialties/diagnostic-testing-nyc",
+  medicalSpa: "/specialties/medical-spa-nyc",
   ourTeam: "/our-team",
   patientReviews: "/patient-reviews",
   contactUs: "/contact-us",
@@ -29,8 +29,8 @@ export const SPECIALTY_NAV_ITEMS = [
 
 /** Top-level header navigation (excluding specialties dropdown). Blog hidden until redesign. */
 export const HEADER_NAV_ITEMS = [
-  { label: "Diagnostics & Testing", to: ROUTES.diagnostics },
-  { label: "Medical Spa Services", to: ROUTES.medicalSpa },
+  { label: "Diagnostic Testing NYC", to: ROUTES.diagnostics },
+  { label: "Medical Spa NYC", to: ROUTES.medicalSpa },
   { label: "Our Team", to: ROUTES.ourTeam },
   { label: "Patient Reviews", to: ROUTES.patientReviews },
   { label: "Contact Us", to: ROUTES.contactUs },

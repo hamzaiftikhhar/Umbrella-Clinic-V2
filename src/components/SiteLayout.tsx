@@ -44,9 +44,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         `isolate` is required so mix-blend / lazy images cannot sample the
         green footer underneath (the hard-scroll flash).
       */}
-      <div
-        className="relative z-10 isolate flex-1 overflow-x-clip bg-background md:flex-none md:min-h-screen md:mb-[var(--footer-h)]"
-      >
+      <div className="relative z-10 isolate flex-1 overflow-x-clip bg-background md:flex-none md:min-h-screen md:mb-[var(--footer-h)]">
         {children}
       </div>
 

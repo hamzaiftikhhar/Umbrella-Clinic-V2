@@ -7,7 +7,7 @@ export const POPULAR_INSURANCE_CARRIERS = [
   "EmblemHealth (formerly known as GHI)",
   "HealthFirst (NY)",
   "Fidelis Care (NY)",
-  "Anthem Blue Cross Blue Shield"
+  "Anthem Blue Cross Blue Shield",
 ] as const;
 
 export const ALL_INSURANCE_CARRIER_NAMES = [
@@ -738,7 +738,7 @@ export const ALL_INSURANCE_CARRIER_NAMES = [
   "WPS Health Plan",
   "Yamhill Community Care Organization",
   "Zenith",
-  "Zing Health"
+  "Zing Health",
 ] as const;
 
 export const TOTAL_INSURANCE_CARRIERS = 728;

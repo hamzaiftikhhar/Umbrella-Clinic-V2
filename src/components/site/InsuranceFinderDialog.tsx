@@ -11,10 +11,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { TOTAL_IN_NETWORK_PLANS } from "@/data/insurance-network";
-import {
-  POPULAR_INSURANCE_CARRIERS,
-  TOTAL_INSURANCE_CARRIERS,
-} from "@/data/insurance-carriers";
+import { POPULAR_INSURANCE_CARRIERS, TOTAL_INSURANCE_CARRIERS } from "@/data/insurance-carriers";
 import {
   hasExactInsuranceMatch,
   MAX_INSURANCE_RESULTS,
@@ -43,13 +40,13 @@ export function InsuranceFinderDialog() {
 
       <DialogContent className="max-h-[min(85vh,720px)] max-w-xl gap-0 overflow-hidden p-0 sm:rounded-[1.5rem]">
         <DialogHeader className="space-y-1 border-b border-border/60 px-6 pb-5 pt-6 text-left">
-          <DialogTitle className="font-display text-2xl font-medium tracking-tight">
+          <DialogTitle className="font-display text-2xl font-semibold tracking-tight">
             Find your insurance
           </DialogTitle>
           <DialogDescription>
             Search {TOTAL_INSURANCE_CARRIERS.toLocaleString()}+ carriers and{" "}
-            {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans. We&apos;ll verify your exact
-            coverage before your visit.
+            {TOTAL_IN_NETWORK_PLANS.toLocaleString()}+ in-network plans. We&apos;ll verify your
+            exact coverage before your visit.
           </DialogDescription>
         </DialogHeader>
 

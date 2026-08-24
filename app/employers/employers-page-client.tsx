@@ -72,7 +72,7 @@ export function EmployersPageClient() {
             {submitted ? (
               <div className="mx-auto mt-10 max-w-lg rounded-3xl border border-border/60 bg-card p-10 text-center shadow-[var(--shadow-card)]">
                 <p className="font-display text-2xl italic">
-                  Thanks  we&apos;ll be in touch within 2 business days.
+                  Thanks we&apos;ll be in touch within 2 business days.
                 </p>
               </div>
             ) : (

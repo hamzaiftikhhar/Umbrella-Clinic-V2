@@ -2,15 +2,7 @@
 
 import { GeoImage } from "./primitives/GeoImage";
 import { type ReactNode } from "react";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  Calendar,
-  Check,
-  MapPin,
-  Phone,
-  Star,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Calendar, Check, MapPin, Phone, Star } from "lucide-react";
 import { Link } from "@/components/AppLink";
 import { MedicalIconFrame } from "@/components/icons/MedicalIcon";
 import {
@@ -72,7 +64,9 @@ function Block({
 
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">{children}</p>
+    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
+      {children}
+    </p>
   );
 }
 
@@ -116,7 +110,7 @@ export function SleepMedicineNycPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:items-stretch lg:gap-14 xl:gap-16">
             <Block className="flex flex-col justify-center">
               <SectionLabel>Sleep Medicine NYC</SectionLabel>
-              <h1 className="font-display text-balance text-[2.2rem] font-medium leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
+              <h1 className="font-display text-balance text-[2.2rem] font-bold leading-[1.02] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.25rem]">
                 {SLEEP_MEDICINE_HERO.h1}
               </h1>
 
@@ -170,7 +164,7 @@ export function SleepMedicineNycPage() {
             <div className="max-w-3xl">
               <h2
                 id="sleep-intro-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {SLEEP_MEDICINE_INTRO.heading}
               </h2>
@@ -193,7 +187,7 @@ export function SleepMedicineNycPage() {
               <SectionLabel>Your care team</SectionLabel>
               <h2
                 id="why-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {SLEEP_MEDICINE_WHY_CHOOSE.heading}
               </h2>
@@ -232,7 +226,7 @@ export function SleepMedicineNycPage() {
               <SectionLabel>What we treat</SectionLabel>
               <h2
                 id="conditions-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {SLEEP_MEDICINE_CONDITIONS.heading}
               </h2>
@@ -290,7 +284,7 @@ export function SleepMedicineNycPage() {
               <SectionLabel>Precision testing</SectionLabel>
               <h2
                 id="diagnostics-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {SLEEP_MEDICINE_DIAGNOSTICS.heading}
               </h2>
@@ -310,7 +304,7 @@ export function SleepMedicineNycPage() {
                   <Block key={item.title} delay={0.05}>
                     <article className="group overflow-hidden rounded-[1.75rem] border border-border/50 bg-background shadow-[var(--shadow-elegant)] lg:grid lg:grid-cols-[1.1fr_0.9fr]">
                       <div className="border-b border-border/50 p-8 sm:p-10 lg:border-b-0 lg:border-r">
-                        <span className="font-display text-sm font-medium tracking-[0.2em] text-primary/60">
+                        <span className="font-display text-sm font-semibold tracking-[0.2em] text-primary/60">
                           STEP {step}
                         </span>
                         <div className="mt-6 flex items-start gap-4">
@@ -318,7 +312,9 @@ export function SleepMedicineNycPage() {
                             <Glyph size={22} />
                           </MedicalIconFrame>
                           <div>
-                            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">{item.title}</h3>
+                            <h3 className="text-xl font-semibold text-foreground sm:text-2xl">
+                              {item.title}
+                            </h3>
                             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
                               {item.body}
                             </p>
@@ -327,7 +323,7 @@ export function SleepMedicineNycPage() {
                       </div>
                       <div className="relative min-h-[220px] bg-[color:var(--navy-900)] lg:min-h-full">
                         <GeoImage
-                          src={IMG.sleepStudy}
+                          src={IMG.sleepMedicineConsultation}
                           alt={SLEEP_MEDICINE_NYC_SEO.diagnosticsImageAlt}
                           fill
                           className="object-cover opacity-75"
@@ -350,8 +346,12 @@ export function SleepMedicineNycPage() {
                       <Glyph size={20} />
                     </MedicalIconFrame>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-base font-semibold text-foreground sm:text-lg">{item.title}</h3>
-                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                      <h3 className="text-base font-semibold text-foreground sm:text-lg">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                        {item.body}
+                      </p>
                     </div>
                   </article>
                 </Block>
@@ -369,7 +369,7 @@ export function SleepMedicineNycPage() {
               <SectionLabel>Patient trust</SectionLabel>
               <h2
                 id="trust-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {SLEEP_MEDICINE_TRUST.heading}
               </h2>
@@ -386,12 +386,16 @@ export function SleepMedicineNycPage() {
               return (
                 <Block key={item.title} delay={i * 0.04}>
                   <article className="group relative overflow-hidden rounded-[1.75rem] border border-border/50 bg-background p-7 shadow-[var(--shadow-soft)] sm:p-8">
-                    <span className="font-display text-5xl font-light text-primary/10">{index}</span>
+                    <span className="font-display text-5xl font-light text-primary/10">
+                      {index}
+                    </span>
                     <MedicalIconFrame variant="primary" className="mt-4 rounded-full">
                       <Glyph size={20} />
                     </MedicalIconFrame>
                     <h3 className="mt-5 text-lg font-semibold text-foreground">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {item.body}
+                    </p>
                   </article>
                 </Block>
               );
@@ -415,7 +419,7 @@ export function SleepMedicineNycPage() {
             <Block>
               <h2
                 id="sleep-location-heading"
-                className="font-display max-w-xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
+                className="font-display max-w-xl text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.75rem]"
               >
                 {SLEEP_MEDICINE_LOCATION.heading}
               </h2>
@@ -465,7 +469,9 @@ export function SleepMedicineNycPage() {
                       i === 0 && "border-primary/25 bg-primary/[0.04]",
                     )}
                   >
-                    <span className={cn("font-medium", i === 0 ? "text-primary" : "text-foreground/90")}>
+                    <span
+                      className={cn("font-medium", i === 0 ? "text-primary" : "text-foreground/90")}
+                    >
                       {name}
                     </span>
                     <span className="font-display text-[10px] tabular-nums text-muted-foreground/40">
@@ -489,7 +495,7 @@ export function SleepMedicineNycPage() {
                   <SectionLabel>Sleep medicine team</SectionLabel>
                   <h2
                     id="specialists-heading"
-                    className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                    className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
                   >
                     {SLEEP_MEDICINE_SPECIALISTS.heading}
                   </h2>
@@ -569,7 +575,10 @@ export function SleepMedicineNycPage() {
       )}
 
       {/* 9. Insurance & Reviews */}
-      <section className="section-py bg-[color:var(--cream)]/60" aria-label="Insurance and patient reviews">
+      <section
+        className="section-py bg-[color:var(--cream)]/60"
+        aria-label="Insurance and patient reviews"
+      >
         <Container size="lg">
           <div className="grid gap-6 md:grid-cols-2">
             <Block>
@@ -582,7 +591,7 @@ export function SleepMedicineNycPage() {
                 </MedicalIconFrame>
                 <h2
                   id="insurance-heading"
-                  className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
+                  className="font-display mt-5 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
                 >
                   {SLEEP_MEDICINE_INSURANCE.heading}
                 </h2>
@@ -615,7 +624,7 @@ export function SleepMedicineNycPage() {
                 </div>
                 <h2
                   id="reviews-heading"
-                  className="font-display mt-5 text-2xl font-medium tracking-[-0.02em] text-foreground sm:text-3xl"
+                  className="font-display mt-5 text-2xl font-semibold tracking-[-0.02em] text-foreground sm:text-3xl"
                 >
                   {SLEEP_MEDICINE_REVIEWS.heading}
                 </h2>
@@ -643,7 +652,7 @@ export function SleepMedicineNycPage() {
               <SectionLabel>Related care</SectionLabel>
               <h2
                 id="related-heading"
-                className="font-display text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-balance text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {SLEEP_MEDICINE_RELATED.heading}
               </h2>
@@ -675,13 +684,16 @@ export function SleepMedicineNycPage() {
       </section>
 
       {/* 11. FAQ */}
-      <section className="section-py bg-[color:var(--cream)]/40" aria-labelledby="sleep-faq-heading">
+      <section
+        className="section-py bg-[color:var(--cream)]/40"
+        aria-labelledby="sleep-faq-heading"
+      >
         <Container size="lg">
           <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:gap-20">
             <Block>
               <h2
                 id="sleep-faq-heading"
-                className="font-display text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
+                className="font-display text-3xl font-semibold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl"
               >
                 {SLEEP_MEDICINE_FAQ_HEADING}
               </h2>
@@ -718,7 +730,7 @@ export function SleepMedicineNycPage() {
                 aria-hidden
               />
               <Calendar className="mx-auto h-10 w-10 text-primary" aria-hidden />
-              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-medium leading-[1.06] text-foreground sm:text-4xl">
+              <h2 className="font-display mx-auto mt-5 max-w-2xl text-balance text-3xl font-semibold leading-[1.06] text-foreground sm:text-4xl">
                 {SLEEP_MEDICINE_FINAL_CTA.heading}
               </h2>
               <p className="mx-auto mt-5 max-w-xl leading-relaxed text-muted-foreground">

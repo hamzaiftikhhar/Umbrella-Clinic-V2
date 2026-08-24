@@ -123,7 +123,7 @@ export function SiteHeader() {
                 >
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm text-foreground/75 transition-colors hover:text-primary"
+                    className="inline-flex items-center gap-1 rounded-full px-3 py-2 text-sm font-normal text-foreground/75 transition-colors hover:text-primary"
                     aria-expanded={specialtiesOpen}
                   >
                     Our Specialties <ChevronDown className="h-3.5 w-3.5" />
@@ -211,7 +211,7 @@ export function SiteHeader() {
                   <button
                     type="button"
                     onClick={() => setMobileSpecialtiesOpen((v) => !v)}
-                    className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-base text-foreground/85 hover:bg-secondary"
+                    className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-base font-normal text-foreground/85 hover:bg-secondary"
                     aria-expanded={mobileSpecialtiesOpen}
                   >
                     Our Specialties

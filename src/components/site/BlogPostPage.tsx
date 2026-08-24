@@ -12,20 +12,32 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
           <Container size="lg">
             <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
               <ol className="flex flex-wrap items-center gap-1.5">
-                <li><Link href="/" className="hover:underline">Home</Link></li>
+                <li>
+                  <Link href="/" className="hover:underline">
+                    Home
+                  </Link>
+                </li>
                 <li aria-hidden>/</li>
-                <li><Link href="/blog" className="hover:underline">Blog</Link></li>
+                <li>
+                  <Link href="/blog" className="hover:underline">
+                    Blog
+                  </Link>
+                </li>
                 <li aria-hidden>/</li>
-                <li><span aria-current="page">{post.title}</span></li>
+                <li>
+                  <span aria-current="page">{post.title}</span>
+                </li>
               </ol>
             </nav>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
               {post.category}
             </p>
-            <h1 className="font-display mt-4 max-w-3xl text-balance text-3xl font-medium leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
+            <h1 className="font-display mt-4 max-w-3xl text-balance text-3xl font-bold leading-[1.06] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
               {post.title}
             </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">{post.excerpt}</p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+              {post.excerpt}
+            </p>
             <p className="mt-6 text-sm text-muted-foreground">
               {post.author} · {post.readTime} ·{" "}
               {new Date(post.publishedAt).toLocaleDateString("en-US", {
@@ -51,13 +63,16 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
         <Container size="lg" className="py-16 sm:py-20">
           <div className="prose-custom mx-auto max-w-2xl space-y-6">
             {post.body.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="text-lg leading-relaxed text-foreground/85">
+              <p
+                key={paragraph.slice(0, 40)}
+                className="text-lg leading-relaxed text-foreground/85"
+              >
                 {paragraph}
               </p>
             ))}
           </div>
           <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-border/60 bg-secondary/30 p-8 text-center">
-            <p className="font-display text-xl font-medium text-foreground">
+            <p className="font-display text-xl font-semibold text-foreground">
               Ready to establish care in NYC?
             </p>
             <p className="mt-2 text-sm text-muted-foreground">

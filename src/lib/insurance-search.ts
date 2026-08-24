@@ -1,13 +1,13 @@
 import { ALL_INSURANCE_PLANS } from "@/data/insurance-network";
-import {
-  ALL_INSURANCE_CARRIER_NAMES,
-  POPULAR_INSURANCE_CARRIERS,
-} from "@/data/insurance-carriers";
+import { ALL_INSURANCE_CARRIER_NAMES, POPULAR_INSURANCE_CARRIERS } from "@/data/insurance-carriers";
 
 export const MAX_INSURANCE_RESULTS = 40;
 
 export function normalizeInsuranceQuery(value: string) {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 export type InsuranceSearchResult =
@@ -51,7 +51,8 @@ export function hasExactInsuranceMatch(query: string): boolean {
 
   return (
     ALL_INSURANCE_PLANS.some(
-      ({ carrier, plan }) => normalizeInsuranceQuery(plan) === q || normalizeInsuranceQuery(carrier) === q,
+      ({ carrier, plan }) =>
+        normalizeInsuranceQuery(plan) === q || normalizeInsuranceQuery(carrier) === q,
     ) || ALL_INSURANCE_CARRIER_NAMES.some((name) => normalizeInsuranceQuery(name) === q)
   );
 }

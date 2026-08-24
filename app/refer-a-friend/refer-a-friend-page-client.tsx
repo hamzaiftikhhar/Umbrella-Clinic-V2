@@ -84,7 +84,7 @@ export function ReferAFriendPageClient() {
           <Reveal>
             {submitted ? (
               <div className="mt-10 rounded-3xl border border-border/60 bg-card p-10 text-center shadow-[var(--shadow-card)]">
-                <p className="font-display text-2xl italic">Sent  thanks for thinking of them.</p>
+                <p className="font-display text-2xl italic">Sent thanks for thinking of them.</p>
               </div>
             ) : (
               <form

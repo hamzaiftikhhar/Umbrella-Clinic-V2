@@ -5,7 +5,7 @@ export const NEUROLOGIST_CLINIC_PHONE = "(347) 667-8272";
 export const NEUROLOGIST_NYC_SEO = {
   title: "Best Neurologist NYC | Brain & Nerve Specialists | Umbrella Health",
   description:
-    "Looking for a trusted neurologist in NYC? Umbrella Health offers expert diagnosis and treatment for migraines, memory loss, tremors, neuropathy, seizures. Visit Us",
+    "Expert NYC neurologists at Umbrella Health treat migraines, memory loss, tremors, neuropathy, and seizures. Schedule an appointment today",
   heroImageAlt:
     "Neurologist in NYC — best neurologist NYC for brain and nervous system care at Umbrella Health",
   conditionsImageAlt:
@@ -202,8 +202,7 @@ export const NEUROLOGIST_FINAL_CTA = {
   callCta: "Call Our Team to Get Started",
 } as const;
 
-export const NEUROLOGIST_FAQ_HEADING =
-  "Frequently Asked Questions About Neurologists in NYC";
+export const NEUROLOGIST_FAQ_HEADING = "Frequently Asked Questions About Neurologists in NYC";
 
 export const NEUROLOGIST_NYC_FAQS = [
   {

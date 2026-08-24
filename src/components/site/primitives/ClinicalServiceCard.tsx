@@ -25,7 +25,7 @@ export function ClinicalServiceCard({
   return (
     <div className={cn("group/card relative min-w-0", className)}>
       <Link href={href} className="block">
-        <article className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] sm:rounded-[2rem]">
+        <article className="relative aspect-[4/5] overflow-hidden rounded-[1.375rem] sm:rounded-[1.5rem]">
           <GeoImage
             src={imageUrl}
             alt={imageAlt ?? `${title} at Umbrella Health NYC`}
@@ -66,11 +66,7 @@ export function ClinicalServiceCard({
   );
 }
 
-export function ClinicalServiceRows({
-  services,
-}: {
-  services: ClinicalServiceCardProps[];
-}) {
+export function ClinicalServiceRows({ services }: { services: ClinicalServiceCardProps[] }) {
   const rows = [services.slice(0, 4), services.slice(4, 8)];
 
   return (

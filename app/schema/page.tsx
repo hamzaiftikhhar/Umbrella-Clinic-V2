@@ -19,7 +19,7 @@ export default function SchemaDebugPage() {
       <JsonLd data={[]} />
       <main className="section-py bg-background">
         <Container size="lg">
-          <h1 className="font-display text-3xl font-medium text-foreground sm:text-4xl">
+          <h1 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
             Structured data preview
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground">
@@ -31,7 +31,10 @@ export default function SchemaDebugPage() {
           <div className="mt-10 space-y-8">
             {Object.entries(bundle).map(([key, value]) => (
               <section key={key} aria-labelledby={`schema-${key}`}>
-                <h2 id={`schema-${key}`} className="text-lg font-semibold capitalize text-foreground">
+                <h2
+                  id={`schema-${key}`}
+                  className="text-lg font-semibold capitalize text-foreground"
+                >
                   {key.replace(/([A-Z])/g, " $1").trim()}
                 </h2>
                 <pre className="mt-3 overflow-x-auto rounded-2xl border border-border/60 bg-card p-5 text-xs leading-relaxed text-foreground/90">

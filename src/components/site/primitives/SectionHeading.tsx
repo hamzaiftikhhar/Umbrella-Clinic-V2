@@ -30,10 +30,9 @@ export function SectionHeading({
       )}
       <Tag
         id={id}
-        className="font-display text-3xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
+        className="font-display text-3xl font-semibold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-4xl md:text-5xl"
       >
-        {title}{" "}
-        {accent && <span className="font-light italic text-primary">{accent}</span>}
+        {title} {accent && <span className="font-light italic text-primary">{accent}</span>}
       </Tag>
       {description && (
         <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">

@@ -14,14 +14,19 @@ export function BlogIndexPage() {
         <Container size="lg">
           <nav aria-label="Breadcrumb" className="mb-6 text-xs text-muted-foreground">
             <ol className="flex items-center gap-1.5">
-              <li><Link href="/" className="hover:underline">Home</Link></li>
+              <li>
+                <Link href="/" className="hover:underline">
+                  Home
+                </Link>
+              </li>
               <li aria-hidden>/</li>
-              <li><span aria-current="page">Blog</span></li>
+              <li>
+                <span aria-current="page">Blog</span>
+              </li>
             </ol>
           </nav>
-          <h1 className="font-display max-w-3xl text-balance text-4xl font-medium leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
-            Health insights for{" "}
-            <span className="font-light italic text-primary">New Yorkers</span>
+          <h1 className="font-display max-w-3xl text-balance text-4xl font-bold leading-[1.04] tracking-[-0.02em] text-foreground sm:text-5xl">
+            Health insights for <span className="font-light italic text-primary">New Yorkers</span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Practical guides on primary care, preventive health, and navigating healthcare in NYC —
@@ -52,12 +57,19 @@ export function BlogIndexPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/70">
                     {featured.category} · Featured
                   </p>
-                  <h2 className="font-display mt-3 text-2xl font-medium leading-tight text-foreground sm:text-3xl">
+                  <h2 className="font-display mt-3 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
                     {featured.title}
                   </h2>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">{featured.excerpt}</p>
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                    {featured.excerpt}
+                  </p>
                   <p className="mt-6 text-sm text-muted-foreground">
-                    {featured.readTime} · {new Date(featured.publishedAt).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+                    {featured.readTime} ·{" "}
+                    {new Date(featured.publishedAt).toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })}
                   </p>
                 </div>
               </Link>

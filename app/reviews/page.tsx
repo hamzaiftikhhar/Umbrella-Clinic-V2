@@ -2,10 +2,7 @@ import { buildPageSeo } from "@/lib/page-head";
 import { JsonLd } from "@/components/JsonLd";
 import { ReviewsPageClient } from "./reviews-page-client";
 import { patientReviews } from "@/data/reviews";
-import {
-  medicalClinicSchema,
-  reviewSchemas,
-} from "@/lib/schema";
+import { medicalClinicSchema, reviewSchemas } from "@/lib/schema";
 
 const seo = buildPageSeo({
   title: "Patient Reviews — Umbrella Health NYC",
@@ -14,6 +11,7 @@ const seo = buildPageSeo({
   path: "/patient-reviews",
   crumbs: [{ label: "Home", to: "/" }, { label: "Patient Reviews" }],
   geo: true,
+  ogImage: "/images/patient-reviews-hero.webp",
   extraSchema: [medicalClinicSchema({ includeRating: true }), ...reviewSchemas(patientReviews)],
 });
 export const metadata = seo.metadata;

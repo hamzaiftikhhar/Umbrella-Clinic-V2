@@ -12,8 +12,7 @@ export const PAIN_NYC_SEO = {
     "Patients living active, pain-free lives after pain management treatment at Umbrella Health NYC",
   conditionsImageAlt:
     "Pain management clinic near me evaluating spine and joint pain at Umbrella Health",
-  interventionalImageAlt:
-    "Interventional pain management services at Umbrella Health NYC",
+  interventionalImageAlt: "Interventional pain management services at Umbrella Health NYC",
   chronicImageAlt: "Chronic pain management doctor near me at Umbrella Health",
   spineImageAlt: "Back and spine pain treatment near me at Umbrella Health NYC",
   nerveImageAlt: "Nerve pain specialist near me treating neuropathic pain at Umbrella Health",

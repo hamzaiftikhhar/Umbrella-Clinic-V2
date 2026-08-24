@@ -82,7 +82,7 @@ export function PrimaryCareLocationSection() {
           >
             <h2
               id="location-heading"
-              className="font-display max-w-lg text-balance text-4xl font-medium leading-[1.04] tracking-[-0.03em] text-foreground sm:text-5xl"
+              className="font-display max-w-lg text-balance text-4xl font-semibold leading-[1.04] tracking-[-0.03em] text-foreground sm:text-5xl"
             >
               {PRIMARY_CARE_LOCATION.heading}
             </h2>
@@ -119,7 +119,10 @@ export function PrimaryCareLocationSection() {
               </li>
               <li className="flex gap-4">
                 <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[color:var(--accent-amber-surface)]">
-                  <span className="text-xs font-semibold text-[color:var(--accent-amber)]" aria-hidden>
+                  <span
+                    className="text-xs font-semibold text-[color:var(--accent-amber)]"
+                    aria-hidden
+                  >
                     @
                   </span>
                 </span>

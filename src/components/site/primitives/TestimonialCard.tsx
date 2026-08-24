@@ -11,12 +11,7 @@ interface TestimonialCardProps {
   rating?: number;
 }
 
-export function TestimonialCard({
-  name,
-  quote,
-  time,
-  rating = 5,
-}: TestimonialCardProps) {
+export function TestimonialCard({ name, quote, time, rating = 5 }: TestimonialCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
   const textRef = useRef<HTMLParagraphElement>(null);
