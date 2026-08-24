@@ -12,6 +12,7 @@ const seo = buildPageSeo({
     { label: "Longevity", to: "/longevity" },
     { label: "Hormone Optimization" },
   ],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
