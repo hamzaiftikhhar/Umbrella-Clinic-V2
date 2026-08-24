@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       { label: "Our Team", to: "/our-team" },
       { label: physician.name },
     ],
+    robots: { index: false, follow: true },
   });
   return seo.metadata;
 }

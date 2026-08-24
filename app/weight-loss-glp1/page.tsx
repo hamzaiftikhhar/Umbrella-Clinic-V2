@@ -29,6 +29,7 @@ const seo = buildPageSeo({
   path: "/weight-loss-glp1",
   crumbs: [{ label: "Home", to: "/" }, { label: "Weight Loss (GLP-1)" }],
   extraSchema: [faqSchema(faqs)],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 

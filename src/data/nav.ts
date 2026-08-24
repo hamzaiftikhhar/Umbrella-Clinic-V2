@@ -14,11 +14,11 @@ export const PRIMARY_NAV: NavItem[] = HEADER_NAV_ITEMS.map(({ label, to }) => ({
   to,
 }));
 
+/** Architecture-only links — no soft/legacy URLs that leak crawl equity. */
 export const MORE_NAV: NavItem[] = [
-  { label: "FAQ", to: "/faq" },
-  { label: "Resources", to: "/resources" },
-  { label: "For Employers", to: "/employers" },
-  { label: "Patient Portal", to: "/portal" },
+  { label: "Insurance", to: ROUTES.insurance },
+  { label: "Patient Reviews", to: ROUTES.patientReviews },
+  { label: "Contact Us", to: ROUTES.contactUs },
 ];
 
 export const FOOTER_COLUMNS = [
@@ -31,9 +31,7 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: "Diagnostic Testing NYC", to: ROUTES.diagnostics },
       { label: "Medical Spa NYC", to: ROUTES.medicalSpa },
-      { label: "Insurance & Pricing", to: ROUTES.insurance },
-      { label: "For Employers", to: "/employers" },
-      { label: "Patient Resources", to: "/resources" },
+      { label: "Insurance", to: ROUTES.insurance },
     ],
   },
   {
@@ -42,8 +40,6 @@ export const FOOTER_COLUMNS = [
       { label: "Our Team", to: ROUTES.ourTeam },
       { label: "Patient Reviews", to: ROUTES.patientReviews },
       { label: "Contact Us", to: ROUTES.contactUs },
-      { label: "Blog", to: ROUTES.blog },
-      { label: "FAQ", to: "/faq" },
     ],
   },
 ] as const;

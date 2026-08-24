@@ -10,6 +10,7 @@ const seo = buildPageSeo({
   description: "Terms governing your use of the Umbrella Health website.",
   path: "/terms",
   crumbs: [{ label: "Home", to: "/" }, { label: "Terms" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 

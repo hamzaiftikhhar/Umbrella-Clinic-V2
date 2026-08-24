@@ -1,9 +1,13 @@
 import { SITE_URL, SITE_NAME, SITE_ADDRESS, SITE_PHONE, BOOKING_URL } from "@/lib/site";
-import { CLINIC_OPENING_HOURS } from "@/lib/schema";
+import { CLINIC_HOURS_PENDING_VERIFICATION, CLINIC_OPENING_HOURS } from "@/data/clinic-hours";
 import { PHYSICIANS, physicianProfilePath } from "@/data/physicians";
 import { CLINICAL_SERVICES } from "@/data/clinical-services";
 
 export function generateLlmsTxt(full = false): string {
+  const hoursLine = CLINIC_HOURS_PENDING_VERIFICATION
+    ? "- Hours: Contact the clinic to confirm current hours"
+    : `- Hours: ${CLINIC_OPENING_HOURS.join("; ")}`;
+
   const lines: string[] = [
     `# ${SITE_NAME}`,
     "",
@@ -13,7 +17,7 @@ export function generateLlmsTxt(full = false): string {
     `- Name: ${SITE_NAME}`,
     `- Address: ${SITE_ADDRESS}`,
     `- Phone: ${SITE_PHONE}`,
-    `- Hours: ${CLINIC_OPENING_HOURS.join("; ")}`,
+    hoursLine,
     `- Booking: ${BOOKING_URL}`,
     `- Website: ${SITE_URL}`,
     "",
@@ -44,7 +48,7 @@ export function generateLlmsTxt(full = false): string {
     `- Details: ${SITE_URL}/insurance`,
     "",
     "## Locations served",
-    "- Lower Manhattan, NoHo, Union Square, SoHo, Tribeca, Greenwich Village, Flatiron, Brooklyn (commutable)",
+    "- Lower Manhattan, Union Square, SoHo, Tribeca, Greenwich Village, Flatiron, Brooklyn (commutable)",
     `- Visit us: ${SITE_URL}/contact-us`,
     "",
     "## FAQ",

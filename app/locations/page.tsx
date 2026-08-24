@@ -34,6 +34,7 @@ const seo = buildPageSeo({
   geo: true,
   crumbs: [{ label: "Home", to: "/" }, { label: "Locations" }],
   extraSchema: [medicalClinicSchema({ includeHours: true })],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 

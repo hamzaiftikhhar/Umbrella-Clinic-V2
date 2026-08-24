@@ -10,6 +10,7 @@ const seo = buildPageSeo({
   description: "How Umbrella Health collects, uses, and protects your information.",
   path: "/privacy",
   crumbs: [{ label: "Home", to: "/" }, { label: "Privacy" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 

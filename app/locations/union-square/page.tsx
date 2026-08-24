@@ -17,6 +17,7 @@ const seo = buildPageSeo({
     { label: "Union Square" },
   ],
   extraSchema: [localClinicSchema("Union Square", [...NEIGHBORHOOD_AREAS["union-square"]])],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 

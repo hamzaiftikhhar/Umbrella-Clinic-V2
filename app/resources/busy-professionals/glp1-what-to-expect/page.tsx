@@ -19,6 +19,7 @@ const seo = buildPageSeo({
     { label: "Busy Professionals", to: "/resources/busy-professionals" },
     { label: article.title },
   ],
+  robots: { index: false, follow: false },
   extraSchema: [
     articleSchema({
       title: article.title,

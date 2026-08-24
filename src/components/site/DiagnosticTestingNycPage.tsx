@@ -95,13 +95,7 @@ export function DiagnosticTestingNycPage() {
               </li>
               <li aria-hidden>/</li>
               <li>
-                <Link href={ROUTES.specialtiesHub} className="hover:underline">
-                  Our Specialties
-                </Link>
-              </li>
-              <li aria-hidden>/</li>
-              <li>
-                <span aria-current="page">Diagnostic Testing NYC</span>
+                <span aria-current="page">Diagnostics</span>
               </li>
             </ol>
           </nav>

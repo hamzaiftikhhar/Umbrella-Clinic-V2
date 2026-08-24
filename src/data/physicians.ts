@@ -127,7 +127,7 @@ export const PHYSICIANS: Physician[] = [
     faqs: [
       {
         q: "Is Dr. Rajat Lamington accepting new patients?",
-        a: "Yes. Dr. Lamington accepts new patients at Umbrella Health in NoHo, Lower Manhattan. Book online through Zocdoc for in-person or telehealth visits.",
+        a: "Yes. Dr. Lamington accepts new patients at Umbrella Health in Lower Manhattan. Book online through Zocdoc for in-person or telehealth visits.",
       },
       {
         q: "What conditions does Dr. Lamington treat?",

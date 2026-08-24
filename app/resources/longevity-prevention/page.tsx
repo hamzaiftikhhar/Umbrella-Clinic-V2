@@ -18,6 +18,7 @@ const seo = buildPageSeo({
     { label: "Resources", to: "/resources" },
     { label: p.title },
   ],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 
