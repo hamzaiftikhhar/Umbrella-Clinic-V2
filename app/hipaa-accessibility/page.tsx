@@ -10,6 +10,7 @@ const seo = buildPageSeo({
   description: "Our HIPAA compliance and accessibility commitments.",
   path: "/hipaa-accessibility",
   crumbs: [{ label: "Home", to: "/" }, { label: "HIPAA & Accessibility" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 
