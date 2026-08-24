@@ -75,10 +75,10 @@ export function UmbrellaDifference() {
 
             <div className="mt-10 flex flex-col gap-5 border-t border-border/50 pt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
               <Link
-                to="/specialties"
+                to="/our-team"
                 className="group inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
               >
-                See How We&apos;re Different
+                Meet Our Physicians
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
               </Link>
 
