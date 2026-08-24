@@ -17,6 +17,7 @@ const seo = buildPageSeo({
     "Plain-English health writing across diagnostics, longevity, and real-world health for busy professionals.",
   path: "/resources",
   crumbs: [{ label: "Home", to: "/" }, { label: "Resources" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 
