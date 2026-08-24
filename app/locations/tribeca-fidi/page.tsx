@@ -17,6 +17,7 @@ const seo = buildPageSeo({
     { label: "Tribeca / FiDi" },
   ],
   extraSchema: [localClinicSchema("Tribeca / FiDi", [...NEIGHBORHOOD_AREAS["tribeca-fidi"]])],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 

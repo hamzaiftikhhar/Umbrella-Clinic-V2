@@ -13,6 +13,7 @@ const seo = buildPageSeo({
   geo: true,
   crumbs: [{ label: "Home", to: "/" }, { label: "Locations", to: "/locations" }, { label: "SoHo" }],
   extraSchema: [localClinicSchema("SoHo", [...NEIGHBORHOOD_AREAS.soho])],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
