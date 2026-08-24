@@ -13,6 +13,7 @@ const seo = buildPageSeo({
     { label: "Diagnostics", to: "/diagnostics" },
     { label: "Sleep & Pulmonary" },
   ],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 

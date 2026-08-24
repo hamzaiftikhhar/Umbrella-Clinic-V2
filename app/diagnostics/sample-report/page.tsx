@@ -34,6 +34,7 @@ const seo = buildPageSeo({
     { label: "Diagnostics", to: "/diagnostics" },
     { label: "Sample Report" },
   ],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 
