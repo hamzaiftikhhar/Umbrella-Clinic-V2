@@ -24,7 +24,11 @@ import {
   MEDICAL_SPA_TREATMENTS,
 } from "@/data/medical-spa-nyc-content";
 import { ROUTES } from "@/data/site-architecture";
-import { CLINIC_HOURS_PENDING_VERIFICATION, CLINIC_OPENING_HOURS, clinicOpeningHoursSpecification } from "@/data/clinic-hours";
+import {
+  CLINIC_HOURS_PENDING_VERIFICATION,
+  CLINIC_OPENING_HOURS,
+  clinicOpeningHoursSpecification,
+} from "@/data/clinic-hours";
 import {
   absoluteUrl,
   BOOKING_URL,
