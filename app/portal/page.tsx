@@ -12,6 +12,7 @@ const seo = buildPageSeo({
   description: "Access your records, messages, results, and scheduling.",
   path: "/portal",
   crumbs: [{ label: "Home", to: "/" }, { label: "Patient Portal" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 

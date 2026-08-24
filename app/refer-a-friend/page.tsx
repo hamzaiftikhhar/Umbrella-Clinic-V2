@@ -7,6 +7,7 @@ const seo = buildPageSeo({
   description: "Send a friend or partner to Umbrella  both of you get something back.",
   path: "/refer-a-friend",
   crumbs: [{ label: "Home", to: "/" }, { label: "Refer a Friend" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 

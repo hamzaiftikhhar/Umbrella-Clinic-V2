@@ -17,6 +17,7 @@ const seo = buildPageSeo({
   path: "/faq",
   crumbs: [{ label: "Home", to: "/" }, { label: "FAQ" }],
   extraSchema: [faqSchema(faqs)],
+  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 

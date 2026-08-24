@@ -8,6 +8,7 @@ const seo = buildPageSeo({
     "Executive physicals, longevity programs, and on-site days for NYC firms. Concierge-quality care for your team.",
   path: "/employers",
   crumbs: [{ label: "Home", to: "/" }, { label: "For Employers" }],
+  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 
