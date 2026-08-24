@@ -24,6 +24,7 @@ import {
   MEDICAL_SPA_TREATMENTS,
 } from "@/data/medical-spa-nyc-content";
 import { ROUTES } from "@/data/site-architecture";
+import { CLINIC_HOURS_PENDING_VERIFICATION, CLINIC_OPENING_HOURS, clinicOpeningHoursSpecification } from "@/data/clinic-hours";
 import {
   absoluteUrl,
   BOOKING_URL,
@@ -38,12 +39,12 @@ import {
   CLINIC_SOCIAL_SAME_AS,
 } from "@/lib/site";
 
+export { CLINIC_OPENING_HOURS } from "@/data/clinic-hours";
+
 export const DEFAULT_OG_IMAGE = "/images/street-view.webp";
 export const SITE_LOGO = "/images/combination-mark.webp";
 export const HERO_IMAGE_PATH =
   "/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.webp";
-
-export const CLINIC_OPENING_HOURS = ["Mo-Fr 08:00-19:00", "Sa 09:00-15:00"] as const;
 
 /** E.164 for schema.org telephone fields. */
 export const SITE_PHONE_SCHEMA = "+1-347-667-8272";
@@ -57,8 +58,9 @@ export const CLINIC_MEDICAL_SPECIALTIES = [
 ] as const;
 
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
-export const CLINIC_ID = `${SITE_URL}/#medical-clinic`;
+/** Canonical MedicalClinic entity id (SEO graph uses #clinic). */
 export const CLINIC_SCHEMA_ID = `${SITE_URL}/#clinic`;
+export const CLINIC_ID = CLINIC_SCHEMA_ID;
 export const CATALOG_SCHEMA_ID = `${SITE_URL}/#catalog`;
 export const LOGO_SCHEMA_ID = `${SITE_URL}/#logo`;
 export const HOMEPAGE_SCHEMA_ID = `${SITE_URL}/#homepage`;
@@ -98,7 +100,6 @@ export function medicalClinicSchema(options: MedicalClinicOptions = {}) {
     areaServed = [
       "New York City",
       "Lower Manhattan",
-      "NoHo",
       "Union Square",
       "SoHo",
       "Tribeca",
@@ -112,7 +113,7 @@ export function medicalClinicSchema(options: MedicalClinicOptions = {}) {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
-    "@id": CLINIC_ID,
+    "@id": CLINIC_SCHEMA_ID,
     name: SITE_NAME,
     description: SITE_TAGLINE,
     url: absoluteUrl("/"),
@@ -127,8 +128,9 @@ export function medicalClinicSchema(options: MedicalClinicOptions = {}) {
     parentOrganization: { "@id": ORGANIZATION_ID },
   };
 
-  if (includeHours) {
+  if (includeHours && !CLINIC_HOURS_PENDING_VERIFICATION) {
     schema.openingHours = [...CLINIC_OPENING_HOURS];
+    schema.openingHoursSpecification = clinicOpeningHoursSpecification();
   }
 
   if (includeRating) {
@@ -161,14 +163,6 @@ export function webSiteSchema() {
     name: SITE_NAME,
     url: absoluteUrl("/"),
     publisher: { "@id": ORGANIZATION_ID },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${absoluteUrl("/specialties")}?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -445,7 +439,6 @@ export function primaryCareNycPageSchemaGraph() {
           { "@type": "Place", name: "Greenwich Village" },
           { "@type": "Place", name: "Flatiron District" },
           { "@type": "Place", name: "SoHo" },
-          { "@type": "Place", name: "NoHo" },
           { "@type": "Place", name: "Gramercy" },
           { "@type": "Place", name: "East Village" },
           { "@type": "Place", name: "West Village" },
@@ -933,20 +926,9 @@ export function sleepMedicineNycPageSchemaGraph(heroImageUrl: string) {
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
         hasMap: CLINIC_GOOGLE_MAPS_URL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "15:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -1202,20 +1184,9 @@ export function cardiologistNycPageSchemaGraph(heroImageUrl: string) {
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
         hasMap: CLINIC_GOOGLE_MAPS_URL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "15:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -1490,20 +1461,9 @@ export function painManagementNycPageSchemaGraph(heroImageUrl: string) {
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
         hasMap: CLINIC_GOOGLE_MAPS_URL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "15:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -1639,20 +1599,9 @@ export function medicalWeightLossClinicNycPageSchemaGraph(heroImageUrl: string) 
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
         hasMap: CLINIC_GOOGLE_MAPS_URL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "15:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -1718,14 +1667,6 @@ export function medicalWeightLossClinicNycPageSchemaGraph(heroImageUrl: string) 
         url: absoluteUrl("/"),
         name: SITE_NAME,
         publisher: { "@id": ORGANIZATION_ID },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${absoluteUrl("/specialties")}?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "WebPage",
@@ -1872,20 +1813,9 @@ export function diagnosticTestingNycPageSchemaGraph(heroImageUrl: string) {
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
         hasMap: CLINIC_GOOGLE_MAPS_URL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "15:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -1953,14 +1883,6 @@ export function diagnosticTestingNycPageSchemaGraph(heroImageUrl: string) {
         url: absoluteUrl("/"),
         name: SITE_NAME,
         publisher: { "@id": ORGANIZATION_ID },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${absoluteUrl("/specialties")}?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "WebPage",
@@ -2006,13 +1928,7 @@ export function diagnosticTestingNycPageSchemaGraph(heroImageUrl: string) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "Specialties",
-            item: absoluteUrl(ROUTES.specialtiesHub),
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Diagnostic Testing NYC",
+            name: "Diagnostics",
             item: pageUrl,
           },
         ],
@@ -2107,20 +2023,9 @@ export function medicalSpaNycPageSchemaGraph(heroImageUrl: string) {
         address: postalAddressSchema(),
         geo: geoCoordinatesSchema(),
         hasMap: CLINIC_GOOGLE_MAPS_URL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "19:00",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "15:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "Neurology",
@@ -2188,14 +2093,6 @@ export function medicalSpaNycPageSchemaGraph(heroImageUrl: string) {
         url: absoluteUrl("/"),
         name: SITE_NAME,
         publisher: { "@id": ORGANIZATION_ID },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${absoluteUrl("/specialties")}?q={search_term_string}`,
-          },
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "WebPage",
@@ -2347,7 +2244,7 @@ export function reviewSchemas(reviews: ReviewInput[]) {
 export function localClinicSchema(neighborhood: string, servedAreas: string[]) {
   return medicalClinicSchema({
     areaServed: servedAreas,
-    includeHours: true,
+    includeHours: false,
   });
 }
 
@@ -2426,14 +2323,9 @@ export function homePageSchemaGraph() {
         geo: geoCoordinatesSchema(),
         telephone: SITE_PHONE_SCHEMA,
         email: SITE_EMAIL,
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "09:00",
-            closes: "17:00",
-          },
-        ],
+        ...(clinicOpeningHoursSpecification()
+          ? { openingHoursSpecification: clinicOpeningHoursSpecification() }
+          : {}),
         medicalSpecialty: [
           "PrimaryCare",
           "InternalMedicine",
@@ -2462,11 +2354,6 @@ export function homePageSchemaGraph() {
         url: absoluteUrl("/"),
         name: SITE_NAME,
         publisher: { "@id": ORGANIZATION_ID },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: `${absoluteUrl("/")}?s={search_term_string}`,
-          "query-input": "required name=search_term_string",
-        },
       },
       {
         "@type": "WebPage",
