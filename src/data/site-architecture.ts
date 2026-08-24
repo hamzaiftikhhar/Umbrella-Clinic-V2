@@ -8,7 +8,7 @@ export const ROUTES = {
   sleepMedicine: "/specialties/sleep-medicine-services-nyc",
   painManagement: "/specialties/pain-management-nyc",
   medicalWeightLoss: "/specialties/medical-weight-loss-clinic-nyc",
-  diagnostics: "/specialties/diagnostic-testing-nyc",
+  diagnostics: "/diagnostics",
   medicalSpa: "/specialties/medical-spa-nyc",
   ourTeam: "/our-team",
   patientReviews: "/patient-reviews",
@@ -16,6 +16,24 @@ export const ROUTES = {
   insurance: "/insurance",
   blog: "/blog",
 } as const;
+
+/** Pages that should be indexed + listed in sitemap (SEO architecture allowlist). */
+export const INDEXABLE_ARCHITECTURE_PATHS = [
+  ROUTES.home,
+  ROUTES.specialtiesHub,
+  ROUTES.primaryCare,
+  ROUTES.cardiology,
+  ROUTES.neurology,
+  ROUTES.sleepMedicine,
+  ROUTES.painManagement,
+  ROUTES.medicalWeightLoss,
+  ROUTES.diagnostics,
+  ROUTES.medicalSpa,
+  ROUTES.ourTeam,
+  ROUTES.patientReviews,
+  ROUTES.insurance,
+  ROUTES.contactUs,
+] as const;
 
 /** Specialty links for the Our Specialties dropdown (hub children only). */
 export const SPECIALTY_NAV_ITEMS = [
