@@ -12,6 +12,7 @@ import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
 import { CLINIC_MAP_EMBED_URL, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
 import { medicalClinicSchema } from "@/lib/schema";
+import { CLINIC_HOURS_DISPLAY } from "@/data/clinic-hours";
 
 const seo = buildPageSeo({
   title: "Contact Us — Umbrella Health NYC | 32 West 14th Street",
@@ -34,7 +35,7 @@ const facts: { iconKey: LucideIconKey; title: string; body: string }[] = [
   {
     iconKey: "clock",
     title: "Hours",
-    body: "Mon–Fri · 8am – 7pm\nSaturday · 9am – 3pm\nSunday · Closed",
+    body: CLINIC_HOURS_DISPLAY.compact,
   },
   {
     iconKey: "accessibility",
