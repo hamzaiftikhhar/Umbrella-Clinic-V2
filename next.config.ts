@@ -5,8 +5,13 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/our-physicians",
+        destination: "/our-team",
+        permanent: true,
+      },
+      {
         source: "/our-physicians/dr-archimedes-jao",
-        destination: "/our-physicians",
+        destination: "/our-team",
         permanent: true,
       },
       {
@@ -27,6 +32,21 @@ const nextConfig: NextConfig = {
       {
         source: "/medical-spa",
         destination: "/specialties/medical-spa-nyc",
+        permanent: true,
+      },
+      {
+        source: "/visit-us",
+        destination: "/contact-us",
+        permanent: true,
+      },
+      {
+        source: "/reviews",
+        destination: "/patient-reviews",
+        permanent: true,
+      },
+      {
+        source: "/weight-loss-glp1",
+        destination: "/specialties/medical-weight-loss-clinic-nyc",
         permanent: true,
       },
     ];
