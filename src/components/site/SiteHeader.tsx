@@ -150,7 +150,7 @@ export function SiteHeader() {
                     <Link
                       to={item.to}
                       activeProps={{ className: "text-primary font-medium" }}
-                      className="rounded-full px-3 py-2 text-sm text-foreground/75 transition-colors hover:text-primary"
+                      className="rounded-full px-2.5 py-2 text-sm text-foreground/75 transition-colors hover:text-primary"
                     >
                       {item.label}
                     </Link>

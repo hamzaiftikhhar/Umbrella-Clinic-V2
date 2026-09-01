@@ -38,6 +38,7 @@ export const FOOTER_COLUMNS = [
     title: "Clinic",
     links: [
       { label: "Our Team", to: ROUTES.ourTeam },
+      { label: "Blog", to: ROUTES.blog },
       { label: "Patient Reviews", to: ROUTES.patientReviews },
       { label: "Contact Us", to: ROUTES.contactUs },
     ],
