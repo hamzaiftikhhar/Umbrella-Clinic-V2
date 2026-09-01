@@ -45,11 +45,12 @@ export const SPECIALTY_NAV_ITEMS = [
   { label: "Medical Weight Loss NYC", to: ROUTES.medicalWeightLoss },
 ] as const;
 
-/** Top-level header navigation (excluding specialties dropdown). Blog hidden until redesign. */
+/** Top-level header navigation (excluding specialties dropdown). */
 export const HEADER_NAV_ITEMS = [
   { label: "Diagnostic Testing NYC", to: ROUTES.diagnostics },
   { label: "Medical Spa NYC", to: ROUTES.medicalSpa },
   { label: "Our Team", to: ROUTES.ourTeam },
+  { label: "Blog", to: ROUTES.blog },
   { label: "Patient Reviews", to: ROUTES.patientReviews },
   { label: "Contact Us", to: ROUTES.contactUs },
   { label: "Insurance", to: ROUTES.insurance },

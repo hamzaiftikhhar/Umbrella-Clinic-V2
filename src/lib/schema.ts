@@ -4,6 +4,7 @@ import type { QA } from "@/components/site/primitives/FAQList";
 import {
   PRIMARY_CARE_CLINIC_EMAIL,
   PRIMARY_CARE_CLINIC_PHONE_SCHEMA,
+  PRIMARY_CARE_FAQS,
 } from "@/data/primary-care-nyc-content";
 import {
   WEIGHT_LOSS_CLINIC_AREAS,
@@ -23,7 +24,9 @@ import {
   MEDICAL_SPA_SEO,
   MEDICAL_SPA_TREATMENTS,
 } from "@/data/medical-spa-nyc-content";
+import { NEUROLOGIST_NYC_FAQS } from "@/data/neurologist-nyc-content";
 import { ROUTES } from "@/data/site-architecture";
+import { SITE_FAQS } from "@/data/site-content";
 import {
   CLINIC_HOURS_PENDING_VERIFICATION,
   CLINIC_OPENING_HOURS,
@@ -248,6 +251,14 @@ export function speakableSchema(path: string, cssSelectors: string[] = ["h1", "a
       cssSelector: cssSelectors,
     },
   };
+}
+
+function faqMainEntity(items: readonly { q: string; a: string }[]) {
+  return items.map((item) => ({
+    "@type": "Question" as const,
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer" as const, text: item.a },
+  }));
 }
 
 interface MedicalServiceInput {
@@ -515,32 +526,7 @@ export function primaryCareNycPageSchemaGraph() {
       {
         "@type": "FAQPage",
         "@id": faqId,
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "Do you accept new patients?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We welcome new patients seeking comprehensive primary care in New York City.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you provide annual physicals?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We provide annual physical exams, preventive screenings and wellness visits.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you offer LGBTQ+ primary care?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes. We provide inclusive, patient-centered LGBTQ+ primary care.",
-            },
-          },
-        ],
+        mainEntity: faqMainEntity(PRIMARY_CARE_FAQS),
       },
       {
         "@type": "WebSite",
@@ -697,6 +683,11 @@ export function neurologistNycPageSchemaGraph(heroImageUrl: string) {
           "SleepMedicine",
           "PainManagement",
         ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqMainEntity(NEUROLOGIST_NYC_FAQS),
       },
     ],
   };
@@ -2257,10 +2248,13 @@ interface ArticleSchemaInput {
   excerpt: string;
   path: string;
   image?: string;
+  datePublished?: string;
+  dateModified?: string;
 }
 
 export function articleSchema(article: ArticleSchemaInput) {
   const pageUrl = absoluteUrl(article.path);
+  const published = article.datePublished;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -2268,8 +2262,15 @@ export function articleSchema(article: ArticleSchemaInput) {
         "@type": "Article",
         headline: article.title,
         description: article.excerpt,
-        image: article.image ? absoluteUrl(article.image) : absoluteUrl(DEFAULT_OG_IMAGE),
+        image: imageObjectSchema(article.image ?? DEFAULT_OG_IMAGE, article.title),
+        url: pageUrl,
         mainEntityOfPage: pageUrl,
+        ...(published
+          ? {
+              datePublished: published,
+              dateModified: article.dateModified ?? published,
+            }
+          : {}),
         author: {
           "@type": "Organization",
           name: SITE_NAME,
@@ -2377,32 +2378,7 @@ export function homePageSchemaGraph() {
       {
         "@type": "FAQPage",
         "@id": HOMEPAGE_FAQ_SCHEMA_ID,
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "How can I find a primary care doctor near me?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Choose a provider offering preventive care, coordinated specialists and convenient access. Umbrella Health serves patients in Lower Manhattan.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Are your primary care doctors accepting new patients?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Yes, new patients are welcome. Contact us to schedule an appointment.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Do you accept Medicaid for adult primary care?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Certain Medicaid plans are accepted. Contact us to verify your coverage.",
-            },
-          },
-        ],
+        mainEntity: faqMainEntity(SITE_FAQS),
       },
     ],
   };
