@@ -5,7 +5,7 @@ import { IMAGE_GEO, imageGeoProps } from "@/data/image-seo";
  * next/image with clinic geo data attributes on every image.
  * Coordinates: 32 West 14th Street, New York, NY 10011.
  */
-export function GeoImage({ alt, title, quality = 95, ...props }: ImageProps) {
+export function GeoImage({ alt, title, quality = 85, ...props }: ImageProps) {
   return (
     <Image
       {...props}
