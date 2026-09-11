@@ -21,7 +21,7 @@ function blogPostSeo(post: BlogPost) {
     ogImage: post.image,
     keywords: post.focusKeyword ? [post.focusKeyword] : undefined,
     crumbs: [{ label: "Home", to: "/" }, { label: "Blog", to: "/blog" }, { label: post.title }],
-    robots: { index: false, follow: false },
+    robots: { index: true, follow: true },
   });
   return { path, seo };
 }
