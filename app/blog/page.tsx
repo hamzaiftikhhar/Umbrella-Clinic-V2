@@ -8,7 +8,7 @@ const seo = buildPageSeo({
     "Expert guides on primary care, preventive health, chronic conditions, and navigating healthcare in New York City from Umbrella Health physicians.",
   path: "/blog",
   crumbs: [{ label: "Home", to: "/" }, { label: "Blog" }],
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 });
 export const metadata = seo.metadata;
 
