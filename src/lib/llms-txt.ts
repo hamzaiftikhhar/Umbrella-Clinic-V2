@@ -1,7 +1,8 @@
-import { SITE_URL, SITE_NAME, SITE_ADDRESS, SITE_PHONE, BOOKING_URL } from "@/lib/site";
+import { BLOG_POSTS } from "@/data/blog-posts";
+import { CLINICAL_SERVICES } from "@/data/clinical-services";
 import { CLINIC_HOURS_PENDING_VERIFICATION, CLINIC_OPENING_HOURS } from "@/data/clinic-hours";
 import { PHYSICIANS, physicianProfilePath } from "@/data/physicians";
-import { CLINICAL_SERVICES } from "@/data/clinical-services";
+import { SITE_URL, SITE_NAME, SITE_ADDRESS, SITE_PHONE, BOOKING_URL } from "@/lib/site";
 
 export function generateLlmsTxt(full = false): string {
   const hoursLine = CLINIC_HOURS_PENDING_VERIFICATION
@@ -39,6 +40,11 @@ export function generateLlmsTxt(full = false): string {
   for (const s of CLINICAL_SERVICES) {
     lines.push(`- ${s.label}: ${SITE_URL}${s.href}`);
     if (full) lines.push(`  - ${s.description}`);
+  }
+
+  lines.push("", "## Blog", `- Hub: ${SITE_URL}/blog`);
+  for (const post of BLOG_POSTS) {
+    lines.push(`- ${post.title}: ${SITE_URL}/blog/${post.slug}`);
   }
 
   lines.push(
