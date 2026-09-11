@@ -1,3 +1,4 @@
+import { acceptingNewPatientsPost } from "./blog/primary-care-doctor-nyc-accepting-new-patients";
 import { annualPhysicalPost } from "./blog/what-to-expect-at-your-annual-physical-in-nyc";
 import { chronicConditionsPost } from "./blog/managing-chronic-conditions-without-the-runaround";
 import { howOftenPrimaryCarePost } from "./blog/how-often-should-you-see-a-primary-care-doctor";
@@ -11,6 +12,7 @@ export { getPostFaqs, getPostToc, headingId } from "./blog/types";
 export { BLOG_PATHS, BLOG_SLUGS } from "./blog/slugs";
 
 export const BLOG_POSTS: BlogPost[] = [
+  acceptingNewPatientsPost,
   howOftenPrimaryCarePost,
   whatIsPrimaryCarePost,
   howToChoosePrimaryCarePost,
