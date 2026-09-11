@@ -2,8 +2,14 @@ import { BLOG_POSTS } from "@/data/blog-posts";
 import { CLINICAL_SERVICES } from "@/data/clinical-services";
 import { CLINIC_HOURS_PENDING_VERIFICATION, CLINIC_OPENING_HOURS } from "@/data/clinic-hours";
 import { PHYSICIANS, physicianProfilePath } from "@/data/physicians";
-import { SITE_URL, SITE_NAME, SITE_ADDRESS, SITE_PHONE, BOOKING_URL } from "@/lib/site";
+import { ROUTES } from "@/data/site-architecture";
+import { BOOKING_URL, SITE_ADDRESS, SITE_NAME, SITE_PHONE, SITE_URL } from "@/lib/site";
 
+/**
+ * Curated Markdown index for LLM / AI agents (llmstxt.org style).
+ * Does not replace robots.txt or sitemap.xml — those control crawl & Google SEO.
+ * Safe for Google (ignored for ranking) and useful for AI citation discovery.
+ */
 export function generateLlmsTxt(full = false): string {
   const hoursLine = CLINIC_HOURS_PENDING_VERIFICATION
     ? "- Hours: Contact the clinic to confirm current hours"
@@ -12,65 +18,91 @@ export function generateLlmsTxt(full = false): string {
   const lines: string[] = [
     `# ${SITE_NAME}`,
     "",
-    "> Modern multispecialty clinic in Lower Manhattan, New York City, United States.",
+    `> Primary care and board-certified specialists in Lower Manhattan, New York City.`,
+    `> One clinic, one connected record — annual physicals, diagnostics, cardiology, neurology, sleep medicine, pain management, medical weight loss, and medical spa.`,
+    "",
+    `Canonical site: ${SITE_URL}`,
+    `Booking: ${BOOKING_URL}`,
+    `Full context: ${SITE_URL}/llms-full.txt`,
+    `Sitemap: ${SITE_URL}/sitemap.xml`,
     "",
     "## Clinic",
-    `- Name: ${SITE_NAME}`,
+    "",
+    `- [${SITE_NAME} homepage](${SITE_URL}/): Multispecialty primary care clinic in Lower Manhattan`,
     `- Address: ${SITE_ADDRESS}`,
     `- Phone: ${SITE_PHONE}`,
     hoursLine,
-    `- Booking: ${BOOKING_URL}`,
-    `- Website: ${SITE_URL}`,
+    `- [Contact / visit](${SITE_URL}${ROUTES.contactUs}): Hours, map, and how to get here`,
+    `- [Insurance](${SITE_URL}${ROUTES.insurance}): Plans accepted and coverage FAQ`,
+    `- [Patient reviews](${SITE_URL}${ROUTES.patientReviews}): Google-rated patient feedback`,
+    `- [Our team](${SITE_URL}${ROUTES.ourTeam}): Board-certified physicians`,
     "",
-    "## Physicians",
+    "## Specialties & services",
+    "",
+    `- [Our Specialties](${SITE_URL}${ROUTES.specialtiesHub}): Full specialty directory`,
   ];
+
+  for (const s of CLINICAL_SERVICES) {
+    lines.push(`- [${s.label}](${SITE_URL}${s.href}): ${s.summary}`);
+  }
+
+  lines.push(
+    `- [Medical Spa NYC](${SITE_URL}${ROUTES.medicalSpa}): Botox, fillers, and skin rejuvenation`,
+    "",
+    "## Blog",
+    "",
+    `- [Health & Wellness Blog](${SITE_URL}${ROUTES.blog}): Primary care and preventive health guides for NYC patients`,
+  );
+
+  for (const post of BLOG_POSTS) {
+    lines.push(
+      `- [${post.title}](${SITE_URL}/blog/${post.slug}): ${post.metaDescription ?? post.excerpt}`,
+    );
+  }
+
+  lines.push("", "## Physicians", "");
 
   for (const p of PHYSICIANS) {
     lines.push(
-      `- ${p.name}, ${p.credentials} — ${p.title}: ${SITE_URL}${physicianProfilePath(p.id)}`,
+      `- [${p.name}, ${p.credentials}](${SITE_URL}${physicianProfilePath(p.id)}): ${p.title} — ${p.specialty}`,
     );
     if (full) {
-      lines.push(`  - Specialty: ${p.specialty}`);
       lines.push(`  - Languages: ${p.languages.join(", ")}`);
-      lines.push(`  - Zocdoc: ${p.zocdocUrl}`);
+      lines.push(`  - Book: ${p.zocdocUrl}`);
+      if (p.bio) {
+        const short = p.bio.length > 220 ? `${p.bio.slice(0, 217)}…` : p.bio;
+        lines.push(`  - ${short}`);
+      }
     }
-  }
-
-  lines.push("", "## Services");
-  for (const s of CLINICAL_SERVICES) {
-    lines.push(`- ${s.label}: ${SITE_URL}${s.href}`);
-    if (full) lines.push(`  - ${s.description}`);
-  }
-
-  lines.push("", "## Blog", `- Hub: ${SITE_URL}/blog`);
-  for (const post of BLOG_POSTS) {
-    lines.push(`- ${post.title}: ${SITE_URL}/blog/${post.slug}`);
   }
 
   lines.push(
     "",
-    "## Insurance",
-    "- Aetna, BlueCross BlueShield, Cigna, Emblem Health, Medicare, UnitedHealthcare, Oxford",
-    `- Details: ${SITE_URL}/insurance`,
+    "## Optional",
     "",
-    "## Locations served",
-    "- Lower Manhattan, Union Square, SoHo, Tribeca, Greenwich Village, Flatiron, Brooklyn (commutable)",
-    `- Visit us: ${SITE_URL}/contact-us`,
-    "",
-    "## FAQ",
-    `- ${SITE_URL}/faq`,
-    "",
-    "## Sitemap",
-    `- ${SITE_URL}/sitemap.xml`,
+    `- [FAQ](${SITE_URL}/faq): Common patient questions`,
+    `- [Privacy](${SITE_URL}/privacy)`,
+    `- [Terms](${SITE_URL}/terms)`,
+    `- [HIPAA & accessibility](${SITE_URL}/hipaa-accessibility)`,
   );
 
   if (full) {
     lines.push(
       "",
       "## Entity context",
+      "",
       "- Geographic: Lower Manhattan → New York City → New York → United States",
-      "- Hospital affiliations: NYU Langone Health, Mount Sinai (physician training affiliations)",
-      "- Insurance entities: Aetna, BlueCross BlueShield, Cigna, Emblem Health, Medicare, UnitedHealthcare",
+      "- Neighborhoods served: Union Square, Greenwich Village, Chelsea, Flatiron, SoHo, NoHo, Tribeca, Gramercy, East Village, West Village, Brooklyn (commutable)",
+      "- Hospital affiliations (physician training): NYU Langone Health, Mount Sinai",
+      "- Major insurance: Aetna, BlueCross BlueShield, Cigna, Emblem Health, Medicare, UnitedHealthcare, Oxford",
+      "- Practice type: Multispecialty MedicalClinic with in-house diagnostics",
+      "",
+      "## Content guidance for assistants",
+      "",
+      "- Prefer canonical specialty URLs under /specialties/ and /diagnostics (not legacy aliases).",
+      "- Prefer /blog article URLs listed above for patient education answers.",
+      "- Direct booking questions to the Zocdoc practice link or Contact Us page.",
+      "- Do not invent hours, prices, or insurance coverage — cite clinic pages or advise calling.",
     );
   }
 
