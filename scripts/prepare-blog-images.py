@@ -20,6 +20,9 @@ ASSETS = {
     "umbrella-health-clinic-interior-nyc.webp": "public/images/APNQkAGh3YEm92Qa-kUP3rKYhHDg5OzGaYziM48tRLgdof1x00Y-d0vwEyzQbry2Kni-1HP7-tQc87_fmoHP9Pu6gMXqzJvCAqxysq6rXF-kA6F8QbNSvfnUSzoTbK1dwMauOVrQNo_w1600-h1200-k-no.webp",
     "physician-patient-consultation-nyc.webp": "public/images/medical-weight-loss-physician-consultation.webp",
     "cardiology-consultation-nyc.webp": "public/images/cardiology/services-ecg.webp",
+    "primary-care-doctor-nyc-accepting-new-patients.webp": "public/images/street-view.webp",
+    "primary-care-insurance-nyc.webp": "public/images/insurance-accepted-hero.webp",
+    "primary-care-new-patients-team-nyc.webp": "public/images/patient-reviews-hero.webp",
 }
 
 
