@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { BLOG_POSTS } from "@/data/blog-posts";
 import { INDEXABLE_ARCHITECTURE_PATHS, ROUTES } from "@/data/site-architecture";
 import { SITE_URL } from "@/lib/site";
 
 /**
- * Sitemap = indexable architecture pages including the blog hub.
+ * Sitemap = indexable architecture pages + blog hub + all blog posts.
  */
 interface SitemapMeta {
   changefreq?: "weekly" | "monthly" | "yearly";
@@ -29,7 +30,7 @@ const sitemapMeta: Record<string, SitemapMeta> = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return INDEXABLE_ARCHITECTURE_PATHS.map((path) => {
+  const architectureEntries = INDEXABLE_ARCHITECTURE_PATHS.map((path) => {
     const meta = sitemapMeta[path] ?? { changefreq: "monthly" as const, priority: 0.8 };
     return {
       url: `${SITE_URL}${path}`,
@@ -37,4 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: meta.priority,
     };
   });
+
+  const blogPosts: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...architectureEntries, ...blogPosts];
 }
