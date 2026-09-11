@@ -33,6 +33,7 @@ export const INDEXABLE_ARCHITECTURE_PATHS = [
   ROUTES.patientReviews,
   ROUTES.insurance,
   ROUTES.contactUs,
+  ROUTES.blog,
 ] as const;
 
 /** Specialty links for the Our Specialties dropdown (hub children only). */
