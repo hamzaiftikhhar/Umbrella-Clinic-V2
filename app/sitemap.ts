@@ -3,8 +3,7 @@ import { INDEXABLE_ARCHITECTURE_PATHS, ROUTES } from "@/data/site-architecture";
 import { SITE_URL } from "@/lib/site";
 
 /**
- * Sitemap = SEO architecture allowlist ONLY.
- * Everything else stays live with noindex (no 404s) so old links don't break SEO.
+ * Sitemap = indexable architecture pages including the blog hub.
  */
 interface SitemapMeta {
   changefreq?: "weekly" | "monthly" | "yearly";
@@ -26,6 +25,7 @@ const sitemapMeta: Record<string, SitemapMeta> = {
   [ROUTES.patientReviews]: { changefreq: "weekly", priority: 0.7 },
   [ROUTES.insurance]: { changefreq: "monthly", priority: 0.8 },
   [ROUTES.contactUs]: { changefreq: "monthly", priority: 0.8 },
+  [ROUTES.blog]: { changefreq: "weekly", priority: 0.8 },
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
