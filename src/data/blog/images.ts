@@ -9,4 +9,7 @@ export const BLOG_IMAGES = {
   clinicInterior: "/images/blog/umbrella-health-clinic-interior-nyc.webp",
   physicianPatient: "/images/blog/physician-patient-consultation-nyc.webp",
   cardiology: "/images/blog/cardiology-consultation-nyc.webp",
+  acceptingNewPatients: "/images/blog/primary-care-doctor-nyc-accepting-new-patients.webp",
+  insurancePrimaryCare: "/images/blog/primary-care-insurance-nyc.webp",
+  newPatientsTeam: "/images/blog/primary-care-new-patients-team-nyc.webp",
 } as const;
