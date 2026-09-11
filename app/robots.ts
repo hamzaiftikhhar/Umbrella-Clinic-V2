@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
 
 /**
- * Disallow non-architecture URLs so Google deprioritizes them.
- * Pages remain live; each also sends robots noindex where applicable.
+ * Allow blog crawl for SEO. Soft/utility paths remain disallowed.
+ * Pages remain live; noindex still applies where set on individual routes.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -14,8 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           // Utility / legacy
           "/portal",
-          "/blog",
-          "/blog/",
           "/resources",
           "/resources/",
           "/careers",
