@@ -486,13 +486,13 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
         <figure className="relative mx-auto max-w-6xl overflow-hidden bg-secondary">
           <div className="relative aspect-[16/9] max-h-[34rem] min-h-[16rem] sm:aspect-[2/1]">
             <GeoImage
-            src={post.image}
-            alt={post.imageAlt}
-            fill
+              src={post.image}
+              alt={post.imageAlt}
+              fill
               className="object-cover object-center"
-            sizes="100vw"
-            priority
-          />
+              sizes="100vw"
+              priority
+            />
           </div>
           <figcaption className="mx-auto max-w-6xl px-5 py-3 text-sm text-muted-foreground sm:px-8">
             {post.imageAlt}
@@ -503,7 +503,7 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
           <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_17rem] lg:items-start lg:gap-16">
             <div className="min-w-0">
               <ArticleBody post={post} />
-        </div>
+            </div>
 
             <aside className="hidden lg:sticky lg:top-24 lg:block">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
@@ -557,10 +557,10 @@ export function BlogPostPage({ post }: { post: BlogPost }) {
                       <h3 className="mt-2 text-[1.02rem] font-semibold leading-snug text-foreground group-hover:text-primary">
                         {item.title}
                       </h3>
-            </div>
+                    </div>
                   </Link>
                 ))}
-          </div>
+              </div>
             </aside>
           ) : null}
         </Container>
