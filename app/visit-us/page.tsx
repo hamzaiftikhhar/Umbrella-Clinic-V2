@@ -13,6 +13,7 @@ import type { LucideIconKey } from "@/components/icons/icon-keys";
 import { CLINIC_MAP_EMBED_URL, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
 import { medicalClinicSchema } from "@/lib/schema";
 import { CLINIC_HOURS_DISPLAY } from "@/data/clinic-hours";
+import { SynapseContactEmbed } from "@/components/SynapseContactEmbed";
 
 const seo = buildPageSeo({
   title: "Contact Us — Umbrella Health NYC | 32 West 14th Street",
@@ -156,6 +157,22 @@ function Page() {
                 </div>
               </div>
             </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="pb-20 sm:pb-28" aria-labelledby="ai-assistant-heading">
+        <Container>
+          <div className="mx-auto max-w-[540px]">
+            <SectionHeading
+              as="h2"
+              id="ai-assistant-heading"
+              eyebrow="AI assistant"
+              title="Chat with"
+              accent="Umbrella Health."
+              description="Ask about doctors, insurance, hours, and booking. This is the same assistant as the Chat button."
+            />
+            <SynapseContactEmbed />
           </div>
         </Container>
       </section>
