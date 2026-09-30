@@ -23,6 +23,23 @@ ASSETS = {
     "primary-care-doctor-nyc-accepting-new-patients.webp": "public/images/street-view.webp",
     "primary-care-insurance-nyc.webp": "public/images/insurance-accepted-hero.webp",
     "primary-care-new-patients-team-nyc.webp": "public/images/patient-reviews-hero.webp",
+    # Unique stock heroes for Content Plan batch articles
+    "primary-care-for-high-blood-pressure-nyc.webp": "public/images/blog/sources/bp-cuff.jpg",
+    "home-blood-pressure-monitoring-nyc.webp": "public/images/blog/sources/home-bp-monitor.jpg",
+    "primary-care-for-diabetes-nyc.webp": "public/images/blog/sources/diabetes-consult.jpg",
+    "a1c-blood-test-results-nyc.webp": "public/images/blog/sources/a1c-labs.jpg",
+    "blood-tests-in-a-primary-care-checkup-nyc.webp": "public/images/blog/sources/blood-tubes.jpg",
+    "common-primary-care-blood-tests-nyc.webp": "public/images/blog/sources/lab-panel.jpg",
+    "do-you-need-a-referral-nyc.webp": "public/images/blog/sources/insurance-desk.jpg",
+    "primary-care-specialist-referral-flowchart-nyc.webp": "public/images/blog/sources/referral-handoff.jpg",
+    "primary-care-doctor-or-urgent-care-nyc.webp": "public/images/blog/sources/clinic-decision.jpg",
+    "primary-care-urgent-care-er-comparison-nyc.webp": "public/images/blog/sources/care-compare.jpg",
+    "when-to-see-a-doctor-for-a-headache-nyc.webp": "public/images/blog/sources/headache.jpg",
+    "headache-diary-primary-care-nyc.webp": "public/images/blog/sources/headache-diary.jpg",
+    "primary-care-vs-internal-medicine-nyc.webp": "public/images/blog/sources/adult-pcp.jpg",
+    "primary-care-internal-medicine-family-medicine-nyc.webp": "public/images/blog/sources/family-vs-im.jpg",
+    "annual-physical-vs-wellness-visit-nyc.webp": "public/images/blog/sources/wellness-checklist.jpg",
+    "annual-physical-medicare-wellness-visit-comparison-nyc.webp": "public/images/blog/sources/medicare-compare.jpg",
 }
 
 
@@ -48,6 +65,14 @@ def process(src_rel: str, dest_name: str) -> None:
     src = ROOT / src_rel
     dest = OUT / dest_name
     im = Image.open(src).convert("RGB")
+
+    # Prefer landscape heroes: center-crop tall images to ~3:2.
+    w, h = im.size
+    if h > w:
+        target_h = int(w * 2 / 3)
+        top = max(0, (h - target_h) // 2)
+        im = im.crop((0, top, w, top + target_h))
+
     # Keep landscape sources as-is; cap width for web.
     max_w = 1800
     if im.width > max_w:
