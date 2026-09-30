@@ -25,7 +25,9 @@ export const BLOG_IMAGES = {
   headacheWhenToSeeDoctor: "/images/blog/when-to-see-a-doctor-for-a-headache-nyc.webp",
   headacheDiary: "/images/blog/headache-diary-primary-care-nyc.webp",
   primaryCareVsInternalMedicine: "/images/blog/primary-care-vs-internal-medicine-nyc.webp",
-  primaryCareVsInternalDiagram: "/images/blog/primary-care-internal-medicine-family-medicine-nyc.webp",
+  primaryCareVsInternalDiagram:
+    "/images/blog/primary-care-internal-medicine-family-medicine-nyc.webp",
   annualPhysicalVsWellness: "/images/blog/annual-physical-vs-wellness-visit-nyc.webp",
-  annualPhysicalVsWellnessChart: "/images/blog/annual-physical-medicare-wellness-visit-comparison-nyc.webp",
+  annualPhysicalVsWellnessChart:
+    "/images/blog/annual-physical-medicare-wellness-visit-comparison-nyc.webp",
 } as const;
