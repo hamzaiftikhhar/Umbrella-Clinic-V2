@@ -4,9 +4,11 @@ import { BLOG_IMAGES } from "./images";
 import { BLOG_PATHS, BLOG_SLUGS } from "./slugs";
 import type { BlogPost } from "./types";
 
-const HEALTHCARE_GOV_PREVENTIVE_URL = "https://www.healthcare.gov/coverage/preventive-care-benefits/";
+const HEALTHCARE_GOV_PREVENTIVE_URL =
+  "https://www.healthcare.gov/coverage/preventive-care-benefits/";
 const MEDICARE_AWV_URL = "https://www.medicare.gov/coverage/yearly-wellness-visits";
-const MEDICARE_WELCOME_URL = "https://www.medicare.gov/coverage/welcome-to-medicare-preventive-visit";
+const MEDICARE_WELCOME_URL =
+  "https://www.medicare.gov/coverage/welcome-to-medicare-preventive-visit";
 
 export const annualPhysicalVsWellnessPost: BlogPost = {
   slug: BLOG_SLUGS.annualPhysicalVsWellness,
@@ -23,8 +25,7 @@ export const annualPhysicalVsWellnessPost: BlogPost = {
   readTime: "11 min read",
   publishedAt: "2026-09-30",
   image: BLOG_IMAGES.annualPhysicalVsWellness,
-  imageAlt:
-    "Patient and primary care doctor discussing an annual physical versus a wellness visit",
+  imageAlt: "Patient and primary care doctor discussing an annual physical versus a wellness visit",
   author: "Umbrella Health",
   body: [
     {
@@ -103,9 +104,7 @@ export const annualPhysicalVsWellnessPost: BlogPost = {
     {
       type: "p",
       text: 'Medicare.gov is clear that the Annual Wellness Visit is not a physical exam. Medicare also offers a one-time "Welcome to Medicare" preventive visit within the first 12 months of Part B coverage.',
-      links: [
-        { label: '"Welcome to Medicare" preventive visit', href: MEDICARE_WELCOME_URL },
-      ],
+      links: [{ label: '"Welcome to Medicare" preventive visit', href: MEDICARE_WELCOME_URL }],
     },
 
     {
