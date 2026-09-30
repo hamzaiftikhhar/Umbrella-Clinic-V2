@@ -6,6 +6,17 @@ export const BLOG_SLUGS = {
   choosePrimaryCare: "how-to-choose-a-primary-care-doctor-in-nyc",
   howOften: "how-often-should-you-see-a-primary-care-doctor",
   acceptingNewPatients: "primary-care-doctor-nyc-accepting-new-patients",
+  highBloodPressure: "primary-care-for-high-blood-pressure",
+  primaryCareDiabetes: "primary-care-for-diabetes",
+  bloodTestsCheckup: "blood-tests-in-a-primary-care-checkup",
+  referralNyc: "do-you-need-a-referral-nyc",
+  primaryCareOrUrgentCare: "primary-care-doctor-or-urgent-care",
+  headacheWhenToSeeDoctor: "when-to-see-a-doctor-for-a-headache",
+  primaryCareVsInternalMedicine: "primary-care-vs-internal-medicine",
+  annualPhysicalVsWellness: "annual-physical-vs-wellness-visit",
+  /** Planned — not published yet. */
+  preventiveScreenings: "preventive-health-screenings-for-adults",
+  telehealthPrimaryCare: "telehealth-primary-care-nyc",
 } as const;
 
 export const BLOG_PATHS = {
@@ -16,4 +27,14 @@ export const BLOG_PATHS = {
   choosePrimaryCare: `/blog/${BLOG_SLUGS.choosePrimaryCare}`,
   howOften: `/blog/${BLOG_SLUGS.howOften}`,
   acceptingNewPatients: `/blog/${BLOG_SLUGS.acceptingNewPatients}`,
+  highBloodPressure: `/blog/${BLOG_SLUGS.highBloodPressure}`,
+  primaryCareDiabetes: `/blog/${BLOG_SLUGS.primaryCareDiabetes}`,
+  bloodTestsCheckup: `/blog/${BLOG_SLUGS.bloodTestsCheckup}`,
+  referralNyc: `/blog/${BLOG_SLUGS.referralNyc}`,
+  primaryCareOrUrgentCare: `/blog/${BLOG_SLUGS.primaryCareOrUrgentCare}`,
+  headacheWhenToSeeDoctor: `/blog/${BLOG_SLUGS.headacheWhenToSeeDoctor}`,
+  primaryCareVsInternalMedicine: `/blog/${BLOG_SLUGS.primaryCareVsInternalMedicine}`,
+  annualPhysicalVsWellness: `/blog/${BLOG_SLUGS.annualPhysicalVsWellness}`,
+  preventiveScreenings: `/blog/${BLOG_SLUGS.preventiveScreenings}`,
+  telehealthPrimaryCare: `/blog/${BLOG_SLUGS.telehealthPrimaryCare}`,
 } as const;
