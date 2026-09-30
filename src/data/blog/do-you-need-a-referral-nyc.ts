@@ -31,8 +31,7 @@ export const referralNycPost: BlogPost = {
   readTime: "12 min read",
   publishedAt: "2026-09-30",
   image: BLOG_IMAGES.referralNyc,
-  imageAlt:
-    "Patient checking insurance referral requirements at a primary care front desk in NYC",
+  imageAlt: "Patient checking insurance referral requirements at a primary care front desk in NYC",
   author: "Umbrella Health",
   body: [
     {
