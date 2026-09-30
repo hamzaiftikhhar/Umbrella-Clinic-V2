@@ -10,7 +10,8 @@ const MEDLINEPLUS_BMP_URL = "https://medlineplus.gov/lab-tests/basic-metabolic-p
 const MEDLINEPLUS_CHOLESTEROL_URL = "https://medlineplus.gov/lab-tests/cholesterol-levels/";
 const MEDLINEPLUS_A1C_URL = "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/";
 const MEDLINEPLUS_THYROID_URL = "https://medlineplus.gov/thyroidtests.html";
-const HEALTHCARE_GOV_PREVENTIVE_URL = "https://www.healthcare.gov/coverage/preventive-care-benefits/";
+const HEALTHCARE_GOV_PREVENTIVE_URL =
+  "https://www.healthcare.gov/coverage/preventive-care-benefits/";
 
 export const bloodTestsCheckupPost: BlogPost = {
   slug: BLOG_SLUGS.bloodTestsCheckup,
