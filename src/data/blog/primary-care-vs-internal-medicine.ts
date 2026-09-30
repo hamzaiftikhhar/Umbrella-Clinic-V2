@@ -325,8 +325,7 @@ export const primaryCareVsInternalMedicinePost: BlogPost = {
     {
       type: "faq",
       heading: "Frequently Asked Questions",
-      subtitle:
-        "Common questions about primary care vs internal medicine, internists and PCPs.",
+      subtitle: "Common questions about primary care vs internal medicine, internists and PCPs.",
       items: [
         {
           q: "Is an Internist the Same as a Primary Care Doctor?",
