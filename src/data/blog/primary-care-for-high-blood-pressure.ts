@@ -27,8 +27,7 @@ export const highBloodPressurePost: BlogPost = {
   readTime: "14 min read",
   publishedAt: "2026-09-30",
   image: BLOG_IMAGES.highBloodPressure,
-  imageAlt:
-    "Primary care doctor checking a patient's blood pressure during a routine visit in NYC",
+  imageAlt: "Primary care doctor checking a patient's blood pressure during a routine visit in NYC",
   author: "Umbrella Health",
   body: [
     {
@@ -39,7 +38,10 @@ export const highBloodPressurePost: BlogPost = {
       type: "p",
       text: "High blood pressure often causes no symptoms at all, which is why many people only learn about it at a routine checkup. According to MedlinePlus from the U.S. National Library of Medicine, untreated high blood pressure can raise the risk of serious problems such as heart disease, stroke and kidney disease. Regular care with a primary care doctor in NYC can help you catch it early and keep it under control over time.",
       links: [
-        { label: "MedlinePlus from the U.S. National Library of Medicine", href: MEDLINEPLUS_HBP_URL },
+        {
+          label: "MedlinePlus from the U.S. National Library of Medicine",
+          href: MEDLINEPLUS_HBP_URL,
+        },
         { label: "primary care doctor in NYC", href: ROUTES.primaryCare },
       ],
     },
@@ -69,7 +71,10 @@ export const highBloodPressurePost: BlogPost = {
       type: "p",
       text: "Hypertension means that pressure stays higher than it should over time. The American Heart Association's blood pressure categories describe a normal reading as less than 120/80 mm Hg, with higher ranges labeled elevated, stage 1 or stage 2 hypertension. Your doctor will interpret your numbers in the context of your age, health history and other risk factors, not from a single reading alone.",
       links: [
-        { label: "American Heart Association's blood pressure categories", href: AHA_BP_CATEGORIES_URL },
+        {
+          label: "American Heart Association's blood pressure categories",
+          href: AHA_BP_CATEGORIES_URL,
+        },
       ],
     },
 
@@ -160,9 +165,7 @@ export const highBloodPressurePost: BlogPost = {
     {
       type: "p",
       text: "Management is personal. Your plan depends on your readings, your overall cardiovascular risk and any other conditions you have. According to the National Heart, Lung, and Blood Institute, treatment often starts with heart-healthy lifestyle changes and may include medicine.",
-      links: [
-        { label: "National Heart, Lung, and Blood Institute", href: NHLBI_HBP_URL },
-      ],
+      links: [{ label: "National Heart, Lung, and Blood Institute", href: NHLBI_HBP_URL }],
     },
 
     {
@@ -268,7 +271,8 @@ export const highBloodPressurePost: BlogPost = {
       text: "Very high blood pressure with symptoms needs emergency care. Call 911 right away if a high reading comes with chest pain, shortness of breath, severe headache, confusion, vision changes, weakness or numbness, or trouble speaking. The CDC lists sudden numbness, confusion, trouble seeing and severe headache as warning signs of stroke. Do not wait for a primary care appointment in these situations.",
       links: [
         {
-          label: "CDC lists sudden numbness, confusion, trouble seeing and severe headache as warning signs of stroke",
+          label:
+            "CDC lists sudden numbness, confusion, trouble seeing and severe headache as warning signs of stroke",
           href: CDC_STROKE_SIGNS_URL,
         },
       ],
