@@ -31,8 +31,7 @@ export const primaryCareDiabetesPost: BlogPost = {
   readTime: "13 min read",
   publishedAt: "2026-09-30",
   image: BLOG_IMAGES.primaryCareDiabetes,
-  imageAlt:
-    "Primary care doctor reviewing A1C blood test results with a patient in Manhattan",
+  imageAlt: "Primary care doctor reviewing A1C blood test results with a patient in Manhattan",
   author: "Umbrella Health",
   body: [
     {

@@ -23,8 +23,7 @@ export const primaryCareOrUrgentCarePost: BlogPost = {
   readTime: "12 min read",
   publishedAt: "2026-09-30",
   image: BLOG_IMAGES.primaryCareOrUrgentCare,
-  imageAlt:
-    "New Yorker deciding between a primary care doctor and urgent care for a minor illness",
+  imageAlt: "New Yorker deciding between a primary care doctor and urgent care for a minor illness",
   author: "Umbrella Health",
   body: [
     {
@@ -55,10 +54,7 @@ export const primaryCareOrUrgentCarePost: BlogPost = {
           "Primary care",
           "Ongoing care, prevention, chronic conditions and many new non-emergency problems",
         ],
-        [
-          "Urgent care",
-          "Minor illnesses and injuries when your usual doctor isn't available",
-        ],
+        ["Urgent care", "Minor illnesses and injuries when your usual doctor isn't available"],
         ["Emergency room", "Serious or life-threatening conditions"],
       ],
     },
@@ -307,8 +303,7 @@ export const primaryCareOrUrgentCarePost: BlogPost = {
     {
       type: "faq",
       heading: "Frequently Asked Questions",
-      subtitle:
-        "Common questions about choosing a primary care doctor or urgent care in NYC.",
+      subtitle: "Common questions about choosing a primary care doctor or urgent care in NYC.",
       items: [
         {
           q: "Is Urgent Care More Expensive Than Primary Care?",
