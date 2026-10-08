@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 
@@ -14,18 +14,15 @@ export function SiteLayout({ children }: { children: ReactNode }) {
   const footerRef = useRef<HTMLDivElement>(null);
   const [footerHeight, setFooterHeight] = useState(FOOTER_HEIGHT_FALLBACK);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const el = footerRef.current;
     if (!el) return;
 
-    const measure = () => {
-      const h = el.offsetHeight;
-      if (h > 0) setFooterHeight(h);
-    };
-
-    measure();
-
-    const ro = new ResizeObserver(measure);
+    // ResizeObserver fires asynchronously after layout — no forced synchronous reflow.
+    const ro = new ResizeObserver((entries) => {
+      const h = entries[0]?.contentRect.height ?? 0;
+      if (h > 0) setFooterHeight(Math.round(h));
+    });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);

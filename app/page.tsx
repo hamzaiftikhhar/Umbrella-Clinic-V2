@@ -1,22 +1,47 @@
 import { HomeHero } from "@/components/site/HomeHero";
 import { InsuranceLogoBar } from "@/components/site/InsuranceLogoBar";
 import { LocationBanner } from "@/components/site/LocationBanner";
-import { ClinicalServicesGrid } from "@/components/site/ClinicalServicesGrid";
-import { CareDiagram } from "@/components/site/CareDiagram";
-import { UmbrellaDifference } from "@/components/site/UmbrellaDifference";
-import { StatCallout } from "@/components/site/primitives/StatCallout";
-import { Testimonials } from "@/components/site/Testimonials";
-import { FounderProfile } from "@/components/site/FounderProfile";
-import { EmployersStrip } from "@/components/site/EmployersStrip";
-import { HomeFAQ, homeFaqs } from "@/components/site/HomeFAQ";
-import { ClinicMap } from "@/components/site/ClinicMap";
-import { GalleryBanner } from "@/components/site/primitives/GalleryBanner";
-import { BookButton } from "@/components/site/primitives/BookButton";
+import dynamic from "next/dynamic";
 import { JsonLd } from "@/components/JsonLd";
 import { IMG } from "@/data/images";
 import { buildPageSeo } from "@/lib/page-head";
 import { homePageSchemaGraph } from "@/lib/schema";
 import { PENDING_VERIFICATION } from "@/data/pending-verification";
+
+// Below-the-fold sections — deferred to reduce initial bundle parsed on mobile
+const ClinicalServicesGrid = dynamic(() =>
+  import("@/components/site/ClinicalServicesGrid").then((m) => ({ default: m.ClinicalServicesGrid }))
+);
+const CareDiagram = dynamic(() =>
+  import("@/components/site/CareDiagram").then((m) => ({ default: m.CareDiagram }))
+);
+const UmbrellaDifference = dynamic(() =>
+  import("@/components/site/UmbrellaDifference").then((m) => ({ default: m.UmbrellaDifference }))
+);
+const StatCallout = dynamic(() =>
+  import("@/components/site/primitives/StatCallout").then((m) => ({ default: m.StatCallout }))
+);
+const Testimonials = dynamic(() =>
+  import("@/components/site/Testimonials").then((m) => ({ default: m.Testimonials }))
+);
+const FounderProfile = dynamic(() =>
+  import("@/components/site/FounderProfile").then((m) => ({ default: m.FounderProfile }))
+);
+const EmployersStrip = dynamic(() =>
+  import("@/components/site/EmployersStrip").then((m) => ({ default: m.EmployersStrip }))
+);
+const ClinicMap = dynamic(() =>
+  import("@/components/site/ClinicMap").then((m) => ({ default: m.ClinicMap }))
+);
+const HomeFAQ = dynamic(() =>
+  import("@/components/site/HomeFAQ").then((m) => ({ default: m.HomeFAQ }))
+);
+const GalleryBanner = dynamic(() =>
+  import("@/components/site/primitives/GalleryBanner").then((m) => ({ default: m.GalleryBanner }))
+);
+const BookButton = dynamic(() =>
+  import("@/components/site/primitives/BookButton").then((m) => ({ default: m.BookButton }))
+);
 
 const TITLE = "Primary Care & Specialists NYC | Umbrella Health";
 const DESCRIPTION =

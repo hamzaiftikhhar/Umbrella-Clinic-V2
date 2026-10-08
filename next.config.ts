@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // Optimize lucide-react imports — prevents importing the entire icon library
+  // which was generating the large chunk flagged in the legacy-JS audit.
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
   async redirects() {
     return [
       {

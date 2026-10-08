@@ -18,7 +18,6 @@ export default function robots(): MetadataRoute.Robots {
     "/reviews",
     "/medical-spa",
     "/weight-loss-glp1",
-    "/specialties/diagnostic-testing-nyc",
     "/specialties/medical-weight-loss-nyc",
     "/specialties/sleep-medicine-nyc",
     // Fake search URLs from old SearchAction
