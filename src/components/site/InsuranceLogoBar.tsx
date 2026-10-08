@@ -51,6 +51,7 @@ export function InsuranceLogoBar() {
               key={item.name}
               className="flex h-20 items-center justify-center rounded-2xl border border-border/60 bg-card px-4 py-4 sm:h-24 transition-colors hover:bg-muted/50"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element -- SVG logos are not optimized by next/image; img is intentional */}
               <img
                 src={item.src}
                 alt={`${item.name} logo`}

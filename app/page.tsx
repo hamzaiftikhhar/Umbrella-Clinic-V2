@@ -10,37 +10,39 @@ import { PENDING_VERIFICATION } from "@/data/pending-verification";
 
 // Below-the-fold sections — deferred to reduce initial bundle parsed on mobile
 const ClinicalServicesGrid = dynamic(() =>
-  import("@/components/site/ClinicalServicesGrid").then((m) => ({ default: m.ClinicalServicesGrid }))
+  import("@/components/site/ClinicalServicesGrid").then((m) => ({
+    default: m.ClinicalServicesGrid,
+  })),
 );
 const CareDiagram = dynamic(() =>
-  import("@/components/site/CareDiagram").then((m) => ({ default: m.CareDiagram }))
+  import("@/components/site/CareDiagram").then((m) => ({ default: m.CareDiagram })),
 );
 const UmbrellaDifference = dynamic(() =>
-  import("@/components/site/UmbrellaDifference").then((m) => ({ default: m.UmbrellaDifference }))
+  import("@/components/site/UmbrellaDifference").then((m) => ({ default: m.UmbrellaDifference })),
 );
 const StatCallout = dynamic(() =>
-  import("@/components/site/primitives/StatCallout").then((m) => ({ default: m.StatCallout }))
+  import("@/components/site/primitives/StatCallout").then((m) => ({ default: m.StatCallout })),
 );
 const Testimonials = dynamic(() =>
-  import("@/components/site/Testimonials").then((m) => ({ default: m.Testimonials }))
+  import("@/components/site/Testimonials").then((m) => ({ default: m.Testimonials })),
 );
 const FounderProfile = dynamic(() =>
-  import("@/components/site/FounderProfile").then((m) => ({ default: m.FounderProfile }))
+  import("@/components/site/FounderProfile").then((m) => ({ default: m.FounderProfile })),
 );
 const EmployersStrip = dynamic(() =>
-  import("@/components/site/EmployersStrip").then((m) => ({ default: m.EmployersStrip }))
+  import("@/components/site/EmployersStrip").then((m) => ({ default: m.EmployersStrip })),
 );
 const ClinicMap = dynamic(() =>
-  import("@/components/site/ClinicMap").then((m) => ({ default: m.ClinicMap }))
+  import("@/components/site/ClinicMap").then((m) => ({ default: m.ClinicMap })),
 );
 const HomeFAQ = dynamic(() =>
-  import("@/components/site/HomeFAQ").then((m) => ({ default: m.HomeFAQ }))
+  import("@/components/site/HomeFAQ").then((m) => ({ default: m.HomeFAQ })),
 );
 const GalleryBanner = dynamic(() =>
-  import("@/components/site/primitives/GalleryBanner").then((m) => ({ default: m.GalleryBanner }))
+  import("@/components/site/primitives/GalleryBanner").then((m) => ({ default: m.GalleryBanner })),
 );
 const BookButton = dynamic(() =>
-  import("@/components/site/primitives/BookButton").then((m) => ({ default: m.BookButton }))
+  import("@/components/site/primitives/BookButton").then((m) => ({ default: m.BookButton })),
 );
 
 const TITLE = "Primary Care & Specialists NYC | Umbrella Health";

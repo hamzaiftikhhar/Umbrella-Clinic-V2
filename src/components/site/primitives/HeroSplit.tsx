@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
+import { GeoImage } from "./GeoImage";
 
 interface HeroSplitProps {
   eyebrow?: string;
@@ -57,11 +58,13 @@ export function HeroSplit({
 
           <Reveal delay={0.1}>
             <div className="relative mx-auto aspect-square w-full max-w-md">
-              <img
+              <GeoImage
                 src={image}
                 alt={imageAlt}
-                className="h-full w-full rounded-full object-cover shadow-[var(--shadow-elegant)]"
+                fill
+                className="rounded-full object-cover shadow-[var(--shadow-elegant)]"
                 loading="eager"
+                sizes="(max-width: 768px) 90vw, 448px"
               />
             </div>
           </Reveal>

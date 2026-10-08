@@ -39,10 +39,9 @@ export function HomeHero() {
         fill
         priority
         fetchPriority="high"
-        decoding="sync"
         className="object-cover object-[68%_20%]"
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 1600px"
-        quality={90}
+        quality={75}
       />
 
       <div

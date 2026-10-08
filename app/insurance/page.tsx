@@ -200,6 +200,7 @@ function Page() {
                 className="flex h-24 items-center justify-center rounded-2xl border border-border/60 bg-card px-5 py-4 text-center text-sm font-medium text-foreground transition-colors hover:bg-muted/50 sm:h-28"
               >
                 {c.src ? (
+                  // eslint-disable-next-line @next/next/no-img-element -- carrier brand logos at variable fixed heights; fill layout would distort them
                   <img
                     src={c.src}
                     alt={`${c.name} logo`}

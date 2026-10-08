@@ -37,6 +37,7 @@ export function ServiceCard({ title, description, to, badge, image, className }:
           <ArrowRight className="h-4 w-4" />
         </span>
         {image && (
+          // eslint-disable-next-line @next/next/no-img-element -- decorative thumbnail, aria-hidden, fixed pixel size
           <img
             src={image}
             alt=""
