@@ -42,9 +42,7 @@ function Page() {
             {Object.values(pillars).map((p, i) => (
               <Reveal key={p.slug} delay={i * 0.05}>
                 <Link
-                  href={
-                    `/resources/${p.slug}` as "/resources/decoding-your-diagnostics"
-                  }
+                  href={`/resources/${p.slug}` as "/resources/decoding-your-diagnostics"}
                   className="group block overflow-hidden rounded-3xl border border-border/60 bg-card transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-card)]"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden">
