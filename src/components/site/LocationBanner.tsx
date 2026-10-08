@@ -14,6 +14,7 @@ export function LocationBanner() {
             src={IMG.clinicInterior}
             alt="Inside Umbrella Health clinic in New York City"
             fill
+            loading="lazy"
             className="object-cover object-[center_42%]"
             sizes="100vw"
           />
