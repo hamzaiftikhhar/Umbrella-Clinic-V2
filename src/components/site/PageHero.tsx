@@ -3,7 +3,7 @@ import { Container } from "./primitives/Container";
 import { Reveal } from "./primitives/Reveal";
 import { Link } from "@/components/AppLink";
 import { ChevronRight } from "lucide-react";
-import { geoImgProps } from "./primitives/GeoImage";
+import { GeoImage } from "./primitives/GeoImage";
 
 export interface Crumb {
   label: string;
@@ -97,12 +97,13 @@ export function PageHero({
 
           <Reveal delay={0.1}>
             <div className="relative mx-auto aspect-square w-full max-w-md">
-              <img
+              <GeoImage
                 src={image}
                 alt={imageAlt}
-                className="h-full w-full rounded-full object-cover object-top shadow-[var(--shadow-elegant)]"
+                fill
+                className="rounded-full object-cover object-top shadow-[var(--shadow-elegant)]"
                 loading="eager"
-                {...geoImgProps(imageAlt)}
+                sizes="(max-width: 768px) 90vw, 448px"
               />
             </div>
           </Reveal>

@@ -64,6 +64,7 @@ export function TestimonialCard({ name, quote, time, rating = 5 }: TestimonialCa
           aria-label="View on Google Maps"
           className="transition-transform hover:scale-110"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element -- SVG brand logo, not optimizable by next/image */}
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
             alt="Google"
