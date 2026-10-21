@@ -5,7 +5,7 @@ export const PRIMARY_CARE_CLINIC_ADDRESS =
 export const PRIMARY_CARE_CLINIC_ADDRESS_SHORT = "32 W 14th Street, New York, NY 10011";
 export const PRIMARY_CARE_CLINIC_PHONE = "(347) 667-8272";
 export const PRIMARY_CARE_CLINIC_PHONE_SCHEMA = "+1-347-667-8272";
-export const PRIMARY_CARE_CLINIC_EMAIL = "admin@myumbrellahealth.com";
+export const PRIMARY_CARE_CLINIC_EMAIL = "info@myumbrellahealth.com";
 
 export const PRIMARY_CARE_SEO = {
   title: "Primary Care Doctor in New York City | Umbrella Health",
