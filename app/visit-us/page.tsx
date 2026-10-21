@@ -10,10 +10,11 @@ import { CTABanner } from "@/components/site/primitives/CTABanner";
 import { SeoImage } from "@/components/site/primitives/SeoImage";
 import { IMG } from "@/data/images";
 import type { LucideIconKey } from "@/components/icons/icon-keys";
-import { CLINIC_MAP_EMBED_URL, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
+import { BOOKING_URL, CLINIC_MAP_EMBED_URL, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
 import { medicalClinicSchema } from "@/lib/schema";
 import { CLINIC_HOURS_DISPLAY } from "@/data/clinic-hours";
 import { SynapseContactEmbed } from "@/components/SynapseContactEmbed";
+import { ContactForm } from "@/components/site/ContactForm";
 
 const seo = buildPageSeo({
   title: "Contact Us — Umbrella Health NYC | 32 West 14th Street",
@@ -104,6 +105,12 @@ function Page() {
           <div className="mt-8 flex flex-wrap gap-3">
             <BookButton>Book appointment</BookButton>
             <a
+              href="#enquiry"
+              className="inline-flex items-center rounded-full border border-border/70 bg-background/80 px-6 py-3 text-sm font-medium text-foreground backdrop-blur-sm transition-colors hover:border-primary/25"
+            >
+              Send a message
+            </a>
+            <a
               href={`tel:${SITE_PHONE.replace(/\D/g, "")}`}
               className="inline-flex items-center rounded-full border border-border/70 bg-background/80 px-6 py-3 text-sm font-medium text-foreground backdrop-blur-sm hover:border-primary/25"
             >
@@ -136,8 +143,14 @@ function Page() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10">
+              <div className="mt-10 flex flex-wrap gap-3">
                 <BookButton>Book appointment</BookButton>
+                <a
+                  href="#enquiry"
+                  className="inline-flex items-center rounded-full border border-border/70 bg-background px-6 py-3 text-sm font-medium text-foreground transition-colors hover:border-primary/25"
+                >
+                  General enquiry
+                </a>
               </div>
             </Reveal>
 
@@ -161,16 +174,64 @@ function Page() {
         </Container>
       </section>
 
-      <section className="pb-20 sm:pb-28" aria-labelledby="ai-assistant-heading">
+      <section
+        id="enquiry"
+        className="scroll-mt-20 border-y border-border/50 bg-secondary/30 py-14 sm:scroll-mt-24 sm:py-20 md:py-28"
+        aria-labelledby="enquiry-heading"
+      >
+        <Container>
+          <div className="grid items-start gap-8 md:gap-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-14">
+            <Reveal>
+              <SectionHeading
+                as="h2"
+                id="enquiry-heading"
+                eyebrow="General enquiry"
+                title="Send us a"
+                accent="message."
+                description="Questions about hours, insurance, or how to get started? We reply by email. For appointments, booking online is usually fastest."
+              />
+              <ul className="mt-6 space-y-2.5 text-sm leading-relaxed text-muted-foreground sm:mt-8 sm:space-y-3">
+                <li className="flex gap-2.5">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden />
+                  General clinic questions only — never medical history or test results.
+                </li>
+                <li className="flex gap-2.5">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden />
+                  Prefer to speak with someone? Call {SITE_PHONE}.
+                </li>
+                <li className="flex gap-2.5">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden />
+                  Ready to be seen?{" "}
+                  <a
+                    href={BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground underline underline-offset-2"
+                  >
+                    Book online
+                  </a>
+                  .
+                </li>
+              </ul>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <ContactForm />
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-14 sm:py-20 md:py-28" aria-labelledby="ai-assistant-heading">
         <Container>
           <div className="mx-auto max-w-[540px]">
             <SectionHeading
               as="h2"
               id="ai-assistant-heading"
+              align="center"
               eyebrow="AI assistant"
               title="Chat with"
               accent="Umbrella Health."
-              description="Ask about doctors, insurance, hours, and booking. This is the same assistant as the Chat button."
+              description="Ask about doctors, insurance, hours, and booking — the same assistant as the Chat button."
             />
             <SynapseContactEmbed />
           </div>
