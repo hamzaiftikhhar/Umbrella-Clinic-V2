@@ -21,7 +21,8 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
   readTime: "11 min read",
   publishedAt: "2026-10-21",
   image: BLOG_IMAGES.whenToSeeANeurologistNyc,
-  imageAlt: "Patient asking a doctor when to see a neurologist in NYC",
+  imageAlt:
+    "Patient asking a doctor when to see a neurologist at Umbrella Health in Lower Manhattan NYC",
   author: "Umbrella Health",
   body: [
     {
@@ -38,18 +39,23 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
       text: "This guide walks you through them in plain words. It also covers your first visit and how to get care in Lower Manhattan.",
     },
     {
-      type: "ctaBox",
-      title: "Already know you want a specialist?",
-      body: `Book an appointment with our NYC neurologist or call ${SITE_PHONE} to schedule your visit.`,
+      type: "cta",
+      prompt: "Already know you want a specialist?",
+      label: "Explore Neurology at Umbrella Health →",
+      href: ROUTES.neurology,
+    },
+    {
+      type: "ctaGroup",
       links: [
-        { label: "Book an appointment with our NYC neurologist →", href: ROUTES.neurology },
-        { label: "Contact Umbrella Health →", href: ROUTES.contactUs },
+        { label: "Contact Us to book a visit →", href: ROUTES.contactUs },
+        { label: `Call ${SITE_PHONE}`, href: `tel:${SITE_PHONE.replace(/\D/g, "")}` },
       ],
     },
 
     {
       type: "h2",
       heading: "What Does a Neurologist Do?",
+      subtitle: "Brain, spine, nerves and muscles — evaluated without surgery in most cases.",
     },
     {
       type: "p",
@@ -60,10 +66,23 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
       type: "p",
       text: "A neurologist doesn't usually operate. Instead, they listen to your story, examine you and order the right tests. Then they build a plan with you. They also keep your primary care doctor in the loop.",
     },
+    {
+      type: "diagram",
+      variant: "care-path",
+      alt: "Care path from patient concerns through primary care to neurology follow-up",
+      steps: [
+        "Notice a new or changing symptom",
+        "Primary care evaluation",
+        "Neurology visit when needed",
+        "Testing and care plan",
+        "Follow-up with your team",
+      ],
+    },
 
     {
       type: "h2",
       heading: "When to See a Neurologist: Signs It May Be Time",
+      subtitle: "You don't need a perfect description — you need a pattern.",
     },
     {
       type: "p",
@@ -150,12 +169,14 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
     {
       type: "image",
       src: BLOG_IMAGES.neurologistSignsChecklist,
-      alt: "Checklist of signs that show when to see a neurologist",
+      alt: "Checklist of signs that show when to see a neurologist in NYC",
+      caption: "Common signs that may mean it's time to see a neurologist.",
     },
 
     {
       type: "h2",
       heading: "When It's an Emergency, Not an Appointment",
+      subtitle: "Some symptoms can't wait for a booking — call 911.",
     },
     {
       type: "p",
@@ -192,10 +213,21 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
         },
       ],
     },
+    {
+      type: "diagram",
+      variant: "process",
+      alt: "How a neurology referral works from primary care to specialist visit",
+      steps: [
+        "Primary care visit",
+        "Referral when your plan requires it",
+        "Neurology evaluation and follow-up",
+      ],
+    },
 
     {
       type: "h2",
       heading: "What Happens at Your First Neurology Visit?",
+      subtitle: "Mostly a conversation, a careful exam, and a clear next step.",
     },
     {
       type: "p",
@@ -210,6 +242,11 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
         "Eye movements and speech",
         "Memory and thinking",
       ],
+    },
+    {
+      type: "process",
+      alt: "First neurology visit path at Umbrella Health",
+      steps: ["History and exam", "Targeted testing when needed", "Personalized care plan"],
     },
     {
       type: "p",
@@ -253,10 +290,27 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
       type: "p",
       text: "Go straight to a neurologist when you already know the problem is neurological. Examples include a known migraine history that changed, or a tremor that keeps getting worse.",
     },
+    {
+      type: "table",
+      headers: ["Situation", "Usually start here"],
+      rows: [
+        ["New mild symptoms, unclear cause", "Primary care — history, exam and basic labs first"],
+        [
+          "Known neurological issue that changed",
+          "Neurology — or ask primary care for a same-practice referral",
+        ],
+        [
+          "Sudden face droop, weakness, speech or vision loss",
+          "Call 911 — emergency care, not a routine booking",
+        ],
+      ],
+      note: "Your insurance plan may require a referral before a specialty visit.",
+    },
 
     {
       type: "h2",
       heading: "Seeing a Neurologist in Lower Manhattan",
+      subtitle: "Primary care and neurology under one roof near Union Square.",
     },
     {
       type: "p",
@@ -273,12 +327,18 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
       text: "The practice offers same-day appointments when possible for new neurological symptoms.",
     },
     {
+      type: "image",
+      src: BLOG_IMAGES.clinicInterior,
+      alt: "Umbrella Health clinic interior for neurology and primary care in Lower Manhattan NYC",
+      caption: "Umbrella Health at 32 West 14th Street, Lower Manhattan.",
+    },
+    {
       type: "ctaBox",
       title: "Ready to get answers?",
-      body: `Book an appointment with our NYC neurologist. You can also contact Umbrella Health to book a visit or call ${SITE_PHONE} to schedule.`,
+      body: `Book through our NYC neurologist page, contact Umbrella Health, or call ${SITE_PHONE}.`,
       links: [
-        { label: "Book an appointment with our NYC neurologist →", href: ROUTES.neurology },
-        { label: "Contact Umbrella Health →", href: ROUTES.contactUs },
+        { label: "NYC Neurologist →", href: ROUTES.neurology },
+        { label: "Contact Us →", href: ROUTES.contactUs },
       ],
     },
     {
@@ -296,35 +356,22 @@ export const whenToSeeANeurologistNycPost: BlogPost = {
       text: "Not every odd feeling needs a specialist. Here's a quick way to sort them.",
     },
     {
-      type: "p",
-      text: "Usually fine to watch for a few days:",
-    },
-    {
-      type: "ul",
-      items: [
-        "A mild headache after a short night of sleep",
-        "A brief tingle after you sat in one position too long",
-        "A shaky hand after three cups of coffee",
-        "Forgetting a name, then remembering it later",
+      type: "table",
+      headers: ["Usually fine to watch a few days", "See a neurologist sooner"],
+      rows: [
+        ["Mild headache after a short night of sleep", "The same symptom keeps coming back"],
+        ["Brief tingle after sitting in one position too long", "It gets a little worse each week"],
+        ["Shaky hand after three cups of coffee", "It shows up on one side of your body"],
+        [
+          "Forgetting a name, then remembering it later",
+          "Friends or family notice a change in you",
+        ],
+        [
+          "Symptoms that clear quickly and don't return",
+          "It stops you from working, driving or sleeping",
+        ],
       ],
-    },
-    {
-      type: "p",
-      text: "Signs you need a neurologist soon:",
-    },
-    {
-      type: "ul",
-      items: [
-        "The same symptom keeps coming back",
-        "It gets a little worse each week",
-        "It shows up on one side of your body",
-        "Friends or family notice a change in you",
-        "It stops you from working, driving or sleeping",
-      ],
-    },
-    {
-      type: "p",
-      text: "Trust your gut here. You know your body best. If something feels off for more than a couple of weeks, book a visit.",
+      note: "If something feels off for more than a couple of weeks, book a visit. Trust your gut — you know your body best.",
     },
 
     {
