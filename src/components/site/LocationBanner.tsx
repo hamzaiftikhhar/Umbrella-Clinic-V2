@@ -70,7 +70,14 @@ export function LocationBanner() {
                     to="/contact-us"
                     className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/35 bg-primary-foreground/10 px-6 py-2.5 text-sm font-medium text-primary-foreground backdrop-blur-sm transition-all duration-300 hover:border-primary-foreground/55 hover:bg-primary-foreground/15"
                   >
-                    Our Clinics
+                    Visit the clinic
+                    <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </Link>
+                  <Link
+                    to="/contact-us#enquiry"
+                    className="group inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-transparent px-6 py-2.5 text-sm font-medium text-primary-foreground transition-all duration-300 hover:border-primary-foreground/45 hover:bg-primary-foreground/10"
+                  >
+                    Send a message
                     <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </Link>
                   <a
