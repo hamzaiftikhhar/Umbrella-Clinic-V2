@@ -24,7 +24,7 @@ export const contactFormSchema = z.object({
     .min(CONTACT_MESSAGE_MIN, `Message must be at least ${CONTACT_MESSAGE_MIN} characters.`)
     .max(CONTACT_MESSAGE_MAX, `Message must be ${CONTACT_MESSAGE_MAX} characters or fewer.`),
   /** Honeypot — bots that fill this are rejected silently on the server. */
-  website: z.string().max(200).optional().default(""),
+  website: z.string().max(200).optional(),
   /** Client-set timestamp (ms) used for a basic timing check. */
   startedAt: z.number().int().positive().optional(),
 });
