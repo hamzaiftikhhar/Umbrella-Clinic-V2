@@ -3,7 +3,7 @@ import { Link } from "@/components/AppLink";
 import { Facebook, Instagram } from "lucide-react";
 import { FOOTER_COLUMNS } from "@/data/nav";
 import { FOOTER_DESCRIPTION, FOOTER_TAGLINE } from "@/data/site-content";
-import { CLINIC_SOCIAL_LINKS, SITE_ADDRESS, SITE_PHONE } from "@/lib/site";
+import { CLINIC_SOCIAL_LINKS, SITE_ADDRESS, SITE_EMAIL, SITE_PHONE } from "@/lib/site";
 import { Wordmark } from "./primitives/Wordmark";
 
 const FOOTER_SOCIAL = [
@@ -77,10 +77,16 @@ export function SiteFooter() {
 
         <div className="mt-5 flex flex-col gap-2.5 border-t border-primary-foreground/15 pt-4 text-[10px] text-primary-foreground/60 md:mt-20 md:gap-4 md:pt-10 md:text-xs">
           <p className="leading-snug md:leading-normal">
-            {SITE_ADDRESS} · {SITE_PHONE}
+            {SITE_ADDRESS} · {SITE_PHONE} ·{" "}
+            <a href={`mailto:${SITE_EMAIL}`} className="hover:text-primary-foreground">
+              {SITE_EMAIL}
+            </a>
           </p>
           <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 md:justify-end">
             <div className="flex flex-wrap gap-x-4 gap-y-1 md:gap-x-6 md:gap-y-2">
+              <Link to="/contact-us#enquiry" className="hover:text-primary-foreground">
+                Contact form
+              </Link>
               <Link to="/privacy" className="hover:text-primary-foreground">
                 Privacy
               </Link>

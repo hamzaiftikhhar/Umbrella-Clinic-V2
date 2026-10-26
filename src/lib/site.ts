@@ -5,7 +5,7 @@ export const SITE_NAME = "Umbrella Health";
 export const SITE_TAGLINE = "Modern medicine, measured.";
 /** Canonical clinic contact — matches Primary Care / Neurologist SEO schemas. */
 export const SITE_PHONE = "(347) 667-8272";
-export const SITE_EMAIL = "admin@myumbrellahealth.com";
+export const SITE_EMAIL = "info@myumbrellahealth.com";
 export const SITE_ADDRESS = "32 West 14th Street, New York, NY 10011";
 
 /** Official clinic social profiles — used in schema and footer. */

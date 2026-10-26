@@ -30,4 +30,6 @@ export const BLOG_IMAGES = {
   annualPhysicalVsWellness: "/images/blog/annual-physical-vs-wellness-visit-nyc.webp",
   annualPhysicalVsWellnessChart:
     "/images/blog/annual-physical-medicare-wellness-visit-comparison-nyc.webp",
+  whenToSeeANeurologistNyc: "/images/blog/when-to-see-a-neurologist-nyc.webp",
+  neurologistSignsChecklist: "/images/blog/neurologist-signs-checklist-nyc.webp",
 } as const;

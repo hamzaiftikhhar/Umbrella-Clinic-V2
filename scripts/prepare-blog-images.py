@@ -40,6 +40,8 @@ ASSETS = {
     "primary-care-internal-medicine-family-medicine-nyc.webp": "public/images/blog/sources/family-vs-im.jpg",
     "annual-physical-vs-wellness-visit-nyc.webp": "public/images/blog/sources/wellness-checklist.jpg",
     "annual-physical-medicare-wellness-visit-comparison-nyc.webp": "public/images/blog/sources/medicare-compare.jpg",
+    "when-to-see-a-neurologist-nyc.webp": "public/images/blog/sources/neurologist-consult.jpg",
+    "neurologist-signs-checklist-nyc.webp": "public/images/blog/sources/neuro-signs-checklist.jpg",
 }
 
 

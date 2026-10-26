@@ -1,3 +1,4 @@
+import { Link } from "@/components/AppLink";
 import { Container } from "./Container";
 import { BookButton } from "./BookButton";
 
@@ -7,6 +8,7 @@ export interface CTABannerProps {
   italic?: string;
   ctaLabel?: string;
   ariaLabel?: string;
+  showEnquiryLink?: boolean;
   /** @deprecated retained for API compatibility; clinic photo carousel removed */
   images?: readonly string[];
   /** @deprecated retained for API compatibility; clinic photo carousel removed */
@@ -23,6 +25,7 @@ export function CTABanner({
   italic = "feel measurably better.",
   ctaLabel = "Book your appointment",
   ariaLabel = "Get started",
+  showEnquiryLink = true,
 }: CTABannerProps) {
   return (
     <section aria-label={ariaLabel} className="px-5 pb-24 sm:px-8 sm:pb-32">
@@ -61,8 +64,16 @@ export function CTABanner({
             <h2 className="font-display text-balance text-3xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-4xl md:text-5xl">
               {title} <span className="text-primary-foreground/90">{italic}</span>
             </h2>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <BookButton variant="light">{ctaLabel}</BookButton>
+              {showEnquiryLink && (
+                <Link
+                  to="/contact-us#enquiry"
+                  className="inline-flex items-center rounded-full border border-primary-foreground/35 bg-transparent px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:border-primary-foreground/55 hover:bg-primary-foreground/10"
+                >
+                  Send a message
+                </Link>
+              )}
             </div>
           </div>
         </div>
