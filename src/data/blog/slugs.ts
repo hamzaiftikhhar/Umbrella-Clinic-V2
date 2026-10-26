@@ -15,6 +15,7 @@ export const BLOG_SLUGS = {
   primaryCareVsInternalMedicine: "primary-care-vs-internal-medicine",
   annualPhysicalVsWellness: "annual-physical-vs-wellness-visit",
   whenToSeeANeurologistNyc: "when-to-see-a-neurologist-nyc",
+  neurologistForMigrainesNyc: "neurologist-for-migraines-nyc",
   /** Planned — not published yet. */
   preventiveScreenings: "preventive-health-screenings-for-adults",
   telehealthPrimaryCare: "telehealth-primary-care-nyc",
@@ -37,6 +38,7 @@ export const BLOG_PATHS = {
   primaryCareVsInternalMedicine: `/blog/${BLOG_SLUGS.primaryCareVsInternalMedicine}`,
   annualPhysicalVsWellness: `/blog/${BLOG_SLUGS.annualPhysicalVsWellness}`,
   whenToSeeANeurologistNyc: `/blog/${BLOG_SLUGS.whenToSeeANeurologistNyc}`,
+  neurologistForMigrainesNyc: `/blog/${BLOG_SLUGS.neurologistForMigrainesNyc}`,
   preventiveScreenings: `/blog/${BLOG_SLUGS.preventiveScreenings}`,
   telehealthPrimaryCare: `/blog/${BLOG_SLUGS.telehealthPrimaryCare}`,
 } as const;
