@@ -13,6 +13,7 @@ import { primaryCareVsInternalMedicinePost } from "./blog/primary-care-vs-intern
 import { referralNycPost } from "./blog/do-you-need-a-referral-nyc";
 import { sameDaySickVisitsPost } from "./blog/same-day-sick-visits-in-lower-manhattan";
 import { whatIsPrimaryCarePost } from "./blog/what-is-primary-care";
+import { neurologistForBrainFogNycPost } from "./blog/neurologist-for-brain-fog-nyc";
 import { neurologistForTremorsNycPost } from "./blog/neurologist-for-tremors-nyc";
 import { neurologistForMemoryLossNycPost } from "./blog/neurologist-for-memory-loss-nyc";
 import { neurologistForMigrainesNycPost } from "./blog/neurologist-for-migraines-nyc";
@@ -24,6 +25,7 @@ export { getPostFaqs, getPostToc, headingId } from "./blog/types";
 export { BLOG_PATHS, BLOG_SLUGS } from "./blog/slugs";
 
 export const BLOG_POSTS: BlogPost[] = [
+  neurologistForBrainFogNycPost,
   neurologistForTremorsNycPost,
   neurologistForMemoryLossNycPost,
   neurologistForMigrainesNycPost,

@@ -291,6 +291,7 @@ export const neurologistForTremorsNycPost: BlogPost = {
     {
       type: "p",
       text: "Feeling foggy or slow? A neurologist for brain fog can look for the cause.",
+      links: [{ label: "neurologist for brain fog", href: BLOG_PATHS.neurologistForBrainFogNyc }],
     },
 
     {
