@@ -42,6 +42,10 @@ ASSETS = {
     "annual-physical-medicare-wellness-visit-comparison-nyc.webp": "public/images/blog/sources/medicare-compare.jpg",
     "when-to-see-a-neurologist-nyc.webp": "public/images/blog/sources/neurologist-consult.jpg",
     "neurologist-signs-checklist-nyc.webp": "public/images/blog/sources/neuro-signs-checklist.jpg",
+    "neurologist-for-migraines-nyc.webp": "public/images/blog/sources/migraine-woman.jpg",
+    "neurologist-for-memory-loss-nyc.webp": "public/images/blog/sources/memory-photo-album.jpg",
+    "neurologist-for-tremors-nyc.webp": "public/images/blog/sources/tremor-hands.jpg",
+    "neurologist-for-brain-fog-nyc.webp": "public/images/blog/sources/brain-fog-desk.jpg",
 }
 
 

@@ -20,8 +20,9 @@ export const neurologistForBrainFogNycPost: BlogPost = {
   category: "Neurology",
   readTime: "8 min read",
   publishedAt: "2026-11-02",
-  image: BLOG_IMAGES.physicianPatient,
-  imageAlt: "Office worker with brain fog considering a neurologist for brain fog in NYC",
+  image: BLOG_IMAGES.neurologistForBrainFog,
+  imageAlt:
+    "When Should You See a Neurologist for Brain Fog in NYC? Woman rubbing her temples at her desk",
   author: "Umbrella Health",
   body: [
     {

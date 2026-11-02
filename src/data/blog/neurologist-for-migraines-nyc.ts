@@ -20,8 +20,9 @@ export const neurologistForMigrainesNycPost: BlogPost = {
   category: "Neurology",
   readTime: "8 min read",
   publishedAt: "2026-10-26",
-  image: BLOG_IMAGES.headacheWhenToSeeDoctor,
-  imageAlt: "Adult with a migraine considering a neurologist for migraines in NYC",
+  image: BLOG_IMAGES.neurologistForMigraines,
+  imageAlt:
+    "When Is It Time to See a Neurologist for Migraines in NYC? Woman with a migraine covering her face",
   author: "Umbrella Health",
   body: [
     {

@@ -20,8 +20,9 @@ export const neurologistForMemoryLossNycPost: BlogPost = {
   category: "Neurology",
   readTime: "8 min read",
   publishedAt: "2026-11-02",
-  image: BLOG_IMAGES.physicianPatient,
-  imageAlt: "Family preparing to see a neurologist for memory loss in NYC",
+  image: BLOG_IMAGES.neurologistForMemoryLoss,
+  imageAlt:
+    "What Should You Expect From a Neurologist for Memory Loss in NYC? Older adults looking through a photo album",
   author: "Umbrella Health",
   body: [
     {

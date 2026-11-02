@@ -32,4 +32,8 @@ export const BLOG_IMAGES = {
     "/images/blog/annual-physical-medicare-wellness-visit-comparison-nyc.webp",
   whenToSeeANeurologistNyc: "/images/blog/when-to-see-a-neurologist-nyc.webp",
   neurologistSignsChecklist: "/images/blog/neurologist-signs-checklist-nyc.webp",
+  neurologistForMigraines: "/images/blog/neurologist-for-migraines-nyc.webp",
+  neurologistForMemoryLoss: "/images/blog/neurologist-for-memory-loss-nyc.webp",
+  neurologistForTremors: "/images/blog/neurologist-for-tremors-nyc.webp",
+  neurologistForBrainFog: "/images/blog/neurologist-for-brain-fog-nyc.webp",
 } as const;
