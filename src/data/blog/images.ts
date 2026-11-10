@@ -38,4 +38,6 @@ export const BLOG_IMAGES = {
   neurologistForBrainFog: "/images/blog/neurologist-for-brain-fog-nyc.webp",
   whenToSeeASleepSpecialistNyc: "/images/blog/when-to-see-a-sleep-specialist-nyc.webp",
   sleepSpecialistSignsChecklist: "/images/blog/sleep-specialist-signs-checklist-nyc.webp",
+  sleepApneaSymptomsNyc: "/images/blog/sleep-apnea-symptoms-nyc.webp",
+  sleepApneaDayNight: "/images/blog/sleep-apnea-day-night-nyc.webp",
 } as const;
