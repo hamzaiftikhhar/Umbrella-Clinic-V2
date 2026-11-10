@@ -36,4 +36,6 @@ export const BLOG_IMAGES = {
   neurologistForMemoryLoss: "/images/blog/neurologist-for-memory-loss-nyc.webp",
   neurologistForTremors: "/images/blog/neurologist-for-tremors-nyc.webp",
   neurologistForBrainFog: "/images/blog/neurologist-for-brain-fog-nyc.webp",
+  whenToSeeASleepSpecialistNyc: "/images/blog/when-to-see-a-sleep-specialist-nyc.webp",
+  sleepSpecialistSignsChecklist: "/images/blog/sleep-specialist-signs-checklist-nyc.webp",
 } as const;
