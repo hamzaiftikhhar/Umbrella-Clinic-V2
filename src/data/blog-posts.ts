@@ -18,6 +18,7 @@ import { neurologistForTremorsNycPost } from "./blog/neurologist-for-tremors-nyc
 import { neurologistForMemoryLossNycPost } from "./blog/neurologist-for-memory-loss-nyc";
 import { neurologistForMigrainesNycPost } from "./blog/neurologist-for-migraines-nyc";
 import { whenToSeeANeurologistNycPost } from "./blog/when-to-see-a-neurologist-nyc";
+import { sleepApneaSymptomsNycPost } from "./blog/sleep-apnea-symptoms-nyc";
 import { whenToSeeASleepSpecialistNycPost } from "./blog/when-to-see-a-sleep-specialist-nyc";
 import type { BlogPost } from "./blog/types";
 
@@ -26,6 +27,7 @@ export { getPostFaqs, getPostToc, headingId } from "./blog/types";
 export { BLOG_PATHS, BLOG_SLUGS } from "./blog/slugs";
 
 export const BLOG_POSTS: BlogPost[] = [
+  sleepApneaSymptomsNycPost,
   whenToSeeASleepSpecialistNycPost,
   neurologistForBrainFogNycPost,
   neurologistForTremorsNycPost,

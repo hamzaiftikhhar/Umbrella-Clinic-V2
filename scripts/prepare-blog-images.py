@@ -48,6 +48,8 @@ ASSETS = {
     "neurologist-for-brain-fog-nyc.webp": "public/images/blog/sources/brain-fog-desk.jpg",
     "when-to-see-a-sleep-specialist-nyc.webp": "public/images/blog/sources/sleep-specialist-tired.jpg",
     "sleep-specialist-signs-checklist-nyc.webp": "public/images/blog/sources/sleep-signs-checklist.jpg",
+    "sleep-apnea-symptoms-nyc.webp": "public/images/blog/sources/sleep-apnea-couple.jpg",
+    "sleep-apnea-day-night-nyc.webp": "public/images/blog/sources/sleep-apnea-day-night.jpg",
 }
 
 
