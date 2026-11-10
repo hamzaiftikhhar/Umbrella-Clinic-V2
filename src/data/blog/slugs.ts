@@ -19,6 +19,7 @@ export const BLOG_SLUGS = {
   neurologistForMemoryLossNyc: "neurologist-for-memory-loss-nyc",
   neurologistForTremorsNyc: "neurologist-for-tremors-nyc",
   neurologistForBrainFogNyc: "neurologist-for-brain-fog-nyc",
+  whenToSeeASleepSpecialistNyc: "when-to-see-a-sleep-specialist-nyc",
   /** Planned — not published yet. */
   preventiveScreenings: "preventive-health-screenings-for-adults",
   telehealthPrimaryCare: "telehealth-primary-care-nyc",
@@ -45,6 +46,7 @@ export const BLOG_PATHS = {
   neurologistForMemoryLossNyc: `/blog/${BLOG_SLUGS.neurologistForMemoryLossNyc}`,
   neurologistForTremorsNyc: `/blog/${BLOG_SLUGS.neurologistForTremorsNyc}`,
   neurologistForBrainFogNyc: `/blog/${BLOG_SLUGS.neurologistForBrainFogNyc}`,
+  whenToSeeASleepSpecialistNyc: `/blog/${BLOG_SLUGS.whenToSeeASleepSpecialistNyc}`,
   preventiveScreenings: `/blog/${BLOG_SLUGS.preventiveScreenings}`,
   telehealthPrimaryCare: `/blog/${BLOG_SLUGS.telehealthPrimaryCare}`,
 } as const;
