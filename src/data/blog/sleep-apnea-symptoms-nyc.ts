@@ -293,10 +293,14 @@ export const sleepApneaSymptomsNycPost: BlogPost = {
         "CPAP. A machine that keeps your airway open with gentle air pressure through a mask. Many people adjust within a few weeks.",
         "Oral appliances. A custom mouthpiece moves your jaw forward. It may help in some cases.",
         "Positional therapy. Some people breathe better on their side.",
-        "Weight management. Losing extra weight can ease symptoms for some people. Our medical weight loss clinic can help.",
+        "Weight management. Losing extra weight can ease symptoms for some people.",
         "Lifestyle changes. Less alcohol at night, no smoking and treating nasal congestion can help.",
         "Surgery or implants. These may come up when other options don't work.",
       ],
+    },
+    {
+      type: "p",
+      text: "Our medical weight loss clinic can help.",
       links: [{ label: "medical weight loss clinic", href: ROUTES.medicalWeightLoss }],
     },
     {
