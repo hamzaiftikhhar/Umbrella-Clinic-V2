@@ -50,6 +50,8 @@ ASSETS = {
     "sleep-specialist-signs-checklist-nyc.webp": "public/images/blog/sources/sleep-signs-checklist.jpg",
     "sleep-apnea-symptoms-nyc.webp": "public/images/blog/sources/sleep-apnea-couple.jpg",
     "sleep-apnea-day-night-nyc.webp": "public/images/blog/sources/sleep-apnea-day-night.jpg",
+    "home-sleep-study-nyc.webp": "public/images/blog/sources/home-sleep-study-kit.jpg",
+    "home-vs-lab-sleep-study-nyc.webp": "public/images/blog/sources/home-vs-lab-sleep-study.jpg",
 }
 
 
