@@ -122,6 +122,12 @@ export const whenToSeeASleepSpecialistNycPost: BlogPost = {
     {
       type: "p",
       text: "Maybe you lie awake for an hour. Or you wake at 3 a.m. and can't drift off again. If this happens most nights for weeks, it's worth a visit. Insomnia treatment in NYC can help you sleep through the night again.",
+      links: [
+        {
+          label: "Insomnia treatment in NYC",
+          href: BLOG_PATHS.insomniaTreatmentNyc,
+        },
+      ],
     },
 
     {
