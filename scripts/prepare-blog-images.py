@@ -52,6 +52,8 @@ ASSETS = {
     "sleep-apnea-day-night-nyc.webp": "public/images/blog/sources/sleep-apnea-day-night.jpg",
     "home-sleep-study-nyc.webp": "public/images/blog/sources/home-sleep-study-kit.jpg",
     "home-vs-lab-sleep-study-nyc.webp": "public/images/blog/sources/home-vs-lab-sleep-study.jpg",
+    "insomnia-treatment-nyc.webp": "public/images/blog/sources/insomnia-awake-clock.jpg",
+    "insomnia-nightstand-clock-nyc.webp": "public/images/blog/sources/insomnia-nightstand-clock.jpg",
 }
 
 
