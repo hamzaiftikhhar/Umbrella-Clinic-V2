@@ -44,4 +44,6 @@ export const BLOG_IMAGES = {
   homeSleepStudyVsLab: "/images/blog/home-vs-lab-sleep-study-nyc.webp",
   insomniaTreatmentNyc: "/images/blog/insomnia-treatment-nyc.webp",
   insomniaNightstand: "/images/blog/insomnia-nightstand-clock-nyc.webp",
+  neurologistForSleepDisordersNyc: "/images/blog/neurologist-for-sleep-disorders-nyc.webp",
+  neurologistForSleepConsult: "/images/blog/neurologist-for-sleep-consult-nyc.webp",
 } as const;
