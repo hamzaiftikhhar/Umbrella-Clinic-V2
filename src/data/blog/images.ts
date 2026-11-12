@@ -40,4 +40,6 @@ export const BLOG_IMAGES = {
   sleepSpecialistSignsChecklist: "/images/blog/sleep-specialist-signs-checklist-nyc.webp",
   sleepApneaSymptomsNyc: "/images/blog/sleep-apnea-symptoms-nyc.webp",
   sleepApneaDayNight: "/images/blog/sleep-apnea-day-night-nyc.webp",
+  homeSleepStudyNyc: "/images/blog/home-sleep-study-nyc.webp",
+  homeSleepStudyVsLab: "/images/blog/home-vs-lab-sleep-study-nyc.webp",
 } as const;
