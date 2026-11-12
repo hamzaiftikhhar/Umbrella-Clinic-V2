@@ -276,7 +276,10 @@ export const sleepApneaSymptomsNycPost: BlogPost = {
     {
       type: "p",
       text: "Your doctor picks the right test for you. Sleep medicine at Umbrella Health includes home sleep studies and sleep apnea testing. A home sleep study in NYC lets you do the test in your own bed.",
-      links: [{ label: "Sleep medicine at Umbrella Health", href: ROUTES.sleepMedicine }],
+      links: [
+        { label: "Sleep medicine at Umbrella Health", href: ROUTES.sleepMedicine },
+        { label: "home sleep study in NYC", href: BLOG_PATHS.homeSleepStudyNyc },
+      ],
     },
 
     {
