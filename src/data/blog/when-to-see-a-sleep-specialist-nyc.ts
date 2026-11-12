@@ -158,7 +158,7 @@ export const whenToSeeASleepSpecialistNycPost: BlogPost = {
       links: [
         {
           label: "neurologist for sleep disorders",
-          href: BLOG_PATHS.whenToSeeANeurologistNyc,
+          href: BLOG_PATHS.neurologistForSleepDisordersNyc,
         },
       ],
     },

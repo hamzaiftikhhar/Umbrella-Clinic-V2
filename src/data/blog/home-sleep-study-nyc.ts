@@ -149,6 +149,12 @@ export const homeSleepStudyNycPost: BlogPost = {
     {
       type: "p",
       text: "Could it be narcolepsy or a parasomnia? A neurologist for sleep disorders can help sort that out.",
+      links: [
+        {
+          label: "neurologist for sleep disorders",
+          href: BLOG_PATHS.neurologistForSleepDisordersNyc,
+        },
+      ],
     },
 
     {
