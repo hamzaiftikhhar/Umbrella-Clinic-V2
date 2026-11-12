@@ -21,6 +21,7 @@ export const BLOG_SLUGS = {
   neurologistForBrainFogNyc: "neurologist-for-brain-fog-nyc",
   whenToSeeASleepSpecialistNyc: "when-to-see-a-sleep-specialist-nyc",
   sleepApneaSymptomsNyc: "sleep-apnea-symptoms-nyc",
+  homeSleepStudyNyc: "home-sleep-study-nyc",
   /** Planned — not published yet. */
   preventiveScreenings: "preventive-health-screenings-for-adults",
   telehealthPrimaryCare: "telehealth-primary-care-nyc",
@@ -49,6 +50,7 @@ export const BLOG_PATHS = {
   neurologistForBrainFogNyc: `/blog/${BLOG_SLUGS.neurologistForBrainFogNyc}`,
   whenToSeeASleepSpecialistNyc: `/blog/${BLOG_SLUGS.whenToSeeASleepSpecialistNyc}`,
   sleepApneaSymptomsNyc: `/blog/${BLOG_SLUGS.sleepApneaSymptomsNyc}`,
+  homeSleepStudyNyc: `/blog/${BLOG_SLUGS.homeSleepStudyNyc}`,
   preventiveScreenings: `/blog/${BLOG_SLUGS.preventiveScreenings}`,
   telehealthPrimaryCare: `/blog/${BLOG_SLUGS.telehealthPrimaryCare}`,
 } as const;
