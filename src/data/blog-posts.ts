@@ -20,6 +20,7 @@ import { neurologistForMigrainesNycPost } from "./blog/neurologist-for-migraines
 import { whenToSeeANeurologistNycPost } from "./blog/when-to-see-a-neurologist-nyc";
 import { homeSleepStudyNycPost } from "./blog/home-sleep-study-nyc";
 import { insomniaTreatmentNycPost } from "./blog/insomnia-treatment-nyc";
+import { neurologistForSleepDisordersNycPost } from "./blog/neurologist-for-sleep-disorders-nyc";
 import { sleepApneaSymptomsNycPost } from "./blog/sleep-apnea-symptoms-nyc";
 import { whenToSeeASleepSpecialistNycPost } from "./blog/when-to-see-a-sleep-specialist-nyc";
 import type { BlogPost } from "./blog/types";
@@ -29,6 +30,7 @@ export { getPostFaqs, getPostToc, headingId } from "./blog/types";
 export { BLOG_PATHS, BLOG_SLUGS } from "./blog/slugs";
 
 export const BLOG_POSTS: BlogPost[] = [
+  neurologistForSleepDisordersNycPost,
   insomniaTreatmentNycPost,
   homeSleepStudyNycPost,
   sleepApneaSymptomsNycPost,

@@ -54,6 +54,8 @@ ASSETS = {
     "home-vs-lab-sleep-study-nyc.webp": "public/images/blog/sources/home-vs-lab-sleep-study.jpg",
     "insomnia-treatment-nyc.webp": "public/images/blog/sources/insomnia-awake-clock.jpg",
     "insomnia-nightstand-clock-nyc.webp": "public/images/blog/sources/insomnia-nightstand-clock.jpg",
+    "neurologist-for-sleep-disorders-nyc.webp": "public/images/blog/sources/neuro-sleep-subway.jpg",
+    "neurologist-for-sleep-consult-nyc.webp": "public/images/blog/sources/neuro-sleep-consult.jpg",
 }
 
 
