@@ -56,6 +56,16 @@ ASSETS = {
     "insomnia-nightstand-clock-nyc.webp": "public/images/blog/sources/insomnia-nightstand-clock.jpg",
     "neurologist-for-sleep-disorders-nyc.webp": "public/images/blog/sources/neuro-sleep-subway.jpg",
     "neurologist-for-sleep-consult-nyc.webp": "public/images/blog/sources/neuro-sleep-consult.jpg",
+    "peripheral-artery-disease-symptoms-nyc.webp": "public/images/blog/sources/pad-leg-pain.jpg",
+    "pad-arteries-diagram-nyc.webp": "public/images/blog/sources/pad-arteries.jpg",
+    "cardiac-diagnostic-testing-nyc.webp": "public/images/blog/sources/cardiac-ekg.jpg",
+    "cardiac-tests-chart-nyc.webp": "public/images/blog/sources/cardiac-tests.jpg",
+    "heart-palpitations-cardiologist-nyc.webp": "public/images/blog/sources/palpitations-watch.jpg",
+    "heart-rhythm-diagram-nyc.webp": "public/images/blog/sources/heart-rhythm.jpg",
+    "when-to-worry-about-chest-pain-nyc.webp": "public/images/blog/sources/chest-pain-bench.jpg",
+    "chest-pain-causes-chart-nyc.webp": "public/images/blog/sources/chest-pain-causes.jpg",
+    "when-to-see-a-cardiologist-nyc.webp": "public/images/blog/sources/cardiologist-stairs.jpg",
+    "cardiologist-signs-checklist-nyc.webp": "public/images/blog/sources/cardiologist-checklist.jpg",
 }
 
 
