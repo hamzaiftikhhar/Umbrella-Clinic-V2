@@ -2,11 +2,14 @@ import { acceptingNewPatientsPost } from "./blog/primary-care-doctor-nyc-accepti
 import { annualPhysicalPost } from "./blog/what-to-expect-at-your-annual-physical-in-nyc";
 import { annualPhysicalVsWellnessPost } from "./blog/annual-physical-vs-wellness-visit";
 import { bloodTestsCheckupPost } from "./blog/blood-tests-in-a-primary-care-checkup";
+import { cardiacDiagnosticTestingNycPost } from "./blog/cardiac-diagnostic-testing-nyc";
 import { chronicConditionsPost } from "./blog/managing-chronic-conditions-without-the-runaround";
 import { headacheWhenToSeeDoctorPost } from "./blog/when-to-see-a-doctor-for-a-headache";
+import { heartPalpitationsCardiologistNycPost } from "./blog/heart-palpitations-cardiologist-nyc";
 import { highBloodPressurePost } from "./blog/primary-care-for-high-blood-pressure";
 import { howOftenPrimaryCarePost } from "./blog/how-often-should-you-see-a-primary-care-doctor";
 import { howToChoosePrimaryCarePost } from "./blog/how-to-choose-a-primary-care-doctor-in-nyc";
+import { peripheralArteryDiseaseSymptomsNycPost } from "./blog/peripheral-artery-disease-symptoms-nyc";
 import { primaryCareDiabetesPost } from "./blog/primary-care-for-diabetes";
 import { primaryCareOrUrgentCarePost } from "./blog/primary-care-doctor-or-urgent-care";
 import { primaryCareVsInternalMedicinePost } from "./blog/primary-care-vs-internal-medicine";
@@ -18,6 +21,13 @@ import { neurologistForTremorsNycPost } from "./blog/neurologist-for-tremors-nyc
 import { neurologistForMemoryLossNycPost } from "./blog/neurologist-for-memory-loss-nyc";
 import { neurologistForMigrainesNycPost } from "./blog/neurologist-for-migraines-nyc";
 import { whenToSeeANeurologistNycPost } from "./blog/when-to-see-a-neurologist-nyc";
+import { homeSleepStudyNycPost } from "./blog/home-sleep-study-nyc";
+import { insomniaTreatmentNycPost } from "./blog/insomnia-treatment-nyc";
+import { neurologistForSleepDisordersNycPost } from "./blog/neurologist-for-sleep-disorders-nyc";
+import { sleepApneaSymptomsNycPost } from "./blog/sleep-apnea-symptoms-nyc";
+import { whenToSeeASleepSpecialistNycPost } from "./blog/when-to-see-a-sleep-specialist-nyc";
+import { whenToSeeACardiologistNycPost } from "./blog/when-to-see-a-cardiologist-nyc";
+import { whenToWorryAboutChestPainNycPost } from "./blog/when-to-worry-about-chest-pain-nyc";
 import type { BlogPost } from "./blog/types";
 
 export type { BlogBlock, BlogFaq, BlogLink, BlogPost } from "./blog/types";
@@ -25,6 +35,16 @@ export { getPostFaqs, getPostToc, headingId } from "./blog/types";
 export { BLOG_PATHS, BLOG_SLUGS } from "./blog/slugs";
 
 export const BLOG_POSTS: BlogPost[] = [
+  peripheralArteryDiseaseSymptomsNycPost,
+  cardiacDiagnosticTestingNycPost,
+  heartPalpitationsCardiologistNycPost,
+  whenToWorryAboutChestPainNycPost,
+  whenToSeeACardiologistNycPost,
+  neurologistForSleepDisordersNycPost,
+  insomniaTreatmentNycPost,
+  homeSleepStudyNycPost,
+  sleepApneaSymptomsNycPost,
+  whenToSeeASleepSpecialistNycPost,
   neurologistForBrainFogNycPost,
   neurologistForTremorsNycPost,
   neurologistForMemoryLossNycPost,

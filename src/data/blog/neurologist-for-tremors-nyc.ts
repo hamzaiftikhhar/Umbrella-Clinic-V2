@@ -20,8 +20,9 @@ export const neurologistForTremorsNycPost: BlogPost = {
   category: "Neurology",
   readTime: "8 min read",
   publishedAt: "2026-11-02",
-  image: BLOG_IMAGES.physicianPatient,
-  imageAlt: "Adult with a hand tremor thinking about seeing a neurologist for tremors",
+  image: BLOG_IMAGES.neurologistForTremors,
+  imageAlt:
+    "Why Do Your Hands Shake, and Do You Need a Neurologist for Tremors in NYC? Close-up of an older adult's hands",
   author: "Umbrella Health",
   body: [
     {
