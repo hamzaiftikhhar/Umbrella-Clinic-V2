@@ -24,6 +24,11 @@ export const BLOG_SLUGS = {
   homeSleepStudyNyc: "home-sleep-study-nyc",
   insomniaTreatmentNyc: "insomnia-treatment-nyc",
   neurologistForSleepDisordersNyc: "neurologist-for-sleep-disorders-nyc",
+  peripheralArteryDiseaseSymptomsNyc: "peripheral-artery-disease-symptoms-nyc",
+  cardiacDiagnosticTestingNyc: "cardiac-diagnostic-testing-nyc",
+  heartPalpitationsCardiologistNyc: "heart-palpitations-cardiologist-nyc",
+  whenToWorryAboutChestPainNyc: "when-to-worry-about-chest-pain-nyc",
+  whenToSeeACardiologistNyc: "when-to-see-a-cardiologist-nyc",
   /** Planned — not published yet. */
   preventiveScreenings: "preventive-health-screenings-for-adults",
   telehealthPrimaryCare: "telehealth-primary-care-nyc",
@@ -55,6 +60,11 @@ export const BLOG_PATHS = {
   homeSleepStudyNyc: `/blog/${BLOG_SLUGS.homeSleepStudyNyc}`,
   insomniaTreatmentNyc: `/blog/${BLOG_SLUGS.insomniaTreatmentNyc}`,
   neurologistForSleepDisordersNyc: `/blog/${BLOG_SLUGS.neurologistForSleepDisordersNyc}`,
+  peripheralArteryDiseaseSymptomsNyc: `/blog/${BLOG_SLUGS.peripheralArteryDiseaseSymptomsNyc}`,
+  cardiacDiagnosticTestingNyc: `/blog/${BLOG_SLUGS.cardiacDiagnosticTestingNyc}`,
+  heartPalpitationsCardiologistNyc: `/blog/${BLOG_SLUGS.heartPalpitationsCardiologistNyc}`,
+  whenToWorryAboutChestPainNyc: `/blog/${BLOG_SLUGS.whenToWorryAboutChestPainNyc}`,
+  whenToSeeACardiologistNyc: `/blog/${BLOG_SLUGS.whenToSeeACardiologistNyc}`,
   preventiveScreenings: `/blog/${BLOG_SLUGS.preventiveScreenings}`,
   telehealthPrimaryCare: `/blog/${BLOG_SLUGS.telehealthPrimaryCare}`,
 } as const;
