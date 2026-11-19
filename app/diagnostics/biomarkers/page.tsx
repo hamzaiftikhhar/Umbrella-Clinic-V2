@@ -13,7 +13,6 @@ const seo = buildPageSeo({
     { label: "Diagnostics", to: "/diagnostics" },
     { label: "Biomarkers" },
   ],
-  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
