@@ -19,7 +19,6 @@ const seo = buildPageSeo({
     { label: "Decoding Your Diagnostics", to: "/resources/decoding-your-diagnostics" },
     { label: article.title },
   ],
-  robots: { index: false, follow: false },
   extraSchema: [
     articleSchema({
       title: article.title,
