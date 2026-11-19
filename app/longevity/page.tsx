@@ -33,7 +33,6 @@ const seo = buildPageSeo({
     "Executive physicals, biomarker panels, and healthspan programs from a real multispecialty clinic. Measured optimization, not vibes.",
   path: "/longevity",
   crumbs: [{ label: "Home", to: "/" }, { label: "Longevity" }],
-  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
