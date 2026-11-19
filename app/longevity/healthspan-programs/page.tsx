@@ -13,7 +13,6 @@ const seo = buildPageSeo({
     { label: "Longevity", to: "/longevity" },
     { label: "Healthspan Programs" },
   ],
-  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
