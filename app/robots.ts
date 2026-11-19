@@ -3,17 +3,17 @@ import { SITE_URL } from "@/lib/site";
 
 /**
  * Open crawl for SEO + AI discovery.
- * Only block utility/legacy/junk paths that dilute crawl budget or create soft-404 noise.
- * Blog and architecture pages are fully crawlable.
+ * Only block paths that can harm the site: private/debug pages, redirect
+ * aliases (duplicate crawl), and junk search-query URLs.
+ * Real marketing and content pages stay crawlable.
  */
 export default function robots(): MetadataRoute.Robots {
   const disallowJunk = [
+    // Private / debug / thin lead-gen — should never appear in search
     "/portal",
     "/schema",
-    "/careers",
-    "/refer-a-friend",
-    "/employers",
-    // Alias / legacy paths (canonicals live elsewhere — avoid duplicate crawl)
+    "/longevity/waitlist",
+    // Redirect aliases (canonicals live elsewhere — avoid duplicate crawl)
     "/visit-us",
     "/reviews",
     "/medical-spa",
