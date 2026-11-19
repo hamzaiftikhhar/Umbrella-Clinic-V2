@@ -12,7 +12,6 @@ const seo = buildPageSeo({
     { label: "Diagnostics", to: "/diagnostics" },
     { label: "Autonomic Testing" },
   ],
-  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
