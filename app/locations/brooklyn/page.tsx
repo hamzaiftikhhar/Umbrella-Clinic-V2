@@ -17,7 +17,6 @@ const seo = buildPageSeo({
     { label: "Brooklyn" },
   ],
   extraSchema: [localClinicSchema("Brooklyn", [...NEIGHBORHOOD_AREAS.brooklyn])],
-  robots: { index: false, follow: true },
 });
 export const metadata = seo.metadata;
 
