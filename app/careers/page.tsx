@@ -20,7 +20,6 @@ const seo = buildPageSeo({
   description: "Build a modern clinic with us. Open roles at Umbrella Health.",
   path: "/careers",
   crumbs: [{ label: "Home", to: "/" }, { label: "Careers" }],
-  robots: { index: false, follow: false },
 });
 export const metadata = seo.metadata;
 
