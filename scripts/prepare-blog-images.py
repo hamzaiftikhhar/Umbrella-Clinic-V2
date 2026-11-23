@@ -66,6 +66,16 @@ ASSETS = {
     "chest-pain-causes-chart-nyc.webp": "public/images/blog/sources/chest-pain-causes.jpg",
     "when-to-see-a-cardiologist-nyc.webp": "public/images/blog/sources/cardiologist-stairs.jpg",
     "cardiologist-signs-checklist-nyc.webp": "public/images/blog/sources/cardiologist-checklist.jpg",
+    "what-do-pain-management-doctors-do-nyc.webp": "public/images/blog/sources/pain-doctors-kitchen-back.jpg",
+    "pain-management-plan-diagram-nyc.webp": "public/images/blog/sources/pain-plan-therapy.jpg",
+    "sciatica-treatment-nyc.webp": "public/images/blog/sources/sciatica-subway-back.jpg",
+    "sciatic-nerve-diagram-nyc.webp": "public/images/blog/sources/sciatic-nerve-stretch.jpg",
+    "epidural-shot-for-back-pain-nyc.webp": "public/images/blog/sources/epidural-spine-model.jpg",
+    "epidural-space-diagram-nyc.webp": "public/images/blog/sources/epidural-clinic-consult.jpg",
+    "chronic-back-pain-treatment-nyc.webp": "public/images/blog/sources/chronic-back-stairs.jpg",
+    "chronic-back-pain-options-chart-nyc.webp": "public/images/blog/sources/chronic-back-pt.jpg",
+    "nerve-pain-treatment-nyc.webp": "public/images/blog/sources/nerve-pain-feet-night.jpg",
+    "neuropathy-foot-exam-nyc.webp": "public/images/blog/sources/neuropathy-foot-exam.jpg",
 }
 
 
