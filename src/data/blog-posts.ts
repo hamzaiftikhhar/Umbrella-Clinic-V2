@@ -28,6 +28,11 @@ import { sleepApneaSymptomsNycPost } from "./blog/sleep-apnea-symptoms-nyc";
 import { whenToSeeASleepSpecialistNycPost } from "./blog/when-to-see-a-sleep-specialist-nyc";
 import { whenToSeeACardiologistNycPost } from "./blog/when-to-see-a-cardiologist-nyc";
 import { whenToWorryAboutChestPainNycPost } from "./blog/when-to-worry-about-chest-pain-nyc";
+import { whatDoPainManagementDoctorsDoPost } from "./blog/what-do-pain-management-doctors-do";
+import { sciaticaTreatmentNycPost } from "./blog/sciatica-treatment-nyc";
+import { epiduralShotForBackPainNycPost } from "./blog/epidural-shot-for-back-pain-nyc";
+import { chronicBackPainTreatmentNycPost } from "./blog/chronic-back-pain-treatment-nyc";
+import { nervePainTreatmentNycPost } from "./blog/nerve-pain-treatment-nyc";
 import type { BlogPost } from "./blog/types";
 
 export type { BlogBlock, BlogFaq, BlogLink, BlogPost } from "./blog/types";
@@ -35,6 +40,11 @@ export { getPostFaqs, getPostToc, headingId } from "./blog/types";
 export { BLOG_PATHS, BLOG_SLUGS } from "./blog/slugs";
 
 export const BLOG_POSTS: BlogPost[] = [
+  nervePainTreatmentNycPost,
+  chronicBackPainTreatmentNycPost,
+  epiduralShotForBackPainNycPost,
+  sciaticaTreatmentNycPost,
+  whatDoPainManagementDoctorsDoPost,
   peripheralArteryDiseaseSymptomsNycPost,
   cardiacDiagnosticTestingNycPost,
   heartPalpitationsCardiologistNycPost,
