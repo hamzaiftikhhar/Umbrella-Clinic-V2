@@ -29,6 +29,11 @@ export const BLOG_SLUGS = {
   heartPalpitationsCardiologistNyc: "heart-palpitations-cardiologist-nyc",
   whenToWorryAboutChestPainNyc: "when-to-worry-about-chest-pain-nyc",
   whenToSeeACardiologistNyc: "when-to-see-a-cardiologist-nyc",
+  whatDoPainManagementDoctorsDo: "what-do-pain-management-doctors-do",
+  sciaticaTreatmentNyc: "sciatica-treatment-nyc",
+  epiduralShotForBackPainNyc: "epidural-shot-for-back-pain-nyc",
+  chronicBackPainTreatmentNyc: "chronic-back-pain-treatment-nyc",
+  nervePainTreatmentNyc: "nerve-pain-treatment-nyc",
   /** Planned — not published yet. */
   preventiveScreenings: "preventive-health-screenings-for-adults",
   telehealthPrimaryCare: "telehealth-primary-care-nyc",
@@ -65,6 +70,11 @@ export const BLOG_PATHS = {
   heartPalpitationsCardiologistNyc: `/blog/${BLOG_SLUGS.heartPalpitationsCardiologistNyc}`,
   whenToWorryAboutChestPainNyc: `/blog/${BLOG_SLUGS.whenToWorryAboutChestPainNyc}`,
   whenToSeeACardiologistNyc: `/blog/${BLOG_SLUGS.whenToSeeACardiologistNyc}`,
+  whatDoPainManagementDoctorsDo: `/blog/${BLOG_SLUGS.whatDoPainManagementDoctorsDo}`,
+  sciaticaTreatmentNyc: `/blog/${BLOG_SLUGS.sciaticaTreatmentNyc}`,
+  epiduralShotForBackPainNyc: `/blog/${BLOG_SLUGS.epiduralShotForBackPainNyc}`,
+  chronicBackPainTreatmentNyc: `/blog/${BLOG_SLUGS.chronicBackPainTreatmentNyc}`,
+  nervePainTreatmentNyc: `/blog/${BLOG_SLUGS.nervePainTreatmentNyc}`,
   preventiveScreenings: `/blog/${BLOG_SLUGS.preventiveScreenings}`,
   telehealthPrimaryCare: `/blog/${BLOG_SLUGS.telehealthPrimaryCare}`,
 } as const;
